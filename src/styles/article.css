@@ -494,3 +494,262 @@
 .article-body .footnotes a {
   color: var(--section-color, var(--ink));
 }
+
+/* CLAIM 심층분석 포맷 (2026-08-15 편입 — 특허 비교분석 전용 컴포넌트) */
+
+.article-body p.lede {
+  font-size: 17.5px;
+}
+
+.article-body .section-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--section-color, var(--ink));
+  letter-spacing: 0.08em;
+  display: block;
+  margin: 40px 0 -4px;
+}
+
+.article-body .tbl-wrap {
+  overflow-x: auto;
+}
+
+.article-body .tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border: 1px solid var(--section-color, var(--ink));
+  color: var(--section-color, var(--ink));
+}
+
+.article-body .tag.status-granted {
+  background: var(--section-color, var(--ink));
+  color: var(--card);
+  border-color: var(--section-color, var(--ink));
+}
+
+.article-body .quote-box {
+  margin: 18px 0 0;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--section-color, var(--ink));
+}
+
+.article-body .quote-box p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.article-body .quote-box cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--meta-soft);
+}
+
+.article-body .patent-card {
+  margin: 22px 0 0;
+  border: 1px solid var(--line-frame);
+  background: var(--card);
+}
+
+.article-body .patent-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: #f2f1ea;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-body .patent-card-head .co {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.article-body .patent-card-head .num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--meta-soft);
+}
+
+.article-body .patent-card-body {
+  padding: 4px 18px 18px;
+}
+
+.article-body .fig-frame {
+  margin: 16px 0 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 10px;
+}
+
+.article-body .fig-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-body .fig-cap {
+  font-size: 14px;
+  color: var(--meta-soft);
+  padding-top: 7px;
+  line-height: 1.6;
+  font-family: var(--font-mono);
+}
+
+.article-body .no-fig-note {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  background: #f2f1ea;
+  border-left: 3px solid var(--line-frame);
+  font-size: 14px;
+  color: var(--meta-soft);
+  line-height: 1.6;
+}
+
+.article-body .num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--line-soft);
+  margin-top: 14px;
+  border: 1px solid var(--line-soft);
+}
+
+.article-body .num-cell {
+  background: var(--card);
+  padding: 10px 12px;
+}
+
+.article-body .num-cell .k {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--meta-soft);
+  display: block;
+}
+
+.article-body .num-cell .v {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 3px;
+  display: block;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.article-body .viz-box {
+  margin: 20px 0 0;
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 20px clamp(10px, 3vw, 24px) 14px;
+  overflow-x: auto;
+}
+
+.article-body .viz-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--meta-soft);
+  margin-bottom: 6px;
+}
+
+.article-body .viz-box svg text {
+  font-family: var(--font-sans);
+}
+
+.article-body .viz-box svg .mono {
+  font-family: var(--font-mono);
+}
+
+.article-body .matrix-grid {
+  display: grid;
+  grid-template-columns: 90px repeat(4, 1fr);
+  grid-template-rows: auto repeat(2, minmax(92px, auto));
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.article-body .matrix-grid > div {
+  background: var(--card);
+  padding: 8px 10px;
+}
+
+.article-body .matrix-grid .corner {
+  background: var(--paper);
+}
+
+.article-body .matrix-grid .col-head {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-body .matrix-grid .row-head {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-body .matrix-grid .cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.article-body .matrix-chip {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 7px;
+  background: var(--section-color-soft, oklch(0.88 0.03 150));
+  color: #14321f;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.article-body .matrix-chip.alt {
+  background: #f0e3c8;
+  color: #4a3a12;
+}
+
+.article-body .matrix-grid .empty {
+  color: var(--meta);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+@media (max-width: 780px) {
+  .article-body .matrix-grid {
+    font-size: 11px;
+  }
+}
