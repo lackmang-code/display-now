@@ -35,14 +35,20 @@ paywallAfter: 0
 
 어두운 방에 들어가면 화면이 스르륵 어두워지고, 햇빛 아래로 나가면 다시 밝아진다. 이 밝기를 맞추는 눈이 조도센서(ALS, Ambient Light Sensor)다. 밝기만 재는 센서로 생각하면 절반만 아는 셈이다. 요즘 behind-OLED용 ALS(ams OSRAM TCS3720 등)는 Red·Green·Blue·Clear, 즉 RGB+C 네 채널을 동시에 읽는 작은 컬러 카메라에 가깝다. 세 가지를 뽑아낸다. Clear 채널로 주변 밝기(조도)를 재고, RGB 채널의 비율로 지금 빛이 햇빛인지 형광등인지 색온도(CCT)를 읽어 화면의 화이트밸런스를 자동 조정하고, 조명이 눈에 안 보이게 깜빡이는 주파수(플리커)를 잡아 카메라 촬영 시 줄무늬(밴딩)를 막는다.
 
-<figure class="fig-single">
-  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/als_chip.webp" alt="behind-OLED ALS 센서 실물 다이 단면 사진" />
-  <figcaption>behind-OLED ALS 센서의 실물 다이 단면. RGB+C 포토다이오드 영역이 위쪽에 보인다.</figcaption>
-</figure>
+주변광 밝기와 색온도를 바꾸면 화면이 어떻게 반응하는지 직접 움직여볼 수 있다.
+
+<div class="sim-embed" data-sim="als-white-balance-demo" data-params='{"ambientIntensityPct":55,"ambientTempK":4500}'>
+  <p class="sim-fallback">JavaScript가 꺼져 있으면 이 영역이 표시되지 않습니다.</p>
+</div>
 
 이 센서는 원래 화면 위 베젤에 편하게 앉아 있었다. 그런데 화면이 앞면을 거의 다 덮는 풀스크린 시대가 오면서 앉을 자리를 잃고 화면 밑으로 숨어들어야 했다. 이 순간부터 이야기는 센서가 아니라 OLED의 이야기가 된다.
 
 ## 2. 투과율이라는 벽
+
+<figure class="fig-float">
+  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/als_chip.webp" alt="behind-OLED ALS 센서 실물 다이 단면 사진" />
+  <figcaption>behind-OLED ALS 센서의 실물 다이 단면. RGB+C 포토다이오드 영역이 위쪽에 보인다.</figcaption>
+</figure>
 
 OLED가 우리에겐 스스로 빛을 내는 화려한 화면이지만, 그 아래 센서 눈높이에서 보면 여러 겹으로 쌓인 불투명한 막이다. 외부광이 센서에 닿으려면 커버글라스·편광판·박막봉지·화소층을 모두 투과해야 한다. 화소전극(Anode)은 전반사막이라 투과율이 0에 가깝지만, 전극 사이 하부배선이 만든 미세한 그물망으로 빛이 새어 나간다. 특허 US11974458이 기술하는 OLED 패널 적층 구조가 이 경로를 보여준다. 그래서 ALS에게 가장 중요한 단어는 OLED의 투과특성이다.
 

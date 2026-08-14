@@ -1,0 +1,75 @@
+<svg viewBox="0 0 840 460" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="839" height="459" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">백플레이트는 두 번 바뀌었다</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">갤럭시 Z폴드 세대별 힌지 소재 · DESK 종합</text>
+
+  <!-- legend -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#4d4d45">
+    <rect x="28" y="78" width="12" height="12" fill="#9a9a90"/>
+    <text x="46" y="88">SUS(스테인리스)</text>
+    <rect x="180" y="78" width="12" height="12" fill="#c7bfa8"/>
+    <text x="198" y="88">CFRP(탄소섬유복합)</text>
+    <rect x="352" y="78" width="12" height="12" fill="oklch(0.45 0.12 315)"/>
+    <text x="370" y="88">티타늄</text>
+  </g>
+
+  <!-- 8 columns: Fold1 Fold2 Fold3 Fold4 Fold5 Fold6 Fold7 Fold8 -->
+  <!-- column x centers, width 88 each starting x=40 -->
+  <g font-family="'IBM Plex Mono', monospace">
+    <!-- material bars -->
+    <rect x="40"  y="140" width="80" height="60" fill="#9a9a90"/>
+    <rect x="130" y="140" width="80" height="60" fill="#9a9a90"/>
+    <rect x="220" y="140" width="80" height="60" fill="#c7bfa8"/>
+    <rect x="310" y="140" width="80" height="60" fill="#c7bfa8"/>
+    <rect x="400" y="140" width="80" height="60" fill="#c7bfa8"/>
+    <rect x="490" y="140" width="80" height="60" fill="#c7bfa8"/>
+    <rect x="580" y="140" width="80" height="60" fill="oklch(0.45 0.12 315)"/>
+    <rect x="670" y="140" width="90" height="60" fill="oklch(0.45 0.12 315)"/>
+
+    <!-- gen labels -->
+    <text x="80"  y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드1</text>
+    <text x="170" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드2</text>
+    <text x="260" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드3</text>
+    <text x="350" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드4</text>
+    <text x="440" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드5</text>
+    <text x="530" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="500">폴드6</text>
+    <text x="620" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="700">폴드7</text>
+    <text x="715" y="222" font-size="13" fill="#12120e" text-anchor="middle" font-weight="700">폴드8</text>
+
+    <text x="80"  y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2019</text>
+    <text x="170" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2020</text>
+    <text x="260" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2021</text>
+    <text x="350" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2022</text>
+    <text x="440" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2023</text>
+    <text x="530" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2024</text>
+    <text x="620" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2025</text>
+    <text x="715" y="238" font-size="11" fill="#8a8a80" text-anchor="middle">2026</text>
+  </g>
+
+  <!-- S-Pen row -->
+  <line x1="28" y1="266" x2="812" y2="266" stroke="#e4e4de"/>
+  <text x="28" y="284" font-size="12.5" fill="#6f6f66" font-family="'IBM Plex Mono', monospace" letter-spacing="0.2">S펜 디지타이저</text>
+  <g font-family="'IBM Plex Mono', monospace" font-size="15" text-anchor="middle">
+    <text x="80"  y="306" fill="#c9c9c4">·</text>
+    <text x="170" y="306" fill="#c9c9c4">·</text>
+    <text x="260" y="306" fill="#12120e" font-weight="700">O</text>
+    <text x="350" y="306" fill="#12120e" font-weight="700">O</text>
+    <text x="440" y="306" fill="#12120e" font-weight="700">O</text>
+    <text x="530" y="306" fill="#12120e" font-weight="700">O</text>
+    <text x="620" y="306" fill="#c9c9c4">X</text>
+    <text x="715" y="306" fill="#c9c9c4">X</text>
+  </g>
+
+  <line x1="28" y1="330" x2="812" y2="330" stroke="#dcdcd6"/>
+
+  <!-- annotation callouts -->
+  <text x="28" y="356" font-size="13.5" fill="#12120e" font-weight="600">① S펜이 들어오며 금속이 밀려났다 (2021, 폴드3)</text>
+  <text x="28" y="376" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">S펜 디지타이저(연성회로기판)가 SUS 금속과 전자기 간섭을 일으켜 CFRP로 전환</text>
+
+  <text x="28" y="404" font-size="13.5" fill="#12120e" font-weight="600">② S펜을 접자 금속이 돌아왔다 (2025, 폴드7)</text>
+  <text x="28" y="424" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">디지타이저 층 제거(-0.6mm) → 간섭 제약이 사라지며 티타늄 재도입, 폴드8은 필름까지 확장</text>
+
+  <line x1="28" y1="443" x2="812" y2="443" stroke="#dcdcd6"/>
+  <text x="28" y="454" font-size="11" fill="#8a8a80">출처: 디일렉(THE ELEC) 백플레이트 소재 취재 · 베타뉴스 S펜 미지원 확인 · 삼성디스플레이 뉴스룸 — DESK 종합, 그래프 직접 제작</text>
+</svg>

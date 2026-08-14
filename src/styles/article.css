@@ -3,6 +3,7 @@
 }
 
 .article-body h2 {
+  clear: both;
   margin: 36px 0 0;
   font-family: var(--font-serif);
   font-size: clamp(19px, 2.2vw, 23px);
@@ -244,6 +245,35 @@
   line-height: 1.65;
   padding-top: 8px;
   word-break: keep-all;
+}
+
+.fig-float {
+  float: right;
+  max-width: 190px;
+  margin: 4px 0 16px 24px;
+}
+
+.fig-float img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.fig-float figcaption {
+  font-size: 13px;
+  color: var(--ink-faint);
+  line-height: 1.55;
+  padding-top: 6px;
+  word-break: keep-all;
+}
+
+@media (max-width: 560px) {
+  .fig-float {
+    float: none;
+    max-width: 220px;
+    margin: 16px auto;
+  }
 }
 
 .fig-num {
