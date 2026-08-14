@@ -1,0 +1,52 @@
+---
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+
+interface Props {
+  activeSection?: string;
+  minimal?: boolean;
+  showNav?: boolean;
+}
+
+const { activeSection, minimal = false, showNav = true } = Astro.props;
+---
+
+<header class="site-header">
+  <div style="display:flex; align-items:baseline; gap:12px; min-width:0; flex:0 0 auto;">
+    {
+      minimal ? (
+        <span class="wordmark">DISPLAY NOW</span>
+      ) : (
+        <a href="/" class="wordmark">DISPLAY NOW</a>
+      )
+    }
+  </div>
+  {
+    showNav && (
+      <nav data-nav="1">
+        {
+          SECTION_ORDER.map((key) => {
+            const s = SECTIONS[key];
+            const on = activeSection === key;
+            return (
+              <a
+                class="chip"
+                aria-current={on ? 'true' : undefined}
+                href={`/section/${key}`}
+                style={`background:${sectionColor(key)};`}
+              >
+                {s.labelEn}
+              </a>
+            );
+          })
+        }
+        <a
+          class="archive-link"
+          aria-current={activeSection === 'archive' ? 'true' : undefined}
+          href="/archive"
+          style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}
+        >아카이브</a>
+      </nav>
+    )
+  }
+  <a class="subscribe-btn" href="/editorial#구독">구독하기</a>
+</header>

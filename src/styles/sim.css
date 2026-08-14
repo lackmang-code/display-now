@@ -1,0 +1,139 @@
+/* 테커 인터랙티브 시뮬레이션 공용 스타일 — 디자인 토큰(tokens.css) 준수 */
+/* 각진 모서리(radius 0), 그림자 없음, 애니메이션/트랜지션 없음 */
+
+.sim-embed {
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  background: var(--card);
+  max-width: 700px;
+}
+
+.sim-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--meta-soft);
+}
+
+.sim-tag {
+  padding: 2px 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--on-dark);
+  background: var(--section-color, var(--ink));
+  flex: 0 0 auto;
+}
+
+.sim-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sim-canvas-wrap {
+  flex: 0 0 auto;
+}
+
+.sim-canvas-wrap canvas {
+  display: block;
+  background: #0d0d0a;
+  border: 1px solid var(--line);
+}
+
+.sim-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--meta-soft);
+}
+
+.sim-controls {
+  flex: 1 1 200px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sim-control label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.sim-control input[type='range'] {
+  width: 100%;
+}
+
+.sim-toggle-group {
+  display: flex;
+}
+
+.sim-toggle-btn {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.sim-toggle-btn + .sim-toggle-btn {
+  border-left: none;
+}
+
+.sim-toggle-btn[aria-pressed='true'] {
+  background: var(--section-color, var(--ink));
+  color: var(--on-dark);
+  border-color: var(--section-color, var(--ink));
+}
+
+.sim-readout {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  padding-top: 4px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.sim-note {
+  padding: 10px 16px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--meta-soft);
+  background: var(--card-warm);
+  word-break: keep-all;
+}
+
+.sim-fallback {
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--meta-soft);
+}
+
+@media (max-width: 480px) {
+  .sim-body {
+    flex-direction: column;
+  }
+  .sim-canvas-wrap canvas {
+    width: 100%;
+    height: auto;
+  }
+}

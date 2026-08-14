@@ -1,0 +1,62 @@
+---
+import { sectionColor } from '../lib/sections';
+import { bylineOf, sectionLabel, articleHref, type Article } from '../lib/articles';
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const color = sectionColor(article.data.section);
+---
+
+<a href={articleHref(article)} class="article-card">
+  <div class="meta-row">
+    <span class="chip" style={`background:${color};`}>{sectionLabel(article)}</span>
+    <span class="byline">{bylineOf(article)}</span>
+  </div>
+  <div class="title">{article.data.title}</div>
+  <p class="summary">{article.data.summary}</p>
+</a>
+
+<style>
+  .article-card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: clamp(13px, 3.8vw, 18px) clamp(14px, 4vw, 20px);
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+  }
+  .chip {
+    color: var(--card);
+    padding: 3px 8px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .byline {
+    color: var(--meta);
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: clamp(17px, 4.4vw, 23px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.38;
+    margin-top: 9px;
+    word-break: keep-all;
+  }
+  .summary {
+    margin: 8px 0 0;
+    font-size: clamp(14px, 3.7vw, 15.5px);
+    line-height: 1.7;
+    color: var(--ink-mute);
+    word-break: keep-all;
+  }
+</style>

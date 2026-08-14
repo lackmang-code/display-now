@@ -1,0 +1,47 @@
+---
+// 검증용 샌드박스 페이지 — 발행물 아님. 사이트 내비게이션 어디에도 링크되지 않음.
+// 테커 워크플로우(04_Display_Now/Teker/워크플로우_기술노트시뮬레이션.md)의 컴포넌트 뼈대 검증용.
+// 프로덕션 빌드에서는 실제 콘텐츠 대신 noindex 안내만 노출한다 — 로컬 dev 서버에서만 실사용.
+import Base from '../layouts/Base.astro';
+import SimBoot from '../components/SimBoot.astro';
+
+const isProd = import.meta.env.PROD;
+---
+
+<Base title="시뮬레이션 컴포넌트 테스트 — DISPLAY NOW" noindex={true}>
+  {
+    isProd ? (
+      <main style="max-width:760px; margin:60px auto; padding:0 20px;">
+        <p style="font-family:var(--font-mono); font-size:14px; color:var(--meta-soft);">
+          dev-sim-test — 개발 전용 페이지입니다.
+        </p>
+      </main>
+    ) : (
+      <>
+        <main style="max-width:760px; margin:60px auto; padding:0 20px;">
+          <p style="font-family:var(--font-mono); font-size:14px; color:var(--meta-soft);">
+            dev-sim-test — 검증용 페이지, 발행물 아님
+          </p>
+          <h1 style="font-family:var(--font-serif); font-size:28px; margin-top:8px;">
+            시뮬레이션 컴포넌트 뼈대 테스트
+          </h1>
+          <p style="line-height:1.8;">
+            아래 박스가 <code>data-sim="udc-diffraction-demo"</code> 자리표시자를 <code>SimBoot</code>가
+            찾아 마운트한 결과입니다. 슬라이더를 움직이면 즉시(트랜지션 없이) 다시 그려집니다.
+          </p>
+
+          <div
+            class="sim-embed"
+            data-sim="udc-diffraction-demo"
+            data-params='{"apertureUm":3,"wavelengthNm":550}'
+            style="--section-color: oklch(0.45 0.11 40);"
+          >
+            <p class="sim-fallback">JavaScript가 꺼져 있으면 이 영역이 표시되지 않습니다.</p>
+          </div>
+        </main>
+
+        <SimBoot />
+      </>
+    )
+  }
+</Base>

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 840 480" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="839" height="479" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">이번 주 다이제스트를 한 장으로</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">숫자로 보는 물량 → 마진 전환 · DESK 종합</text>
+
+  <!-- Panel 1: LGD 상반기 영업손익 -->
+  <text x="28" y="94" font-size="13" fill="#6f6f66" font-family="'IBM Plex Mono', monospace" letter-spacing="0.3">LG디스플레이 상반기 영업손익 (억원)</text>
+
+  <line x1="60" y1="260" x2="440" y2="260" stroke="#c9c9c4" stroke-width="1"/>
+
+  <!-- FY2025: -826억 -->
+  <rect x="100" y="260" width="90" height="165" fill="#2a2a24"/>
+  <text x="145" y="443" font-size="14" font-family="'IBM Plex Mono', monospace" fill="#12120e" text-anchor="middle" font-weight="500">-826억원</text>
+  <text x="145" y="461" font-size="12.5" fill="#8a8a80" text-anchor="middle">2025년 상반기</text>
+
+  <!-- FY2026: +390억 -->
+  <rect x="260" y="182" width="90" height="78" fill="oklch(0.45 0.12 315)"/>
+  <text x="305" y="170" font-size="14" font-family="'IBM Plex Mono', monospace" fill="oklch(0.45 0.12 315)" text-anchor="middle" font-weight="700">+390억원</text>
+  <text x="305" y="461" font-size="12.5" fill="#8a8a80" text-anchor="middle">2026년 상반기</text>
+
+  <text x="440" y="264" font-size="11" fill="#a4a49a" text-anchor="end">0</text>
+
+  <!-- divider -->
+  <line x1="480" y1="90" x2="480" y2="430" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- Panel 2: 이번 주 신호 스트립 -->
+  <text x="504" y="94" font-size="13" fill="#6f6f66" font-family="'IBM Plex Mono', monospace" letter-spacing="0.3">이번 주 다이제스트 신호 5개</text>
+
+  <g font-family="'IBM Plex Mono', monospace">
+    <text x="504" y="132" font-size="26" font-weight="700" fill="#12120e">+1%</text>
+    <text x="504" y="150" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">2026년 설비 증설률 (Omdia)</text>
+    <line x1="504" y1="164" x2="812" y2="164" stroke="#e4e4de"/>
+
+    <text x="504" y="196" font-size="26" font-weight="700" fill="#12120e">82%</text>
+    <text x="504" y="214" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">평균 가동률 (Omdia)</text>
+    <line x1="504" y1="228" x2="812" y2="228" stroke="#e4e4de"/>
+
+    <text x="504" y="260" font-size="26" font-weight="700" fill="#12120e">-12%</text>
+    <text x="504" y="278" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">스마트폰 디스플레이 수요 (Omdia)</text>
+    <line x1="504" y1="292" x2="812" y2="292" stroke="#e4e4de"/>
+
+    <text x="504" y="324" font-size="26" font-weight="700" fill="oklch(0.45 0.12 315)">+51%</text>
+    <text x="504" y="342" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">코핀 2분기 매출, OLEDoS·AR (매일경제)</text>
+    <line x1="504" y1="356" x2="812" y2="356" stroke="#e4e4de"/>
+
+    <text x="504" y="388" font-size="26" font-weight="700" fill="#12120e">~100만대</text>
+    <text x="504" y="406" font-size="12.5" fill="#4d4d45" font-family="'IBM Plex Sans KR', sans-serif">게이밍 콘솔용 OLED 침투 (Omdia)</text>
+  </g>
+
+  <line x1="28" y1="452" x2="812" y2="452" stroke="#dcdcd6"/>
+  <text x="28" y="470" font-size="11" fill="#a4a49a">출처: LG디스플레이 2026년 2분기 실적발표(언론 보도 종합) · Omdia Display Dynamics(2026.08) · 매일경제 — DESK 종합, 그래프 직접 제작</text>
+</svg>

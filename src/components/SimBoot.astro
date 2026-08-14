@@ -1,0 +1,29 @@
+---
+import '../styles/sim.css';
+---
+
+<script>
+  import registry from '../lib/simulations/index.js';
+
+  function boot() {
+    document.querySelectorAll<HTMLElement>('[data-sim]').forEach((el) => {
+      if (el.dataset.simMounted) return;
+      const id = el.dataset.sim;
+      const mount = id ? registry[id] : undefined;
+      if (!mount) {
+        console.warn(`[sim] 등록되지 않은 시뮬레이션 id: ${id}`);
+        return;
+      }
+      let params = {};
+      try {
+        params = el.dataset.params ? JSON.parse(el.dataset.params) : {};
+      } catch (e) {
+        console.warn(`[sim] data-params 파싱 실패 (${id})`, e);
+      }
+      mount(el, params);
+      el.dataset.simMounted = 'true';
+    });
+  }
+
+  boot();
+</script>

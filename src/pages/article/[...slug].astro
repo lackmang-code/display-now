@@ -1,0 +1,387 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SimBoot from '../../components/SimBoot.astro';
+import '../../styles/article.css';
+import { getCollection } from 'astro:content';
+import { SECTIONS, sectionColor } from '../../lib/sections';
+import { getAllArticles, dateLabel, articleHref } from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+const toc = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label');
+const section = SECTIONS[entry.data.section];
+const color = sectionColor(entry.data.section);
+
+const all = await getAllArticles();
+const related = all.filter((a) => a.slug !== entry.slug && a.data.section === entry.data.section).slice(0, 3);
+const reporterInitial = entry.data.reporter[0];
+---
+
+<Base title={`${entry.data.title} — DISPLAY NOW`} description={entry.data.summary}>
+  <div class="frame">
+    <Header activeSection={entry.data.section} />
+    <div class="accent-line" style={`background:${color};`}></div>
+
+    <div class="article-layout">
+      <aside class="toc-aside">
+        <div class="toc-label" style={`color:${color}; border-bottom-color:${color};`}>목차</div>
+        <nav class="toc-nav">
+          {
+            toc.map((h) => (
+              <a href={`#${h.slug}`} style={`border-left-color:${color};`}>{h.text}</a>
+            ))
+          }
+        </nav>
+        <div class="toc-meta">
+          <div>읽는 시간 {entry.data.readingMinutes}분</div>
+        </div>
+        {
+          entry.data.sources.length > 0 && (
+            <div class="toc-sources">
+              <div class="toc-sub-label">근거 자료</div>
+              <div class="src-count">{entry.data.sources.length}건</div>
+            </div>
+          )
+        }
+      </aside>
+
+      <div class="article-main">
+        <article class="article-body" style={`--section-color:${color};`} data-paywall-after={entry.data.paywallAfter}>
+          <div class="top-meta">
+            <a href={`/section/${entry.data.section}`} style={`border-bottom-color:${color};`}>{section.label}</a>
+            <span>{dateLabel(entry)} · 읽는 시간 {entry.data.readingMinutes}분</span>
+          </div>
+
+          <h1 class="headline">{entry.data.title}</h1>
+          <p class="dek">{entry.data.summary}</p>
+
+          <div class="byline-box">
+            <span class="reporter-badge">{reporterInitial}</span>
+            <span><span class="dim">by</span> <b>{entry.data.reporter}</b> <span class="dim">(AI 기자 · {section.label} 담당)</span></span>
+            <span class="sep">|</span>
+            <span><span class="dim">AI 편집장</span> <b>DEEPLE</b></span>
+          </div>
+
+          <Content />
+        </article>
+
+        <SimBoot />
+
+        {
+          entry.data.sources.length > 0 && (
+            <section class="sources-box">
+              <div class="sources-head">
+                <span class="reporter-badge">{reporterInitial}</span>
+                <span class="sources-label">이 기사의 근거</span>
+                <span class="sources-sign">AI 기자 <b>{entry.data.reporter}</b> 작성 · AI 편집장 <b>DEEPLE</b> 편집 완료</span>
+              </div>
+              {
+                entry.data.sources.length === 1 ? (
+                  <p class="sources-note">
+                    이 기사는 위 서지정보의 논문 1편을 근거로 작성했습니다. 수치·서술은 모두 원문과
+                    대조했습니다{entry.data.sources[0].url && <> — <a href={entry.data.sources[0].url} target="_blank" rel="noopener">원문 열기</a></>}.
+                  </p>
+                ) : (
+                  <ul class="sources-list">
+                    {
+                      entry.data.sources.map((s) => (
+                        <li>
+                          <span class="src-type">{s.type}</span>
+                          {s.url ? (
+                            <a href={s.url} target="_blank" rel="noopener">{s.title}</a>
+                          ) : (
+                            <span>{s.title}{s.number ? ` (${s.number})` : ''}</span>
+                          )}
+                        </li>
+                      ))
+                    }
+                  </ul>
+                )
+              }
+            </section>
+          )
+        }
+
+        {
+          related.length > 0 && (
+            <section class="related">
+              <a href={`/section/${entry.data.section}`} class="related-head">{section.label} · {entry.data.reporter}의 다른 글 →</a>
+              <div class="related-grid">
+                {related.map((a) => (
+                  <a href={articleHref(a)} class="related-item">
+                    <div class="related-date">{dateLabel(a)} · {a.data.readingMinutes}분</div>
+                    <div class="related-title">{a.data.title}</div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        <section class="newsletter-strip">
+          <div style="flex:1 1 320px; min-width:0;">
+            <div style="font-family:var(--font-serif); font-size:19px; font-weight:600; letter-spacing:-0.03em;">주 3회, 디스플레이 산업의 숫자만 골라 보냅니다</div>
+            <p style="margin:6px 0 0; font-size:14px; line-height:1.7; color:var(--ink-faint); word-break:keep-all;">무료 뉴스레터는 매주 화·목·금 아침 7시. 언제든 해지할 수 있습니다.</p>
+          </div>
+          <form onsubmit="return false;">
+            <input type="email" placeholder="이메일 주소" />
+            <button type="submit">구독</button>
+          </form>
+        </section>
+
+        <div style="height:40px;"></div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.article-body[data-paywall-after]').forEach((article) => {
+    const n = Number(article.dataset.paywallAfter || '0');
+    if (!n) return;
+
+    const sections = Array.from(article.querySelectorAll('h2'));
+    const boundary = sections[n];
+    if (!boundary) return;
+
+    const gate = document.createElement('div');
+    gate.id = 'paywall';
+    gate.className = 'paywall-box';
+    gate.innerHTML = `
+      <div class="paywall-title">여기부터는 구독자 전용입니다</div>
+      <p>남은 분석은 무료 뉴스레터를 구독하시면 이어서 볼 수 있습니다.</p>
+      <a class="paywall-cta" href="/editorial#구독">무료로 구독하고 계속 읽기 →</a>
+    `;
+    boundary.before(gate);
+
+    let el: Element | null = boundary;
+    while (el) {
+      const next: Element | null = el.nextElementSibling;
+      el.classList.add('paywall-hidden');
+      el = next;
+    }
+  });
+</script>
+
+<style>
+  .accent-line {
+    height: 3px;
+  }
+  .article-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .toc-aside {
+    position: sticky;
+    top: 56px;
+    flex: 1 1 216px;
+    max-width: 216px;
+    min-width: 0;
+    padding: 32px 20px 40px clamp(14px, 4vw, 26px);
+    border-right: 1px solid var(--line-soft);
+    align-self: start;
+  }
+  .toc-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding-bottom: 8px;
+    border-bottom: 2px solid;
+  }
+  .toc-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+  }
+  .toc-nav a {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 9px 0 9px 10px;
+    border-left: 2px solid var(--line-soft);
+    color: #55554d;
+    word-break: keep-all;
+  }
+  .toc-meta,
+  .toc-sources {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+    line-height: 1.9;
+  }
+  .toc-sub-label {
+    letter-spacing: 0.08em;
+  }
+  .article-main {
+    flex: 1 1 520px;
+    min-width: 0;
+    padding: 32px clamp(14px, 4vw, 26px) 0 clamp(14px, 4vw, 32px);
+  }
+  .top-meta {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+    letter-spacing: 0.05em;
+  }
+  .top-meta a {
+    color: var(--ink);
+    border-bottom: 2px solid;
+    padding-bottom: 2px;
+  }
+  .headline {
+    margin: 16px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 5vw, 42px);
+    line-height: 1.28;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+    max-width: 700px;
+  }
+  .dek {
+    margin: 16px 0 0;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #45453d;
+    word-break: keep-all;
+    max-width: 700px;
+  }
+  .sources-box {
+    margin: 40px 0 0;
+    max-width: 880px;
+    border: 1px solid var(--line);
+    background: #f7f7f3;
+  }
+  .sources-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--line-soft);
+    flex-wrap: wrap;
+  }
+  .sources-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+  .sources-sign {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .sources-sign b {
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+  .sources-note {
+    margin: 0;
+    padding: 6px 20px 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--meta-soft);
+  }
+  .sources-note a {
+    color: var(--accent, inherit);
+  }
+  .sources-list {
+    margin: 0;
+    padding: 6px 20px 16px;
+    list-style: none;
+  }
+  .sources-list li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 14px;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+  .sources-list li > a,
+  .sources-list li > span:not(.src-type) {
+    flex: 1 1 240px;
+    min-width: 0;
+    word-break: break-word;
+  }
+  .sources-list li:last-child {
+    border-bottom: none;
+  }
+  .src-type {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--meta);
+    text-transform: uppercase;
+    flex: 0 0 auto;
+  }
+  .sources-list a {
+    color: var(--section-color, var(--ink));
+  }
+  .related {
+    margin: 44px 0 0;
+    max-width: 880px;
+    border-top: 2px solid var(--ink);
+    padding-top: 16px;
+  }
+  .related-head {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--meta-soft);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 12px;
+  }
+  .related-item {
+    padding: 14px 20px 14px 0;
+    border-right: 1px solid var(--line-soft);
+  }
+  .related-date {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .related-title {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.45;
+    margin-top: 6px;
+    word-break: keep-all;
+  }
+
+  @media (max-width: 780px) {
+    .toc-aside {
+      display: none;
+    }
+    .article-main {
+      padding: 24px clamp(14px, 4vw, 26px) 0;
+    }
+  }
+</style>

@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+---
+
+<Base title="페이지를 찾을 수 없습니다 — DISPLAY NOW">
+  <div class="frame" style="min-height:100vh; display:flex; flex-direction:column;">
+    <Header />
+    <div class="accent-strip">
+      <span style={`background:${sectionColor('tech-note')};`}></span>
+      <span style={`background:${sectionColor('paper')};`}></span>
+      <span style={`background:${sectionColor('patent')};`}></span>
+      <span style={`background:${sectionColor('issue')};`}></span>
+    </div>
+
+    <main class="main">
+      <div class="eyebrow">404 · PAGE NOT FOUND</div>
+      <h1>찾으시는 페이지가 없습니다</h1>
+      <p>주소가 바뀌었거나 삭제된 기사일 수 있습니다. 기사를 찾으시는 것이라면 아카이브에서 제목이나 기업명으로 검색해 보십시오.</p>
+
+      <div class="actions">
+        <a href="/archive" class="primary">아카이브에서 검색</a>
+        <a href="/" class="secondary">홈으로</a>
+      </div>
+
+      <div class="section-nav">
+        <div class="eyebrow">꼭지로 이동</div>
+        <div class="section-grid">
+          {
+            SECTION_ORDER.map((key) => {
+              const s = SECTIONS[key];
+              const color = sectionColor(key);
+              return (
+                <a href={`/section/${key}`} class="section-card" style={`border-left-color:${color};`}>
+                  <div class="s-label" style={`color:${color};`}>{s.labelEn}</div>
+                  <div class="s-title">{s.label}</div>
+                  <div class="s-blurb">{s.blurb}</div>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <p class="report-line">링크가 잘못 걸려 있다면 <a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a>로 알려 주십시오.</p>
+    </main>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .main {
+    flex: 1 1 auto;
+    padding: clamp(40px, 8vw, 72px) clamp(14px, 4vw, 32px);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--meta);
+  }
+  h1 {
+    margin: 12px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 5vw, 40px);
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+    max-width: 22ch;
+  }
+  .main > p {
+    margin: 14px 0 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink-mute);
+    max-width: 52ch;
+    word-break: keep-all;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .primary {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--on-dark);
+    background: var(--ink);
+    padding: 12px 22px;
+  }
+  .secondary {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--ink);
+    padding: 12px 22px;
+  }
+  .section-nav {
+    margin-top: 44px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .section-nav .eyebrow {
+    margin-bottom: 12px;
+  }
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+  }
+  .section-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 4px solid;
+    padding: 14px 18px;
+    display: block;
+  }
+  .s-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+  .s-title {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-top: 6px;
+  }
+  .s-blurb {
+    font-size: 14px;
+    color: #55554d;
+    margin-top: 4px;
+    word-break: keep-all;
+  }
+  .report-line {
+    margin: 26px 0 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--meta-soft);
+    word-break: keep-all;
+  }
+  .report-line a {
+    border-bottom: 1px solid var(--line-frame);
+  }
+</style>

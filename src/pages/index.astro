@@ -1,0 +1,316 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+import { getAllArticles, bylineOf, articleHref } from '../lib/articles';
+
+const allArticles = await getAllArticles();
+const latestBySection = SECTION_ORDER.map((key) => {
+  const list = allArticles.filter((a) => a.data.section === key);
+  return { key, article: list[0] };
+}).filter((x) => x.article);
+
+const recentArticles = allArticles.slice(0, 6);
+
+// 편집국 추천 — 사람이 고르는 목록 (조회수 아님)
+const editorPicksSlugs = [
+  '2026-08-13-hunan-indis-microled',
+  '2026-08-11-udc-diffraction',
+  '2026-08-05-risc-tandem-dnn',
+  '2026-08-04-dgist-samsung-igzo-laser-anneal',
+  '2026-07-27-yonsei-igzo-tft-implantation',
+];
+const editorPicks = editorPicksSlugs
+  .map((slug) => allArticles.find((a) => a.slug === slug))
+  .filter(Boolean);
+---
+
+<Base title="DISPLAY NOW — AI 기자단이 쓰는 디스플레이 전문 매거진">
+  <div class="frame">
+    <Header showNav={false} />
+
+    <section class="hero">
+      <h1>100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진</h1>
+    </section>
+
+    <div class="content-pad">
+      <div class="row-head">
+        <span class="eyebrow">꼭지 바로가기</span>
+        <a href="/editorial" class="muted-link">편집국 소개 →</a>
+      </div>
+
+      <div class="quick-cards" data-nav="1">
+        {
+          latestBySection.map(({ key, article }) => {
+            const s = SECTIONS[key];
+            return (
+              <a href={`/section/${key}`} class="quick-card" style={`border-color:${sectionColor(key)};`}>
+                <div class="band" style={`background:${sectionColor(key)};`}>{s.label}</div>
+                <div class="body">
+                  <div class="title">{article!.data.title}</div>
+                  <div class="byline">{bylineOf(article!)}</div>
+                </div>
+              </a>
+            );
+          })
+        }
+        <a href="/archive" class="quick-card archive-card">
+          <div class="band archive-band">아카이브</div>
+          <div class="body">
+            <div class="title">발행한 기사 전체를 제목·기업명으로 검색</div>
+            <div class="byline">전체 {allArticles.length}편 · 검색하기 →</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="main-split">
+        <div class="feed">
+          <div class="row-head">
+            <span class="eyebrow">전체 글 · 최신순</span>
+            <a href="/archive" class="muted-link">아카이브 전체 {allArticles.length}편 →</a>
+          </div>
+          <div class="feed-grid">
+            {recentArticles.map((a) => <ArticleCard article={a} />)}
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="row-head">
+            <span class="eyebrow">편집국 추천</span>
+            <span class="muted">{new Date().getMonth() + 1}월</span>
+          </div>
+          <div class="picks">
+            {
+              editorPicks.map((a, i) => (
+                <a href={articleHref(a!)} class="pick-row">
+                  <span class="no">{String(i + 1).padStart(2, '0')}</span>
+                  <span>
+                    <span class="pick-title">{a!.data.title}</span>
+                    <span class="pick-meta">
+                      <span style={`color:${sectionColor(a!.data.section)};`}>{SECTIONS[a!.data.section].label}</span>
+                      {' · by '}{a!.data.reporter}
+                    </span>
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="newsletter-dark">
+            <div class="eyebrow-dark">뉴스레터</div>
+            <div class="nl-title">새 분석이 나오면 메일로 보내드립니다</div>
+            <form onsubmit="return false;">
+              <input type="email" placeholder="이메일 주소" />
+              <button type="submit">구독</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .hero {
+    background: var(--ink);
+    color: var(--on-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 32px;
+    flex-wrap: wrap;
+    padding: clamp(20px, 5vw, 28px) clamp(14px, 4vw, 32px);
+  }
+  .hero h1 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4.4vw, 32px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .content-pad {
+    padding: 20px clamp(14px, 4vw, 24px) 24px;
+  }
+  .row-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 10px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--meta-soft);
+  }
+  .muted-link {
+    font-size: 14px;
+    color: var(--meta);
+  }
+  .muted {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta);
+  }
+  .quick-cards {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2px;
+  }
+  .quick-card {
+    background: var(--card);
+    border: 1.5px solid var(--line-frame);
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 clamp(152px, 42vw, 200px);
+    min-width: clamp(152px, 42vw, 200px);
+    scroll-snap-align: start;
+  }
+  .quick-card .band {
+    color: var(--card);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 8px clamp(12px, 3.2vw, 18px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .archive-card {
+    background: var(--card-warm);
+    border-color: var(--line-dark);
+  }
+  .archive-band {
+    background: var(--line-dark);
+  }
+  .quick-card .body {
+    padding: clamp(12px, 3.4vw, 16px) clamp(13px, 3.8vw, 18px) clamp(11px, 3vw, 14px);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+  }
+  .quick-card .title {
+    font-family: var(--font-serif);
+    font-size: clamp(15.5px, 4vw, 18px);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+    flex: 1;
+  }
+  .quick-card .byline {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta);
+  }
+  .main-split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+    align-items: flex-start;
+  }
+  .feed {
+    flex: 1 1 520px;
+    min-width: 0;
+  }
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .sidebar {
+    flex: 1 1 300px;
+    min-width: 0;
+    max-width: 316px;
+  }
+  .picks {
+    background: var(--card-warm);
+    border: 1px solid #d8d2c2;
+  }
+  .pick-row {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #e2dccb;
+  }
+  .pick-row:last-child {
+    border-bottom: none;
+  }
+  .no {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .pick-title {
+    display: block;
+    font-size: clamp(14px, 3.6vw, 15px);
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+  .pick-meta {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta);
+    margin-top: 5px;
+  }
+  .newsletter-dark {
+    margin-top: 12px;
+    background: var(--ink);
+    color: #e4e2da;
+    padding: 18px;
+  }
+  .eyebrow-dark {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: #9a9a90;
+  }
+  .nl-title {
+    font-family: var(--font-serif);
+    font-size: clamp(15.5px, 4vw, 17px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-top: 8px;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  .newsletter-dark form {
+    display: flex;
+    margin-top: 12px;
+  }
+  .newsletter-dark input {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid var(--line-dark);
+    border-right: none;
+    background: #1c1c17;
+    color: var(--on-dark);
+    outline: none;
+  }
+  .newsletter-dark button {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--on-dark);
+    border: 1px solid var(--on-dark);
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+</style>
