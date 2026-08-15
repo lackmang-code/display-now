@@ -106,10 +106,11 @@ const editorPicks = editorPicksSlugs
           <div class="newsletter-dark">
             <div class="eyebrow-dark">뉴스레터</div>
             <div class="nl-title">새 분석이 나오면 메일로 보내드립니다</div>
-            <form onsubmit="return false;">
-              <input type="email" placeholder="이메일 주소" />
+            <form id="subscribe-form">
+              <input type="email" name="email" placeholder="이메일 주소" required />
               <button type="submit">구독</button>
             </form>
+            <p class="nl-status" id="subscribe-status" hidden></p>
           </div>
 
           <a class="ad-box" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
@@ -384,4 +385,57 @@ const editorPicks = editorPicksSlugs
     color: var(--on-dark-mute);
     margin-top: 5px;
   }
+  .nl-status {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
 </style>
+
+<script>
+  const form = document.getElementById('subscribe-form');
+  const status = document.getElementById('subscribe-status');
+
+  function showStatus(text) {
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = text;
+  }
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = form.elements.namedItem('email');
+      const email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
+      const btn = form.querySelector('button');
+      if (btn instanceof HTMLButtonElement) {
+        btn.disabled = true;
+        btn.textContent = '처리 중...';
+      }
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          form.hidden = true;
+          showStatus('구독 신청 완료했습니다. 감사합니다!');
+        } else {
+          showStatus('이메일 주소를 확인해주세요.');
+          if (btn instanceof HTMLButtonElement) {
+            btn.disabled = false;
+            btn.textContent = '구독';
+          }
+        }
+      } catch {
+        showStatus('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+        if (btn instanceof HTMLButtonElement) {
+          btn.disabled = false;
+          btn.textContent = '구독';
+        }
+      }
+    });
+  }
+</script>
