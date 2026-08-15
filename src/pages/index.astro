@@ -396,7 +396,7 @@ const editorPicks = editorPicksSlugs
   const form = document.getElementById('subscribe-form');
   const status = document.getElementById('subscribe-status');
 
-  function showStatus(text) {
+  function showStatus(text: string) {
     if (!status) return;
     status.hidden = false;
     status.textContent = text;
