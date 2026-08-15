@@ -12,7 +12,7 @@ const latestBySection = SECTION_ORDER.map((key) => {
   return { key, article: list[0] };
 }).filter((x) => x.article);
 
-const recentArticles = allArticles.slice(0, 6);
+const recentArticles = allArticles.slice(0, 8);
 
 // 편집국 추천 — 사람이 고르는 목록 (조회수 아님)
 const editorPicksSlugs = [
