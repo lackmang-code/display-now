@@ -73,17 +73,15 @@ const donts = [
       </div>
 
       <article class="deeple-capstone">
-        <div class="rcard-head deeple-head">
-          <span class="rcard-name">DEEPLE</span>
-          <span class="rcard-nameko">디플 · AI 편집장</span>
+        <div class="dc-head">
+          <span class="dc-name">DEEPLE</span>
+          <span class="dc-role">디플 · AI 편집장</span>
         </div>
-        <div class="rcard-body">
-          <p>TEKER·PEER·CLAIM·DESK 네 기자가 쓴 기사를 모아 문체와 형식을 통일하고, 근거 표기를 검증해 발행 큐로 넘깁니다. 이 편집국 페이지도 DEEPLE이 정리합니다.</p>
-          <div class="rcard-facts">
-            <div><span>읽는 것</span><span>TEKER·PEER·CLAIM·DESK 네 기자의 원고</span></div>
-            <div><span>하는 일</span><span>문체·형식 통일 · 근거 표기 검증 · 발행 큐 정리</span></div>
-            <div><span>한계</span><span class="limit">편집 판단은 여기까지입니다. 발행 여부는 박원상 대표의 기획·검수를 통과해야 확정됩니다.</span></div>
-          </div>
+        <p class="dc-desc">TEKER·PEER·CLAIM·DESK 네 기자가 쓴 기사를 모아 문체와 형식을 통일하고, 근거 표기를 검증해 발행 큐로 넘깁니다. 이 편집국 페이지도 DEEPLE이 정리합니다.</p>
+        <div class="dc-facts">
+          <div><span>읽는 것</span><span>TEKER·PEER·CLAIM·DESK 네 기자의 원고</span></div>
+          <div><span>하는 일</span><span>문체·형식 통일 · 근거 표기 검증 · 발행 큐 정리</span></div>
+          <div><span>한계</span><span>편집 판단은 여기까지입니다. 발행 여부는 박원상 대표의 기획·검수를 통과해야 확정됩니다.</span></div>
         </div>
       </article>
 
@@ -313,15 +311,119 @@ const donts = [
     white-space: nowrap;
   }
   .deeple-capstone {
-    background: var(--card);
-    border: 1.5px solid var(--ink);
-    max-width: 480px;
-    margin: 0 auto;
+    --deeple: oklch(0.45 0.11 200);
+    background: var(--deeple);
+    color: var(--on-dark);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 22px 28px;
+    width: 100%;
+  }
+  .dc-head {
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 3px;
+    padding-right: 24px;
+    border-right: 1px solid rgba(244, 243, 238, 0.18);
   }
-  .deeple-head {
-    background: var(--ink);
+  .dc-name {
+    font-family: var(--font-mono);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .dc-role {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+    white-space: nowrap;
+  }
+  .dc-desc {
+    flex: 1 1 280px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cfcec6;
+    word-break: keep-all;
+  }
+  .dc-facts {
+    flex: 1 1 420px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .dc-facts > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1 1 140px;
+    min-width: 140px;
+  }
+  .dc-facts > div > span:first-child {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--on-dark-mute);
+  }
+  .dc-facts > div > span:last-child {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #e4e2da;
+    word-break: keep-all;
+  }
+  @media (max-width: 780px) {
+    .deeple-capstone {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 0;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--card);
+      color: inherit;
+      border: 1.5px solid var(--deeple);
+    }
+    .dc-head {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-right: none;
+      background: var(--deeple);
+      color: var(--on-dark);
+      padding: 10px 20px;
+    }
+    .dc-desc {
+      flex: none;
+      padding: 20px 20px 0;
+      color: #2a2a24;
+    }
+    .dc-facts {
+      flex: none;
+      flex-direction: column;
+      gap: 0;
+      padding: 14px 20px 20px;
+    }
+    .dc-facts > div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      min-width: 0;
+      padding: 9px 0;
+      border-bottom: 1px solid #e8e8e2;
+    }
+    .dc-facts > div:last-child {
+      border-bottom: none;
+    }
+    .dc-facts > div > span:first-child {
+      color: var(--meta-soft);
+      flex: 0 0 60px;
+    }
+    .dc-facts > div > span:last-child {
+      color: #55554d;
+    }
   }
   .steps-row {
     display: flex;
