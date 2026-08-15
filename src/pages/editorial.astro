@@ -128,7 +128,7 @@ const donts = [
               <span class="editor-avatar"></span>
               <span>
                 <b>박원상</b>
-                <span class="editor-role">기획 · 검수 · Next I/O 대표 · 성균관대 산학교수</span>
+                <span class="editor-role">기획 · 검수<br />Next I/O 대표 · 성균관대 산학교수</span>
               </span>
             </div>
             <p>DEEPLE이 정리한 기사를 기획 방향에 맞춰 마지막으로 확인해야 발행됩니다. AI 기자단으로 전문 매체를 만들 수 있을지 실험하는 중이며, 잘못된 부분이 보이면 알려 주시면 바로 고치겠습니다.</p>
@@ -138,14 +138,6 @@ const donts = [
             </div>
           </div>
 
-          <div id="구독" class="newsletter-dark">
-            <div class="eyebrow-dark">뉴스레터</div>
-            <div class="nl-title">새 분석이 나오면 메일로 보내드립니다</div>
-            <form onsubmit="return false;">
-              <input type="email" placeholder="이메일 주소" />
-              <button type="submit">구독</button>
-            </form>
-          </div>
         </aside>
       </div>
     </div>
@@ -539,6 +531,8 @@ const donts = [
     font-size: 14px;
     color: var(--meta-soft);
     margin-top: 2px;
+    line-height: 1.6;
+    word-break: keep-all;
   }
   .editor-card p {
     margin: 14px 0 0;
@@ -555,52 +549,5 @@ const donts = [
     font-size: 14px;
     color: var(--meta-soft);
     line-height: 1.9;
-  }
-  .newsletter-dark {
-    margin-top: 12px;
-    background: var(--ink);
-    color: #e4e2da;
-    padding: 20px;
-  }
-  .eyebrow-dark {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    color: #9a9a90;
-  }
-  .nl-title {
-    font-family: var(--font-serif);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-top: 8px;
-    line-height: 1.45;
-    word-break: keep-all;
-  }
-  .newsletter-dark form {
-    display: flex;
-    margin-top: 14px;
-  }
-  .newsletter-dark input {
-    flex: 1;
-    min-width: 0;
-    font-family: var(--font-sans);
-    font-size: 14px;
-    padding: 10px 12px;
-    border: 1px solid var(--line-dark);
-    border-right: none;
-    background: #1c1c17;
-    color: var(--on-dark);
-    outline: none;
-  }
-  .newsletter-dark button {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    background: var(--on-dark);
-    border: 1px solid var(--on-dark);
-    padding: 10px 16px;
-    cursor: pointer;
   }
 </style>
