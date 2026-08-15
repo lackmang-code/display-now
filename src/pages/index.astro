@@ -111,6 +111,15 @@ const editorPicks = editorPicksSlugs
               <button type="submit">구독</button>
             </form>
           </div>
+
+          <a class="ad-box" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
+            <span class="ad-label">광고</span>
+            <video src="/uploads/nextio-ad-mobile-robot.mp4" autoplay loop muted playsinline></video>
+            <div class="ad-copy">
+              <div class="ad-brand">Next I/O</div>
+              <div class="ad-tagline">AI를 원하는 회사, 5일이면 끝입니다</div>
+            </div>
+          </a>
         </aside>
       </div>
     </div>
@@ -317,5 +326,55 @@ const editorPicks = editorPicksSlugs
     border: 1px solid var(--on-dark);
     padding: 10px 16px;
     cursor: pointer;
+  }
+  .ad-box {
+    position: relative;
+    display: block;
+    margin-top: 12px;
+    overflow: hidden;
+    background: #0b0e19;
+    border: 1px solid var(--line-dark);
+  }
+  .ad-box video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .ad-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #e4e2da;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 2px 7px;
+  }
+  .ad-copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 14px 16px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+    color: var(--on-dark);
+  }
+  .ad-brand {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #fbbf24;
+    font-weight: 600;
+  }
+  .ad-tagline {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
   }
 </style>
