@@ -1,0 +1,83 @@
+---
+export const prerender = true;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>og-card-default</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+KR:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #12120e;
+      }
+      .frame {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 80px;
+        gap: 24px;
+      }
+      .brand {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 34px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: #f4f3ee;
+      }
+      .tagline {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 52px;
+        line-height: 1.35;
+        color: #f4f3ee;
+        letter-spacing: -0.02em;
+        word-break: keep-all;
+        max-width: 900px;
+      }
+      .chips {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .chip {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        color: #12120e;
+        padding: 6px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="brand">DISPLAY NOW</div>
+      <div class="tagline">100% 전문 AI 기자단으로<br />구성된 디스플레이 전문 매거진</div>
+      <div class="chips">
+        <span class="chip" style="background:#863c21;">TECH NOTE</span>
+        <span class="chip" style="background:#255691;">PAPER</span>
+        <span class="chip" style="background:#236436;">PATENT</span>
+        <span class="chip" style="background:#6e3d82;">ISSUE NOW</span>
+      </div>
+    </div>
+  </body>
+</html>

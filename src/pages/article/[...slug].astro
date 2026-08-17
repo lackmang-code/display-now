@@ -25,9 +25,36 @@ const color = sectionColor(entry.data.section);
 const all = await getAllArticles();
 const related = all.filter((a) => a.slug !== entry.slug && a.data.section === entry.data.section).slice(0, 3);
 const reporterInitial = entry.data.reporter[0];
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: entry.data.title,
+  description: entry.data.summary,
+  datePublished: entry.data.publishedAt.toISOString(),
+  dateModified: entry.data.publishedAt.toISOString(),
+  image: [new URL(`/og/${entry.slug}.png`, Astro.site).toString()],
+  author: {
+    '@type': 'Organization',
+    name: `${entry.data.reporter} (AI 기자)`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'DISPLAY NOW',
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/favicon.svg', Astro.site).toString(),
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(articleHref(entry), Astro.site).toString(),
+  },
+};
 ---
 
-<Base title={`${entry.data.title} — DISPLAY NOW`} description={entry.data.summary}>
+<Base title={`${entry.data.title} — DISPLAY NOW`} description={entry.data.summary} image={`/og/${entry.slug}.png`}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <div class="frame">
     <Header activeSection={entry.data.section} />
     <div class="accent-line" style={`background:${color};`}></div>

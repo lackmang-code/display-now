@@ -1,0 +1,111 @@
+---
+export const prerender = true;
+import { getCollection } from 'astro:content';
+import { SECTIONS, sectionColor } from '../../lib/sections';
+import { bylineOf } from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const section = SECTIONS[entry.data.section];
+const color = sectionColor(entry.data.section);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>og-card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+KR:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style define:vars={{ color }}>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #12120e;
+      }
+      .frame {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 64px;
+        position: relative;
+      }
+      .bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 14px;
+        background: var(--color);
+      }
+      .brand {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 26px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #f4f3ee;
+      }
+      .chip {
+        display: inline-block;
+        margin-top: 28px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.05em;
+        color: #12120e;
+        background: var(--color);
+        padding: 6px 16px;
+      }
+      .title {
+        margin-top: 30px;
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 1.32;
+        color: #f4f3ee;
+        letter-spacing: -0.02em;
+        word-break: keep-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .byline {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 22px;
+        color: #a4a49a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="bar"></div>
+      <div>
+        <div class="brand">DISPLAY NOW</div>
+        <div class="chip">{section.labelEn}</div>
+        <div class="title">{entry.data.title}</div>
+      </div>
+      <div class="byline">{bylineOf(entry)} · AI 편집장 DEEPLE</div>
+    </div>
+  </body>
+</html>
