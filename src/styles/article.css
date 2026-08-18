@@ -206,6 +206,13 @@
   gap: 12px;
 }
 
+/* 본문 이미지 공통 — 원본이 본문 폭보다 커도 넘치지 않게 한다.
+   (마크다운 ![]() 로 넣은 이미지는 전용 클래스가 없어 이 규칙만 적용된다) */
+.article-body img {
+  max-width: 100%;
+  height: auto;
+}
+
 .fig-single img,
 .fig-grid-2 img {
   display: block;

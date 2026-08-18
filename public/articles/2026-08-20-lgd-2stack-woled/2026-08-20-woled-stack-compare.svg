@@ -1,0 +1,81 @@
+<svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="579" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">업계는 쌓는데, LG디스플레이는 덜어냈다</text>
+  <text x="28" y="63" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">대형 OLED 발광 스택 구조 비교 · DESK 종합</text>
+
+  <!-- legend -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4d4d45">
+    <rect x="28" y="82" width="11" height="11" fill="#5b6ea8"/><text x="44" y="92">청색 발광층</text>
+    <rect x="140" y="82" width="11" height="11" fill="#b3a659"/><text x="156" y="92">황녹색 발광층</text>
+    <rect x="266" y="82" width="11" height="11" fill="#6f9070"/><text x="282" y="92">녹색</text>
+    <rect x="330" y="82" width="11" height="11" fill="#a86a63"/><text x="346" y="92">적색</text>
+    <line x1="404" y1="88" x2="428" y2="88" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="434" y="92">전하생성층(CGL)</text>
+  </g>
+
+  <!-- ===== COL 1 : 3-stack ===== -->
+  <g>
+    <text x="42" y="130" font-size="13.5" font-weight="700" fill="#12120e">LGD 3스택</text>
+    <text x="42" y="148" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">1~3세대 WOLED</text>
+    <rect x="42" y="390" width="150" height="34" fill="#5b6ea8"/><text x="117" y="412" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="42" y1="386" x2="192" y2="386" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="42" y="346" width="150" height="34" fill="#b3a659"/><text x="117" y="368" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">황녹</text>
+    <line x1="42" y1="342" x2="192" y2="342" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="42" y="302" width="150" height="34" fill="#5b6ea8"/><text x="117" y="324" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <text x="117" y="452" font-size="12" fill="#2a2a24" text-anchor="middle" font-family="'IBM Plex Mono', monospace">BT.2020 76.5%</text>
+    <text x="117" y="472" font-size="11.5" fill="#8a8a80" text-anchor="middle">황녹 하나로 적·녹을 겸함</text>
+  </g>
+
+  <!-- ===== COL 2 : 4-stack ===== -->
+  <g>
+    <text x="228" y="130" font-size="13.5" font-weight="700" fill="#12120e">LGD 4스택</text>
+    <text x="228" y="148" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">4세대 · 2025 프리미엄</text>
+    <rect x="228" y="390" width="150" height="34" fill="#5b6ea8"/><text x="303" y="412" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="228" y1="386" x2="378" y2="386" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="228" y="346" width="150" height="34" fill="#6f9070"/><text x="303" y="368" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">녹</text>
+    <line x1="228" y1="342" x2="378" y2="342" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="228" y="302" width="150" height="34" fill="#5b6ea8"/><text x="303" y="324" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="228" y1="298" x2="378" y2="298" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="228" y="258" width="150" height="34" fill="#a86a63"/><text x="303" y="280" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">적</text>
+    <text x="303" y="452" font-size="12" fill="#2a2a24" text-anchor="middle" font-family="'IBM Plex Mono', monospace">최대 4,000니트</text>
+    <text x="303" y="472" font-size="11.5" fill="#8a8a80" text-anchor="middle">적·녹을 분리해 한 층 더 쌓음</text>
+  </g>
+
+  <!-- ===== COL 3 : new 2-stack (highlight) ===== -->
+  <g>
+    <rect x="404" y="112" width="174" height="376" fill="none" stroke="oklch(0.45 0.12 315)" stroke-width="2" rx="4"/>
+    <text x="418" y="136" font-size="13.5" font-weight="700" fill="oklch(0.45 0.12 315)">LGD 신규 2스택</text>
+    <text x="418" y="154" font-size="11" fill="oklch(0.45 0.12 315)" font-family="'IBM Plex Mono', monospace">2026 발표 · 보급형</text>
+    <rect x="418" y="390" width="146" height="34" fill="#5b6ea8"/><text x="491" y="412" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청 (신규 재료)</text>
+    <line x1="418" y1="386" x2="564" y2="386" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="418" y="368" width="146" height="17" fill="#6f9070"/><text x="491" y="381" font-size="11" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">녹</text>
+    <rect x="418" y="350" width="146" height="17" fill="#a86a63"/><text x="491" y="363" font-size="11" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">적</text>
+    <text x="491" y="338" font-size="11" fill="oklch(0.45 0.12 315)" text-anchor="middle" font-family="'IBM Plex Mono', monospace">적·녹이 한 스택 안에</text>
+    <text x="491" y="452" font-size="12" fill="oklch(0.45 0.12 315)" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">BT.2020 82.5% · −4V</text>
+    <text x="491" y="472" font-size="11.5" fill="#8a8a80" text-anchor="middle">층은 줄고 색은 넓어짐</text>
+  </g>
+
+  <!-- ===== COL 4 : Samsung penta ===== -->
+  <g>
+    <text x="614" y="130" font-size="13.5" font-weight="700" fill="#12120e">삼성D 펜타 탠덤</text>
+    <text x="614" y="148" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">QD-OLED · 2026 5스택</text>
+    <rect x="614" y="398" width="150" height="26" fill="#5b6ea8"/>
+    <line x1="614" y1="394" x2="764" y2="394" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="614" y="362" width="150" height="26" fill="#5b6ea8"/>
+    <line x1="614" y1="358" x2="764" y2="358" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="614" y="326" width="150" height="26" fill="#5b6ea8"/>
+    <line x1="614" y1="322" x2="764" y2="322" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="614" y="290" width="150" height="26" fill="#5b6ea8"/>
+    <line x1="614" y1="286" x2="764" y2="286" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="614" y="254" width="150" height="26" fill="#5b6ea8"/>
+    <text x="689" y="238" font-size="11" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청색계 발광층 5층</text>
+    <text x="689" y="452" font-size="12" fill="#2a2a24" text-anchor="middle" font-family="'IBM Plex Mono', monospace">최대 4,500니트</text>
+    <text x="689" y="472" font-size="11.5" fill="#8a8a80" text-anchor="middle">4스택 → 5스택, 수명 2배</text>
+  </g>
+
+  <!-- arrow annotation -->
+  <text x="28" y="516" font-size="12" fill="#4d4d45" font-family="'IBM Plex Mono', monospace">↑ 스택이 늘수록 휘도·수명은 오르지만, 재료비·증착 공정·구동전압이 함께 오른다</text>
+  <text x="28" y="538" font-size="12" fill="oklch(0.45 0.12 315)" font-family="'IBM Plex Mono', monospace">↓ LG디스플레이는 보급형에서만 반대로 갔다. 층을 덜어내고 색은 넓혔다</text>
+  <text x="28" y="562" font-size="10.5" fill="#8a8a80">삼성디스플레이 QD-OLED는 청색 광원 + 퀀텀닷 색변환 방식이라 스택 수만으로 WOLED와 직접 비교되지 않는다.</text>
+</svg>
