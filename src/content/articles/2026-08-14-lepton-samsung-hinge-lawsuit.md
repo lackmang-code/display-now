@@ -1,6 +1,6 @@
 ---
 title: "레이턴-삼성 폴더블 힌지 특허소송 분석"
-summary: "레이턴 컴퓨팅의 폴더블 힌지 소송을 언론은 '타이밍 문제'로 요약했지만, 특허 원문의 우선일을 따져보면 얘기가 다르다. 레이턴의 개념 특허는 삼성보다 4년 앞섰는데, 정작 힌지 구조 특허는 삼성·레노버보다 6년 늦었다 — 폴더블 힌지 IP 리스크를 검토하는 담당자가 참고할 우선일 분석."
+summary: "레이턴 컴퓨팅의 폴더블 힌지 소송을 언론은 '타이밍 문제'로 요약했지만, 특허 원문의 우선일을 따져보면 얘기가 다릅니다. 레이턴의 개념 특허는 삼성보다 4년 앞섰는데, 정작 힌지 구조 특허는 삼성·레노버보다 6년 늦었습니다. 폴더블 힌지 IP 리스크를 검토하는 담당자가 참고할 우선일 분석입니다."
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
@@ -20,10 +20,10 @@ sources:
     title: "Hinge mechanism having plate stops for a flexible display device (US11,614,779, Lepton Computing LLC, 2023-03-28 등록)"
     url: "https://patents.google.com/patent/US11614779B2/en"
   - type: disclosure
-    title: "PacerMonitor — Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al (2:26-cv-00338)"
+    title: "Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al (2:26-cv-00338) (PacerMonitor)"
     url: "https://www.pacermonitor.com/public/case/64287656/Lepton_Computing_LLC_v_Samsung_Electronics,_Co,_Ltd_et_al"
   - type: article
-    title: "9to5Google — Samsung foldables hit with lawsuit by an apparent patent troll"
+    title: "Samsung foldables hit with lawsuit by an apparent patent troll (9to5Google)"
     url: "https://9to5google.com/2026/04/27/samsung-foldable-lawsuit-lepton/"
 featured: false
 paywallAfter: 0
@@ -63,7 +63,7 @@ paywallAfter: 0
 
 전수조사가 아니라 소송 당사자의 핵심 특허를 우선일·유형·격차 세 방식으로 배치해 확인한다.
 
-### 2.1 기술 로드맵 — 우선일 기준
+### 2.1 기술 로드맵: 우선일 기준
 
 <div class="viz-box">
   <div class="viz-title">PRIORITY DATE TIMELINE · 2010–2026</div>
@@ -146,17 +146,17 @@ paywallAfter: 0
     <div class="cell"><span class="matrix-chip">2010-08 · 재구성형 세그먼트 디스플레이</span></div>
     <div class="cell"><span class="matrix-chip alt">2020-03 · 플레이트스톱 힌지</span></div>
     <div class="row-head">삼성전자</div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
     <div class="cell"><span class="matrix-chip">2014-02 · 수용공간 힌지(피인용 305)</span></div>
     <div class="row-head">레노버 베이징</div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
     <div class="cell"><span class="matrix-chip">2014-09 · 이중축 힌지</span></div>
   </div>
 </div>
 
 "개념 특허" 열에는 레이턴만 있다. 여기서는 레이턴이 정말 원조다. 그런데 실제 소송의 핵심인 "힌지 구조 특허" 열을 보면 순서가 뒤집힌다. 삼성(2014-02)과 레노버(2014-09)가 레이턴(2020-03)보다 6년 앞선다. 레이턴이 "원조"라고 주장할 수 있는 범위와, 소송이 실제로 겨누는 범위가 다르다는 뜻이다.
 
-### 2.3 우선일 격차 — 핵심 사건 사이의 시간
+### 2.3 우선일 격차: 핵심 사건 사이의 시간
 
 <div class="viz-box">
   <div class="viz-title">YEARS BETWEEN KEY DATES</div>
@@ -196,7 +196,7 @@ paywallAfter: 0
 
 레이턴의 개념 특허부터 삼성의 힌지 특허까지 4년, 삼성의 힌지 특허부터 레이턴의 힌지 특허까지 6년, 삼성 제품 출시부터 레이턴의 힌지 특허까지도 6개월, 그리고 그 모든 것으로부터 소송 제기까지 다시 여러 해가 걸렸다. "레이턴이 삼성보다 늦었다"는 언론 보도는 이 세 번째 구간(삼성 힌지 vs 레이턴 힌지)에는 맞고, 개념 특허 구간에는 틀리다.
 
-## 3. 정성 분석 — 특허 4건 + 소송 1건
+## 3. 정성 분석: 특허 4건 + 소송 1건
 
 연대순으로 배열했다. 청구항 1 전문(요지)과 명세서가 스스로 밝힌 종래기술 문제, 수치 한정을 그대로 인용한다.
 
@@ -256,7 +256,7 @@ Hinge device and foldable display apparatus having the same
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-lepton-samsung-hinge-lawsuit/2026-08-14-lepton-samsung-hinge-lawsuit-fig1.png" alt="삼성전자 힌지 수용공간 구조 단면도" />
-  <div class="fig-cap">FIG. 5 (US9250733B2) — 힌지축(210)과 기어(510, 530)가 맞물려 접힘부 아래 수용공간(400)을 만드는 단면 구조. 원문 도면.</div>
+  <div class="fig-cap">FIG. 5 (US9250733B2): 힌지축(210)과 기어(510, 530)가 맞물려 접힘부 아래 수용공간(400)을 만드는 단면 구조. 원문 도면.</div>
 </div>
 
   </div>
@@ -289,7 +289,7 @@ Double-shaft hinge and electronic device
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-lepton-samsung-hinge-lawsuit/2026-08-14-lepton-samsung-hinge-lawsuit-fig2.png" alt="레노버 베이징 이중축 힌지 분해도" />
-  <div class="fig-cap">FIG. 2 (US9611680B2) — 두 개의 평행한 회전축(1, 2)과 베벨기어(31, 32, 33), 캠 와셔 스택(11, 12, 13, 20)으로 구성된 이중축 힌지 분해 사시도. 원문 도면.</div>
+  <div class="fig-cap">FIG. 2 (US9611680B2): 두 개의 평행한 회전축(1, 2)과 베벨기어(31, 32, 33), 캠 와셔 스택(11, 12, 13, 20)으로 구성된 이중축 힌지 분해 사시도. 원문 도면.</div>
 </div>
 
   </div>
@@ -355,7 +355,7 @@ Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al
 
 ## 4. 비교분석
 
-### 4.1 레이턴의 두 물결 — 2010년과 2020년은 다른 이야기다
+### 4.1 레이턴의 두 물결: 2010년과 2020년은 다른 이야기다
 
 레이턴 컴퓨팅의 특허를 우선일순으로 늘어놓으면 뚜렷한 두 물결이 보인다. 첫 물결은 2010년 8월, 임시출원(US 61/372,391)에서 시작해 여러 건의 계속출원을 거쳐 지금도 이어지는 **"재구성형 세그먼트 디스플레이"** 개념이다. 4.3인치 세그먼트 4개 또는 8개를 유연 회로로 연결해 휴대폰 크기에서 태블릿 크기로 재구성한다는 내용으로, 특정 힌지 구조를 청구하지 않는다.
 
@@ -363,7 +363,7 @@ Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al
 
 즉 "레이턴이 원조"라는 주장이 성립하려면 어느 물결을 말하는지부터 밝혀야 한다. 넓은 개념이라면 맞다. 힌지 그 자체라면, 적어도 이번에 확인한 삼성·레노버 특허보다는 늦다.
 
-### 4.2 삼성 vs 레노버 — 7개월 차이로 갈린 2014년의 경쟁
+### 4.2 삼성 vs 레노버: 7개월 차이로 갈린 2014년의 경쟁
 
 2014년 2월, 삼성전자는 두 개의 몸체가 접히는 부분에 "수용공간(accommodation space)"을 만들어 접힌 디스플레이 패널이 눌리지 않도록 지지하는 힌지 구조를 출원했다. 이 특허(US9250733B2)는 지금까지 305건의 후속 특허에 인용됐다. 업계 전반이 참조하는 기초 특허라는 뜻이다.
 
@@ -371,7 +371,7 @@ Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al
 
 7개월이라는 격차가 "삼성이 레노버에 영향을 줬다"는 뜻은 아니다. 두 청구항의 구조가 근본적으로 다르다는 점에서 독립적으로 개발됐을 가능성이 있다. 다만 확인하지 않았다.
 
-### 4.3 소송 — 무엇을 겨누고 있는가
+### 4.3 소송: 무엇을 겨누고 있는가
 
 2026년 4월 23일 접수된 소송(Lepton Computing LLC v. Samsung Electronics Co., Ltd. et al, 사건번호 2:26-cv-00338, 텍사스동부지법)은 레이턴이 스스로를 "폴더블폰의 원조 개발자"라 칭하며 2008년까지 거슬러 올라가는 개념과 시제품이 있었다고 주장한다. 소장은 갤럭시Z폴드·플립·트라이폴드 전 라인이 유연 디스플레이·힌지 메커니즘·UI 전환 관련 특허 9건을 침해했다고 주장하며 판매금지를 요구한다.
 
@@ -394,7 +394,7 @@ Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al
 "타이밍 문제"라는 언론의 한 줄 요약은 절반만 맞았다. 레이턴의 힌지 구조 특허(2020)는 확실히 삼성(2014)·레노버(2014)보다 늦다. 그런데 레이턴의 더 넓은 개념 특허(2010)는 그 누구보다도 이르다. 소송의 승패는 소장이 실제로 어느 특허를, 어떤 청구항으로 겨누고 있는지에 달려 있고, 이건 CLAIM이 판단할 문제가 아니라 법원이 판단할 문제다. 다만 "언론이 인용한 등록일 하나로 소송 전체를 재단할 수 없다"는 건 이번 조사로 확인됐다. 다음 편에서는 PACER를 통해 실제 소장에 첨부된 9건의 특허 목록을 확보해, 이 검증을 완성해볼 만하다.
 
 <dl class="term-list">
-  <div><dt>검색식</dt><dd>assignee:(Lepton Computing), sort=old — 레이턴 포트폴리오 전체를 우선일순 확인. 삼성·레노버는 개별 특허번호 직접 대조</dd></div>
+  <div><dt>검색식</dt><dd>assignee:(Lepton Computing), sort=old, 레이턴 포트폴리오 전체를 우선일순 확인. 삼성·레노버는 개별 특허번호 직접 대조</dd></div>
   <div><dt>기준일</dt><dd>우선일(priority date) 기준, 2010~2026년</dd></div>
   <div><dt>데이터 확보일</dt><dd>2026-08-14</dd></div>
   <div><dt>분류 규칙</dt><dd>특허유형(개념 특허 vs 힌지 구조 특허) × 회사</dd></div>
@@ -402,7 +402,7 @@ Lepton Computing LLC v. Samsung Electronics, Co., Ltd. et al
 
 *본 분석은 공개 특허 공보 및 공개 보도에 기반한 정리이며 각 회사·소송 당사자의 공식 입장이 아니다. 침해·무효에 대한 자체 판단은 하지 않는다.*
 
-## 7. 부록 — 특허 스펙 전체
+## 7. 부록: 특허 스펙 전체
 
 <div class="tbl-wrap">
 

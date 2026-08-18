@@ -1,6 +1,6 @@
 ---
-title: "UTG(폴더블 커버글라스) 특허 분석"
-summary: "코닝이 2014년 등록한 폴더블 유리 특허를 Schott가 이의신청으로 걸었고, 유럽특허청은 취소로 답했다. 코닝부터 2024년 도우인시스까지 이어진 폴더블 유리 특허 일곱 건을 우선일 순서로 열어보면 소재 공급망의 진짜 경쟁 구도가 보인다 — UTG 소싱을 검토하는 구매·기획 담당자를 위한 원문 청구항 비교."
+title: "폴더블 커버글라스용 초박막유리(UTG) 특허 분석"
+summary: "코닝이 2014년 등록한 폴더블 유리 특허를 Schott가 이의신청으로 걸었고, 유럽특허청은 취소로 답했습니다. 코닝부터 2024년 도우인시스까지 이어진 폴더블 유리 특허 일곱 건을 우선일 순서로 열어보면 소재 공급망의 진짜 경쟁 구도가 보입니다. 초박막유리 소싱을 검토하는 구매·기획 담당자를 위한 원문 청구항 비교입니다."
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
@@ -11,7 +11,7 @@ sources:
     title: "Bendable glass stack assemblies, articles and methods of making the same (EP3099642B1, Corning Inc, 2018-03-21 등록 → 취소)"
     url: "https://patents.google.com/patent/EP3099642B1/en"
   - type: disclosure
-    title: "JUVE Patent — Corning and Schott battle over flexible glass handset displays"
+    title: "Corning and Schott battle over flexible glass handset displays (JUVE Patent)"
     url: "https://www.juve-patent.com/cases/corning-and-schott-battle-over-flexible-glass-handset-displays/"
   - type: patent
     title: "Long-term bendable glass material and method for producing a long-term bendable glass material (US12130278B2, Schott AG, 등록)"
@@ -69,7 +69,7 @@ paywallAfter: 0
 
 전수조사가 아니므로 "몇 건"을 세는 정량분석 대신, 확보한 7건을 시간·레버·수치 세 방식으로 배치해 상대적 위치를 확인한다.
 
-### 2.1 기술 로드맵 — 우선일 기준
+### 2.1 기술 로드맵: 우선일 기준
 
 <div class="viz-box">
   <div class="viz-title">PRIORITY DATE TIMELINE · 2014–2024</div>
@@ -149,14 +149,14 @@ paywallAfter: 0
     <div class="cell"><span class="matrix-chip">Schott②(2018) · 유리-세라믹</span></div>
     <div class="row-head">외관</div>
     <div class="cell"><span class="matrix-chip alt">도우인시스(2024) · 차등식각</span></div>
-    <div class="cell empty">—</div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
+    <div class="cell empty">·</div>
   </div>
 </div>
 
 강도 행에 여섯 건, 외관 행에 한 건이 몰려 있다. 도우인시스(외관 행)와 삼성디스플레이①(강도 행)은 둘 다 "구조" 열, 둘 다 "폴딩부를 비폴딩부와 다르게 처리한다"는 상위 발상을 공유하지만, 구체적 수단은 다르다. 삼성디스플레이①은 화학강화(2차) 깊이를 영역별로 다르게 주고, 도우인시스는 식각으로 영역별 두께를 깎아낸다. 같은 발상이 다른 도구·다른 목적으로 갈라진 사례에 가깝다.
 
-### 2.3 수치 비교 — 압축응력(CS) 구간
+### 2.3 수치 비교: 압축응력(CS) 구간
 
 <div class="viz-box">
   <div class="viz-title">SURFACE COMPRESSIVE STRESS (CS) · MPa</div>
@@ -186,7 +186,7 @@ paywallAfter: 0
 
 코닝(2014)·Schott②(2018)·삼성디스플레이③(2021) 세 특허가 명시한 압축응력 구간이 100~2000MPa 부근에서 넓게 겹친다. 7년의 시차와 서로 다른 레버(스택 구조·유리세라믹·용융염 공정)를 쓰고도 같은 수치 구간에 도달했다는 뜻이다. 이 겹침이 세 회사 제품의 실제 강도가 같다는 뜻은 아니다. 측정 두께·시험 조건이 명세서마다 다를 수 있어 직접 비교하지 않는다(5장 반증 참조). Schott①·삼성디스플레이①②·도우인시스 특허는 CS를 수치로 명시하지 않아 이 차트에서 제외했다.
 
-## 3. 정성 분석 — 특허 7건
+## 3. 정성 분석: 특허 7건
 
 연대순으로 배열했다. 청구항 1 전문(요지)과 명세서가 스스로 밝힌 종래기술 문제, 수치 한정을 그대로 인용한다.
 
@@ -217,7 +217,7 @@ Bendable glass stack assemblies, articles and methods of making the same
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-utg-six-companies-deep-report/2026-08-14-utg-six-companies-deep-report-fig1.png" alt="코닝 스택 어셈블리 사시도" />
-  <div class="fig-cap">FIG. 1 (EP3099642B1) — 유리 소자(50)와 압축응력영역(60)을 포함한 스택 어셈블리(100) 사시도. 원문 도면.</div>
+  <div class="fig-cap">FIG. 1 (EP3099642B1): 유리 소자(50)와 압축응력영역(60)을 포함한 스택 어셈블리(100) 사시도. 원문 도면.</div>
 </div>
 
   </div>
@@ -279,7 +279,7 @@ Long-term bendable glass material and method for producing a long-term bendable 
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-utg-six-companies-deep-report/2026-08-14-utg-six-companies-deep-report-fig2.png" alt="삼성디스플레이 폴딩부·비폴딩부 두께차 단면도" />
-  <div class="fig-cap">FIG. 3a (KR102810405B1) — 폴딩 영역(FA, 두께 T1)이 비폴딩 영역(NFA, 두께 T2)보다 얇고, 제2층(화학강화층) 깊이도 영역별로 다르게 형성된 단면. 원문 도면.</div>
+  <div class="fig-cap">FIG. 3a (KR102810405B1): 폴딩 영역(FA, 두께 T1)이 비폴딩 영역(NFA, 두께 T2)보다 얇고, 제2층(화학강화층) 깊이도 영역별로 다르게 형성된 단면. 원문 도면.</div>
 </div>
 
   </div>
@@ -312,7 +312,7 @@ Ultrathin glass ceramic article and method for producing an ultrathin glass cera
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-utg-six-companies-deep-report/2026-08-14-utg-six-companies-deep-report-fig3.png" alt="Schott 유리-세라믹 결정상 구배 단면도" />
-  <div class="fig-cap">FIG. (US20250002398A1) — 두께 t의 단면. 외층(t1, t2)과 중심부(B) 사이 결정상 함량(x/xx/xxx로 표기)이 층마다 다른 구배 구조. 원문 도면.</div>
+  <div class="fig-cap">FIG. (US20250002398A1): 두께 t의 단면. 외층(t1, t2)과 중심부(B) 사이 결정상 함량(x/xx/xxx로 표기)이 층마다 다른 구배 구조. 원문 도면.</div>
 </div>
 
   </div>
@@ -402,7 +402,7 @@ Glass strengthening molten salt and glass strengthening method using the same
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-utg-six-companies-deep-report/2026-08-14-utg-six-companies-deep-report-fig4.png" alt="도우인시스 폴딩부 부분식각 단면도" />
-  <div class="fig-cap">FIG. (KR102714616B1) — 다공성 소재(23)를 이용해 폴딩 영역을 부분 식각, 완만한 슬로프면을 형성하는 구조. 원문 도면.</div>
+  <div class="fig-cap">FIG. (KR102714616B1): 다공성 소재(23)를 이용해 폴딩 영역을 부분 식각, 완만한 슬로프면을 형성하는 구조. 원문 도면.</div>
 </div>
 
   </div>
@@ -410,7 +410,7 @@ Glass strengthening molten salt and glass strengthening method using the same
 
 ## 4. 비교분석
 
-### 4.1 코닝 vs Schott — 특허가 된 소송
+### 4.1 코닝 vs Schott: 특허가 된 소송
 
 2014년 1월, 코닝은 접히는 유리를 층층이 쌓아 올리는 "스택 어셈블리" 구조로 EP3099642를 출원했다. 유리 소자 두께 25~125μm, 압축응력 100~2000MPa, 굽힘반경 3~20mm. 폴더블 유리가 갖춰야 할 스펙을 구체적 수치로 못박은, 이 리포트에서 확인한 것 중 가장 이른 폴더블 전용 특허다. 2018년 3월 등록됐다.
 
@@ -420,7 +420,7 @@ Schott가 이 시기 홀로 손 놓고 있었던 건 아니다. 코닝보다 20�
 
 정리하면 이렇다. 코닝은 "어떻게 접을 것인가"를 먼저 청구했고, 그중 상당수가 취소됐다. Schott는 거의 같은 시기에 "얼마나 오래 접을 것인가"라는 다른 질문을 청구해 살아남았다. 침해나 무효 여부에 대한 판단은 이 기사의 몫이 아니다. 다만 두 회사가 같은 문제 앞에서 서로 다른 청구 전략을 택했고, 결과가 갈렸다는 사실만은 EPO의 공개 기록이 보여준다.
 
-### 4.2 삼성디스플레이 → 도우인시스 — 5년 걸친 같은 발상, 다른 수단
+### 4.2 삼성디스플레이에서 도우인시스로: 5년 걸친 같은 발상, 다른 수단
 
 2019년 10월, 삼성디스플레이는 "유리 기판" 특허를 출원했다(청구항 12). 핵심은 단순하다. 폴딩 부분을 비폴딩 부분보다 얇게 만들고, 두 부분 모두에 화학강화층(제2층)을 입히되 비폴딩 부분 쪽 강화 깊이를 더 깊게 준다. 목적은 강도였다. 얇은 폴딩부와 두꺼운 비폴딩부가 서로 다른 응력 조건에 놓이니, 강화 공정도 영역별로 달리 설계한 것이다.
 
@@ -428,13 +428,13 @@ Schott가 이 시기 홀로 손 놓고 있었던 건 아니다. 코닝보다 20�
 
 5년의 시차를 둔 두 특허가 서로를 인용하는지는 확인하지 않았다. 인용 관계를 근거로 "도우인시스가 삼성디스플레이를 참고했다"고 주장하지 않는다. 다만 "폴딩부를 비폴딩부와 다르게 처리한다"는 같은 상위 발상이, 유리 제조사(삼성디스플레이)에서 후공정 협력사(도우인시스)로, 화학강화라는 수단에서 식각이라는 수단으로, 강도라는 목적에서 외관이라는 목적으로 넘어갔다는 사실 관계만 남긴다.
 
-### 4.3 Schott — 3년 뒤 다른 갈래
+### 4.3 Schott: 3년 뒤 다른 갈래
 
 Schott①(2015)이 "얼마나 오래 안 깨지는가"를 유리 그대로 규정했다면, Schott②(2018)는 재료 범주 자체를 바꿨다. 유리-세라믹. 결정상을 포함하는 외층과 비정질상 중심부로 구성된 구배 구조다. 외층 결정상 5~80vol%, 중심부 0~70vol%로 결정화 정도를 위치별로 다르게 줘서, 순수 유리보다 나은 굽힘반경(900×t mm 이하)을 공식으로 제시한다. 두께 하한은 0.03mm. 이번 7건 중 가장 얇다.
 
 한 회사 안에서도 "유리를 그대로 쓰되 스펙을 정밀 규정"(2015)과 "유리라는 재료 범주 자체를 바꾼다"(2018), 서로 다른 두 갈래가 3년 간격으로 나왔다.
 
-### 4.4 삼성디스플레이 — 한 회사, 세 가지 레버
+### 4.4 삼성디스플레이: 한 회사, 세 가지 레버
 
 삼성디스플레이의 세 특허(①2019 두께차 화학강화, ②2020 Beilby층 구조, ③2021 용융염 공정)는 구조·구조·공정으로 레버가 갈린다. ②는 폴딩부의 평탄면에만 Beilby층을 두고 굴곡부에는 두지 않는 층 배치로 충격 저항을 설계하고 볼드롭 테스트로 검증한다. ③은 유리 조성이 아니라 강화 공정(용융염의 조성·응고점)을 정밀 제어해, 응고된 잔류염이 유리 표면에 남아 계면 응력을 일으키는 문제를 막는다. 한 회사가 같은 목표(강도) 앞에서 레버를 하나로 고정하지 않고 병행하고 있다는 뜻이다.
 
@@ -465,7 +465,7 @@ Schott①(2015)이 "얼마나 오래 안 깨지는가"를 유리 그대로 규�
 
 *본 분석은 공개 특허 공보 및 EPO 공개 사건기록에 기반한 정리이며 각 회사의 공식 입장이 아니다. 침해·무효에 대한 자체 판단은 하지 않으며, EPO의 취소·항소 상태는 위 사건기록에 근거해 인용했다.*
 
-## 7. 부록 — 특허 스펙 전체
+## 7. 부록: 특허 스펙 전체
 
 <div class="tbl-wrap">
 

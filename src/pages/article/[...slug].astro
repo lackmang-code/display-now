@@ -53,7 +53,7 @@ const articleLd = {
 };
 ---
 
-<Base title={`${entry.data.title} — DISPLAY NOW`} description={entry.data.summary} image={`/og/${entry.slug}.png`}>
+<Base title={`${entry.data.title} | DISPLAY NOW`} description={entry.data.summary} image={`/og/${entry.slug}.png`}>
   <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <div class="frame">
     <Header activeSection={entry.data.section} />
@@ -116,7 +116,7 @@ const articleLd = {
                 entry.data.sources.length === 1 ? (
                   <p class="sources-note">
                     이 기사는 위 서지정보의 논문 1편을 근거로 작성했습니다. 수치·서술은 모두 원문과
-                    대조했습니다{entry.data.sources[0].url && <> — <a href={entry.data.sources[0].url} target="_blank" rel="noopener">원문 열기</a></>}.
+                    대조했습니다{entry.data.sources[0].url && <>. <a href={entry.data.sources[0].url} target="_blank" rel="noopener">원문 열기</a></>}.
                   </p>
                 ) : (
                   <ul class="sources-list">

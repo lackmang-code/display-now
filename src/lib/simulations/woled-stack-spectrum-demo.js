@@ -221,8 +221,8 @@ export function mount(container, params = {}) {
     const rO = channelStats(other, 'r', state.fwhm);
 
     readoutOut.innerHTML =
-      `적색 채널 — 통과 광량 ${r.passPct.toFixed(1)}% · 중심파장 ${r.centroid.toFixed(0)}nm<br>` +
-      `녹색 채널 — 통과 광량 ${g.passPct.toFixed(1)}% · 중심파장 ${g.centroid.toFixed(0)}nm<br>` +
+      `적색 채널: 통과 광량 ${r.passPct.toFixed(1)}% · 중심파장 ${r.centroid.toFixed(0)}nm<br>` +
+      `녹색 채널: 통과 광량 ${g.passPct.toFixed(1)}% · 중심파장 ${g.centroid.toFixed(0)}nm<br>` +
       `<span style="opacity:.65">비교 구조의 적색 중심파장 ${rO.centroid.toFixed(0)}nm</span>`;
   }
 

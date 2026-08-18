@@ -22,7 +22,7 @@ const features = isPaper ? articles.filter((a) => !a.data.tags.includes(BRIEF_TA
 const briefs = isPaper ? articles.filter((a) => a.data.tags.includes(BRIEF_TAG)) : [];
 ---
 
-<Base title={`${section.label} — DISPLAY NOW`}>
+<Base title={`${section.label} | DISPLAY NOW`}>
   <div style={`background: oklch(0.925 0.022 ${section.hue}); min-height: 100vh;`}>
     <div class="frame frame-boxed">
       <Header activeSection={slug} />

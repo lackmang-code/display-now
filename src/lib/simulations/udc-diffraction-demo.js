@@ -34,19 +34,19 @@ export function mount(container, params = {}) {
       </div>
       <div class="sim-controls">
         <div class="sim-control">
-          <label>틈 폭 <span data-out="aperture"></span> &micro;m — 흐림</label>
+          <label>틈 폭 <span data-out="aperture"></span> &micro;m (흐림)</label>
           <input type="range" min="1" max="8" step="0.1" data-in="aperture" />
         </div>
         <div class="sim-control">
-          <label>스펙트럼 폭 <span data-out="spectral"></span> nm — 헤일로</label>
+          <label>스펙트럼 폭 <span data-out="spectral"></span> nm (헤일로)</label>
           <input type="range" min="0" max="200" step="10" data-in="spectral" />
         </div>
         <div class="sim-control">
-          <label>격자 규칙도 <span data-out="grid"></span>% — 플레어</label>
+          <label>격자 규칙도 <span data-out="grid"></span>% (플레어)</label>
           <input type="range" min="0" max="100" step="5" data-in="grid" />
         </div>
         <div class="sim-control">
-          <label>중심 파장 <span data-out="wavelength"></span> nm — 색조</label>
+          <label>중심 파장 <span data-out="wavelength"></span> nm (색조)</label>
           <input type="range" min="450" max="650" step="5" data-in="wavelength" />
         </div>
         <div class="sim-readout" data-out="theta"></div>

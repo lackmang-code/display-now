@@ -1,6 +1,6 @@
 ---
 title: "청색 인광 OLED 특허 분석"
-summary: "청색 인광의 원리를 청구한 특허는 2020년 8월에 존속기간이 끝났다. 만료 6년이 지난 지금도 양산 채택은 공표되지 않았다. 아무도 못 막는데 아무도 못 만드는 이 구간에서, 실제 방어선이 어디로 옮겨갔는지를 등록 특허 원문으로 확인했다."
+summary: "청색 인광의 원리를 청구한 특허는 2020년 8월에 존속기간이 끝났습니다. 만료 6년이 지난 지금도 양산 채택은 공표되지 않았습니다. 아무도 막을 수 없는데 아무도 만들지 못하는 이 구간에서 실제 방어선이 어디로 옮겨갔는지를 등록 특허 원문으로 확인했습니다."
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-18
@@ -32,10 +32,10 @@ sources:
     title: "유기 전계발광 재료 및 소자 (KR2025-0058728A, 유니버설 디스플레이, 우선일 2019-11-14 / 2025-04-30 공개)"
     url: "https://patents.google.com/patent/KR20250058728A/en"
   - type: disclosure
-    title: "Universal Display Corporation Q2 2026 Earnings Call Transcript (2026-07-30) — 상용화 시점 관련 경영진 발언 및 2026년 매출 가이던스"
+    title: "Universal Display Corporation Q2 2026 Earnings Call Transcript (2026-07-30): 상용화 시점 관련 경영진 발언 및 2026년 매출 가이던스"
     url: "https://www.fool.com/earnings/call-transcripts/2026/07/30/universal-display-oled-q2-2026-earnings-call-transcript/"
   - type: article
-    title: "Universal Display Corporation — Unlocking Blue: A Deep Dive into Phosphorescent Blue OLEDs (2026-06-23)"
+    title: "Unlocking Blue: A Deep Dive into Phosphorescent Blue OLEDs (Universal Display Corporation, 2026-06-23)"
     url: "https://oled.com/blog/unlocking-blue-a-deep-dive-into-phosphorescent-blue-oleds/"
 featured: false
 paywallAfter: 0
@@ -57,7 +57,7 @@ OLED의 적색과 녹색은 2000년대에 형광에서 인광으로 넘어갔다
 
 ### 1.2 분석 범위
 
-우선일 기준 1997년부터 2019년까지, 22년에 걸친 여덟 건을 대상으로 한다. 출원인은 프린스턴대·서던캘리포니아대(USC)·유니버설디스플레이·규슈대·큐럭스다. 패널사(삼성디스플레이·LG디스플레이)의 자체 재료 특허는 이번 표본에 넣지 않았다 — 이 기술의 권리 계보가 재료사와 대학에서 시작됐기 때문이다.
+우선일 기준 1997년부터 2019년까지, 22년에 걸친 여덟 건을 대상으로 한다. 출원인은 프린스턴대·서던캘리포니아대(USC)·유니버설디스플레이·규슈대·큐럭스다. 패널사(삼성디스플레이·LG디스플레이)의 자체 재료 특허는 이번 표본에 넣지 않았다. 이 기술의 권리 계보가 재료사와 대학에서 시작됐기 때문이다.
 
 ### 1.3 데이터 소스 및 검색식
 
@@ -67,7 +67,7 @@ OLED의 적색과 녹색은 2000년대에 형광에서 인광으로 넘어갔다
 |---|---|
 | 데이터 소스 | 구글특허(patents.google.com) 단일 소스. KIPRIS 등 유료 등록원부는 미확보 |
 | 채택한 검색식 | `"phosphorescent organic light emitting"` · `"blue phosphorescent"` + 출원인 지정 · `"thermally activated delayed fluorescence"` + 발명자 지정 |
-| 폐기한 검색식 | `"blue phosphorescent"` 단독 — 8,134건이 나왔으나 상위 결과가 1920~60년대 야광 도료·인쇄판 특허였다. OLED와 무관한 문구 일치 |
+| 폐기한 검색식 | `"blue phosphorescent"` 단독: 8,134건이 나왔으나 상위 결과가 1920~60년대 야광 도료·인쇄판 특허였다. OLED와 무관한 문구 일치 |
 | 정렬 기준 | 오래된 순(sort=old) 우선 확인 후 최신순으로 보완 |
 | 출원인 검증 | 표본 전건에 대해 구글특허 *Application filed by* / *Current Assignee* 필드를 직접 열어 확인 |
 | 한계 | 전수조사가 아닌 8건 표본. 청구항 수·피인용 수는 지표로 쓰지 않음(계속출원·분할로 왜곡) |
@@ -109,7 +109,7 @@ OLED의 적색과 녹색은 2000년대에 형광에서 인광으로 넘어갔다
 
 </div>
 
-## 3. 정성 분석 — 특허 5건
+## 3. 정성 분석: 특허 5건
 
 <div class="patent-card">
   <div class="patent-card-head">
@@ -132,7 +132,7 @@ OLEDs doped with phosphorescent compounds
 
 #### 판독
 
-인광 OLED 자체의 출발점이다. 발명자 명단은 1998년 인광 OLED를 학계에 처음 알린 팀과 겹친다. 이 특허는 색을 특정하지 않았다 — 청색이 별도의 문제로 떨어져 나오는 것은 다음 특허부터다. 구글특허 서지에 "최초 패밀리 소송 제기" 기록이 남아 있으나, 이번 분석은 소송을 다루지 않으므로 사실 표기에 그친다.
+인광 OLED 자체의 출발점이다. 발명자 명단은 1998년 인광 OLED를 학계에 처음 알린 팀과 겹친다. 이 특허는 색을 특정하지 않았다. 청색이 별도의 문제로 떨어져 나오는 것은 다음 특허부터다. 구글특허 서지에 "최초 패밀리 소송 제기" 기록이 남아 있으나, 이번 분석은 소송을 다루지 않으므로 사실 표기에 그친다.
 
   </div>
 </div>
@@ -164,7 +164,7 @@ Organometallic compounds and emission-shifting organic electrophosphorescence
 
 #### 판독
 
-청색 인광을 성립시키는 설계 조건이 2000년 시점에 이미 수치로 확정돼 있었다. 호스트가 게스트보다 삼중항 에너지가 낮아야 에너지가 되돌아 새지 않는다는 것, 게스트는 빨리 빛으로 내보내고 호스트는 느리게 붕괴해야 한다는 것 — 오늘 청색 인광 재료를 설계할 때 여전히 지켜야 하는 조건이다.
+청색 인광을 성립시키는 설계 조건이 2000년 시점에 이미 수치로 확정돼 있었다. 호스트가 게스트보다 삼중항 에너지가 낮아야 에너지가 되돌아 새지 않는다는 것, 게스트는 빨리 빛으로 내보내고 호스트는 느리게 붕괴해야 한다는 것. 이 두 조건은 오늘 청색 인광 재료를 설계할 때도 그대로 지켜야 한다.
 
 **이 특허는 2020년 8월 11일에 만료됐다.** 상태는 "Expired - Lifetime"이다. 위 조건은 이제 공중의 영역에 있다.
 
@@ -188,7 +188,7 @@ Hybrid OLED having phosphorescent and fluorescent emitters
 
 #### 초록
 
-<div class="quote-box"><p>적어도 두 발광재료 — 형광 청색 발광재료와 인광 발광재료 — 의 결합 발광을 갖는 유기 발광소자. 형광과 인광 발광체의 조합으로 효율과 수명을 최적화한 소자 구조를 제공한다.</p></div>
+<div class="quote-box"><p>적어도 두 발광재료(형광 청색 발광재료와 인광 발광재료)의 결합 발광을 갖는 유기 발광소자. 형광과 인광 발광체의 조합으로 효율과 수명을 최적화한 소자 구조를 제공한다.</p></div>
 
 #### 판독
 
@@ -198,7 +198,7 @@ Hybrid OLED having phosphorescent and fluorescent emitters
 
 <div class="fig-frame">
   <img src="/articles/2026-08-18-blue-phosphorescent-oled-patents/2026-08-18-blue-phosphorescent-oled-patents-fig1.png" alt="US9070884B2 Figure 3 특허 원문 도면. ITO 기판 위로 Ir(Ph-ppy)3, NPD, CBP:Ir(Ph-ppy)3, CBP:Ir(pq)2(acac), ADN:BFD47, Alq3, LiF, Al 순으로 쌓인 소자 단면. 청색 발광층만 형광 도판트를 쓴다." />
-  <div class="fig-cap">FIG. 3 (US9070884B2) — 소자 적층 단면. 아래에서부터 ITO(양극) · Ir(Ph-ppy)₃ · NPD · <b>CBP:Ir(Ph-ppy)₃(녹색 인광)</b> · <b>CBP:Ir(pq)₂(acac)(적색 인광)</b> · <b>ADN:BFD47(청색 형광)</b> · Alq₃ · LiF · Al(음극). 적·녹만 이리듐 착체(인광)를 쓰고 청색만 형광 도판트를 쓴다. 원문 도면.</div>
+  <div class="fig-cap">FIG. 3 (US9070884B2): 소자 적층 단면. 아래에서부터 ITO(양극) · Ir(Ph-ppy)₃ · NPD · <b>CBP:Ir(Ph-ppy)₃(녹색 인광)</b> · <b>CBP:Ir(pq)₂(acac)(적색 인광)</b> · <b>ADN:BFD47(청색 형광)</b> · Alq₃ · LiF · Al(음극). 적·녹만 이리듐 착체(인광)를 쓰고 청색만 형광 도판트를 쓴다. 원문 도면.</div>
 </div>
 
 적색층과 녹색층에는 CBP 호스트에 이리듐 착체가 도핑돼 있다. 인광이다. 청색층만 ADN 호스트에 BFD47이 들어간다. 형광이다. 한 소자 안에서 청색만 다른 원리로 빛난다.
@@ -313,7 +313,7 @@ Organic electroluminescent devices
 
 | 구간 | 무엇을 보호하나 | 만료 |
 |---|---|---|
-| 원천 (2000년 우선) | 청색 인광이 성립하는 삼중항 에너지 조건 | 2020 — 만료 |
+| 원천 (2000년 우선) | 청색 인광이 성립하는 삼중항 에너지 조건 | 2020년 만료 |
 | 우회 (2005년 우선) | 청색만 형광으로 남긴 하이브리드 소자 구조 | 2029 |
 | 제3의 길 (2011년 우선) | 지연형광 재료와 소자 | 2033 |
 | 개량 (2014~2019년 우선) | 구체적 화합물 조성·호스트 조합·광추출 구조 | 2034~2039 |
@@ -344,7 +344,7 @@ Organic electroluminescent devices
 
 지연형광 갈래의 권리는 2033년까지 남아 있다. 청색이 인광으로 갈지 지연형광으로 갈지, 혹은 하이브리드로 더 버틸지는 아직 어느 특허도 답하지 않는다.
 
-## 7. 부록 — 특허 스펙 전체
+## 7. 부록: 특허 스펙 전체
 
 <div class="tbl-wrap">
 
@@ -352,12 +352,12 @@ Organic electroluminescent devices
 |---|---|---|---|---|---|---|
 | US6303238B1 | 프린스턴대 · USC | 1997-12-01 | 2001-10-16 | 2017-12-01 | 만료 | US |
 | US6939624B2 | 유니버설디스플레이 · 프린스턴대 · USC | 2000-08-11 | 2005-09-06 | 2020-08-11 | 만료 | US |
-| TW593625B | 프린스턴대 · USC · 유니버설디스플레이 | 2000-08-11 | 2004-06-21 | — | 만료 | EP·AU·CN·JP·KR·WO·TW |
+| TW593625B | 프린스턴대 · USC · 유니버설디스플레이 | 2000-08-11 | 2004-06-21 | 미상 | 만료 | EP·AU·CN·JP·KR·WO·TW |
 | US9070884B2 | 유니버설디스플레이 | 2005-04-13 | 2015-06-30 | 2029-10-16 | 유효 | WO·US·TW |
 | US10454038B2 | 큐럭스 (규슈대에서 이전) | 2011-07-15 | 2019-10-22 | 2033-08-13 | 유효 | CN·EP·KR·WO·JP·US·TW |
-| US2025/0268098A1 | 유니버설디스플레이 | 2014-01-08 | — | ~2034 | 출원중 | US·CN·KR |
-| US2026/0026191A1 | 유니버설디스플레이 | 2014-07-24 | — | ~2034 | 출원중 | WO·EP·US·CN·JP·KR |
-| KR2025-0058728A | 유니버설디스플레이 | 2019-11-14 | — | ~2039 | 출원중 | EP·CN·JP·KR |
+| US2025/0268098A1 | 유니버설디스플레이 | 2014-01-08 | 미등록 | ~2034 | 출원중 | US·CN·KR |
+| US2026/0026191A1 | 유니버설디스플레이 | 2014-07-24 | 미등록 | ~2034 | 출원중 | WO·EP·US·CN·JP·KR |
+| KR2025-0058728A | 유니버설디스플레이 | 2019-11-14 | 미등록 | ~2039 | 출원중 | EP·CN·JP·KR |
 
 </div>
 

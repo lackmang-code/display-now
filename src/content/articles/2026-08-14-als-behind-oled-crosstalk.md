@@ -1,5 +1,5 @@
 ---
-title: "UPS2: ALS"
+title: "언더패널 센서 2: 조도센서"
 summary: "OLED 아래로 숨은 조도센서가 자기 발광 빛과 외부광을 구분하지 못하면, 화면 밝기 제어가 통째로 흔들립니다. 편광판을 없애는 최근 트렌드가 이 문제를 오히려 키우는 이유와, 센서·패널 설계팀이 실제로 마주치는 크로스토크 보정 방법을 정리했습니다."
 section: tech-note
 reporter: TEKER
@@ -55,7 +55,7 @@ OLED가 우리에겐 스스로 빛을 내는 화려한 화면이지만, 그 아�
 빛이 너무 약하면 OLED 쪽이 더 투명해지는 수밖에 없다. 감도를 아무리 손톱만 한 칩에 욱여넣어도 한계가 있어서, 화소 배치·캐소드(음극) 패턴·터치 전극 구조를 투과율 쪽으로 다시 설계하는 일이 패널의 몫으로 넘어간다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/oled_refl_trans.webp" alt="같은 OLED 패널을 반사(좌)·투과(우)로 촬영한 실제 이미지 — 배선 사이 그물망으로만 빛이 통과" />
+  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/oled_refl_trans.webp" alt="같은 OLED 패널을 반사(좌)·투과(우)로 촬영한 실제 이미지. 배선 사이 그물망으로만 빛이 통과" />
   <figcaption>같은 OLED 패널을 반사(좌)·투과(우)로 본 실제 이미지. 배선 사이 그물망으로만 빛이 통과한다.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ OLED가 우리에겐 스스로 빛을 내는 화려한 화면이지만, 그 아�
 센서 바로 위 화소도 빛을 낸다. 외부광(신호)과 화소 누설광(잡음)이 뒤섞여 센서에 들어온다는 뜻이다. 특허 US12498264는 이 문제를 두 갈래로 푼다. 하나는 타이밍이다. 화소가 짧게 꺼지는 블랭킹 구간에 맞춰 빛을 재면 순수한 외부광에 가깝게 잡힌다. 이를 위해 DDIC가 발광 타이밍을, LTPO 백플레인이 낮은 구동 주파수를 내어준다. 다른 하나는 계산이다. 화소별 광 누설을 열지도(heat map)로 만들어 화면 내용과 밝기를 반영해 잡음을 빼낸다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/blanking_sync.webp" alt="블랭킹 동기화 타이밍 그래프 3단 — OLED 발광 파형, 센서 측정창, 누적 광전하량" />
+  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/blanking_sync.webp" alt="블랭킹 동기화 타이밍 그래프 3단. OLED 발광 파형, 센서 측정창, 누적 광전하량" />
   <figcaption>OLED 발광(위)이 짧게 꺼지는 블랭킹 구간에 센서 측정창(가운데)을 맞추면 누적 광전하량(아래)에서 화소 누설광을 덜어낼 수 있다.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ OLED가 우리에겐 스스로 빛을 내는 화려한 화면이지만, 그 아�
 여기서 흔한 오해가 하나 있다. "편광판을 없앴으니 빛이 더 들어와 ALS엔 무조건 좋다"는 생각이다. 그렇게 단순하지 않다. POL-less가 하는 일은 빛을 더 통과시키는 것이 아니라 편광판 없이도 반사를 억제하는 것이다. 그 역할을 떠맡은 블랙 PDL과 컬러필터도 그 자체로 빛을 흡수·차단한다. 일반 OLED에서 센서 창 역할을 하던 Anode 사이 그물망 공간이 POL-less 구조에서는 블랙 PDL과 컬러필터로 오히려 모두 가려져, 투과율이 사실상 0에 가까워질 수 있다. POL-less 패널이라고 해서 센서가 쓸 투과율이 저절로 확보되는 것은 아니라는 뜻이다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/polless_layers.webp" alt="일반 OLED(좌)와 POL-less OLED(우) 적층 비교 — 우측은 블랙 PDL·컬러필터가 투과창을 덮는다" />
+  <img src="/articles/2026-08-14-als-behind-oled-crosstalk/polless_layers.webp" alt="일반 OLED(좌)와 POL-less OLED(우) 적층 비교. 우측은 블랙 PDL·컬러필터가 투과창을 덮는다" />
   <figcaption>일반 OLED(좌)와 POL-less OLED(우) 적층 비교. 우측은 편광판 대신 블랙 PDL·컬러필터가 반사를 억제하지만, 그만큼 센서용 투과창도 함께 가린다.</figcaption>
 </figure>
 

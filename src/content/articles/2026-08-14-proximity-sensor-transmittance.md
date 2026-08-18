@@ -1,6 +1,6 @@
 ---
-title: "UPS1: 근접센서"
-summary: "근접센서 신호가 OLED를 두 번 통과하면 세기는 거리의 제곱(T²)으로 줄어듭니다. 신호 마진을 확보하려 발광을 키우면 이번엔 TFT 광열화라는 신뢰성 리스크가 따라옵니다 — 언더디스플레이 센서를 설계하는 엔지니어가 이 트레이드오프를 어떻게 풀어야 하는지 정리했습니다."
+title: "언더패널 센서 1: 근접센서"
+summary: "근접센서 신호가 OLED를 두 번 통과하면 세기는 거리의 제곱(T²)으로 줄어듭니다. 신호 마진을 확보하려 발광을 키우면 이번엔 TFT 광열화라는 신뢰성 리스크가 따라옵니다. 언더디스플레이 센서를 설계하는 엔지니어가 이 트레이드오프를 어떻게 풀어야 하는지 정리했습니다."
 section: tech-note
 reporter: TEKER
 publishedAt: 2026-08-14
@@ -45,7 +45,7 @@ paywallAfter: 0
 왜 굳이 안 보이는 빛을 따로 쏠까. 가시광은 이미 주변 조명·햇빛으로 가득 차 있어서, 센서가 쏜 빛과 원래 있던 빛을 구별할 수 없다. 반면 940nm 근적외선은 자연광에 거의 섞이지 않는 "깨끗한" 대역이라, 지금 돌아온 빛이 방금 쏜 그 빛인지를 명확히 구분할 수 있다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림2_TCS3720_다이사진.webp" alt="ams TCS3720 실제 다이 사진 — ALS와 Proximity 영역 통합" />
+  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림2_TCS3720_다이사진.webp" alt="ams TCS3720 실제 다이 사진. ALS와 Proximity 영역 통합" />
   <figcaption>실제 3-in-1 통합 센서 다이(ams TCS3720, 3.34×1.36×0.6mm OLGA 패키지). <span class="src">출처: ams OSRAM 데이터시트</span></figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ paywallAfter: 0
 광원이 생기자 TFT가 새로운 방식으로 위협받는다. LTPS·Oxide(IGZO) TFT는 원래 빛에 반응하는 성질이 있어서, OLED 패널은 설계 단계부터 정면에서 들어오는 외부광을 막는 차광구조를 갖추고 있다. 하지만 정면광을 막도록 설계된 기존 구조로는 패널 배면에서 새로 생긴 IR 광원의 노출 경로를 막지 못한다. 그래서 구동 TFT(T1) 하부에 별도의 금속 차광층(BML, Bottom Metal Layer)을 추가해야 한다.[^2]
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림3_LTPO_BML단면도.webp" alt="LTPO 백플레인 단면도 — LTPS와 Oxide TFT가 공존하는 하이브리드 구조, BML 위치 표시" />
+  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림3_LTPO_BML단면도.webp" alt="LTPO 백플레인 단면도. LTPS와 Oxide TFT가 공존하는 하이브리드 구조, BML 위치 표시" />
   <figcaption>BML은 스택 맨 아래 Barrier층에, LTPS TFT 하부에만 선택적으로 형성된다. <span class="src">출처: 특허 도면 재구성</span></figcaption>
 </figure>
 
@@ -75,8 +75,8 @@ paywallAfter: 0
 ams의 TCS3720은 ALS Engine과 Proximity Engine을 한 다이에 통합한 3-in-1 센서다. LED 구동 핀이 IR LED를 켜고, 반사파는 아날로그-디지털 변환을 거쳐 디지털 신호로 바뀐다. 핵심은 VSYNC 핀이다. 디스플레이 프레임 신호를 받아 블랭킹 구간에만 맞춰 IR을 쏘고 받는다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림1_TCS3720_블록도.webp" alt="ams TCS3720 블록도 — ALS Engine, Proximity Engine, Digital Core 구조" />
-  <figcaption>TCS3720 블록도 — 근접·조도·디지털 코어가 한 칩에 통합된다. <span class="src">출처: ams OSRAM 데이터시트</span></figcaption>
+  <img src="/articles/2026-08-14-proximity-sensor-transmittance/그림1_TCS3720_블록도.webp" alt="ams TCS3720 블록도. ALS Engine, Proximity Engine, Digital Core 구조" />
+  <figcaption>TCS3720 블록도. 근접·조도·디지털 코어가 한 칩에 통합된다. <span class="src">출처: ams OSRAM 데이터시트</span></figcaption>
 </figure>
 
 ## 4. 또 다른 과제들

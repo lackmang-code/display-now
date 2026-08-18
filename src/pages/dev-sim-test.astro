@@ -8,12 +8,12 @@ import SimBoot from '../components/SimBoot.astro';
 const isProd = import.meta.env.PROD;
 ---
 
-<Base title="시뮬레이션 컴포넌트 테스트 — DISPLAY NOW" noindex={true}>
+<Base title="시뮬레이션 컴포넌트 테스트 | DISPLAY NOW" noindex={true}>
   {
     isProd ? (
       <main style="max-width:760px; margin:60px auto; padding:0 20px;">
         <p style="font-family:var(--font-mono); font-size:14px; color:var(--meta-soft);">
-          dev-sim-test — 개발 전용 페이지입니다.
+          dev-sim-test. 개발 전용 페이지입니다.
         </p>
       </main>
     ) : (

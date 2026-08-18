@@ -1,6 +1,6 @@
 ---
-title: "BOE-삼성디스플레이 UPC 특허소송 분석"
-summary: "BOE가 특허 4건을 들고 삼성디스플레이를 제소한 지 넉 달 만에, 약 1조 원 규모 라이선스 합의로 조용히 끝났다. 3년을 끌어온 양사 전면전이 왜 이렇게 빨리 정리됐는지, 소송에 실제 첨부된 특허 4건의 청구범위를 원문으로 뜯어봤다 — IP·사업개발 담당자를 위한 라이선싱 전략 참고 자료."
+title: "BOE-삼성디스플레이 언더패널 카메라 특허소송 분석"
+summary: "BOE가 특허 4건을 들고 삼성디스플레이를 제소한 지 넉 달 만에 약 1조 원 규모 라이선스 합의로 조용히 끝났습니다. 3년을 끌어온 양사 전면전이 왜 이렇게 빨리 정리됐는지, 소송에 실제 첨부된 특허 4건의 청구범위를 원문으로 뜯어봤습니다. IP·사업개발 담당자를 위한 라이선싱 전략 참고 자료입니다."
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
@@ -20,16 +20,16 @@ sources:
     title: "Array substrate, display panel, and display device (US11,695,017, BOE, 2023-07-04 등록)"
     url: "https://patents.google.com/patent/US11695017B2/en"
   - type: disclosure
-    title: "PacerMonitor — BOE Technology Group Co., Ltd. et al v. Samsung Display Co., Ltd. (2:25-cv-00715)"
+    title: "BOE Technology Group Co., Ltd. et al v. Samsung Display Co., Ltd. (2:25-cv-00715) (PacerMonitor)"
     url: "https://www.pacermonitor.com/public/case/59023650/BOE_Technology_Group_Co,_Ltd_et_al_v_Samsung_Display_Co,_Ltd"
   - type: article
-    title: "OLED-Info — BOE files a lawsuit against Samsung Display saying it infringes upon its under-the-OLED camera IP"
+    title: "BOE files a lawsuit against Samsung Display saying it infringes upon its under-the-OLED camera IP (OLED-Info)"
     url: "https://www.oled-info.com/boe-files-lawsuit-against-samsung-display-saying-it-infringes-upon-its-under"
   - type: article
-    title: "The Elec — Samsung Display and BOE settle ITC OLED patent lawsuit"
+    title: "Samsung Display and BOE settle ITC OLED patent lawsuit (The Elec)"
     url: "https://www.thelec.net/news/articleView.html?idxno=5496"
   - type: article
-    title: "TechCrunch — Samsung Display, China's BOE settle OLED patent and trade secret lawsuits"
+    title: "Samsung Display, China's BOE settle OLED patent and trade secret lawsuits (TechCrunch)"
     url: "https://techcrunch.com/2025/11/20/samsung-display-chinas-boe-settle-oled-patent-and-trade-secret-lawsuits"
 featured: false
 paywallAfter: 0
@@ -69,7 +69,7 @@ BOE의 4개 특허를 "무엇을 바꾸는가(레버)" 하나의 축으로 나�
 
 전수조사가 아니라 소송에 첨부된 특허 4건을 우선일·레버·소송기간 세 방식으로 배치해 확인한다.
 
-### 2.1 기술 로드맵 — 우선일 기준
+### 2.1 기술 로드맵: 우선일 기준
 
 <div class="viz-box">
   <div class="viz-title">PRIORITY DATE TIMELINE · 2018–2026</div>
@@ -117,19 +117,19 @@ BOE의 4개 특허 우선일은 전부 2018년, 6~10월 사이 넉 달에 몰려
     <div class="col-head">배선구조</div>
     <div class="row-head">BOE①</div>
     <div class="cell"><span class="matrix-chip">994 · 투과영역 배치(원조)</span></div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
     <div class="row-head">BOE②③</div>
     <div class="cell"><span class="matrix-chip alt">266309/307976 · 화소밀도 차등화(쌍둥이)</span></div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
     <div class="row-head">BOE④</div>
-    <div class="cell empty">—</div>
+    <div class="cell empty">·</div>
     <div class="cell"><span class="matrix-chip">017 · 배선 게더링+차광</span></div>
   </div>
 </div>
 
 4건 중 3건이 "화소구조" 열에 몰려 있고, 그중 2건(②·③)은 사실상 같은 발명의 형제 계속출원이다. 실질적으로 서로 다른 아이디어는 2가지(화소 vs 배선)뿐인데, 소송에는 4건으로 늘어서 있다. 계속출원을 여러 건 확보해두면 같은 발명으로도 소장에 첨부할 특허 수를 늘릴 수 있다는 걸 보여주는 사례다.
 
-### 2.3 소송 4건 존속기간 — 제소부터 종결까지
+### 2.3 소송 4건 존속기간: 제소부터 종결까지
 
 <div class="viz-box">
   <div class="viz-title">CASE DURATION · FILED → DISMISSED</div>
@@ -163,7 +163,7 @@ BOE의 4개 특허 우선일은 전부 2018년, 6~10월 사이 넉 달에 몰려
 
 삼성의 2023년 첫 소송은 2년을 끌다 자진취하됐다. 그런데 2025년에 새로 시작된 나머지 세 소송(삼성 영업비밀·삼성 특허·BOE 특허)은 시작 시점이 제각각인데도 **2025년 11월 19~25일, 거의 동시에 취하**됐다. 각자 다른 법정 다툼이 아니라, 하나의 협상 패키지 안에서 움직였다는 뜻이다.
 
-## 3. 정성 분석 — BOE 특허 4건
+## 3. 정성 분석: BOE 특허 4건
 
 BOE가 2025년 7월 삼성디스플레이를 상대로 낸 소송에 첨부된 특허 4건이다. 청구항 1 전문(요지)과 명세서가 스스로 밝힌 종래기술 문제, 수치 한정을 그대로 인용한다.
 
@@ -194,7 +194,7 @@ Display panel and method for manufacturing the same
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-boe-samsung-display-upc-lawsuit/2026-08-14-boe-samsung-display-upc-lawsuit-fig1.png" alt="BOE 언더패널카메라 투과영역 단면도" />
-  <div class="fig-cap">FIG. 1 (US11037994B2) — 화소(87)와 투과영역(90) 사이로 외부광이 봉지층(60/82)을 통과해 하부 센서(80)에 도달하는 단면 구조. 원문 도면.</div>
+  <div class="fig-cap">FIG. 1 (US11037994B2): 화소(87)와 투과영역(90) 사이로 외부광이 봉지층(60/82)을 통과해 하부 센서(80)에 도달하는 단면 구조. 원문 도면.</div>
 </div>
 
   </div>
@@ -285,7 +285,7 @@ Array substrate, display panel, and display device
 
 <div class="fig-frame">
   <img src="/articles/2026-08-14-boe-samsung-display-upc-lawsuit/2026-08-14-boe-samsung-display-upc-lawsuit-fig2.png" alt="BOE 배선 게더링 영역 평면도" />
-  <div class="fig-cap">FIG. 1 (US11695017B2) — 센서 영역(50)을 지나는 배선(L1~L6)을 그룹으로 묶어 차광스트립(20) 투영범위 안에 모으는 평면 구조. 원문 도면.</div>
+  <div class="fig-cap">FIG. 1 (US11695017B2): 센서 영역(50)을 지나는 배선(L1~L6)을 그룹으로 묶어 차광스트립(20) 투영범위 안에 모으는 평면 구조. 원문 도면.</div>
 </div>
 
   </div>
@@ -293,7 +293,7 @@ Array substrate, display panel, and display device
 
 ## 4. 비교분석
 
-### 4.1 BOE①·②③ — 화소구조 안의 두 세대
+### 4.1 BOE①·②③: 화소구조 안의 두 세대
 
 BOE①(US11037994B2, 우선일 2018-08-29)은 가장 단순한 아이디어다. 화소와 화소 사이에 투과부를 두어 빛이 패널을 통과하게 한다. 화소 배열 자체는 균일하게 두고, 그 틈새에 구멍을 낸다는 접근이다.
 
@@ -301,13 +301,13 @@ BOE②·③(US12266309B2 / US12307976B2, 우선일 2018-06-20)은 한 발 더 �
 
 같은 발명에서 갈라진 계속출원을 소송에 별개 특허로 첨부하는 건 미국 특허 실무에서 드문 일이 아니다. 청구범위를 조금씩 달리해 침해 주장의 폭을 넓히는 전략이다. 다만 독자 입장에서는 "특허 4건"이라는 숫자가 실제로는 "서로 다른 아이디어 3가지(투과부·화소밀도·배선)"임을 알아둘 필요가 있다.
 
-### 4.2 BOE④ — 화소가 아니라 배선을 건드리다
+### 4.2 BOE④: 화소가 아니라 배선을 건드리다
 
 BOE④(US11695017B2, 우선일 2018-10-11)는 다른 층위의 문제를 겨눈다. 화소 자체가 아니라, 화소 사이를 지나는 배선이다. 센서 영역을 통과하는 배선을 그대로 두면 화소 배열이 불규칙해져 화질이 떨어진다. 그래서 이 배선들을 그룹으로 묶어 차광스트립 아래로 모아버린다. 화소구조 3건이 "빛을 어떻게 통과시킬까"를 풀었다면, 이 특허는 "회로를 어떻게 숨길까"를 푼다.
 
 PCT 경로(PCT/CN2019/110371)로 출원돼 국제출원 후 미국 국내단계로 진입했다는 점도 다른 3건(모두 미국 직접출원 또는 계속출원)과 다르다. BOE가 이 아이디어만큼은 애초에 여러 국가 동시 보호를 염두에 뒀다는 뜻일 수 있다.
 
-### 4.3 소송 — 7년 묵은 특허가 왜 지금 등장했나
+### 4.3 소송: 7년 묵은 특허가 왜 지금 등장했나
 
 4건 모두 우선일이 2018년인데, 소송은 2025년 7월에야 제기됐다. 이 격차 자체는 이례적이지 않다. 미국 특허 소송은 흔히 상대 제품이 실제로 시장에 나온 뒤, 그것도 협상이 결렬된 뒤에야 제기된다. 갤럭시Z폴드5(2023-08)·폴드6이 시장에서 몇 년 팔린 뒤, 그리고 삼성디스플레이가 2022년 12월부터 시작한 ITC 조사·소송 공세가 격화된 뒤에야 BOE가 맞소송으로 응수한 흐름과 맞아떨어진다.
 
@@ -330,7 +330,7 @@ PCT 경로(PCT/CN2019/110371)로 출원돼 국제출원 후 미국 국내단계�
 BOE가 삼성디스플레이에 낸 UPC 특허소송은 겉보기엔 "특허 4건짜리 정면충돌"이지만, 원문을 열어보면 실질적으로 다른 아이디어는 3가지(투과부 배치·화소밀도 차등화·배선 게더링)뿐이고 그나마도 우선일은 전부 2018년 한 해에 몰려 있다. 소송이 2025년에야 제기되고 넉 달 만에 화해로 끝난 건, 특허의 신선도가 아니라 양사 관계의 협상 타이밍 문제였다는 정황이 짙다. 실제로 같은 시기 삼성디스플레이·BOE 사이의 다른 소송 3건도 같은 열흘 사이에 함께 취하됐다. 개별 소송을 따로 읽으면 "누가 이겼나"를 묻게 되지만, 나란히 놓고 보면 "언제 합의가 끝났는가" 하나의 질문으로 수렴한다. 다음 편에서는 이번에 특허 번호가 공개되지 않은 삼성디스플레이의 반대쪽 소송(2:25-cv-00412, BOE 패널이 쓰인 Nubia·RedMagic 겨냥)을 원문으로 확인해볼 만하다.
 
 <dl class="term-list">
-  <div><dt>검색식</dt><dd>공개 보도 인용 특허번호 4건을 구글특허 원문으로 개별 대조 — assignee 필드 직접 확인(B-0 규칙)</dd></div>
+  <div><dt>검색식</dt><dd>공개 보도 인용 특허번호 4건을 구글특허 원문으로 개별 대조, assignee 필드 직접 확인(B-0 규칙)</dd></div>
   <div><dt>기준일</dt><dd>우선일(priority date) 및 소송 제소일·종결일 기준, 2018~2025년</dd></div>
   <div><dt>데이터 확보일</dt><dd>2026-08-14</dd></div>
   <div><dt>분류 규칙</dt><dd>레버(화소구조 vs 배선구조) × 특허, 계속출원 관계는 서지사항으로 확인</dd></div>
@@ -338,7 +338,7 @@ BOE가 삼성디스플레이에 낸 UPC 특허소송은 겉보기엔 "특허 4�
 
 *본 분석은 공개 특허 공보 및 공개 보도·법원 공개기록에 기반한 정리이며 각 회사·소송 당사자의 공식 입장이 아니다. 침해·무효에 대한 자체 판단은 하지 않는다.*
 
-## 7. 부록 — 특허·소송 스펙 전체
+## 7. 부록: 특허·소송 스펙 전체
 
 <div class="tbl-wrap">
 

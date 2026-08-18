@@ -1,6 +1,6 @@
 // 구조광 삼각측량 데모 — 깊이가 연속적으로 변하는 물체(구) 위에서
 // 점 패턴이 어떻게 휘는가. 밀린 양이 곧 그 지점의 깊이다.
-// 기사 "UPS3: FaceID" 2절(2단계 — 3만 개의 점으로 깊이를 만든다)에 삽입.
+// 기사 "언더패널 센서 3: 페이스 ID" 2절(2단계: 3만 개의 점으로 깊이를 만든다)에 삽입.
 //
 // 모델:
 //   구면 돌출량   Δz(r) = h × sqrt(1 − (r/R)²)      (중심에서 멀어질수록 낮아진다)
@@ -211,9 +211,9 @@ export function mount(container, params = {}) {
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = 'rgba(244,243,238,0.72)';
-    ctx.fillText('원래 — 등간격', 8, stripY0 - 15);
+    ctx.fillText('원래: 등간격', 8, stripY0 - 15);
     ctx.fillStyle = 'rgba(224,132,62,0.95)';
-    ctx.fillText('밀린 뒤 — 왼쪽 벌어짐 / 오른쪽 좁아짐', 8, stripY1 - 15);
+    ctx.fillText('밀린 뒤: 왼쪽 벌어짐 / 오른쪽 좁아짐', 8, stripY1 - 15);
 
     // 라벨 — 도트와 겹치지 않도록 배경 박스와 함께
     ctx.font = '11px monospace';
