@@ -1,0 +1,67 @@
+<svg viewBox="0 0 840 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-family="'Noto Serif KR', Georgia, serif" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">특허는 끝났는데, 제품은 아직 없다</text>
+  <text x="28" y="63" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#8a8a80" letter-spacing="0.4">청색 인광 관련 특허의 존속기간 · 구글특허 서지사항(우선일·만료일) 기준</text>
+
+  <line x1="250" y1="88" x2="810" y2="88" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- 현재 시점 기준선 -->
+  <line x1="635.8" y1="92" x2="635.8" y2="396" stroke="#12120e" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="566" y="70" width="140" height="19" fill="#12120e"/>
+  <text x="636" y="84" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#f4f3ee" text-anchor="middle" letter-spacing="0.3">2026.08 현재 · 미양산</text>
+
+  <!-- row 1 : US6303238B1 -->
+  <text x="240" y="115" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#12120e" text-anchor="end">US6303238B1</text>
+  <text x="240" y="129" font-size="11" fill="#6f6f66" text-anchor="end">인광 OLED 원조 · 프린스턴·USC</text>
+  <rect x="286.3" y="110" width="248.9" height="16" fill="#dcdcd6" stroke="#c9c9c4" stroke-width="1"/>
+  <text x="541" y="122" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#8a8a80">만료 2017.12</text>
+
+  <!-- row 2 : US6939624B2  (핵심) -->
+  <text x="240" y="161" font-family="'IBM Plex Mono', monospace" font-size="11.5" font-weight="600" fill="#236436" text-anchor="end">US6939624B2</text>
+  <text x="240" y="175" font-size="11" fill="#236436" text-anchor="end" font-weight="600">청색 인광 원조 · UDC·프린스턴·USC</text>
+  <rect x="319.8" y="156" width="248.9" height="16" fill="#c9c9c4" stroke="#236436" stroke-width="1.5"/>
+  <text x="568.7" y="151" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#236436" font-weight="600" text-anchor="end">만료 2020.08</text>
+
+  <!-- 간극 표시 -->
+  <line x1="568.7" y1="188" x2="635.8" y2="188" stroke="#236436" stroke-width="1"/>
+  <line x1="568.7" y1="184" x2="568.7" y2="192" stroke="#236436" stroke-width="1"/>
+  <line x1="635.8" y1="184" x2="635.8" y2="192" stroke="#236436" stroke-width="1"/>
+  <text x="602" y="203" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#236436" text-anchor="middle">만료 후 6년</text>
+
+  <!-- row 3 : US9070884B2 -->
+  <text x="240" y="219" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#12120e" text-anchor="end">US9070884B2</text>
+  <text x="240" y="233" font-size="11" fill="#6f6f66" text-anchor="end">하이브리드 우회 · 청색만 형광</text>
+  <rect x="377.9" y="214" width="305" height="16" fill="#236436"/>
+  <text x="689" y="226" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#6f6f66">2029.10</text>
+
+  <!-- row 4 : US10454038B2 -->
+  <text x="240" y="265" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#12120e" text-anchor="end">US10454038B2</text>
+  <text x="240" y="279" font-size="11" fill="#6f6f66" text-anchor="end">TADF 제3의 길 · 규슈대→큐럭스</text>
+  <rect x="455.8" y="260" width="274.8" height="16" fill="#62946C"/>
+  <text x="737" y="272" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#6f6f66">2033.08</text>
+
+  <!-- row 5 : US2025/0268098 -->
+  <text x="240" y="311" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#12120e" text-anchor="end">US2025/0268098</text>
+  <text x="240" y="325" font-size="11" fill="#6f6f66" text-anchor="end">2025년 출원 · 우선일 2014</text>
+  <rect x="486.7" y="306" width="248.9" height="16" fill="#C6DFCA" stroke="#62946C" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="742" y="318" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#8a8a80">~2034 예상</text>
+
+  <!-- row 6 : KR2025/0058728 -->
+  <text x="240" y="357" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#12120e" text-anchor="end">KR2025/0058728</text>
+  <text x="240" y="371" font-size="11" fill="#6f6f66" text-anchor="end">2025년 출원 · 우선일 2019</text>
+  <rect x="559.5" y="352" width="248.9" height="16" fill="#C6DFCA" stroke="#62946C" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- 축 -->
+  <line x1="250" y1="396" x2="810" y2="396" stroke="#c9c9c4" stroke-width="1"/>
+  <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#8a8a80" text-anchor="middle">
+    <line x1="312.2" y1="396" x2="312.2" y2="401" stroke="#c9c9c4"/><text x="312.2" y="414">2000</text>
+    <line x1="436.7" y1="396" x2="436.7" y2="401" stroke="#c9c9c4"/><text x="436.7" y="414">2010</text>
+    <line x1="561.1" y1="396" x2="561.1" y2="401" stroke="#c9c9c4"/><text x="561.1" y="414">2020</text>
+    <line x1="685.6" y1="396" x2="685.6" y2="401" stroke="#c9c9c4"/><text x="685.6" y="414">2030</text>
+    <line x1="810" y1="396" x2="810" y2="401" stroke="#c9c9c4"/><text x="805" y="414">2040</text>
+  </g>
+
+  <text x="28" y="441" font-size="11.5" fill="#6f6f66">막대는 우선일부터 만료일까지. 점선 막대는 아직 등록되지 않은 출원으로, 만료일은 우선일에 20년을 더한 값이다.</text>
+  <text x="28" y="457" font-size="11.5" fill="#6f6f66">청색 인광의 원리를 청구한 특허는 2020년 8월 존속기간이 끝났고, 6년이 지난 지금도 양산 채택은 공표되지 않았다.</text>
+</svg>
