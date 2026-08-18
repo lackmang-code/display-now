@@ -15,6 +15,11 @@
   --meta: #8a8a80;
   --meta-soft: #6f6f66;
 
+  /* 제호용 골드. 꼭지 색과 같은 oklch 체계로 잡아 팔레트에 섞이게 했다.
+     Next I/O 골드(#FBBF24)와는 다른 값이다. 디플은 자체 색만 쓴다. */
+  --gold: oklch(0.87 0.195 93);
+  --gold-dim: oklch(0.78 0.17 90);
+
   --hue-tech-note: 40;
   --chroma-tech-note: 0.11;
   --hue-paper: 255;

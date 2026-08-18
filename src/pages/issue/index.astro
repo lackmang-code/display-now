@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { sectionColor } from '../../lib/sections';
+import { getIssues, articlesOfIssue, issueNumberLabel, issueDateLabel, issueHref } from '../../lib/issues';
+
+const issues = getIssues();
+const withCounts = await Promise.all(
+  issues.map(async (issue) => {
+    const list = await articlesOfIssue(issue);
+    const head = issue.headSlug ? list.find((a) => a.slug === issue.headSlug) : list[0];
+    // 카드 상단 띠는 그 호 헤드 기사의 꼭지 색. 호마다 색이 달라져 목록에서 서로 구분된다
+    const band = head ? sectionColor(head.data.section) : 'var(--gold)';
+    return { issue, count: list.length, band };
+  }),
+);
+---
+
+<Base title="지난 호 | DISPLAY NOW" description="DISPLAY NOW가 매주 화요일 발행하는 주간 호 목록입니다.">
+  <div class="frame issue-frame">
+    <Header showNav={false} />
+    <div class="accent-strip">
+      <span style={`background:${sectionColor('tech-note')};`}></span>
+      <span style={`background:${sectionColor('paper')};`}></span>
+      <span style={`background:${sectionColor('patent')};`}></span>
+      <span style={`background:${sectionColor('issue')};`}></span>
+    </div>
+
+    <section class="issues-hero">
+      <div class="eyebrow">지난 호</div>
+      <h1>매주 화요일, 그 주의 디스플레이를 한 권으로 묶습니다</h1>
+    </section>
+
+    <div class="content-pad">
+      {
+        withCounts.length === 0 ? (
+          <p class="empty">창간호를 준비하고 있습니다. 그동안 발행한 기사는 <a href="/archive">아카이브</a>에서 보실 수 있습니다.</p>
+        ) : (
+          <div class="issue-grid">
+            {
+              withCounts.map(({ issue, count, band }) => (
+                <a href={issueHref(issue)} class="issue-card">
+                  <div class="band" style={`background:${band};`} />
+                  <div class="shot">
+                    <img
+                      src={`/issues/issue-${issue.no}-cover.png`}
+                      alt={`${issueNumberLabel(issue)} 표지: ${issue.headline}`}
+                      loading="lazy"
+                    />
+                    <span class="no-badge">{String(issue.no).padStart(2, '0')}</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</div>
+                    <div class="card-title">{issue.headline}</div>
+                    <div class="card-count">{count}편 수록</div>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        )
+      }
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  /* 호 목록도 호 페이지와 같은 검정 판형으로 이어 붙인다 */
+  .issue-frame {
+    width: min(808px, 100%);
+    background: var(--ink);
+    color: var(--on-dark);
+    border-left-color: var(--line-dark);
+    border-right-color: var(--line-dark);
+  }
+
+  .issues-hero {
+    background: var(--ink);
+    color: var(--on-dark);
+    padding: clamp(20px, 5vw, 28px) clamp(14px, 4vw, 32px);
+  }
+  .issues-hero .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+  .issues-hero h1 {
+    margin: 8px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4.4vw, 32px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .content-pad {
+    padding: 20px clamp(14px, 4vw, 24px) 32px;
+  }
+  .empty {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--on-dark-mute);
+  }
+  .empty a {
+    color: var(--gold-dim);
+  }
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .issue-card {
+    display: block;
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--line-frame);
+    overflow: hidden;
+  }
+  .band {
+    height: 6px;
+  }
+  /* 캔버스 그림은 어둡다. 흰 카드 안에 넣어야 검정 배경에서 호끼리 분리된다 */
+  .shot {
+    position: relative;
+    background: #0d0d0a;
+    padding: 10px;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+  }
+  .no-badge {
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    font-family: var(--font-mono);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .card-no {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta-soft);
+  }
+  .card-title {
+    margin: 6px 0 8px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .card-count {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta);
+  }
+</style>

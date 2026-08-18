@@ -41,6 +41,12 @@ const { activeSection, minimal = false, showNav = true } = Astro.props;
         }
         <a
           class="archive-link"
+          aria-current={activeSection === 'issue-list' ? 'true' : undefined}
+          href="/issue"
+          style={activeSection === 'issue-list' ? 'color:var(--ink); background:#c4c4bc;' : ''}
+        >주간호</a>
+        <a
+          class="archive-link"
           aria-current={activeSection === 'archive' ? 'true' : undefined}
           href="/archive"
           style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}

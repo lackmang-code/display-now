@@ -3,7 +3,7 @@ title: "디스플레이 백플레인 소재 IGZO가 메모리로 간 이유"
 summary: "20년 넘게 화면 뒤 스위치로만 쓰이던 IGZO를 동국대 연구진이 수직 메모리의 저항 스위칭층으로 세웠습니다. 열쇠는 스퍼터가 아니라 ALD였고, In:Ga:Zn 비율을 1:3:1까지 갈륨 쪽으로 밀어야 비로소 스위칭이 살아났습니다. 디스플레이 공정팀이 익숙한 소재가 어디까지 확장되는지 보여주는 결과입니다."
 section: paper
 reporter: PEER
-publishedAt: 2026-08-16
+publishedAt: 2026-08-18
 readingMinutes: 8
 tags: [IGZO, ALD, 수직 RRAM, 뉴로모픽, 동국대]
 sources:

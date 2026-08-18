@@ -3,7 +3,7 @@ title: "불소로 잡은 산화물 TFT의 이동도와 안정성"
 summary: "이동도를 올리면 안정성이 무너지는 트레이드오프, IGZO TFT 채널에 이온주입 공정 하나만 더해 둘 다 잡았습니다. 이동도 12.1→38.6cm²/V·s, 문턱전압 변화 최대 1.74V. 공정 스텝을 늘리지 않고 스펙을 함께 끌어올릴 수 있다는 뜻이라 백플레인 공정 담당자가 눈여겨볼 결과입니다."
 section: paper
 reporter: PEER
-publishedAt: 2026-07-26
+publishedAt: 2026-07-27
 readingMinutes: 8
 tags: [IGZO TFT, 이온주입, 산화물 반도체, 연세대]
 sources:

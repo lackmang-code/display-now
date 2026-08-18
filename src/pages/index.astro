@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { getAllArticles, bylineOf, articleHref } from '../lib/articles';
+import { getIssues, articlesOfIssue, issueNumberLabel, issueDateLabel, issueHref } from '../lib/issues';
 
 const allArticles = await getAllArticles();
 const latestBySection = SECTION_ORDER.map((key) => {
@@ -13,6 +14,10 @@ const latestBySection = SECTION_ORDER.map((key) => {
 }).filter((x) => x.article);
 
 const recentArticles = allArticles.slice(0, 8);
+
+// 이번 호 배너. ISSUES에는 발행 확정된 호만 넣으므로 맨 앞이 곧 최신 호다.
+const latestIssue = getIssues()[0];
+const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue)).length : 0;
 
 // 편집국 추천 — 사람이 고르는 목록 (조회수 아님)
 const editorPicksSlugs = [
@@ -39,6 +44,25 @@ const editorPicks = editorPicksSlugs
     <section class="hero">
       <h1>100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진</h1>
     </section>
+
+    {
+      latestIssue && (
+        <a class="issue-banner" href={issueHref(latestIssue)}>
+          <div class="ib-left">
+            <span class="ib-label">이번 호</span>
+            <span class="ib-no">{issueNumberLabel(latestIssue)} · {issueDateLabel(latestIssue)}</span>
+          </div>
+          <div class="ib-main">
+            <div class="ib-headline">{latestIssue.headline}</div>
+            <div class="ib-meta">
+              {latestIssueCount}편 수록
+              {latestIssue.coverSim && ' · 표지가 움직입니다'}
+            </div>
+          </div>
+          <span class="ib-go">표지 열기 →</span>
+        </a>
+      )
+    }
 
     <div class="content-pad">
       <div class="row-head">
@@ -149,6 +173,58 @@ const editorPicks = editorPicksSlugs
     font-weight: 700;
     letter-spacing: -0.035em;
     word-break: keep-all;
+  }
+  /* 이번 호 배너. 히어로 바로 아래에서 그 주 호로 보낸다 */
+  .issue-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    background: var(--ink);
+    color: var(--on-dark);
+    border-top: 1px solid rgba(244, 243, 238, 0.18);
+    padding: 14px clamp(14px, 4vw, 32px) 16px;
+  }
+  .ib-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 0 0 auto;
+  }
+  .ib-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+  .ib-no {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .ib-main {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .ib-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(17px, 3vw, 21px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .ib-meta {
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .ib-go {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--gold);
   }
   .content-pad {
     padding: 20px clamp(14px, 4vw, 24px) 24px;

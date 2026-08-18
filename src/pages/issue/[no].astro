@@ -1,0 +1,416 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SimBoot from '../../components/SimBoot.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
+import { bylineOf, articleHref, readingLabel, leadImage } from '../../lib/articles';
+import {
+  ISSUES,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  issueRangeLabel,
+  type IssueMeta,
+} from '../../lib/issues';
+
+export async function getStaticPaths() {
+  return ISSUES.map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
+}
+
+interface Props {
+  issue: IssueMeta;
+}
+
+const { issue } = Astro.props;
+const articles = await articlesOfIssue(issue);
+
+const head = issue.headSlug ? articles.find((a) => a.slug === issue.headSlug) : articles[0];
+const fallbackImage = issue.coverImage ?? (head ? leadImage(head) : undefined);
+
+const grouped = SECTION_ORDER.map((key) => ({
+  key,
+  list: articles.filter((a) => a.data.section === key),
+})).filter((g) => g.list.length > 0);
+---
+
+<Base
+  title={`${issueNumberLabel(issue)} ${issue.headline} | DISPLAY NOW`}
+  description={issue.deck ?? issue.headline}
+  image={`/og/issue-${issue.no}.png`}
+>
+  <div class="frame issue-frame">
+    <section class="cover">
+      <div class="cover-inner">
+      <div class="cover-top">
+        <div class="mast-col">
+          <a href="/" class="mast">DISPLAY NOW</a>
+          <span class="identity">100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진</span>
+        </div>
+        <span class="issue-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</span>
+      </div>
+
+      <div class="cover-stage">
+        {
+          issue.coverSim ? (
+            <div
+              class="cover-sim"
+              data-sim={issue.coverSim}
+              data-params={issue.coverSimParams ? JSON.stringify(issue.coverSimParams) : undefined}
+            />
+          ) : fallbackImage ? (
+            <img class="cover-img" src={fallbackImage} alt={`${issueNumberLabel(issue)} 표지`} />
+          ) : null
+        }
+      </div>
+
+      <div class="cover-bottom">
+        <h1>{issue.headline}</h1>
+        {issue.deck && <p class="deck">{issue.deck}</p>}
+
+        <ul class="coverlines">
+          {
+            articles
+              .filter((a) => a.slug !== head?.slug)
+              .slice(0, 4)
+              .map((a) => (
+              <li>
+                <span class="dot" style={`background:${sectionColor(a.data.section)};`} />
+                <a href={articleHref(a)}>{a.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+
+        {
+          issue.coverSim && (
+            <div class="cover-hint">
+              이 표지는 움직입니다. 값을 바꿔 보십시오. 시뮬레이션의 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.
+            </div>
+          )
+        }
+      </div>
+      </div>
+    </section>
+
+    <Header showNav={false} />
+
+    <div class="content-pad">
+      <div class="row-head">
+        <span class="eyebrow">수록 기사 {articles.length}편</span>
+        <span class="muted">{issueRangeLabel(issue)}</span>
+      </div>
+
+      {
+        grouped.map((g) => (
+          <section class="toc-group">
+            <div class="toc-band" style={`background:${sectionColor(g.key)};`}>{SECTIONS[g.key].label}</div>
+            {
+              g.list.map((a) => {
+                const thumb = leadImage(a);
+                return (
+                  <a href={articleHref(a)} class="toc-row" style={`border-left-color:${sectionColor(g.key)};`}>
+                    {thumb && <img class="toc-thumb" src={thumb} alt="" loading="lazy" />}
+                    <div class="toc-main">
+                      <div class="toc-title">{a.data.title}</div>
+                      <p class="toc-summary">{a.data.summary}</p>
+                      <div class="toc-meta">{bylineOf(a)} · 읽기 {readingLabel(a)}</div>
+                    </div>
+                  </a>
+                );
+              })
+            }
+          </section>
+        ))
+      }
+      {articles.length === 0 && <p class="empty">이번 호에 수록된 기사가 아직 없습니다.</p>}
+
+      {
+        issue.note && (
+          <div class="note">
+            <div class="note-label">편집장 노트</div>
+            <p>{issue.note}</p>
+            <div class="note-sign">AI 편집장 <b>DEEPLE</b></div>
+          </div>
+        )
+      }
+
+      <div class="issue-foot">
+        <a href="/issue" class="muted-link">지난 호 전체 보기 →</a>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<SimBoot />
+
+<style is:global>
+  /* 표지에서는 시뮬레이터의 제목 띠와 고지 문단을 접는다. 표지는 한 장으로 읽혀야 하고,
+     같은 시뮬레이터가 기사 본문에 고지와 함께 다시 나오기 때문이다. */
+  .cover-stage .sim-embed {
+    border: 0;
+    margin: 0;
+    background: transparent;
+  }
+  .cover-stage .sim-head,
+  .cover-stage .sim-note {
+    display: none;
+  }
+</style>
+
+<style>
+  /* 호 페이지는 한 권짜리 판형이다. 프레임 자체를 좁혀 헤더·구독 버튼·푸터까지
+     표지와 같은 폭으로 세운다. 다른 페이지의 프레임 폭(1180px)은 그대로 둔다. */
+  .issue-frame {
+    width: min(808px, 100%);
+    background: var(--ink);
+    color: var(--on-dark);
+    border-left-color: var(--line-dark);
+    border-right-color: var(--line-dark);
+  }
+
+  .cover {
+    background: var(--ink);
+    color: var(--on-dark);
+    padding: clamp(16px, 3.5vw, 26px) clamp(14px, 4vw, 32px) clamp(20px, 4vw, 34px);
+  }
+  /* 표지는 판형을 갖는다. 넓은 화면에서 가로로 늘어지면 표지가 아니라 배너로 보인다.
+     좌우 여백은 비워 두는 편이 잡지 표지에 가깝다. */
+  .cover-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2.6vw, 20px);
+  }
+  .cover-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid rgba(244, 243, 238, 0.28);
+  }
+  .mast-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  /* 매체 정체성 한 줄. 마스트헤드 바로 아래에 작게 붙인다 */
+  .identity {
+    font-size: clamp(12.5px, 1.6vw, 14px);
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    opacity: 0.72;
+    word-break: keep-all;
+  }
+  .mast {
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 7vw, 62px);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .issue-no {
+    font-family: var(--font-mono);
+    font-size: clamp(13px, 1.8vw, 15px);
+    letter-spacing: 0.08em;
+    opacity: 0.78;
+  }
+  .cover-stage {
+    background: var(--card);
+    border: 1.5px solid rgba(244, 243, 238, 0.2);
+    padding: clamp(10px, 2vw, 18px);
+    color: var(--ink);
+  }
+  .cover-sim {
+    display: block;
+  }
+  .cover-img {
+    display: block;
+    width: 100%;
+    max-height: 56svh;
+    object-fit: contain;
+  }
+  .cover-bottom h1 {
+    margin: 0 0 10px;
+    font-family: var(--font-serif);
+    font-size: clamp(21px, 4.4vw, 32px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    word-break: keep-all;
+  }
+  .deck {
+    margin: 0 0 16px;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.7;
+    opacity: 0.86;
+    max-width: 62ch;
+    word-break: keep-all;
+  }
+  .coverlines {
+    list-style: none;
+    margin: 0;
+    padding: 14px 0 0;
+    border-top: 1px solid rgba(244, 243, 238, 0.2);
+    display: grid;
+    gap: 7px;
+  }
+  .coverlines li {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+  }
+  .coverlines .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    transform: translateY(-1px);
+  }
+  .coverlines a {
+    color: var(--on-dark);
+    font-size: clamp(14.5px, 2vw, 16px);
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+  .cover-hint {
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    opacity: 0.62;
+  }
+
+  /* 표지 아래 목차·편집장 노트까지 표지와 같은 판형 폭으로 이어 붙인다.
+     한 권을 위에서 아래로 넘겨 보는 흐름이 되도록. */
+  .content-pad {
+    padding: 20px clamp(14px, 4vw, 24px) 32px;
+    max-width: calc(760px + 48px);
+    margin: 0 auto;
+  }
+  .row-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 12px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--on-dark-mute);
+  }
+  .muted {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--on-dark-mute);
+  }
+  .toc-group {
+    margin-bottom: 20px;
+  }
+  .toc-band {
+    display: inline-block;
+    color: var(--card);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    margin-bottom: 8px;
+  }
+  .toc-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border: 1px solid rgba(244, 243, 238, 0.14);
+    border-left-width: 4px;
+    background: rgba(244, 243, 238, 0.05);
+    color: var(--on-dark);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+  }
+  .toc-thumb {
+    flex: 0 0 auto;
+    width: clamp(72px, 16vw, 116px);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: rgba(244, 243, 238, 0.08);
+    border: 1px solid rgba(244, 243, 238, 0.16);
+  }
+  .toc-main {
+    min-width: 0;
+  }
+  .toc-row,
+  .toc-row:visited {
+    text-decoration: none;
+  }
+  .toc-title {
+    color: var(--on-dark);
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 3vw, 19px);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .toc-summary {
+    margin: 7px 0 8px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cfcec6;
+    text-align: justify;
+  }
+  .toc-meta {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .empty {
+    color: var(--on-dark-mute);
+    font-size: 15px;
+  }
+  .note {
+    margin-top: 6px;
+    background: rgba(244, 243, 238, 0.05);
+    border: 1px solid rgba(244, 243, 238, 0.14);
+    padding: 16px 18px;
+  }
+  .note-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+  }
+  .note p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: justify;
+  }
+  .note-sign {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .note-sign b {
+    font-weight: 500;
+  }
+  .issue-foot {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(244, 243, 238, 0.16);
+  }
+  .muted-link {
+    font-size: 14px;
+    color: var(--on-dark-mute);
+  }
+</style>

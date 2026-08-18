@@ -3,7 +3,7 @@ title: 7월 3주차 디스플레이 논문 브리핑
 summary: "12대 저널 중 디스플레이 산업과 맞닿은 논문 22편(2026-07-20~07-26 온라인 공개)을 짧게 훑었습니다. 대표 논문은 별도 심층기사로 다뤘습니다."
 section: paper
 reporter: PEER
-publishedAt: '2026-07-25'
+publishedAt: 2026-08-14
 readingMinutes: 7
 tags:
 - 논문 브리핑
