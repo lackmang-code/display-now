@@ -11,6 +11,8 @@ import {
   issueNumberLabel,
   issueDateLabel,
   issueRangeLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
   type IssueMeta,
 } from '../../lib/issues';
 
@@ -50,7 +52,10 @@ const grouped = SECTION_ORDER.map((key) => ({
           </a>
           <span class="identity">100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진</span>
         </div>
-        <span class="issue-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</span>
+        <span class="issue-no">
+          {issueNumberLabel(issue)} · {collectRangeLabel(issue)}
+          {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>}
+        </span>
       </div>
 
       <div class="cover-stage">
@@ -88,7 +93,7 @@ const grouped = SECTION_ORDER.map((key) => ({
         {
           issue.coverSim && (
             <div class="cover-hint">
-              이 표지는 움직입니다. 값을 바꿔 보십시오. 시뮬레이션의 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.
+              이 표지는 시뮬레이션입니다. 값을 바꿔 보십시오. 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.
             </div>
           )
         }

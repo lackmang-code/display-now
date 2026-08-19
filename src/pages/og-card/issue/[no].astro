@@ -1,6 +1,14 @@
 ---
 export const prerender = true;
-import { ISSUES, articlesOfIssue, issueNumberLabel, issueDateLabel, type IssueMeta } from '../../../lib/issues';
+import {
+  ISSUES,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
+  type IssueMeta,
+} from '../../../lib/issues';
 import { SECTIONS, sectionColor } from '../../../lib/sections';
 import { bylineOf } from '../../../lib/articles';
 
@@ -169,7 +177,8 @@ const picks = articles.filter((a) => a.slug !== head?.slug);
 
       <div class="side">
         <div class="issue-line">
-          {issueNumberLabel(issue)} · {issueDateLabel(issue)} · {articles.length}편 수록
+          {issueNumberLabel(issue)} · {collectRangeLabel(issue)}
+          {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>} · {articles.length}편 수록
         </div>
 
         <div class="picks-label">이번 호 수록</div>
@@ -191,7 +200,7 @@ const picks = articles.filter((a) => a.slug !== head?.slug);
         </ul>
 
         <div class="foot">
-          발행 Next I/O{issue.coverSim && <span class="live"> · 표지가 움직입니다</span>}
+          발행 Next I/O{issue.coverSim && <span class="live"> · 표지는 시뮬레이션입니다</span>}
           <span class="site">display-now.nextio.ai.kr</span>
         </div>
       </div>

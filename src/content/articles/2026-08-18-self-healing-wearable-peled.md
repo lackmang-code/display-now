@@ -4,6 +4,7 @@ summary: "나비 날개의 층 구조를 본뜬 자가치유 고분자를 발광
 section: paper
 reporter: PEER
 publishedAt: 2026-08-18
+collectWeekStart: '2026-08-10'
 readingMinutes: 8
 tags: [페로브스카이트 LED, 자가치유 고분자, 웨어러블 디스플레이, 봉지, 국립타이베이과기대]
 sources:

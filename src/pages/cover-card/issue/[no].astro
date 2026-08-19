@@ -1,6 +1,14 @@
 ---
 export const prerender = true;
-import { ISSUES, articlesOfIssue, issueNumberLabel, issueDateLabel, type IssueMeta } from '../../../lib/issues';
+import {
+  ISSUES,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
+  type IssueMeta,
+} from '../../../lib/issues';
 import { sectionColor } from '../../../lib/sections';
 
 export async function getStaticPaths() {
@@ -181,7 +189,8 @@ const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
 
       <div class="issue-line">
         <span>{issueNumberLabel(issue)}</span>
-        <span>{issueDateLabel(issue)}</span>
+        <span>{collectRangeLabel(issue)}</span>
+        {SHOW_PUBLISH_DATE && <span>{issueDateLabel(issue)}</span>}
         <span>{articles.length}편 수록</span>
       </div>
 
@@ -204,7 +213,7 @@ const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
 
       <div class="foot">
         <span>발행 Next I/O</span>
-        {issue.coverSim && <span class="live">표지가 움직입니다</span>}
+        {issue.coverSim && <span class="live">표지는 시뮬레이션입니다</span>}
         <span>display-now.nextio.ai.kr</span>
       </div>
     </div>

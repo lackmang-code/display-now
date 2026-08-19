@@ -1,9 +1,7 @@
 // 기사 원고 검사. npm run build 앞단에서 돈다.
 //
-// 왜 필요한가: 마크다운은 한 문단에 물결표가 둘 있으면 그 사이를 취소선으로
-// 렌더링한다. "7월 20일~26일" 같은 범위 표기를 쓰다 보면 본문 한복판에
-// 가로줄이 그어진 채 발행된다. 실제로 14곳에서 그렇게 나갔다.
-// 사람이 매번 눈으로 잡을 수 없으므로 빌드에서 막는다.
+// 사람 기억에 맡기면 반드시 어긋나는 것만 여기서 막는다.
+// 규칙을 문서에만 적어 두면 새 기자는 모르고, 아는 기자도 잊는다.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -32,14 +30,17 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
 
   const flush = () => {
     if (!para.length) return;
-    const text = para.join('\n');
-    // 인라인 코드는 렌더링에서 제외되므로 세지 않는다
-    const stripped = text.replace(/`[^`]*`/g, '');
-    const tildes = (stripped.match(/(?<!\\)~/g) || []).length;
-    if (tildes >= 2) {
-      problems.push(
-        `${file}:${paraStart}  한 문단에 물결표 ${tildes}개. 그 사이가 취소선(가로줄)으로 렌더링됩니다. \\~ 로 이스케이프하십시오.`
-      );
+    // 인라인 코드는 렌더링에서 제외되므로 검사에서 뺀다
+    const text = para.join('\n').replace(/`[^`]*`/g, '');
+
+    // 물결표 하나는 그냥 물결표로 찍힌다(astro.config.mjs에서 singleTilde를 껐다).
+    // 물결표 둘은 여전히 취소선이 된다. 이 매체는 본문에 취소선을 쓰지 않는다.
+    if (/~~/.test(text)) {
+      problems.push(`${file}:${paraStart}  물결표 두 개(~~)는 취소선이 됩니다. 범위는 물결표 하나로 쓰십시오.`);
+    }
+    // 이스케이프는 이제 필요 없다. 남아 있으면 백슬래시가 화면에 노출될 수 있다
+    if (text.includes(ESC)) {
+      problems.push(`${file}:${paraStart}  물결표 이스케이프가 남아 있습니다. 그냥 ~ 로 쓰십시오.`);
     }
     para = [];
   };
@@ -48,7 +49,7 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
     const line = lines[i];
     const st = line.trim();
 
-    if (st.startsWith('```') || st.startsWith('~~~')) {
+    if (st.startsWith('```')) {
       fenced = !fenced;
       flush();
       continue;
@@ -61,7 +62,7 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
     if (inHtml) {
       // 원시 HTML 안에서는 백슬래시가 화면에 그대로 보인다
       if (line.includes(ESC)) {
-        problems.push(`${file}:${i + 1}  HTML 블록 안의 \\~ 는 화면에 백슬래시가 그대로 보입니다. ~ 로 되돌리십시오.`);
+        problems.push(`${file}:${i + 1}  HTML 블록 안의 이스케이프는 백슬래시가 그대로 보입니다.`);
       }
       continue;
     }

@@ -3,7 +3,15 @@ import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { sectionColor } from '../../lib/sections';
-import { getIssues, articlesOfIssue, issueNumberLabel, issueDateLabel, issueHref } from '../../lib/issues';
+import {
+  getIssues,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
+  issueHref,
+} from '../../lib/issues';
 
 const issues = getIssues();
 const withCounts = await Promise.all(
@@ -50,7 +58,10 @@ const withCounts = await Promise.all(
                     />
                   </div>
                   <div class="card-body">
-                    <div class="card-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</div>
+                    <div class="card-no">
+                      {issueNumberLabel(issue)} · {collectRangeLabel(issue)}
+                      {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>}
+                    </div>
                     <div class="card-title">{issue.headline}</div>
                     <div class="card-count">{count}편 수록</div>
                   </div>

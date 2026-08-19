@@ -4,6 +4,7 @@ summary: "20년 넘게 화면 뒤 스위치로만 쓰이던 IGZO를 동국대 �
 section: paper
 reporter: PEER
 publishedAt: 2026-08-18
+collectWeekStart: '2026-08-10'
 readingMinutes: 8
 tags: [IGZO, ALD, 수직 RRAM, 뉴로모픽, 동국대]
 sources:

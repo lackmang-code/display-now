@@ -33,14 +33,36 @@ export interface IssueMeta {
   headSlug?: string;
   /** 표지에 쓴 자료의 출처 (원발행사·특허번호 등) */
   coverCredit?: string;
+  /**
+   * **이 호를 정의하는 주간의 월요일.** 'YYYY-MM-DD' (필수에 준함)
+   *
+   * 제1호 2026-08-10, 제2호 2026-08-17 … 매주 7일씩 이어진다.
+   * 기사 프론트매터의 `collectWeekStart`가 이 값과 같으면 그 호에 실린다.
+   * **발행일은 호 편성에 쓰지 않는다.** 늦게 내보내도, 늦게 보강해도 내용이 바뀌지 않는다.
+   * 발행일에서 역산하는 방식(발행일 -7 ~ -1 같은)은 쓰지 않는다.
+   */
+  weekStart: string;
   /** 자동 편성 대신 수록 기사를 직접 지정할 때만 사용 */
   slugs?: string[];
 }
 
+/**
+ * 표지와 호 페이지에 **발행일을 표기할지** 여부.
+ *
+ * 인터넷신문으로 정식 등록하기 전까지는 표기하지 않는다.
+ * 인력이 부족해 화요일을 놓치면 소급 발행하는데, 그때 발행일을 박아 두면
+ * 실제와 어긋나 보인다. 대신 **자료수집기간**을 표시한다. 그 값은 고정이라
+ * 언제 내보내도 참이다.
+ *
+ * 정식 직원이 생기고 정기간행물 등록이 끝나면 true로 바꾼다.
+ */
+export const SHOW_PUBLISH_DATE = false;
+
 export const ISSUES: IssueMeta[] = [
   {
     no: 1,
-    publishedAt: '2026-08-25',
+    publishedAt: '2026-08-18',
+    weekStart: '2026-08-10',
     headline: '발광층을 하나 덜어냈더니 색이 더 넓어졌다',
     deck: 'OLED는 10년 넘게 층을 쌓는 쪽으로만 갔습니다. LG디스플레이가 보급형에서 방향을 거꾸로 돌린 주간입니다.',
     coverSim: 'woled-stack-spectrum-demo',
@@ -48,7 +70,6 @@ export const ISSUES: IssueMeta[] = [
     // 헤드라인 기사가 커버라인에도 중복으로 뜬다.
     headSlug: '2026-08-18-lgd-2stack-woled',
     note: '창간호입니다. 네 명의 AI 기자가 각자의 자리에서 한 주를 훑었습니다. 데스크는 LG디스플레이가 스택을 줄이고도 색재현율을 올린 발표를 특허 도면으로 확인했고, 클레임은 만료된 청색 인광 특허 뒤에서 방어선이 어디로 옮겨갔는지 추적했습니다. 테커는 화면 아래로 내려가지 못한 마지막 센서인 페이스 ID를 다뤘습니다. 취재는 하지 않습니다. 공개된 논문·특허·공시만 근거로 삼고, 모든 기사 끝에 그 목록을 싣습니다.',
-    // coverImage: 표지 확정 전까지 비워 둔다. 비어 있으면 활자 표지로 렌더링된다.
   },
 ];
 
@@ -56,15 +77,39 @@ function ymd(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
-function shift(dateStr: string, days: number): string {
-  const [y, m, d] = dateStr.split('-').map(Number);
-  const dt = new Date(y, m - 1, d + days);
-  return ymd(dt);
+/**
+ * 그 호가 다룬 **취재 주간**: 직전 주 월요일 ~ 일요일.
+ *
+ * 기자들은 월요일에서 일요일까지 한 주를 수집해 **그 다음 주 화요일에 기사를 발행한다.**
+ * (예: PEER의 8월 18일자 브리핑은 8월 10일~16일 공개분을 다룬다)
+ *
+ * 주의: 이것은 **표시용 라벨**이지 수록 기사를 고르는 기준이 아니다.
+ * 기사를 고르는 기준은 `articlesOfIssue`의 발행일 일치다.
+ * 둘을 같은 축으로 착각해 이 범위로 기사를 걸렀다가 한 편도 잡히지 않은 적이 있다.
+ */
+export function issueRange(issue: IssueMeta): { from: string; to: string } {
+  if (!issue.weekStart) {
+    throw new Error(`제${issue.no}호에 weekStart(주간 월요일)가 없습니다. 발행일에서 역산하지 않습니다.`);
+  }
+  const [wy, wm, wd] = issue.weekStart.split('-').map(Number);
+  const start = new Date(wy, wm - 1, wd);
+  const end = new Date(start);
+  end.setDate(end.getDate() + 6);
+  return { from: ymd(start), to: ymd(end) };
 }
 
-/** 수록 범위: 직전 화요일 ~ 그 주 월요일 (발행일 하루 전까지) */
-export function issueRange(issue: IssueMeta): { from: string; to: string } {
-  return { from: shift(issue.publishedAt, -7), to: shift(issue.publishedAt, -1) };
+/**
+ * 앞 호에 이미 실린 기사 slug 모음.
+ * 수록을 손으로 지정한 호가 있으면 그 기사가 다음 호의 자동 범위에도 걸린다.
+ * 같은 기사가 두 호에 실리는 것을 막는다.
+ */
+function slugsInEarlierIssues(issue: IssueMeta): Set<string> {
+  const taken = new Set<string>();
+  for (const other of ISSUES) {
+    if (other.no >= issue.no) continue;
+    for (const s of other.slugs ?? []) taken.add(s);
+  }
+  return taken;
 }
 
 export async function articlesOfIssue(issue: IssueMeta): Promise<Article[]> {
@@ -72,11 +117,8 @@ export async function articlesOfIssue(issue: IssueMeta): Promise<Article[]> {
   if (issue.slugs?.length) {
     return issue.slugs.map((s) => all.find((a) => a.slug === s)).filter((a): a is Article => Boolean(a));
   }
-  const { from, to } = issueRange(issue);
-  return all.filter((a) => {
-    const key = ymd(a.data.publishedAt);
-    return key >= from && key <= to;
-  });
+  const taken = slugsInEarlierIssues(issue);
+  return all.filter((a) => !taken.has(a.slug) && a.data.collectWeekStart === issue.weekStart);
 }
 
 export function getIssues(): IssueMeta[] {
@@ -97,6 +139,16 @@ export function issueNumberLabel(issue: IssueMeta): string {
 
 export function issueDateLabel(issue: IssueMeta): string {
   return issue.publishedAt.replace(/-/g, '.');
+}
+
+/** 자료수집기간 라벨. 호의 주간이 곧 수집 주간이다 */
+export function collectRangeLabel(issue: IssueMeta): string {
+  const [y, m, d] = issue.weekStart.split('-').map(Number);
+  const start = new Date(y, m - 1, d);
+  const end = new Date(start);
+  end.setDate(end.getDate() + 6);
+  const fmt = (dt: Date) => `${String(dt.getMonth() + 1).padStart(2, '0')}.${String(dt.getDate()).padStart(2, '0')}`;
+  return `${fmt(start)} ~ ${fmt(end)} 자료수집`;
 }
 
 export function issueRangeLabel(issue: IssueMeta): string {
