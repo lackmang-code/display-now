@@ -44,7 +44,10 @@ const grouped = SECTION_ORDER.map((key) => ({
       <div class="cover-inner">
       <div class="cover-top">
         <div class="mast-col">
-          <a href="/" class="mast">DISPLAY NOW</a>
+          <a href="/" class="mast">
+            <img class="mast-mark" src="/logo/dn-mark.png" alt="" width="512" height="429" />
+            <span>DISPLAY NOW</span>
+          </a>
           <span class="identity">100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진</span>
         </div>
         <span class="issue-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</span>
@@ -209,12 +212,22 @@ const grouped = SECTION_ORDER.map((key) => ({
     word-break: keep-all;
   }
   .mast {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.4vw, 14px);
     font-family: var(--font-serif);
     font-size: clamp(30px, 7vw, 62px);
     font-weight: 700;
     letter-spacing: -0.045em;
     line-height: 1;
     color: var(--gold);
+  }
+  /* 마크는 제호보다 작게. 표지 활자 위계는 제호가 언제나 맨 위다 */
+  .mast-mark {
+    height: 0.78em;
+    width: auto;
+    display: block;
+    flex: 0 0 auto;
   }
   .issue-no {
     font-family: var(--font-mono);

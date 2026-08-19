@@ -1,0 +1,675 @@
+---
+import Base from '../layouts/Base.astro';
+import { SECTIONS, SECTION_ORDER } from '../lib/sections';
+
+const SECTION_LABELS = Object.fromEntries(SECTION_ORDER.map((k) => [k, SECTIONS[k].label]));
+---
+
+<Base title="편집국 관리 | DISPLAY NOW" noindex={true}>
+  <div class="frame">
+    <div class="ad-head">
+      <span class="ad-mast">DISPLAY NOW</span>
+      <span class="ad-tag">편집국 관리</span>
+    </div>
+
+    <main class="ad-wrap">
+      <div id="loginBox" class="ad-login">
+        <label class="ad-label" for="pwInput">관리자 비밀번호</label>
+        <div class="ad-login-row">
+          <input class="ad-input" id="pwInput" type="password" autocomplete="off" />
+          <button class="ad-btn" id="loginBtn" type="button">로그인</button>
+        </div>
+        <p class="ad-error" id="loginError" hidden></p>
+      </div>
+
+      <div id="tabs" class="ad-tabs" hidden>
+        <button class="ad-tab" id="tabBoard" type="button" aria-selected="true">문의</button>
+        <button class="ad-tab" id="tabSubs" type="button" aria-selected="false">구독자</button>
+      </div>
+
+      <div id="boardWrap" hidden>
+        <div class="ad-toolbar">
+          <span class="ad-count" id="postCountEl"></span>
+          <span class="ad-tools">
+            <button class="ad-btn ghost" id="postRefreshBtn" type="button">새로고침</button>
+          </span>
+        </div>
+        <p class="ad-empty" id="postEmptyMsg" hidden>아직 등록된 문의가 없습니다.</p>
+        <p class="ad-error" id="postErrorMsg" hidden></p>
+        <div id="postList"></div>
+      </div>
+
+      <div id="listWrap" hidden>
+        <div class="ad-toolbar">
+          <span class="ad-count" id="countEl"></span>
+          <span class="ad-tools">
+            <button class="ad-btn ghost" id="refreshBtn" type="button">새로고침</button>
+            <button class="ad-btn ghost" id="csvBtn" type="button">CSV 내려받기</button>
+          </span>
+        </div>
+        <p class="ad-empty" id="emptyMsg" hidden>아직 구독자가 없습니다.</p>
+        <div class="ad-table-scroll">
+          <table class="ad-table" id="subTable" hidden>
+            <thead>
+              <tr>
+                <th>신청일</th>
+                <th>이메일</th>
+                <th>이름</th>
+                <th>소속</th>
+                <th>담당</th>
+                <th>관심 꼭지</th>
+                <th>남긴 말</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="subBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script id="section-labels" type="application/json" set:html={JSON.stringify(SECTION_LABELS)} />
+</Base>
+
+<style>
+  .ad-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--on-dark);
+    padding: 14px clamp(12px, 3vw, 24px);
+  }
+  .ad-mast {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .ad-tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--on-dark-mute);
+  }
+
+  .ad-wrap {
+    padding: 32px clamp(12px, 3vw, 24px) 60px;
+  }
+
+  .ad-login {
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .ad-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .ad-login-row {
+    display: flex;
+    gap: 8px;
+  }
+  .ad-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    background: var(--paper);
+    border: 1px solid var(--line-frame);
+    padding: 10px 12px;
+    color: var(--ink);
+  }
+  :global(.ad-btn) {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--on-dark);
+    background: var(--ink);
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+  :global(.ad-btn.ghost) {
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line-frame);
+    font-weight: 500;
+    padding: 8px 14px;
+  }
+  :global(.ad-btn:disabled) {
+    opacity: 0.5;
+    cursor: default;
+  }
+  .ad-error {
+    margin: 10px 0 0;
+    font-size: 13.5px;
+    color: oklch(0.5 0.19 25);
+  }
+
+  .ad-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .ad-tabs[hidden] {
+    display: none;
+  }
+  .ad-tab {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--meta-soft);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 9px 14px;
+    cursor: pointer;
+  }
+  .ad-tab[aria-selected='true'] {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  :global(.ad-post) {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  :global(.ad-post-head) {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  :global(.ad-post-kind) {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--on-dark);
+    background: var(--ink-mute);
+    padding: 3px 7px;
+  }
+  :global(.ad-post-title) {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    flex: 1 1 auto;
+    min-width: 0;
+    word-break: keep-all;
+  }
+  :global(.ad-post-badge) {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 3px 7px;
+    border: 1px solid var(--line-frame);
+    color: var(--meta-soft);
+  }
+  :global(.ad-post-badge.answered) {
+    color: oklch(0.42 0.12 150);
+    border-color: oklch(0.42 0.12 150 / 0.4);
+  }
+  :global(.ad-post-contact) {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--meta);
+    margin-top: 6px;
+  }
+  :global(.ad-post-body) {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+  :global(.ad-reply-existing) {
+    margin-top: 12px;
+    border-left: 3px solid var(--ink);
+    background: var(--card-warm);
+    padding: 10px 13px;
+    font-size: 14px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+  :global(.ad-reply-input) {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line-frame);
+    padding: 10px 12px;
+    min-height: 80px;
+    resize: vertical;
+    margin-top: 12px;
+  }
+  :global(.ad-post-actions) {
+    display: flex;
+    gap: 8px;
+    margin-top: 9px;
+  }
+
+  .ad-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .ad-count {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--ink-mute);
+  }
+  .ad-tools {
+    display: flex;
+    gap: 8px;
+  }
+  .ad-empty {
+    font-size: 14.5px;
+    color: var(--meta-soft);
+  }
+
+  /* 열이 많아 좁은 화면에서는 표만 가로로 스크롤시킨다 */
+  .ad-table-scroll {
+    overflow-x: auto;
+  }
+  .ad-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    font-size: 13.5px;
+  }
+  .ad-table th,
+  .ad-table :global(td) {
+    border: 1px solid var(--line);
+    padding: 9px 10px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  .ad-table th {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    background: var(--card-warm);
+    font-weight: 500;
+  }
+  .ad-table :global(td.wrap) {
+    white-space: normal;
+    min-width: 180px;
+    max-width: 320px;
+    word-break: keep-all;
+  }
+  .ad-table :global(td.mono) {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-mute);
+  }
+  :global(.ad-del) {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    color: oklch(0.5 0.19 25);
+    background: transparent;
+    border: 1px solid var(--line-frame);
+    padding: 4px 9px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const LABELS: Record<string, string> = JSON.parse(
+    document.getElementById('section-labels')?.textContent || '{}'
+  );
+
+  let ADMIN_PW = '';
+  let rows: any[] = [];
+
+  const loginBox = document.getElementById('loginBox');
+  const listWrap = document.getElementById('listWrap');
+  const pwInput = document.getElementById('pwInput') as HTMLInputElement | null;
+  const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement | null;
+  const loginError = document.getElementById('loginError');
+  const countEl = document.getElementById('countEl');
+  const emptyMsg = document.getElementById('emptyMsg');
+  const table = document.getElementById('subTable');
+  const tbody = document.getElementById('subBody');
+  const refreshBtn = document.getElementById('refreshBtn');
+  const csvBtn = document.getElementById('csvBtn');
+
+  const tabs = document.getElementById('tabs');
+  const tabBoard = document.getElementById('tabBoard');
+  const tabSubs = document.getElementById('tabSubs');
+  const boardWrap = document.getElementById('boardWrap');
+  const postListEl = document.getElementById('postList');
+  const postCountEl = document.getElementById('postCountEl');
+  const postEmptyMsg = document.getElementById('postEmptyMsg');
+  const postErrorMsg = document.getElementById('postErrorMsg');
+  const postRefreshBtn = document.getElementById('postRefreshBtn');
+
+  function showLoginError(msg: string) {
+    if (!loginError) return;
+    loginError.hidden = false;
+    loginError.textContent = msg;
+  }
+
+  async function callApi(action: string, extra: Record<string, unknown> = {}) {
+    const res = await fetch('/api/subscribers', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ password: ADMIN_PW || pwInput?.value || '', action, ...extra }),
+    });
+    return { res, data: await res.json() };
+  }
+
+  async function callBoard(action: string, extra: Record<string, unknown> = {}) {
+    const res = await fetch('/api/board/admin', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ password: ADMIN_PW || pwInput?.value || '', action, ...extra }),
+    });
+    return { res, data: await res.json() };
+  }
+
+  async function login() {
+    const pw = pwInput?.value || '';
+    if (!pw) return;
+    if (loginError) loginError.hidden = true;
+    if (loginBtn) {
+      loginBtn.disabled = true;
+      loginBtn.textContent = '확인 중...';
+    }
+    try {
+      const { res, data } = await callApi('list');
+      if (!res.ok || !data.success) {
+        if (data.error === 'admin_not_configured') {
+          showLoginError('서버에 ADMIN_PASSWORD가 설정돼 있지 않습니다. Cloudflare Pages 환경변수를 먼저 등록해 주십시오.');
+        } else if (data.error === 'kv_not_bound') {
+          showLoginError('구독자 저장소(KV)가 연결돼 있지 않습니다.');
+        } else {
+          showLoginError('비밀번호가 올바르지 않습니다.');
+        }
+        return;
+      }
+      ADMIN_PW = pw;
+      if (loginBox) loginBox.hidden = true;
+      if (tabs) tabs.hidden = false;
+      render(data);
+      showTab('board');
+      loadPosts();
+    } catch {
+      showLoginError('접속 중 오류가 발생했습니다.');
+    } finally {
+      if (loginBtn) {
+        loginBtn.disabled = false;
+        loginBtn.textContent = '로그인';
+      }
+    }
+  }
+
+  function fmtDate(iso: string | null) {
+    if (!iso) return '·';
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '·';
+    return d.toLocaleString('ko-KR',
+   {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+
+  function render(data: any) {
+    rows = Array.isArray(data.subscribers) ? data.subscribers : [];
+    if (countEl) countEl.textContent = `구독자 ${rows.length}명`;
+    if (tabSubs) tabSubs.textContent = `구독자 ${rows.length}`;
+    if (!tbody) return;
+    tbody.textContent = '';
+
+    if (!rows.length) {
+      if (emptyMsg) emptyMsg.hidden = false;
+      if (table) table.hidden = true;
+      return;
+    }
+    if (emptyMsg) emptyMsg.hidden = true;
+    if (table) table.hidden = false;
+
+    for (const s of rows) {
+      const tr = document.createElement('tr');
+      const interests = Array.isArray(s.interests)
+        ? s.interests.map((k: string) => LABELS[k] || k).join(' · ')
+        : '';
+
+      // textContent로만 넣어 구독자가 적은 값이 마크업으로 해석되지 않게 한다
+      const cells: Array<[string, string]> = [
+        ['mono', fmtDate(s.subscribedAt)],
+        ['mono', s.email || ''],
+        ['', s.name || ''],
+        ['', s.org || ''],
+        ['', s.role || ''],
+        ['', interests],
+        ['wrap', s.note || ''],
+      ];
+      for (const [cls, text] of cells) {
+        const td = document.createElement('td');
+        if (cls) td.className = cls;
+        td.textContent = text || '·';
+        tr.appendChild(td);
+      }
+
+      const actionTd = document.createElement('td');
+      const del = document.createElement('button');
+      del.className = 'ad-del';
+      del.type = 'button';
+      del.textContent = '해지';
+      del.addEventListener('click', () => remove(s.email, del));
+      actionTd.appendChild(del);
+      tr.appendChild(actionTd);
+
+      tbody.appendChild(tr);
+    }
+  }
+
+  async function refresh() {
+    const { res, data } = await callApi('list');
+    if (res.ok && data.success) render(data);
+  }
+
+  // 브라우저 confirm은 쓰지 않는다. 버튼을 두 번 눌러야 지워지게 해서 오조작만 막는다
+  async function remove(email: string, btn: HTMLButtonElement) {
+    if (btn.dataset.armed !== '1') {
+      btn.dataset.armed = '1';
+      btn.textContent = '한 번 더';
+      setTimeout(() => {
+        if (btn.dataset.armed === '1') {
+          btn.dataset.armed = '';
+          btn.textContent = '해지';
+        }
+      }, 4000);
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = '처리 중';
+    const { res, data } = await callApi('delete', { email });
+    if (res.ok && data.success) {
+      await refresh();
+    } else {
+      btn.disabled = false;
+      btn.textContent = '해지';
+    }
+  }
+
+  function toCsv() {
+    const head = ['신청일', '갱신일', '이메일', '이름', '소속', '담당', '관심꼭지', '남긴말', '유입'];
+    const esc = (v: unknown) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+    const lines = [head.map(esc).join(',')];
+    for (const s of rows) {
+      const interests = Array.isArray(s.interests) ? s.interests.map((k: string) => LABELS[k] || k).join(' · ') : '';
+      lines.push(
+        [s.subscribedAt, s.updatedAt, s.email, s.name, s.org, s.role, interests, s.note, s.source]
+          .map(esc)
+          .join(',')
+      );
+    }
+    // 엑셀이 UTF-8로 열도록 BOM을 붙인다
+    const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'display-now-subscribers.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function showTab(which: 'board' | 'subs') {
+    const onBoard = which === 'board';
+    if (boardWrap) boardWrap.hidden = !onBoard;
+    if (listWrap) listWrap.hidden = onBoard;
+    tabBoard?.setAttribute('aria-selected', String(onBoard));
+    tabSubs?.setAttribute('aria-selected', String(!onBoard));
+  }
+
+  function node(tag: string, cls?: string, text?: string) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderPosts(posts: any[]) {
+    if (!postListEl) return;
+    postListEl.textContent = '';
+    if (postCountEl) postCountEl.textContent = `문의 ${posts.length}건`;
+    if (tabBoard) tabBoard.textContent = `문의 ${posts.length}`;
+    if (postEmptyMsg) postEmptyMsg.hidden = posts.length > 0;
+
+    for (const p of posts) {
+      const box = node('div', 'ad-post');
+
+      const head = node('div', 'ad-post-head');
+      head.appendChild(node('span', 'ad-post-kind', p.kind || '기타'));
+      head.appendChild(node('span', 'ad-post-title', `#${p.id} ${p.title}`));
+      if (p.is_private) head.appendChild(node('span', 'ad-post-badge', '비공개'));
+      head.appendChild(
+        node('span', 'ad-post-badge' + (p.replied_at ? ' answered' : ''), p.replied_at ? '답변완료' : '답변대기')
+      );
+      box.appendChild(head);
+
+      const contact = [p.name, p.email, p.org].filter(Boolean).join(' · ');
+      box.appendChild(node('div', 'ad-post-contact', `${contact} · ${fmtDate(p.created_at)}`));
+      box.appendChild(node('div', 'ad-post-body', p.message));
+
+      if (p.reply) {
+        box.appendChild(node('div', 'ad-reply-existing', `편집국 답변 (${fmtDate(p.replied_at)})
+${p.reply}`));
+      }
+
+      const ta = document.createElement('textarea');
+      ta.className = 'ad-reply-input';
+      ta.placeholder = p.reply ? '답변 수정' : '답변 작성';
+      ta.value = p.reply || '';
+      box.appendChild(ta);
+
+      const actions = node('div', 'ad-post-actions');
+      const saveBtn = node('button', 'ad-btn ghost', p.reply ? '답변 수정' : '답변 등록') as HTMLButtonElement;
+      saveBtn.type = 'button';
+      saveBtn.addEventListener('click',
+  async () => {
+        const text = ta.value.trim();
+        if (!text) return;
+        saveBtn.disabled = true;
+        saveBtn.textContent = '저장 중';
+        const { res, data } = await callBoard('reply', { id: p.id, reply: text });
+        if (res.ok && data.success) {
+          await loadPosts();
+        } else {
+          saveBtn.disabled = false;
+          saveBtn.textContent = '답변 등록';
+        }
+      });
+      actions.appendChild(saveBtn);
+
+      // 브라우저 confirm은 쓰지 않는다. 두 번 눌러야 지워지게 해서 오조작만 막는다
+      const delBtn = node('button', 'ad-del', '삭제') as HTMLButtonElement;
+      delBtn.type = 'button';
+      delBtn.addEventListener('click',
+  async () => {
+        if (delBtn.dataset.armed !== '1') {
+          delBtn.dataset.armed = '1';
+          delBtn.textContent = '한 번 더';
+          setTimeout(() => {
+            if (delBtn.dataset.armed === '1') {
+              delBtn.dataset.armed = '';
+              delBtn.textContent = '삭제';
+            }
+          }, 4000);
+          return;
+        }
+        delBtn.disabled = true;
+        delBtn.textContent = '처리 중';
+        const { res, data } = await callBoard('delete', { id: p.id });
+        if (res.ok && data.success) {
+          await loadPosts();
+        } else {
+          delBtn.disabled = false;
+          delBtn.textContent = '삭제';
+        }
+      });
+      actions.appendChild(delBtn);
+      box.appendChild(actions);
+
+      postListEl.appendChild(box);
+    }
+  }
+
+  async function loadPosts() {
+    if (postErrorMsg) postErrorMsg.hidden = true;
+    try {
+      const { res, data } = await callBoard('list');
+      if (res.ok && data.success) {
+        renderPosts(data.posts || []);
+        return;
+      }
+      if (postErrorMsg) {
+        postErrorMsg.hidden = false;
+        postErrorMsg.textContent =
+          data.error === 'db_not_bound'
+            ? '게시판 데이터베이스(BOARD_DB)가 연결돼 있지 않습니다. Cloudflare Pages에서 D1 바인딩을 추가해 주십시오.'
+            : '문의 목록을 불러오지 못했습니다.';
+      }
+      if (postCountEl) postCountEl.textContent = '';
+    } catch {
+      if (postErrorMsg) {
+        postErrorMsg.hidden = false;
+        postErrorMsg.textContent = '문의 목록을 불러오지 못했습니다.';
+      }
+    }
+  }
+
+  loginBtn?.addEventListener('click', login);
+  pwInput?.addEventListener('keydown',
+  (e) => {
+    if (e.key === 'Enter') login();
+  });
+  refreshBtn?.addEventListener('click', refresh);
+  csvBtn?.addEventListener('click', toCsv);
+  postRefreshBtn?.addEventListener('click', loadPosts);
+  tabBoard?.addEventListener('click', () => showTab('board'));
+  tabSubs?.addEventListener('click', () => showTab('subs'));
+</script>

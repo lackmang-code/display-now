@@ -1,0 +1,720 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// 문의 게시판 전용 페이지.
+// 넥스트아이오 홈페이지 문의 게시판(01_Company/홈페이지/index.html #contact)과 같은 방식이다.
+// 목록은 아코디언, 비밀글은 자물쇠 표시 후 비밀번호로 열람, 하단에 관리자 진입 링크.
+const KINDS = ['제보', '정정 요청', '광고 문의', '제휴 문의', '기타'];
+---
+
+<Base
+  title="문의 게시판 | DISPLAY NOW"
+  description="DISPLAY NOW 편집국에 제보와 기사 정정 요청, 광고와 제휴 문의를 남기는 곳입니다."
+>
+  <div class="frame">
+    <Header />
+
+    <main class="bd-wrap">
+      <p class="bd-eyebrow">CONTACT THE DESK</p>
+      <h1>문의 게시판</h1>
+      <p class="bd-tagline">
+        기사 정정 요청과 제보, 광고와 제휴 문의를 이곳으로 받습니다. 남기신 글에는 편집국이 직접 답을 답니다.
+        공개를 원하지 않으시면 비공개로 남겨 주십시오. 작성하신 비밀번호로만 열립니다.
+      </p>
+
+      <form id="boardForm" class="bd-form" novalidate>
+        <div class="bd-full">
+          <label class="bd-label" for="bd-kind">문의 종류 <span class="bd-req">*</span></label>
+          <select class="bd-input" id="bd-kind" name="kind" required>
+            {KINDS.map((k) => <option value={k}>{k}</option>)}
+          </select>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-col">
+            <label class="bd-label" for="bd-name">이름 <span class="bd-req">*</span></label>
+            <input class="bd-input" id="bd-name" type="text" name="name" placeholder="성함" required />
+          </div>
+          <div class="bd-col">
+            <label class="bd-label" for="bd-email">이메일 <span class="bd-req">*</span></label>
+            <input class="bd-input" id="bd-email" type="email" name="email" placeholder="답장받을 이메일 주소" required />
+          </div>
+        </div>
+
+        <div class="bd-full">
+          <label class="bd-label" for="bd-org">소속 · 기관</label>
+          <input class="bd-input" id="bd-org" type="text" name="org" placeholder="회사 · 학교 · 기관명 (선택)" />
+        </div>
+
+        <div class="bd-full">
+          <label class="bd-label" for="bd-title">제목 <span class="bd-req">*</span></label>
+          <input class="bd-input" id="bd-title" type="text" name="title" placeholder="한 줄로 요약해 주십시오" required />
+        </div>
+
+        <div class="bd-full">
+          <label class="bd-label" for="bd-message">내용 <span class="bd-req">*</span></label>
+          <textarea
+            class="bd-textarea"
+            id="bd-message"
+            name="message"
+            placeholder="기사 정정이라면 해당 기사 제목과 어느 수치가 틀렸는지 적어 주시면 확인이 빠릅니다."
+            required></textarea>
+        </div>
+
+        <div class="bd-full bd-pw-wrap" id="bd-pw-wrap" hidden>
+          <label class="bd-label" for="bd-pw">비밀번호 <span class="bd-req">*</span></label>
+          <input
+            class="bd-input"
+            id="bd-pw"
+            type="password"
+            placeholder="나중에 글을 열어볼 때 필요합니다 (4자 이상)"
+            minlength="4"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="bd-hp" aria-hidden="true">
+          <label for="bd-website">Website</label>
+          <input id="bd-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="bd-actions">
+          <label class="bd-priv">
+            <input type="checkbox" id="bd-priv-chk" />
+            <span>비공개로 남기기</span>
+          </label>
+          <button type="submit" class="bd-submit" id="bd-btn">게시하기</button>
+        </div>
+
+        <p class="bd-error" id="bd-error" hidden></p>
+      </form>
+
+      <div id="boardDone" class="bd-result" hidden>
+        <div class="bd-result-icon">✓</div>
+        <p class="bd-result-title">등록되었습니다</p>
+        <p class="bd-result-sub" id="bd-done-sub">편집국이 확인하고 답을 달겠습니다.</p>
+        <button class="bd-result-btn" id="bd-again-btn" type="button">다시 작성하기</button>
+      </div>
+
+      <div id="boardFail" class="bd-result" hidden>
+        <div class="bd-result-icon fail">✕</div>
+        <p class="bd-result-title">등록에 실패했습니다</p>
+        <p class="bd-result-sub" id="bd-fail-msg">잠시 후 다시 시도해 주십시오.</p>
+        <button class="bd-result-btn" id="bd-fail-again-btn" type="button">다시 작성하기</button>
+      </div>
+
+      <div class="bd-listhead">
+        <span class="bd-listtitle">남겨주신 글</span>
+        <span class="bd-listcount" id="bd-count"></span>
+      </div>
+
+      <div class="bd-list" id="boardList">
+        <p class="bd-loading" id="bdLoading">목록을 불러오는 중입니다.</p>
+      </div>
+
+      <div class="bd-foot">
+        <a class="bd-admin" href="/admin">관리자</a>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .bd-wrap {
+    padding: 40px clamp(14px, 4vw, 32px) 60px;
+    max-width: 760px;
+  }
+  .bd-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    color: var(--meta);
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 5vw, 38px);
+    letter-spacing: -0.035em;
+    margin: 0 0 12px;
+  }
+  .bd-tagline {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    word-break: keep-all;
+    margin: 0 0 28px;
+  }
+
+  .bd-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: clamp(18px, 3.5vw, 26px);
+  }
+  /* display를 직접 지정한 요소는 hidden 속성만으로 감춰지지 않는다 */
+  .bd-form[hidden],
+  .bd-result[hidden],
+  .bd-pw-wrap[hidden] {
+    display: none;
+  }
+  .bd-row {
+    display: flex;
+    gap: 14px;
+  }
+  .bd-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .bd-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    margin-bottom: 7px;
+  }
+  .bd-req {
+    color: oklch(0.55 0.19 25);
+  }
+  .bd-input,
+  .bd-textarea {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line-frame);
+    padding: 11px 12px;
+  }
+  .bd-textarea {
+    min-height: 130px;
+    line-height: 1.7;
+    resize: vertical;
+  }
+  .bd-input:focus,
+  .bd-textarea:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: -1px;
+  }
+  .bd-input.bad {
+    border-color: oklch(0.55 0.19 25);
+  }
+  .bd-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .bd-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 16px;
+  }
+  .bd-priv {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--ink-mute);
+    cursor: pointer;
+  }
+  .bd-submit {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--on-dark);
+    background: var(--ink);
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+  }
+  .bd-submit:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  .bd-error {
+    margin: 0;
+    font-size: 14px;
+    color: oklch(0.5 0.19 25);
+  }
+
+  .bd-result {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 44px 24px;
+    text-align: center;
+  }
+  .bd-result-icon {
+    font-size: 34px;
+    line-height: 1;
+    color: oklch(0.55 0.14 150);
+    margin-bottom: 14px;
+  }
+  .bd-result-icon.fail {
+    color: oklch(0.55 0.19 25);
+  }
+  .bd-result-title {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  .bd-result-sub {
+    font-size: 14.5px;
+    color: var(--ink-mute);
+    margin: 0 0 20px;
+    word-break: keep-all;
+  }
+  .bd-result-btn {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--ink);
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .bd-listhead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 40px 0 0;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .bd-listtitle {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .bd-listcount {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--meta);
+  }
+  .bd-loading {
+    font-size: 14px;
+    color: var(--meta-soft);
+    margin: 16px 0 0;
+  }
+
+  /* 아래는 자바스크립트가 만들어내는 요소다.
+     Astro 스코프 속성이 붙지 않으므로 :global로 열어 둔다 */
+  .bd-list :global(.bd-empty) {
+    font-size: 14px;
+    color: var(--meta-soft);
+    margin: 16px 0 0;
+  }
+  .bd-list :global(.bd-item) {
+    border-bottom: 1px solid var(--line);
+  }
+  .bd-list :global(.bd-item > summary) {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 13px 2px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .bd-list :global(.bd-item > summary::-webkit-details-marker) {
+    display: none;
+  }
+  .bd-list :global(.bd-item[open] > summary) {
+    border-bottom: 1px dashed var(--line);
+  }
+  .bd-list :global(.bd-kind) {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--on-dark);
+    background: var(--ink-mute);
+    padding: 3px 7px;
+    flex: 0 0 auto;
+  }
+  .bd-list :global(.bd-title) {
+    font-family: var(--font-serif);
+    font-size: 16.5px;
+    letter-spacing: -0.02em;
+    flex: 1 1 200px;
+    min-width: 0;
+    word-break: keep-all;
+  }
+  .bd-list :global(.bd-meta) {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--meta);
+    flex: 0 0 auto;
+  }
+  .bd-list :global(.bd-badge) {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    padding: 3px 7px;
+    border: 1px solid var(--line-frame);
+    color: var(--meta-soft);
+    flex: 0 0 auto;
+  }
+  .bd-list :global(.bd-badge.answered) {
+    color: oklch(0.42 0.12 150);
+    border-color: oklch(0.42 0.12 150 / 0.4);
+  }
+  .bd-list :global(.bd-body) {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    padding: 12px 2px 4px;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+  .bd-list :global(.bd-reply) {
+    margin: 8px 0 14px;
+    border-left: 3px solid var(--ink);
+    background: var(--card-warm);
+    padding: 11px 14px;
+  }
+  .bd-list :global(.bd-reply-head) {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    margin-bottom: 6px;
+  }
+  .bd-list :global(.bd-reply-body) {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--ink);
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
+  .bd-list :global(.bd-noreply) {
+    font-size: 13.5px;
+    color: var(--meta-soft);
+    padding: 4px 2px 14px;
+    margin: 0;
+  }
+  .bd-list :global(.bd-unlock) {
+    display: flex;
+    gap: 8px;
+    padding: 12px 2px 14px;
+  }
+  .bd-list :global(.bd-unlock input) {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    background: var(--paper);
+    border: 1px solid var(--line-frame);
+    padding: 8px 10px;
+    max-width: 220px;
+  }
+  .bd-list :global(.bd-unlock button) {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line-frame);
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  .bd-list :global(.bd-unlock-err) {
+    font-size: 13px;
+    color: oklch(0.5 0.19 25);
+    padding: 0 2px 12px;
+    margin: 0;
+  }
+
+  .bd-foot {
+    margin-top: 28px;
+    text-align: right;
+  }
+  .bd-admin {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--meta);
+    border-bottom: 1px solid var(--line-frame);
+  }
+  .bd-admin:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 560px) {
+    .bd-row {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bd-actions {
+      align-items: stretch;
+    }
+    .bd-submit {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('boardForm') as HTMLFormElement | null;
+  const btn = document.getElementById('bd-btn') as HTMLButtonElement | null;
+  const privChk = document.getElementById('bd-priv-chk') as HTMLInputElement | null;
+  const pwWrap = document.getElementById('bd-pw-wrap');
+  const pwInput = document.getElementById('bd-pw') as HTMLInputElement | null;
+  const kindSel = document.getElementById('bd-kind') as HTMLSelectElement | null;
+  const errorEl = document.getElementById('bd-error');
+  const done = document.getElementById('boardDone');
+  const fail = document.getElementById('boardFail');
+  const failMsg = document.getElementById('bd-fail-msg');
+  const listEl = document.getElementById('boardList');
+  const countEl = document.getElementById('bd-count');
+
+  // 푸터의 "정정 및 제보"·"광고 문의"에서 종류를 지정해 들어온다.
+  // 홈페이지 게시판의 goToContactFor()와 같은 역할이다
+  const wanted = new URLSearchParams(location.search).get('kind');
+  if (wanted && kindSel) {
+    const hit = [...kindSel.options].find((o) => o.value === wanted);
+    if (hit) kindSel.value = wanted;
+  }
+
+  function showError(msg: string) {
+    if (!errorEl) return;
+    errorEl.hidden = false;
+    errorEl.textContent = msg;
+  }
+
+  privChk?.addEventListener('change', () => {
+    if (pwWrap) pwWrap.hidden = !privChk.checked;
+    if (!privChk.checked && pwInput) pwInput.value = '';
+  });
+
+  function resetForm() {
+    if (done) done.hidden = true;
+    if (fail) fail.hidden = true;
+    if (form) {
+      form.hidden = false;
+      form.reset();
+    }
+    if (pwWrap) pwWrap.hidden = true;
+    if (errorEl) errorEl.hidden = true;
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = '게시하기';
+    }
+  }
+
+  document.getElementById('bd-again-btn')?.addEventListener('click', resetForm);
+  document.getElementById('bd-fail-again-btn')?.addEventListener('click', resetForm);
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (errorEl) errorEl.hidden = true;
+
+    const fd = new FormData(form);
+    const val = (k: string) => String(fd.get(k) || '').trim();
+    const payload = {
+      kind: val('kind'),
+      name: val('name'),
+      email: val('email'),
+      org: val('org'),
+      title: val('title'),
+      message: val('message'),
+      website: val('website'),
+      is_private: Boolean(privChk?.checked),
+      post_password: pwInput?.value || '',
+    };
+
+    if (!payload.name || !payload.title || !payload.message) {
+      showError('이름과 제목, 내용을 채워 주십시오.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      showError('이메일 주소를 확인해 주십시오.');
+      return;
+    }
+    if (payload.is_private && payload.post_password.length < 4) {
+      showError('비공개 글은 4자 이상의 비밀번호가 필요합니다.');
+      pwInput?.focus();
+      return;
+    }
+
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '등록 중...';
+    }
+
+    try {
+      const res = await fetch('/api/board/submit', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.hidden = true;
+        if (done) done.hidden = false;
+        loadList();
+        return;
+      }
+      form.hidden = true;
+      if (fail) fail.hidden = false;
+      if (failMsg) {
+        failMsg.textContent =
+          data.error === 'db_not_bound'
+            ? '게시판 저장소가 아직 연결되지 않았습니다. info@nextio.ai.kr로 보내 주시면 확인하겠습니다.'
+            : '잠시 후 다시 시도해 주십시오.';
+      }
+    } catch {
+      form.hidden = true;
+      if (fail) fail.hidden = false;
+      if (failMsg) failMsg.textContent = '네트워크 오류입니다. 잠시 후 다시 시도해 주십시오.';
+    }
+  });
+
+  function fmtDate(iso: string) {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '';
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}.${mm}.${dd}`;
+  }
+
+  // 남이 쓴 값은 전부 textContent로만 넣는다. innerHTML을 쓰면 남의 글이 마크업이 된다
+  function el(tag: string, cls?: string, text?: string) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function replyBox(reply: string, repliedAt: string) {
+    const box = el('div', 'bd-reply');
+    box.appendChild(el('div', 'bd-reply-head', `편집국 답변 · ${fmtDate(repliedAt)}`));
+    box.appendChild(el('div', 'bd-reply-body', reply));
+    return box;
+  }
+
+  function renderPost(p: any) {
+    const item = document.createElement('details');
+    item.className = 'bd-item';
+
+    const summary = document.createElement('summary');
+    summary.appendChild(el('span', 'bd-kind', p.kind || '기타'));
+    summary.appendChild(el('span', 'bd-title', (p.is_private ? '🔒 ' : '') + p.title));
+    summary.appendChild(el('span', 'bd-meta', `${p.name} · ${fmtDate(p.created_at)}`));
+    summary.appendChild(
+      el('span', 'bd-badge' + (p.answered ? ' answered' : ''), p.answered ? '답변완료' : '답변대기')
+    );
+    item.appendChild(summary);
+
+    if (!p.is_private) {
+      item.appendChild(el('p', 'bd-body', p.message));
+      if (p.reply) item.appendChild(replyBox(p.reply, p.replied_at));
+      else item.appendChild(el('p', 'bd-noreply', '아직 답변이 등록되지 않았습니다.'));
+      return item;
+    }
+
+    // 비밀글은 펼쳐도 비밀번호를 넣어야 본문이 나온다
+    const box = el('div', 'bd-unlock');
+    const input = document.createElement('input');
+    input.type = 'password';
+    input.placeholder = '작성 시 입력한 비밀번호';
+    const go = el('button', undefined, '확인') as HTMLButtonElement;
+    go.type = 'button';
+    box.appendChild(input);
+    box.appendChild(go);
+    item.appendChild(box);
+
+    const err = el('p', 'bd-unlock-err');
+    err.hidden = true;
+    item.appendChild(err);
+
+    async function unlock() {
+      if (!input.value) return;
+      go.disabled = true;
+      go.textContent = '확인 중';
+      err.hidden = true;
+      try {
+        const res = await fetch('/api/board/unlock', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ id: p.id, password: input.value }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          const title = summary.querySelector('.bd-title');
+          if (title) title.textContent = data.post.title;
+          box.remove();
+          err.remove();
+          item.appendChild(el('p', 'bd-body', data.post.message));
+          if (data.post.reply) item.appendChild(replyBox(data.post.reply, data.post.replied_at));
+          else item.appendChild(el('p', 'bd-noreply', '아직 답변이 등록되지 않았습니다.'));
+          return;
+        }
+        err.hidden = false;
+        if (data.error === 'too_many_attempts') {
+          err.textContent = '시도 횟수를 초과했습니다. 10분 뒤에 다시 시도해 주십시오.';
+        } else if (typeof data.remaining === 'number') {
+          err.textContent = `비밀번호가 일치하지 않습니다. ${data.remaining}번 남았습니다.`;
+        } else {
+          err.textContent = '비밀번호가 일치하지 않습니다.';
+        }
+      } catch {
+        err.hidden = false;
+        err.textContent = '확인 중 오류가 발생했습니다.';
+      }
+      go.disabled = false;
+      go.textContent = '확인';
+    }
+
+    go.addEventListener('click', unlock);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        unlock();
+      }
+    });
+
+    return item;
+  }
+
+  async function loadList() {
+    if (!listEl) return;
+    try {
+      const res = await fetch('/api/board/list');
+      const data = await res.json();
+      listEl.textContent = '';
+      const posts = data.posts || [];
+      if (countEl) countEl.textContent = data.success ? `${posts.length}건` : '';
+      if (!data.success || !posts.length) {
+        // 저장소 미연결 상태를 독자에게 오류로 보여주지 않는다
+        const msg = data.success
+          ? '아직 등록된 글이 없습니다.'
+          : data.error === 'db_not_bound'
+            ? '게시판을 준비하고 있습니다. 그동안 info@nextio.ai.kr로 보내 주십시오.'
+            : '목록을 불러오지 못했습니다.';
+        listEl.appendChild(el('p', 'bd-empty', msg));
+        return;
+      }
+      for (const p of posts) listEl.appendChild(renderPost(p));
+    } catch {
+      listEl.textContent = '';
+      if (countEl) countEl.textContent = '';
+      listEl.appendChild(el('p', 'bd-empty', '목록을 불러오지 못했습니다.'));
+    }
+  }
+
+  loadList();
+</script>

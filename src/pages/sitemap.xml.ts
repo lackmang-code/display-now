@@ -1,8 +1,9 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { SECTION_ORDER } from '../lib/sections';
+import { ISSUES } from '../lib/issues';
 
-const STATIC_PATHS = ['/', '/editorial', '/archive', '/privacy', '/terms'];
+const STATIC_PATHS = ['/', '/editorial', '/archive', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
 
 export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://display-now.nextio.ai.kr');
@@ -11,6 +12,7 @@ export const GET: APIRoute = async ({ site }) => {
   const urls = [
     ...STATIC_PATHS,
     ...SECTION_ORDER.map((key) => `/section/${key}`),
+    ...ISSUES.map((i) => `/issue/${i.no}`),
     ...articles.map((a) => `/article/${a.slug}`),
   ];
 

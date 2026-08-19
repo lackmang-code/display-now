@@ -43,7 +43,7 @@ const articleLd = {
     name: 'DISPLAY NOW',
     logo: {
       '@type': 'ImageObject',
-      url: new URL('/favicon.svg', Astro.site).toString(),
+      url: new URL('/logo/dn-lockup-reverse.png', Astro.site).toString(),
     },
   },
   mainEntityOfPage: {
@@ -138,6 +138,14 @@ const articleLd = {
             </section>
           )
         }
+
+        {/* 정정 요청이 가장 자연스럽게 나오는 자리는 근거를 확인한 직후다 */}
+        <aside class="correction">
+          <span class="correction-text">
+            이 기사에서 사실과 다른 부분을 발견하셨습니까. 알려주시면 확인하고 바로잡겠습니다.
+          </span>
+          <a class="correction-link" href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">정정 요청하기 →</a>
+        </aside>
 
         {
           related.length > 0 && (
@@ -291,6 +299,33 @@ const articleLd = {
     word-break: keep-all;
     max-width: 700px;
   }
+  .correction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 14px 16px;
+    margin-top: 22px;
+  }
+  .correction-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-mute);
+    word-break: keep-all;
+    flex: 1 1 260px;
+  }
+  .correction-link {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    flex: 0 0 auto;
+  }
+
   .sources-box {
     margin: 40px 0 0;
     max-width: 880px;

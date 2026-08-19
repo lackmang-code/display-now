@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SubscribeCTA from '../components/SubscribeCTA.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { getAllArticles, bylineOf, articleHref } from '../lib/articles';
@@ -135,6 +136,7 @@ const editorPicks = editorPicksSlugs
               <button type="submit">구독</button>
             </form>
             <p class="nl-status" id="subscribe-status" hidden></p>
+            <a class="nl-more" href="/subscribe">관심 꼭지까지 지정해 신청하기 →</a>
           </div>
 
           <a class="ad-box" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
@@ -149,6 +151,8 @@ const editorPicks = editorPicksSlugs
         </aside>
       </div>
     </div>
+
+    <SubscribeCTA />
 
     <Footer />
   </div>
@@ -469,6 +473,18 @@ const editorPicks = editorPicksSlugs
     font-size: 13px;
     color: var(--on-dark-mute);
   }
+  .nl-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark-mute);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .nl-more:hover {
+    color: var(--on-dark);
+  }
 </style>
 
 <script>
@@ -495,7 +511,7 @@ const editorPicks = editorPicksSlugs
         const res = await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email, source: 'home-sidebar' }),
         });
         const data = await res.json();
         if (data.ok) {

@@ -100,6 +100,9 @@ nav[data-nav],
 }
 
 .site-header .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-serif);
   font-size: clamp(20px, 5vw, 24px);
   font-weight: 700;
@@ -107,6 +110,22 @@ nav[data-nav],
   white-space: nowrap;
   color: var(--on-dark);
   flex: 0 0 auto;
+}
+
+.site-header .brand-mark {
+  height: 1.5em;
+  width: auto;
+  display: block;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 420px) {
+  .site-header .wordmark {
+    gap: 7px;
+  }
+  .site-header .brand-mark {
+    height: 1.3em;
+  }
 }
 
 .site-header nav {

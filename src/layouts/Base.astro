@@ -28,7 +28,8 @@ const imageURL = new URL(image, Astro.site);
     <meta name="naver-site-verification" content="8fef8f501fc323b567a6562eb3efeda472394cab" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" type="application/rss+xml" title="DISPLAY NOW RSS" href="/rss.xml" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -58,10 +59,10 @@ const imageURL = new URL(image, Astro.site);
       '@type': 'Organization',
       name: 'DISPLAY NOW',
       url: Astro.site?.toString(),
-      logo: new URL('/favicon.svg', Astro.site).toString(),
+      logo: new URL('/logo/dn-lockup-reverse.png', Astro.site).toString(),
       publisher: {
         '@type': 'Organization',
-        name: '(주)넥스트아이오',
+        name: '넥스트아이오',
       },
     })} />
   </head>

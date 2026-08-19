@@ -56,12 +56,22 @@ const articles = await articlesOfIssue(issue);
       }
       /* 표지에서 가장 큰 활자는 언제나 제호다 */
       .mast {
+        display: flex;
+        align-items: center;
+        gap: 16px;
         font-family: 'Noto Serif KR', serif;
         font-weight: 700;
         font-size: 76px;
         line-height: 1;
         letter-spacing: -0.045em;
         color: oklch(0.87 0.195 93);
+      }
+      /* 마크는 제호보다 작게 — 카드에서도 활자 위계는 제호가 맨 위다 */
+      .mast-mark {
+        height: 60px;
+        width: auto;
+        display: block;
+        flex: 0 0 auto;
       }
       .no {
         font-family: 'IBM Plex Mono', monospace;
@@ -123,7 +133,10 @@ const articles = await articlesOfIssue(issue);
   <body>
     <div class="frame">
       <div class="top">
-        <span class="mast">DISPLAY NOW</span>
+        <span class="mast">
+          <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
+          <span>DISPLAY NOW</span>
+        </span>
         <span class="no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</span>
       </div>
       <div class="identity">100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진</div>

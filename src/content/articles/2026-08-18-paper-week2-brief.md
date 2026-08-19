@@ -76,7 +76,7 @@ featured: false
 paywallAfter: 0
 ---
 
-Nature Photonics부터 ACS Applied Materials & Interfaces까지, PEER가 매주 훑는 12개 고IF 학제간 저널 중 디스플레이 산업과 맞닿은 논문만 걸러 짧게 소개한다. 등재 기준일은 온라인 최초 공개일(2026-08-10~08-16)이다. 이번 주는 해당 기간에 실린 865편 가운데 16편이 걸렸다.
+Nature Photonics부터 ACS Applied Materials & Interfaces까지, PEER가 매주 훑는 12개 고IF 학제간 저널 중 디스플레이 산업과 맞닿은 논문만 걸러 짧게 소개한다. 등재 기준일은 온라인 최초 공개일(2026-08-10\~08-16)이다. 이번 주는 해당 기간에 실린 865편 가운데 16편이 걸렸다.
 
 > **이번 주 대표 논문 2편은 심층기사로 다뤘다 →**
 > [디스플레이 백플레인 소재 IGZO가 메모리로 간 이유](/article/2026-08-18-dongguk-ald-igzo-vrram)
@@ -94,7 +94,7 @@ Nature Photonics부터 ACS Applied Materials & Interfaces까지, PEER가 매주 
 
 *Adv. Functional Materials · 08.11 · Qinyu Zhu(창저우대), 교신 Jun Yeob Lee(성균관대)·Lei Hua*
 
-벤조트리(트리아졸)을 받개로 써서 혼성 국소·전하이동(HLCT) 분자를 새로 설계했다. 톨루엔 용액에서 440~490nm 청색 발광, 광발광 양자수율 89~99%. 용액공정 OLED에서 '뜨거운 엑시톤' 경로를 실제로 여는 데 초점을 맞췄다. 국내 연구진(성균관대·수원대)이 교신저자로 참여했다.
+벤조트리(트리아졸)을 받개로 써서 혼성 국소·전하이동(HLCT) 분자를 새로 설계했다. 톨루엔 용액에서 440\~490nm 청색 발광, 광발광 양자수율 89\~99%. 용액공정 OLED에서 '뜨거운 엑시톤' 경로를 실제로 여는 데 초점을 맞췄다. 국내 연구진(성균관대·수원대)이 교신저자로 참여했다.
 
 ### 3. 납 없는 주석 페로브스카이트로 색재현 99%
 
