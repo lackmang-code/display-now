@@ -10,6 +10,7 @@ import {
   type IssueMeta,
 } from '../../../lib/issues';
 import { sectionColor } from '../../../lib/sections';
+import { existsSync } from 'node:fs';
 
 export async function getStaticPaths() {
   return ISSUES.map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
@@ -23,6 +24,11 @@ const { issue } = Astro.props;
 const articles = await articlesOfIssue(issue);
 const head = articles.find((a) => a.slug === issue.headSlug) ?? articles[0];
 const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
+
+// 표지 그림이 아직 없는 호도 있다(캡처 전이거나 그 주에 시뮬레이션이 없거나).
+// 파일이 없으면 그림칸을 아예 빼서 620px 빈 검정 칸이 남지 않게 한다.
+const coverImagePath = `public/issues/issue-${issue.no}-cover.png`;
+const hasCoverImage = existsSync(coverImagePath);
 ---
 
 <!doctype html>
@@ -102,16 +108,25 @@ const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
 
       /* 표지 그림. 시뮬레이션 캔버스가 300x210 고정이라 크게 늘리면 흐려진다.
          잘라내지 않고(contain) 원본 배율에 가깝게 앉힌다 */
-      /* 표지 그림은 지면 폭을 채운다. 작게 띄우면 미완성으로 보인다.
-         캔버스가 검정 바탕이라 흰 판 대신 지면에 그대로 이어 붙인다 */
+      /* 그림칸 높이를 고정한다.
+         시뮬레이터마다 캔버스 비율이 달라(0.91 ~ 1.47) 폭에 맞추면 높이가 603px에서
+         977px까지 벌어진다. 그러면 호마다 표지 레이아웃이 흔들려 매번 손봐야 한다.
+         칸을 고정하고 그림을 그 안에 맞추면 어떤 시뮬레이션이 와도 판형이 유지된다.
+         가로로 넓은 그림은 폭을 채우고, 세로로 긴 그림은 높이에 맞춰 가운데 선다. */
       .stage {
         margin-top: 26px;
+        height: 620px;
         display: flex;
+        align-items: center;
         justify-content: center;
+        overflow: hidden;
       }
       .stage img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
         height: auto;
+        object-fit: contain;
         display: block;
       }
       .stage.empty {
@@ -126,6 +141,11 @@ const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
         letter-spacing: -0.045em;
         margin-top: 36px;
         word-break: keep-all;
+        /* 제목이 길어도 세 줄까지만. 넘치면 커버라인이 밀려난다 */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       .deck {
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -194,9 +214,13 @@ const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
         <span>{articles.length}편 수록</span>
       </div>
 
-      <div class={`stage${issue.coverSim ? '' : ' empty'}`}>
-        <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
-      </div>
+      {
+        hasCoverImage && (
+          <div class="stage">
+            <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+          </div>
+        )
+      }
 
       <h1 class="headline">{issue.headline}</h1>
 
