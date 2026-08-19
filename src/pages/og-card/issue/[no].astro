@@ -1,6 +1,8 @@
 ---
 export const prerender = true;
 import { ISSUES, articlesOfIssue, issueNumberLabel, issueDateLabel, type IssueMeta } from '../../../lib/issues';
+import { SECTIONS, sectionColor } from '../../../lib/sections';
+import { bylineOf } from '../../../lib/articles';
 
 export async function getStaticPaths() {
   return ISSUES.map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
@@ -12,6 +14,10 @@ interface Props {
 
 const { issue } = Astro.props;
 const articles = await articlesOfIssue(issue);
+const head = articles.find((a) => a.slug === issue.headSlug) ?? articles[0];
+// 표지에 헤드 기사가 실리므로 오른쪽에는 나머지 수록 기사를 전부 세운다.
+// 활자는 작게 간다. 기사 제목이 제호보다 커지면 표지의 활자 위계가 뒤집힌다.
+const picks = articles.filter((a) => a.slug !== head?.slug);
 ---
 
 <!doctype html>
@@ -23,7 +29,7 @@ const articles = await articlesOfIssue(issue);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+KR:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -32,125 +38,162 @@ const articles = await articlesOfIssue(issue);
         padding: 0;
         box-sizing: border-box;
       }
+      /* 공유 카드는 가로 1200x630 규격이 고정이다.
+         세로 표지를 왼쪽에 그대로 세우고 오른쪽에 커버라인을 두어
+         "잡지를 펼쳐 놓은" 모양으로 만든다 */
       html,
       body {
         width: 1200px;
         height: 630px;
-        overflow: hidden;
         background: #12120e;
       }
-      .frame {
+      .card {
         width: 1200px;
         height: 630px;
         display: flex;
-        flex-direction: column;
-        padding: 44px 56px 36px;
-        gap: 22px;
+        color: #f4f3ee;
       }
-      .top {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        border-bottom: 2px solid rgba(244, 243, 238, 0.28);
-        padding-bottom: 14px;
+
+      /* 왼쪽: 표지 실물. 표지가 2:3이므로 폭 420이면 높이가 정확히 630이 되어
+         잘리는 곳 없이 통째로 들어간다 */
+      .poster {
+        flex: 0 0 420px;
+        height: 630px;
+        overflow: hidden;
+        border-right: 1px solid rgba(244, 243, 238, 0.25);
+        background: #12120e;
       }
-      /* 표지에서 가장 큰 활자는 언제나 제호다 */
-      .mast {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        font-family: 'Noto Serif KR', serif;
-        font-weight: 700;
-        font-size: 76px;
-        line-height: 1;
-        letter-spacing: -0.045em;
-        color: oklch(0.87 0.195 93);
-      }
-      /* 마크는 제호보다 작게 — 카드에서도 활자 위계는 제호가 맨 위다 */
-      .mast-mark {
-        height: 60px;
-        width: auto;
+      .poster img {
+        width: 420px;
+        height: 630px;
         display: block;
-        flex: 0 0 auto;
       }
-      .no {
+
+      /* 오른쪽: 이번 호 안내 */
+      .side {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 34px 40px 28px;
+        display: flex;
+        flex-direction: column;
+      }
+      .issue-line {
         font-family: 'IBM Plex Mono', monospace;
-        font-size: 23px;
+        font-size: 19px;
         letter-spacing: 0.08em;
         color: #a4a49a;
       }
-      .identity {
+      /* 사이트의 기사 카드를 그대로 옮긴다. 꼭지 · 바이라인 · 제목 · 요약.
+         활자는 작게 간다. 제목이 제호보다 커지면 표지의 활자 위계가 무너진다 */
+      .picks-label {
         font-family: 'IBM Plex Mono', monospace;
-        font-size: 19px;
-        color: #a4a49a;
-        margin-top: -8px;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        color: #8a8a80;
+        margin-top: 18px;
       }
-      /* 그림은 그 주 시뮬레이션. 매주 이 자리가 통째로 바뀐다 */
-      .shot {
-        flex: 1 1 auto;
+      /* 넘치면 하단 발행 정보가 밀려 사라진다. 목록에만 넘침을 가둔다 */
+      .picks {
+        list-style: none;
+        margin-top: 6px;
+        flex: 0 1 auto;
         min-height: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #0d0d0a;
-        border: 1px solid rgba(244, 243, 238, 0.2);
         overflow: hidden;
       }
-      /* 캔버스가 카드 높이를 꽉 채우게 한다. 흰 여백에 그래프가 떠 있으면 그림이 작아 보인다 */
-      .shot img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      .picks li {
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(244, 243, 238, 0.14);
+      }
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12.5px;
+      }
+      .chip {
+        color: #f4f3ee;
+        padding: 2px 7px;
+        flex: 0 0 auto;
+      }
+      .byline {
+        color: #8a8a80;
+      }
+      .t {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-weight: 600;
+        font-size: 17.5px;
+        line-height: 1.28;
+        letter-spacing: -0.02em;
+        color: #f4f3ee;
+        margin-top: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sum {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 13px;
+        line-height: 1.45;
+        color: #a4a49a;
+        margin-top: 3px;
+        word-break: keep-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       .foot {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        gap: 24px;
-      }
-      .headline {
-        font-family: 'Noto Serif KR', serif;
-        font-weight: 700;
-        font-size: 27px;
-        line-height: 1.35;
-        letter-spacing: -0.03em;
-        color: #f4f3ee;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .meta {
+        gap: 16px;
         font-family: 'IBM Plex Mono', monospace;
-        font-size: 20px;
-        color: #a4a49a;
-        flex: 0 0 auto;
+        font-size: 17px;
+        letter-spacing: 0.06em;
+        color: #8a8a80;
+        margin-top: auto;
+        border-top: 1px solid rgba(244, 243, 238, 0.25);
+        padding-top: 12px;
       }
-      .meta .live {
+      .foot .live {
         color: oklch(0.87 0.195 93);
       }
     </style>
   </head>
   <body>
-    <div class="frame">
-      <div class="top">
-        <span class="mast">
-          <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
-          <span>DISPLAY NOW</span>
-        </span>
-        <span class="no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</span>
-      </div>
-      <div class="identity">100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진</div>
-
-      <div class="shot">
-        <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+    <div class="card">
+      <div class="poster">
+        <img src={`/issues/issue-${issue.no}-poster.png`} alt="" />
       </div>
 
-      <div class="foot">
-        <span class="headline">{issue.headline}</span>
-        <span class="meta">
-          {articles.length}편 수록
-          {issue.coverSim && <span class="live"> · 표지가 움직입니다</span>}
-        </span>
+      <div class="side">
+        <div class="issue-line">
+          {issueNumberLabel(issue)} · {issueDateLabel(issue)} · {articles.length}편 수록
+        </div>
+
+        <div class="picks-label">이번 호 수록</div>
+        <ul class="picks">
+          {
+            picks.map((a) => (
+              <li>
+                <div class="meta-row">
+                  <span class="chip" style={`background:${sectionColor(a.data.section, 0.42)};`}>
+                    {SECTIONS[a.data.section].label}
+                  </span>
+                  <span class="byline">{bylineOf(a)}</span>
+                </div>
+                <div class="t">{a.data.title}</div>
+                <p class="sum">{a.data.summary}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="foot">
+          발행 Next I/O{issue.coverSim && <span class="live"> · 표지가 움직입니다</span>}
+          <span class="site">display-now.nextio.ai.kr</span>
+        </div>
       </div>
     </div>
   </body>

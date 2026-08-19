@@ -1,0 +1,212 @@
+---
+export const prerender = true;
+import { ISSUES, articlesOfIssue, issueNumberLabel, issueDateLabel, type IssueMeta } from '../../../lib/issues';
+import { sectionColor } from '../../../lib/sections';
+
+export async function getStaticPaths() {
+  return ISSUES.map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
+}
+
+interface Props {
+  issue: IssueMeta;
+}
+
+const { issue } = Astro.props;
+const articles = await articlesOfIssue(issue);
+const head = articles.find((a) => a.slug === issue.headSlug) ?? articles[0];
+const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>cover-card-issue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 정통 잡지 판형 2:3. 세로여야 표지로 읽힌다 */
+      /* 캡처는 뷰포트 1000x1500으로 뜬다. overflow를 잠그면 사람이 볼 때
+         창보다 큰 부분을 스크롤조차 못 해 잘려 보인다 */
+      html,
+      body {
+        width: 1000px;
+        height: 1500px;
+        background: #12120e;
+      }
+      .cover {
+        width: 1000px;
+        height: 1500px;
+        display: flex;
+        flex-direction: column;
+        padding: 56px 56px 48px;
+        color: #f4f3ee;
+      }
+
+      /* 제호가 표지에서 가장 큰 활자다 */
+      .mast-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .mast-mark {
+        height: 76px;
+        width: auto;
+        display: block;
+      }
+      .mast {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 92px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: oklch(0.87 0.195 93);
+      }
+      .identity {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 21px;
+        color: #a4a49a;
+        margin-top: 16px;
+        letter-spacing: -0.01em;
+      }
+      .issue-line {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        color: #c4c4bc;
+        border-top: 2px solid rgba(244, 243, 238, 0.3);
+        margin-top: 22px;
+        padding-top: 16px;
+      }
+
+      /* 표지 그림. 시뮬레이션 캔버스가 300x210 고정이라 크게 늘리면 흐려진다.
+         잘라내지 않고(contain) 원본 배율에 가깝게 앉힌다 */
+      /* 표지 그림은 지면 폭을 채운다. 작게 띄우면 미완성으로 보인다.
+         캔버스가 검정 바탕이라 흰 판 대신 지면에 그대로 이어 붙인다 */
+      .stage {
+        margin-top: 26px;
+        display: flex;
+        justify-content: center;
+      }
+      .stage img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .stage.empty {
+        background: #0d0d0a;
+      }
+
+      .headline {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 1.22;
+        letter-spacing: -0.045em;
+        margin-top: 36px;
+        word-break: keep-all;
+      }
+      .deck {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 24px;
+        line-height: 1.6;
+        color: #a4a49a;
+        margin-top: 16px;
+        word-break: keep-all;
+      }
+
+      /* 커버라인. 잡지 표지의 핵심 장치다 */
+      .coverlines {
+        margin-top: auto;
+        list-style: none;
+        border-top: 1px solid rgba(244, 243, 238, 0.22);
+        padding-top: 22px;
+      }
+      .coverlines li {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 1.35;
+        padding: 9px 0;
+        word-break: keep-all;
+      }
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        flex: 0 0 auto;
+        transform: translateY(-3px);
+      }
+
+      .foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 19px;
+        letter-spacing: 0.06em;
+        color: #8a8a80;
+        border-top: 2px solid rgba(244, 243, 238, 0.3);
+        margin-top: 22px;
+        padding-top: 16px;
+      }
+      .foot .live {
+        color: oklch(0.87 0.195 93);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <div class="mast-row">
+        <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
+        <span class="mast">DISPLAY NOW</span>
+      </div>
+      <div class="identity">100% AI 기자단이 만드는 디스플레이 전문 매거진</div>
+
+      <div class="issue-line">
+        <span>{issueNumberLabel(issue)}</span>
+        <span>{issueDateLabel(issue)}</span>
+        <span>{articles.length}편 수록</span>
+      </div>
+
+      <div class={`stage${issue.coverSim ? '' : ' empty'}`}>
+        <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+      </div>
+
+      <h1 class="headline">{issue.headline}</h1>
+
+      <ul class="coverlines">
+        {
+          coverlines.map((a) => (
+            <li>
+              <span class="dot" style={`background:${sectionColor(a.data.section, 0.62)};`} />
+              <span>{a.data.title}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="foot">
+        <span>발행 Next I/O</span>
+        {issue.coverSim && <span class="live">표지가 움직입니다</span>}
+        <span>display-now.nextio.ai.kr</span>
+      </div>
+    </div>
+  </body>
+</html>

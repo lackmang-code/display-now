@@ -44,11 +44,10 @@ const withCounts = await Promise.all(
                   <div class="band" style={`background:${band};`} />
                   <div class="shot">
                     <img
-                      src={`/issues/issue-${issue.no}-cover.png`}
+                      src={`/issues/issue-${issue.no}-poster.png`}
                       alt={`${issueNumberLabel(issue)} 표지: ${issue.headline}`}
                       loading="lazy"
                     />
-                    <span class="no-badge">{String(issue.no).padStart(2, '0')}</span>
                   </div>
                   <div class="card-body">
                     <div class="card-no">{issueNumberLabel(issue)} · {issueDateLabel(issue)}</div>
@@ -123,27 +122,18 @@ const withCounts = await Promise.all(
   .band {
     height: 6px;
   }
-  /* 캔버스 그림은 어둡다. 흰 카드 안에 넣어야 검정 배경에서 호끼리 분리된다 */
+  /* 표지는 2:3 세로 판형이다. 제호·호수·커버라인이 표지 안에 이미 들어 있으므로
+     카드에서 따로 덧씌우지 않는다 */
   .shot {
     position: relative;
-    background: #0d0d0a;
-    padding: 10px;
+    background: var(--ink);
   }
   .shot img {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: contain;
-  }
-  .no-badge {
-    position: absolute;
-    left: 12px;
-    top: 8px;
-    font-family: var(--font-mono);
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--gold);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: top center;
   }
   .card-no {
     font-family: var(--font-mono);

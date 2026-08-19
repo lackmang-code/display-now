@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /dev-sim-test
 Disallow: /og-card
+Disallow: /cover-card
 Disallow: /admin
 
 Sitemap: https://display-now.nextio.ai.kr/sitemap.xml
