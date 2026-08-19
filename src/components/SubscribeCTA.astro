@@ -28,6 +28,11 @@
       </form>
       <p class="cta-status" id="cta-status" hidden></p>
       <a class="cta-more" href="/subscribe">이름과 소속, 관심 꼭지까지 남기고 신청하기</a>
+
+      <a class="cta-kakao" href="https://pf.kakao.com/_ZGQiX" target="_blank" rel="noopener">
+        <span class="kakao-dot" aria-hidden="true"></span>
+        카카오톡 채널로 받기
+      </a>
     </div>
   </div>
 
@@ -131,6 +136,29 @@
   }
   .cta-more:hover {
     color: var(--on-dark);
+  }
+
+  /* 카카오 옐로를 꽉 채우면 매체 톤과 어긋나 점으로만 쓴다 */
+  .cta-kakao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 13.5px;
+    color: var(--on-dark);
+    border: 1px solid var(--line-dark);
+    padding: 9px 14px;
+  }
+  .cta-kakao:hover {
+    border-color: var(--on-dark-mute);
+    color: var(--on-dark);
+  }
+  .kakao-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FEE500;
+    flex: 0 0 auto;
   }
 
   .cta-board {

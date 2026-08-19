@@ -124,6 +124,14 @@ const ROLES = [
         <button class="sf-result-btn" id="sf-again-btn" type="button">다시 신청하기</button>
       </div>
 
+      <div class="sf-alt">
+        <span class="sf-alt-text">메일 대신 카카오톡으로 받고 싶으시면 채널을 추가해 주십시오.</span>
+        <a class="sf-kakao" href="https://pf.kakao.com/_ZGQiX" target="_blank" rel="noopener">
+          <span class="kakao-dot" aria-hidden="true"></span>
+          카카오톡 채널 추가
+        </a>
+      </div>
+
       <div class="sf-foot">
         <a class="sf-admin" href="/admin">관리자</a>
       </div>
@@ -345,6 +353,43 @@ const ROLES = [
     border: 1px solid var(--ink);
     padding: 10px 20px;
     cursor: pointer;
+  }
+
+  .sf-alt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 14px 16px;
+  }
+  .sf-alt-text {
+    font-size: 14px;
+    color: var(--ink-mute);
+    word-break: keep-all;
+    flex: 1 1 240px;
+  }
+  /* 카카오 옐로는 점으로만 쓴다. 버튼을 노랗게 채우면 구독 버튼보다 튄다 */
+  .sf-kakao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 9px 16px;
+    flex: 0 0 auto;
+  }
+  .kakao-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FEE500;
+    flex: 0 0 auto;
   }
 
   .sf-foot {
