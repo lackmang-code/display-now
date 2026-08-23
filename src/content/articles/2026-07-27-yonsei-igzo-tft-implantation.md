@@ -1,6 +1,6 @@
 ---
 title: "불소로 잡은 산화물 TFT의 이동도와 안정성"
-summary: "이동도를 올리면 안정성이 무너지는 트레이드오프, IGZO TFT 채널에 이온주입 공정 하나만 더해 둘 다 잡았습니다. 이동도 12.1→38.6cm²/V·s, 문턱전압 변화 최대 1.74V. 공정 스텝을 늘리지 않고 스펙을 함께 끌어올릴 수 있다는 뜻이라 백플레인 공정 담당자가 눈여겨볼 결과입니다."
+summary: "이동도를 올리면 안정성이 무너지는 트레이드오프, IGZO TFT 채널에 이온주입 공정 하나만 더해 둘 다 잡았습니다. 불소이붕소(BF₂) 주입 기준으로 이동도는 12.1→35.8cm²/V·s로 오르고, 문턱전압 변화는 2.46→1.74V로 오히려 개선됐습니다. 공정 스텝을 늘리지 않고 스펙을 함께 끌어올릴 수 있다는 뜻이라 백플레인 공정 담당자가 눈여겨볼 결과입니다."
 section: paper
 reporter: PEER
 publishedAt: 2026-07-27
@@ -20,7 +20,7 @@ paywallAfter: 0
   <div><span class="label">게재</span><span>Advanced Functional Materials, 2026 · Early View <span class="dim">(권·호 미배정)</span> · <code>DOI 10.1002/adfm.77185</code></span></div>
 </div>
 
-산화물 반도체 TFT는 오래된 딜레마를 안고 있었다. 이동도를 높이면 안정성이 떨어지고, 안정성을 잡으려면 공정이 복잡해졌다. 연세대 연구진은 채널에 이온 하나를 심는 것만으로 이 둘을 함께 잡았다. 이동도는 12.1에서 38.6cm²/V·s로 세 배 넘게 뛰었고, 같은 조건에서 문턱전압 변화는 오히려 줄었다.
+산화물 반도체 TFT는 오래된 딜레마를 안고 있었다. 이동도를 높이면 안정성이 떨어지고, 안정성을 잡으려면 공정이 복잡해졌다. 연세대 연구진은 채널에 이온 하나를 심는 것만으로 이 둘을 함께 잡았다. 불소이붕소를 심은 조건에서 이동도는 12.1에서 35.8cm²/V·s로 세 배 가까이 뛰었고, 같은 조건의 문턱전압 변화는 오히려 줄었다.
 
 ## 1. 왜 어려운 문제였나
 
@@ -42,7 +42,7 @@ IGZO 같은 산화물 반도체 TFT는 LTPS TFT보다 이동도가 낮고, 장�
 ## 3. 결과: 붕소와 불소가 갈리는 지점
 
 <div class="stat-row">
-  <div><b>38.6 cm²/V·s</b><span>이동도<span class="dim">(비주입 12.1, B 60keV)</span></span></div>
+  <div><b>35.8 cm²/V·s</b><span>이동도<span class="dim">(비주입 12.1, BF₂ 40keV)</span></span></div>
   <div><b>1.74 V</b><span>PBTS 문턱전압 변화<span class="dim">(비주입 2.46V, BF₂ 40keV)</span></span></div>
   <div><b>1.04 V</b><span>NBIS 문턱전압 변화<span class="dim">(비주입 3.12V, BF₂ 40keV)</span></span></div>
 </div>
@@ -75,8 +75,8 @@ IGZO TFT는 이미 현세대 고급 디스플레이 백플레인의 핵심 소�
 
 | | |
 |---|---|
-| **한 줄 요약** | IGZO 채널에 BF₂ 이온을 직접 주입해 이동도(12.1→38.6cm²/V·s)와 안정성(ΔVth 최대 1.74V)을 동시에 개선 |
-| **핵심 성과** | 이동도 38.6cm²/V·s(B 60keV) · PBTS ΔVth 1.74V(BF₂ 40keV) · NBIS ΔVth 1.04V(BF₂ 40keV) |
+| **한 줄 요약** | IGZO 채널에 BF₂ 이온을 직접 주입해 이동도(12.1→35.8cm²/V·s)와 안정성(PBTS ΔVth 2.46→1.74V)을 동시에 개선 |
+| **핵심 성과** | BF₂ 40keV에서 이동도 35.8cm²/V·s · PBTS ΔVth 1.74V · NBIS ΔVth 1.04V <br />(이동도 최고값 38.6은 B 60keV 조건이나 ΔVth 7.72V로 안정성이 악화) |
 | **강점** | 별도 도핑층·패시베이션층 없이 단일 이온주입 공정으로 도핑과 결함 부동태화 동시 달성 |
 | **게재** | Advanced Functional Materials, 2026 (Early View) |
 
