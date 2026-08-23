@@ -2,10 +2,17 @@
 //
 // 사람 기억에 맡기면 반드시 어긋나는 것만 여기서 막는다.
 // 규칙을 문서에만 적어 두면 새 기자는 모르고, 아는 기자도 잊는다.
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIR = 'src/content/articles';
+const ASSET_DIR = 'public/articles';
+
+// 기사 그림은 webp만 커밋한다(2026-08-23 확정). png는 한 번 커밋되면 히스토리에서 못 지운다.
+// 규칙이 정해지기 전에 발행된 기사까지 막으면 지금 빌드가 통째로 서므로,
+// 제2호(2026-08-25) 이후 슬러그만 검사한다. 규칙 적용 시점과 정확히 같다.
+const WEBP_RULE_FROM = '2026-08-25';
+const RASTER = ['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tif', '.tiff'];
 const ESC = String.fromCharCode(92) + '~';
 const EM_DASH = '—';
 
@@ -78,6 +85,35 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
     }
   }
   flush();
+}
+
+// 그림 파일 형식 검사 — 표지 카드(public/issues, public/og)는 캡처물이라 png를 유지하므로
+// public/articles 아래만 본다. 직접 그린 도표의 svg는 허용한다.
+if (existsSync(ASSET_DIR)) {
+  for (const slug of readdirSync(ASSET_DIR)) {
+    const dir = join(ASSET_DIR, slug);
+    if (!statSync(dir).isDirectory()) continue;
+    if (slug.slice(0, 10) < WEBP_RULE_FROM) continue;
+
+    for (const f of readdirSync(dir)) {
+      const ext = f.slice(f.lastIndexOf('.')).toLowerCase();
+      if (RASTER.includes(ext)) {
+        problems.push(
+          `${slug}/${f}  기사 그림은 webp만 커밋합니다. ` +
+            `Image.open(src).convert("RGB").save(dst, "WEBP", quality=90, method=6)`,
+        );
+      }
+    }
+  }
+}
+
+// 원고가 로컬 png·jpg를 참조하고 있는지도 본다. 파일을 지우고 경로만 남는 경우를 잡는다.
+for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
+  if (file.slice(0, 10) < WEBP_RULE_FROM) continue;
+  const body = readFileSync(join(DIR, file), 'utf8');
+  for (const m of body.matchAll(/\/articles\/[^\s")']+\.(png|jpg|jpeg|gif)/gi)) {
+    problems.push(`${file}  본문이 ${m[0]} 를 참조합니다. webp로 바꾸십시오.`);
+  }
 }
 
 if (problems.length) {
