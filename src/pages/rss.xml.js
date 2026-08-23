@@ -1,9 +1,9 @@
 import rss from '@astrojs/rss';
-import { getAllArticles, articleHref } from '../lib/articles';
+import { getPublishedArticles, articleHref } from '../lib/articles';
 import { SECTIONS } from '../lib/sections';
 
 export async function GET(context) {
-  const articles = await getAllArticles();
+  const articles = await getPublishedArticles();
 
   return rss({
     title: 'DISPLAY NOW',

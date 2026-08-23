@@ -3,13 +3,42 @@ import { SECTIONS, formatByline } from './sections';
 
 export type Article = CollectionEntry<'articles'>;
 
+/**
+ * 기사 전부. **발행 예정분(미래 날짜)도 포함한다.**
+ *
+ * 호 편성·표지 카드처럼 **발행 전에 만들어 둬야 하는 것**이 이 함수를 쓴다.
+ * 독자에게 보이는 목록에는 {@link getPublishedArticles}를 쓴다.
+ */
 export async function getAllArticles(): Promise<Article[]> {
   const all = await getCollection('articles');
   return all.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }
 
-export async function getArticlesBySection(section: string): Promise<Article[]> {
+/**
+ * **빌드 시점(한국 시각) 기준으로 이미 발행일이 된 기사만.**
+ *
+ * 테커·클레임은 수집 주간 개념이 없어 기사를 미리 써 둔다. 그런데 완성될 때마다 push하면
+ * `publishedAt`이 며칠 뒤인 기사가 그날로 라이브에 떠 버린다. 목록에서 걸러 두면
+ * **완성되는 대로 push해도 안전하고, 발행일에 재빌드만 하면 저절로 올라온다.**
+ *
+ * **UTC가 아니라 한국 날짜로 비교한다.** `publishedAt`은 `2026-08-25` 같은 날짜만 있는 값이라
+ * UTC 자정으로 파싱되는데, 그대로 비교하면 한국 시각 8월 25일 오전 9시가 되어야 공개된다.
+ * 발행일 아침에 올리는 운영과 어긋나므로 날짜 문자열끼리 비교한다.
+ *
+ * **정적 사이트라 판단은 빌드 시점에 한 번만 일어난다.** 발행일이 됐다고 저절로 나타나지
+ * 않는다. 그날 push하거나 Cloudflare Pages에서 재배포해야 한다. 어차피 호를 낼 때 push하므로
+ * 절차가 늘지는 않는다.
+ */
+export async function getPublishedArticles(): Promise<Article[]> {
   const all = await getAllArticles();
+  const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
+  const todayKst = new Date(Date.now() + KST_OFFSET_MS).toISOString().slice(0, 10);
+  return all.filter((a) => a.data.publishedAt.toISOString().slice(0, 10) <= todayKst);
+}
+
+/** 꼭지 목록. 발행된 것만 보여준다 */
+export async function getArticlesBySection(section: string): Promise<Article[]> {
+  const all = await getPublishedArticles();
   return all.filter((a) => a.data.section === section);
 }
 

@@ -1,13 +1,14 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
 import { SECTION_ORDER } from '../lib/sections';
 import { ISSUES } from '../lib/issues';
+import { getPublishedArticles } from '../lib/articles';
 
 const STATIC_PATHS = ['/', '/editorial', '/archive', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
 
 export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://display-now.nextio.ai.kr');
-  const articles = await getCollection('articles');
+  // 발행 예정 기사는 색인 대상이 아니다. 검색엔진에 미리 알리면 발행 전에 노출된다
+  const articles = await getPublishedArticles();
 
   const urls = [
     ...STATIC_PATHS,

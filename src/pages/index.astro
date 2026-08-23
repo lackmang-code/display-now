@@ -5,10 +5,10 @@ import Footer from '../components/Footer.astro';
 import SubscribeCTA from '../components/SubscribeCTA.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { getAllArticles, bylineOf, articleHref } from '../lib/articles';
+import { getPublishedArticles, bylineOf, articleHref } from '../lib/articles';
 import { getIssues, articlesOfIssue, issueNumberLabel, issueDateLabel, issueHref } from '../lib/issues';
 
-const allArticles = await getAllArticles();
+const allArticles = await getPublishedArticles();
 const latestBySection = SECTION_ORDER.map((key) => {
   const list = allArticles.filter((a) => a.data.section === key);
   return { key, article: list[0] };

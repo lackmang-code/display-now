@@ -6,7 +6,7 @@ import SimBoot from '../../components/SimBoot.astro';
 import '../../styles/article.css';
 import { getCollection } from 'astro:content';
 import { SECTIONS, sectionColor } from '../../lib/sections';
-import { getAllArticles, dateLabel, articleHref } from '../../lib/articles';
+import { getPublishedArticles, dateLabel, articleHref } from '../../lib/articles';
 import { seriesOf, partOf, episodesOfPart, seriesKicker } from '../../lib/series';
 
 export async function getStaticPaths() {
@@ -23,7 +23,12 @@ const toc = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label')
 const section = SECTIONS[entry.data.section];
 const color = sectionColor(entry.data.section);
 
-const all = await getAllArticles();
+// 연재 목차·다른 글에는 발행된 기사만 세운다. 다만 지금 읽고 있는 기사가 아직 발행 전이면
+// (검수 중) 자기가 목차에서 빠져 어색해지므로 그 한 편만 되넣는다.
+const published = await getPublishedArticles();
+const all = published.some((a) => a.slug === entry.slug)
+  ? published
+  : [entry, ...published].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 const reporterInitial = entry.data.reporter[0];
 
 // 연재 정보. 같은 부의 다른 편들이 있으면 기사 끝에 목차를 세운다.

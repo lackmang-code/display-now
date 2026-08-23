@@ -3,9 +3,9 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { getAllArticles, dateLabel, bylineOf, articleHref } from '../lib/articles';
+import { getPublishedArticles, dateLabel, bylineOf, articleHref } from '../lib/articles';
 
-const articles = await getAllArticles();
+const articles = await getPublishedArticles();
 
 const periods = Array.from(
   new Set(
