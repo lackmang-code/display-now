@@ -35,7 +35,7 @@ paywallAfter: 0
 그 결과 PAA의 자기정렬 나노그루브 구조가 주는 우수한 전하수송과, Al₂O₃의 산소공공이 만드는 깊은 전하트랩(우수한 메모리 유지)을 한 소자 안에서 동시에 얻었다. 이동도를 희생하지 않고도 메모리 소자를 만든 셈이다.
 
 <figure class="fig-single">
-  <img src="/articles/2026-07-28-flexible-otft-retinomorphic/Fig2_소자어레이및특성.png" alt="유연 기판 위 OTFT 소자 구조 개념도와 대면적 소자 어레이 실물 사진, 전기·광학 특성 그래프">
+  <img src="/articles/2026-07-28-flexible-otft-retinomorphic/Fig2_소자어레이및특성.webp" alt="유연 기판 위 OTFT 소자 구조 개념도와 대면적 소자 어레이 실물 사진, 전기·광학 특성 그래프">
   <figcaption><span class="fig-num">그림 1</span>유연 OTFT 소자 구조(a)와 130개 소자로 이뤄진 대면적 어레이 실물(b), 전달특성·굽힘시험·광응답 데이터(c–h). <span class="dim">출처: 논문 Fig. 2, CC BY 4.0</span></figcaption>
 </figure>
 

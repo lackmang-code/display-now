@@ -2,3 +2,15 @@ node_modules/
 dist/
 .astro/
 .wrangler/
+
+# 기사 그림은 webp만 커밋한다 (2026-08-23 확정)
+# 층1의 첫 겹. 실수로 add 하려 해도 무시된다.
+# 이미 추적 중인 발행분 png는 영향받지 않는다(tracked 파일은 gitignore가 못 막는다).
+# 표지 카드(public/issues, public/og)는 캡처물이라 png를 유지하므로 여기서 제외한다.
+public/articles/**/*.png
+public/articles/**/*.jpg
+public/articles/**/*.jpeg
+public/articles/**/*.gif
+public/articles/**/*.bmp
+public/articles/**/*.tif
+public/articles/**/*.tiff
