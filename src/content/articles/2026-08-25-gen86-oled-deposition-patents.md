@@ -103,22 +103,22 @@ IT용 OLED 전환의 기준 유리가 6세대에서 8.6세대로 올라가고 �
 
 <div class="viz-box">
   <div class="viz-title">RELATIVE SAG BY GLASS SIZE (CALCULATED)</div>
-<svg viewBox="0 0 960 230" width="100%" xmlns="http://www.w3.org/2000/svg">
-<line x1="300" y1="34" x2="300" y2="205" stroke="#c9c9c4" stroke-width="1"/>
-<text x="300" y="24" font-size="11" fill="#8a8a80" text-anchor="start" class="mono">6세대 풀 글래스 = 1.0</text>
-<text x="286" y="66" font-size="13" font-weight="700" fill="#12120e" text-anchor="end">6세대 풀 글래스</text>
-<text x="286" y="82" font-size="11" fill="#6f6f66" text-anchor="end" class="mono">1500 x 1850 mm  (2.77 m2)</text>
-<rect x="300" y="48" width="124.8" height="30" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
-<text x="434.8" y="68" font-size="13" font-weight="700" fill="#12120e" text-anchor="start" class="mono">1.00배</text>
-<text x="286" y="118" font-size="13" font-weight="700" fill="#12120e" text-anchor="end">8.6세대 하프 글래스</text>
-<text x="286" y="134" font-size="11" fill="#6f6f66" text-anchor="end" class="mono">1310 x 2290 mm  (3.00 m2)</text>
-<rect x="300" y="100" width="111.8" height="30" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
-<text x="421.8" y="120" font-size="13" font-weight="700" fill="#12120e" text-anchor="start" class="mono">0.90배</text>
-<text x="286" y="170" font-size="13" font-weight="700" fill="#12120e" text-anchor="end">8.6세대 풀 글래스</text>
-<text x="286" y="186" font-size="11" fill="#6f6f66" text-anchor="end" class="mono">2290 x 2620 mm  (6.00 m2)</text>
-<rect x="300" y="152" width="600.0" height="30" fill="oklch(0.45 0.10 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
-<text x="886.0" y="172" font-size="13" font-weight="700" fill="#fdfdfc" text-anchor="end" class="mono">4.81배</text>
-<text x="300" y="222" font-size="11" fill="#8a8a80" class="mono">자중 등분포, 사방 단순지지, 동일 유리 두께 가정. 절대값이 아니라 배율만 본다</text>
+<svg viewBox="0 0 650 236" width="650" xmlns="http://www.w3.org/2000/svg">
+<line x1="236" y1="34" x2="236" y2="212" stroke="#c9c9c4" stroke-width="1"/>
+<text x="236" y="24" font-size="12.5" fill="#8a8a80" text-anchor="start" class="mono">6세대 풀 글래스 = 1.0</text>
+<text x="224" y="63" font-size="14.5" font-weight="700" fill="#12120e" text-anchor="end">6세대 풀 글래스</text>
+<text x="224" y="80" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">1500 x 1850 mm (2.77 m2)</text>
+<rect x="236" y="44" width="72.8" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
+<text x="317.8" y="67" font-size="15" font-weight="700" fill="#12120e" text-anchor="start" class="mono">1.00배</text>
+<text x="224" y="121" font-size="14.5" font-weight="700" fill="#12120e" text-anchor="end">8.6세대 하프 글래스</text>
+<text x="224" y="138" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">1310 x 2290 mm (3.00 m2)</text>
+<rect x="236" y="102" width="65.2" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
+<text x="310.2" y="125" font-size="15" font-weight="700" fill="#12120e" text-anchor="start" class="mono">0.90배</text>
+<text x="224" y="179" font-size="14.5" font-weight="700" fill="#12120e" text-anchor="end">8.6세대 풀 글래스</text>
+<text x="224" y="196" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">2290 x 2620 mm (6.00 m2)</text>
+<rect x="236" y="160" width="350.0" height="34" fill="oklch(0.45 0.10 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.5"/>
+<text x="574.0" y="183" font-size="15" font-weight="700" fill="#fdfdfc" text-anchor="end" class="mono">4.81배</text>
+<text x="236" y="230" font-size="12" fill="#8a8a80" class="mono">자중 등분포, 사방 단순지지, 같은 유리 두께 가정</text>
 </svg>
 </div>
 
@@ -132,78 +132,63 @@ LG디스플레이 명세서가 6세대 풀과 8.6세대 하프를 한 범위로 
 
 <div class="viz-box">
   <div class="viz-title">FILING TO GRANT</div>
-<svg viewBox="0 0 960 400" width="100%" xmlns="http://www.w3.org/2000/svg">
-<line x1="210" y1="44" x2="930" y2="44" stroke="#c9c9c4" stroke-width="1"/>
-<line x1="210.0" y1="40" x2="210.0" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="210.0" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2015</text>
-<line x1="275.5" y1="40" x2="275.5" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="275.5" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2016</text>
-<line x1="340.9" y1="40" x2="340.9" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="340.9" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2017</text>
-<line x1="406.4" y1="40" x2="406.4" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="406.4" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2018</text>
-<line x1="471.8" y1="40" x2="471.8" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="471.8" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2019</text>
-<line x1="537.3" y1="40" x2="537.3" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="537.3" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2020</text>
-<line x1="602.7" y1="40" x2="602.7" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="602.7" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2021</text>
-<line x1="668.2" y1="40" x2="668.2" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="668.2" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2022</text>
-<line x1="733.6" y1="40" x2="733.6" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="733.6" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2023</text>
-<line x1="799.1" y1="40" x2="799.1" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="799.1" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2024</text>
-<line x1="864.5" y1="40" x2="864.5" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="864.5" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2025</text>
-<line x1="930.0" y1="40" x2="930.0" y2="48" stroke="#c9c9c4" stroke-width="1"/>
-<text x="930.0" y="32" font-size="10.5" fill="#8a8a80" text-anchor="middle" class="mono">2026</text>
-<text x="196" y="77" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">야스</text>
-<text x="196" y="91" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">선형증발원 차단판</text>
-<rect x="246.0" y="66" width="100.1" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="246.0" cy="73.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="355.1" y="78" font-size="10.5" fill="#4d4d45" class="mono">KR101699168B1</text>
-<text x="196" y="111" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">캐논토키</text>
-<text x="196" y="125" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">정전척 분리 순서 제어</text>
-<rect x="453.5" y="100" width="95.6" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="453.5" cy="107.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="558.1" y="112" font-size="10.5" fill="#4d4d45" class="mono">KR102085447B1</text>
-<text x="196" y="145" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">선익시스템</text>
-<text x="196" y="159" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">증착원 3축 위치 조절</text>
-<rect x="575.2" y="134" width="99.5" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="575.2" cy="141.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="683.7" y="146" font-size="10.5" fill="#4d4d45" class="mono">KR102355870B1</text>
-<text x="196" y="179" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">캐논토키</text>
-<text x="196" y="193" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">매달아 지지, 접속 위치</text>
-<rect x="688.5" y="168" width="127.6" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="688.5" cy="175.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="825.1" y="180" font-size="10.5" fill="#4d4d45" class="mono">JP7462696B2</text>
-<text x="196" y="213" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">오럼머티리얼</text>
-<text x="196" y="227" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">마스크 잔류응력 제어</text>
-<rect x="692.4" y="202" width="216.7" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="692.4" cy="209.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="900.1" y="214" font-size="10.5" fill="#2a2a24" text-anchor="end" class="mono">KR102854300B1</text>
-<text x="196" y="247" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">LG디스플레이 · 이에스티</text>
-<text x="196" y="261" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">수평 고정형 기판 처리</text>
-<rect x="720.5" y="236" width="94.3" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="720.5" cy="243.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="823.8" y="248" font-size="10.5" fill="#4d4d45" class="mono">KR102651394B1</text>
-<text x="196" y="281" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">알박</text>
-<text x="196" y="295" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">증착원 격자 칸막이</text>
-<rect x="738.2" y="270" width="149.9" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="738.2" cy="277.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="879.1" y="282" font-size="10.5" fill="#2a2a24" text-anchor="end" class="mono">JP7675116B2</text>
-<text x="196" y="315" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">템스코</text>
-<text x="196" y="329" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">8세대급 마스크 분할 접합</text>
-<rect x="738.9" y="304" width="49.1" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="738.9" cy="311.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="797.0" y="316" font-size="10.5" fill="#4d4d45" class="mono">KR102595560B1</text>
-<text x="196" y="349" font-size="12.5" font-weight="700" fill="#12120e" text-anchor="end">파인원</text>
-<text x="196" y="363" font-size="10.5" fill="#6f6f66" text-anchor="end" class="mono">미리 반대로 휜 커브드 베이스</text>
-<rect x="883.5" y="338" width="20.9" height="15" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
-<circle cx="883.5" cy="345.5" r="4" fill="oklch(0.45 0.10 150)"/>
-<text x="895.5" y="350" font-size="10.5" fill="#2a2a24" text-anchor="end" class="mono">KR102845249B1</text>
-<text x="210" y="392" font-size="11" fill="#8a8a80" class="mono">막대 왼쪽 끝 = 출원일, 오른쪽 끝 = 등록일. 아홉 건 모두 등록 유지 중</text>
+<svg viewBox="0 0 650 430" width="650" xmlns="http://www.w3.org/2000/svg">
+<line x1="186" y1="52" x2="636" y2="52" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="186.0" y1="48" x2="186.0" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="186.0" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2015</text>
+<line x1="226.9" y1="48" x2="226.9" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="267.8" y1="48" x2="267.8" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="267.8" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2017</text>
+<line x1="308.7" y1="48" x2="308.7" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="349.6" y1="48" x2="349.6" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="349.6" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2019</text>
+<line x1="390.5" y1="48" x2="390.5" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="431.5" y1="48" x2="431.5" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="431.5" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2021</text>
+<line x1="472.4" y1="48" x2="472.4" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="513.3" y1="48" x2="513.3" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="513.3" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2023</text>
+<line x1="554.2" y1="48" x2="554.2" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<line x1="595.1" y1="48" x2="595.1" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="595.1" y="38" font-size="12.5" fill="#8a8a80" text-anchor="middle" class="mono">2025</text>
+<line x1="636.0" y1="48" x2="636.0" y2="56" stroke="#c9c9c4" stroke-width="1"/>
+<text x="176" y="85" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">야스</text>
+<text x="176" y="100" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR101699168B1</text>
+<rect x="208.5" y="76" width="62.6" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="208.5" cy="85" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="123" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">캐논토키</text>
+<text x="176" y="138" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102085447B1</text>
+<rect x="338.2" y="114" width="59.7" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="338.2" cy="123" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="161" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">선익시스템</text>
+<text x="176" y="176" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102355870B1</text>
+<rect x="414.3" y="152" width="62.2" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="414.3" cy="161" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="199" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">캐논토키</text>
+<text x="176" y="214" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">JP7462696B2</text>
+<rect x="485.0" y="190" width="79.8" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="485.0" cy="199" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="237" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">오럼머티리얼</text>
+<text x="176" y="252" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102854300B1</text>
+<rect x="487.5" y="228" width="135.4" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="487.5" cy="237" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="275" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">LG디스플레이 · 이에스티</text>
+<text x="176" y="290" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102651394B1</text>
+<rect x="505.1" y="266" width="58.9" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="505.1" cy="275" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="313" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">알박</text>
+<text x="176" y="328" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">JP7675116B2</text>
+<rect x="516.1" y="304" width="93.7" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="516.1" cy="313" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="351" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">템스코</text>
+<text x="176" y="366" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102595560B1</text>
+<rect x="516.5" y="342" width="30.7" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="516.5" cy="351" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="176" y="389" font-size="13.5" font-weight="700" fill="#12120e" text-anchor="end">파인원</text>
+<text x="176" y="404" font-size="12" fill="#6f6f66" text-anchor="end" class="mono">KR102845249B1</text>
+<rect x="607.0" y="380" width="13.1" height="18" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1.4"/>
+<circle cx="607.0" cy="389" r="4.5" fill="oklch(0.45 0.10 150)"/>
+<text x="186" y="420" font-size="12" fill="#8a8a80" class="mono">막대 왼쪽 끝 = 출원일, 오른쪽 끝 = 등록일</text>
 </svg>
 </div>
 
@@ -215,64 +200,64 @@ LG디스플레이 명세서가 6세대 풀과 8.6세대 하프를 한 범위로 
 
 <div class="viz-box">
   <div class="viz-title">WHAT THEY CHANGE x WHAT THEY PROTECT</div>
-<svg viewBox="0 0 960 462" width="100%" xmlns="http://www.w3.org/2000/svg">
-<rect x="152" y="6" width="260" height="34" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="282.0" y="30" font-size="12.5" font-weight="700" fill="#2a2a24" text-anchor="middle">처짐과 평탄도</text>
-<rect x="416" y="6" width="260" height="34" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="546.0" y="30" font-size="12.5" font-weight="700" fill="#2a2a24" text-anchor="middle">두께 균일도</text>
-<rect x="680" y="6" width="260" height="34" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="810.0" y="30" font-size="12.5" font-weight="700" fill="#2a2a24" text-anchor="middle">패턴 정밀도</text>
-<rect x="6" y="46" width="142" height="146" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="77.0" y="121.0" font-size="13" font-weight="700" fill="#2a2a24" text-anchor="middle">붙잡는다</text>
-<rect x="152" y="46" width="260" height="146" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="164" y="58" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="172" y="72" font-size="11.5" font-weight="700" fill="#12120e">LG디스플레이 · 이에스티</text>
-<text x="172" y="85" font-size="10" fill="#4d4d45" class="mono">두껍게 만든다 (Ti 7~12mm)</text>
-<rect x="164" y="100" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="172" y="114" font-size="11.5" font-weight="700" fill="#12120e">캐논토키</text>
-<text x="172" y="127" font-size="10" fill="#4d4d45" class="mono">지지점 위치를 옮긴다</text>
-<rect x="164" y="142" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="172" y="156" font-size="11.5" font-weight="700" fill="#12120e">파인원</text>
-<text x="172" y="169" font-size="10" fill="#4d4d45" class="mono">미리 반대로 휘어 놓는다</text>
-<rect x="416" y="46" width="260" height="146" fill="#f7f6f2" stroke="#dcdcd6"/>
-<text x="546.0" y="121.0" font-size="11" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
-<rect x="680" y="46" width="260" height="146" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="692" y="58" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="700" y="72" font-size="11.5" font-weight="700" fill="#12120e">캐논토키</text>
-<text x="700" y="85" font-size="10" fill="#4d4d45" class="mono">흡착 순서대로 분리</text>
-<rect x="6" y="196" width="142" height="146" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="77.0" y="271.0" font-size="13" font-weight="700" fill="#2a2a24" text-anchor="middle">뿌린다</text>
-<rect x="152" y="196" width="260" height="146" fill="#f7f6f2" stroke="#dcdcd6"/>
-<text x="282.0" y="271.0" font-size="11" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
-<rect x="416" y="196" width="260" height="146" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="428" y="208" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="436" y="222" font-size="11.5" font-weight="700" fill="#12120e">야스</text>
-<text x="436" y="235" font-size="10" fill="#4d4d45" class="mono">차단판 높이 변주</text>
-<rect x="428" y="250" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="436" y="264" font-size="11.5" font-weight="700" fill="#12120e">선익시스템</text>
-<text x="436" y="277" font-size="10" fill="#4d4d45" class="mono">증착원 3축 이동</text>
-<rect x="428" y="292" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="436" y="306" font-size="11.5" font-weight="700" fill="#12120e">알박</text>
-<text x="436" y="319" font-size="10" fill="#4d4d45" class="mono">격자 칸막이, 틈 15mm 이하</text>
-<rect x="680" y="196" width="260" height="146" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="692" y="208" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="700" y="222" font-size="11.5" font-weight="700" fill="#12120e">야스</text>
-<text x="700" y="235" font-size="10" fill="#4d4d45" class="mono">섀도우 유발 빔 차단</text>
-<rect x="6" y="346" width="142" height="104" fill="#f2efe6" stroke="#dcdcd6"/>
-<text x="77.0" y="400.0" font-size="13" font-weight="700" fill="#2a2a24" text-anchor="middle">마스크를 고친다</text>
-<rect x="152" y="346" width="260" height="104" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="164" y="358" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="172" y="372" font-size="11.5" font-weight="700" fill="#12120e">오럼머티리얼</text>
-<text x="172" y="385" font-size="10" fill="#4d4d45" class="mono">압연 잔류응력 상쇄</text>
-<rect x="164" y="400" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="172" y="414" font-size="11.5" font-weight="700" fill="#12120e">템스코</text>
-<text x="172" y="427" font-size="10" fill="#4d4d45" class="mono">나눠 만들어 4방향 텐션</text>
-<rect x="416" y="346" width="260" height="104" fill="#f7f6f2" stroke="#dcdcd6"/>
-<text x="546.0" y="400.0" font-size="11" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
-<rect x="680" y="346" width="260" height="104" fill="#fdfdfc" stroke="#dcdcd6"/>
-<rect x="692" y="358" width="236" height="34" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
-<text x="700" y="372" font-size="11.5" font-weight="700" fill="#12120e">템스코</text>
-<text x="700" y="385" font-size="10" fill="#4d4d45" class="mono">멀티 클램프 셀 조정</text>
+<svg viewBox="0 0 650 480" width="650" xmlns="http://www.w3.org/2000/svg">
+<rect x="104" y="4" width="175" height="32" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="191.5" y="27" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">처짐과 평탄도</text>
+<rect x="283" y="4" width="175" height="32" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="370.5" y="27" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">두께 균일도</text>
+<rect x="462" y="4" width="175" height="32" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="549.5" y="27" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">패턴 정밀도</text>
+<rect x="4" y="44" width="96" height="154" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="52.0" y="123.0" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">붙잡는다</text>
+<rect x="104" y="44" width="175" height="154" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="112" y="56" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="119" y="70" font-size="12.5" font-weight="700" fill="#12120e">LG디스플레이 · 이에스티</text>
+<text x="119" y="85" font-size="11.5" fill="#4d4d45" class="mono">티타늄 판 7~12mm</text>
+<rect x="112" y="100" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="119" y="114" font-size="12.5" font-weight="700" fill="#12120e">캐논토키</text>
+<text x="119" y="129" font-size="11.5" fill="#4d4d45" class="mono">지지점 위치를 옮김</text>
+<rect x="112" y="144" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="119" y="158" font-size="12.5" font-weight="700" fill="#12120e">파인원</text>
+<text x="119" y="173" font-size="11.5" fill="#4d4d45" class="mono">미리 반대로 휨</text>
+<rect x="283" y="44" width="175" height="154" fill="#f7f6f2" stroke="#dcdcd6"/>
+<text x="370.5" y="123.0" font-size="12" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
+<rect x="462" y="44" width="175" height="154" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="470" y="56" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="477" y="70" font-size="12.5" font-weight="700" fill="#12120e">캐논토키</text>
+<text x="477" y="85" font-size="11.5" fill="#4d4d45" class="mono">분리 순서 제어</text>
+<rect x="4" y="202" width="96" height="154" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="52.0" y="281.0" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">뿌린다</text>
+<rect x="104" y="202" width="175" height="154" fill="#f7f6f2" stroke="#dcdcd6"/>
+<text x="191.5" y="281.0" font-size="12" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
+<rect x="283" y="202" width="175" height="154" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="291" y="214" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="298" y="228" font-size="12.5" font-weight="700" fill="#12120e">야스</text>
+<text x="298" y="243" font-size="11.5" fill="#4d4d45" class="mono">차단판 높이 변주</text>
+<rect x="291" y="258" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="298" y="272" font-size="12.5" font-weight="700" fill="#12120e">선익시스템</text>
+<text x="298" y="287" font-size="11.5" fill="#4d4d45" class="mono">증착원 3축 이동</text>
+<rect x="291" y="302" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="298" y="316" font-size="12.5" font-weight="700" fill="#12120e">알박</text>
+<text x="298" y="331" font-size="11.5" fill="#4d4d45" class="mono">격자 칸막이</text>
+<rect x="462" y="202" width="175" height="154" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="470" y="214" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="477" y="228" font-size="12.5" font-weight="700" fill="#12120e">야스</text>
+<text x="477" y="243" font-size="11.5" fill="#4d4d45" class="mono">섀도우 빔 차단</text>
+<rect x="4" y="360" width="96" height="110" fill="#f2efe6" stroke="#dcdcd6"/>
+<text x="52.0" y="417.0" font-size="13.5" font-weight="700" fill="#2a2a24" text-anchor="middle">고친다</text>
+<rect x="104" y="360" width="175" height="110" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="112" y="372" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="119" y="386" font-size="12.5" font-weight="700" fill="#12120e">오럼머티리얼</text>
+<text x="119" y="401" font-size="11.5" fill="#4d4d45" class="mono">잔류응력 상쇄</text>
+<rect x="112" y="416" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="119" y="430" font-size="12.5" font-weight="700" fill="#12120e">템스코</text>
+<text x="119" y="445" font-size="11.5" fill="#4d4d45" class="mono">나눠 만들어 4방향 인장</text>
+<rect x="283" y="360" width="175" height="110" fill="#f7f6f2" stroke="#dcdcd6"/>
+<text x="370.5" y="417.0" font-size="12" fill="#b5b5ae" text-anchor="middle" class="mono">표본 없음</text>
+<rect x="462" y="360" width="175" height="110" fill="#fdfdfc" stroke="#dcdcd6"/>
+<rect x="470" y="372" width="159" height="36" fill="oklch(0.88 0.03 150)" stroke="oklch(0.45 0.10 150)" stroke-width="1"/>
+<text x="477" y="386" font-size="12.5" font-weight="700" fill="#12120e">템스코</text>
+<text x="477" y="401" font-size="11.5" fill="#4d4d45" class="mono">멀티 클램프 조정</text>
 </svg>
 </div>
 

@@ -39,7 +39,7 @@ export function mount(container, params = {}) {
     </div>
     <div class="sim-body">
       <div class="sim-canvas-wrap">
-        <canvas width="260" height="212"></canvas>
+        <canvas width="312" height="254"></canvas>
       </div>
       <div class="sim-controls">
         <div class="sim-control">
@@ -82,6 +82,9 @@ export function mount(container, params = {}) {
 
   function draw() {
     const { sagUm, shadowUm, pct } = calc();
+    // 좌표계는 260x212 그대로 두고 1.2배로 확대해 그린다.
+    // 캔버스 안 글자가 본문(17px)에 비해 너무 작다는 지적을 받아 하한을 12px로 올렸다.
+    ctx.setTransform(1.2, 0, 0, 1.2, 0, 0);
     ctx.clearRect(0, 0, 260, 212);
 
     // ── 위: 단면. 프레임 사이에 마스크가 처지고 그 위에 기판이 있다
@@ -98,7 +101,7 @@ export function mount(container, params = {}) {
     ctx.lineTo(x1 + 8, yBase - 14);
     ctx.stroke();
     ctx.fillStyle = MUTE;
-    ctx.font = '9px system-ui, sans-serif';
+    ctx.font = '10px system-ui, sans-serif';
     ctx.textAlign = 'left';
     ctx.fillText('기판', x0 - 8, yBase - 18);
 
@@ -131,12 +134,12 @@ export function mount(container, params = {}) {
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.fillStyle = depth > 30 ? WARN : INK;
-    ctx.font = '10px ui-monospace, monospace';
+    ctx.font = '11px ui-monospace, monospace';
     ctx.textAlign = 'left';
     ctx.fillText(fmt(sagUm) + 'μm', mid + 5, yBase + depth / 2 + 2);
 
     ctx.fillStyle = MUTE;
-    ctx.font = '9px system-ui, sans-serif';
+    ctx.font = '10px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('지지 간격 ' + state.spanMm + 'mm', mid, yBase + 62);
 
@@ -148,7 +151,7 @@ export function mount(container, params = {}) {
     ctx.lineTo(250, gy - 8);
     ctx.stroke();
     ctx.fillStyle = MUTE;
-    ctx.font = '9px system-ui, sans-serif';
+    ctx.font = '10px system-ui, sans-serif';
     ctx.textAlign = 'left';
     ctx.fillText('마스크 구멍 확대', 10, gy + 4);
 
@@ -204,7 +207,7 @@ export function mount(container, params = {}) {
     ctx.fillStyle = MUTE;
     ctx.fill();
 
-    ctx.font = '9px ui-monospace, monospace';
+    ctx.font = '10.5px ui-monospace, monospace';
     ctx.textAlign = 'left';
     ctx.fillStyle = MUTE;
     ctx.fillText(state.beamDeg + '도', bx + 6, subY - 24);
