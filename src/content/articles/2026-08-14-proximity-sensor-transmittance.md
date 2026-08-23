@@ -1,9 +1,13 @@
 ---
-title: "언더패널 센서 1: 근접센서"
+title: "통화할 때 화면은 어떻게 저절로 꺼질까"
 summary: "근접센서 신호가 OLED를 두 번 통과하면 세기는 거리의 제곱(T²)으로 줄어듭니다. 신호 마진을 확보하려 발광을 키우면 이번엔 TFT 광열화라는 신뢰성 리스크가 따라옵니다. 언더디스플레이 센서를 설계하는 엔지니어가 이 트레이드오프를 어떻게 풀어야 하는지 정리했습니다."
 section: tech-note
 reporter: TEKER
 publishedAt: 2026-08-14
+series:
+  id: teker-deep
+  part: 1
+  episode: 2
 readingMinutes: 10
 tags: [근접센서, OLED, TFT, ams OSRAM]
 sources:

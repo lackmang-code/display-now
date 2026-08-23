@@ -1,9 +1,13 @@
 ---
-title: "언더패널 카메라: 회절이 만드는 세 가지 결함"
+title: "화면 밑 카메라로 찍은 셀카는 왜 멀쩡할까"
 summary: "UDC 화질 저하는 픽셀 밀도를 낮춘 대가로, 회절 하나가 흐림·플레어·헤일로 세 가지 결함을 동시에 만듭니다. 해법은 계산복원(SW)과 메타서피스(광학) 두 갈래로 갈리는데, 어느 쪽에 투자할지 정해야 하는 광학·픽셀 설계 엔지니어를 위해 원리부터 특허 동향까지 정리했습니다."
 section: tech-note
 reporter: TEKER
 publishedAt: 2026-08-11
+series:
+  id: teker-deep
+  part: 1
+  episode: 1
 readingMinutes: 12
 tags: [UDC, OLED, 메타서피스, 삼성디스플레이]
 sources:

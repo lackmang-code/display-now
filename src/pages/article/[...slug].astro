@@ -7,6 +7,7 @@ import '../../styles/article.css';
 import { getCollection } from 'astro:content';
 import { SECTIONS, sectionColor } from '../../lib/sections';
 import { getAllArticles, dateLabel, articleHref } from '../../lib/articles';
+import { seriesOf, partOf, episodesOfPart, seriesKicker } from '../../lib/series';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -23,8 +24,20 @@ const section = SECTIONS[entry.data.section];
 const color = sectionColor(entry.data.section);
 
 const all = await getAllArticles();
-const related = all.filter((a) => a.slug !== entry.slug && a.data.section === entry.data.section).slice(0, 3);
 const reporterInitial = entry.data.reporter[0];
+
+// 연재 정보. 같은 부의 다른 편들이 있으면 기사 끝에 목차를 세운다.
+const series = seriesOf(entry);
+const seriesPart = partOf(entry);
+const kicker = seriesKicker(entry);
+const siblings =
+  series && entry.data.series ? episodesOfPart(all, series.id, entry.data.series.part) : [];
+const hasSeriesNav = siblings.length > 1;
+
+// 연재 편이면 "다른 글" 자리를 연재 목차가 대신한다. 같은 목록을 두 번 보여줄 이유가 없다.
+const related = hasSeriesNav
+  ? []
+  : all.filter((a) => a.slug !== entry.slug && a.data.section === entry.data.section).slice(0, 3);
 
 const articleLd = {
   '@context': 'https://schema.org',
@@ -89,6 +102,15 @@ const articleLd = {
             <span>{dateLabel(entry)} · 읽는 시간 {entry.data.readingMinutes}분</span>
           </div>
 
+          {
+            kicker && (
+              <div class="series-kicker" style={`color:${color}; border-color:${color};`}>
+                <span class="series-kicker-label">연재</span>
+                {kicker}
+              </div>
+            )
+          }
+
           <h1 class="headline">{entry.data.title}</h1>
           <p class="dek">{entry.data.summary}</p>
 
@@ -146,6 +168,49 @@ const articleLd = {
           </span>
           <a class="correction-link" href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">정정 요청하기 →</a>
         </aside>
+
+        {
+          hasSeriesNav && seriesPart && (
+            <section class="series-box" style={`--section-color:${color};`}>
+              <div class="series-head">
+                <div class="series-part-no" style={`color:${color};`}>{seriesPart.part}부</div>
+                <div>
+                  <div class="series-part-title">{seriesPart.title}</div>
+                  <div class="series-part-deck">{seriesPart.deck}</div>
+                </div>
+              </div>
+
+              <ol class="series-list">
+                {siblings.map((a) => {
+                  const here = a.slug === entry.slug;
+                  return (
+                    <li class={here ? 'here' : ''}>
+                      <span class="ep" style={here ? `background:${color}; color:#fff; border-color:${color};` : ''}>
+                        {a.data.series!.episode}
+                      </span>
+                      {here ? (
+                        <span class="ep-title">{a.data.title}<span class="ep-now">지금 읽는 글</span></span>
+                      ) : (
+                        <a class="ep-title" href={articleHref(a)}>{a.data.title}</a>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+
+              {seriesPart.status === 'ongoing' && (
+                <p class="series-foot">
+                  {seriesPart.closesWith
+                    ? `이어지는 편은 ${seriesPart.closesWith}(으)로 이 부를 닫습니다. `
+                    : ''}각 편은 따로 읽어도 완결됩니다.
+                </p>
+              )}
+              {seriesPart.status === 'done' && seriesPart.closesWith && (
+                <p class="series-foot">이 부는 {seriesPart.closesWith}(으)로 닫혔습니다. 각 편은 따로 읽어도 완결됩니다.</p>
+              )}
+            </section>
+          )
+        }
 
         {
           related.length > 0 && (
@@ -324,6 +389,122 @@ const articleLd = {
     color: var(--ink);
     border-bottom: 1px solid var(--ink);
     flex: 0 0 auto;
+  }
+
+  /* 연재 표기는 제목 위로 올린다. 제목 안에 편 번호를 넣으면 목록에서 후크가 죽는다 */
+  .series-kicker {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 4px;
+    margin-bottom: 14px;
+  }
+  .series-kicker-label {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    opacity: 0.72;
+  }
+
+  .series-box {
+    margin: 44px 0 0;
+    max-width: 880px;
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--section-color);
+    background: var(--card);
+    padding: 20px 22px 18px;
+  }
+  .series-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .series-part-no {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    flex: 0 0 auto;
+    padding-top: 3px;
+  }
+  .series-part-title {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  .series-part-deck {
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-mute);
+    word-break: keep-all;
+  }
+  .series-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+  }
+  .series-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .series-list li:last-child {
+    border-bottom: 0;
+  }
+  .series-list .ep {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--meta-soft);
+    align-self: center;
+  }
+  .series-list .ep-title {
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  a.ep-title {
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+  }
+  a.ep-title:hover {
+    border-bottom-color: var(--section-color);
+  }
+  .series-list li.here .ep-title {
+    font-weight: 600;
+  }
+  .ep-now {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    color: var(--section-color);
+    margin-left: 9px;
+    white-space: nowrap;
+  }
+  .series-foot {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink-faint);
+    word-break: keep-all;
   }
 
   .sources-box {

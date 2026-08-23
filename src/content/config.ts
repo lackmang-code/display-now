@@ -22,6 +22,23 @@ const articles = defineCollection({
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, 'collectWeekStart는 YYYY-MM-DD 형식의 월요일이어야 합니다')
       .optional(),
+    /**
+     * **연재 정보.** 심층분석을 부(部) 단위로 묶을 때만 적는다.
+     *
+     * 낱개 기사는 비워 둔다. `id`는 `src/lib/series.ts`의 연재 등록부에 있는 값이어야 하고,
+     * `part`는 몇 부인지, `episode`는 그 부 안에서 몇 편째인지다.
+     *
+     * **편 번호는 제목에 넣지 않는다.** 제목에 "센서 1 / 2 / 3"을 달았더니 검색과 목록에서
+     * 후크가 통째로 죽었다(2026-08-22 확인). 연재 표기는 제목 위 키커와 기사 끝 연재
+     * 네비게이션이 담당하고, 제목은 그 편만의 반전을 갖는다.
+     */
+    series: z
+      .object({
+        id: z.string(),
+        part: z.number().int().positive(),
+        episode: z.number().int().positive(),
+      })
+      .optional(),
     readingMinutes: z.number(),
     tags: z.array(z.string()).default([]),
     sources: z

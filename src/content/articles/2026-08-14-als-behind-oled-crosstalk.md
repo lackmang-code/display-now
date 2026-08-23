@@ -1,9 +1,13 @@
 ---
-title: "언더패널 센서 2: 조도센서"
+title: "화면이 밝은데 자동 밝기는 바깥을 어떻게 잴까"
 summary: "OLED 아래로 숨은 조도센서가 자기 발광 빛과 외부광을 구분하지 못하면, 화면 밝기 제어가 통째로 흔들립니다. 편광판을 없애는 최근 트렌드가 이 문제를 오히려 키우는 이유와, 센서·패널 설계팀이 실제로 마주치는 크로스토크 보정 방법을 정리했습니다."
 section: tech-note
 reporter: TEKER
 publishedAt: 2026-08-14
+series:
+  id: teker-deep
+  part: 1
+  episode: 3
 readingMinutes: 10
 tags: [ALS, 조도센서, OLED, 크로스토크]
 sources:

@@ -1,10 +1,14 @@
 ---
-title: "언더패널 센서 3: 페이스 ID"
+title: "페이스 ID도 화면 구멍을 없앨 수 있을까"
 summary: "지문·조도·근접센서가 차례로 화면 아래로 내려가는 동안 페이스 ID만 9년째 화면 위에 남았습니다. 3만 개의 점을 만들어내는 회절이 패널을 만나는 순간 같은 원리로 그 점들을 복제해 무너뜨리기 때문입니다. 산업이 내놓은 답은 점을 더 늘리는 것이 아니라 열 배 넘게 줄이는 것이었습니다. 3D 센싱을 패널 아래로 넣어야 하는 광학·센서 설계 엔지니어를 위해 동작원리부터 해법 세 갈래까지 정리했습니다."
 section: tech-note
 reporter: TEKER
 publishedAt: 2026-08-18
 collectWeekStart: '2026-08-10'
+series:
+  id: teker-deep
+  part: 1
+  episode: 4
 readingMinutes: 18
 tags: [FaceID, 구조광, 3D센싱, OLED, 회절, 언더패널센서]
 sources:
