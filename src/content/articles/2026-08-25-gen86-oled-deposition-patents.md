@@ -295,7 +295,7 @@ LG디스플레이 명세서가 6세대 풀과 8.6세대 하프를 한 범위로 
 <div class="num-grid"><div class="num-cell"><span class="k">차단판 위치</span><span class="v">선형증발원 상단부로부터 50~100mm 틈새</span></div><div class="num-cell"><span class="k">차단 방향</span><span class="v">x, y 두 방향 진행 모두 차단</span></div><div class="num-cell"><span class="k">차단판 길이</span><span class="v">증발원 폭을 가로지르고도 남는 길이</span></div><div class="num-cell"><span class="k">청구항 수</span><span class="v">4</span></div></div>
 
 <div class="fig-frame">
-  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig2-yas-shield.png" alt="선형증발원 위에 세워진 차단판과 그로 인한 막두께 특이점 그래프" />
+  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig2-yas-shield.webp" alt="선형증발원 위에 세워진 차단판과 그로 인한 막두께 특이점 그래프" />
   <div class="fig-cap">도면1 (KR101699168B1): 선형증발원(100)의 폭을 가로지르는 차단판(200), 그리고 그 아래 그래프가 차단판 위치에서 막두께가 꺼지는 특이점을 보여준다. 원문 도면.</div>
 </div>
 
@@ -456,7 +456,7 @@ LG디스플레이 명세서가 6세대 풀과 8.6세대 하프를 한 범위로 
 <div class="num-grid"><div class="num-cell"><span class="k">대상 유리</span><span class="v">1850x1500 ~ 2290x1310mm</span></div><div class="num-cell"><span class="k">냉각 플레이트</span><span class="v">Ti Grade 2, 두께 7~12mm</span></div><div class="num-cell"><span class="k">정전척 두께</span><span class="v">20~1000um</span></div><div class="num-cell"><span class="k">제1유전층</span><span class="v">400~600um</span></div><div class="num-cell"><span class="k">열팽창 계수</span><span class="v">Ti 8.6 / Al2O3 7.3</span></div><div class="num-cell"><span class="k">청구항 수</span><span class="v">24</span></div></div>
 
 <div class="fig-frame">
-  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig1-lgd-esc-stack.png" alt="요크 플레이트, 티타늄 냉각 플레이트, 정전척, 글래스 기판, 마스크가 아래로 매달린 단면도" />
+  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig1-lgd-esc-stack.webp" alt="요크 플레이트, 티타늄 냉각 플레이트, 정전척, 글래스 기판, 마스크가 아래로 매달린 단면도" />
   <div class="fig-cap">도면1 (KR102651394B1): 위에서부터 자석이 박힌 요크 플레이트(130, 131), 티타늄 냉각 플레이트(110), 정전척(120), 글래스 기판(10), 그리고 프레임(21)에 걸린 마스크(20). 전체 구조가 아래를 향해 매달린다. 원문 도면.</div>
 </div>
 
@@ -523,7 +523,7 @@ LG디스플레이 명세서가 6세대 풀과 8.6세대 하프를 한 범위로 
 <div class="num-grid"><div class="num-cell"><span class="k">마스크 제작</span><span class="v">분할 후 용접 접합</span></div><div class="num-cell"><span class="k">텐션 방향</span><span class="v">4방향(장변, 단변)</span></div><div class="num-cell"><span class="k">인장 수단</span><span class="v">멀티 클램프, 개별 또는 동시</span></div><div class="num-cell"><span class="k">청구항 수</span><span class="v">3</span></div></div>
 
 <div class="fig-frame">
-  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig3-temsco-split-mask.png" alt="분할된 마스크 시트를 용접선과 용접 너깃으로 이어 붙인 평면도와 사시도" />
+  <img src="/articles/2026-08-25-gen86-oled-deposition-patents/fig3-temsco-split-mask.webp" alt="분할된 마스크 시트를 용접선과 용접 너깃으로 이어 붙인 평면도와 사시도" />
   <div class="fig-cap">도면11 (KR102595560B1): 분할된 패턴 시트(녹색)와 샵 마스크(자주색)를 용접선(Welding Line)과 너깃(Nugget)으로 잇는 구조. 아래 단면도에서 시트가 여러 장으로 나뉘어 프레임에 걸린 것이 보인다. 원문 도면.</div>
 </div>
 
