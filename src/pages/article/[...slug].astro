@@ -8,6 +8,7 @@ import { getCollection } from 'astro:content';
 import { SECTIONS, sectionColor } from '../../lib/sections';
 import { getPublishedArticles, dateLabel, articleHref } from '../../lib/articles';
 import { seriesOf, partOf, episodesOfPart, seriesKicker } from '../../lib/series';
+import { topicsOf, topicIndex } from '../../lib/tags';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -44,11 +45,28 @@ const related = hasSeriesNav
   ? []
   : all.filter((a) => a.slug !== entry.slug && a.data.section === entry.data.section).slice(0, 3);
 
+// 이 기사가 속한 주제. 페이지가 실제로 존재하는(기사 2편 이상) 주제만 링크로 건다.
+// 기사마다 주제 허브로 나가는 링크가 생기면 크롤러가 사이트 안을 돌아다닐 길이 열린다.
+const liveTopics = new Set(topicIndex(published).map((g) => g.topic.slug));
+const topics = topicsOf(entry).filter((t) => liveTopics.has(t.slug));
+
+// 검색엔진에 보내는 제목. 화면 제목(h1)은 언제나 entry.data.title 그대로다.
+const seoTitle = entry.data.searchTitle ?? entry.data.title;
+
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'NewsArticle',
-  headline: entry.data.title,
+  headline: seoTitle,
+  alternativeHeadline: entry.data.title,
   description: entry.data.summary,
+  inLanguage: 'ko',
+  articleSection: section.label,
+  keywords: entry.data.tags.join(', '),
+  about: topics.map((t) => ({
+    '@type': 'Thing',
+    name: t.label,
+    url: new URL(`/tag/${t.slug}`, Astro.site).toString(),
+  })),
   datePublished: entry.data.publishedAt.toISOString(),
   dateModified: entry.data.publishedAt.toISOString(),
   image: [new URL(`/og/${entry.slug}.png`, Astro.site).toString()],
@@ -71,7 +89,7 @@ const articleLd = {
 };
 ---
 
-<Base title={`${entry.data.title} | DISPLAY NOW`} description={entry.data.summary} image={`/og/${entry.slug}.png`}>
+<Base title={`${seoTitle} | DISPLAY NOW`} description={entry.data.summary} image={`/og/${entry.slug}.png`}>
   <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
   <div class="frame">
     <Header activeSection={entry.data.section} />
@@ -173,6 +191,19 @@ const articleLd = {
           </span>
           <a class="correction-link" href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">정정 요청하기 →</a>
         </aside>
+
+        {
+          topics.length > 0 && (
+            <nav class="topic-chips" aria-label="이 기사의 주제">
+              <span class="topic-chips-label">주제</span>
+              {topics.map((t) => (
+                <a href={`/tag/${t.slug}`} class="topic-chip">
+                  {t.label}
+                </a>
+              ))}
+            </nav>
+          )
+        }
 
         {
           hasSeriesNav && seriesPart && (
@@ -283,6 +314,35 @@ const articleLd = {
 <style>
   .accent-line {
     height: 3px;
+  }
+  .topic-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 clamp(14px, 4vw, 26px) 26px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .topic-chips-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--meta-soft);
+    margin-right: 4px;
+  }
+  .topic-chip {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: #45453d;
+    border: 1px solid var(--line-frame);
+    padding: 5px 11px;
+    white-space: nowrap;
+  }
+  .topic-chip:hover {
+    color: var(--card);
+    background: var(--ink);
+    border-color: var(--ink);
   }
   .article-layout {
     display: flex;

@@ -1,0 +1,277 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SECTIONS, sectionColor } from '../../lib/sections';
+import { getPublishedArticles, dateLabel, articleHref } from '../../lib/articles';
+import { topicIndex, topicsOf, TOPIC_BY_SLUG } from '../../lib/tags';
+
+export async function getStaticPaths() {
+  const articles = await getPublishedArticles();
+  return topicIndex(articles).map((g) => ({
+    params: { slug: g.topic.slug },
+    props: { articles: g.articles },
+  }));
+}
+
+const { slug } = Astro.params;
+const { articles } = Astro.props as { articles: Awaited<ReturnType<typeof getPublishedArticles>> };
+const topic = TOPIC_BY_SLUG.get(slug!)!;
+
+// 이 주제의 기사들이 어느 꼭지에서 나왔는지. 네 기자가 같은 주제를 다른 각도로 다룬다는 것이
+// 이 매체의 구조라서, 주제 페이지에서 그 분포를 보여주는 편이 목록만 세우는 것보다 낫다.
+const bySection = new Map<string, number>();
+for (const a of articles) bySection.set(a.data.section, (bySection.get(a.data.section) ?? 0) + 1);
+
+// 함께 자주 등장하는 다른 주제. 내부 링크를 이어 주제끼리 오갈 수 있게 한다.
+const neighborCount = new Map<string, number>();
+for (const a of articles) {
+  for (const t of topicsOf(a)) {
+    if (t.slug === topic.slug) continue;
+    neighborCount.set(t.slug, (neighborCount.get(t.slug) ?? 0) + 1);
+  }
+}
+const all = await getPublishedArticles();
+const eligible = new Set(topicIndex(all).map((g) => g.topic.slug));
+const neighbors = [...neighborCount.entries()]
+  .filter(([s]) => eligible.has(s))
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 6)
+  .map(([s, n]) => ({ topic: TOPIC_BY_SLUG.get(s)!, n }));
+
+const latest = articles[0];
+---
+
+<Base
+  title={`${topic.label} 기사 모음 | DISPLAY NOW`}
+  description={topic.blurb}
+  image={latest ? `/og/${latest.slug}.png` : '/og/default.png'}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `${topic.label} 기사 모음`,
+      description: topic.blurb,
+      url: new URL(`/tag/${topic.slug}`, Astro.site).toString(),
+      isPartOf: { '@type': 'WebSite', name: 'DISPLAY NOW', url: Astro.site?.toString() },
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: articles.length,
+        itemListElement: articles.map((a, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: new URL(articleHref(a), Astro.site).toString(),
+          name: a.data.title,
+        })),
+      },
+    })}
+  />
+
+  <div style="background:#eeeee8; min-height:100vh;">
+    <div class="frame frame-boxed">
+      <Header />
+      <div class="accent-bar"></div>
+
+      <nav class="crumb" aria-label="위치">
+        <a href="/">홈</a>
+        <span>›</span>
+        <a href="/tag">주제</a>
+        <span>›</span>
+        <span aria-current="page">{topic.label}</span>
+      </nav>
+
+      <div class="topic-head">
+        <div class="eyebrow">[ 주제 ]</div>
+        <h1>{topic.label}</h1>
+        <p class="blurb">{topic.blurb}</p>
+        <div class="meta-line">
+          <span>총 {articles.length}편</span>
+          {
+            [...bySection.entries()].map(([key, n]) => (
+              <span>
+                {SECTIONS[key as keyof typeof SECTIONS].label} {n}편
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="list-wrap">
+        {
+          articles.map((a, i) => (
+            <a href={articleHref(a)} class="list-row">
+              <div class="no-col">
+                {`#${String(articles.length - i).padStart(4, '0')}`}
+                <br />
+                <span class="kind" style={`color:${sectionColor(a.data.section)};`}>
+                  {SECTIONS[a.data.section].label}
+                </span>
+              </div>
+              <div>
+                <div class="row-title">{a.data.title}</div>
+                <p class="row-summary">{a.data.summary}</p>
+              </div>
+              <div class="date-col">
+                {dateLabel(a)}
+                <br />
+                {a.data.readingMinutes}분
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      {
+        neighbors.length > 0 && (
+          <section class="neighbors">
+            <div class="eyebrow">함께 보는 주제</div>
+            <div class="chips">
+              {neighbors.map((n) => (
+                <a href={`/tag/${n.topic.slug}`} class="chip">
+                  {n.topic.label} <span class="n">{n.n}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <Footer />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .frame-boxed {
+    margin: 40px auto;
+    border: 1px solid var(--line-frame);
+    background: var(--card);
+  }
+  .accent-bar {
+    height: 3px;
+    background: var(--ink);
+  }
+  .crumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 12px clamp(14px, 4vw, 26px);
+    border-bottom: 1px solid var(--line-soft);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .crumb a {
+    color: var(--meta-soft);
+  }
+  .crumb a:hover {
+    color: var(--ink);
+  }
+  .topic-head {
+    padding: 30px clamp(14px, 4vw, 26px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .topic-head h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 4.8vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .blurb {
+    margin: 14px 0 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #45453d;
+    word-break: keep-all;
+    max-width: 62ch;
+  }
+  .meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .list-wrap {
+    padding: 0 clamp(14px, 4vw, 26px) 8px;
+  }
+  .list-row {
+    display: grid;
+    grid-template-columns: 96px 1fr 128px;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .no-col {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+    line-height: 1.7;
+  }
+  .row-title {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .row-summary {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #55554d;
+    word-break: keep-all;
+    max-width: 92ch;
+  }
+  .date-col {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+    line-height: 1.8;
+  }
+  @media (max-width: 700px) {
+    .list-row {
+      grid-template-columns: 72px 1fr;
+    }
+    .date-col {
+      grid-column: 2;
+      text-align: left;
+    }
+  }
+  .neighbors {
+    padding: 22px clamp(14px, 4vw, 26px) 30px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: #45453d;
+    border: 1px solid var(--line-frame);
+    padding: 5px 11px;
+  }
+  .chip:hover {
+    color: var(--card);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .chip .n {
+    color: var(--meta-soft);
+  }
+  .chip:hover .n {
+    color: #b4b4aa;
+  }
+</style>
