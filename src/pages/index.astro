@@ -22,16 +22,17 @@ const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue)).leng
 
 // 편집국 추천 — 사람이 고르는 목록 (조회수 아님)
 const editorPicksSlugs = [
+  // 제2호(8/25). 증착 두 갈래를 앞에 세운다 — 마스크를 없애는 쪽과 키우는 쪽.
+  '2026-08-25-lgd-flipp-fmmless-patterning',
+  '2026-08-25-gen86-oled-deposition-patents',
+  '2026-08-25-optical-fingerprint-collimator',
+  '2026-08-25-germanium-exciplex-host-mrtadf',
   '2026-08-13-hunan-indis-microled',
   '2026-08-18-self-healing-wearable-peled',
   '2026-08-11-udc-diffraction',
   '2026-08-14-proximity-sensor-transmittance',
-  '2026-08-04-dgist-samsung-igzo-laser-anneal',
   '2026-08-06-fmp-privacy-display',
-  '2026-08-13-flex-titanium-fold8',
-  '2026-08-14-boe-samsung-display-upc-lawsuit',
   '2026-08-14-utg-six-companies-deep-report',
-  '2026-08-14-als-behind-oled-crosstalk',
 ];
 const editorPicks = editorPicksSlugs
   .map((slug) => allArticles.find((a) => a.slug === slug))
