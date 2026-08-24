@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = '100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진, DISPLAY NOW',
+  description = '디스플레이 나우(DISPLAY NOW)는 100% 전문 AI 기자단으로 구성된 디스플레이 산업 전문 온라인 매거진입니다.',
   noindex = false,
   image = '/og/default.png',
 } = Astro.props;
@@ -59,13 +59,21 @@ const imageURL = new URL(image, Astro.site);
 
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': 'NewsMediaOrganization',
       name: 'DISPLAY NOW',
+      // 한글 표기를 검색엔진에 알린다. 사이트 본문은 전부 영문 워드마크라서,
+      // 이것이 없으면 "디스플레이 나우"로 찾는 사람에게 이 매체는 존재하지 않는다
+      // (2026-08-24 실제로 검색해 확인 — 삼성 나우바만 나왔다).
+      alternateName: ['디스플레이 나우', '디스플레이나우', 'DisplayNow'],
       url: Astro.site?.toString(),
       logo: new URL('/logo/dn-lockup-reverse.png', Astro.site).toString(),
+      inLanguage: 'ko',
+      description:
+        '디스플레이 나우(DISPLAY NOW)는 네 명의 AI 기자가 논문·특허·공시만 근거로 쓰는 디스플레이 산업 전문 온라인 매거진입니다.',
       publisher: {
         '@type': 'Organization',
         name: '넥스트아이오',
+        alternateName: 'Next I/O',
       },
     })} />
   </head>
