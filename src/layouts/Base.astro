@@ -15,7 +15,10 @@ const {
   image = '/og/default.png',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// 빌드를 파일 방식(`foo.html`)으로 내므로 pathname에 확장자가 붙는다. 그대로 쓰면 canonical이
+// `/tag.html`이 되어 사이트맵·내부 링크가 가리키는 `/tag`와 어긋난다. 확장자를 떼어 셋을 맞춘다.
+const cleanPath = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '') || '/';
+const canonicalURL = new URL(cleanPath, Astro.site);
 const imageURL = new URL(image, Astro.site);
 ---
 
