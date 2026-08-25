@@ -28,6 +28,11 @@ paywallAfter: 0
 
 선전대 연구진이 택한 길은 지금까지와 방향이 다르다. **발광체를 손대지 않고 그것을 담는 호스트만 바꿨다.** 호스트 분자에 들어 있던 규소를 게르마늄으로 치환한 것이 전부다.
 
+<figure class="fig-single">
+  <img src="/articles/2026-08-25-germanium-exciplex-host-mrtadf/fig1-host-design.webp" alt="역계간전이와 두 갈래 에너지 전달을 그린 개념도, 게르마늄계와 규소계 호스트 분자 구조, 붕소 개수가 다른 MR-TADF 발광체 세 종의 구조" />
+  <figcaption>그림 1. 이 연구의 설계가 한 장에 들어 있다. (a) 호스트에서 일어나는 역계간전이(RISC)와, 호스트에서 발광체로 가는 두 갈래 에너지 전달. 푀르스터 전달(FET)은 단일항을, 덱스터 전달(DET)은 삼중항을 넘긴다. (b) 목표 호스트인 게르마늄계 GeCzCz·GeTrzCz2(위)와 대조군인 규소계 SiCzCz·SiTrzCz2(아래). 색이 칠해진 자리가 갈리는 지점이고, 그 중심 원자만 Ge와 Si로 다르다. (c) 붕소 개수가 다른 MR-TADF 발광체 세 종. <span class="src">Nature Communications (2026) Fig. 1, CC BY 4.0</span></figcaption>
+</figure>
+
 ## 1. 왜 어려운 문제였나
 
 삼중항을 단일항으로 되돌리려면 전자의 스핀이 뒤집혀야 하고, 스핀을 뒤집는 힘은 스핀궤도결합에서 나온다. 그리고 스핀궤도결합은 원자번호가 클수록 강해진다. 여기까지는 교과서다.
@@ -79,6 +84,11 @@ paywallAfter: 0
 | 지연형광 수명 | 1.9μs | 1.6μs | |
 | 즉발형광 수명 | 186.8ns | 173.0ns | |
 
+<figure class="fig-single">
+  <img src="/articles/2026-08-25-germanium-exciplex-host-mrtadf/fig2-exciplex-pl.webp" alt="게르마늄 호스트 두 종과 이를 섞은 막의 흡수·발광 스펙트럼, 그리고 세 막의 시간분해 감쇠곡선" />
+  <figcaption>그림 2. 두 분자를 섞으면 어느 쪽의 것도 아닌 발광이 나온다. (a) GeCzCz와 GeTrzCz2 각각의 흡수(빈 기호)·발광(채운 기호) 스펙트럼, 그리고 둘을 섞은 막의 발광. 섞은 막에서만 470nm 쪽으로 밀린 띠가 생긴다. 엑시플렉스가 만들어졌다는 증거다. (b) 같은 세 막의 시간분해 감쇠. 마이크로초대까지 남는 지연 성분도 섞은 막에만 있다. <span class="src">Nature Communications (2026) Fig. 2, CC BY 4.0</span></figcaption>
+</figure>
+
 비복사 감쇠가 줄어든 이유로 연구진은 게르마늄이 만든 더 조밀한 분자 패킹을 든다. 단결정 X선 회절에서 게르마늄 화합물의 결정 밀도가 규소 쪽보다 높게 나왔고, 분자 사이 분산 상호작용이 강해진 결과로 해석했다.
 
 ## 3. 덱스터를 막고 푀르스터를 살린다
@@ -94,6 +104,11 @@ paywallAfter: 0
 | t-DABNA (심청) | 4.7nm | 1.33배 감소 | 1.18배 단축 | 1.69배 증가 |
 | υ-DABNA (청) | 7.6nm | 1.70배 감소 | 1.67배 단축 | 2.02배 증가 |
 | ω-DABNA (녹) | 8.5nm | **3.05배 감소** | 2.14배 단축 | 2.08배 증가 |
+
+<figure class="fig-single">
+  <img src="/articles/2026-08-25-germanium-exciplex-host-mrtadf/fig3-transient-contours.webp" alt="규소 호스트와 게르마늄 호스트에 세 가지 발광체를 넣은 막의 시간분해 발광 등고선 여섯 장" />
+  <figcaption>그림 3. 발광체를 넣은 막에서 빛이 잦아드는 모습. 각 짝의 위가 규소 호스트, 아래가 게르마늄 호스트이며 (a) t-DABNA, (b) υ-DABNA, (c) ω-DABNA다. 아래쪽에서 꼬리가 더 일찍 끊긴다. 지연형광 수명이 각각 1.18배·1.67배·2.14배 짧아진 것이 이 그림이다. 가로축 눈금이 (a)는 마이크로초대, (b)·(c)는 수백 나노초대로 서로 다르다. <span class="src">Nature Communications (2026) Fig. 3, CC BY 4.0</span></figcaption>
+</figure>
 
 푀르스터 반경이 큰 발광체일수록 개선 폭이 컸다. 호스트의 단일항 에너지가 발광체로 확실하게 건너가는 만큼, 삼중항은 호스트 쪽에 남아 빨라진 역계간전이로 되돌려지는 구조다. υ-DABNA의 역계간전이 속도는 9.1×10<sup>5</sup>초<sup>-1</sup>에 이르렀다.
 
@@ -116,6 +131,11 @@ paywallAfter: 0
 | t-DABNA · 게르마늄 | 30.1% | 12.0% | 7.6% |
 | t-DABNA · 규소 | 26.9% | 7.5% | 4.5% |
 | t-DABNA · 탄소 | 16.8% | 2.5% | |
+
+<figure class="fig-single">
+  <img src="/articles/2026-08-25-germanium-exciplex-host-mrtadf/fig4-eqe-rolloff.webp" alt="세 발광체 각각에 대해 게르마늄·규소·탄소 호스트의 휘도별 외부양자효율을 그린 곡선 세 장" />
+  <figcaption>그림 4. 이 논문의 논지가 그대로 보이는 그림. 왼쪽부터 (d) t-DABNA, (e) υ-DABNA, (f) ω-DABNA이고 각 그림에서 맨 위 곡선이 게르마늄 호스트, 나머지 둘이 규소(Si)와 탄소(C) 대조군이다. 왼쪽 끝의 최대 효율은 세 호스트가 크게 다르지 않은데 오른쪽으로 갈수록 간격이 벌어진다. (e)의 5,000니트 자리에서 게르마늄은 24.4%, 탄소는 3.2%다. <span class="src">Nature Communications (2026) Fig. 4d~f, CC BY 4.0 · 원본 12개 패널 가운데 세 개만 잘라 실었다</span></figcaption>
+</figure>
 
 **밝기가 올라갈수록 격차가 벌어진다는 점이 이 표의 핵심이다.** 최대 효율만 보면 υ-DABNA의 게르마늄과 탄소 호스트 차이는 40.1% 대 36.7%로 크지 않다. 그런데 5,000니트에서는 24.4% 대 3.2%가 된다. 효율 저하를 억제한다는 말이 실제로 무엇을 뜻하는지가 이 두 숫자 사이에 있다.
 

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 880 472" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Noto Serif KR', serif">
+<rect x="0.5" y="0.5" width="879" height="471" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="context-stroke"/></marker></defs>
+<text x="28" y="42" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">감쇠곡선 하나 뒤에서 벌어지는 다섯 갈래</text>
+<text x="28" y="63" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">논문의 속도방정식이 담는 경로 · 미지수는 계수 5개 + 트랩 밀도 = 6개 · PEER 작성</text>
+<line x1="70" y1="150" x2="700" y2="150" stroke="#12120e" stroke-width="2"/>
+<line x1="70" y1="350" x2="700" y2="350" stroke="#12120e" stroke-width="2"/>
+<text x="70" y="138" font-size="13" fill="#4d4d45">전도대</text>
+<text x="70" y="372" font-size="13" fill="#4d4d45">가전자대</text>
+<line x1="210" y1="248" x2="242" y2="248" stroke="#8a8a80" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="256" y1="248" x2="288" y2="248" stroke="#8a8a80" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="302" y1="248" x2="334" y2="248" stroke="#8a8a80" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="348" y1="248" x2="380" y2="248" stroke="#8a8a80" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="398" y="253" font-size="13" fill="#8a8a80">트랩 준위 (밀도 N<tspan baseline-shift="sub" font-size="9.5">T</tspan>)</text>
+<circle cx="150" cy="150" r="7.5" fill="#3f7ab0"/>
+<circle cx="600" cy="150" r="7.5" fill="#3f7ab0"/>
+<circle cx="650" cy="150" r="7.5" fill="#3f7ab0"/>
+<circle cx="150" cy="350" r="7.5" fill="#d1743f" fill-opacity="0.25" stroke="#d1743f" stroke-width="1.6"/>
+<circle cx="600" cy="350" r="7.5" fill="#d1743f" fill-opacity="0.25" stroke="#d1743f" stroke-width="1.6"/>
+<circle cx="650" cy="350" r="7.5" fill="#d1743f" fill-opacity="0.25" stroke="#d1743f" stroke-width="1.6"/>
+<circle cx="277" cy="248" r="7.5" fill="#3f7ab0"/>
+<circle cx="722" cy="150" r="6" fill="#3f7ab0"/><text x="734" y="155" font-size="12" fill="#4d4d45">전자</text>
+<circle cx="722" cy="350" r="6" fill="#d1743f" fill-opacity="0.25" stroke="#d1743f" stroke-width="1.6"/><text x="734" y="355" font-size="12" fill="#4d4d45">정공</text>
+<line x1="150" y1="161" x2="150" y2="337" stroke="#1f3f7a" stroke-width="2.4" marker-end="url(#ah)"/>
+<circle cx="120" cy="250" r="10" fill="#1f3f7a"/>
+<text x="120" y="254.5" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">1</text>
+<path d="M 166 262 q 8 -8 16 0 q 8 8 16 0 q 8 -8 16 0" fill="none" stroke="#1f3f7a" stroke-width="1.6"/>
+<text x="120" y="392" font-size="12.5" fill="#1f3f7a" font-weight="700">직접 재결합 γ<tspan baseline-shift="sub" font-size="9.5">eh</tspan></text>
+<text x="120" y="410" font-size="12" fill="#6f6f66">빛이 되는 유일한 경로</text>
+<line x1="260" y1="161" x2="273" y2="236" stroke="#3f7ab0" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="236" cy="196" r="10" fill="#3f7ab0"/>
+<text x="236" y="200.5" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2</text>
+<text x="212" y="112" font-size="12.5" fill="#3f7ab0" font-weight="700">전자 포획 γ<tspan baseline-shift="sub" font-size="9.5">ec</tspan></text>
+<line x1="308" y1="236" x2="295" y2="161" stroke="#8a8a80" stroke-width="1.8" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<circle cx="332" cy="196" r="10" fill="#8a8a80"/>
+<text x="332" y="200.5" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">4</text>
+<text x="350" y="94" font-size="12.5" fill="#8a8a80" font-weight="700">전자 방출 γ<tspan baseline-shift="sub" font-size="9.5">ee</tspan></text>
+<text x="350" y="112" font-size="12" fill="#6f6f66">감쇠곡선에서 두 자릿수를 움직여도 거의 안 보인다</text>
+<line x1="277" y1="260" x2="277" y2="337" stroke="#b23f2b" stroke-width="2.0" marker-end="url(#ah)"/>
+<circle cx="251" cy="306" r="10" fill="#b23f2b"/>
+<text x="251" y="310.5" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">3</text>
+<text x="300" y="392" font-size="12.5" fill="#b23f2b" font-weight="700">트랩 매개 비발광 재결합 γ<tspan baseline-shift="sub" font-size="9.5">hc</tspan></text>
+<line x1="600" y1="161" x2="600" y2="337" stroke="#d1743f" stroke-width="2.0" marker-end="url(#ah)"/>
+<line x1="650" y1="144" x2="650" y2="96" stroke="#d1743f" stroke-width="2.0" marker-end="url(#ah)"/>
+<line x1="606" y1="250" x2="644" y2="190" stroke="#d1743f" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="574" cy="250" r="10" fill="#d1743f"/>
+<text x="574" y="254.5" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">5</text>
+<text x="560" y="392" font-size="12.5" fill="#d1743f" font-weight="700">오제 재결합 γ<tspan baseline-shift="sub" font-size="9.5">Aug</tspan></text>
+<text x="560" y="410" font-size="12" fill="#6f6f66">에너지가 빛이 아니라 옆 전자를 밀어 올린다</text>
+<text x="28" y="452" font-size="12" fill="#8a8a80">여섯 개를 다르게 조합해도 ①이 만드는 감쇠곡선은 거의 같은 모양이 된다. 광발광 양자수율은 트랩이 얼마나 채워졌는지에 민감해 나머지를 갈라 준다.</text>
+</svg>

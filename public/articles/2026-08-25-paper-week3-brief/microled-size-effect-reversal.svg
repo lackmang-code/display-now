@@ -1,0 +1,48 @@
+<svg viewBox="0 0 880 558" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Noto Serif KR', serif">
+<rect x="0.5" y="0.5" width="879" height="557" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">측벽 손상을 지웠더니 마이크로LED의 크기 효과가 뒤집혔다</text>
+<text x="28" y="63" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">Nature Photonics 08.20 · 건식 수복·부동태화 처리 전후 · 논문 수치로 PEER 작성</text>
+<circle cx="358" cy="96" r="6" fill="#a9a9a0"/><text x="370" y="101" font-size="12.5" fill="#4d4d45">미처리</text>
+<circle cx="440" cy="96" r="6" fill="#1f3f7a"/><text x="452" y="101" font-size="12.5" fill="#4d4d45">처리 후</text>
+<text x="330" y="151" font-size="13.5" fill="#12120e" text-anchor="end">상온 상대 내부양자효율</text>
+<line x1="352" y1="146" x2="760" y2="146" stroke="#ececE6" stroke-width="1"/>
+<line x1="484.6" y1="146" x2="753.9" y2="146" stroke="#1f3f7a" stroke-width="2.4" stroke-opacity="0.35"/>
+<circle cx="484.6" cy="146" r="7" fill="#a9a9a0"/>
+<circle cx="753.9" cy="146" r="7" fill="#1f3f7a"/>
+<text x="484.6" y="132" font-size="11.5" fill="#7a7a72" text-anchor="middle" font-family="'IBM Plex Mono', monospace">32.5%</text>
+<text x="753.9" y="132" font-size="11.5" fill="#1f3f7a" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">98.5%</text>
+<text x="774" y="150" font-size="11" fill="#b6b6ac" font-family="'IBM Plex Mono', monospace">/ 100%</text>
+<text x="330" y="207" font-size="13.5" fill="#12120e" text-anchor="end">15μm 소자의 유효 발광 폭</text>
+<line x1="352" y1="202" x2="760" y2="202" stroke="#ececE6" stroke-width="1"/>
+<line x1="578.8" y1="202" x2="754.8" y2="202" stroke="#1f3f7a" stroke-width="2.4" stroke-opacity="0.35"/>
+<circle cx="578.8" cy="202" r="7" fill="#a9a9a0"/>
+<circle cx="754.8" cy="202" r="7" fill="#1f3f7a"/>
+<text x="578.8" y="188" font-size="11.5" fill="#7a7a72" text-anchor="middle" font-family="'IBM Plex Mono', monospace">8.34μm</text>
+<text x="754.8" y="188" font-size="11.5" fill="#1f3f7a" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">14.81μm</text>
+<text x="774" y="206" font-size="11" fill="#b6b6ac" font-family="'IBM Plex Mono', monospace">/ 15μm</text>
+<text x="330" y="263" font-size="13.5" fill="#12120e" text-anchor="end">가장자리 캐리어 수명</text>
+<line x1="352" y1="258" x2="760" y2="258" stroke="#ececE6" stroke-width="1"/>
+<line x1="529.1" y1="258" x2="686.3" y2="258" stroke="#1f3f7a" stroke-width="2.4" stroke-opacity="0.35"/>
+<circle cx="529.1" cy="258" r="7" fill="#a9a9a0"/>
+<circle cx="686.3" cy="258" r="7" fill="#1f3f7a"/>
+<text x="529.1" y="244" font-size="11.5" fill="#7a7a72" text-anchor="middle" font-family="'IBM Plex Mono', monospace">6.51ns</text>
+<text x="686.3" y="244" font-size="11.5" fill="#1f3f7a" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">12.29ns</text>
+<text x="774" y="262" font-size="11" fill="#b6b6ac" font-family="'IBM Plex Mono', monospace">/ 15ns</text>
+<text x="330" y="319" font-size="13.5" fill="#12120e" text-anchor="end">1.6μm 소자 수율</text>
+<line x1="352" y1="314" x2="760" y2="314" stroke="#ececE6" stroke-width="1"/>
+<line x1="721.2" y1="314" x2="755.1" y2="314" stroke="#1f3f7a" stroke-width="2.4" stroke-opacity="0.35"/>
+<circle cx="721.2" cy="314" r="7" fill="#a9a9a0"/>
+<circle cx="755.1" cy="314" r="7" fill="#1f3f7a"/>
+<text x="707.2" y="318" font-size="11.5" fill="#7a7a72" text-anchor="end" font-family="'IBM Plex Mono', monospace">90.5%</text>
+<text x="755.1" y="300" font-size="11.5" fill="#1f3f7a" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">98.8%</text>
+<text x="774" y="318" font-size="11" fill="#b6b6ac" font-family="'IBM Plex Mono', monospace">/ 100%</text>
+<rect x="28" y="386" width="824" height="132" fill="#f6f4ee" stroke="#e2ddd0"/>
+<line x1="596" y1="402" x2="596" y2="502" stroke="#e2ddd0"/>
+<text x="52" y="420" font-size="13.5" fill="#b8862a" font-weight="700" font-family="'IBM Plex Mono', monospace">뒤집힌 것은 방향이다</text>
+<text x="52" y="450" font-size="13" fill="#4d4d45">처리한 소자의 피크 외부양자효율은</text>
+<text x="52" y="472" font-size="13" fill="#4d4d45">칩이 작아질수록 오히려 올라간다.</text>
+<text x="52" y="498" font-size="12.5" fill="#7a7a72">측벽 재결합이 사라지면 작아질수록 유리한 광추출만 남는다.</text>
+<text x="624" y="438" font-size="15" fill="#7a7a72" font-family="'IBM Plex Mono', monospace">100μm    38.9%</text>
+<text x="624" y="478" font-size="19" fill="#b8862a" font-weight="700" font-family="'IBM Plex Mono', monospace">1.6μm    47.6%</text>
+<text x="28" y="538" font-size="12" fill="#8a8a80">각 행은 그 항목의 눈금(오른쪽 끝 표기)에 맞춰 그렸다. 항목마다 단위가 달라 행 사이의 길이를 서로 견주지는 않는다.</text>
+</svg>
