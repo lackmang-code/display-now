@@ -16,7 +16,7 @@ import Base from '../../layouts/Base.astro';
 import Footer from '../../components/Footer.astro';
 import SimBoot from '../../components/SimBoot.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
-import { bylineOf, articleHref, readingLabel } from '../../lib/articles';
+import { bylineOf, articleHref, readingLabel, leadImage } from '../../lib/articles';
 import {
   getIssues,
   articlesOfIssue,
@@ -37,6 +37,8 @@ const current = issues[0];
 const articles = await articlesOfIssue(current);
 const head = current.headSlug ? articles.find((a) => a.slug === current.headSlug) : articles[0];
 const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
+// 시뮬레이터가 없는 주의 표지. 지정 이미지가 없으면 헤드 기사의 첫 그림을 쓴다.
+const coverFallback = current.coverImage ?? (head ? leadImage(head) : undefined);
 
 // 주간지라 1년이면 52호가 된다. 풀다운에 전부 넣을 수 없으므로 최근 여덟 호까지만
 // 담고 나머지는 "전체 호 목록"이 받는다.
@@ -136,14 +138,23 @@ const navIssues = issues.slice(0, 8);
     <section class="cover">
       <div class="cno">{issueNumberLabel(current)} · {collectRangeLabel(current)}</div>
 
+      {/*
+        시뮬레이터가 하나도 없는 주에는 헤드 기사의 첫 이미지를 표지로 쓴다(CLAIM.md 규정).
+        처음엔 coverSim만 그렸는데, 그러면 그런 주에 빈 흰 상자가 뜬다.
+        호 페이지에는 이 폴백이 이미 있었고 시안이 빠뜨린 것이다.
+      */}
       <div class="stage">
         {
-          current.coverSim && (
+          current.coverSim ? (
             <div
               class="cover-sim"
               data-sim={current.coverSim}
               style={head ? `--section-color:${sectionColor(head.data.section)};` : undefined}
             />
+          ) : coverFallback ? (
+            <img class="cover-img" src={coverFallback} alt={`제${current.no}호 표지`} />
+          ) : (
+            <p class="cover-none">표지 준비 중입니다.</p>
           )
         }
       </div>
@@ -243,6 +254,26 @@ const navIssues = issues.slice(0, 8);
     accent-color: var(--section-color, var(--ink));
     height: 28px;
   }
+
+  /* 표지는 한 칸짜리로 세운다. 기본 sim-body는 캔버스와 조작부를 가로로 붙이는데,
+     캔버스가 302px 고정이라 카드가 490px가 되는 순간(520px 프레임·태블릿·데스크톱)
+     조작부가 아래로 밀리면서 캔버스 오른쪽에 흰 여백이 157px 남았다.
+     캔버스를 카드 폭에 맞춰 늘리고 조작부를 그 아래 전폭으로 둔다.
+
+     플렉스를 유지한 채 flex-basis:100%만 주면 안 된다. basis는 가로축에만 걸리므로
+     래퍼 높이가 캔버스의 원래 크기(212px)에 머무는데 늘어난 캔버스는 235px가 되어
+     23px가 삐져나오고 첫 슬라이더 라벨을 덮었다. 블록으로 세우면 이 순환이 없다. */
+  .proto .stage .sim-body {
+    display: block;
+    padding: 0;
+  }
+  .proto .stage .sim-canvas-wrap {
+    margin-bottom: 16px;
+  }
+  .proto .stage .sim-canvas-wrap canvas {
+    width: 100%;
+    height: auto;
+  }
 </style>
 
 <style>
@@ -330,6 +361,16 @@ const navIssues = issues.slice(0, 8);
   }
   .bar2 summary::-webkit-details-marker {
     display: none;
+  }
+  /* 320px에서 네 항목 합이 296px, 남는 폭이 9px뿐이었다. 글꼴을 키워 쓰는 사람에게는
+     그대로 넘친다. 좁은 화면에서는 좌우 여백을 줄여 여유를 32px 더 만든다.
+     터치 높이 42px는 건드리지 않는다. */
+  @media (max-width: 360px) {
+    .bar2 summary,
+    .bar2 .flat {
+      padding: 0 9px;
+      font-size: 13px;
+    }
   }
   .car {
     width: 0;
@@ -425,13 +466,15 @@ const navIssues = issues.slice(0, 8);
     padding: 11px 16px 14px;
     border-top: 1px solid rgba(244, 243, 238, 0.09);
   }
+  /* 칩 높이가 31px이라 손가락으로 집기에 작았다. 최소 44px로 올린다 */
   .chips .chip {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    min-height: 44px;
     font-size: 12.5px;
     line-height: 1;
-    padding: 8px 10px;
+    padding: 8px 11px;
     border: 1px solid rgba(244, 243, 238, 0.2);
     color: var(--on-dark);
     text-decoration: none;
@@ -481,6 +524,20 @@ const navIssues = issues.slice(0, 8);
     border: 1px solid rgba(244, 243, 238, 0.2);
     padding: 10px;
     color: var(--ink);
+  }
+  .cover-img {
+    display: block;
+    width: 100%;
+    max-height: 56svh;
+    object-fit: contain;
+  }
+  .cover-none {
+    margin: 0;
+    padding: 40px 0;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta-soft);
   }
   .cover h1 {
     margin: 16px 0 9px;
