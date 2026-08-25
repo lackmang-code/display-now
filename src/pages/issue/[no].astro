@@ -417,6 +417,24 @@ const grouped = SECTION_ORDER.map((key) => ({
     background: rgba(244, 243, 238, 0.08);
     border: 1px solid rgba(244, 243, 238, 0.16);
   }
+  /* 좁은 화면에서는 썸네일을 뺀다.
+     402px에서 72×54px까지 줄어 무슨 그림인지 알아볼 수 없으면서,
+     72px를 가져가는 바람에 글이 좁은 칸에 갇혀 요약이 8~10줄로 늘어났다.
+     행 하나가 310~356px가 되어 목차를 훑을 수가 없었다.
+     그림을 보는 자리는 기사 본문이지 목차가 아니다. */
+  @media (max-width: 640px) {
+    .toc-thumb {
+      display: none;
+    }
+    /* 요약도 세 줄까지만. 목차는 고르는 곳이지 읽는 곳이 아니다 */
+    .toc-summary {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-align: left;
+    }
+  }
   .toc-main {
     min-width: 0;
   }
