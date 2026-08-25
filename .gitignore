@@ -14,3 +14,6 @@ public/articles/**/*.gif
 public/articles/**/*.bmp
 public/articles/**/*.tif
 public/articles/**/*.tiff
+
+# 검수용 시안. 로컬에서만 띄운다. 라이브에 올리지 않는다.
+src/pages/preview/
