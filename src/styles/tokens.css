@@ -99,16 +99,19 @@ nav[data-nav],
   z-index: 5;
 }
 
+/* 제호는 이 사이트에서 가장 큰 활자이자 유일하게 골드인 글자다.
+   흰색 24px이던 시절에는 바로 아래 히어로 문구(32px 흰색)에 눌려
+   그 문구가 매체 이름처럼 읽혔다(2026-08-25 지적). */
 .site-header .wordmark {
   display: flex;
   align-items: center;
   gap: 9px;
   font-family: var(--font-serif);
-  font-size: clamp(20px, 5vw, 24px);
+  font-size: clamp(22px, 5.4vw, 30px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   white-space: nowrap;
-  color: var(--on-dark);
+  color: var(--gold);
   flex: 0 0 auto;
 }
 

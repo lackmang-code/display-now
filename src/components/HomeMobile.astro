@@ -1,0 +1,763 @@
+---
+/**
+ * 홈의 **모바일 지면**. 820px 이하에서만 보인다.
+ *
+ * 이 지면은 **정보 목록**이다. 표지가 아니다.
+ *
+ * 처음에는 호 페이지(/issue/N)를 본떠 표지형으로 만들었는데, 그러면 홈과 호 페이지가
+ * 거의 같은 화면이 된다(제호 옆 호수·표지 시뮬레이터·헤드라인·덱·목차가 전부 겹쳤다).
+ * 게다가 PC 홈에는 없는 시뮬레이터가 모바일에만 있어 두 지면의 성격도 어긋났다.
+ * 그래서 시뮬레이터를 빼고 PC 홈과 같은 정보를 폰 크기로 압축해 담는다.
+ *
+ * 역할이 이렇게 갈린다.
+ *   홈        — 이번 호가 무엇이고 무엇이 있는지 훑는 곳
+ *   호 페이지 — 표지를 열고 제대로 읽는 곳 (시뮬레이터·요약·편집장 노트가 거기 있다)
+ *
+ * 정보 밀도를 위해 기사 요약문을 싣지 않는다. 제목·꼭지·기자·읽는 시간까지만 담아
+ * 한 손가락 스크롤로 전체가 파악되게 한다.
+ *
+ * 활자 규칙 — 어기면 바로 티가 난다.
+ *   1. 제호는 어떤 폭에서도 줄이 바뀌지 않는다(white-space: nowrap)
+ *   2. 제호가 이 지면에서 가장 큰 활자다. 다른 제목을 제호보다 키우지 않는다
+ *
+ * ⚠️ tokens.css·Footer처럼 양쪽이 같이 쓰는 것을 고치면 여기도 같이 바뀐다.
+ */
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+import {
+  bylineOf,
+  articleHref,
+  readingLabel,
+  dateLabel,
+  getPublishedArticles,
+  type Article,
+} from '../lib/articles';
+import { topicIndex } from '../lib/tags';
+import { getIssues, issueNumberLabel, issueHref, type IssueMeta } from '../lib/issues';
+
+interface Props {
+  latestIssue?: IssueMeta;
+  latestIssueCount: number;
+  recentArticles: Article[];
+  editorPicks: Article[];
+  totalCount: number;
+}
+
+const { latestIssue, latestIssueCount, recentArticles, editorPicks, totalCount } = Astro.props;
+
+// 내비 풀다운에 실제 숫자를 넣는다. "전체 기사"만 적혀 있으면 눌러 볼 이유가 없다.
+const published = await getPublishedArticles();
+const topics = topicIndex(published);
+const sectionCount = (key: string) => published.filter((a) => a.data.section === key).length;
+
+// 주간지라 1년이면 52호가 된다. 풀다운에는 최근 여덟 호까지만 담는다.
+const navIssues = getIssues().slice(0, 8);
+---
+
+<div class="mhome">
+  <!-- ══════════ 1층 ══════════ -->
+  <div class="bar1">
+    <a href="/" class="mast">
+      <img class="mast-mark" src="/logo/dn-mark.png" alt="" width="512" height="429" />
+      <span>DISPLAY NOW</span>
+    </a>
+    <a class="sub" href="/subscribe">구독</a>
+  </div>
+
+  {/* 매체가 무엇인지 한 줄. PC 지면과 같은 문구·같은 흰색 */}
+  <p class="identity">100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진</p>
+
+  <!-- ══════════ 2층 — 스크롤하면 이 줄만 위에 붙는다 ══════════ -->
+  <nav class="bar2" id="dnnav">
+    <details name="dnnav" class="dd">
+      <summary>기사<i class="car"></i></summary>
+      <div class="panel">
+        {
+          SECTION_ORDER.map((key) => (
+            <a class="prow" href={`/section/${key}`}>
+              <span class="dot" style={`background:${sectionColor(key)};`} />
+              <span class="ptxt inline">
+                <b>{SECTIONS[key].label}</b>
+                <em>{SECTIONS[key].labelEn}</em>
+              </span>
+              <span class="cnt">{sectionCount(key)}편</span>
+            </a>
+          ))
+        }
+      </div>
+    </details>
+
+    <details name="dnnav" class="dd">
+      <summary>지난호<i class="car"></i></summary>
+      <div class="panel">
+        {
+          navIssues.map((i) => (
+            <a class="prow" href={issueHref(i)}>
+              <span class="ino">{i.no}호</span>
+              <span class="ihead">{i.headline}</span>
+            </a>
+          ))
+        }
+        <a class="prow all" href="/issue">전체 호 목록 →</a>
+      </div>
+    </details>
+
+    <details name="dnnav" class="dd">
+      <summary>아카이브<i class="car"></i></summary>
+      <div class="panel">
+        <a class="prow" href="/archive">
+          <span class="ptxt"><b>전체 기사</b><em>제목 · 기업명으로 검색</em></span>
+          <span class="cnt">{totalCount}편</span>
+        </a>
+        {/* 주제 칩 여섯 개를 여기 깔았다가 뺐다(2026-08-25). 풀다운 하나에 담기에 많았다.
+            주제를 고르는 일은 /tag 페이지가 받는다 */}
+        <a class="prow" href="/tag">
+          <span class="ptxt"><b>주제별</b><em>기술 · 기업 단위로 묶어 보기</em></span>
+          <span class="cnt">{topics.length}개</span>
+        </a>
+      </div>
+    </details>
+
+    <details name="dnnav" class="dd">
+      <summary>편집국<i class="car"></i></summary>
+      <div class="panel">
+        <a class="prow" href="/editorial">
+          <span class="ptxt"><b>편집국 소개</b><em>AI 기자 4인과 AI 편집장</em></span>
+        </a>
+        <a class="prow" href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">
+          <span class="ptxt"><b>정정 및 제보</b><em>수치가 틀렸다면 알려 주십시오</em></span>
+        </a>
+        <a class="prow" href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">
+          <span class="ptxt"><b>광고 문의</b><em>지면 · 제휴 문의</em></span>
+        </a>
+      </div>
+    </details>
+  </nav>
+
+  <!-- ══════════ 이번 호 ══════════ -->
+  {
+    latestIssue && (
+      <a class="issue-band" href={issueHref(latestIssue)}>
+        <span class="ib-top">
+          <span class="ib-label">이번 호</span>
+          <span class="ib-no">{issueNumberLabel(latestIssue)}</span>
+        </span>
+        <span class="ib-head">{latestIssue.headline}</span>
+        <span class="ib-foot">
+          <span>{latestIssueCount}편 수록{latestIssue.coverSim && ' · 표지는 시뮬레이션'}</span>
+          <span class="ib-go">표지 열기 →</span>
+        </span>
+      </a>
+    )
+  }
+
+  <div class="pad">
+    <!-- ══════════ 꼭지 바로가기 ══════════ -->
+    <div class="secline"><span>꼭지</span><em><a href="/editorial">편집국 소개 →</a></em></div>
+    <div class="secgrid">
+      {
+        SECTION_ORDER.map((key) => (
+          <a class="seccard" href={`/section/${key}`} style={`border-left-color:${sectionColor(key)};`}>
+            <span class="sc-name" style={`color:${sectionColor(key, 0.74)};`}>{SECTIONS[key].label}</span>
+            <span class="sc-n">{sectionCount(key)}편 · {SECTIONS[key].reporter}</span>
+          </a>
+        ))
+      }
+      <a class="seccard arch" href="/archive">
+        <span class="sc-name">아카이브</span>
+        <span class="sc-n">전체 {totalCount}편 · 검색</span>
+      </a>
+    </div>
+
+    <!-- ══════════ 최신 글 ══════════ -->
+    <div class="secline"><span>최신 글</span><em><a href="/archive">전체 {totalCount}편 →</a></em></div>
+    {
+      recentArticles.map((a) => (
+        <a class="arow" href={articleHref(a)} style={`border-left-color:${sectionColor(a.data.section)};`}>
+          <span class="ar-band" style={`color:${sectionColor(a.data.section, 0.74)};`}>
+            {SECTIONS[a.data.section].label}
+          </span>
+          <span class="ar-title">{a.data.title}</span>
+          <span class="ar-meta">{bylineOf(a)} · 읽기 {readingLabel(a)}</span>
+        </a>
+      ))
+    }
+
+    <!-- ══════════ 홍보영상 ══════════ -->
+    {/*
+      PC 지면과 같은 자리(편집국 추천 바로 위)에 둔다.
+      영상은 2.47MB다. autoplay를 붙이면 화면에 안 보여도 받아 버리므로
+      preload="none"으로 두고, 화면에 들어올 때만 받아서 재생한다.
+      그 스크립트는 index.astro에 있고 video[data-lazy-video]를 전부 잡는다 —
+      두 지면에 하나씩 있지만 숨겨진 쪽은 교차가 없어 요청되지 않는다.
+    */}
+    <a class="mad" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
+      <span class="mad-label">광고</span>
+      <img class="mad-logo" src="/uploads/nextio-lockup-reverse.svg" alt="Next I/O" />
+      <video
+        src="/uploads/nextio-ad-mobile-robot.mp4"
+        loop
+        muted
+        playsinline
+        preload="none"
+        data-lazy-video
+      ></video>
+      <span class="mad-copy">
+        <span class="mad-tag">당신의 PC에 AI 직원을<br />복제/이식시켜 드립니다.</span>
+        <span class="mad-contact">문의: info@nextio.ai.kr</span>
+      </span>
+    </a>
+
+    <!-- ══════════ 편집국 추천 ══════════ -->
+    {
+      editorPicks.length > 0 && (
+        <>
+          <div class="secline"><span>편집국 추천</span><em>사람이 고릅니다</em></div>
+          <div class="picks">
+            {editorPicks.map((a, i) => (
+              <a class="prow2" href={articleHref(a)}>
+                <span class="pno">{String(i + 1).padStart(2, '0')}</span>
+                <span class="pbody">
+                  <span class="ptitle">{a.data.title}</span>
+                  <span class="pmeta">
+                    <span style={`color:${sectionColor(a.data.section, 0.74)};`}>
+                      {SECTIONS[a.data.section].label}
+                    </span>
+                    {' · by '}{a.data.reporter} · {dateLabel(a)}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  // <details name> 하나로도 서로 배타적으로 열리지만, 바깥을 눌렀을 때와 Esc는 직접 닫는다.
+  const nav = document.getElementById('dnnav');
+  if (nav) {
+    const close = () => nav.querySelectorAll('details[open]').forEach((d) => d.removeAttribute('open'));
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target as Node)) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+    // name 속성을 지원하지 않는 브라우저 대비 — 하나를 열면 나머지를 닫는다
+    nav.querySelectorAll('details').forEach((d) => {
+      d.addEventListener('toggle', () => {
+        if (!d.open) return;
+        nav.querySelectorAll('details').forEach((o) => {
+          if (o !== d) o.removeAttribute('open');
+        });
+      });
+    });
+  }
+</script>
+
+<style>
+  .mhome {
+    width: min(520px, 100%);
+    margin: 0 auto;
+    background: var(--ink);
+    color: var(--on-dark);
+    min-height: 100svh;
+  }
+
+  /* ─────────── 1층 ─────────── */
+  .bar1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 15px 6px;
+  }
+  .mast {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-serif);
+    /* 제호가 이 지면에서 가장 큰 활자다 */
+    font-size: clamp(22px, 7.4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--gold);
+    text-decoration: none;
+    min-width: 0;
+  }
+  /* 제호는 어떤 폭에서도 줄이 바뀌지 않는다. 매체 이름이 두 동강 나면 제호가 아니다 */
+  .mast span {
+    white-space: nowrap;
+  }
+  .mast-mark {
+    height: 0.8em;
+    width: auto;
+    flex: 0 0 auto;
+  }
+  .sub {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 11px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .identity {
+    margin: 0;
+    padding: 0 15px 11px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #fff;
+    word-break: keep-all;
+  }
+  @media (max-width: 380px) {
+    .mast {
+      gap: 6px;
+    }
+    .sub {
+      font-size: 11.5px;
+      padding: 5px 9px;
+    }
+    .bar1 {
+      padding: 10px 12px 6px;
+      gap: 8px;
+    }
+    .identity {
+      padding: 0 12px 10px;
+      font-size: 12.5px;
+    }
+  }
+
+  /* ─────────── 2층 ─────────── */
+  .bar2 {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: stretch;
+    background: var(--ink);
+    border-top: 1px solid rgba(244, 243, 238, 0.16);
+    border-bottom: 1px solid rgba(244, 243, 238, 0.16);
+  }
+  /* details를 static으로 둬야 패널이 .bar2 전체 폭에 걸린다 */
+  .dd {
+    position: static;
+    flex: 0 0 auto;
+  }
+  .bar2 summary {
+    /* 시각적으로는 얇게, 손가락 대는 자리는 42px를 확보한다 */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 42px;
+    padding: 0 13px;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark);
+    cursor: pointer;
+    list-style: none;
+    white-space: nowrap;
+  }
+  .bar2 summary::-webkit-details-marker {
+    display: none;
+  }
+  /* 320px에서 네 항목 합이 296px, 남는 폭이 9px뿐이었다. 좁은 화면에서는 여백을 줄인다 */
+  @media (max-width: 360px) {
+    .bar2 summary {
+      padding: 0 9px;
+      font-size: 13px;
+    }
+  }
+  .car {
+    width: 0;
+    height: 0;
+    border-left: 3.5px solid transparent;
+    border-right: 3.5px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.6;
+    transition: transform 0.15s;
+  }
+  .dd[open] summary {
+    color: var(--gold);
+    background: rgba(244, 243, 238, 0.07);
+  }
+  .dd[open] .car {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  .panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #14140f;
+    border-bottom: 1px solid var(--gold);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+    max-height: 62svh;
+    overflow-y: auto;
+  }
+  .prow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 9px 16px;
+    border-top: 1px solid rgba(244, 243, 238, 0.09);
+    color: var(--on-dark);
+    text-decoration: none;
+  }
+  .prow:first-child {
+    border-top: 0;
+  }
+  .prow .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .ptxt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .ptxt.inline {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .ptxt b {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .ptxt em {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark-mute);
+    word-break: keep-all;
+  }
+  .ptxt.inline em {
+    font-size: 11px;
+    letter-spacing: 0.09em;
+  }
+  .cnt {
+    margin-left: auto;
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+  }
+  .ino {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    width: 30px;
+  }
+  .ihead {
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  .prow.all {
+    justify-content: flex-end;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--on-dark-mute);
+    min-height: 42px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 11px 16px 14px;
+    border-top: 1px solid rgba(244, 243, 238, 0.09);
+  }
+  /* 손가락으로 집을 수 있게 최소 44px */
+  .chips .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 44px;
+    font-size: 12.5px;
+    line-height: 1;
+    padding: 8px 11px;
+    border: 1px solid rgba(244, 243, 238, 0.2);
+    color: var(--on-dark);
+    text-decoration: none;
+    border-radius: 2px;
+    word-break: keep-all;
+  }
+  .chips .chip i {
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--on-dark-mute);
+  }
+
+  /* ─────────── 이번 호 ─────────── */
+  /* 검정 지면 위에서 이 띠 하나만 골드다. "이번 주는 이것"이라는 표시.
+     밝은 판(테두리만 골드) 안도 만들어 봤으나 대표 판단으로 골드로 확정(2026-08-25) */
+  .issue-band {
+    display: block;
+    margin: 13px 15px 0;
+    padding: 11px 14px 12px;
+    background: var(--gold);
+    color: #17170f;
+    text-decoration: none;
+  }
+  .ib-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  .ib-label {
+    font-weight: 700;
+  }
+  .ib-no {
+    color: rgba(23, 23, 15, 0.68);
+  }
+  .ib-head {
+    display: block;
+    margin: 6px 0 8px;
+    font-family: var(--font-serif);
+    font-size: clamp(17px, 5vw, 22px);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .ib-foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: rgba(23, 23, 15, 0.7);
+  }
+  .ib-go {
+    flex: 0 0 auto;
+    font-weight: 600;
+    color: #17170f;
+  }
+
+  /* ─────────── 본문 ─────────── */
+  .pad {
+    padding: 0 15px 26px;
+  }
+  @media (max-width: 380px) {
+    .issue-band {
+      margin: 12px 12px 0;
+    }
+    .pad {
+      padding: 0 12px 24px;
+    }
+  }
+  .secline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 22px 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(244, 243, 238, 0.2);
+  }
+  .secline span {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+  }
+  .secline em {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 11.5px;
+    color: var(--on-dark-mute);
+  }
+  .secline em a {
+    color: var(--on-dark-mute);
+    text-decoration: none;
+  }
+
+  /* 꼭지 — 두 칸씩. 이름과 편수만 담아 목록처럼 보이지 않게 한다 */
+  .secgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+  .seccard {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1px solid rgba(244, 243, 238, 0.14);
+    border-left-width: 3px;
+    background: rgba(244, 243, 238, 0.045);
+    padding: 10px 12px;
+    text-decoration: none;
+  }
+  .seccard.arch {
+    grid-column: 1 / -1;
+    border-left-color: rgba(244, 243, 238, 0.4);
+  }
+  .sc-name {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--on-dark);
+  }
+  .seccard.arch .sc-name {
+    color: var(--on-dark);
+  }
+  .sc-n {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--on-dark-mute);
+  }
+
+  /* 최신 글 — 요약 없이 제목 중심. 한 손가락 스크롤로 전체가 보이게 한다 */
+  .arow {
+    display: block;
+    border-left: 3px solid;
+    background: rgba(244, 243, 238, 0.045);
+    padding: 10px 13px 11px;
+    margin-bottom: 6px;
+    text-decoration: none;
+  }
+  .ar-band {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    margin-bottom: 4px;
+  }
+  .ar-title {
+    display: block;
+    color: var(--on-dark);
+    font-family: var(--font-serif);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.42;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .ar-meta {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--on-dark-mute);
+  }
+
+  /* ─────────── 홍보영상 ─────────── */
+  .mad {
+    position: relative;
+    display: block;
+    margin-top: 22px;
+    overflow: hidden;
+    background: #0b0e19;
+    border: 1px solid var(--line-dark);
+    text-decoration: none;
+  }
+  .mad video {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+  }
+  .mad-label {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    color: #e4e2da;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 2px 7px;
+  }
+  .mad-logo {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    z-index: 2;
+    height: 16px;
+    width: auto;
+  }
+  .mad-copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    padding: 13px 14px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.82));
+    color: var(--on-dark);
+  }
+  .mad-tag {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  .mad-contact {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--on-dark-mute);
+  }
+
+  /* 편집국 추천 — 번호를 앞세워 목록과 결을 다르게 */
+  .picks {
+    border-top: 1px solid rgba(244, 243, 238, 0.14);
+  }
+  .prow2 {
+    display: flex;
+    gap: 11px;
+    align-items: baseline;
+    padding: 11px 2px;
+    border-bottom: 1px solid rgba(244, 243, 238, 0.1);
+    text-decoration: none;
+  }
+  .pno {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+  }
+  .pbody {
+    min-width: 0;
+  }
+  .ptitle {
+    display: block;
+    color: var(--on-dark);
+    font-size: 14.5px;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  .pmeta {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--on-dark-mute);
+  }
+</style>
