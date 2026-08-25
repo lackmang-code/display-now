@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { SECTION_ORDER } from '../lib/sections';
-import { ISSUES } from '../lib/issues';
+import { getIssues } from '../lib/issues';
 import { getPublishedArticles } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
 
@@ -34,7 +34,9 @@ export const GET: APIRoute = async ({ site }) => {
       path: `/tag/${g.topic.slug}`,
       lastmod: day(g.articles[0].data.publishedAt),
     })),
-    ...ISSUES.map((i) => ({ path: `/issue/${i.no}`, lastmod: i.publishedAt })),
+    // 발행 예정 호는 색인 대상이 아니다. 표지 캡처용으로 페이지는 만들지만
+    // 사이트맵에 넣으면 발행 전에 검색엔진에 알리는 셈이 된다(기사와 같은 원칙).
+    ...getIssues().map((i) => ({ path: `/issue/${i.no}`, lastmod: i.publishedAt })),
     ...articles.map((a) => ({
       path: `/article/${a.slug}`,
       lastmod: day(a.data.publishedAt),

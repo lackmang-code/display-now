@@ -152,8 +152,34 @@ export async function articlesOfIssue(issue: IssueMeta): Promise<Article[]> {
   return all.filter((a) => !taken.has(a.slug) && a.data.collectWeekStart === issue.weekStart);
 }
 
+/**
+ * **발행일이 지난 호만** 최신순으로 돌려준다. 홈·호 목록·내비가 이걸 쓴다.
+ *
+ * 표지 카드 세 장을 찍으려면 발행 전에 이 파일에 다음 호를 적어 넣어야 하는데,
+ * 걸러 두지 않으면 **적어 넣는 순간 홈이 그 호로 넘어간다.** 홈이 최신 호를
+ * 따라가게 되면서(2026-08-25 지면 개편) 생긴 조건이다. 종전에는 홈이 기사 목록이라
+ * `getPublishedArticles()`의 게이팅만으로 충분했다.
+ *
+ * 걸러지지 않는 것 — 의도한 것이다.
+ *   `/issue/N` 페이지 · 표지 카드 · og 카드는 `ISSUES`를 직접 쓴다.
+ *   발행 전에 그 주소로 들어가 표지를 캡처해야 하기 때문이다.
+ *
+ * ⚠️ 정적 사이트라 발행일이 됐다고 저절로 나타나지 않는다. 판단은 빌드할 때 한 번뿐이다.
+ *    **발행일 당일에 push하거나 재배포해야** 목록에 올라온다.
+ */
 export function getIssues(): IssueMeta[] {
+  return getAllIssues().filter((i) => i.publishedAt <= todayKst());
+}
+
+/** 발행일과 무관하게 전부. 페이지 생성·표지 캡처처럼 미리 만들어야 하는 곳에서 쓴다 */
+export function getAllIssues(): IssueMeta[] {
   return [...ISSUES].sort((a, b) => b.no - a.no);
+}
+
+/** 한국 날짜 'YYYY-MM-DD'. 기사 게이팅(getPublishedArticles)과 같은 기준을 쓴다 */
+function todayKst(): string {
+  const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
+  return new Date(Date.now() + KST_OFFSET_MS).toISOString().slice(0, 10);
 }
 
 export function getIssue(no: number): IssueMeta | undefined {
