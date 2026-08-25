@@ -191,7 +191,6 @@ const navIssues = issues.slice(0, 8);
     */}
     <div class="endline">
       <span>제{current.no}호 끝</span>
-      <a href="/issue">지난 호 전체 →</a>
     </div>
 
     <Footer />
@@ -597,23 +596,25 @@ const navIssues = issues.slice(0, 8);
   }
 
   /* ─────────── 한 권의 끝 ─────────── */
+  /* "지난 호 전체 →"를 여기 뒀다가 뺐다(2026-08-25 대표 지적). 지난 호로 가는 길은
+     내비 풀다운이 담당한다. 남은 것은 한 권이 끝났다는 표시뿐이라 가운데로 세운다 —
+     한쪽에만 글자가 남으면 링크를 지운 자리가 비어 보인다.
+     선을 글자 양옆으로 지나가게 해 종이 잡지의 끝 표시처럼 읽히게 했다. */
   .endline {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    align-items: center;
     gap: 12px;
-    margin: 0 15px 30px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(244, 243, 238, 0.2);
+    margin: 4px 15px 30px;
     font-family: var(--font-mono);
-    font-size: 12.5px;
-    letter-spacing: 0.04em;
-  }
-  .endline span {
+    font-size: 12px;
+    letter-spacing: 0.14em;
     color: var(--on-dark-mute);
   }
-  .endline a {
-    color: var(--gold);
-    text-decoration: none;
+  .endline::before,
+  .endline::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(244, 243, 238, 0.2);
   }
 </style>
