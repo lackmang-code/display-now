@@ -116,6 +116,31 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
   }
 }
 
+// ── 시각자료가 하나도 없는 기사를 찾는다 ────────────────────────────────
+//
+// "기사마다 데이터 시각화 최소 1점"은 이미 정해진 규칙인데, 편집 검수에서 이 항목을
+// 눈으로 보지 않아 제2호 피어 기사 세 편이 그림 0장으로 나갔다(2026-08-25 대표가 발견).
+// 읽는 시간·제목·수치는 검수했으면서 "그림이 있는가"는 검사 목록에 아예 없었다.
+//
+// 막지는 않고 경고만 한다. 브리핑처럼 그림 없이 나가는 것이 맞는 글도 있고,
+// 빌드를 세우면 발행이 막혀 오히려 급하게 아무 그림이나 넣게 된다.
+// 발행 전에 눈에 띄게 하는 것이 목적이다.
+const noFigure = [];
+for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
+  if (file.slice(0, 10) < WEBP_RULE_FROM) continue;
+  const src = readFileSync(join(DIR, file), 'utf8');
+  const lines = src.split('\n');
+  const body = lines.slice(frontmatterEnd(lines) + 1).join('\n');
+  const hasImg = /!\[[^\]]*\]\([^)]+\)/.test(body) || /<img[^>]+src=/i.test(body);
+  const hasSim = /data-sim=/.test(body);
+  if (!hasImg && !hasSim) noFigure.push(file.replace(/\.md$/, ''));
+}
+if (noFigure.length) {
+  console.warn(`\n⚠ 시각자료가 없는 기사 ${noFigure.length}건 — 그림이나 시뮬레이터를 넣었는지 확인하십시오`);
+  for (const s of noFigure) console.warn('  ' + s);
+  console.warn('');
+}
+
 if (problems.length) {
   console.error(`\n원고 검사 실패 (${problems.length}건)\n`);
   for (const p of problems) console.error('  ' + p);
