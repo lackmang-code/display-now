@@ -22,6 +22,14 @@ import {
   issueNumberLabel,
   collectRangeLabel,
 } from '../../lib/issues';
+import { getPublishedArticles } from '../../lib/articles';
+import { topicIndex } from '../../lib/tags';
+
+// 아카이브 풀다운에 실제 숫자를 넣는다. "전체 기사"만 적혀 있으면 눌러 볼 이유가 없다.
+const published = await getPublishedArticles();
+const topics = topicIndex(published);
+// 기사가 많은 주제부터 여섯 개만 칩으로 깐다. 열여덟 개를 다 늘어놓으면 풀다운이 아니라 목록이 된다.
+const topTopics = topics.slice(0, 6);
 
 const issues = getIssues();
 const current = issues[0];
@@ -56,7 +64,7 @@ const backIssues = issues.filter((i) => i.no !== current.no).slice(0, 3);
             SECTION_ORDER.map((key) => (
               <a class="prow" href={`/section/${key}`}>
                 <span class="dot" style={`background:${sectionColor(key)};`} />
-                <span class="ptxt">
+                <span class="ptxt inline">
                   <b>{SECTIONS[key].label}</b>
                   <em>{SECTIONS[key].labelEn}</em>
                 </span>
@@ -81,8 +89,48 @@ const backIssues = issues.filter((i) => i.no !== current.no).slice(0, 3);
         </div>
       </details>
 
-      <a class="flat" href="/archive">아카이브</a>
-      <a class="flat" href="/editorial">편집국</a>
+      {/*
+        아카이브·편집국도 풀다운으로 통일한다. 넷 중 둘만 바로 넘어가면 누르기 전에
+        무엇이 나올지 예측이 안 된다(2026-08-25 대표 지적). 둘을 하나로 묶는 안도 검토했으나
+        "읽을 것을 찾는 곳"과 "누가 만드는가"는 성격이 달라 묶으면 "더보기" 같은 라벨밖에
+        나오지 않는다. 통일하는 편이 낫고, 덤으로 상단에서 갈 길이 없던
+        주제별·제보·광고 문의가 여기서 살아난다.
+      */}
+      <details name="dnnav" class="dd">
+        <summary>아카이브<i class="car"></i></summary>
+        <div class="panel">
+          <a class="prow" href="/archive">
+            <span class="ptxt"><b>전체 기사</b><em>제목 · 기업명으로 검색</em></span>
+            <span class="cnt">{published.length}편</span>
+          </a>
+          <a class="prow" href="/tag">
+            <span class="ptxt"><b>주제별</b><em>기술 · 기업 단위로 묶어 보기</em></span>
+            <span class="cnt">{topics.length}개</span>
+          </a>
+          <div class="chips">
+            {topTopics.map((g) => (
+              <a class="chip" href={`/tag/${g.topic.slug}`}>
+                {g.topic.label}<i>{g.articles.length}</i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </details>
+
+      <details name="dnnav" class="dd">
+        <summary>편집국<i class="car"></i></summary>
+        <div class="panel">
+          <a class="prow" href="/editorial">
+            <span class="ptxt"><b>편집국 소개</b><em>AI 기자 4인과 AI 편집장</em></span>
+          </a>
+          <a class="prow" href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">
+            <span class="ptxt"><b>정정 및 제보</b><em>수치가 틀렸다면 알려 주십시오</em></span>
+          </a>
+          <a class="prow" href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">
+            <span class="ptxt"><b>광고 문의</b><em>지면 · 제휴 문의</em></span>
+          </a>
+        </div>
+      </details>
     </nav>
 
     <!-- ══════════ 표지 ══════════ -->
@@ -338,11 +386,19 @@ const backIssues = issues.filter((i) => i.no !== current.no).slice(0, 3);
     border-radius: 50%;
     flex: 0 0 auto;
   }
+  /* 기본은 두 줄. 제목 아래에 그 항목이 무엇인지 한 줄로 붙는다 —
+     눌러 보기 전에 무엇이 나올지 알 수 있어야 풀다운을 다는 의미가 있다. */
   .ptxt {
     display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  /* 꼭지는 한글·영문 라벨이 짝이라 한 줄에 나란히 둔다 */
+  .ptxt.inline {
+    flex-direction: row;
     align-items: baseline;
     gap: 8px;
-    min-width: 0;
   }
   .ptxt b {
     font-size: 15px;
@@ -351,8 +407,48 @@ const backIssues = issues.filter((i) => i.no !== current.no).slice(0, 3);
   .ptxt em {
     font-family: var(--font-mono);
     font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark-mute);
+    word-break: keep-all;
+  }
+  .ptxt.inline em {
     font-size: 11px;
     letter-spacing: 0.09em;
+  }
+  .cnt {
+    margin-left: auto;
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+  }
+
+  /* 자주 다룬 주제를 칩으로 깐다. 열여덟 개를 다 늘어놓으면 풀다운이 아니라 목록이 된다 */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 11px 16px 14px;
+    border-top: 1px solid rgba(244, 243, 238, 0.09);
+  }
+  .chips .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    line-height: 1;
+    padding: 8px 10px;
+    border: 1px solid rgba(244, 243, 238, 0.2);
+    color: var(--on-dark);
+    text-decoration: none;
+    border-radius: 2px;
+    word-break: keep-all;
+  }
+  .chips .chip i {
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
     color: var(--on-dark-mute);
   }
   .ino {
