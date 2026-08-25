@@ -1,4 +1,5 @@
 ---
+import { SECTIONS, SECTION_ORDER } from '../lib/sections';
 ---
 
 <footer class="site-footer">
@@ -16,6 +17,16 @@
       <div>이메일 <a href="mailto:info@nextio.ai.kr" style="color:#c4c4bc;">info@nextio.ai.kr</a> · 전화 010-3938-6918</div>
     </div>
     <div style="text-align:right;">
+      {/*
+        꼭지 네 개를 푸터에 세운다. 상단 내비에서 꼭지를 풀다운 안으로 넣으면
+        좁은 화면에서 이 링크들이 기본 상태에서 감춰진다. 구글은 모바일 화면을 기준으로
+        색인하므로 감춰진 링크는 값이 깎인다. 모든 페이지에 들어가는 푸터가 그 대안이다.
+      */}
+      <div class="links">
+        {SECTION_ORDER.map((key) => (
+          <a href={`/section/${key}`}>{SECTIONS[key].label}</a>
+        ))}
+      </div>
       <div class="links">
         <a href="/issue">주간호</a>
         <a href="/archive">아카이브</a>

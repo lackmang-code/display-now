@@ -1,0 +1,553 @@
+---
+/**
+ * 모바일 개조 시안 A — 표지형 뼈대 + 얇은 2층 내비.
+ *
+ * 발행물이 아니다. 사이트 어디에서도 링크되지 않고 사이트맵에도 없으며 noindex다.
+ * 대표가 폰으로 직접 눌러 보기 위한 페이지이고, 방향이 확정되면 이 파일은 지운다.
+ *
+ * 확정된 전제 (2026-08-25 대표 승인)
+ *  - 내비는 기사 · 지난호 · 아카이브 · 편집국 넷만. "기사"는 꼭지로, "지난호"는 호수로 풀다운
+ *  - 402px에서 제호(144) + 구독(84)이 먼저 먹어 내비에 110px만 남는다. 한 줄에 못 넣는다
+ *    → 1층 제호·구독 / 2층 내비의 2층 구조. Works in Progress·The Verge가 같은 구조다
+ *  - 홈은 표지 → 이번 호 목차 → 지난 호 3권에서 끝낸다. 기사 스트림을 잇지 않는다
+ */
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import SimBoot from '../../components/SimBoot.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
+import { bylineOf, articleHref, readingLabel } from '../../lib/articles';
+import {
+  getIssues,
+  articlesOfIssue,
+  issueNumberLabel,
+  collectRangeLabel,
+} from '../../lib/issues';
+
+const issues = getIssues();
+const current = issues[0];
+const articles = await articlesOfIssue(current);
+const head = current.headSlug ? articles.find((a) => a.slug === current.headSlug) : articles[0];
+const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
+
+// 주간지라 1년이면 52호가 된다. 풀다운에 전부 넣을 수 없으므로 최근 여덟 호까지만
+// 담고 나머지는 "전체 호 목록"이 받는다.
+const navIssues = issues.slice(0, 8);
+// 표지 아래에서 보여줄 지난 호. 현재 호를 뺀 세 권.
+const backIssues = issues.filter((i) => i.no !== current.no).slice(0, 3);
+---
+
+<Base title="[시안] 모바일 표지형 A | DISPLAY NOW" noindex={true}>
+  <div class="proto">
+    <!-- ══════════ 1층 ══════════ -->
+    <div class="bar1">
+      <a href="/preview/mobile-a" class="mast">
+        <img class="mast-mark" src="/logo/dn-mark.png" alt="" width="512" height="429" />
+        <span>DISPLAY NOW</span>
+      </a>
+      <a class="sub" href="/subscribe">구독</a>
+    </div>
+
+    <!-- ══════════ 2층 — 스크롤하면 이 줄만 위에 붙는다 ══════════ -->
+    <nav class="bar2" id="dnnav">
+      <details name="dnnav" class="dd">
+        <summary>기사<i class="car"></i></summary>
+        <div class="panel">
+          {
+            SECTION_ORDER.map((key) => (
+              <a class="prow" href={`/section/${key}`}>
+                <span class="dot" style={`background:${sectionColor(key)};`} />
+                <span class="ptxt">
+                  <b>{SECTIONS[key].label}</b>
+                  <em>{SECTIONS[key].labelEn}</em>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </details>
+
+      <details name="dnnav" class="dd">
+        <summary>지난호<i class="car"></i></summary>
+        <div class="panel">
+          {
+            navIssues.map((i) => (
+              <a class="prow" href={`/issue/${i.no}`}>
+                <span class="ino">{i.no}호</span>
+                <span class="ihead">{i.headline}</span>
+              </a>
+            ))
+          }
+          <a class="prow all" href="/issue">전체 호 목록 →</a>
+        </div>
+      </details>
+
+      <a class="flat" href="/archive">아카이브</a>
+      <a class="flat" href="/editorial">편집국</a>
+    </nav>
+
+    <!-- ══════════ 표지 ══════════ -->
+    <section class="cover">
+      <div class="cno">{issueNumberLabel(current)} · {collectRangeLabel(current)}</div>
+
+      <div class="stage">
+        {
+          current.coverSim && (
+            <div
+              class="cover-sim"
+              data-sim={current.coverSim}
+              style={head ? `--section-color:${sectionColor(head.data.section)};` : undefined}
+            />
+          )
+        }
+      </div>
+
+      <h1>{current.headline}</h1>
+      {current.deck && <p class="deck">{current.deck}</p>}
+
+      <ul class="clines">
+        {
+          coverlines.map((a) => (
+            <li>
+              <span class="dot" style={`background:${sectionColor(a.data.section)};`} />
+              <a href={articleHref(a)}>{a.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      {current.coverSim && <p class="hint">이 표지는 시뮬레이션입니다. 값을 바꿔 보십시오.</p>}
+    </section>
+
+    <!-- ══════════ 이번 호 목차 ══════════ -->
+    <section class="toc">
+      <div class="secline"><span>이번 호</span><em>{articles.length}편</em></div>
+      {
+        articles.map((a) => (
+          <a class="trow" href={articleHref(a)} style={`border-left-color:${sectionColor(a.data.section)};`}>
+            <div class="tband" style={`color:${sectionColor(a.data.section, 0.72)};`}>
+              {SECTIONS[a.data.section].label}
+            </div>
+            <div class="ttitle">{a.data.title}</div>
+            <div class="tmeta">{bylineOf(a)} · 읽기 {readingLabel(a)}</div>
+          </a>
+        ))
+      }
+    </section>
+
+    <!-- ══════════ 지난 호 ══════════ -->
+    {
+      backIssues.length > 0 && (
+        <section class="back">
+          <div class="secline"><span>지난 호</span><em><a href="/issue">전체 →</a></em></div>
+          <div class="shelf">
+            {backIssues.map((i) => (
+              <a class="book" href={`/issue/${i.no}`}>
+                <img src={`/issues/issue-${i.no}-poster.png`} alt={`제${i.no}호 표지`} loading="lazy" />
+                <span class="bno">제{i.no}호</span>
+                <span class="bhead">{i.headline}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <Footer />
+  </div>
+</Base>
+
+<SimBoot />
+
+<script>
+  // <details name> 하나로도 서로 배타적으로 열리지만, 바깥을 눌렀을 때와 Esc는 직접 닫는다.
+  const nav = document.getElementById('dnnav');
+  if (nav) {
+    const close = () => nav.querySelectorAll('details[open]').forEach((d) => d.removeAttribute('open'));
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target as Node)) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+    // name 속성을 지원하지 않는 브라우저 대비 — 하나를 열면 나머지를 닫는다
+    nav.querySelectorAll('details').forEach((d) => {
+      d.addEventListener('toggle', () => {
+        if (!d.open) return;
+        nav.querySelectorAll('details').forEach((o) => {
+          if (o !== d) o.removeAttribute('open');
+        });
+      });
+    });
+  }
+</script>
+
+<style is:global>
+  /* 표지에서는 시뮬레이터의 제목 띠와 고지를 접는다. 표지는 한 장으로 읽혀야 한다. */
+  .proto .stage .sim-embed {
+    border: 0;
+    margin: 0;
+    background: transparent;
+  }
+  .proto .stage .sim-head,
+  .proto .stage .sim-note {
+    display: none;
+  }
+
+  /* 슬라이더가 OS 기본 파랑이라 검정·골드 지면에서 혼자 튀었다. 꼭지색으로 맞춘다 —
+     골드보다 낫다. 슬라이더가 흰 판 위에 있어 골드는 대비가 약하고,
+     꼭지색은 이 사이트가 이미 쓰는 언어라 어느 기사에 붙어도 저절로 맞는다.
+     손잡이는 손가락으로 집을 수 있게 키운다(ciechanow.ski 실측 약 28px).
+     ※ 승인 전이라 시안 안에서만 적용한다. sim.css는 건드리지 않았다. */
+  .proto .sim-control input[type='range'] {
+    accent-color: var(--section-color, var(--ink));
+    height: 28px;
+  }
+</style>
+
+<style>
+  .proto {
+    width: min(520px, 100%);
+    margin: 0 auto;
+    background: var(--ink);
+    color: var(--on-dark);
+    min-height: 100svh;
+  }
+
+  /* ─────────── 1층 ─────────── */
+  .bar1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 15px 9px;
+    background: var(--ink);
+  }
+  .mast {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-serif);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--gold);
+    text-decoration: none;
+    min-width: 0;
+  }
+  .mast-mark {
+    height: 0.8em;
+    width: auto;
+    flex: 0 0 auto;
+  }
+  /* 부제를 제호 밑에서 뺐다. 두 줄짜리 부제가 제호(29px)보다 높이 54px로 커져
+     부제가 매체 이름처럼 읽혔다(대표 지적 4번). 문구는 편집국 페이지와 푸터에 남아 있다. */
+  .sub {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 11px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+
+  /* ─────────── 2층 ─────────── */
+  .bar2 {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background: var(--ink);
+    border-top: 1px solid rgba(244, 243, 238, 0.16);
+    border-bottom: 1px solid rgba(244, 243, 238, 0.16);
+  }
+  /* details를 static으로 둬야 패널이 .bar2 전체 폭에 걸린다 */
+  .dd {
+    position: static;
+    flex: 0 0 auto;
+  }
+  .bar2 summary,
+  .bar2 .flat {
+    /* 시각적으로는 얇게, 손가락 대는 자리는 42px를 확보한다 */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 42px;
+    padding: 0 13px;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark);
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    white-space: nowrap;
+  }
+  .bar2 summary::-webkit-details-marker {
+    display: none;
+  }
+  .car {
+    width: 0;
+    height: 0;
+    border-left: 3.5px solid transparent;
+    border-right: 3.5px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.6;
+    transition: transform 0.15s;
+  }
+  .dd[open] summary {
+    color: var(--gold);
+    background: rgba(244, 243, 238, 0.07);
+  }
+  .dd[open] .car {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  .panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #14140f;
+    border-bottom: 1px solid var(--gold);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+    max-height: 62svh;
+    overflow-y: auto;
+  }
+  .prow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 9px 16px;
+    border-top: 1px solid rgba(244, 243, 238, 0.09);
+    color: var(--on-dark);
+    text-decoration: none;
+  }
+  .prow:first-child {
+    border-top: 0;
+  }
+  .prow .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .ptxt {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+  }
+  .ptxt b {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .ptxt em {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    color: var(--on-dark-mute);
+  }
+  .ino {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    width: 30px;
+  }
+  .ihead {
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  .prow.all {
+    justify-content: flex-end;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--on-dark-mute);
+    min-height: 42px;
+  }
+
+  /* ─────────── 표지 ─────────── */
+  .cover {
+    padding: 15px 15px 22px;
+  }
+  .cno {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.07em;
+    color: var(--on-dark-mute);
+    margin-bottom: 11px;
+  }
+  .stage {
+    background: var(--card);
+    border: 1px solid rgba(244, 243, 238, 0.2);
+    padding: 10px;
+    color: var(--ink);
+  }
+  .cover h1 {
+    margin: 16px 0 9px;
+    font-family: var(--font-serif);
+    font-size: 25px;
+    line-height: 1.34;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    word-break: keep-all;
+  }
+  .deck {
+    margin: 0 0 15px;
+    font-size: 14.5px;
+    line-height: 1.68;
+    opacity: 0.85;
+    word-break: keep-all;
+  }
+  .clines {
+    list-style: none;
+    margin: 0;
+    padding: 13px 0 0;
+    border-top: 1px solid rgba(244, 243, 238, 0.2);
+    display: grid;
+    gap: 8px;
+  }
+  .clines li {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+  }
+  .clines .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    transform: translateY(-1px);
+  }
+  .clines a {
+    color: var(--on-dark);
+    font-size: 14.5px;
+    line-height: 1.5;
+    word-break: keep-all;
+    text-decoration: none;
+  }
+  .hint {
+    margin: 14px 0 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    opacity: 0.58;
+  }
+
+  /* ─────────── 구역 제목 ─────────── */
+  .secline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 0 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(244, 243, 238, 0.2);
+  }
+  .secline span {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+  }
+  .secline em {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 12.5px;
+    color: var(--on-dark-mute);
+  }
+  .secline em a {
+    color: var(--on-dark-mute);
+    text-decoration: none;
+  }
+
+  /* ─────────── 이번 호 목차 ─────────── */
+  .toc {
+    padding: 4px 15px 24px;
+  }
+  .trow {
+    display: block;
+    border-left: 3px solid;
+    background: rgba(244, 243, 238, 0.045);
+    padding: 12px 14px;
+    margin-bottom: 7px;
+    text-decoration: none;
+  }
+  .tband {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.09em;
+    margin-bottom: 5px;
+  }
+  .ttitle {
+    color: var(--on-dark);
+    font-family: var(--font-serif);
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.44;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .tmeta {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--on-dark-mute);
+  }
+
+  /* ─────────── 지난 호 ─────────── */
+  .back {
+    padding: 4px 15px 30px;
+  }
+  .shelf {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+  }
+  .book {
+    flex: 0 0 122px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: var(--on-dark);
+  }
+  /* 검정 지면 위에 표지를 책처럼 세운다. 경계를 선이 아니라 빛으로 긋는다 */
+  .book img {
+    display: block;
+    width: 122px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(212, 165, 52, 0.42);
+    box-shadow:
+      0 0 22px rgba(212, 165, 52, 0.16),
+      0 0 54px rgba(212, 165, 52, 0.08);
+  }
+  .bno {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+  }
+  .bhead {
+    display: block;
+    margin-top: 3px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--on-dark-mute);
+    word-break: keep-all;
+  }
+</style>
