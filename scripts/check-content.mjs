@@ -132,8 +132,13 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
   const lines = src.split('\n');
   const body = lines.slice(frontmatterEnd(lines) + 1).join('\n');
   const hasImg = /!\[[^\]]*\]\([^)]+\)/.test(body) || /<img[^>]+src=/i.test(body);
+  const hasSvg = /<svg[\s>]/i.test(body);
   const hasSim = /data-sim=/.test(body);
-  if (!hasImg && !hasSim) noFigure.push(file.replace(/\.md$/, ''));
+  // 시뮬레이터가 있어도 그림이 0장이면 경고한다(2026-08-31 개정).
+  // 종전 조건은 `!hasImg && !hasSim`이라 시뮬레이터 하나만 있으면 통과했다.
+  // 제3호 데스크 기사가 시뮬 1종·그림 0장으로 그 구멍을 그대로 빠져나갔다.
+  // 제2호 보강 때도 "시뮬만 있는 기사"를 대상에 넣었으면서 검사기는 안 잡고 있었다.
+  if (!hasImg && !hasSvg) noFigure.push(file.replace(/\.md$/, '') + (hasSim ? '  (시뮬레이터만 있음)' : ''));
 }
 if (noFigure.length) {
   console.warn(`\n⚠ 시각자료가 없는 기사 ${noFigure.length}건 — 그림이나 시뮬레이터를 넣었는지 확인하십시오`);
