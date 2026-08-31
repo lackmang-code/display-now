@@ -266,8 +266,8 @@ const articleLd = {
 
         <section class="newsletter-strip">
           <div style="flex:1 1 320px; min-width:0;">
-            <div style="font-family:var(--font-serif); font-size:19px; font-weight:600; letter-spacing:-0.03em;">주 3회, 디스플레이 산업의 숫자만 골라 보냅니다</div>
-            <p style="margin:6px 0 0; font-size:14px; line-height:1.7; color:var(--ink-faint); word-break:keep-all;">무료 뉴스레터는 매주 화·목·금 아침 7시. 언제든 해지할 수 있습니다.</p>
+            <div style="font-family:var(--font-serif); font-size:19px; font-weight:600; letter-spacing:-0.03em;">매주 화요일, 그 주의 디스플레이를 한 권으로 보내드립니다</div>
+            <p style="margin:6px 0 0; font-size:14px; line-height:1.7; color:var(--ink-faint); word-break:keep-all;">무료 뉴스레터입니다. 언제든 해지할 수 있습니다.</p>
           </div>
           <form onsubmit="return false;">
             <input type="email" placeholder="이메일 주소" />
@@ -316,11 +316,16 @@ const articleLd = {
     height: 3px;
   }
   .topic-chips {
+    /* 부속 블록이므로 880px(README "기사 페이지는 폭이 두 가지"). 본문 700px이 아니다.
+       종전에는 폭 제한 없이 margin clamp만 있어서 오른쪽은 부속 블록과 맞는데
+       왼쪽만 26px 안으로 밀려 있었다(2026-08-31 발견). */
+    max-width: 700px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin: 0 clamp(14px, 4vw, 26px) 26px;
+    /* 좌우 여백은 .article-main 패딩이 이미 준다. clamp로 한 번 더 주면 왼쪽이 밀린다. */
+    margin: 0 0 26px;
     padding-top: 18px;
     border-top: 1px solid var(--line-soft);
   }
@@ -429,7 +434,15 @@ const articleLd = {
     word-break: keep-all;
     max-width: 700px;
   }
+  /* tokens.css의 .newsletter-strip 은 880px이고 섹션 페이지와 공유한다.
+     기사 페이지에서만 본문 폭에 맞춘다. */
+  .newsletter-strip {
+    max-width: 700px;
+  }
   .correction {
+    /* 부속 블록 폭(880px). 이 블록만 max-width가 없어 .article-main(962px)을
+       그대로 채우는 바람에 904px로 혼자 튀어나와 있었다(2026-08-31 발견). */
+    max-width: 700px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -476,7 +489,7 @@ const articleLd = {
 
   .series-box {
     margin: 44px 0 0;
-    max-width: 880px;
+    max-width: 700px;
     border: 1px solid var(--line);
     border-top: 2px solid var(--section-color);
     background: var(--card);
@@ -574,7 +587,7 @@ const articleLd = {
 
   .sources-box {
     margin: 40px 0 0;
-    max-width: 880px;
+    max-width: 700px;
     border: 1px solid var(--line);
     background: #f7f7f3;
   }
@@ -649,7 +662,7 @@ const articleLd = {
   }
   .related {
     margin: 44px 0 0;
-    max-width: 880px;
+    max-width: 700px;
     border-top: 2px solid var(--ink);
     padding-top: 16px;
   }
