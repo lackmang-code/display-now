@@ -1,0 +1,98 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="559" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">흐림폭은 GtG가 만드는 것이 아닙니다</text>
+  <text x="28" y="63" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">흐림폭(BEW)의 정의와 240Hz에서의 분해 · DESK 계산</text>
+
+  <line x1="466" y1="86" x2="466" y2="516" stroke="#e4e4dc" stroke-width="1"/>
+
+  <!-- ============ PANEL A : definition ============ -->
+  <g>
+    <text x="28" y="112" font-size="14" font-weight="700" fill="#12120e">① 흐림폭은 이렇게 정의합니다</text>
+    <text x="28" y="130" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">윤곽에서 휘도 10%와 90% 사이의 픽셀 수</text>
+
+    <!-- axes -->
+    <line x1="96" y1="180" x2="96" y2="400" stroke="#8a8a80" stroke-width="1"/>
+    <line x1="96" y1="400" x2="410" y2="400" stroke="#8a8a80" stroke-width="1"/>
+
+    <!-- gridlines at 10% and 90% -->
+    <line x1="96" y1="202" x2="360" y2="202" stroke="#c8c8c0" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="96" y1="378" x2="360" y2="378" stroke="#c8c8c0" stroke-width="1" stroke-dasharray="4 3"/>
+
+    <!-- axis labels -->
+    <g font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#8a8a80" text-anchor="end">
+      <text x="88" y="184">100%</text>
+      <text x="88" y="206">90%</text>
+      <text x="88" y="382">10%</text>
+      <text x="88" y="404">0%</text>
+    </g>
+    <text x="52" y="290" font-size="11.5" fill="#4d4d45" font-family="'IBM Plex Mono', monospace" text-anchor="middle" transform="rotate(-90 52 290)">휘도</text>
+    <text x="253" y="500" font-size="11.5" fill="#4d4d45" font-family="'IBM Plex Mono', monospace" text-anchor="middle">화면 위 위치 (픽셀)</text>
+
+    <!-- ideal (instant) edge, for reference -->
+    <path d="M250 400 L250 180" stroke="#c8c8c0" stroke-width="1.4" stroke-dasharray="5 4" fill="none"/>
+    <text x="244" y="172" font-size="10.5" fill="#a8a8a0" font-family="'IBM Plex Mono', monospace" text-anchor="end">이상적인 윤곽</text>
+
+    <!-- measured blurred edge -->
+    <path d="M120 400 C190 400 205 291 250 290 C295 289 310 180 380 180" stroke="#5b6ea8" stroke-width="2.4" fill="none"/>
+    <text x="386" y="176" font-size="11" fill="#5b6ea8" font-family="'IBM Plex Mono', monospace">실제</text>
+
+    <!-- crossing markers -->
+    <circle cx="169" cy="378" r="3.4" fill="#5b6ea8"/>
+    <circle cx="331" cy="202" r="3.4" fill="#5b6ea8"/>
+    <line x1="169" y1="378" x2="169" y2="432" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="331" y1="202" x2="331" y2="432" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <!-- BEW measure arrow -->
+    <g stroke="oklch(0.45 0.12 315)" stroke-width="1.6" fill="none">
+      <line x1="169" y1="432" x2="331" y2="432"/>
+      <path d="M176 427 L169 432 L176 437"/>
+      <path d="M324 427 L331 432 L324 437"/>
+    </g>
+    <text x="250" y="454" font-size="12.5" font-weight="700" fill="oklch(0.45 0.12 315)" text-anchor="middle" font-family="'IBM Plex Mono', monospace">흐림폭 (BEW)</text>
+
+    <text x="28" y="524" font-size="11.5" fill="#4d4d45">MPRT는 이 폭을 시간 단위로 환산한 값입니다.</text>
+  </g>
+
+  <!-- ============ PANEL B : decomposition at 240Hz ============ -->
+  <g>
+    <text x="496" y="112" font-size="14" font-weight="700" fill="#12120e">② 그 폭을 무엇이 만드나</text>
+    <text x="496" y="130" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">표적 속도 초당 1,000픽셀 기준</text>
+
+    <!-- legend -->
+    <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4d4d45">
+      <rect x="496" y="152" width="11" height="11" fill="#5b6ea8"/><text x="512" y="162">픽셀 지속시간이 만드는 몫</text>
+      <rect x="702" y="152" width="11" height="11" fill="#a86a63"/><text x="718" y="162">GtG의 몫</text>
+    </g>
+
+    <!-- bar 1 : 240Hz, GtG 0.03ms -->
+    <text x="496" y="200" font-size="12" fill="#2a2a24" font-family="'IBM Plex Mono', monospace">240Hz · GtG 0.03ms</text>
+    <rect x="496" y="210" width="297.9" height="40" fill="#5b6ea8"/>
+    <rect x="793.9" y="210" width="2.1" height="40" fill="#a86a63"/>
+    <text x="804" y="235" font-size="12.5" font-weight="700" fill="#2a2a24" font-family="'IBM Plex Mono', monospace">4.20px</text>
+    <text x="504" y="235" font-size="11.5" fill="#fff" font-family="'IBM Plex Mono', monospace">지속시간 4.17px</text>
+
+    <!-- bar 2 : 240Hz, GtG ten times faster -->
+    <text x="496" y="290" font-size="12" fill="#2a2a24" font-family="'IBM Plex Mono', monospace">240Hz · GtG 0.003ms (열 배 개선)</text>
+    <rect x="496" y="300" width="297.9" height="40" fill="#5b6ea8"/>
+    <rect x="793.9" y="300" width="0.2" height="40" fill="#a86a63"/>
+    <text x="804" y="325" font-size="12.5" font-weight="700" fill="#2a2a24" font-family="'IBM Plex Mono', monospace">4.17px</text>
+    <text x="504" y="325" font-size="11.5" fill="#fff" font-family="'IBM Plex Mono', monospace">지속시간 4.17px</text>
+
+    <!-- bar 3 : 560Hz -->
+    <text x="496" y="380" font-size="12" fill="#2a2a24" font-family="'IBM Plex Mono', monospace">560Hz · GtG 0.03ms</text>
+    <rect x="496" y="390" width="127.9" height="40" fill="#5b6ea8"/>
+    <rect x="623.9" y="390" width="2.1" height="40" fill="#a86a63"/>
+    <text x="634" y="415" font-size="12.5" font-weight="700" fill="oklch(0.45 0.12 315)" font-family="'IBM Plex Mono', monospace">1.82px</text>
+    <text x="504" y="415" font-size="11.5" fill="#fff" font-family="'IBM Plex Mono', monospace">1.79px</text>
+
+    <!-- callout to the sliver -->
+    <line x1="795" y1="206" x2="795" y2="186" stroke="#a86a63" stroke-width="1"/>
+    <line x1="795" y1="186" x2="742" y2="186" stroke="#a86a63" stroke-width="1"/>
+    <text x="738" y="190" font-size="11" fill="#a86a63" font-family="'IBM Plex Mono', monospace" text-anchor="end">0.03px · 전체의 0.7%</text>
+
+    <text x="496" y="466" font-size="11.5" fill="#4d4d45">GtG를 열 배 줄여도 흐림폭은 0.7%만 좁아집니다.</text>
+    <text x="496" y="486" font-size="11.5" fill="oklch(0.45 0.12 315)">주사율을 240Hz에서 560Hz로 올리면 절반 아래로 좁아집니다.</text>
+    <text x="496" y="524" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">흐림폭 = 표적 속도 × 픽셀 지속시간</text>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="639" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">층을 하나 더 쌓는 두 가지 방법</text>
+  <text x="28" y="63" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">QD-OLED 펜타 탠덤과 탠덤 WOLED의 발광 스택 구조 · DESK 종합</text>
+
+  <!-- legend -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4d4d45">
+    <rect x="28" y="82" width="11" height="11" fill="#5b6ea8"/><text x="44" y="92">청색 발광층</text>
+    <rect x="128" y="82" width="11" height="11" fill="#6f9070"/><text x="144" y="92">녹색</text>
+    <rect x="186" y="82" width="11" height="11" fill="#a86a63"/><text x="202" y="92">적색</text>
+    <line x1="246" y1="88" x2="270" y2="88" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="276" y="92">전하생성층(CGL)</text>
+    <rect x="400" y="82" width="11" height="11" fill="#d8d8d0"/><text x="416" y="92">전극</text>
+  </g>
+
+  <line x1="450" y1="118" x2="450" y2="580" stroke="#e4e4dc" stroke-width="1"/>
+
+  <!-- ===================== LEFT : Samsung Display penta tandem ===================== -->
+  <g>
+    <text x="56" y="132" font-size="14" font-weight="700" fill="#12120e">삼성디스플레이 · QD-OLED 펜타 탠덤</text>
+    <text x="56" y="150" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">청색 발광 스택 5층 · 2026년 2월 발표</text>
+
+    <!-- light leaving the panel -->
+    <g font-family="'IBM Plex Mono', monospace" font-size="11.5" text-anchor="middle">
+      <text x="112" y="212" fill="#a86a63">적색</text>
+      <text x="224" y="212" fill="#6f9070">녹색</text>
+      <text x="336" y="212" fill="#5b6ea8">청색</text>
+    </g>
+    <g stroke-width="1.6" fill="none">
+      <path d="M112 242 L112 222 M106 228 L112 221 L118 228" stroke="#a86a63"/>
+      <path d="M224 242 L224 222 M218 228 L224 221 L230 228" stroke="#6f9070"/>
+      <path d="M336 242 L336 222 M330 228 L336 221 L342 228" stroke="#5b6ea8"/>
+    </g>
+
+    <!-- quantum dot colour conversion, split by subpixel -->
+    <rect x="56" y="246" width="112" height="34" fill="#a86a63"/>
+    <rect x="168" y="246" width="112" height="34" fill="#6f9070"/>
+    <rect x="280" y="246" width="112" height="34" fill="#eef0f7" stroke="#5b6ea8" stroke-width="1" stroke-dasharray="4 3"/>
+    <g font-family="'IBM Plex Mono', monospace" font-size="11" text-anchor="middle">
+      <text x="112" y="268" fill="#fff">퀀텀닷 적</text>
+      <text x="224" y="268" fill="#fff">퀀텀닷 녹</text>
+      <text x="336" y="268" fill="#5b6ea8">변환 없음</text>
+    </g>
+
+    <!-- cathode -->
+    <rect x="56" y="288" width="336" height="16" fill="#d8d8d0"/>
+    <text x="224" y="300" font-size="10.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">캐소드</text>
+
+    <!-- five blue emission stacks -->
+    <rect x="56" y="304" width="336" height="30" fill="#5b6ea8"/><text x="224" y="324" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="56" y1="338" x2="392" y2="338" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="56" y="342" width="336" height="30" fill="#5b6ea8"/><text x="224" y="362" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="56" y1="376" x2="392" y2="376" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="56" y="380" width="336" height="30" fill="#5b6ea8"/><text x="224" y="400" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="56" y1="414" x2="392" y2="414" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="56" y="418" width="336" height="30" fill="#5b6ea8"/><text x="224" y="438" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="56" y1="452" x2="392" y2="452" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="56" y="456" width="336" height="30" fill="#5b6ea8"/><text x="224" y="476" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+
+    <!-- anode -->
+    <rect x="56" y="486" width="336" height="16" fill="#d8d8d0"/>
+    <text x="224" y="498" font-size="10.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">애노드</text>
+
+    <text x="224" y="528" font-size="12.5" fill="#2a2a24" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청색 광원 + 퀀텀닷 색변환</text>
+    <text x="224" y="550" font-size="12" fill="#8a8a80" text-anchor="middle">다섯 층이 전부 청색입니다.</text>
+    <text x="224" y="570" font-size="12" fill="#8a8a80" text-anchor="middle">전류를 나눠 수명을 법니다.</text>
+  </g>
+
+  <!-- ===================== RIGHT : LG Display tandem WOLED ===================== -->
+  <g>
+    <text x="508" y="132" font-size="14" font-weight="700" fill="#12120e">LG디스플레이 · 탠덤 WOLED</text>
+    <text x="508" y="150" font-size="11" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">적·청·녹·청 4층 · 프라이머리 RGB 탠덤</text>
+
+    <!-- light leaving the panel -->
+    <g font-family="'IBM Plex Mono', monospace" font-size="11.5" text-anchor="middle">
+      <text x="564" y="250" fill="#a86a63">적색</text>
+      <text x="676" y="250" fill="#6f9070">녹색</text>
+      <text x="788" y="250" fill="#5b6ea8">청색</text>
+    </g>
+    <g stroke-width="1.6" fill="none">
+      <path d="M564 280 L564 260 M558 266 L564 259 L570 266" stroke="#a86a63"/>
+      <path d="M676 280 L676 260 M670 266 L676 259 L682 266" stroke="#6f9070"/>
+      <path d="M788 280 L788 260 M782 266 L788 259 L794 266" stroke="#5b6ea8"/>
+    </g>
+
+    <!-- colour filter, split by subpixel -->
+    <rect x="508" y="284" width="112" height="34" fill="#a86a63"/>
+    <rect x="620" y="284" width="112" height="34" fill="#6f9070"/>
+    <rect x="732" y="284" width="112" height="34" fill="#5b6ea8"/>
+    <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#fff" text-anchor="middle">
+      <text x="564" y="306">필터 적</text>
+      <text x="676" y="306">필터 녹</text>
+      <text x="788" y="306">필터 청</text>
+    </g>
+
+    <!-- cathode -->
+    <rect x="508" y="326" width="336" height="16" fill="#d8d8d0"/>
+    <text x="676" y="338" font-size="10.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">캐소드</text>
+
+    <!-- four emission stacks : red, blue, green, blue -->
+    <rect x="508" y="342" width="336" height="30" fill="#a86a63"/><text x="676" y="362" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">적</text>
+    <line x1="508" y1="376" x2="844" y2="376" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="508" y="380" width="336" height="30" fill="#5b6ea8"/><text x="676" y="400" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+    <line x1="508" y1="414" x2="844" y2="414" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="508" y="418" width="336" height="30" fill="#6f9070"/><text x="676" y="438" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">녹</text>
+    <line x1="508" y1="452" x2="844" y2="452" stroke="#8a8a80" stroke-width="1" stroke-dasharray="3 2"/>
+    <rect x="508" y="456" width="336" height="30" fill="#5b6ea8"/><text x="676" y="476" font-size="12" fill="#fff" text-anchor="middle" font-family="'IBM Plex Mono', monospace">청</text>
+
+    <!-- anode -->
+    <rect x="508" y="486" width="336" height="16" fill="#d8d8d0"/>
+    <text x="676" y="498" font-size="10.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">애노드</text>
+
+    <text x="676" y="528" font-size="12.5" fill="#2a2a24" text-anchor="middle" font-family="'IBM Plex Mono', monospace">백색 광원 + 컬러필터</text>
+    <text x="676" y="550" font-size="12" fill="#8a8a80" text-anchor="middle">네 층이 각각 다른 색입니다.</text>
+    <text x="676" y="570" font-size="12" fill="#8a8a80" text-anchor="middle">황색을 갈라 색을 법니다.</text>
+  </g>
+
+  <text x="28" y="602" font-size="12.5" fill="oklch(0.45 0.12 315)" font-family="'IBM Plex Mono', monospace">같은 한 층 더인데 하나는 수명을 벌러 갔고, 하나는 색을 벌러 갔습니다</text>
+  <text x="28" y="624" font-size="10.5" fill="#8a8a80">층 수를 그대로 견주면 안 됩니다. 두 숫자가 세는 대상이 다릅니다. 서브픽셀은 두 패널 모두 RGB 스트라이프입니다.</text>
+</svg>
