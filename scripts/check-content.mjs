@@ -146,6 +146,104 @@ if (noFigure.length) {
   console.warn('');
 }
 
+// ── 새로 그리는 그림의 글자는 영어다 (2026-09-02 확정 · 제4호부터) ─────────
+//
+// 논문 관례 그대로다. 한국어 학술지 논문도 Figure 안의 축·범례·이름표는 영어다.
+// 기준은 길이가 아니라 위치 — 캔버스 프레임 안이냐 밖이냐다.
+//
+// 문서에만 적어 두면 안 지켜진다. 규칙을 넣은 날 이미 떠 있던 기자 세션은 그 파일을
+// 읽지 않는다. CLAUDE.md 는 세션이 시작할 때만 읽히기 때문이다. 그래서 여기서 막는다.
+//
+// 소급하지 않는다. 아래 목록은 규칙 확정 당시 이미 있던 것들이라 면제한다.
+// **새로 만드는 것만 검사한다. 목록에 추가해서 검사를 피하지 말 것.**
+const SIM_DIR = 'src/lib/simulations';
+const GRANDFATHERED_SIMS = new Set([
+  'als-white-balance-demo',
+  'bpdl-bm-spectrum-demo',
+  'crosstalk-heatmap-demo',
+  'esports-persistence-blur-demo',
+  'faceid-ghost-dot-demo',
+  'faceid-triangulation-demo',
+  'fingerprint-far-frr-demo',
+  'flipp-aperture-lifetime-demo',
+  'fmm-tension-sag-demo',
+  'metasurface-mtf-demo',
+  'nanoled-count-polarity-demo',
+  'nanoled-dep-window-demo',
+  'optical-fp-angle-contrast-demo',
+  'optical-fp-collimator-demo',
+  'proximity-transmittance-demo',
+  'trpl-plqy-degeneracy-demo',
+  'udc-diffraction-demo',
+  'ultrasonic-fp-bondline-demo',
+  'ultrasonic-fp-impedance-demo',
+  'ultrasonic-fp-stack-demo',
+  'ultrasonic-fp-timegate-demo',
+  'upc-interference-demo',
+  'ups-fresnel-map-demo',
+  'woled-stack-spectrum-demo',
+]);
+const GRANDFATHERED_SVGS = new Set([
+  '2026-07-30-hiaa-big-hole/2026-07-26-hiaa-vs-kod-compare.svg',
+  '2026-08-13-flex-titanium-fold8/2026-08-13-flex-titanium-timeline.svg',
+  '2026-08-13-lgd-margin-defense-chart.svg',
+  '2026-08-18-blue-phosphorescent-oled-patents/2026-08-18-blue-phosphorescent-oled-patents-fig2.svg',
+  '2026-08-18-lgd-2stack-woled/2026-08-20-woled-stack-compare.svg',
+  '2026-08-25-paper-week3-brief/microled-size-effect-reversal.svg',
+  '2026-08-25-skku-deep-learning-carrier-kinetics/r2-by-learning-input.svg',
+  '2026-08-25-skku-deep-learning-carrier-kinetics/recombination-paths.svg',
+  '2026-09-01-esports-245-panel-tandem/blurred-edge-width.svg',
+  '2026-09-01-esports-245-panel-tandem/tandem-stack-compare.svg',
+]);
+
+const HANGUL = /[가-힣]/;
+
+// 주석은 한글 그대로 둔다. 화면에 찍히는 문자열만 본다.
+function stripComments(src) {
+  return src
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .split('\n')
+    .map((l) => (/^\s*\/\//.test(l) ? '' : l.replace(/\s\/\/.*$/, '')))
+    .join('\n');
+}
+
+if (existsSync(SIM_DIR)) {
+  for (const f of readdirSync(SIM_DIR)) {
+    if (!f.endsWith('.js') || f === 'index.js') continue;
+    const id = f.slice(0, -3);
+    if (GRANDFATHERED_SIMS.has(id)) continue;
+    const hits = stripComments(readFileSync(join(SIM_DIR, f), 'utf8'))
+      .split('\n')
+      .map((l, i) => [i + 1, l])
+      .filter(([, l]) => HANGUL.test(l));
+    if (hits.length) {
+      problems.push(
+        `${f} — 시뮬레이터 화면 문자열에 한글 ${hits.length}줄. 캔버스 안은 영어로 씁니다\n` +
+        hits.slice(0, 4).map(([n, l]) => `      ${n}행  ${l.trim().slice(0, 76)}`).join('\n') +
+        (hits.length > 4 ? `\n      … 외 ${hits.length - 4}줄` : '') +
+        `\n      고지문은 원고에 <template data-sim-note> 로 넣습니다`);
+    }
+  }
+}
+
+function walkSvg(dir, rel) {
+  if (!existsSync(dir)) return;
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const r = rel ? `${rel}/${e.name}` : e.name;
+    if (e.isDirectory()) walkSvg(join(dir, e.name), r);
+    else if (e.name.endsWith('.svg') && !GRANDFATHERED_SVGS.has(r)) {
+      const texts = (readFileSync(join(dir, e.name), 'utf8').match(/<text[^>]*>[\s\S]*?<\/text>/g) || [])
+        .filter((t) => HANGUL.test(t));
+      if (texts.length) {
+        problems.push(
+          `${r} — 직접 그린 도판의 글자에 한글 ${texts.length}곳. 도판 안은 영어로 씁니다\n` +
+          '      ' + texts.slice(0, 3).map((t) => t.replace(/<[^>]+>/g, ' ').trim().slice(0, 38)).join(' · '));
+      }
+    }
+  }
+}
+walkSvg(ASSET_DIR, '');
+
 if (problems.length) {
   console.error(`\n원고 검사 실패 (${problems.length}건)\n`);
   for (const p of problems) console.error('  ' + p);
