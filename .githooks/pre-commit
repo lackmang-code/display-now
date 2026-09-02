@@ -14,7 +14,17 @@ img=""
 secret=""
 big=""
 
-for f in $(git diff --cached --name-only --diff-filter=AM); do
+# git 은 비ASCII 경로를 "\354\227\260..." 로 이스케이프해 넘긴다. core.quotepath=false 가
+# 없으면 **한글 파일명 패턴이 하나도 발화하지 않는다.** 2026-09-03 실전 테스트에서
+# 연동규격_테스트.md·견적_테스트.md 가 그대로 통과하는 것을 확인했다. 아래 2)의 기존
+# 패턴(작업지시서·보고_20)도 그때까지 죽은 규칙이었다.
+#
+# 로컬 설정(git config core.quotepath false)으로 우연히 동작할 수 있으나 클론하면
+# 따라가지 않는다. 훅이 직접 끈다. IFS 고정은 공백 든 파일명이 쪼개지는 별개 버그다.
+OLD_IFS=$IFS
+IFS='
+'
+for f in $(git -c core.quotepath=false diff --cached --name-only --diff-filter=AM); do
   [ -f "$f" ] || continue
 
   # 1) 기사 그림은 webp만
@@ -30,10 +40,21 @@ for f in $(git diff --cached --name-only --diff-filter=AM); do
   esac
 
   # 2) 내부 자료가 딸려 올라가는 것을 막는다. public 저장소다.
+  #
+  # 2026-09-03 보강. 홈페이지(nextio-web)에서 CLAUDE.md 가 HTTP 200 으로 10일간 전문
+  # 공개된 사고가 났다. 그 저장소 훅에도 파일명 패턴이 있었으나 CLAUDE·rules·연동규격이
+  # 빠져 있었다. 여기에 같은 구멍을 남기지 않는다.
+  # 기사 파일명은 ASCII 슬러그라 아래 한글 패턴에 걸리지 않는다.
   case "$f" in
     *.pdf|*.PDF|*.zip|*.ZIP|*.docx|*.DOCX|*.pptx|*.PPTX|*.xlsx|*.XLSX|*.hwp|*.HWP|*.hwpx)
       secret="$secret  $f\n" ;;
-    *_작업노트*|*_내부*|*작업지시서*|*보고_20*)
+    *_작업노트*|*_내부*|*작업지시서*|*보고_20*|*브리핑_*|*연동규격*|*검수_*|*회신_*)
+      secret="$secret  $f\n" ;;
+    CLAUDE.md|*/CLAUDE.md|rules.md|*/rules.md|.agents/*|*/.agents/*)
+      secret="$secret  $f\n" ;;
+    *modify_plan*|*착수점*)
+      secret="$secret  $f\n" ;;
+    *견적*|*계약*|*NDA*|*리드DB*|*컨택*|*단가*|*세금계산서*)
       secret="$secret  $f\n" ;;
   esac
 
@@ -45,6 +66,7 @@ for f in $(git diff --cached --name-only --diff-filter=AM); do
     fi
   fi
 done
+IFS=$OLD_IFS
 
 fail=0
 
