@@ -47,6 +47,11 @@ for f in $(git -c core.quotepath=false diff --cached --name-only --diff-filter=A
   # 기사 파일명은 ASCII 슬러그라 아래 한글 패턴에 걸리지 않는다.
   case "$f" in
     *.pdf|*.PDF|*.zip|*.ZIP|*.docx|*.DOCX|*.pptx|*.PPTX|*.xlsx|*.XLSX|*.hwp|*.HWP|*.hwpx)
+      secret="$secret  $f
+" ;;
+    # 원본 매거진 훅에서 가져옴. 압축·원본 편집파일은 여기 올 이유가 없다.
+    # mp4 는 막지 않는다 — 편집국 히어로·광고가 실제 배포 자산이다.
+    *.psd|*.PSD|*.ai|*.AI|*.7z|*.rar|*.RAR|*.tar|*.tar.gz|*.tgz)
       secret="$secret  $f\n" ;;
     *_작업노트*|*_내부*|*작업지시서*|*보고_20*|*브리핑_*|*연동규격*|*검수_*|*회신_*)
       secret="$secret  $f\n" ;;
