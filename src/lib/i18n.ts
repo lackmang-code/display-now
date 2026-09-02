@@ -80,6 +80,32 @@ export const UI = {
     issueListEmpty: '창간호를 준비하고 있습니다.',
     coverAltFull: (no: string, headline: string) => `${no} 표지: ${headline}`,
     articleCount: (n: number) => `${n}편 수록`,
+
+    edTitle: '편집국',
+    edHero: '100% AI 기자단으로<br />구성된 디스플레이 전문<br />온라인 매거진입니다.',
+    edHeroSub: '디스플레이 나우(DISPLAY NOW)는 세상에 없는 새로운 시도입니다. 많은 응원 부탁드립니다.',
+    edNewsroom: 'AI 편집국',
+    edNewsroomSub: '기자 4인 + 편집장 1인 · 담당 자료와 한계를 함께 밝힙니다',
+    edReads: '읽는 것',
+    edDoes: '하는 일',
+    edLimit: '한계',
+    edSeeArticles: (code: string) => `${code}의 기사 보기 →`,
+    edConnector: '네 기자의 원고를 모아 편집',
+    edDeepleRole: '디플 · AI 편집장',
+    edDeepleDesc:
+      'TEKER·PEER·CLAIM·DESK 네 기자가 쓴 기사를 모아 문체와 형식을 통일하고, 근거 표기를 검증해 발행 큐로 넘깁니다. 이 편집국 페이지도 DEEPLE이 정리합니다.',
+    edDeepleReads: 'TEKER·PEER·CLAIM·DESK 네 기자의 원고',
+    edDeepleDoes: '문체·형식 통일 · 근거 표기 검증 · 발행 큐 정리',
+    edDeepleLimit: '편집 판단은 여기까지입니다. 발행 여부는 박원상 대표의 기획·검수를 통과해야 확정됩니다.',
+    edPipeline: '기사가 나오기까지',
+    edPipelineSub: '다섯 단계 · 마지막은 사람',
+    edDonts: '우리가 하지 않는 것',
+    edOversight: '기획 · 검수',
+    edEditorName: '박원상',
+    edEditorRole: '기획 · 검수<br />Next I/O 대표 · 성균관대 산학교수',
+    edEditorDesc:
+      'DEEPLE이 정리한 기사를 기획 방향에 맞춰 마지막으로 확인해야 발행됩니다. AI 기자단으로 전문 매체를 만들 수 있을지 실험하는 중이며, 잘못된 부분이 보이면 알려 주시면 바로 고치겠습니다.',
+    edBoard: '문의 게시판에 글 남기기 →',
   },
 
   en: {
@@ -90,7 +116,7 @@ export const UI = {
     editorial: 'Editorial',
     subscribe: 'Subscribe',
     subscribeShort: 'Subscribe',
-    corrections: 'Corrections & tips',
+    corrections: 'Corrections',
     adInquiry: 'Advertising',
     privacy: 'Privacy',
     terms: 'Terms',
@@ -151,6 +177,35 @@ export const UI = {
     issueListEmpty: 'The English edition begins with Issue 4.',
     coverAltFull: (no: string, headline: string) => `${no} cover: ${headline}`,
     articleCount: (n: number) => `${n} articles`,
+
+    edTitle: 'Editorial',
+    edHero: 'A display trade magazine<br />written entirely by<br />a team of AI reporters.',
+    edHeroSub:
+      'DISPLAY NOW is an attempt at something that did not exist before. We would be glad of your support.',
+    edNewsroom: 'The AI newsroom',
+    edNewsroomSub:
+      'Four reporters and one editor-in-chief · each states what it reads and where it stops',
+    edReads: 'Reads',
+    edDoes: 'Does',
+    edLimit: 'Limits',
+    edSeeArticles: (code: string) => `Articles by ${code} →`,
+    edConnector: 'Edits the four reporters into one issue',
+    edDeepleRole: 'DEEPLE · AI editor-in-chief',
+    edDeepleDesc:
+      'Takes what TEKER, PEER, CLAIM and DESK have written, makes the voice and form consistent, verifies how the sources are cited, and moves it to the publishing queue. This editorial page is edited by DEEPLE too.',
+    edDeepleReads: 'Copy from TEKER, PEER, CLAIM and DESK',
+    edDeepleDoes: 'Voice and form · verification of source citation · publishing queue',
+    edDeepleLimit:
+      'Editorial judgement stops here. Whether it publishes is settled only after Wonsang Park has reviewed it.',
+    edPipeline: 'How an article gets here',
+    edPipelineSub: 'Five steps · the last one is a person',
+    edDonts: 'What we do not do',
+    edOversight: 'Direction · review',
+    edEditorName: 'Wonsang Park',
+    edEditorRole: 'Direction · review<br />CEO, Next I/O · Industry Professor, SKKU',
+    edEditorDesc:
+      'An article is published only after it has been checked against the editorial direction. This is an experiment in whether a team of AI reporters can make a trade publication; if you see something wrong, tell us and we will fix it.',
+    edBoard: 'Write to the newsroom →',
   },
 } as const;
 

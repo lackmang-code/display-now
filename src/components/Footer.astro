@@ -41,11 +41,11 @@ const en = lang === 'en';
         <a href={en ? '/en/issue' : '/issue'}>{ui.issues}</a>
         {!en && <a href="/archive">{ui.archive}</a>}
         {!en && <a href="/tag">{ui.topics}</a>}
-        <a href="/editorial">{ui.editorial}</a>
-        <a href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">{ui.corrections}</a>
-        <a href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">{ui.adInquiry}</a>
-        <a href="/privacy">{ui.privacy}</a>
-        <a href="/terms">{ui.terms}</a>
+        <a href={en ? '/en/editorial' : '/editorial'}>{ui.editorial}</a>
+        <a href={en ? 'mailto:info@nextio.ai.kr?subject=Correction' : '/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD'}>{ui.corrections}</a>
+        <a href={en ? 'mailto:info@nextio.ai.kr?subject=Advertising' : '/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98'}>{ui.adInquiry}</a>
+        <a href={en ? '/en/privacy' : '/privacy'}>{ui.privacy}</a>
+        <a href={en ? '/en/terms' : '/terms'}>{ui.terms}</a>
       </div>
       <div class="copy">{ui.footerCopy}</div>
     </div>

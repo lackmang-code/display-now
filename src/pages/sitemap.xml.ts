@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { SECTION_ORDER } from '../lib/sections';
-import { getIssues } from '../lib/issues';
+import { getIssues, getIssuesEn } from '../lib/issues';
 import { getPublishedArticles, articleHref } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
 
@@ -19,6 +19,7 @@ export const GET: APIRoute = async ({ site }) => {
   // 영문판은 사이트맵에 함께 넣는다. 검색 유입을 새로 여는 것이 영문판을 내는 목적이라
   // 색인되지 않으면 만든 의미가 없다. 목록·꼭지 페이지는 아직 한글판뿐이므로 기사만 넣는다.
   const articlesEn = await getPublishedArticles('en');
+  const issuesEn = getIssuesEn();
 
   // 최신 기사 날짜. 목록 성격의 페이지는 이 날짜에 함께 갱신된다
   const newest = articles.length > 0 ? day(articles[0].data.publishedAt) : undefined;
@@ -49,6 +50,12 @@ export const GET: APIRoute = async ({ site }) => {
       path: articleHref(a),
       lastmod: day(a.data.publishedAt),
     })),
+    // 영문 고정 페이지. 이 홈이자 아카이브라 목록 경로는 이것뿐이다.
+    ...['/en', '/en/issue', '/en/editorial', '/en/privacy', '/en/terms'].map((path) => ({
+      path,
+      lastmod: articlesEn.length > 0 ? day(articlesEn[0].data.publishedAt) : newest,
+    })),
+    ...issuesEn.map((i) => ({ path: `/en/issue/${i.no}`, lastmod: i.publishedAt })),
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

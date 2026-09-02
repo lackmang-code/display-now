@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import type { Lang } from '../lib/articles';
+
+interface Props {
+  title: string;
+  /** 최종 수정일 표기 문구 */
+  updated: string;
+  lang?: Lang;
+}
+
+const { title, updated, lang = 'ko' } = Astro.props;
+---
+
+<Base title={`${title} | DISPLAY NOW`} lang={lang}>
+  <div class="frame">
+    <Header lang={lang} />
+    <main class="doc">
+      <h1>{title}</h1>
+      <p class="updated">{updated}</p>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </div>
+</Base>
+
+<style is:global>
+  /* 약관·방침 네 장(한/영 × 개인정보·이용약관)이 같은 판을 쓴다.
+     본문이 슬롯으로 들어오므로 스코프 스타일로는 닿지 않아 전역으로 둔다.
+     선택자를 .doc 아래로만 한정해 다른 페이지에 새지 않게 한다. */
+  .doc {
+    padding: 40px clamp(14px, 4vw, 32px) 60px;
+    max-width: 720px;
+  }
+  .doc h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 4vw, 34px);
+    letter-spacing: -0.03em;
+  }
+  .doc .updated {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .doc h2 {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    margin-top: 28px;
+  }
+  .doc p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    word-break: keep-all;
+  }
+  .doc a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--line-frame);
+  }
+</style>

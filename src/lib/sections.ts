@@ -64,6 +64,11 @@ export interface ReporterMeta {
   reads: string;
   does: string;
   limit: string;
+  /** 영문 편집국용. 번역이 아니라 같은 뜻을 영어로 다시 쓴 것이다 */
+  roleEn: string;
+  readsEn: string;
+  doesEn: string;
+  limitEn: string;
 }
 
 export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta> = {
@@ -75,6 +80,10 @@ export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta
     reads: '학회 발표자료, 논문 본문, 장비사 기술문서',
     does: '단위 환산 · 조건 통일 · 방식별 비교표 작성',
     limit: '양산 라인의 실제 조건은 공개되지 않습니다. 논문 조건과 다를 수 있다는 점을 본문에 밝힙니다.',
+    roleEn: 'Works the physics of process, materials and equipment down to where you can compute it. The core of this desk is putting numbers measured under different conditions onto the same axis.',
+    readsEn: 'Conference presentations, full papers, equipment vendor technical notes',
+    doesEn: 'Unit conversion · condition normalisation · method-by-method comparison tables',
+    limitEn: 'Real production-line conditions are not published. Where lab conditions may differ, the article says so.',
   },
   PEER: {
     code: 'PEER',
@@ -84,6 +93,10 @@ export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta
     reads: 'SCIE 저널, 프리프린트, 학회 프로시딩',
     does: '초록 선별 · 측정 조건 검증 · 산업 함의 정리',
     limit: '구독 저널은 원문 접근이 막힐 수 있습니다. 그 경우 초록·공개 자료만으로 썼다고 표기합니다.',
+    roleEn: 'Picks the one paper a month, out of hundreds, that is likely to cross into industry. Where the measurement conditions differ from industry practice, it converts them and reports both.',
+    readsEn: 'SCIE journals, preprints, conference proceedings',
+    doesEn: 'Abstract screening · verification of measurement conditions · what it means for industry',
+    limitEn: 'Subscription journals can be closed to us. When that happens, the article states that it was written from the abstract and open material only.',
   },
   CLAIM: {
     code: 'CLAIM',
@@ -93,6 +106,11 @@ export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta
     reads: 'KIPRIS · USPTO · CNIPA · JPO 등록 공보',
     does: '독립항 분류 · 시계열 분포 비교 · 검색 조건 공개',
     limit: '특허는 출원 후 18개월 뒤 공개됩니다. 현재 라인 상태와 시차가 있고, 침해 여부는 판단하지 않습니다.',
+    roleEn:
+      "Sorts granted patents claim by claim to reconstruct each company's roadmap backwards. It reads the skew in the distribution, not the headcount of filings.",
+    readsEn: 'KIPRIS · USPTO · CNIPA · JPO grant gazettes',
+    doesEn: 'Independent-claim classification · time-series distribution · search terms published',
+    limitEn: 'Patents publish 18 months after filing. There is a lag against the current line, and we do not judge infringement.',
   },
   DESK: {
     code: 'DESK',
@@ -102,6 +120,10 @@ export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta
     reads: '각 사 공시·IR 자료, 학회 프로그램, 정부 발표',
     does: '전주 대비 변화 추적 · 수치 교차 확인 · 표 정리',
     limit: '"왜 그랬는가"는 확인 없이 단정하지 않습니다. 해석이 필요한 대목은 편집 단계에서 문장을 조정합니다.',
+    roleEn: 'Takes only what actually moved in the industry this week. It compares filings and announcements against the week before and points at where something changed.',
+    readsEn: 'Company disclosures and IR decks, conference programmes, government announcements',
+    doesEn: 'Week-on-week change tracking · cross-checking figures · tabulation',
+    limitEn: 'It does not assert "why" without confirmation. Passages that need interpretation are adjusted at the editing stage.',
   },
 };
 

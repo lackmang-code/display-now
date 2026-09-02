@@ -1,69 +1,26 @@
 ---
-import Base from '../layouts/Base.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import LegalDoc from '../components/LegalDoc.astro';
 ---
 
-<Base title="개인정보처리방침 | DISPLAY NOW">
-  <div class="frame">
-    <Header />
-    <main class="doc">
-      <h1>개인정보처리방침</h1>
-      <p class="updated">최종 수정일: 2026.08.19</p>
+<LegalDoc title="개인정보처리방침" updated="최종 수정일: 2026.08.19">
+  <p>DISPLAY NOW(운영: 넥스트아이오, 이하 "회사")는 뉴스레터 구독 신청 시 아래 항목을 수집합니다.</p>
 
-      <p>DISPLAY NOW(운영: 넥스트아이오, 이하 "회사")는 뉴스레터 구독 신청 시 아래 항목을 수집합니다.</p>
+  <h2>1. 수집 항목 및 목적</h2>
+  <p>필수 항목은 이메일 주소이며, 뉴스레터 발송 목적으로만 사용합니다.</p>
+  <p>
+    선택 항목으로 이름, 소속·기관, 담당 업무, 관심 꼭지, 편집국에 남기신 의견을 수집합니다. 선택 항목은
+    독자 구성을 파악하고 기사 주제를 정하는 데에만 참고하며, 적지 않아도 구독에 아무 제한이 없습니다.
+  </p>
 
-      <h2>1. 수집 항목 및 목적</h2>
-      <p>필수 항목은 이메일 주소이며, 뉴스레터 발송 목적으로만 사용합니다.</p>
-      <p>
-        선택 항목으로 이름, 소속·기관, 담당 업무, 관심 꼭지, 편집국에 남기신 의견을 수집합니다. 선택 항목은
-        독자 구성을 파악하고 기사 주제를 정하는 데에만 참고하며, 적지 않아도 구독에 아무 제한이 없습니다.
-      </p>
+  <h2>2. 보유 및 이용 기간</h2>
+  <p>구독 해지 요청 시 즉시 파기합니다. 별도 요청이 없는 한 뉴스레터 운영 기간 동안 보유합니다.</p>
 
-      <h2>2. 보유 및 이용 기간</h2>
-      <p>구독 해지 요청 시 즉시 파기합니다. 별도 요청이 없는 한 뉴스레터 운영 기간 동안 보유합니다.</p>
+  <h2>3. 제3자 제공</h2>
+  <p>수집한 이메일 주소를 제3자에게 제공하지 않습니다.</p>
 
-      <h2>3. 제3자 제공</h2>
-      <p>수집한 이메일 주소를 제3자에게 제공하지 않습니다.</p>
+  <h2>4. 이용자의 권리</h2>
+  <p>언제든지 이메일(<a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a>)로 구독 해지 및 정보 삭제를 요청할 수 있습니다.</p>
 
-      <h2>4. 이용자의 권리</h2>
-      <p>언제든지 이메일(<a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a>)로 구독 해지 및 정보 삭제를 요청할 수 있습니다.</p>
-
-      <h2>5. 문의</h2>
-      <p>개인정보 관련 문의는 <a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a>로 연락 바랍니다.</p>
-    </main>
-    <Footer />
-  </div>
-</Base>
-
-<style>
-  .doc {
-    padding: 40px clamp(14px, 4vw, 32px) 60px;
-    max-width: 720px;
-  }
-  .doc h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(26px, 4vw, 34px);
-    letter-spacing: -0.03em;
-  }
-  .updated {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--meta-soft);
-  }
-  .doc h2 {
-    font-family: var(--font-serif);
-    font-size: 19px;
-    margin-top: 28px;
-  }
-  .doc p {
-    font-size: 15.5px;
-    line-height: 1.8;
-    color: var(--ink-soft);
-    word-break: keep-all;
-  }
-  .doc a {
-    color: var(--ink);
-    border-bottom: 1px solid var(--line-frame);
-  }
-</style>
+  <h2>5. 문의</h2>
+  <p>개인정보 관련 문의는 <a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a>로 연락 바랍니다.</p>
+</LegalDoc>
