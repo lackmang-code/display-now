@@ -20,7 +20,22 @@ import '../styles/sim.css';
       } catch (e) {
         console.warn(`[sim] data-params 파싱 실패 (${id})`, e);
       }
+
+      // 고지문(Limitations)은 캔버스 프레임 밖 텍스트라 시뮬 코드가 아니라 원고가 갖는다.
+      // mount()가 innerHTML을 덮어쓰므로 미리 꺼내 두었다가 마운트 후에 다시 붙인다.
+      // <template>에 담기 때문에 마운트 전에 잠깐 보이거나 이중으로 그려지지 않는다.
+      const noteEl = el.querySelector<HTMLTemplateElement>('template[data-sim-note]');
+      const noteHtml = noteEl ? noteEl.innerHTML.trim() : '';
+
       mount(el, params);
+
+      if (noteHtml && !el.querySelector('.sim-note')) {
+        const note = document.createElement('div');
+        note.className = 'sim-note';
+        note.innerHTML = noteHtml;
+        el.appendChild(note);
+      }
+
       el.dataset.simMounted = 'true';
     });
   }
