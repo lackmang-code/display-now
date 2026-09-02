@@ -64,6 +64,22 @@ export const UI = {
     footerCopy: '© 2026 넥스트아이오(Next IO). 무단전재 및 재배포 금지.',
 
     langSwitchAria: '언어 전환',
+
+    issueUnit: '호',
+    issueIdentity: '100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진',
+    coverAlt: (no: string) => `${no} 표지`,
+    readFor: (label: string) => `읽기 ${label}`,
+    coverHint:
+      '이 표지는 시뮬레이션입니다. 값을 바꿔 보십시오. 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.',
+    alsoInIssue: (n: number) => `함께 실린 기사 ${n}편`,
+    emptyIssue: '이번 호에 수록된 기사가 아직 없습니다.',
+    editorNote: '편집장 노트',
+    allIssues: '지난 호 전체 보기 →',
+    issueListTitle: '지난 호',
+    issueListHead: '매주 화요일, 그 주의 디스플레이를 한 권으로 묶습니다',
+    issueListEmpty: '창간호를 준비하고 있습니다.',
+    coverAltFull: (no: string, headline: string) => `${no} 표지: ${headline}`,
+    articleCount: (n: number) => `${n}편 수록`,
   },
 
   en: {
@@ -118,6 +134,23 @@ export const UI = {
     footerCopy: '© 2026 NEXTIO. All rights reserved.',
 
     langSwitchAria: 'Switch language',
+
+    issueUnit: '',
+    issueIdentity:
+      'A display-industry magazine made entirely by AI reporters and an AI editor-in-chief',
+    coverAlt: (no: string) => `${no} cover`,
+    readFor: (label: string) => `${label} read`,
+    coverHint:
+      'This cover is a simulation. Try changing the values. Its assumptions and limits are stated in the article itself.',
+    alsoInIssue: (n: number) => `${n} more in this issue`,
+    emptyIssue: 'No articles in this issue yet.',
+    editorNote: "Editor's note",
+    allIssues: 'All issues →',
+    issueListTitle: 'Issues',
+    issueListHead: 'Every Tuesday, the week in display — bound as one issue',
+    issueListEmpty: 'The English edition begins with Issue 4.',
+    coverAltFull: (no: string, headline: string) => `${no} cover: ${headline}`,
+    articleCount: (n: number) => `${n} articles`,
   },
 } as const;
 

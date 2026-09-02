@@ -1,4 +1,4 @@
-import { getAllArticles, type Article } from './articles';
+import { getAllArticles, baseSlug, type Article, type Lang } from './articles';
 
 /**
  * 주간 호(號) 메타데이터.
@@ -44,6 +44,17 @@ export interface IssueMeta {
   weekStart: string;
   /** 자동 편성 대신 수록 기사를 직접 지정할 때만 사용 */
   slugs?: string[];
+
+  /**
+   * 영문판 표지 문구. **번역이 아니라 다시 쓴다.**
+   *
+   * 편성(`slugs`·`weekStart`)은 한글로 한 번만 정의하고, 영문 호는 짝이 있는 기사만
+   * 끌어온다 — 편성을 두 벌 관리하면 반드시 어긋난다.
+   * 비워 두면 영문 호 페이지를 만들지 않는다.
+   */
+  headlineEn?: string;
+  deckEn?: string;
+  noteEn?: string;
 }
 
 /**
@@ -180,13 +191,27 @@ function slugsInEarlierIssues(issue: IssueMeta): Set<string> {
   return taken;
 }
 
-export async function articlesOfIssue(issue: IssueMeta): Promise<Article[]> {
-  const all = await getAllArticles();
-  if (issue.slugs?.length) {
-    return issue.slugs.map((s) => all.find((a) => a.slug === s)).filter((a): a is Article => Boolean(a));
-  }
-  const taken = slugsInEarlierIssues(issue);
-  return all.filter((a) => !taken.has(a.slug) && a.data.collectWeekStart === issue.weekStart);
+export async function articlesOfIssue(issue: IssueMeta, lang: Lang = 'ko'): Promise<Article[]> {
+  const all = await getAllArticles('ko');
+  const ko = issue.slugs?.length
+    ? issue.slugs.map((s) => all.find((a) => a.slug === s)).filter((a): a is Article => Boolean(a))
+    : (() => {
+        const taken = slugsInEarlierIssues(issue);
+        return all.filter((a) => !taken.has(a.slug) && a.data.collectWeekStart === issue.weekStart);
+      })();
+
+  if (lang === 'ko') return ko;
+
+  // 영문 호는 **한글 편성 순서를 그대로 따르되 짝이 있는 기사만** 싣는다.
+  // 편성은 한글 쪽에서 한 번만 정의된다. 아직 번역되지 않은 편은 조용히 빠진다.
+  const en = await getAllArticles('en');
+  const byBase = new Map(en.map((a) => [baseSlug(a), a]));
+  return ko.map((a) => byBase.get(a.slug)).filter((a): a is Article => Boolean(a));
+}
+
+/** 영문 표지 문구가 채워진 호만. 영문 호 페이지는 이것만 만든다 */
+export function getIssuesEn(): IssueMeta[] {
+  return getIssues().filter((i) => Boolean(i.headlineEn));
 }
 
 /**
@@ -223,12 +248,12 @@ export function getIssue(no: number): IssueMeta | undefined {
   return ISSUES.find((i) => i.no === no);
 }
 
-export function issueHref(issue: IssueMeta): string {
-  return `/issue/${issue.no}`;
+export function issueHref(issue: IssueMeta, lang: Lang = 'ko'): string {
+  return lang === 'en' ? `/en/issue/${issue.no}` : `/issue/${issue.no}`;
 }
 
-export function issueNumberLabel(issue: IssueMeta): string {
-  return `제${issue.no}호`;
+export function issueNumberLabel(issue: IssueMeta, lang: Lang = 'ko'): string {
+  return lang === 'en' ? `Issue ${issue.no}` : `제${issue.no}호`;
 }
 
 export function issueDateLabel(issue: IssueMeta): string {
@@ -236,17 +261,21 @@ export function issueDateLabel(issue: IssueMeta): string {
 }
 
 /** 자료수집기간 라벨. 호의 주간이 곧 수집 주간이다 */
-export function collectRangeLabel(issue: IssueMeta): string {
+export function collectRangeLabel(issue: IssueMeta, lang: Lang = 'ko'): string {
   const [y, m, d] = issue.weekStart.split('-').map(Number);
   const start = new Date(y, m - 1, d);
   const end = new Date(start);
   end.setDate(end.getDate() + 6);
   const fmt = (dt: Date) => `${String(dt.getMonth() + 1).padStart(2, '0')}.${String(dt.getDate()).padStart(2, '0')}`;
-  return `${fmt(start)} ~ ${fmt(end)} 자료수집`;
+  return lang === 'en'
+    ? `Collected ${fmt(start)} – ${fmt(end)}`
+    : `${fmt(start)} ~ ${fmt(end)} 자료수집`;
 }
 
-export function issueRangeLabel(issue: IssueMeta): string {
+export function issueRangeLabel(issue: IssueMeta, lang: Lang = 'ko'): string {
   const { from, to } = issueRange(issue);
   const fmt = (s: string) => s.slice(5).replace('-', '.');
-  return `${fmt(from)} ~ ${fmt(to)} 발행분`;
+  return lang === 'en'
+    ? `Published ${fmt(from)} – ${fmt(to)}`
+    : `${fmt(from)} ~ ${fmt(to)} 발행분`;
 }

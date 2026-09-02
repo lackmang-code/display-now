@@ -9,6 +9,7 @@ interface Props {
 
 const { lang = 'ko' } = Astro.props;
 const ui = t(lang);
+const en = lang === 'en';
 ---
 
 <footer class="site-footer">
@@ -33,13 +34,13 @@ const ui = t(lang);
       */}
       <div class="links">
         {SECTION_ORDER.map((key) => (
-          <a href={`/section/${key}`}>{lang === 'en' ? SECTIONS[key].labelEn : SECTIONS[key].label}</a>
+          <a href={en ? `/en#sec-${key}` : `/section/${key}`}>{lang === 'en' ? SECTIONS[key].labelEn : SECTIONS[key].label}</a>
         ))}
       </div>
       <div class="links">
-        <a href="/issue">{ui.issues}</a>
-        <a href="/archive">{ui.archive}</a>
-        <a href="/tag">{ui.topics}</a>
+        <a href={en ? '/en/issue' : '/issue'}>{ui.issues}</a>
+        {!en && <a href="/archive">{ui.archive}</a>}
+        {!en && <a href="/tag">{ui.topics}</a>}
         <a href="/editorial">{ui.editorial}</a>
         <a href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">{ui.corrections}</a>
         <a href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">{ui.adInquiry}</a>

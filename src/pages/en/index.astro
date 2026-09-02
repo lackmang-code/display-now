@@ -1,0 +1,243 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
+import { getPublishedArticles } from '../../lib/articles';
+import { getIssuesEn, issueHref, issueNumberLabel, collectRangeLabel } from '../../lib/issues';
+
+// 영문 쪽은 한 장이 홈이자 아카이브다. 주 6편이라 한글판의 기간 필터·태그 클라우드가
+// 채워지지도 않고, 면을 둘로 나누면 앞으로 한글 페이지를 고칠 때마다 두 벌을 맞춰야 한다.
+const articles = await getPublishedArticles('en');
+const bySection = SECTION_ORDER.map((key) => ({
+  key,
+  meta: SECTIONS[key],
+  items: articles.filter((a) => a.data.section === key),
+})).filter((g) => g.items.length > 0);
+
+const latest = getIssuesEn()[0];
+---
+
+<Base title="DISPLAY NOW" lang="en">
+  <div class="frame">
+    <Header lang="en" />
+
+    <section class="masthead">
+      <h1>Display, read from the sources.</h1>
+      <p>
+        DISPLAY NOW is a trade magazine for the display industry — panels, materials and equipment.
+        Four specialist AI reporters write it and an AI editor-in-chief edits it. We do not
+        interview. Every article is built on published papers, granted patents and public filings
+        alone, and every article carries the full list of what it was built on.
+      </p>
+      <p class="masthead-sub">
+        A new issue every Tuesday. The cover is not a picture — it is a simulation you can run.
+      </p>
+    </section>
+
+    {
+      latest && (
+        <a class="latest-issue" href={issueHref(latest, 'en')}>
+          <span class="li-no">{issueNumberLabel(latest, 'en')}</span>
+          <span class="li-head">{latest.headlineEn}</span>
+          <span class="li-range">{collectRangeLabel(latest, 'en')}</span>
+        </a>
+      )
+    }
+
+    {
+      articles.length === 0 ? (
+        <p class="empty">The English edition begins with Issue 4.</p>
+      ) : (
+        bySection.map((g) => (
+          <section class="sec" id={`sec-${g.key}`}>
+            <div class="sec-head" style={`border-color:${sectionColor(g.key)};`}>
+              <span class="sec-chip" style={`background:${sectionColor(g.key)};`}>
+                {g.meta.labelEn}
+              </span>
+              <span class="sec-count">{g.items.length}</span>
+            </div>
+            <div class="sec-grid">
+              {g.items.map((a) => (
+                <ArticleCard article={a} />
+              ))}
+            </div>
+          </section>
+        ))
+      )
+    }
+
+    <section class="subscribe" id="subscribe">
+      <div>
+        <div class="sub-head">Every Tuesday, the week in display — as one issue.</div>
+        <p class="sub-note">A free newsletter. Unsubscribe any time.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <Footer lang="en" />
+  </div>
+</Base>
+
+<style>
+  .frame {
+    max-width: 1180px;
+    margin: 0 auto;
+    border-left: 1px solid var(--line-frame);
+    border-right: 1px solid var(--line-frame);
+    min-height: 100vh;
+    background: var(--paper);
+  }
+
+  .masthead {
+    padding: clamp(30px, 7vw, 58px) clamp(16px, 5vw, 42px) clamp(20px, 4vw, 30px);
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead h1 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(27px, 6.2vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.18;
+    color: var(--ink);
+  }
+  .masthead p {
+    margin: 16px 0 0;
+    max-width: 68ch;
+    font-size: clamp(14.5px, 3.7vw, 16px);
+    line-height: 1.75;
+    color: var(--ink-mute);
+  }
+  .masthead-sub {
+    color: var(--meta) !important;
+    font-family: var(--font-mono);
+    font-size: 14px !important;
+  }
+
+  .latest-issue {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+    padding: 15px clamp(16px, 5vw, 42px);
+    border-bottom: 1px solid var(--line);
+    background: var(--card-warm);
+    text-decoration: none;
+  }
+  .li-no {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    flex: 0 0 auto;
+  }
+  .li-head {
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    flex: 1 1 auto;
+  }
+  .li-range {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta-soft);
+    flex: 0 0 auto;
+  }
+  .latest-issue:hover .li-head {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .sec {
+    padding: clamp(22px, 5vw, 34px) clamp(16px, 5vw, 42px);
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 9px;
+    border-bottom: 2px solid;
+    margin-bottom: 18px;
+  }
+  .sec-chip {
+    color: var(--card);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+  }
+  .sec-count {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta-soft);
+  }
+  .sec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .empty {
+    padding: clamp(40px, 9vw, 80px) clamp(16px, 5vw, 42px);
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--meta-soft);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+    padding: clamp(22px, 5vw, 32px) clamp(16px, 5vw, 42px);
+    border-bottom: 1px solid var(--line);
+    background: var(--card-warm);
+  }
+  .subscribe > div {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .sub-head {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  .sub-note {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-faint);
+  }
+  .subscribe form {
+    display: flex;
+    gap: 8px;
+    flex: 0 1 auto;
+  }
+  .subscribe input {
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    min-width: 200px;
+  }
+  .subscribe button {
+    padding: 9px 18px;
+    border: none;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    cursor: pointer;
+  }
+</style>

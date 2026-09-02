@@ -28,6 +28,10 @@ const { Content, headings } = await entry.render();
 const lang = langOf(entry);
 const ui = t(lang);
 const counterpart = await counterpartOf(entry);
+// 영문 쪽은 꼭지 목록 페이지를 따로 두지 않는다. `/en` 한 장 안의 앵커로 보낸다 —
+// 없는 페이지로 보내거나 한글 목록으로 흘리지 않기 위한 분기다.
+const sectionListHref =
+  lang === 'en' ? `/en#sec-${entry.data.section}` : `/section/${entry.data.section}`;
 const altHref = counterpart ? articleHref(counterpart) : undefined;
 const toc = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label');
 const section = SECTIONS[entry.data.section];
@@ -140,7 +144,7 @@ const articleLd = {
             data-paywall-body={ui.paywallBody}
             data-paywall-cta={ui.paywallCta}>
           <div class="top-meta">
-            <a href={`/section/${entry.data.section}`} style={`border-bottom-color:${color};`}>{sectionLabel}</a>
+            <a href={sectionListHref} style={`border-bottom-color:${color};`}>{sectionLabel}</a>
             <span>{dateLabel(entry)} · {ui.readingTime(entry.data.readingMinutes)}</span>
           </div>
 
@@ -274,7 +278,7 @@ const articleLd = {
         {
           related.length > 0 && (
             <section class="related">
-              <a href={`/section/${entry.data.section}`} class="related-head">{ui.moreFrom(sectionLabel, entry.data.reporter)}</a>
+              <a href={sectionListHref} class="related-head">{ui.moreFrom(sectionLabel, entry.data.reporter)}</a>
               <div class="related-grid">
                 {related.map((a) => (
                   <a href={articleHref(a)} class="related-item">

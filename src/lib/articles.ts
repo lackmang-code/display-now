@@ -51,11 +51,11 @@ export async function getArticlesBySection(section: string, lang: Lang = 'ko'): 
 }
 
 export function readingLabel(a: Article): string {
-  return `${a.data.readingMinutes}분`;
+  return langOf(a) === 'en' ? `${a.data.readingMinutes} min` : `${a.data.readingMinutes}분`;
 }
 
 export function bylineOf(a: Article): string {
-  return formatByline(a.data.reporter, a.data.publishedAt);
+  return formatByline(a.data.reporter, a.data.publishedAt, langOf(a));
 }
 
 export function dateLabel(a: Article, format: 'short' | 'dot' = 'dot'): string {
@@ -67,7 +67,8 @@ export function dateLabel(a: Article, format: 'short' | 'dot' = 'dot'): string {
 }
 
 export function sectionLabel(a: Article): string {
-  return SECTIONS[a.data.section].label;
+  const s = SECTIONS[a.data.section];
+  return langOf(a) === 'en' ? s.labelEn : s.label;
 }
 
 /**

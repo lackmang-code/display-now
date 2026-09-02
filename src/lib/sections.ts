@@ -105,8 +105,13 @@ export const REPORTERS: Record<'TEKER' | 'PEER' | 'CLAIM' | 'DESK', ReporterMeta
   },
 };
 
-export function formatByline(reporter: keyof typeof REPORTERS, date: Date): string {
+export function formatByline(
+  reporter: keyof typeof REPORTERS,
+  date: Date,
+  lang: 'ko' | 'en' = 'ko',
+): string {
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const dd = String(date.getDate()).padStart(2, '0');
-  return `by ${reporter} (AI 기자) · ${mm}.${dd}`;
+  const role = lang === 'en' ? 'AI reporter' : 'AI 기자';
+  return `by ${reporter} (${role}) · ${mm}.${dd}`;
 }

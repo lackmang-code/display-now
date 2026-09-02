@@ -1,0 +1,138 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { t } from '../../../lib/i18n';
+import {
+  getIssuesEn,
+  articlesOfIssue,
+  issueHref,
+  issueNumberLabel,
+  collectRangeLabel,
+} from '../../../lib/issues';
+
+const ui = t('en');
+const issues = getIssuesEn();
+const counts = await Promise.all(issues.map((i) => articlesOfIssue(i, 'en').then((a) => a.length)));
+---
+
+<Base title={`${ui.issueListTitle} | DISPLAY NOW`} lang="en">
+  <div class="frame">
+    <Header lang="en" activeSection="issue-list" />
+
+    <div class="pad">
+      <div class="eyebrow">{ui.issueListTitle}</div>
+      <h1>{ui.issueListHead}</h1>
+
+      {
+        issues.length === 0 ? (
+          <p class="empty">{ui.issueListEmpty}</p>
+        ) : (
+          <div class="grid">
+            {issues.map((issue, i) => (
+              <a class="card" href={issueHref(issue, 'en')}>
+                <img
+                  class="cover"
+                  src={`/issues/issue-${issue.no}-poster.png`}
+                  alt={ui.coverAltFull(issueNumberLabel(issue, 'en'), issue.headlineEn ?? '')}
+                  loading="lazy"
+                />
+                <div class="card-meta">
+                  {issueNumberLabel(issue, 'en')} · {collectRangeLabel(issue, 'en')}
+                </div>
+                <div class="card-head">{issue.headlineEn}</div>
+                <div class="card-count">{ui.articleCount(counts[i])}</div>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+
+    <Footer lang="en" />
+  </div>
+</Base>
+
+<style>
+  .frame {
+    max-width: 1180px;
+    margin: 0 auto;
+    border-left: 1px solid var(--line-frame);
+    border-right: 1px solid var(--line-frame);
+    min-height: 100vh;
+    background: var(--paper);
+  }
+  .pad {
+    padding: clamp(26px, 6vw, 50px) clamp(16px, 5vw, 42px) clamp(40px, 8vw, 70px);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .empty {
+    margin-top: 28px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--meta-soft);
+  }
+
+  /* 표지를 검정 지면 위에 책처럼 세운다. 경계를 선이 아니라 빛으로 긋는다 —
+     표지가 모두 검정 판이라 빛이 없으면 호끼리 경계가 붙어 보인다.
+     발광 반경은 표지 폭에 비례해야 한다(여기는 298px 기준). */
+  .grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: clamp(22px, 4vw, 38px);
+  }
+  .card {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+  .cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border: 1px solid rgb(201 162 77 / 0.42);
+    box-shadow:
+      0 0 22px rgb(201 162 77 / 0.2),
+      0 0 60px rgb(201 162 77 / 0.12);
+  }
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  .card-meta {
+    margin-top: 12px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--meta-soft);
+  }
+  .card-head {
+    margin-top: 5px;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .card-count {
+    margin-top: 5px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--meta-soft);
+  }
+</style>
