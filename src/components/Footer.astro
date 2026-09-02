@@ -1,5 +1,14 @@
 ---
 import { SECTIONS, SECTION_ORDER } from '../lib/sections';
+import { t } from '../lib/i18n';
+import type { Lang } from '../lib/articles';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'ko' } = Astro.props;
+const ui = t(lang);
 ---
 
 <footer class="site-footer">
@@ -12,9 +21,9 @@ import { SECTIONS, SECTION_ORDER } from '../lib/sections';
         구조화 데이터의 alternateName만으로는 부족하고, 실제 글자가 페이지에 있어야 한다.
         모든 페이지에 들어가는 푸터가 그 자리로 가장 적절하다.
       */}
-      <div style="margin-top:6px;">디스플레이 나우는 논문·특허·공시만 근거로 쓰는 디스플레이 산업 전문 온라인 매거진입니다.</div>
-      <div style="margin-top:8px;">발행 넥스트아이오 · 박원상 (Next I/O 대표 · 성균관대 산학교수)</div>
-      <div>이메일 <a href="mailto:info@nextio.ai.kr" style="color:#c4c4bc;">info@nextio.ai.kr</a> · 전화 010-3938-6918</div>
+      <div style="margin-top:6px;">{ui.footerBlurb}</div>
+      <div style="margin-top:8px;">{ui.footerPublisher}</div>
+      <div>{ui.footerEmail} <a href="mailto:info@nextio.ai.kr" style="color:#c4c4bc;">info@nextio.ai.kr</a> · {ui.footerPhone} 010-3938-6918</div>
     </div>
     <div style="text-align:right;">
       {/*
@@ -24,20 +33,20 @@ import { SECTIONS, SECTION_ORDER } from '../lib/sections';
       */}
       <div class="links">
         {SECTION_ORDER.map((key) => (
-          <a href={`/section/${key}`}>{SECTIONS[key].label}</a>
+          <a href={`/section/${key}`}>{lang === 'en' ? SECTIONS[key].labelEn : SECTIONS[key].label}</a>
         ))}
       </div>
       <div class="links">
-        <a href="/issue">주간호</a>
-        <a href="/archive">아카이브</a>
-        <a href="/tag">주제별</a>
-        <a href="/editorial">편집국</a>
-        <a href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">정정 및 제보</a>
-        <a href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">광고 문의</a>
-        <a href="/privacy">개인정보처리방침</a>
-        <a href="/terms">이용약관</a>
+        <a href="/issue">{ui.issues}</a>
+        <a href="/archive">{ui.archive}</a>
+        <a href="/tag">{ui.topics}</a>
+        <a href="/editorial">{ui.editorial}</a>
+        <a href="/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD">{ui.corrections}</a>
+        <a href="/board?kind=%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98">{ui.adInquiry}</a>
+        <a href="/privacy">{ui.privacy}</a>
+        <a href="/terms">{ui.terms}</a>
       </div>
-      <div class="copy">© 2026 넥스트아이오(Next IO). 무단전재 및 재배포 금지.</div>
+      <div class="copy">{ui.footerCopy}</div>
     </div>
   </div>
 </footer>

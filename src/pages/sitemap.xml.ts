@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SECTION_ORDER } from '../lib/sections';
 import { getIssues } from '../lib/issues';
-import { getPublishedArticles } from '../lib/articles';
+import { getPublishedArticles, articleHref } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
 
 const STATIC_PATHS = ['/', '/editorial', '/archive', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
@@ -15,6 +15,10 @@ export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://display-now.nextio.ai.kr');
   // 발행 예정 기사는 색인 대상이 아니다. 검색엔진에 미리 알리면 발행 전에 노출된다
   const articles = await getPublishedArticles();
+
+  // 영문판은 사이트맵에 함께 넣는다. 검색 유입을 새로 여는 것이 영문판을 내는 목적이라
+  // 색인되지 않으면 만든 의미가 없다. 목록·꼭지 페이지는 아직 한글판뿐이므로 기사만 넣는다.
+  const articlesEn = await getPublishedArticles('en');
 
   // 최신 기사 날짜. 목록 성격의 페이지는 이 날짜에 함께 갱신된다
   const newest = articles.length > 0 ? day(articles[0].data.publishedAt) : undefined;
@@ -39,6 +43,10 @@ export const GET: APIRoute = async ({ site }) => {
     ...getIssues().map((i) => ({ path: `/issue/${i.no}`, lastmod: i.publishedAt })),
     ...articles.map((a) => ({
       path: `/article/${a.slug}`,
+      lastmod: day(a.data.publishedAt),
+    })),
+    ...articlesEn.map((a) => ({
+      path: articleHref(a),
       lastmod: day(a.data.publishedAt),
     })),
   ];

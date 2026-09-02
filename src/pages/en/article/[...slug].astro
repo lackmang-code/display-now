@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleView from '../../../components/ArticleView.astro';
+import { baseSlug } from '../../../lib/articles';
+
+// 영문판만 이 경로가 맡는다.
+//
+// 영문 원고는 `src/content/articles/en/<한글판 slug>.md`에 두므로 Astro가 주는 slug가
+// `en/2026-09-08-foo`다. 주소에서는 접두사를 떼어 `/en/article/2026-09-08-foo`로 낸다 —
+// 언어는 경로 맨 앞에 한 번만 나오는 편이 hreflang·분석·공유 어디서나 읽기 쉽다.
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles
+    .filter((entry) => entry.data.lang === 'en')
+    .map((entry) => ({ params: { slug: baseSlug(entry) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<ArticleView entry={entry} />

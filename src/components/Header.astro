@@ -1,13 +1,30 @@
 ---
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+import { t } from '../lib/i18n';
+import LangSwitch from './LangSwitch.astro';
+import type { Lang } from '../lib/articles';
 
 interface Props {
   activeSection?: string;
   minimal?: boolean;
   showNav?: boolean;
+  lang?: Lang;
+  /**
+   * 반대 언어판 경로. **짝이 있을 때만 넘긴다.** 없으면 전환 스위치를 세우지 않는다.
+   * 헤더에 전역으로 달면 영문판이 없는 페이지에서 404가 된다.
+   */
+  altHref?: string;
 }
 
-const { activeSection, minimal = false, showNav = true } = Astro.props;
+const {
+  activeSection,
+  minimal = false,
+  showNav = true,
+  lang = 'ko',
+  altHref,
+} = Astro.props;
+const ui = t(lang);
+const home = lang === 'en' ? '/en' : '/';
 ---
 
 <header class="site-header">
@@ -19,7 +36,7 @@ const { activeSection, minimal = false, showNav = true } = Astro.props;
           <span>DISPLAY NOW</span>
         </span>
       ) : (
-        <a href="/" class="wordmark" aria-label="DISPLAY NOW 홈">
+        <a href={home} class="wordmark" aria-label={ui.home}>
           <img class="brand-mark" src="/logo/dn-mark.png" alt="" width="512" height="429" />
           <span>DISPLAY NOW</span>
         </a>
@@ -50,15 +67,16 @@ const { activeSection, minimal = false, showNav = true } = Astro.props;
           aria-current={activeSection === 'issue-list' ? 'true' : undefined}
           href="/issue"
           style={activeSection === 'issue-list' ? 'color:var(--ink); background:#c4c4bc;' : ''}
-        >주간호</a>
+        >{ui.issues}</a>
         <a
           class="archive-link"
           aria-current={activeSection === 'archive' ? 'true' : undefined}
           href="/archive"
           style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}
-        >아카이브</a>
+        >{ui.archive}</a>
       </nav>
     )
   }
-  <a class="subscribe-btn" href="/subscribe">구독하기</a>
+  {altHref && <LangSwitch lang={lang} altHref={altHref} />}
+  <a class="subscribe-btn" href="/subscribe">{ui.subscribe}</a>
 </header>

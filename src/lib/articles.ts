@@ -9,9 +9,17 @@ export type Article = CollectionEntry<'articles'>;
  * 호 편성·표지 카드처럼 **발행 전에 만들어 둬야 하는 것**이 이 함수를 쓴다.
  * 독자에게 보이는 목록에는 {@link getPublishedArticles}를 쓴다.
  */
-export async function getAllArticles(): Promise<Article[]> {
+export type Lang = 'ko' | 'en';
+
+/** 기사의 언어. 프론트매터에 없으면 한글로 본다. */
+export function langOf(a: Article): Lang {
+  return (a.data.lang ?? 'ko') as Lang;
+}
+
+export async function getAllArticles(lang: Lang | 'all' = 'ko'): Promise<Article[]> {
   const all = await getCollection('articles');
-  return all.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+  const scoped = lang === 'all' ? all : all.filter((a) => (a.data.lang ?? 'ko') === lang);
+  return scoped.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }
 
 /**
@@ -29,16 +37,16 @@ export async function getAllArticles(): Promise<Article[]> {
  * 않는다. 그날 push하거나 Cloudflare Pages에서 재배포해야 한다. 어차피 호를 낼 때 push하므로
  * 절차가 늘지는 않는다.
  */
-export async function getPublishedArticles(): Promise<Article[]> {
-  const all = await getAllArticles();
+export async function getPublishedArticles(lang: Lang | 'all' = 'ko'): Promise<Article[]> {
+  const all = await getAllArticles(lang);
   const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
   const todayKst = new Date(Date.now() + KST_OFFSET_MS).toISOString().slice(0, 10);
   return all.filter((a) => a.data.publishedAt.toISOString().slice(0, 10) <= todayKst);
 }
 
 /** 꼭지 목록. 발행된 것만 보여준다 */
-export async function getArticlesBySection(section: string): Promise<Article[]> {
-  const all = await getPublishedArticles();
+export async function getArticlesBySection(section: string, lang: Lang = 'ko'): Promise<Article[]> {
+  const all = await getPublishedArticles(lang);
   return all.filter((a) => a.data.section === section);
 }
 
@@ -62,8 +70,32 @@ export function sectionLabel(a: Article): string {
   return SECTIONS[a.data.section].label;
 }
 
+/**
+ * 한글판과 영문판을 잇는 열쇠.
+ *
+ * 영문판은 `src/content/articles/en/<한글판 slug>.md`에 두므로 Astro가 준 slug가
+ * `en/2026-09-08-foo`가 된다. 짝을 찾을 때는 이 접두사를 뗀 값을 쓴다.
+ * `translationOf`를 적어 두면 그 값이 우선한다.
+ */
+export function baseSlug(a: Article): string {
+  return a.data.translationOf ?? a.slug.replace(/^en\//, '');
+}
+
 export function articleHref(a: Article): string {
-  return `/article/${a.slug}`;
+  return langOf(a) === 'en' ? `/en/article/${baseSlug(a)}` : `/article/${a.slug}`;
+}
+
+/**
+ * 반대 언어판. **없으면 undefined** — 전환 버튼도 hreflang도 그때는 달지 않는다.
+ *
+ * 버튼을 헤더에 전역으로 달면 영문판이 없는 페이지에서 404가 된다. 짝이 실제로
+ * 존재하는 페이지에만 뜨게 하는 것이 이 함수의 존재 이유다.
+ */
+export async function counterpartOf(a: Article): Promise<Article | undefined> {
+  const key = baseSlug(a);
+  const other: Lang = langOf(a) === 'en' ? 'ko' : 'en';
+  const all = await getAllArticles(other);
+  return all.find((x) => baseSlug(x) === key);
 }
 
 /**
