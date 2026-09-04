@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="439" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">Why fluorine, on a single axis</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">Liquid surface tension vs. solid critical surface tension &#183; mN/m at room temperature</text>
+
+  <!-- overlap band: hydrocarbon oils 20-31 mN/m -->
+  <rect x="280" y="96" width="105" height="252" fill="#a86a63" opacity="0.09"/>
+  <line x1="280" y1="96" x2="280" y2="348" stroke="#a86a63" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+  <line x1="385" y1="96" x2="385" y2="348" stroke="#a86a63" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+
+  <!-- ============ LIQUIDS (upper half) ============ -->
+  <text x="28" y="112" font-size="15.6" font-weight="700" fill="#4d4d45" font-family="'IBM Plex Mono', monospace" letter-spacing="0.8">LIQUIDS TO REPEL</text>
+
+  <!-- hydrocarbon oil band -->
+  <rect x="280" y="132" width="105" height="24" fill="#a86a63" opacity="0.75"/>
+  <text x="332" y="126" font-size="15.6" fill="#7d4a44" text-anchor="middle" font-family="'IBM Plex Mono', monospace">20 &#8211; 31</text>
+  <text x="332" y="174" font-size="16.9" fill="#12120e" text-anchor="middle">Hydrocarbon oils (sebum range)</text>
+
+  <!-- n-hexadecane marker -->
+  <line x1="351" y1="156" x2="351" y2="204" stroke="#7d4a44" stroke-width="1.2"/>
+  <circle cx="351" cy="204" r="3.4" fill="#7d4a44"/>
+  <text x="360" y="200" font-size="15.6" fill="#7d4a44" font-family="'IBM Plex Mono', monospace">27.5</text>
+  <text x="360" y="216" font-size="16.2" fill="#4d4d45">n-Hexadecane (test liquid)</text>
+
+  <!-- water marker -->
+  <rect x="775" y="132" width="14" height="24" fill="#5b6ea8" opacity="0.8"/>
+  <text x="782" y="126" font-size="15.6" fill="#3f4f80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">72.8</text>
+  <text x="782" y="174" font-size="16.9" fill="#12120e" text-anchor="middle">Water</text>
+
+  <!-- ============ AXIS ============ -->
+  <line x1="90" y1="230" x2="860" y2="230" stroke="#4d4d45" stroke-width="1.4"/>
+  <g font-family="'IBM Plex Mono', monospace" font-size="14.3" fill="#8a8a80" text-anchor="middle">
+    <line x1="90" y1="230" x2="90" y2="237" stroke="#8a8a80"/><text x="90" y="252">0</text>
+    <line x1="185" y1="230" x2="185" y2="237" stroke="#8a8a80"/><text x="185" y="252">10</text>
+    <line x1="280" y1="230" x2="280" y2="237" stroke="#8a8a80"/><text x="280" y="252">20</text>
+    <line x1="375" y1="230" x2="375" y2="237" stroke="#8a8a80"/><text x="375" y="252">30</text>
+    <line x1="470" y1="230" x2="470" y2="237" stroke="#8a8a80"/><text x="470" y="252">40</text>
+    <line x1="565" y1="230" x2="565" y2="237" stroke="#8a8a80"/><text x="565" y="252">50</text>
+    <line x1="660" y1="230" x2="660" y2="237" stroke="#8a8a80"/><text x="660" y="252">60</text>
+    <line x1="755" y1="230" x2="755" y2="237" stroke="#8a8a80"/><text x="755" y="252">70</text>
+    <line x1="850" y1="230" x2="850" y2="237" stroke="#8a8a80"/><text x="850" y="252">80</text>
+  </g>
+
+  <!-- ============ SURFACES (lower half) ============ -->
+  <text x="28" y="286" font-size="15.6" font-weight="700" fill="#4d4d45" font-family="'IBM Plex Mono', monospace" letter-spacing="0.8">SURFACE</text>
+  <text x="28" y="306" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">critical surface</text>
+  <text x="28" y="324" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">tension by group</text>
+
+  <!-- CF3 -->
+  <circle cx="147" cy="290" r="5" fill="#3f6f5a"/>
+  <line x1="147" y1="230" x2="147" y2="285" stroke="#3f6f5a" stroke-width="1.2"/>
+  <text x="147" y="312" font-size="18.2" font-weight="700" fill="#12120e" text-anchor="middle">CF3</text>
+  <text x="147" y="330" font-size="15.6" fill="#3f6f5a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">6</text>
+
+  <!-- CF2 -->
+  <circle cx="252" cy="290" r="5" fill="#6f9070"/>
+  <line x1="252" y1="230" x2="252" y2="285" stroke="#6f9070" stroke-width="1.2"/>
+  <text x="252" y="312" font-size="18.2" font-weight="700" fill="#12120e" text-anchor="middle">CF2</text>
+  <text x="252" y="330" font-size="15.6" fill="#6f9070" text-anchor="middle" font-family="'IBM Plex Mono', monospace">17</text>
+
+  <!-- CH3 band 22-24 -->
+  <rect x="299" y="285" width="19" height="10" fill="#a86a63"/>
+  <line x1="308" y1="230" x2="308" y2="285" stroke="#a86a63" stroke-width="1.2"/>
+  <text x="308" y="346" font-size="18.2" font-weight="700" fill="#12120e" text-anchor="middle">CH3</text>
+  <text x="308" y="364" font-size="15.6" fill="#7d4a44" text-anchor="middle" font-family="'IBM Plex Mono', monospace">22 &#8211; 24</text>
+
+  <!-- CH2 31 -->
+  <circle cx="385" cy="290" r="5" fill="#a86a63"/>
+  <line x1="385" y1="230" x2="385" y2="285" stroke="#a86a63" stroke-width="1.2"/>
+  <text x="385" y="312" font-size="18.2" font-weight="700" fill="#12120e" text-anchor="middle">CH2</text>
+  <text x="385" y="330" font-size="15.6" fill="#7d4a44" text-anchor="middle" font-family="'IBM Plex Mono', monospace">31</text>
+
+  <!-- annotations -->
+  <path d="M 332 372 L 332 392 L 470 392" fill="none" stroke="#7d4a44" stroke-width="1"/>
+  <text x="478" y="398" font-size="16.2" fill="#7d4a44">Hydrocarbon surfaces sit inside the oil range</text>
+
+  <path d="M 147 336 L 147 392 L 128 392" fill="none" stroke="#3f6f5a" stroke-width="1"/>
+  <text x="122" y="396" font-size="16.2" fill="#3f6f5a" text-anchor="end">Margin</text>
+
+  <text x="872" y="428" font-size="13.7" fill="#b0b0a6" text-anchor="end" font-family="'IBM Plex Mono', monospace">Zisman critical surface tension &#183; DISPLAY NOW</text>
+</svg>

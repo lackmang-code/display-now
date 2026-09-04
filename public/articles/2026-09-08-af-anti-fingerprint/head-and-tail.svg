@@ -1,0 +1,85 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="399" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">One molecule, two jobs</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">PFPE silane: the tail lowers surface energy, the head holds it in place</text>
+
+  <!-- air side label -->
+  <text x="28" y="104" font-size="15" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">AIR</text>
+
+  <!-- CF3 terminal band -->
+  <line x1="90" y1="118" x2="860" y2="118" stroke="#3f6f5a" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <text x="860" y="112" font-size="15" fill="#3f6f5a" text-anchor="end" font-family="'IBM Plex Mono', monospace">CF3 terminals face outward &#183; 6 mN/m</text>
+
+  <!-- molecules -->
+  <g stroke-linecap="round">
+    <!-- molecule template repeated -->
+    <g>
+      <circle cx="150" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 150 133 L 150 168 L 158 196 L 150 224 L 150 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="150" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="150" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="142" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+    <g>
+      <circle cx="250" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 250 133 L 250 168 L 242 196 L 250 224 L 250 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="250" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="250" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="242" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+    <g>
+      <circle cx="350" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 350 133 L 350 168 L 358 196 L 350 224 L 350 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="350" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="350" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="342" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+    <g>
+      <circle cx="450" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 450 133 L 450 168 L 442 196 L 450 224 L 450 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="450" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="450" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="442" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+    <g>
+      <circle cx="550" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 550 133 L 550 168 L 558 196 L 550 224 L 550 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="550" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="550" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="542" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+    <g>
+      <circle cx="650" cy="126" r="7" fill="#3f6f5a"/>
+      <path d="M 650 133 L 650 168 L 642 196 L 650 224 L 650 252" fill="none" stroke="#6f9070" stroke-width="3.4"/>
+      <circle cx="650" cy="176" r="3" fill="#a8b8c8"/>
+      <circle cx="650" cy="216" r="3" fill="#a8b8c8"/>
+      <rect x="642" y="252" width="16" height="14" fill="#5b6ea8"/>
+    </g>
+  </g>
+
+  <!-- thickness bracket -->
+  <line x1="716" y1="126" x2="716" y2="266" stroke="#8a8a80" stroke-width="1"/>
+  <line x1="710" y1="126" x2="722" y2="126" stroke="#8a8a80" stroke-width="1"/>
+  <line x1="710" y1="266" x2="722" y2="266" stroke="#8a8a80" stroke-width="1"/>
+  <text x="730" y="192" font-size="16.2" fill="#4d4d45" font-family="'IBM Plex Mono', monospace">10 &#8211; 15 nm</text>
+  <text x="730" y="210" font-size="15" fill="#8a8a80">optically invisible</text>
+
+  <!-- bond line -->
+  <line x1="90" y1="266" x2="700" y2="266" stroke="#5b6ea8" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="90" y="284" font-size="15" fill="#3f4f80" font-family="'IBM Plex Mono', monospace">Si &#8211; O &#8211; Si bond to surface silanol</text>
+
+  <!-- substrate -->
+  <rect x="90" y="292" width="610" height="30" fill="#dfe4ea" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="395" y="312" font-size="15.6" fill="#5a6470" text-anchor="middle" font-family="'IBM Plex Mono', monospace">GLASS or SiO2 ADHESION LAYER</text>
+
+  <!-- legend -->
+  <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#4d4d45">
+    <circle cx="106" cy="352" r="6" fill="#3f6f5a"/><text x="120" y="356">CF3 terminal</text>
+    <line x1="242" y1="346" x2="242" y2="358" stroke="#6f9070" stroke-width="3.4"/><text x="254" y="356">PFPE chain (tail)</text>
+    <circle cx="404" cy="352" r="3" fill="#a8b8c8"/><text x="416" y="356">ether oxygen</text>
+    <rect x="536" y="346" width="14" height="12" fill="#5b6ea8"/><text x="558" y="356">silane head</text>
+  </g>
+
+  <text x="872" y="374" font-size="13.7" fill="#b0b0a6" text-anchor="end" font-family="'IBM Plex Mono', monospace">Schematic, not to scale &#183; DISPLAY NOW</text>
+</svg>

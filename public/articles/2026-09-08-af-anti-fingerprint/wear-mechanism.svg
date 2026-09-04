@@ -1,0 +1,65 @@
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="429" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">The layer does not peel. The tails are cut.</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">Reported wear path: chain scission near the Si &#8211; C bond, with heads left bonded</text>
+
+  <line x1="450" y1="86" x2="450" y2="330" stroke="#e4e4dc" stroke-width="1"/>
+
+  <!-- ============ LEFT : as coated ============ -->
+  <text x="56" y="108" font-size="18.2" font-weight="700" fill="#12120e">As coated</text>
+  <line x1="56" y1="128" x2="396" y2="128" stroke="#3f6f5a" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <text x="396" y="122" font-size="14.3" fill="#3f6f5a" text-anchor="end" font-family="'IBM Plex Mono', monospace">continuous CF3 surface</text>
+
+  <g stroke-linecap="round">
+    <g><circle cx="92" cy="136" r="6" fill="#3f6f5a"/><path d="M 92 142 L 92 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="85" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <g><circle cx="142" cy="136" r="6" fill="#3f6f5a"/><path d="M 142 142 L 142 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="135" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <g><circle cx="192" cy="136" r="6" fill="#3f6f5a"/><path d="M 192 142 L 192 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="185" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <g><circle cx="242" cy="136" r="6" fill="#3f6f5a"/><path d="M 242 142 L 242 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="235" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <g><circle cx="292" cy="136" r="6" fill="#3f6f5a"/><path d="M 292 142 L 292 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="285" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <g><circle cx="342" cy="136" r="6" fill="#3f6f5a"/><path d="M 342 142 L 342 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="335" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+  </g>
+  <rect x="56" y="244" width="340" height="26" fill="#dfe4ea" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="226" y="262" font-size="15" fill="#5a6470" text-anchor="middle" font-family="'IBM Plex Mono', monospace">GLASS</text>
+
+  <!-- ============ RIGHT : after abrasion ============ -->
+  <text x="504" y="108" font-size="18.2" font-weight="700" fill="#12120e">After abrasion</text>
+  <line x1="504" y1="128" x2="844" y2="128" stroke="#a86a63" stroke-width="0.9" stroke-dasharray="2 5"/>
+  <text x="844" y="122" font-size="14.3" fill="#7d4a44" text-anchor="end" font-family="'IBM Plex Mono', monospace">patchy CF3 surface</text>
+
+  <g stroke-linecap="round">
+    <!-- intact -->
+    <g><circle cx="540" cy="136" r="6" fill="#3f6f5a"/><path d="M 540 142 L 540 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="533" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <!-- cut -->
+    <g><path d="M 590 196 L 590 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="583" y="232" width="14" height="12" fill="#5b6ea8"/>
+       <line x1="580" y1="192" x2="600" y2="184" stroke="#a86a63" stroke-width="1.6"/></g>
+    <g><circle cx="640" cy="136" r="6" fill="#3f6f5a"/><path d="M 640 142 L 640 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="633" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+    <!-- cut -->
+    <g><path d="M 690 202 L 690 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="683" y="232" width="14" height="12" fill="#5b6ea8"/>
+       <line x1="680" y1="198" x2="700" y2="190" stroke="#a86a63" stroke-width="1.6"/></g>
+    <!-- cut short -->
+    <g><path d="M 740 216 L 740 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="733" y="232" width="14" height="12" fill="#5b6ea8"/>
+       <line x1="730" y1="212" x2="750" y2="204" stroke="#a86a63" stroke-width="1.6"/></g>
+    <g><circle cx="790" cy="136" r="6" fill="#3f6f5a"/><path d="M 790 142 L 790 232" stroke="#6f9070" stroke-width="3.2" fill="none"/><rect x="783" y="232" width="14" height="12" fill="#5b6ea8"/></g>
+  </g>
+  <rect x="504" y="244" width="340" height="26" fill="#dfe4ea" stroke="#b9c2cc" stroke-width="1"/>
+  <text x="674" y="262" font-size="15" fill="#5a6470" text-anchor="middle" font-family="'IBM Plex Mono', monospace">GLASS</text>
+
+  <!-- fragments leaving -->
+  <g fill="#a86a63" opacity="0.55">
+    <circle cx="606" cy="160" r="3"/><circle cx="618" cy="148" r="2.4"/>
+    <circle cx="706" cy="168" r="3"/><circle cx="718" cy="156" r="2.4"/>
+    <circle cx="756" cy="182" r="2.6"/>
+  </g>
+  <text x="844" y="150" font-size="14.3" fill="#7d4a44" text-anchor="end" font-family="'IBM Plex Mono', monospace">released fragments</text>
+
+  <!-- heads remain callout -->
+  <path d="M 690 254 L 690 288 L 744 288" fill="none" stroke="#3f4f80" stroke-width="1"/>
+  <text x="752" y="293" font-size="15.6" fill="#3f4f80">Heads remain</text>
+
+  <!-- what the metrics show -->
+  <rect x="56" y="316" width="788" height="86" fill="#f4f4f0" stroke="#e4e4dc" stroke-width="1"/>
+  <text x="76" y="340" font-size="15.6" font-weight="700" fill="#4d4d45" font-family="'IBM Plex Mono', monospace" letter-spacing="0.8">WHAT THE MEASUREMENTS SHOW</text>
+  <text x="76" y="366" font-size="16.9" fill="#12120e">Static contact angle stays high, because intact CF3 patches remain</text>
+  <text x="76" y="388" font-size="16.9" fill="#7d4a44">Contact angle hysteresis rises first, because the surface is now non-uniform</text>
+</svg>
