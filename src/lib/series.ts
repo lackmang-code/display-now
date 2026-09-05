@@ -1,4 +1,4 @@
-import type { Article } from './articles';
+import type { Article, Lang } from './articles';
 
 /**
  * 연재(심층분석) 등록부.
@@ -24,6 +24,15 @@ export interface SeriesPart {
   /** 이 부를 닫는 물리량·개념. 마지막 편이 여기로 수렴한다 */
   closesWith?: string;
   status: 'ongoing' | 'done' | 'planned';
+
+  /* 🔴 영문판이 쓰는 세 필드. **UI 문구가 아니라 데이터라서 i18n 사전이 못 덮는다.**
+     2026-09-05 영문 34편을 배포하고 라이브를 확인하니 키커에 「화면 아래로 1부 · 1편」이
+     한글로 박혀 있었다. 원고 대조 검사기는 원고(md)만 보므로 이 자리를 못 잡는다 —
+     **원고 밖에서 화면에 찍히는 글자는 검사기 사각지대다.**
+     비워 두면 한글이 그대로 나오므로 부를 새로 만들 때 함께 채운다. */
+  titleEn?: string;
+  deckEn?: string;
+  closesWithEn?: string;
 }
 
 export interface SeriesMeta {
@@ -45,6 +54,9 @@ export const SERIES: Record<string, SeriesMeta> = {
         title: '화면 아래로',
         deck: '센서를 화면 밑으로 넣는 일이 왜 센서마다 다른 문제가 되는가',
         closesWith: '프레넬 수',
+        titleEn: 'Under the Screen',
+        deckEn: 'Why putting a sensor under the screen becomes a different problem for each sensor',
+        closesWithEn: 'the Fresnel number',
         status: 'done',
       },
       {
@@ -52,6 +64,9 @@ export const SERIES: Record<string, SeriesMeta> = {
         title: '표면처리기술',
         deck: '커버윈도우 최외곽 네 가지 코팅의 소재와 공정, 그리고 규격',
         closesWith: '표면 거칠기',
+        titleEn: 'Surface Treatment',
+        deckEn: 'The materials, processes and specifications of the four outermost coatings on a cover window',
+        closesWithEn: 'surface roughness',
         status: 'ongoing',
       },
       {
@@ -59,6 +74,9 @@ export const SERIES: Record<string, SeriesMeta> = {
         title: '크게 만드는 일',
         deck: '큰 화면과 작은 화소를 같은 장비로 만들 수 없는 이유',
         closesWith: '치수와 정밀도의 충돌',
+        titleEn: 'Making It Large',
+        deckEn: 'Why a large screen and small pixels cannot be made on the same equipment',
+        closesWithEn: 'the collision of dimension and precision',
         status: 'planned',
       },
     ],
@@ -90,11 +108,26 @@ export function episodesOfPart(all: Article[], id: string, part: number): Articl
  * 그 부가 몇 편으로 끝날지는 발행 전에는 확정할 수 없으므로 총 편수를 적지 않는다.
  * 총 편수를 적었다가 계획이 바뀌면 지난 기사가 전부 거짓말이 된다.
  */
-export function seriesKicker(a: Article): string | undefined {
+export function seriesKicker(a: Article, lang: Lang = 'ko'): string | undefined {
   const s = seriesOf(a);
   const p = partOf(a);
   if (!s || !p || !a.data.series) return undefined;
-  return `${p.title} ${a.data.series.part}부 · ${a.data.series.episode}편`;
+  const { part, episode } = a.data.series;
+  return lang === 'en'
+    ? `${partTitle(p, 'en')} · Part ${part}, Episode ${episode}`
+    : `${p.title} ${part}부 · ${episode}편`;
+}
+
+/* 부 제목·덱·닫는 물리량을 언어에 맞춰 고른다.
+   영문이 비어 있으면 한글로 떨어진다 — 빈 칸을 내보내는 것보다 낫다. */
+export function partTitle(p: SeriesPart, lang: Lang = 'ko'): string {
+  return lang === 'en' ? (p.titleEn ?? p.title) : p.title;
+}
+export function partDeck(p: SeriesPart, lang: Lang = 'ko'): string {
+  return lang === 'en' ? (p.deckEn ?? p.deck) : p.deck;
+}
+export function partClosesWith(p: SeriesPart, lang: Lang = 'ko'): string | undefined {
+  return lang === 'en' ? (p.closesWithEn ?? p.closesWith) : p.closesWith;
 }
 
 /** 연재 중 아직 안 끝난 부가 있으면 그 부를 돌려준다 (홈·아카이브 안내용) */

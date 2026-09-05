@@ -14,7 +14,7 @@ import {
   counterpartOf,
 } from '../lib/articles';
 import { t } from '../lib/i18n';
-import { seriesOf, partOf, episodesOfPart, seriesKicker } from '../lib/series';
+import { seriesOf, partOf, episodesOfPart, seriesKicker, partTitle, partDeck, partClosesWith } from '../lib/series';
 import { topicsOf, topicIndex } from '../lib/tags';
 
 interface Props {
@@ -61,7 +61,7 @@ const reporterInitial = entry.data.reporter[0];
 // 연재 정보. 같은 부의 다른 편들이 있으면 기사 끝에 목차를 세운다.
 const series = seriesOf(entry);
 const seriesPart = partOf(entry);
-const kicker = seriesKicker(entry);
+const kicker = seriesKicker(entry, lang);
 const siblings =
   series && entry.data.series ? episodesOfPart(all, series.id, entry.data.series.part) : [];
 const hasSeriesNav = siblings.length > 1;
@@ -260,8 +260,8 @@ const articleLd = {
               <div class="series-head">
                 <div class="series-part-no" style={`color:${color};`}>{ui.partNo(seriesPart.part)}</div>
                 <div>
-                  <div class="series-part-title">{seriesPart.title}</div>
-                  <div class="series-part-deck">{seriesPart.deck}</div>
+                  <div class="series-part-title">{partTitle(seriesPart, lang)}</div>
+                  <div class="series-part-deck">{partDeck(seriesPart, lang)}</div>
                 </div>
               </div>
 
@@ -285,12 +285,12 @@ const articleLd = {
 
               {seriesPart.status === 'ongoing' && (
                 <p class="series-foot">
-                  {seriesPart.closesWith ? ui.seriesClosesWith(seriesPart.closesWith) : ''}
+                  {partClosesWith(seriesPart, lang) ? ui.seriesClosesWith(partClosesWith(seriesPart, lang)!) : ''}
                   {ui.seriesStandalone}
                 </p>
               )}
-              {seriesPart.status === 'done' && seriesPart.closesWith && (
-                <p class="series-foot">{ui.seriesClosedWith(seriesPart.closesWith)}{ui.seriesStandalone}</p>
+              {seriesPart.status === 'done' && partClosesWith(seriesPart, lang) && (
+                <p class="series-foot">{ui.seriesClosedWith(partClosesWith(seriesPart, lang)!)}{ui.seriesStandalone}</p>
               )}
             </section>
           )
