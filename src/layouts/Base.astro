@@ -61,7 +61,13 @@ const enURL = altHref ? (lang === 'en' ? canonicalURL : new URL(altHref, Astro.s
     {koURL && <link rel="alternate" hreflang="ko" href={koURL} />}
     {enURL && <link rel="alternate" hreflang="en" href={enURL} />}
     {koURL && <link rel="alternate" hreflang="x-default" href={koURL} />}
-    <link rel="alternate" type="application/rss+xml" title="DISPLAY NOW RSS" href="/rss.xml" />
+    {/* 피드도 언어를 따라간다. 영문 페이지에서 한글 피드를 가리키면 구독기에 한글 기사가 들어온다 */}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="DISPLAY NOW RSS"
+      href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'}
+    />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <meta property="og:type" content="website" />
