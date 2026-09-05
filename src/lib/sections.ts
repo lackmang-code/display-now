@@ -8,6 +8,9 @@ export interface SectionMeta {
   hue: number;
   chroma: number;
   blurb: string;
+  /* 꼭지가 무엇을 하는 곳인지 한 줄. 홈 「꼭지 바로가기」 카드가 첫 문장만 잘라 쓴다.
+     🔴 UI 문구가 아니라 데이터라 i18n 사전이 못 덮는다 — 여기에 짝을 둔다. */
+  blurbEn: string;
 }
 
 export const SECTIONS: Record<SectionKey, SectionMeta> = {
@@ -19,6 +22,8 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     hue: 40,
     chroma: 0.11,
     blurb: '공정·소재·장비의 원리를 계산 가능한 수준까지 풀어 정리합니다. 이 매체에서 가장 긴 글이 모이는 꼭지입니다.',
+    blurbEn:
+      'Works the physics of process, materials and equipment down to where you can compute it. The longest articles in this magazine collect here.',
   },
   paper: {
     key: 'paper',
@@ -28,6 +33,8 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     hue: 255,
     chroma: 0.11,
     blurb: '산업으로 넘어올 논문만 매달 한 편씩 고릅니다. 측정 조건과 산업 표준의 차이를 환산해 함께 싣습니다.',
+    blurbEn:
+      'One paper a month, chosen because it is likely to cross into industry. Where the measurement conditions differ from industry practice, we convert them and print both.',
   },
   patent: {
     key: 'patent',
@@ -37,6 +44,8 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     hue: 150,
     chroma: 0.1,
     blurb: '등록 특허를 청구항 단위로 분류해 각 사의 로드맵을 역추적합니다.',
+    blurbEn:
+      "Sorts granted patents claim by claim to reconstruct each company's roadmap backwards.",
   },
   issue: {
     key: 'issue',
@@ -46,6 +55,8 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     hue: 315,
     chroma: 0.12,
     blurb: '이번 주 업계에서 실제로 움직인 일만 골라 정리합니다. 학회·공시에서 언급량이 급변한 기술도 여기서 다룹니다.',
+    blurbEn:
+      'Only what actually moved in the industry this week. Technologies whose mention rate jumped in conferences and filings are covered here too.',
   },
 };
 

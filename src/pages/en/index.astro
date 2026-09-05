@@ -1,14 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
+import HomeDesktop from '../../components/HomeDesktop.astro';
 import Footer from '../../components/Footer.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
-import { getPublishedArticles } from '../../lib/articles';
-import { getIssuesEn, issueHref, issueNumberLabel, collectRangeLabel } from '../../lib/issues';
+import { getPublishedArticles, baseSlug } from '../../lib/articles';
+import { getIssuesEn, articlesOfIssue } from '../../lib/issues';
+import { resolvePicks } from '../../lib/picks';
 
-// 영문 쪽은 한 장이 홈이자 아카이브다. 주 6편이라 한글판의 기간 필터·태그 클라우드가
-// 채워지지도 않고, 면을 둘로 나누면 앞으로 한글 페이지를 고칠 때마다 두 벌을 맞춰야 한다.
+/*
+ * 영문 홈은 **한글 홈과 같은 컴포넌트(HomeDesktop)를 쓴다.**
+ * 종전에는 여기에 별도 지면이 있었고, 그 결과 이번 호 배너·꼭지 카드·편집국 추천·광고가
+ * 영문에만 통째로 없었다. 구조를 따로 두면 한글을 고칠 때마다 영문이 뒤처진다.
+ *
+ * 그 아래에 **꼭지별 전체 목록**을 이어 붙인다. 영문 쪽은 아직 꼭지 낱장도 아카이브도
+ * 없어서 이 목록이 그 두 면을 겸한다. 홈의 꼭지 카드가 여기 `#sec-*` 앵커로 내려온다.
+ *
+ * 모바일 전용 지면(HomeMobile)은 한글만 있다. 영문은 HomeDesktop 한 벌이 좁은 폭에서
+ * 그대로 접히게 둔다 — 주 6편이라 표지형 지면을 따로 유지할 만큼 분량이 없다.
+ */
 const articles = await getPublishedArticles('en');
 const bySection = SECTION_ORDER.map((key) => ({
   key,
@@ -16,36 +26,33 @@ const bySection = SECTION_ORDER.map((key) => ({
   items: articles.filter((a) => a.data.section === key),
 })).filter((g) => g.items.length > 0);
 
-const latest = getIssuesEn()[0];
+// 이번 호. `headlineEn`이 있는 호만 getIssuesEn()에 들어온다.
+const latestIssue = getIssuesEn()[0];
+const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue, 'en')).length : 0;
+
+// 배너가 헤드 기사 제목을 그대로 싣는 호에서는 그 기사를 목록에서 뺀다(한글 홈과 같은 규칙).
+// 영문판 slug는 `en/` 접두사가 붙으므로 `baseSlug`로 맞춘다.
+const _head0 = latestIssue?.headSlug
+  ? articles.find((a) => baseSlug(a) === latestIssue.headSlug)
+  : undefined;
+const bannerHeadSlug =
+  _head0 && latestIssue?.headlineEn?.trim() === _head0.data.title.trim() ? _head0.slug : undefined;
+const recentArticles = articles.filter((a) => a.slug !== bannerHeadSlug).slice(0, 8);
+
+const shownSlugs = new Set<string>(recentArticles.map((a) => a.slug));
+if (bannerHeadSlug) shownSlugs.add(bannerHeadSlug);
+const editorPicks = resolvePicks(articles, shownSlugs);
 ---
 
 <Base title="DISPLAY NOW" lang="en" altHref="/">
-  <div class="frame">
-    <Header lang="en" altHref="/" />
-
-    <section class="masthead">
-      <h1>Display, read from the sources.</h1>
-      <p>
-        DISPLAY NOW is a trade magazine for the display industry — panels, materials and equipment.
-        Four specialist AI reporters write it and an AI editor-in-chief edits it. We do not
-        interview. Every article is built on published papers, granted patents and public filings
-        alone, and every article carries the full list of what it was built on.
-      </p>
-      <p class="masthead-sub">
-        A new issue every Tuesday. The cover is not a picture — it is a simulation you can run.
-      </p>
-    </section>
-
-    {
-      latest && (
-        <a class="latest-issue" href={issueHref(latest, 'en')}>
-          <span class="li-no">{issueNumberLabel(latest, 'en')}</span>
-          <span class="li-head">{latest.headlineEn}</span>
-          <span class="li-range">{collectRangeLabel(latest, 'en')}</span>
-        </a>
-      )
-    }
-
+  <HomeDesktop
+    lang="en"
+    allArticles={articles}
+    recentArticles={recentArticles}
+    editorPicks={editorPicks}
+    latestIssue={latestIssue}
+    latestIssueCount={latestIssueCount}
+  >
     {
       articles.length === 0 ? (
         <p class="empty">The English edition begins with Issue 4.</p>
@@ -68,96 +75,76 @@ const latest = getIssuesEn()[0];
       )
     }
 
+    {/* 한글 홈의 SubscribeCTA 자리. `/subscribe`의 영문 짝이 아직 없어 여기가 그 역할을 겸한다 */}
     <section class="subscribe" id="subscribe">
       <div>
         <div class="sub-head">Every Tuesday, the week in display — as one issue.</div>
         <p class="sub-note">A free newsletter. Unsubscribe any time.</p>
       </div>
-      <form onsubmit="return false;">
-        <input type="email" placeholder="Email address" />
+      <form id="en-subscribe-form">
+        <input type="email" name="email" placeholder="Email address" required />
         <button type="submit">Subscribe</button>
       </form>
+      <p class="sub-status" id="en-subscribe-status" hidden></p>
     </section>
 
     <Footer lang="en" />
-  </div>
+  </HomeDesktop>
 </Base>
 
+<script>
+  // 하단 구독 폼. 사이드바 폼(HomeDesktop)과 id가 겹치지 않게 따로 둔다.
+  const form = document.getElementById('en-subscribe-form');
+  const statusEl = document.getElementById('en-subscribe-status');
+
+  function show(text: string) {
+    if (!statusEl) return;
+    statusEl.hidden = false;
+    statusEl.textContent = text;
+  }
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.elements.namedItem('email');
+      const email = input instanceof HTMLInputElement ? input.value.trim() : '';
+      const btn = form.querySelector('button');
+      const reset = () => {
+        if (btn instanceof HTMLButtonElement) {
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      };
+      if (btn instanceof HTMLButtonElement) {
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+      }
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email, source: 'en-home' }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          form.hidden = true;
+          show('You are subscribed. Thank you!');
+        } else {
+          show('Please check the email address.');
+          reset();
+        }
+      } catch {
+        show('Something went wrong. Please try again in a moment.');
+        reset();
+      }
+    });
+  }
+</script>
+
 <style>
-  .frame {
-    max-width: 1180px;
-    margin: 0 auto;
-    border-left: 1px solid var(--line-frame);
-    border-right: 1px solid var(--line-frame);
-    min-height: 100vh;
-    background: var(--paper);
-  }
-
-  .masthead {
-    padding: clamp(30px, 7vw, 58px) clamp(16px, 5vw, 42px) clamp(20px, 4vw, 30px);
-    border-bottom: 1px solid var(--line);
-  }
-  .masthead h1 {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(27px, 6.2vw, 44px);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.18;
-    color: var(--ink);
-  }
-  .masthead p {
-    margin: 16px 0 0;
-    max-width: 68ch;
-    font-size: clamp(14.5px, 3.7vw, 16px);
-    line-height: 1.75;
-    color: var(--ink-mute);
-  }
-  .masthead-sub {
-    color: var(--meta) !important;
-    font-family: var(--font-mono);
-    font-size: 14px !important;
-  }
-
-  .latest-issue {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 14px;
-    padding: 15px clamp(16px, 5vw, 42px);
-    border-bottom: 1px solid var(--line);
-    background: var(--card-warm);
-    text-decoration: none;
-  }
-  .li-no {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    flex: 0 0 auto;
-  }
-  .li-head {
-    font-family: var(--font-serif);
-    font-size: clamp(16px, 4vw, 20px);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    flex: 1 1 auto;
-  }
-  .li-range {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--meta-soft);
-    flex: 0 0 auto;
-  }
-  .latest-issue:hover .li-head {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
   .sec {
     padding: clamp(22px, 5vw, 34px) clamp(16px, 5vw, 42px);
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
   }
   .sec-head {
     display: flex;
@@ -190,7 +177,7 @@ const latest = getIssuesEn()[0];
     font-family: var(--font-mono);
     font-size: 15px;
     color: var(--meta-soft);
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
   }
 
   .subscribe {
@@ -199,7 +186,7 @@ const latest = getIssuesEn()[0];
     align-items: center;
     gap: 16px 24px;
     padding: clamp(22px, 5vw, 32px) clamp(16px, 5vw, 42px);
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
     background: var(--card-warm);
   }
   .subscribe > div {
@@ -223,6 +210,9 @@ const latest = getIssuesEn()[0];
     gap: 8px;
     flex: 0 1 auto;
   }
+  .subscribe form[hidden] {
+    display: none;
+  }
   .subscribe input {
     padding: 9px 12px;
     border: 1px solid var(--line);
@@ -239,5 +229,11 @@ const latest = getIssuesEn()[0];
     font-family: var(--font-mono);
     font-size: 14px;
     cursor: pointer;
+  }
+  .sub-status {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 14px;
+    color: var(--meta);
   }
 </style>

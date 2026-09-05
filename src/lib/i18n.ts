@@ -108,6 +108,34 @@ export const UI = {
     edEditorDesc:
       'DEEPLE이 정리한 기사를 기획 방향에 맞춰 마지막으로 확인해야 발행됩니다. AI 기자단으로 전문 매체를 만들 수 있을지 실험하는 중이며, 잘못된 부분이 보이면 알려 주시면 바로 고치겠습니다.',
     edBoard: '문의 게시판에 글 남기기 →',
+
+    /* ── 홈 PC 지면(HomeDesktop.astro) ──────────────────────────
+       한글 홈과 영문 홈은 **같은 컴포넌트 한 벌**을 쓴다.
+       지면을 두 벌로 두면 한글 쪽을 고칠 때마다 영문 쪽이 조용히 뒤처진다. */
+    homeTagline: '100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진',
+    homeIssueLabel: '이번 호',
+    homeCoverOpen: '표지 열기 →',
+    homeCoverSimNote: ' · 표지는 시뮬레이션입니다',
+    homeQuickNav: '꼭지 바로가기',
+    homeEditorialLink: '편집국 소개 →',
+    homeSectionByline: (n: number, reporter: string) => `${n}편 · by ${reporter} →`,
+    homeArchiveBand: '아카이브',
+    homeArchiveTitle: '발행한 기사 전체를 제목·기업명으로 검색',
+    homeArchiveByline: (n: number) => `전체 ${n}편 · 검색하기 →`,
+    homeFeedHead: '전체 글 · 최신순',
+    homeFeedLink: (n: number) => `아카이브 전체 ${n}편 →`,
+    homePicks: '편집국 추천',
+    homeMonth: (m: number) => `${m}월`,
+    homeAdLabel: '광고',
+    homeAdTagline: '당신의 PC에 AI 직원을<br />복제/이식시켜 드립니다.',
+    homeAdContact: '문의: info@nextio.ai.kr',
+    homeNlEyebrow: '뉴스레터',
+    homeNlTitle: '새 분석이 나오면 메일로 보내드립니다',
+    homeNlMore: '관심 꼭지까지 지정해 신청하기 →',
+    subProcessing: '처리 중...',
+    subDone: '구독 신청 완료했습니다. 감사합니다!',
+    subBadEmail: '이메일 주소를 확인해주세요.',
+    subError: '오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
   },
 
   en: {
@@ -210,6 +238,33 @@ export const UI = {
     edEditorDesc:
       'An article is published only after it has been checked against the editorial direction. This is an experiment in whether a team of AI reporters can make a trade publication; if you see something wrong, tell us and we will fix it.',
     edBoard: 'Write to the newsroom →',
+
+    /* 홈 PC 지면. 위 한글 블록과 짝이다 */
+    homeTagline: 'A display trade magazine written entirely by a team of specialist AI reporters',
+    homeIssueLabel: 'This issue',
+    homeCoverOpen: 'Open the cover →',
+    homeCoverSimNote: ' · the cover is a simulation you can run',
+    homeQuickNav: 'Sections',
+    homeEditorialLink: 'About the newsroom →',
+    homeSectionByline: (n: number, reporter: string) => `${n} articles · by ${reporter} →`,
+    homeArchiveBand: 'Back issues',
+    homeArchiveTitle: 'Every issue since the first, cover by cover',
+    homeArchiveByline: (n: number) => `${n} articles in all · browse →`,
+    homeFeedHead: 'All articles · newest first',
+    homeFeedLink: (n: number) => `All ${n} by section →`,
+    homePicks: "Editor's picks",
+    homeMonth: (m: number) =>
+      ['January','February','March','April','May','June','July','August','September','October','November','December'][m - 1],
+    homeAdLabel: 'AD',
+    homeAdTagline: 'We clone an AI employee<br />onto your own PC.',
+    homeAdContact: 'Contact: info@nextio.ai.kr',
+    homeNlEyebrow: 'Newsletter',
+    homeNlTitle: 'We mail you every new analysis as it is published',
+    homeNlMore: 'Sign up and pick the sections you follow →',
+    subProcessing: 'Sending...',
+    subDone: 'You are subscribed. Thank you!',
+    subBadEmail: 'Please check the email address.',
+    subError: 'Something went wrong. Please try again in a moment.',
   },
 } as const;
 

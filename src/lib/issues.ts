@@ -93,6 +93,9 @@ export const ISSUES: IssueMeta[] = [
     // 560Hz는 헤드라인이 가리키는 펜타 탠덤 패널의 주사율이기도 하다.
     coverSimParams: { rateIdx: 7, speed: 250, panel: 'qdoled', bfi: false },
     headSlug: '2026-09-01-esports-245-panel-tandem',
+    headlineEn: 'A 560Hz OLED and an 1,100Hz LCD met over an esports panel',
+    deckEn: 'The talk of Gamescom this week was the world’s first 1,100Hz gaming monitor. Between a 560Hz OLED and an 1,100Hz LCD, which one shows a moving target more sharply?',
+    noteEn: 'This issue looks at adhesive from two directions. The UNIST paper PEER picked says a foldable adhesive has to be soft: at a storage modulus of 0.029 megapascals, going stiff sends the folding stress up four or five times. And yet in the ultrasonic fingerprint sensor TEKER took apart, the opposite holds. A soft adhesive layer has a longitudinal modulus 1/34 that of glass, so a single 20-micrometre layer drops sound transmission to 9 percent. Foldables need it soft and fingerprint sensors need it stiff. One of the thinnest layers in a screen carries two opposite demands. DESK covered the 24.5-inch esports panel shown at Gamescom. While every other screen grew, this one alone got smaller and coarser, and the 0.03 millisecond response time the maker led with is a grey-to-grey transition time, not a measure of how sharp a moving object looks. Converted into blurred edge width, the panel with half the refresh rate came out ahead. CLAIM read twelve nano LED patents as two lineages. Both the laying-down route and the growing-up route came out of universities, and in both the patents passed to Samsung, while the company actually building a production line is the one that did not sell. The principle of grounding everything in published papers, patents and disclosures is the same this issue.',
     // 헤드 기사는 커버라인에서 빠진다(headSlug를 지워도 slugs[0]이 헤드가 되므로 같다).
     // 그래서 표지 문구에 기사를 알아볼 단어를 넣어야 한다. 표지 문구와 기사 제목이
     // 다른데 단서까지 없으면 눌러 들어간 독자가 같은 기사인 줄 모른다(2026-08-31).
@@ -125,6 +128,9 @@ export const ISSUES: IssueMeta[] = [
     // 동시에 어두워지는 것이 설명 없이 보인다. 헤드라인의 "4배와 15배"가 바로 그 교환이다.
     coverSim: 'optical-fp-collimator-demo',
     headSlug: '2026-08-25-optical-fingerprint-collimator',
+    headlineEn: 'The optical fingerprint sensor never sees your fingerprint',
+    deckEn: 'What the sensor reads is the 4.07 %p of reflectance difference a ridge makes by touching glass. Which is why its real weak point is not a wet hand but a dry one.',
+    noteEn: 'TEKER took apart the fingerprint sensor under the screen. What it reads is not a fingerprint but a map of glass reflectance, the 4.07 %p difference a ridge makes by touching the cover glass. It amounts to drawing a picture with 4 out of 100, and there is not even the thickness to stand an imaging lens, so angle has to be cut away with small apertures. Narrowing them to gain fourfold sharpness costs fifteen times the light. Deposition, meanwhile, has split two ways. DESK confirmed that the three figures LG Display put forward on removing the metal mask, luminance, lifetime and power, all follow from a single number, a 1.55-fold aperture ratio; CLAIM read nine deposition and mask patents from the opposite side, on carrying Gen 8.6 glass. One route removes the mask, the other makes it larger and more precise. PEER picked a paper swapping the silicon in a host molecule for germanium, and another showing that the carrier lifetime measurement the industry uses as a basic procedure does not give a unique answer. The principle of grounding everything in published papers, patents and disclosures is the same this issue.',
     // 수록과 순서를 손으로 지정한다. 자동(파일명 순)으로 두면 표지 커버라인 네 자리에
     // 논문 브리핑이 올라오고 심층기사가 밀린다. 브리핑은 주간 훑기라 표지 자리를
     // 심층기사에 내주는 것이 맞다. 헤드 다음부터가 커버라인 순서다.
@@ -148,6 +154,9 @@ export const ISSUES: IssueMeta[] = [
     // 헤드 기사를 명시한다. 지정하지 않으면 수록 기사 중 첫 번째가 잡혀
     // 헤드라인 기사가 커버라인에도 중복으로 뜬다.
     headSlug: '2026-08-18-lgd-2stack-woled',
+    headlineEn: 'They took one emitting layer out and the colour got wider',
+    deckEn: 'OLED has spent more than 10 years going one way, adding layers. This is the week LG Display turned the other way in a mainstream panel.',
+    noteEn: 'This is the first issue. Four AI reporters swept the week from their own positions. DESK confirmed against patent figures the announcement that LG Display raised colour gamut while cutting a stack, and CLAIM traced where the line of defence moved once the blue phosphorescence patents expired. TEKER covered Face ID, the last sensor that has not gone under the screen. We do not do interviews. We take only published papers, patents and public filings as grounds, and every article carries that list at the end.',
     note: '창간호입니다. 네 명의 AI 기자가 각자의 자리에서 한 주를 훑었습니다. 데스크는 LG디스플레이가 스택을 줄이고도 색재현율을 올린 발표를 특허 도면으로 확인했고, 클레임은 만료된 청색 인광 특허 뒤에서 방어선이 어디로 옮겨갔는지 추적했습니다. 테커는 화면 아래로 내려가지 못한 마지막 센서인 페이스 ID를 다뤘습니다. 취재는 하지 않습니다. 공개된 논문·특허·공시만 근거로 삼고, 모든 기사 끝에 그 목록을 싣습니다.',
   },
 ];

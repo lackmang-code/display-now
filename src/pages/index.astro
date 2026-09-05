@@ -1,19 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import HomeMobile from '../components/HomeMobile.astro';
-import Header from '../components/Header.astro';
+import HomeDesktop from '../components/HomeDesktop.astro';
 import Footer from '../components/Footer.astro';
 import SubscribeCTA from '../components/SubscribeCTA.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { getPublishedArticles, bylineOf, articleHref } from '../lib/articles';
-import { getIssues, articlesOfIssue, issueNumberLabel, issueDateLabel, issueHref } from '../lib/issues';
+import { getPublishedArticles } from '../lib/articles';
+import { getIssues, articlesOfIssue } from '../lib/issues';
+import { resolvePicks } from '../lib/picks';
 
 const allArticles = await getPublishedArticles();
-const latestBySection = SECTION_ORDER.map((key) => {
-  const list = allArticles.filter((a) => a.data.section === key);
-  return { key, article: list[0] };
-}).filter((x) => x.article);
 
 // 이번 호 배너가 헤드 기사 제목을 그대로 싣는다(headline = 그 기사 제목).
 // 그 기사를 목록에도 두면 한 화면에 같은 제목이 두 번 나오므로 목록에서 뺀다.
@@ -30,49 +25,18 @@ const recentArticles = allArticles.filter((a) => a.slug !== bannerHeadSlug).slic
 const latestIssue = getIssues()[0];
 const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue)).length : 0;
 
-// 편집국 추천 — 사람이 고르는 목록 (조회수 아님)
-const editorPicksSlugs = [
-  // 제2호(8/25). 증착 두 갈래를 앞에 세운다 — 마스크를 없애는 쪽과 키우는 쪽.
-  '2026-08-25-lgd-flipp-fmmless-patterning',
-  '2026-08-25-gen86-oled-deposition-patents',
-  '2026-08-25-optical-fingerprint-collimator',
-  '2026-08-25-germanium-exciplex-host-mrtadf',
-  '2026-08-13-hunan-indis-microled',
-  '2026-08-18-self-healing-wearable-peled',
-  '2026-08-11-udc-diffraction',
-  '2026-08-14-proximity-sensor-transmittance',
-  '2026-08-06-fmp-privacy-display',
-  '2026-08-14-utg-six-companies-deep-report',
-  // 아래는 여유분이다. 위쪽 넷은 이번 호라 목록·배너에 이미 나와 걸러지므로,
-  // 넉넉히 담아 두지 않으면 이 자리가 열 개를 못 채운다(실제로 여섯 개로 줄었다).
-  '2026-08-18-lgd-2stack-woled',
-  '2026-08-18-dongguk-ald-igzo-vrram',
-  '2026-08-14-als-behind-oled-crosstalk',
-  '2026-08-14-lepton-samsung-hinge-lawsuit',
-  '2026-07-30-hiaa-big-hole',
-  '2026-08-04-dgist-samsung-igzo-laser-anneal',
-];
-/** 이 자리에 보여줄 개수. 목록은 이보다 길게 두고 걸러진 뒤 앞에서 잘라 쓴다 */
-const EDITOR_PICK_COUNT = 10;
-// 바로 왼쪽 기사 목록에 이미 있는 것은 추천에서 뺀다. 같은 화면에 두 번 나오면
-// 추천이 목록의 메아리가 된다. 빼고 나면 이 자리가 "최신에 밀려 안 보이는 좋은 글"을
-// 드러내는 역할이 되어 오히려 쓸모가 생긴다.
-// 배너에 실린 헤드 기사도 함께 뺀다. 목록에서만 빼고 여기를 놔뒀더니
-// 배너에서 지운 제목이 추천 자리로 되살아났다.
+// 편집국 추천 — 사람이 고르는 목록 (조회수 아님). 목록 자체는 `src/lib/picks.ts`에 있다.
+// 바로 왼쪽 기사 목록에 이미 있는 것과 배너에 실린 헤드 기사는 뺀다.
 const shownSlugs = new Set<string>(recentArticles.map((a) => a.slug));
 if (bannerHeadSlug) shownSlugs.add(bannerHeadSlug);
-const editorPicks = editorPicksSlugs
-  .map((slug) => allArticles.find((a) => a.slug === slug))
-  .filter(Boolean)
-  .filter((a) => !shownSlugs.has(a!.slug))
-  .slice(0, EDITOR_PICK_COUNT);
+const editorPicks = resolvePicks(allArticles, shownSlugs);
 ---
 
 <Base title="DISPLAY NOW | AI 기자단이 쓰는 디스플레이 전문 매거진" altHref="/en">
   {/*
     홈은 폭 820px을 경계로 지면이 갈린다.
 
-    이하 → 표지형(HomeMobile.astro) · 초과 → 아래 PC 지면.
+    이하 → 표지형(HomeMobile.astro) · 초과 → PC 지면(HomeDesktop.astro).
     둘은 구조가 아예 달라서 CSS로 접는 방식으로는 안 되고, 두 벌을 다 두고 가른다.
     경계값 820px은 첨디공On이 쓰는 값과 같게 맞췄다.
 
@@ -81,6 +45,9 @@ const editorPicks = editorPicksSlugs
 
     ⚠️ 구글은 모바일 지면을 기준으로 색인한다. PC에만 있고 모바일에 없는 링크는 값이 깎인다.
     그래서 꼭지·주간호·아카이브·주제별·편집국 링크가 모바일 내비 풀다운과 푸터 양쪽에 있다.
+
+    🔴 PC 지면은 영문 홈(`/en`)과 **같은 컴포넌트 한 벌**을 쓴다. 여기를 고치면 영문도 같이
+    바뀐다 — 그것이 이 구조의 목적이다. 언어별로 다른 것은 문구(i18n)와 링크 경로뿐이다.
   */}
   {/* 데이터는 여기서 한 번만 계산해 넘긴다. 양쪽이 따로 계산하면 두 지면이 어긋난다 */}
   <div class="home-mobile">
@@ -93,146 +60,14 @@ const editorPicks = editorPicksSlugs
     />
   </div>
 
-  <div class="frame home-desktop">
-    <Header showNav={false} altHref="/en" />
-
-    <section class="hero">
-      <h1>100% 전문 AI 기자단으로 구성된 디스플레이 전문 매거진</h1>
-    </section>
-
-    {
-      latestIssue && (
-        <a class="issue-banner" href={issueHref(latestIssue)}>
-          <div class="ib-left">
-            <span class="ib-label">이번 호</span>
-            <span class="ib-no">{issueNumberLabel(latestIssue)} · {issueDateLabel(latestIssue)}</span>
-          </div>
-          <div class="ib-main">
-            <div class="ib-headline">{latestIssue.headline}</div>
-            <div class="ib-meta">
-              {latestIssueCount}편 수록
-              {latestIssue.coverSim && ' · 표지는 시뮬레이션입니다'}
-            </div>
-          </div>
-          <span class="ib-go">표지 열기 →</span>
-        </a>
-      )
-    }
-
-    <div class="content-pad">
-      <div class="row-head">
-        <span class="eyebrow">꼭지 바로가기</span>
-        <a href="/editorial" class="muted-link">편집국 소개 →</a>
-      </div>
-
-      {/*
-        꼭지 카드는 **내비게이션**이다. 종전에는 각 꼭지의 최신 기사 제목을 실었는데,
-        그 제목이 바로 아래 기사 목록과 오른쪽 편집국 추천에 그대로 또 나와
-        한 화면에서 같은 제목이 서너 번씩 보였다(기사 자리 24칸에 고유 제목 15개).
-
-        제목 대신 **그 꼭지가 무엇을 하는 곳인지** 한 줄로 적는다.
-        카드가 목록처럼 보이지 않고, 처음 온 사람이 꼭지를 고를 근거가 생긴다.
-      */}
-      <div class="quick-cards" data-nav="1">
-        {
-          latestBySection.map(({ key }) => {
-            const s = SECTIONS[key];
-            // 첫 문장만. 이미 마침표로 끝나면 또 붙이지 않는다(특허 카드가 ".."이 됐다)
-            const first = s.blurb.split('. ')[0];
-            const blurb = first.endsWith('.') ? first : first + '.';
-            const n = allArticles.filter((a) => a.data.section === key).length;
-            return (
-              <a href={`/section/${key}`} class="quick-card" style={`border-color:${sectionColor(key)};`}>
-                <div class="band" style={`background:${sectionColor(key)};`}>{s.label}</div>
-                <div class="body">
-                  <div class="title">{blurb}</div>
-                  <div class="byline">{n}편 · by {s.reporter} →</div>
-                </div>
-              </a>
-            );
-          })
-        }
-        <a href="/archive" class="quick-card archive-card">
-          <div class="band archive-band">아카이브</div>
-          <div class="body">
-            <div class="title">발행한 기사 전체를 제목·기업명으로 검색</div>
-            <div class="byline">전체 {allArticles.length}편 · 검색하기 →</div>
-          </div>
-        </a>
-      </div>
-
-      <div class="main-split">
-        <div class="feed">
-          <div class="row-head">
-            <span class="eyebrow">전체 글 · 최신순</span>
-            <a href="/archive" class="muted-link">아카이브 전체 {allArticles.length}편 →</a>
-          </div>
-          <div class="feed-grid">
-            {recentArticles.map((a) => <ArticleCard article={a} />)}
-          </div>
-        </div>
-
-        <aside class="sidebar">
-          {/* 광고를 사이드바 맨 위로 올린다. 맨 아래에 두면 스크롤을 끝까지 내려야 보인다 */}
-          <a class="ad-box" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
-            <span class="ad-label">광고</span>
-            <img class="ad-logo" src="/uploads/nextio-lockup-reverse.svg" alt="Next I/O" />
-            {/*
-              autoplay를 떼고 preload="none"으로 둔다. 이 영상은 2.47MB인데
-              autoplay가 붙어 있으면 화면에 안 보여도 브라우저가 내려받는다.
-              지면을 나눈 뒤 이 광고는 PC 지면에만 있는데, 폰에서 재니
-              보이지도 않는 영상 2,528KB를 받고 있었다.
-            */}
-            <video
-              src="/uploads/nextio-ad-mobile-robot.mp4"
-              loop
-              muted
-              playsinline
-              preload="none"
-              data-lazy-video
-            ></video>
-            <div class="ad-copy">
-              <div class="ad-tagline">당신의 PC에 AI 직원을<br />복제/이식시켜 드립니다.</div>
-              <div class="ad-contact">문의: info@nextio.ai.kr</div>
-            </div>
-          </a>
-
-          <div class="row-head">
-            <span class="eyebrow">편집국 추천</span>
-            <span class="muted">{new Date().getMonth() + 1}월</span>
-          </div>
-          <div class="picks">
-            {
-              editorPicks.map((a, i) => (
-                <a href={articleHref(a!)} class="pick-row">
-                  <span class="no">{String(i + 1).padStart(2, '0')}</span>
-                  <span>
-                    <span class="pick-title">{a!.data.title}</span>
-                    <span class="pick-meta">
-                      <span style={`color:${sectionColor(a!.data.section)};`}>{SECTIONS[a!.data.section].label}</span>
-                      {' · by '}{a!.data.reporter}
-                    </span>
-                  </span>
-                </a>
-              ))
-            }
-          </div>
-
-          <div class="newsletter-dark">
-            <div class="eyebrow-dark">뉴스레터</div>
-            <div class="nl-title">새 분석이 나오면 메일로 보내드립니다</div>
-            <form id="subscribe-form">
-              <input type="email" name="email" placeholder="이메일 주소" required />
-              <button type="submit">구독</button>
-            </form>
-            <p class="nl-status" id="subscribe-status" hidden></p>
-            <a class="nl-more" href="/subscribe">관심 꼭지까지 지정해 신청하기 →</a>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-
+  <div class="home-desktop">
+    <HomeDesktop
+      allArticles={allArticles}
+      recentArticles={recentArticles}
+      editorPicks={editorPicks}
+      latestIssue={latestIssue}
+      latestIssueCount={latestIssueCount}
+    />
   </div>
 
   {/*
@@ -244,31 +79,6 @@ const editorPicks = editorPicksSlugs
     <Footer />
   </div>
 </Base>
-
-<script>
-  // 광고 영상은 화면에 들어올 때만 받아서 재생한다.
-  // display:none 안에 있으면 교차가 일어나지 않으므로 폰에서는 아예 받지 않는다.
-  const vids = document.querySelectorAll<HTMLVideoElement>('video[data-lazy-video]');
-  if (vids.length) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        const v = e.target as HTMLVideoElement;
-        if (e.isIntersecting) {
-          // preload="none"이라 이 시점에는 아직 데이터가 없다. 첫 play()는 거부되므로
-          // 받을 준비를 시키고, 데이터가 오면 한 번 더 시도한다.
-          // (이걸 안 하면 영상은 내려받아 놓고 멈춘 채로 있다)
-          v.preload = 'auto';
-          const tryPlay = () => v.play().catch(() => {});
-          tryPlay();
-          v.addEventListener('canplay', tryPlay, { once: true });
-        } else {
-          v.pause();
-        }
-      }
-    }, { rootMargin: '200px' });
-    vids.forEach((v) => io.observe(v));
-  }
-</script>
 
 <style>
   /* ── 지면 가르기 ────────────────────────────────────────────
@@ -289,398 +99,4 @@ const editorPicks = editorPicksSlugs
       display: block;
     }
   }
-
-  .hero {
-    background: var(--ink);
-    color: var(--on-dark);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px 32px;
-    flex-wrap: wrap;
-    /* 글자를 줄였으니 띠도 같이 줄인다. 안 그러면 빈 검정 띠만 두껍게 남는다 */
-    padding: clamp(12px, 2.4vw, 16px) clamp(14px, 4vw, 32px);
-  }
-  /* 매체를 한 줄로 소개하는 문구다. 제목이 아니다.
-     32px/700 흰색이던 때는 제호(24px)보다 커서 이쪽이 매체 이름처럼 읽혔다.
-     제호보다 확실히 아래에 두고, 굵기와 색도 한 단계 내려 태그라인으로 만든다. */
-  .hero h1 {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(15px, 2.6vw, 19px);
-    line-height: 1.5;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    /* 완전 흰색. 크기를 32→19px로 줄여 제호에 자리를 내준 대신
-       색은 가장 밝게 둔다(회색으로 눌렀더니 너무 물러났다). */
-    color: #fff;
-    word-break: keep-all;
-  }
-  /* 이번 호 배너. 히어로 바로 아래에서 그 주 호로 보낸다.
-     ── 안 A ──
-     종전에는 제호·부제·배너가 모두 같은 검정이라 세 덩어리가 하나로 붙어 보였다.
-     배너만 밝은 판으로 뒤집어 "여기부터 이번 주 내용"이라는 경계를 만든다.
-     골드 테두리로 묶어 아래 콘텐츠 영역과도 섞이지 않게 한다. */
-  .issue-banner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 20px;
-    background: var(--gold);
-    color: #17170f;
-    padding: 15px clamp(14px, 4vw, 32px) 17px;
-  }
-  .issue-banner .ib-no,
-  .issue-banner .ib-meta {
-    color: rgba(23, 23, 15, 0.66);
-  }
-  .issue-banner .ib-label,
-  .issue-banner .ib-go {
-    color: #17170f;
-    font-weight: 600;
-  }
-  .ib-left {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    flex: 0 0 auto;
-  }
-  .ib-label {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-  }
-  .ib-no {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .ib-main {
-    flex: 1 1 320px;
-    min-width: 0;
-  }
-  .ib-headline {
-    font-family: var(--font-serif);
-    font-size: clamp(17px, 3vw, 21px);
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: -0.03em;
-    word-break: keep-all;
-  }
-  .ib-meta {
-    margin-top: 4px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .ib-go {
-    flex: 0 0 auto;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--gold);
-  }
-  .content-pad {
-    padding: 20px clamp(14px, 4vw, 24px) 24px;
-  }
-  .row-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin: 0 0 10px;
-  }
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    color: var(--meta-soft);
-  }
-  .muted-link {
-    font-size: 14px;
-    color: var(--meta);
-  }
-  .muted {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--meta);
-  }
-  .quick-cards {
-    display: flex;
-    gap: 12px;
-    align-items: stretch;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 2px;
-  }
-  .quick-card {
-    background: var(--card);
-    border: 1.5px solid var(--line-frame);
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 clamp(152px, 42vw, 200px);
-    min-width: clamp(152px, 42vw, 200px);
-    scroll-snap-align: start;
-  }
-  .quick-card .band {
-    color: var(--card);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    padding: 8px clamp(12px, 3.2vw, 18px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .archive-card {
-    background: var(--card-warm);
-    border-color: var(--line-dark);
-  }
-  .archive-band {
-    background: var(--line-dark);
-  }
-  .quick-card .body {
-    padding: clamp(12px, 3.4vw, 16px) clamp(13px, 3.8vw, 18px) clamp(11px, 3vw, 14px);
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    flex: 1;
-  }
-  .quick-card .title {
-    font-family: var(--font-serif);
-    font-size: clamp(15.5px, 4vw, 18px);
-    font-weight: 600;
-    line-height: 1.45;
-    letter-spacing: -0.03em;
-    word-break: keep-all;
-    flex: 1;
-  }
-  .quick-card .byline {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--meta);
-  }
-  .main-split {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 22px;
-    align-items: flex-start;
-  }
-  .feed {
-    flex: 1 1 520px;
-    min-width: 0;
-  }
-  .feed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px;
-  }
-  .sidebar {
-    flex: 1 1 300px;
-    min-width: 0;
-    max-width: 316px;
-  }
-  .picks {
-    background: var(--card-warm);
-    border: 1px solid #d8d2c2;
-  }
-  .pick-row {
-    display: grid;
-    grid-template-columns: 26px 1fr;
-    gap: 12px;
-    padding: 14px 18px;
-    border-bottom: 1px solid #e2dccb;
-  }
-  .pick-row:last-child {
-    border-bottom: none;
-  }
-  .no {
-    font-family: var(--font-mono);
-    font-size: 15px;
-    color: var(--ink);
-  }
-  .pick-title {
-    display: block;
-    font-size: clamp(14px, 3.6vw, 15px);
-    line-height: 1.5;
-    word-break: keep-all;
-  }
-  .pick-meta {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--meta);
-    margin-top: 5px;
-  }
-  .newsletter-dark {
-    margin-top: 12px;
-    background: var(--ink);
-    color: #e4e2da;
-    padding: 18px;
-  }
-  .eyebrow-dark {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    color: #9a9a90;
-  }
-  .nl-title {
-    font-family: var(--font-serif);
-    font-size: clamp(15.5px, 4vw, 17px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-top: 8px;
-    line-height: 1.45;
-    word-break: keep-all;
-  }
-  .newsletter-dark form {
-    display: flex;
-    margin-top: 12px;
-  }
-  .newsletter-dark form[hidden] {
-    display: none;
-  }
-  .newsletter-dark input {
-    flex: 1;
-    min-width: 0;
-    font-family: var(--font-sans);
-    font-size: 14px;
-    padding: 10px 12px;
-    border: 1px solid var(--line-dark);
-    border-right: none;
-    background: #1c1c17;
-    color: var(--on-dark);
-    outline: none;
-  }
-  .newsletter-dark button {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    background: var(--on-dark);
-    border: 1px solid var(--on-dark);
-    padding: 10px 16px;
-    cursor: pointer;
-  }
-  .ad-box {
-    position: relative;
-    display: block;
-    margin-top: 12px;
-    overflow: hidden;
-    background: #0b0e19;
-    border: 1px solid var(--line-dark);
-  }
-  .ad-box video {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-  .ad-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: #e4e2da;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 2px 7px;
-  }
-  .ad-copy {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 14px 16px;
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
-    color: var(--on-dark);
-  }
-  .ad-logo {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-    height: 18px;
-    width: auto;
-  }
-  .ad-tagline {
-    font-family: var(--font-serif);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    word-break: keep-all;
-  }
-  .ad-contact {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--on-dark-mute);
-    margin-top: 5px;
-  }
-  .nl-status {
-    margin: 10px 0 0;
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .nl-more {
-    display: inline-block;
-    margin-top: 10px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    color: var(--on-dark-mute);
-    border-bottom: 1px solid var(--line-dark);
-  }
-  .nl-more:hover {
-    color: var(--on-dark);
-  }
 </style>
-
-<script>
-  const form = document.getElementById('subscribe-form');
-  const status = document.getElementById('subscribe-status');
-
-  function showStatus(text: string) {
-    if (!status) return;
-    status.hidden = false;
-    status.textContent = text;
-  }
-
-  if (form instanceof HTMLFormElement) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const emailInput = form.elements.namedItem('email');
-      const email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
-      const btn = form.querySelector('button');
-      if (btn instanceof HTMLButtonElement) {
-        btn.disabled = true;
-        btn.textContent = '처리 중...';
-      }
-      try {
-        const res = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ email, source: 'home-sidebar' }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-          form.hidden = true;
-          showStatus('구독 신청 완료했습니다. 감사합니다!');
-        } else {
-          showStatus('이메일 주소를 확인해주세요.');
-          if (btn instanceof HTMLButtonElement) {
-            btn.disabled = false;
-            btn.textContent = '구독';
-          }
-        }
-      } catch {
-        showStatus('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-        if (btn instanceof HTMLButtonElement) {
-          btn.disabled = false;
-          btn.textContent = '구독';
-        }
-      }
-    });
-  }
-</script>
