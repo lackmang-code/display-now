@@ -16,9 +16,9 @@ const issues = getIssuesEn();
 const counts = await Promise.all(issues.map((i) => articlesOfIssue(i, 'en').then((a) => a.length)));
 ---
 
-<Base title={`${ui.issueListTitle} | DISPLAY NOW`} lang="en">
+<Base title={`${ui.issueListTitle} | DISPLAY NOW`} lang="en" altHref="/issue">
   <div class="frame">
-    <Header lang="en" activeSection="issue-list" />
+    <Header lang="en" activeSection="issue-list" altHref="/issue" />
 
     <div class="pad">
       <div class="eyebrow">{ui.issueListTitle}</div>

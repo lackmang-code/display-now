@@ -9,14 +9,16 @@ interface Props {
   /** 최종 수정일 표기 문구 */
   updated: string;
   lang?: Lang;
+  /** 반대 언어판 경로. 문서마다 다르므로 불러쓰는 쪽이 넘긴다 */
+  altHref?: string;
 }
 
-const { title, updated, lang = 'ko' } = Astro.props;
+const { title, updated, lang = 'ko', altHref } = Astro.props;
 ---
 
-<Base title={`${title} | DISPLAY NOW`} lang={lang}>
+<Base title={`${title} | DISPLAY NOW`} lang={lang} altHref={altHref}>
   <div class="frame">
-    <Header lang={lang} />
+    <Header lang={lang} altHref={altHref} />
     <main class="doc">
       <h1>{title}</h1>
       <p class="updated">{updated}</p>

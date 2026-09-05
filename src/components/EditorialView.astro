@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { lang = 'ko' } = Astro.props;
+// 언어 전환. 편집국은 양쪽 면이 다 있어 짝이 항상 있다.
+const altHref = lang === 'en' ? '/editorial' : '/en/editorial';
 const en = lang === 'en';
 const ui = t(lang);
 
@@ -54,9 +56,9 @@ const donts = en ? DONTS.en : DONTS.ko;
 ---
 
 
-<Base title={`${ui.edTitle} | DISPLAY NOW`} lang={lang}>
+<Base title={`${ui.edTitle} | DISPLAY NOW`} lang={lang} altHref={altHref}>
   <div class="frame">
-    <Header activeSection="editorial" lang={lang} />
+    <Header activeSection="editorial" lang={lang} altHref={altHref} />
 
     <section class="hero">
       <div class="hero-text">

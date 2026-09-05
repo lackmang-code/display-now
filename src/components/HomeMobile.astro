@@ -60,6 +60,10 @@ const navIssues = getIssues().slice(0, 8);
       <img class="mast-mark" src="/logo/dn-mark.png" alt="" width="512" height="429" />
       <span>DISPLAY NOW</span>
     </a>
+    {/* 영문판으로 가는 문. PC 지면은 헤더의 KO/EN 스위치가 맡지만 모바일 지면에는
+        그 헤더가 없어 길이 통째로 없었다(2026-09-05 대표 지적).
+        구글은 모바일 지면을 기준으로 색인하므로 여기 없으면 링크값도 깎인다. */}
+    <a class="sub lang" href="/en" hreflang="en" lang="en">EN</a>
     <a class="sub" href="/subscribe">구독</a>
   </div>
 
@@ -307,6 +311,18 @@ const navIssues = getIssues().slice(0, 8);
     padding: 6px 11px;
     text-decoration: none;
     border-radius: 2px;
+  }
+
+  /* 언어 전환은 보조 동작이라 구독 버튼과 같은 무게로 서면 안 된다.
+     골드는 구독 하나만 쓰고 이쪽은 한 단계 내린다 */
+  .sub.lang {
+    margin-left: auto;
+    color: var(--meta-soft);
+    border-color: var(--line-soft);
+    padding: 6px 9px;
+  }
+  .sub.lang:hover {
+    color: var(--ink);
   }
   .identity {
     margin: 0;
