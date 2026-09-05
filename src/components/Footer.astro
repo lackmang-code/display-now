@@ -39,7 +39,7 @@ const en = lang === 'en';
       </div>
       <div class="links">
         <a href={en ? '/en/issue' : '/issue'}>{ui.issues}</a>
-        {!en && <a href="/archive">{ui.archive}</a>}
+        <a href={en ? '/en/archive' : '/archive'}>{ui.archive}</a>
         {!en && <a href="/tag">{ui.topics}</a>}
         <a href={en ? '/en/editorial' : '/editorial'}>{ui.editorial}</a>
         <a href={en ? 'mailto:info@nextio.ai.kr?subject=Correction' : '/board?kind=%EC%A0%95%EC%A0%95%20%EC%9A%94%EC%B2%AD'}>{ui.corrections}</a>

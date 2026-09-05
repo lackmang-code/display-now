@@ -1,36 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { getPublishedArticles, dateLabel, bylineOf, articleHref } from '../lib/articles';
+/**
+ * 영문 아카이브.
+ *
+ * **홈에서 전체 목록을 떼어내 여기로 옮긴 면이다.** 종전에는 `/en` 한 장이 홈이자
+ * 아카이브라 발행분 전체가 랜딩 페이지에 실렸는데, 호가 쌓이면 첫 화면이 목록에
+ * 잠식된다(2026-09-05 대표 지적). 한글 홈처럼 홈은 최신 8편에서 끊고 전체는 여기로 온다.
+ *
+ * 한글 아카이브(`pages/archive.astro`)와 **일부러 다른 것 둘**:
+ *  ① 기간 필터 — 영문 발행분이 아직 한 구간에 몰려 있어 칸이 채워지지 않는다.
+ *  ② 태그 구름 — 태그가 한글 낱말이다(`금주의핫이슈`·`지문센서`). 영문 면에 한글
+ *    칩을 세우느니 빼는 편이 낫다. 태그를 영문화하면 그때 되살린다.
+ * 검색·꼭지 필터·정렬은 같다. 검수 때 「빠진 것」과 「빠뜨린 것」을 가르려고 여기 적어 둔다.
+ */
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
+import { getPublishedArticles, dateLabel, bylineOf, articleHref } from '../../lib/articles';
 
-const articles = await getPublishedArticles();
-
-const periods = Array.from(
-  new Set(
-    articles.map((a) => {
-      const d = a.data.publishedAt;
-      return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
-    }),
-  ),
-).sort((a, b) => b.localeCompare(a));
-
-const tagFreq = new Map<string, number>();
-articles.forEach((a) => a.data.tags.forEach((t) => tagFreq.set(t, (tagFreq.get(t) || 0) + 1)));
-const rankedTags = Array.from(tagFreq.entries())
-  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))
-  .map(([t]) => t);
-const TAG_CAP = 10;
-const visibleTags = rankedTags.slice(0, TAG_CAP);
-const hiddenTagCount = rankedTags.length - TAG_CAP;
-
-const suggestions = rankedTags.slice(0, 5);
+const articles = await getPublishedArticles('en');
 ---
 
-<Base title="아카이브 | DISPLAY NOW" altHref="/en/archive">
+<Base title="Archive | DISPLAY NOW" lang="en" altHref="/archive">
   <div class="frame">
-    <Header activeSection="archive" altHref="/en/archive" />
+    <Header lang="en" activeSection="archive" altHref="/archive" />
     <div class="accent-strip">
       <span style={`background:${sectionColor('tech-note')};`}></span>
       <span style={`background:${sectionColor('paper')};`}></span>
@@ -39,55 +32,33 @@ const suggestions = rankedTags.slice(0, 5);
     </div>
 
     <section class="archive-hero">
-      <div class="eyebrow">아카이브</div>
-      <h1>발행한 모든 기사를 여기서 찾습니다</h1>
+      <div class="eyebrow">ARCHIVE</div>
+      <h1>Every article we have published, in one place</h1>
 
       <div class="search-box">
-        <input type="search" id="q" placeholder="기업명, 기술, 제목으로 검색 (예: BOE 8.6세대)" />
-        <button type="button" id="clear-btn">지우기</button>
-      </div>
-
-      <div class="suggestions">
-        <span>자주 찾는 검색어</span>
-        {suggestions.map((s) => <button type="button" class="suggest-btn" data-query={s}>{s}</button>)}
+        <input type="search" id="q" placeholder="Search by company, technology or title (e.g. BOE Gen 8.6)" />
+        <button type="button" id="clear-btn">Clear</button>
       </div>
     </section>
 
     <div class="content-pad">
       <div class="filter-grid">
-        <div class="filter-label">꼭지</div>
+        <div class="filter-label">Section</div>
         <div class="chip-row" id="section-chips">
-          <button type="button" class="chip active" data-section="전체" style="border-color:#12120e; background:#12120e; color:#f4f3ee;">전체 {articles.length}</button>
+          <button type="button" class="chip active" data-section="all" style="border-color:#12120e; background:#12120e; color:#f4f3ee;">All {articles.length}</button>
           {
             SECTION_ORDER.map((key) => (
-              <button type="button" class="chip" data-section={key} style={`--chip-color:${sectionColor(key)};`}>{SECTIONS[key].label}</button>
+              <button type="button" class="chip" data-section={key} style={`--chip-color:${sectionColor(key)};`}>{SECTIONS[key].labelEn}</button>
             ))
           }
-        </div>
-
-        <div class="filter-label">기간</div>
-        <div class="chip-row" id="period-chips">
-          <button type="button" class="chip active" data-period="전체">전체</button>
-          {periods.map((p) => <button type="button" class="chip" data-period={p}>{p.replace('.', '년 ')}월</button>)}
-        </div>
-
-        <div class="filter-label">태그</div>
-        <div class="chip-row" id="tag-chips">
-          {visibleTags.map((t) => <button type="button" class="chip" data-tag={t}>{t}</button>)}
-          {
-            hiddenTagCount > 0 && (
-              <button type="button" class="chip dashed" id="more-tags">더 보기 +{hiddenTagCount}</button>
-            )
-          }
-          {rankedTags.slice(TAG_CAP).map((t) => <button type="button" class="chip hidden-tag" data-tag={t} hidden>{t}</button>)}
         </div>
       </div>
 
       <div class="result-bar">
-        <div class="result-label" id="result-label">전체 {articles.length}편 · 최신순</div>
+        <div class="result-label" id="result-label">All {articles.length} · newest first</div>
         <div class="chip-row">
-          <button type="button" class="chip sort active" data-sort="최신순">최신순</button>
-          <button type="button" class="chip sort" data-sort="오래된순">오래된순</button>
+          <button type="button" class="chip sort active" data-sort="newest">Newest</button>
+          <button type="button" class="chip sort" data-sort="oldest">Oldest</button>
         </div>
       </div>
 
@@ -100,25 +71,20 @@ const suggestions = rankedTags.slice(0, 5);
               style={`border-left-color:${sectionColor(a.data.section)};`}
               data-title={a.data.title.toLowerCase()}
               data-summary={a.data.summary.toLowerCase()}
-              data-tags={a.data.tags.join(' ').toLowerCase()}
               data-section={a.data.section}
-              data-period={`${a.data.publishedAt.getFullYear()}.${String(a.data.publishedAt.getMonth() + 1).padStart(2, '0')}`}
               data-date={a.data.publishedAt.toISOString()}
             >
               <div class="result-main">
                 <div class="result-meta">
-                  <span class="chip-tag" style={`background:${sectionColor(a.data.section)};`}>{SECTIONS[a.data.section].label}</span>
+                  <span class="chip-tag" style={`background:${sectionColor(a.data.section)};`}>{SECTIONS[a.data.section].labelEn}</span>
                   <span class="byline">{bylineOf(a)}</span>
                 </div>
                 <div class="result-title">{a.data.title}</div>
                 <p class="result-summary">{a.data.summary}</p>
-                <div class="result-tags">
-                  {a.data.tags.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
-                </div>
               </div>
               <div class="result-side">
                 <span>{dateLabel(a, 'short')}</span>
-                <span>{a.data.readingMinutes}분</span>
+                <span>{a.data.readingMinutes} min</span>
               </div>
             </a>
           ))
@@ -126,16 +92,16 @@ const suggestions = rankedTags.slice(0, 5);
       </div>
 
       <div id="empty-state" class="empty-state" hidden>
-        <div class="empty-title">조건에 맞는 기사가 없습니다</div>
-        <p>검색어를 줄이거나 필터를 해제해 보십시오. 찾으시는 주제가 아직 없다면 제보해 주시면 다루겠습니다.</p>
+        <div class="empty-title">Nothing matches those filters</div>
+        <p>Try a shorter search term, or clear the section filter. If the subject you are after is not here yet, tell us and we will cover it.</p>
         <div class="empty-actions">
-          <button type="button" id="reset-btn">필터 전체 해제</button>
-          <a href="mailto:info@nextio.ai.kr">주제 제보하기</a>
+          <button type="button" id="reset-btn">Clear all filters</button>
+          <a href="mailto:info@nextio.ai.kr">Suggest a subject</a>
         </div>
       </div>
     </div>
 
-    <Footer />
+    <Footer lang="en" />
   </div>
 </Base>
 
@@ -143,37 +109,30 @@ const suggestions = rankedTags.slice(0, 5);
   const q = document.getElementById('q') as HTMLInputElement;
   const clearBtn = document.getElementById('clear-btn')!;
   const resetBtn = document.getElementById('reset-btn')!;
-  const moreTags = document.getElementById('more-tags');
   const results = Array.from(document.querySelectorAll<HTMLAnchorElement>('.result-row'));
   const resultLabel = document.getElementById('result-label')!;
   const emptyState = document.getElementById('empty-state')!;
   const resultsWrap = document.getElementById('results')!;
 
-  const state = { query: '', section: '전체', period: '전체', tag: '', sort: '최신순' };
+  const state = { query: '', section: 'all', sort: 'newest' };
 
   function setActive(container: Element | null, attr: string, value: string) {
     container?.querySelectorAll<HTMLButtonElement>('button').forEach((b) => {
-      const v = b.dataset[attr];
-      b.classList.toggle('active', v === value);
+      b.classList.toggle('active', b.dataset[attr] === value);
     });
   }
 
   function apply() {
     const q1 = state.query.trim().toLowerCase();
-    let visible = results.filter((row) => {
-      if (state.section !== '전체' && row.dataset.section !== state.section) return false;
-      if (state.period !== '전체' && row.dataset.period !== state.period) return false;
-      if (state.tag && !row.dataset.tags!.includes(state.tag.toLowerCase())) return false;
-      if (q1) {
-        const hay = `${row.dataset.title} ${row.dataset.summary} ${row.dataset.tags}`;
-        if (!hay.includes(q1)) return false;
-      }
+    const visible = results.filter((row) => {
+      if (state.section !== 'all' && row.dataset.section !== state.section) return false;
+      if (q1 && !`${row.dataset.title} ${row.dataset.summary}`.includes(q1)) return false;
       return true;
     });
 
     visible.sort((a, b) => {
       const diff = new Date(b.dataset.date!).valueOf() - new Date(a.dataset.date!).valueOf();
-      return state.sort === '오래된순' ? -diff : diff;
+      return state.sort === 'oldest' ? -diff : diff;
     });
 
     results.forEach((r) => (r.hidden = true));
@@ -182,10 +141,10 @@ const suggestions = rankedTags.slice(0, 5);
       resultsWrap.appendChild(r);
     });
 
-    const filtered = !!q1 || state.section !== '전체' || state.period !== '전체' || !!state.tag;
+    const filtered = !!q1 || state.section !== 'all';
     resultLabel.textContent = filtered
-      ? `검색 결과 ${visible.length}편`
-      : `전체 ${visible.length}편 · ${state.sort}`;
+      ? `${visible.length} result${visible.length === 1 ? '' : 's'}`
+      : `All ${visible.length} · ${state.sort === 'oldest' ? 'oldest first' : 'newest first'}`;
 
     emptyState.hidden = visible.length > 0;
     resultsWrap.hidden = visible.length === 0;
@@ -202,22 +161,10 @@ const suggestions = rankedTags.slice(0, 5);
   });
   resetBtn.addEventListener('click', () => {
     state.query = '';
-    state.section = '전체';
-    state.period = '전체';
-    state.tag = '';
+    state.section = 'all';
     q.value = '';
-    setActive(document.getElementById('section-chips'), 'section', '전체');
-    setActive(document.getElementById('period-chips'), 'period', '전체');
-    document.querySelectorAll('#tag-chips .chip').forEach((b) => b.classList.remove('active'));
+    setActive(document.getElementById('section-chips'), 'section', 'all');
     apply();
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('.suggest-btn').forEach((b) => {
-    b.addEventListener('click', () => {
-      state.query = b.dataset.query || '';
-      q.value = state.query;
-      apply();
-    });
   });
 
   document.querySelectorAll<HTMLButtonElement>('#section-chips .chip').forEach((b) => {
@@ -226,29 +173,6 @@ const suggestions = rankedTags.slice(0, 5);
       setActive(document.getElementById('section-chips'), 'section', state.section);
       apply();
     });
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('#period-chips .chip').forEach((b) => {
-    b.addEventListener('click', () => {
-      state.period = b.dataset.period!;
-      setActive(document.getElementById('period-chips'), 'period', state.period);
-      apply();
-    });
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('#tag-chips .chip[data-tag]').forEach((b) => {
-    b.addEventListener('click', () => {
-      const t = b.dataset.tag!;
-      state.tag = state.tag === t ? '' : t;
-      document.querySelectorAll('#tag-chips .chip[data-tag]').forEach((x) => x.classList.remove('active'));
-      if (state.tag) b.classList.add('active');
-      apply();
-    });
-  });
-
-  moreTags?.addEventListener('click', () => {
-    document.querySelectorAll('.hidden-tag').forEach((el) => el.removeAttribute('hidden'));
-    moreTags.setAttribute('hidden', '');
   });
 
   document.querySelectorAll<HTMLButtonElement>('.chip.sort').forEach((b) => {
@@ -260,10 +184,21 @@ const suggestions = rankedTags.slice(0, 5);
     });
   });
 
+  // 홈의 꼭지 카드와 헤더 꼭지 칩이 `?section=` 을 달고 온다.
+  // 영문에는 꼭지 낱장이 없어 이 면이 그 자리를 겸한다.
+  const wanted = new URLSearchParams(location.search).get('section');
+  if (wanted && document.querySelector(`#section-chips .chip[data-section="${wanted}"]`)) {
+    state.section = wanted;
+    setActive(document.getElementById('section-chips'), 'section', wanted);
+  }
+
   apply();
 </script>
 
 <style>
+  /* 한글 아카이브(`pages/archive.astro`)와 같은 판이다. 시각을 갈라 둘 이유가 없어
+     스타일 블록을 그대로 가져왔다. 기간·태그 칩 규칙도 함께 들어 있는데,
+     그 둘을 되살릴 때 스타일까지 다시 옮기지 않아도 되도록 남겨 둔다. */
   .archive-hero {
     background: var(--ink);
     color: var(--on-dark);

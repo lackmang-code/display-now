@@ -2,8 +2,6 @@
 import Base from '../../layouts/Base.astro';
 import HomeDesktop from '../../components/HomeDesktop.astro';
 import Footer from '../../components/Footer.astro';
-import ArticleCard from '../../components/ArticleCard.astro';
-import { SECTIONS, SECTION_ORDER, sectionColor } from '../../lib/sections';
 import { getPublishedArticles, baseSlug } from '../../lib/articles';
 import { getIssuesEn, articlesOfIssue } from '../../lib/issues';
 import { resolvePicks } from '../../lib/picks';
@@ -13,18 +11,14 @@ import { resolvePicks } from '../../lib/picks';
  * 종전에는 여기에 별도 지면이 있었고, 그 결과 이번 호 배너·꼭지 카드·편집국 추천·광고가
  * 영문에만 통째로 없었다. 구조를 따로 두면 한글을 고칠 때마다 영문이 뒤처진다.
  *
- * 그 아래에 **꼭지별 전체 목록**을 이어 붙인다. 영문 쪽은 아직 꼭지 낱장도 아카이브도
- * 없어서 이 목록이 그 두 면을 겸한다. 홈의 꼭지 카드가 여기 `#sec-*` 앵커로 내려온다.
+ * 🔴 **랜딩 페이지는 전체 목록을 이지 않는다.** 한때 이 면이 홈이자 아카이브라
+ * 발행분 전체를 꼭지별로 실었는데, 호가 쌓이면 첫 화면이 목록에 잠식된다
+ * (2026-09-05 대표 지적). 한글 홈과 같이 **최신 8편에서 끊고** 전체는 `/en/archive`가 받는다.
  *
  * 모바일 전용 지면(HomeMobile)은 한글만 있다. 영문은 HomeDesktop 한 벌이 좁은 폭에서
  * 그대로 접히게 둔다 — 주 6편이라 표지형 지면을 따로 유지할 만큼 분량이 없다.
  */
 const articles = await getPublishedArticles('en');
-const bySection = SECTION_ORDER.map((key) => ({
-  key,
-  meta: SECTIONS[key],
-  items: articles.filter((a) => a.data.section === key),
-})).filter((g) => g.items.length > 0);
 
 // 이번 호. `headlineEn`이 있는 호만 getIssuesEn()에 들어온다.
 const latestIssue = getIssuesEn()[0];
@@ -53,33 +47,18 @@ const editorPicks = resolvePicks(articles, shownSlugs);
     latestIssue={latestIssue}
     latestIssueCount={latestIssueCount}
   >
-    {
-      articles.length === 0 ? (
-        <p class="empty">The English edition begins with Issue 4.</p>
-      ) : (
-        bySection.map((g) => (
-          <section class="sec" id={`sec-${g.key}`}>
-            <div class="sec-head" style={`border-color:${sectionColor(g.key)};`}>
-              <span class="sec-chip" style={`background:${sectionColor(g.key)};`}>
-                {g.meta.labelEn}
-              </span>
-              <span class="sec-count">{g.items.length}</span>
-            </div>
-            <div class="sec-grid">
-              {g.items.map((a) => (
-                <ArticleCard article={a} />
-              ))}
-            </div>
-          </section>
-        ))
-      )
-    }
-
-    {/* 한글 홈의 SubscribeCTA 자리. `/subscribe`의 영문 짝이 아직 없어 여기가 그 역할을 겸한다 */}
+    {/*
+      한글 홈의 SubscribeCTA 자리. `/subscribe`의 영문 짝이 아직 없어 여기가 그 역할을 겸하고,
+      한글 구독 페이지의 언어 전환이 `/en#subscribe`로 오므로 이 id는 유지해야 한다.
+      슬롯으로 넣는 이유는 `.frame` 테두리다 — 밖에 두면 한 번 끊겼다 이어져 가로 이음매가 보인다.
+    */}
     <section class="subscribe" id="subscribe">
       <div>
         <div class="sub-head">Every Tuesday, the week in display — as one issue.</div>
-        <p class="sub-note">A free newsletter. Unsubscribe any time.</p>
+        <p class="sub-note">
+          The technical notes, papers, patents and issues four AI reporters wrote that week, in one
+          mail. Every article carries the full list of what it was built on. Unsubscribe any time.
+        </p>
       </div>
       <form id="en-subscribe-form">
         <input type="email" name="email" placeholder="Email address" required />
@@ -142,50 +121,12 @@ const editorPicks = resolvePicks(articles, shownSlugs);
 </script>
 
 <style>
-  .sec {
-    padding: clamp(22px, 5vw, 34px) clamp(16px, 5vw, 42px);
-    border-top: 1px solid var(--line);
-  }
-  .sec-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 9px;
-    border-bottom: 2px solid;
-    margin-bottom: 18px;
-  }
-  .sec-chip {
-    color: var(--card);
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    padding: 3px 9px;
-  }
-  .sec-count {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--meta-soft);
-  }
-  .sec-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 14px;
-  }
-
-  .empty {
-    padding: clamp(40px, 9vw, 80px) clamp(16px, 5vw, 42px);
-    font-family: var(--font-mono);
-    font-size: 15px;
-    color: var(--meta-soft);
-    border-top: 1px solid var(--line);
-  }
-
   .subscribe {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 16px 24px;
-    padding: clamp(22px, 5vw, 32px) clamp(16px, 5vw, 42px);
+    padding: clamp(24px, 5vw, 36px) clamp(16px, 5vw, 42px);
     border-top: 1px solid var(--line);
     background: var(--card-warm);
   }
@@ -195,12 +136,14 @@ const editorPicks = resolvePicks(articles, shownSlugs);
   }
   .sub-head {
     font-family: var(--font-serif);
-    font-size: 19px;
-    font-weight: 600;
+    font-size: clamp(19px, 3.4vw, 24px);
+    font-weight: 700;
     letter-spacing: -0.03em;
+    line-height: 1.35;
   }
   .sub-note {
-    margin: 6px 0 0;
+    margin: 8px 0 0;
+    max-width: 60ch;
     font-size: 14px;
     line-height: 1.7;
     color: var(--ink-faint);

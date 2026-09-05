@@ -40,13 +40,12 @@ const {
 const ui = t(lang);
 const en = lang === 'en';
 
-/* 영문판에는 아직 꼭지 낱장(`/en/section/*`)도 아카이브도 없다.
-   없는 주소로 보내는 대신 같은 지면 아래 꼭지별 전체 목록으로 내린다.
-   「아카이브」 자리는 실제로 있는 면인 지난 호 목록이 대신한다. */
+/* 영문판에는 꼭지 낱장(`/en/section/*`)이 없다. 아카이브(`/en/archive`)가 그 자리를
+   겸하므로 꼭지 카드는 그 면의 꼭지 필터를 켠 채로 연다. */
 const editorialHref = en ? '/en/editorial' : '/editorial';
-const sectionHref = (key: string) => (en ? `/en#sec-${key}` : `/section/${key}`);
-const archiveHref = en ? '/en/issue' : '/archive';
-const feedMoreHref = en ? '/en#sec-tech-note' : '/archive';
+const sectionHref = (key: string) => (en ? `/en/archive?section=${key}` : `/section/${key}`);
+const archiveHref = en ? '/en/archive' : '/archive';
+const feedMoreHref = en ? '/en/archive' : '/archive';
 const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
 ---
 

@@ -27,9 +27,9 @@ const ui = t(lang);
 const en = lang === 'en';
 const home = en ? '/en' : '/';
 
-// 영문 쪽은 면이 작다. `/en` 한 장이 홈이자 아카이브라 「아카이브」를 따로 세우지 않고,
-// 꼭지는 그 안의 앵커로 간다. 없는 페이지로 보내지 않는 것이 이 분기의 이유다.
-const sectionHref = (key: string) => (en ? `/en#sec-${key}` : `/section/${key}`);
+// 영문에는 꼭지 낱장(`/en/section/*`)이 없다. 아카이브가 그 자리를 겸하므로
+// 꼭지 칩은 아카이브의 꼭지 필터를 켠 채로 연다. 없는 페이지로 보내지 않는 것이 이 분기의 이유다.
+const sectionHref = (key: string) => (en ? `/en/archive?section=${key}` : `/section/${key}`);
 const issuesHref = en ? '/en/issue' : '/issue';
 const subscribeHref = en ? '/en#subscribe' : '/subscribe';
 ---
@@ -75,14 +75,12 @@ const subscribeHref = en ? '/en#subscribe' : '/subscribe';
           href={issuesHref}
           style={activeSection === 'issue-list' ? 'color:var(--ink); background:#c4c4bc;' : ''}
         >{ui.issues}</a>
-        {!en && (
-          <a
-            class="archive-link"
-            aria-current={activeSection === 'archive' ? 'true' : undefined}
-            href="/archive"
-            style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}
-          >{ui.archive}</a>
-        )}
+        <a
+          class="archive-link"
+          aria-current={activeSection === 'archive' ? 'true' : undefined}
+          href={en ? '/en/archive' : '/archive'}
+          style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}
+        >{ui.archive}</a>
       </nav>
     )
   }
