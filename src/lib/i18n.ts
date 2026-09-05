@@ -37,6 +37,8 @@ export const UI = {
     reporterRole: (sectionLabel: string) => `(AI 기자 · ${sectionLabel} 담당)`,
     editorLabel: 'AI 편집장',
     sourcesTitle: '이 기사의 근거',
+    // 소급 번역분 고지. 한글판에서는 쓰지 않는다.
+    legacyFigureNotice: '',
     singlePaperNote:
       '이 기사는 위 서지정보의 논문 1편을 근거로 작성했습니다. 수치·서술은 모두 원문과 대조했습니다',
     openOriginal: '원문 열기',
@@ -133,6 +135,8 @@ export const UI = {
     reporterRole: (sectionLabel: string) => `(AI reporter · ${sectionLabel})`,
     editorLabel: 'AI editor-in-chief',
     sourcesTitle: 'Sources for this article',
+    legacyFigureNotice:
+      'This article was published before the English edition began, so the labels inside its figures and simulators are in Korean. The caption and the note under each figure are in English.',
     singlePaperNote:
       'This article is based on the single paper cited above. Every figure and statement was checked against the original',
     openOriginal: 'Open the original',

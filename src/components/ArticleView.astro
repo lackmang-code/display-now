@@ -41,6 +41,18 @@ const color = sectionColor(entry.data.section);
 // 연재 목차·다른 글에는 발행된 기사만 세운다. 다만 지금 읽고 있는 기사가 아직 발행 전이면
 // (검수 중) 자기가 목차에서 빠져 어색해지므로 그 한 편만 되넣는다.
 const published = await getPublishedArticles(lang);
+
+/** 소급 번역분 고지를 세울지. **발행일만으로 판정하면 틀린 고지가 붙는다.**
+ *
+ * 「그림 안은 영어」는 제4호(2026-09-08)부터이고 소급하지 않는다(2026-09-05 대표 판단).
+ * 그러나 그 전 기사라도 **우리가 직접 그린 것이 없으면** 고지할 것이 없다 —
+ * 논문·특허에서 가져온 인용 도판은 원본 그대로가 규칙이라 애초에 한국어가 아니다.
+ * 그래서 발행일과 **직접 그린 도판·시뮬레이터의 존재**를 함께 본다. */
+const hasKoreanFigures =
+  entry.data.publishedAt.toISOString().slice(0, 10) < '2026-09-08' &&
+  (entry.body.includes('data-sim=') ||
+    entry.body.includes('<svg') ||
+    entry.body.includes('.svg'));
 const all = published.some((a) => a.slug === entry.slug)
   ? published
   : [entry, ...published].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
@@ -166,6 +178,15 @@ const articleLd = {
             <span class="sep">|</span>
             <span><span class="dim">{ui.editorLabel}</span> <b>DEEPLE</b></span>
           </div>
+
+          {/* 소급 번역분 고지. 「그림 안은 영어」는 제4호(2026-09-08)부터라
+              그 전에 발행된 기사는 그림 안 글자가 한국어다. 소급해 고치지 않기로 했으므로
+              (2026-09-05 대표 판단) 영문판에서만 사실을 밝힌다. 읽을 수 있는 것이
+              무엇인지 함께 알려야 사과가 아니라 안내가 된다.
+              프론트매터 플래그를 두면 누군가 반드시 빠뜨리므로 발행일로 자동 판정한다. */}
+          {lang === 'en' && hasKoreanFigures && (
+            <p class="legacy-figure-notice">{ui.legacyFigureNotice}</p>
+          )}
 
           <Content />
         </article>
@@ -339,6 +360,17 @@ const articleLd = {
 </script>
 
 <style>
+  /* 소급 번역분 고지 — 사과가 아니라 안내이므로 본문 앞에 조용히 둔다 */
+  .legacy-figure-notice {
+    margin: 0 0 22px;
+    padding: 10px 14px;
+    border-left: 3px solid rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.035);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #6f6f66;
+  }
+
   .accent-line {
     height: 3px;
   }

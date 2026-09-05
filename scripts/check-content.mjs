@@ -63,6 +63,20 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
     }
     if (fenced) continue;
 
+    const prevLine = i > 0 ? lines[i - 1] : '';
+
+    // HTML 블록이 끝난 바로 다음 줄에 마크다운이 오면 그 줄은 변환되지 않는다.
+    // `## 4. 비교분석` 이 글자 그대로 본문에 찍히고 그 아래 절이 통째로 형식을 잃는다.
+    // 빌드는 통과하고 원고만 봐서는 안 보인다 — 2026-09-05 제4호에서 실제로 걸렸다.
+    // inHtml 판정보다 먼저 봐야 한다. 뒤에 두면 continue 로 빠져 도달하지 않는다.
+    if (/^\s*<\/(div|svg|figure|table|template|p|ul|ol)>\s*$/.test(prevLine) &&
+        /^\s{0,3}(#{1,6} |\||> |[-*] |\d+\. )/.test(line)) {
+      problems.push(
+        `${file}:${i + 1}  HTML 블록(${prevLine.trim()}) 바로 다음 줄이 마크다운입니다. ` +
+        `사이에 빈 줄을 넣으십시오 — 없으면 그 줄이 글자 그대로 찍힙니다.`,
+      );
+    }
+
     if (!inHtml && /^\s{0,3}<\/?[A-Za-z][A-Za-z0-9-]*/.test(line)) inHtml = true;
     else if (inHtml && st === '') inHtml = false;
 
