@@ -8,7 +8,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-08-18
 collectWeekStart: '2026-08-10'
-readingMinutes: 8
+readingMinutes: 3
 tags: [perovskite-LED, self-healing-polymer, wearable-display, encapsulation, NTUT]
 sources:
   - type: paper

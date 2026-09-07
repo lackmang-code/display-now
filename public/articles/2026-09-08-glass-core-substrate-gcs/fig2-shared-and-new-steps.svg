@@ -1,0 +1,75 @@
+<svg viewBox="0 0 840 494" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="839" height="493" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3">What crosses over, and what does not</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">Display panel line vs. glass core substrate line · DESK</text>
+
+  <line x1="28" y1="78" x2="812" y2="78" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- ===== Shared column label ===== -->
+  <text x="30" y="168" font-size="11.5" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="1.2">SHARED</text>
+
+  <!-- ===== Shared steps (display gave these) ===== -->
+  <rect x="30" y="176" width="160" height="66" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="110" y="203" font-size="13" font-weight="600" fill="#4a2d63" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">Alkali-free glass</text>
+  <text x="110" y="222" font-size="11" fill="#7a5c94" text-anchor="middle" font-family="'IBM Plex Mono', monospace">CTE 3.8 ppm/K · 0.5 mm</text>
+
+  <rect x="206" y="176" width="160" height="66" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="286" y="203" font-size="13" font-weight="600" fill="#4a2d63" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">Large-format handling</text>
+  <text x="286" y="222" font-size="11" fill="#7a5c94" text-anchor="middle" font-family="'IBM Plex Mono', monospace">panel scale, not 300 mm</text>
+
+  <!-- connector into fork -->
+  <line x1="366" y1="209" x2="392" y2="209" stroke="#b9a3cc" stroke-width="1.4"/>
+  <line x1="392" y1="146" x2="392" y2="286" stroke="#c9c9c3" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <line x1="392" y1="146" x2="416" y2="146" stroke="#c9c9c3" stroke-width="1.2"/>
+  <line x1="392" y1="286" x2="416" y2="286" stroke="#c9c9c3" stroke-width="1.2"/>
+
+  <!-- ===== Branch A : display panel ===== -->
+  <text x="416" y="124" font-size="11.5" font-weight="600" fill="#6a6a62" font-family="'IBM Plex Mono', monospace" letter-spacing="1">DISPLAY PANEL</text>
+  <rect x="416" y="126" width="128" height="40" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.2"/>
+  <text x="480" y="151" font-size="12" fill="#4a4a44" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">TFT patterning</text>
+
+  <line x1="544" y1="146" x2="560" y2="146" stroke="#d5d5cf" stroke-width="1.2"/>
+  <rect x="560" y="126" width="128" height="40" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.2"/>
+  <text x="624" y="151" font-size="12" fill="#4a4a44" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">Cell assembly</text>
+
+  <line x1="688" y1="146" x2="704" y2="146" stroke="#d5d5cf" stroke-width="1.2"/>
+  <text x="712" y="143" font-size="11.5" fill="#6a6a62" font-family="'IBM Plex Sans KR', sans-serif">Ships as</text>
+  <text x="712" y="157" font-size="11.5" font-weight="600" fill="#4a4a44" font-family="'IBM Plex Sans KR', sans-serif">one panel</text>
+
+  <!-- ===== Branch B : glass core substrate ===== -->
+  <text x="416" y="264" font-size="11.5" font-weight="600" fill="#8a5a2a" font-family="'IBM Plex Mono', monospace" letter-spacing="1">GLASS CORE SUBSTRATE</text>
+  <rect x="416" y="266" width="92" height="40" rx="5" fill="#fdf5ec" stroke="#dfc09a" stroke-width="1.2"/>
+  <text x="462" y="284" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">TGV</text>
+  <text x="462" y="298" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">drilling</text>
+
+  <line x1="508" y1="286" x2="520" y2="286" stroke="#dfc09a" stroke-width="1.2"/>
+  <rect x="520" y="266" width="92" height="40" rx="5" fill="#fdf5ec" stroke="#dfc09a" stroke-width="1.2"/>
+  <text x="566" y="284" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">Via</text>
+  <text x="566" y="298" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">metallization</text>
+
+  <line x1="612" y1="286" x2="624" y2="286" stroke="#dfc09a" stroke-width="1.2"/>
+  <rect x="624" y="266" width="92" height="40" rx="5" fill="#fdf5ec" stroke="#dfc09a" stroke-width="1.2"/>
+  <text x="670" y="284" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">RDL</text>
+  <text x="670" y="298" font-size="11.5" fill="#6b4520" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">build-up</text>
+
+  <line x1="716" y1="286" x2="728" y2="286" stroke="#c2705a" stroke-width="1.4"/>
+  <rect x="728" y="266" width="84" height="40" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.5"/>
+  <text x="770" y="284" font-size="11.5" font-weight="600" fill="#8a3a26" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">Dicing +</text>
+  <text x="770" y="298" font-size="11.5" font-weight="600" fill="#8a3a26" text-anchor="middle" font-family="'IBM Plex Sans KR', sans-serif">thermal cycles</text>
+
+  <!-- ===== Failure callout ===== -->
+  <line x1="770" y1="306" x2="770" y2="336" stroke="#c2705a" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <line x1="770" y1="336" x2="120" y2="336" stroke="#c2705a" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <circle cx="120" cy="336" r="3" fill="#c2705a"/>
+
+  <rect x="30" y="352" width="782" height="62" rx="5" fill="#fbeeea" stroke="#e8cbc3" stroke-width="1"/>
+  <text x="46" y="374" font-size="12.5" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Sans KR', sans-serif">SeWaRe crack</text>
+  <text x="46" y="391" font-size="12" fill="#7a4a3a" font-family="'IBM Plex Sans KR', sans-serif">Microcracks at the diced edge grow under CTE mismatch with the build-up layers, then split the whole substrate.</text>
+  <text x="46" y="407" font-size="11.5" fill="#8a3a26" font-family="'IBM Plex Mono', monospace">Qualification: -40 / +125 C, 1,000 cycles</text>
+
+  <!-- ===== Bottom note ===== -->
+  <text x="30" y="442" font-size="12.5" fill="#4a4a44" font-family="'IBM Plex Sans KR', sans-serif">Same glass. Same handling. Everything after the hole is new.</text>
+  <text x="30" y="461" font-size="11.5" fill="#8a8a80" font-family="'IBM Plex Sans KR', sans-serif">A display panel is never diced into thousands of parts, never carries copper build-up layers, and never sees 1,000 thermal cycles.</text>
+  <text x="30" y="479" font-size="10.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from AGC / IEEE EPS "Glass Core Substrate" (2025) and AUO press release (2026-08-31).</text>
+</svg>

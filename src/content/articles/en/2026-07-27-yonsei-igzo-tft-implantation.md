@@ -5,7 +5,7 @@ summary: "The trade-off where raising mobility collapses stability, solved for b
 section: paper
 reporter: PEER
 publishedAt: 2026-07-27
-readingMinutes: 8
+readingMinutes: 3
 lang: en
 translationOf: 2026-07-27-yonsei-igzo-tft-implantation
 tags: [IGZO TFT, 이온주입, 산화물 반도체, 연세대]

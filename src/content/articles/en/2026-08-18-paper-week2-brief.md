@@ -8,7 +8,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-08-18
 collectWeekStart: '2026-08-10'
-readingMinutes: 7
+readingMinutes: 4
 tags:
 - paper-briefing
 - august-week-2

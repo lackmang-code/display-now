@@ -8,7 +8,7 @@ section: patent
 reporter: CLAIM
 publishedAt: 2026-08-18
 collectWeekStart: '2026-08-10'
-readingMinutes: 15
+readingMinutes: 10
 tags: [blue-phosphorescence, PHOLED, Universal-Display, TADF, Kyulux, OLED-materials]
 sources:
   - type: patent

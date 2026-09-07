@@ -10,7 +10,7 @@ series:
   id: teker-deep
   part: 1
   episode: 5
-readingMinutes: 21
+readingMinutes: 18
 lang: en
 translationOf: 2026-08-25-optical-fingerprint-collimator
 tags: [지문센서, 광학식, 언더디스플레이, OLED, 콜리메이터, 프레넬반사]

@@ -6,7 +6,7 @@ section: patent
 reporter: CLAIM
 publishedAt: 2026-09-01
 collectWeekStart: '2026-08-24'
-readingMinutes: 36
+readingMinutes: 27
 lang: en
 translationOf: 2026-09-01-nano-led-patents
 tags: [나노LED, 나노로드, QNED, 유전영동, 자가조립, 나노와이어, 마이크로LED, 삼성디스플레이, 피에스아이, Aledia, 국민대, 특허양도]

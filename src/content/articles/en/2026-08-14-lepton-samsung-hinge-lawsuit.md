@@ -5,7 +5,7 @@ summary: "The press summarized Lepton Computing's foldable hinge suit as a 'timi
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
-readingMinutes: 14
+readingMinutes: 10
 lang: en
 translationOf: 2026-08-14-lepton-samsung-hinge-lawsuit
 tags: [특허소송, 레이턴컴퓨팅, 삼성전자, 레노버, 폴더블힌지]

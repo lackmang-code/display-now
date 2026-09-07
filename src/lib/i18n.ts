@@ -74,8 +74,8 @@ export const UI = {
     coverHint:
       '이 표지는 시뮬레이션입니다. 값을 바꿔 보십시오. 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.',
     alsoInIssue: (n: number) => `함께 실린 기사 ${n}편`,
+    articleTitleLabel: '기사 제목',
     emptyIssue: '이번 호에 수록된 기사가 아직 없습니다.',
-    editorNote: '편집장 노트',
     allIssues: '지난 호 전체 보기 →',
     issueListTitle: '지난 호',
     issueListHead: '매주 화요일, 그 주의 디스플레이를 한 권으로 묶습니다',
@@ -201,8 +201,8 @@ export const UI = {
     coverHint:
       'This cover is a simulation. Try changing the values. Its assumptions and limits are stated in the article itself.',
     alsoInIssue: (n: number) => `${n} more in this issue`,
+    articleTitleLabel: 'Article title',
     emptyIssue: 'No articles in this issue yet.',
-    editorNote: "Editor's note",
     allIssues: 'All issues →',
     issueListTitle: 'Issues',
     issueListHead: 'Every Tuesday, the week in display — bound as one issue',

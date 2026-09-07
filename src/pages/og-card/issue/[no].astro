@@ -25,7 +25,12 @@ const articles = await articlesOfIssue(issue);
 const head = articles.find((a) => a.slug === issue.headSlug) ?? articles[0];
 // 표지에 헤드 기사가 실리므로 오른쪽에는 나머지 수록 기사를 전부 세운다.
 // 활자는 작게 간다. 기사 제목이 제호보다 커지면 표지의 활자 위계가 뒤집힌다.
-const picks = articles.filter((a) => a.slug !== head?.slug);
+//
+// 다만 그 규칙은 수록이 많을 때만 맞다. 2편짜리 제4호에서 오른쪽이 70% 비었다.
+// 셋 미만이면 헤드도 목록에 세운다 — 왼쪽은 표지 문구(headline)이고 오른쪽은
+// 기사 제목이라 글자가 달라서 중복으로 읽히지 않는다.
+const rest = articles.filter((a) => a.slug !== head?.slug);
+const picks = rest.length >= 3 ? rest : articles;
 ---
 
 <!doctype html>
@@ -112,6 +117,15 @@ const picks = articles.filter((a) => a.slug !== head?.slug);
         padding: 6px 0;
         border-bottom: 1px solid rgba(244, 243, 238, 0.14);
       }
+      /* 수록이 적은 호는 같은 판을 쓰면 오른쪽 면이 빈다.
+         블록을 벌리고 요약을 더 보여줘 면을 채운다 — 활자 크기는 건드리지 않는다.
+         제목이 커지면 제호보다 커져 표지의 활자 위계가 뒤집히기 때문이다. */
+      .picks.few li {
+        padding: 14px 0;
+      }
+      .picks.few .sum {
+        -webkit-line-clamp: 3;
+      }
       .meta-row {
         display: flex;
         align-items: center;
@@ -182,7 +196,7 @@ const picks = articles.filter((a) => a.slug !== head?.slug);
         </div>
 
         <div class="picks-label">이번 호 수록</div>
-        <ul class="picks">
+        <ul class={picks.length < 3 ? 'picks few' : 'picks'}>
           {
             picks.map((a) => (
               <li>

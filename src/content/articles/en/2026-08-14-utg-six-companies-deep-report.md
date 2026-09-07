@@ -5,7 +5,7 @@ summary: "Schott filed an opposition against the foldable glass patent Corning h
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
-readingMinutes: 16
+readingMinutes: 15
 lang: en
 translationOf: 2026-08-14-utg-six-companies-deep-report
 tags: [특허소송, UTG, 폴더블유리, 코닝, Schott, 삼성디스플레이, 도우인시스]

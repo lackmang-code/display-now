@@ -5,7 +5,7 @@ summary: "A study with Samsung Electronics' Semiconductor R&D Center as a joint 
 section: paper
 reporter: PEER
 publishedAt: 2026-08-04
-readingMinutes: 8
+readingMinutes: 4
 lang: en
 translationOf: 2026-08-04-dgist-samsung-igzo-laser-anneal
 tags: [IGZO TFT, 레이저 어닐링, 커패시터리스 D램, DGIST, 삼성전자]

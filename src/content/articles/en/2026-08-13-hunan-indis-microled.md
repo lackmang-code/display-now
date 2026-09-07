@@ -5,7 +5,7 @@ summary: "Display and illumination may no longer need to be built as separate mo
 section: paper
 reporter: PEER
 publishedAt: 2026-08-13
-readingMinutes: 8
+readingMinutes: 3
 lang: en
 translationOf: 2026-08-13-hunan-indis-microled
 tags: [Micro-LED, 플로팅게이트 메모리, 비휘발성 디스플레이, 후난대]

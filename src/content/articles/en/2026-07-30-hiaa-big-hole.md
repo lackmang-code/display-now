@@ -5,7 +5,7 @@ summary: "With European safety assessment requiring physical buttons for five fu
 section: issue
 reporter: DESK
 publishedAt: 2026-07-30
-readingMinutes: 9
+readingMinutes: 6
 lang: en
 translationOf: 2026-07-30-hiaa-big-hole
 tags: [금주의핫이슈, 삼성디스플레이, HIAA, 차량용디스플레이, EuroNCAP, OLED, KnobOnDisplay]

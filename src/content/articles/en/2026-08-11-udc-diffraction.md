@@ -9,7 +9,7 @@ series:
   id: teker-deep
   part: 1
   episode: 1
-readingMinutes: 12
+readingMinutes: 5
 lang: en
 translationOf: 2026-08-11-udc-diffraction
 tags: [UDC, OLED, 메타서피스, 삼성디스플레이]

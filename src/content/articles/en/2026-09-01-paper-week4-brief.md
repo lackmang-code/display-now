@@ -6,7 +6,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-09-01
 collectWeekStart: '2026-08-24'
-readingMinutes: 8
+readingMinutes: 6
 lang: en
 translationOf: 2026-09-01-paper-week4-brief
 tags:

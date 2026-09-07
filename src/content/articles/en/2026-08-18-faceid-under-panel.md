@@ -12,7 +12,7 @@ series:
   id: teker-deep
   part: 1
   episode: 4
-readingMinutes: 18
+readingMinutes: 20
 tags: [FaceID, structured-light, 3D-sensing, OLED, diffraction, under-panel-sensor]
 sources:
   - type: patent

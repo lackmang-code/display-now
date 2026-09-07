@@ -16,7 +16,6 @@ export interface IssueMeta {
   /** 표지 부제 */
   deck?: string;
   /** 편집장 노트. 이번 호를 어떻게 읽으면 되는지 3~5문장 */
-  note?: string;
   /**
    * 표지에 올릴 시뮬레이션 id (`src/lib/simulations/<id>.js`).
    *
@@ -54,7 +53,6 @@ export interface IssueMeta {
    */
   headlineEn?: string;
   deckEn?: string;
-  noteEn?: string;
 }
 
 /**
@@ -70,6 +68,36 @@ export interface IssueMeta {
 export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
+  {
+    no: 4,
+    publishedAt: '2026-09-08',
+    weekStart: '2026-08-31',
+    // 🔴 헤드를 테커로 잡았다 (2026-09-08 대표 확정).
+    // 종전에는 클레임이었는데, 표지 시뮬이 테커 것이라 표지의 큰 제목과 그 밑 그림이
+    // 서로 다른 기사를 가리켰다. 제1~3호는 전부 표지 시뮬 = 헤드 기사였고 제4호만
+    // 어긋나 있었다. 클레임 기사에는 시뮬도 외부 이미지도 없어 표지를 맡길 수 없다.
+    // 발견의 세기만 보면 28건을 전수로 훑은 클레임이 더 세다 — 헤드는 다음 기회로 미룬다.
+    // 표지 문구는 기사 제목이 연재 표기(`표면처리기술 AF(Anti-Fingerprint)`)라 따로 짓는다.
+    // 약어 풀이 `AF(Anti-Fingerprint)`는 대표 지시로 표지 문구에 반드시 넣는다(그것만 20자).
+    headline: 'AF(Anti-Fingerprint) 코팅이 지문을 지우는 원리',
+    deck: '손끝에서 옮겨 붙는 기름의 양은 코팅이 있으나 없으나 같습니다. 달라지는 것은 그 기름이 앉는 모양입니다. 표면의 임계표면장력을 6mN/m까지 낮추면 맨유리에서 접촉각 10도 미만으로 눕던 기름이 65도로 서고, 미끄럼각이 6도라 판을 조금만 기울여도 굴러 내립니다.',
+    // 표지 시뮬은 테커 편 것을 쓴다. 시뮬 파이프라인은 전 기자 공용이고, 이번 호에서
+    // 시뮬이 있는 편이 테커뿐이다. 두 개 중 젖음/가시성 쪽을 골랐다 —
+    // 마모 편은 각도 대 사이클 그래프라 썸네일 크기에서 선이 뭉개진다.
+    // 액적이 방울로 뭉치는 그림은 작게 줄여도 무엇인지 알아본다.
+    // gammaC 6은 CF3 표면(가장 낮은 임계표면장력)이라 방울이 가장 동그랗게 선다.
+    coverSim: 'af-wetting-visibility-demo',
+    coverSimParams: { gammaC: 6, liquid: 'hexadecane' },
+    // 🔴 slugs를 박지 않는다. 박으면 그 목록이 편성을 고정해,
+    // 뒤늦게 들어온 기사가 호에서 조용히 빠진다.
+    // 수집 주간(월~일)이 닫히기 전에 편성을 확정하려다 실제로 그럴 뻔했다(2026-09-05).
+    // 비워 두면 collectWeekStart === weekStart 인 기사를 자동으로 전부 묶는다.
+    headSlug: '2026-09-08-af-anti-fingerprint',
+    // 영문 호. 표지 문구가 비어 있으면 영문 호 페이지를 아예 만들지 않으므로
+    // 세 줄이 함께 있어야 한다. 수록은 짝이 있는 기사만 자동으로 걸린다.
+    headlineEn: 'How an AF (Anti-Fingerprint) coating clears a fingerprint',
+    deckEn: 'The amount of oil a fingertip leaves behind is the same with or without the coating. What changes is the shape it settles into. Drop the surface critical tension to 6 mN/m and oil that lay flat on bare glass below a 10 degree contact angle stands up at 65, and with a sliding angle of 6 degrees it rolls off the moment the panel is tilted.',
+  },
   {
     no: 3,
     publishedAt: '2026-09-01',
@@ -95,7 +123,6 @@ export const ISSUES: IssueMeta[] = [
     headSlug: '2026-09-01-esports-245-panel-tandem',
     headlineEn: 'A 560Hz OLED and an 1,100Hz LCD met over an esports panel',
     deckEn: 'The talk of Gamescom this week was the world’s first 1,100Hz gaming monitor. Between a 560Hz OLED and an 1,100Hz LCD, which one shows a moving target more sharply?',
-    noteEn: 'This issue looks at adhesive from two directions. The UNIST paper PEER picked says a foldable adhesive has to be soft: at a storage modulus of 0.029 megapascals, going stiff sends the folding stress up four or five times. And yet in the ultrasonic fingerprint sensor TEKER took apart, the opposite holds. A soft adhesive layer has a longitudinal modulus 1/34 that of glass, so a single 20-micrometre layer drops sound transmission to 9 percent. Foldables need it soft and fingerprint sensors need it stiff. One of the thinnest layers in a screen carries two opposite demands. DESK covered the 24.5-inch esports panel shown at Gamescom. While every other screen grew, this one alone got smaller and coarser, and the 0.03 millisecond response time the maker led with is a grey-to-grey transition time, not a measure of how sharp a moving object looks. Converted into blurred edge width, the panel with half the refresh rate came out ahead. CLAIM read twelve nano LED patents as two lineages. Both the laying-down route and the growing-up route came out of universities, and in both the patents passed to Samsung, while the company actually building a production line is the one that did not sell. The principle of grounding everything in published papers, patents and disclosures is the same this issue.',
     // 헤드 기사는 커버라인에서 빠진다(headSlug를 지워도 slugs[0]이 헤드가 되므로 같다).
     // 그래서 표지 문구에 기사를 알아볼 단어를 넣어야 한다. 표지 문구와 기사 제목이
     // 다른데 단서까지 없으면 눌러 들어간 독자가 같은 기사인 줄 모른다(2026-08-31).
@@ -108,7 +135,6 @@ export const ISSUES: IssueMeta[] = [
       '2026-09-01-stretchable-oled-nanocrack',
       '2026-09-01-paper-week4-brief',
     ],
-    note: '이번 호는 접착제를 두 방향에서 봅니다. 피어가 고른 UNIST 논문은 폴더블 접착제가 물러야 한다고 말합니다. 저장탄성률 0.029메가파스칼, 단단하면 접힘 응력이 네댓 배로 뜁니다. 그런데 같은 주 테커가 뜯은 초음파 지문센서에서는 정반대입니다. 무른 접착층은 종탄성계수가 유리의 34분의 1이라, 20마이크로미터 한 겹이 소리의 투과를 9퍼센트까지 떨어뜨립니다. 폴더블은 물러야 하고 지문센서는 단단해야 합니다. 화면에서 가장 얇은 층 하나에 서로 반대인 요구가 걸려 있습니다. 데스크는 게임스컴에서 나온 24.5인치 e스포츠 패널을 다뤘습니다. 화면이 다 커지는 동안 이것만 작아지고 성겨졌는데, 제조사가 앞세운 응답속도 0.03밀리초는 계조 간 전이시간이지 동체가 또렷한 정도를 재는 값이 아닙니다. 흐림폭으로 환산하니 주사율이 절반인 패널이 앞섰습니다. 클레임은 나노 LED 특허 열두 건에서 두 계보를 갈라 읽었습니다. 눕히는 쪽과 세워 키우는 쪽 모두 대학에서 나왔고 양쪽 모두에서 특허가 삼성으로 넘어갔는데, 정작 양산 라인을 세우고 있는 곳은 팔지 않은 쪽입니다. 공개된 논문·특허·공시만 근거로 삼는다는 원칙은 이번 호도 같습니다.',
   },
   {
     no: 2,
@@ -130,7 +156,6 @@ export const ISSUES: IssueMeta[] = [
     headSlug: '2026-08-25-optical-fingerprint-collimator',
     headlineEn: 'The optical fingerprint sensor never sees your fingerprint',
     deckEn: 'What the sensor reads is the 4.07 %p of reflectance difference a ridge makes by touching glass. Which is why its real weak point is not a wet hand but a dry one.',
-    noteEn: 'TEKER took apart the fingerprint sensor under the screen. What it reads is not a fingerprint but a map of glass reflectance, the 4.07 %p difference a ridge makes by touching the cover glass. It amounts to drawing a picture with 4 out of 100, and there is not even the thickness to stand an imaging lens, so angle has to be cut away with small apertures. Narrowing them to gain fourfold sharpness costs fifteen times the light. Deposition, meanwhile, has split two ways. DESK confirmed that the three figures LG Display put forward on removing the metal mask, luminance, lifetime and power, all follow from a single number, a 1.55-fold aperture ratio; CLAIM read nine deposition and mask patents from the opposite side, on carrying Gen 8.6 glass. One route removes the mask, the other makes it larger and more precise. PEER picked a paper swapping the silicon in a host molecule for germanium, and another showing that the carrier lifetime measurement the industry uses as a basic procedure does not give a unique answer. The principle of grounding everything in published papers, patents and disclosures is the same this issue.',
     // 수록과 순서를 손으로 지정한다. 자동(파일명 순)으로 두면 표지 커버라인 네 자리에
     // 논문 브리핑이 올라오고 심층기사가 밀린다. 브리핑은 주간 훑기라 표지 자리를
     // 심층기사에 내주는 것이 맞다. 헤드 다음부터가 커버라인 순서다.
@@ -142,7 +167,6 @@ export const ISSUES: IssueMeta[] = [
       '2026-08-25-skku-deep-learning-carrier-kinetics',
       '2026-08-25-paper-week3-brief',
     ],
-    note: '테커가 화면 아래 지문센서를 뜯었습니다. 센서가 읽는 것은 지문이 아니라 융선이 유리에 닿아 생기는 반사율 차이 4.07 %p, 그 유리 반사 지도입니다. 100 가운데 4를 가지고 그림을 그리는 셈인데, 결상 렌즈를 세울 두께마저 없어 작은 구멍으로 각도를 잘라야 합니다. 구멍을 좁혀 4배 또렷해지는 동안 들어오는 빛은 15배 줄어듭니다. 한편 증착 공정은 두 갈래로 갈라졌습니다. 데스크는 LG디스플레이가 금속 마스크를 걷어내고 내놓은 휘도·수명·소비전력 세 수치가 실은 개구율 1.55배 하나에서 유도된다는 것을 확인했고, 클레임은 정반대편에서 8.6세대 유리를 감당하려는 증착·마스크 특허 아홉 건을 읽었습니다. 한쪽은 마스크를 없애는 길이고 한쪽은 더 크고 정밀하게 만드는 길입니다. 피어는 호스트 분자의 규소를 게르마늄으로 바꾼 논문과, 업계가 기본 절차로 쓰는 캐리어 수명 측정이 유일한 답을 주지 않는다는 논문을 골랐습니다. 공개된 논문·특허·공시만 근거로 삼는다는 원칙은 이번 호도 같습니다.',
   },
   {
     no: 1,
@@ -156,8 +180,6 @@ export const ISSUES: IssueMeta[] = [
     headSlug: '2026-08-18-lgd-2stack-woled',
     headlineEn: 'They took one emitting layer out and the colour got wider',
     deckEn: 'OLED has spent more than 10 years going one way, adding layers. This is the week LG Display turned the other way in a mainstream panel.',
-    noteEn: 'This is the first issue. Four AI reporters swept the week from their own positions. DESK confirmed against patent figures the announcement that LG Display raised colour gamut while cutting a stack, and CLAIM traced where the line of defence moved once the blue phosphorescence patents expired. TEKER covered Face ID, the last sensor that has not gone under the screen. We do not do interviews. We take only published papers, patents and public filings as grounds, and every article carries that list at the end.',
-    note: '창간호입니다. 네 명의 AI 기자가 각자의 자리에서 한 주를 훑었습니다. 데스크는 LG디스플레이가 스택을 줄이고도 색재현율을 올린 발표를 특허 도면으로 확인했고, 클레임은 만료된 청색 인광 특허 뒤에서 방어선이 어디로 옮겨갔는지 추적했습니다. 테커는 화면 아래로 내려가지 못한 마지막 센서인 페이스 ID를 다뤘습니다. 취재는 하지 않습니다. 공개된 논문·특허·공시만 근거로 삼고, 모든 기사 끝에 그 목록을 싣습니다.',
   },
 ];
 
@@ -205,8 +227,23 @@ export async function articlesOfIssue(issue: IssueMeta, lang: Lang = 'ko'): Prom
   const ko = issue.slugs?.length
     ? issue.slugs.map((s) => all.find((a) => a.slug === s)).filter((a): a is Article => Boolean(a))
     : (() => {
+        // 🔴 편성 키는 `publishedAt`이지 `collectWeekStart`가 아니다.
+        //
+        // 수집 주간이 소재를 정하는 꼭지(데스크·피어)와 그렇지 않은 꼭지(테커·클레임)가
+        // 있다. 테커·클레임은 몇 주 전에 써 두고 편집장이 호에 배분한다.
+        // 그런데 편성 키가 collectWeekStart면 배분하려고 발행일을 옮겨도 호가 따라오지
+        // 않는다. 옮기려면 「언제 수집했나」라는 사실을 고쳐야 하고, 그건 왜곡이다.
+        //
+        // 더 나쁜 것은 조용히 사라지는 것이다 — 발행일만 다음 호로 옮기면 이전 호에는
+        // 남고 다음 호에는 안 뜬다. 두 호 사이에서 기사가 없어진다.
+        //
+        // 발행일을 바꾸면 그 호로 간다. 그것이 편집장의 배분 수단이다.
         const taken = slugsInEarlierIssues(issue);
-        return all.filter((a) => !taken.has(a.slug) && a.data.collectWeekStart === issue.weekStart);
+        return all.filter(
+          (a) =>
+            !taken.has(a.slug) &&
+            a.data.publishedAt.toISOString().slice(0, 10) === issue.publishedAt,
+        );
       })();
 
   if (lang === 'ko') return ko;
@@ -221,6 +258,16 @@ export async function articlesOfIssue(issue: IssueMeta, lang: Lang = 'ko'): Prom
 /** 영문 표지 문구가 채워진 호만. 영문 호 페이지는 이것만 만든다 */
 export function getIssuesEn(): IssueMeta[] {
   return getIssues().filter((i) => Boolean(i.headlineEn));
+}
+
+/** 영문 호 **페이지 생성**용. 목록에는 `getIssuesEn()` 을 쓴다.
+ *
+ * 한글 호 페이지는 `ISSUES` 전체로 만든다 — 표지 3장을 발행 전에 찍어야 하기 때문이다.
+ * 영문만 발행분으로 걸러 두면 **발행 전에 영문 호를 검수할 수 없다.** 2026-09-05
+ * 제4호(영문판 첫 호)에서 실제로 페이지가 생기지 않아 걸렸다. 목록은 양쪽 다
+ * 발행분만 보여주므로 미리 만들어도 독자에게 노출되지 않는다. */
+export function getAllIssuesEn(): IssueMeta[] {
+  return getAllIssues().filter((i) => Boolean(i.headlineEn));
 }
 
 /**

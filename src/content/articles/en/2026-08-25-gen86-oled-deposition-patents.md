@@ -6,7 +6,7 @@ section: patent
 reporter: CLAIM
 publishedAt: 2026-08-25
 collectWeekStart: '2026-08-17'
-readingMinutes: 30
+readingMinutes: 27
 lang: en
 translationOf: 2026-08-25-gen86-oled-deposition-patents
 tags: [8.6세대, 증착장비, 파인메탈마스크, 정전척, 캐논토키, 선익시스템, 야스, 알박, 파인원, IT OLED]

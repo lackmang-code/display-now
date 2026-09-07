@@ -5,7 +5,7 @@ summary: "Merge three devices — sensor, memory and processor — into one and 
 section: paper
 reporter: PEER
 publishedAt: 2026-07-28
-readingMinutes: 8
+readingMinutes: 4
 lang: en
 translationOf: 2026-07-28-flexible-otft-retinomorphic
 tags: [OTFT, 유연전자소자, 뉴로모픽, 이종유전체]

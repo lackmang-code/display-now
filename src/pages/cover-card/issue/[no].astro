@@ -23,7 +23,10 @@ interface Props {
 const { issue } = Astro.props;
 const articles = await articlesOfIssue(issue);
 const head = articles.find((a) => a.slug === issue.headSlug) ?? articles[0];
-const coverlines = articles.filter((a) => a.slug !== head?.slug).slice(0, 4);
+// 🔴 4편에 고정돼 있었다(2026-09-08 수정). 제4호는 헤드를 뺀 5편인데 한 편이 잘려
+// 표지 어디에도 나오지 않았다 — 수록 편수와 표지가 어긋나면 그 기사는 없는 것이 된다.
+// 편수가 늘면 잘라내는 것이 아니라 판을 그 편수에 맞춘다(편집규칙 「면이 비면 판을 고친다」).
+const coverlines = articles.filter((a) => a.slug !== head?.slug);
 
 // 표지 그림이 아직 없는 호도 있다(캡처 전이거나 그 주에 시뮬레이션이 없거나).
 // 파일이 없으면 그림칸을 아예 빼서 620px 빈 검정 칸이 남지 않게 한다.

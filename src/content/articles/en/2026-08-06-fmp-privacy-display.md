@@ -5,7 +5,7 @@ summary: "A privacy display costing 10% more than an equivalent OLED, and Samsun
 section: issue
 reporter: DESK
 publishedAt: 2026-08-06
-readingMinutes: 9
+readingMinutes: 5
 lang: en
 translationOf: 2026-08-06-fmp-privacy-display
 tags: [금주의핫이슈, 프라이버시디스플레이, FMP, 갤럭시S27, 삼성디스플레이, 칩플레이션]

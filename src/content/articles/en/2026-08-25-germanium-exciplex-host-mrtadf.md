@@ -6,7 +6,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-08-25
 collectWeekStart: '2026-08-17'
-readingMinutes: 11
+readingMinutes: 9
 lang: en
 translationOf: 2026-08-25-germanium-exciplex-host-mrtadf
 tags: [MR-TADF, 엑시플렉스, 역계간전이, 효율 저하, 게르마늄, OLED, TCL CSOT]

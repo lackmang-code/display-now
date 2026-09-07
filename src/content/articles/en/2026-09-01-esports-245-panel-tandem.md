@@ -6,7 +6,7 @@ section: issue
 reporter: DESK
 publishedAt: 2026-09-01
 collectWeekStart: '2026-08-24'
-readingMinutes: 16
+readingMinutes: 12
 lang: en
 translationOf: 2026-09-01-esports-245-panel-tandem
 tags: [금주의핫이슈, 게임스컴2026, QD-OLED, 펜타탠덤, 탠덤WOLED, MPRT, 흐림폭, ClearMR, 샘플앤홀드, 주사율, 삼성디스플레이, LG디스플레이, 오디세이]

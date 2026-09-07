@@ -6,7 +6,7 @@ section: issue
 reporter: DESK
 publishedAt: 2026-08-25
 collectWeekStart: '2026-08-17'
-readingMinutes: 19
+readingMinutes: 16
 lang: en
 translationOf: 2026-08-25-lgd-flipp-fmmless-patterning
 tags: [금주의핫이슈, FLiPP, 마스크리스패터닝, FMM, 개구율, LG디스플레이, IMID2026, 8.5세대, 오사거널, 삼성디스플레이]

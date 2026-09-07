@@ -6,7 +6,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-09-01
 collectWeekStart: '2026-08-24'
-readingMinutes: 11
+readingMinutes: 8
 lang: en
 translationOf: 2026-09-01-isosorbide-oca-foldable
 tags: [광학투명접착제, OCA, 폴더블, 아이소소바이드, 소재 국산화, UNIST, 영우]

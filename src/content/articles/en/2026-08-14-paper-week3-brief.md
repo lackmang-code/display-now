@@ -5,7 +5,7 @@ summary: "A short sweep of 22 papers touching the display industry from among th
 section: paper
 reporter: PEER
 publishedAt: 2026-08-14
-readingMinutes: 7
+readingMinutes: 3
 lang: en
 translationOf: 2026-08-14-paper-week3-brief
 tags:

@@ -6,7 +6,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-08-25
 collectWeekStart: '2026-08-17'
-readingMinutes: 10
+readingMinutes: 8
 lang: en
 translationOf: 2026-08-25-skku-deep-learning-carrier-kinetics
 tags: [시간분해 광발광, 광발광 양자수율, 캐리어 재결합, 딥러닝, 페로브스카이트, 성균관대]

@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimBoot from '../components/SimBoot.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { bylineOf, articleHref, readingLabel, leadImage } from '../lib/articles';
+import { bylineOf, articleHref, readingLabel, leadImage, baseSlug } from '../lib/articles';
 import {
   ISSUES,
   articlesOfIssue,
@@ -31,21 +31,29 @@ const articles = await articlesOfIssue(issue, lang);
 // 표지 문구는 번역이 아니라 다시 쓴 것이다(`headlineEn`). 없으면 한글판 문구로 떨어진다.
 const headline = (en && issue.headlineEn) || issue.headline;
 const deck = en ? issue.deckEn : issue.deck;
-const note = en ? issue.noteEn : issue.note;
 
-const head = issue.headSlug ? articles.find((a) => a.slug === issue.headSlug) : articles[0];
+// 🔴 영문판 slug 는 `en/<한글 slug>` 라 그대로 비교하면 헤드를 못 찾는다 (2026-09-08).
+// 못 찾으면 헤드가 목차에서 안 빠져 영문 호만 「6 more in this issue」로 나왔다.
+// 짝을 맞추는 비교는 언제나 baseSlug 다.
+const head = issue.headSlug
+  ? articles.find((a) => baseSlug(a) === issue.headSlug)
+  : articles[0];
 const fallbackImage = issue.coverImage ?? (head ? leadImage(head) : undefined);
 
 // 헤드 기사는 표지가 이미 크게 싣는다. 아래 목차는 나머지만 받는다.
 // 종전에는 표지 커버라인 네 줄과 목차가 같은 제목을 두 번 보여줬고,
 // 헤드 기사 제목은 표지 헤드라인과 목차에 또 두 번 나왔다.
 //
-// ⚠️ 단, 표지 헤드라인이 헤드 기사 제목과 **같을 때만** 뺀다.
-// 제1호처럼 표지 문구를 따로 지은 호에서는 헤드라인이 기사 제목이 아니어서,
-// 목차에서까지 빼면 그 기사 제목이 페이지 어디에도 나오지 않는다
-// (실제로 "2스택 탠덤으로 회귀한 LG디스플레이…"가 통째로 사라졌다).
-const headIsSameTitle = !!head && issue.headline.trim() === head.data.title.trim();
-const rest = headIsSameTitle ? articles.filter((a) => a.slug !== head!.slug) : articles;
+// 🔴 헤드 기사는 표지 문구와 제목이 다르더라도 목차에서 뺀다 (2026-09-08 수정).
+// 종전에는 「표지 문구 === 기사 제목」일 때만 뺐다. 표지 문구를 따로 지은 호에서
+// 목차에서까지 빼면 기사 제목이 페이지 어디에도 안 나오기 때문이었는데,
+// 그 대가로 **같은 기사가 서로 다른 두 제목으로 두 번 실렸다.**
+// 제1·3·4호가 전부 그 상태였고, 대표가 제4호에서 두 기사로 오독했다.
+// 이제 제목이 다를 때는 표지 헤드 블록에 기사 제목을 함께 얹어(head-title)
+// 「사라지는 문제」를 그쪽에서 풀고, 목차에서는 언제나 뺀다.
+// 표지 문구와 기사 제목이 같은지도 그 언어의 값끼리 견준다.
+const headIsSameTitle = !!head && headline.trim() === head.data.title.trim();
+const rest = head ? articles.filter((a) => a.slug !== head.slug) : articles;
 
 const grouped = SECTION_ORDER.map((key) => ({
   key,
@@ -119,6 +127,11 @@ const grouped = SECTION_ORDER.map((key) => ({
         }
         {deck && <p class="deck">{deck}</p>}
         {
+          head && !headIsSameTitle && (
+            <p class="head-title"><span class="head-title-label">{ui.articleTitleLabel}</span> {head.data.title}</p>
+          )
+        }
+        {
           head && (
             <div class="head-meta">
               <span style={`color:${sectionColor(head.data.section, 0.78)};`}>
@@ -175,15 +188,15 @@ const grouped = SECTION_ORDER.map((key) => ({
       }
       {articles.length === 0 && <p class="empty">{ui.emptyIssue}</p>}
 
-      {
-        issue.note && (
-          <div class="note">
-            <div class="note-label">{ui.editorNote}</div>
-            <p>{note}</p>
-            <div class="note-sign">{ui.editorLabel} <b>DEEPLE</b></div>
-          </div>
-        )
-      }
+      {/*
+        🔴 편집장 노트는 2026-09-08 대표 결정으로 폐기했다. 되살리지 말 것.
+        ① 기사의 결론을 미리 흘렸다 — 노트만 읽으면 기사를 열 이유가 줄어든다.
+           근거 목록을 전부 싣는 매체가 결론만 요약해 표지에 붙이는 꼴이었다.
+        ② 같은 화면에서 제목·summary·꼭지 구분이 이미 세 번 안내한다. 노트는 네 번째였다.
+        ③ 분량이 호마다 늘었다 — 233 → 509 → 588 → 706자. 매주 쓰는 비용이 계속 올랐다.
+        「이 호가 왜 한 호인가」는 표지 문구와 덱이 헤드 기사에 대해 하고,
+        AI 편집장 DEEPLE 표기는 기사 바이라인에 그대로 남는다.
+      */}
 
       <div class="issue-foot">
         <a href={en ? '/en/issue' : '/issue'} class="muted-link">{ui.allIssues}</a>
@@ -350,6 +363,21 @@ const grouped = SECTION_ORDER.map((key) => ({
     color: inherit;
   }
   /* 표지 헤드라인 밑에 붙는 한 줄. 표지만 봐도 그 기사가 어떤 글인지 알 수 있게 한다 */
+  .head-title {
+    margin: 0.55rem 0 0;
+    font-size: 0.94rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  /* 🔴 라벨을 ::before content 로 박지 않는다 (2026-09-08).
+     한글 「기사 제목 · 」이 CSS 에 있어 영문 호에도 그대로 찍혔다.
+     원고 밖에서 화면에 찍히는 글자는 i18n 사전이 덮지 못하므로 템플릿이 갖는다. */
+  .head-title-label {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .head-title-label::after {
+    content: ' · ';
+  }
   .head-meta {
     display: flex;
     flex-wrap: wrap;
@@ -475,34 +503,6 @@ const grouped = SECTION_ORDER.map((key) => ({
   .empty {
     color: var(--on-dark-mute);
     font-size: 15px;
-  }
-  .note {
-    margin-top: 6px;
-    background: rgba(244, 243, 238, 0.05);
-    border: 1px solid rgba(244, 243, 238, 0.14);
-    padding: 16px 18px;
-  }
-  .note-label {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    color: var(--gold-dim);
-    margin-bottom: 8px;
-  }
-  .note p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.75;
-    text-align: justify;
-  }
-  .note-sign {
-    margin-top: 10px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .note-sign b {
-    font-weight: 500;
   }
   .issue-foot {
     margin-top: 18px;

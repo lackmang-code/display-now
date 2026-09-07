@@ -6,7 +6,7 @@ section: paper
 reporter: PEER
 publishedAt: 2026-09-01
 collectWeekStart: '2026-08-24'
-readingMinutes: 12
+readingMinutes: 10
 lang: en
 translationOf: 2026-09-01-stretchable-oled-nanocrack
 tags: [신축성 디스플레이, OLED, 저분자 유기반도체, 크랙 공학, 웨어러블, 동북사범대]

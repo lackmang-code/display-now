@@ -5,7 +5,7 @@ summary: "Four months after BOE sued Samsung Display over four patents, it ended
 section: patent
 reporter: CLAIM
 publishedAt: 2026-08-14
-readingMinutes: 13
+readingMinutes: 11
 lang: en
 translationOf: 2026-08-14-boe-samsung-display-upc-lawsuit
 tags: [특허소송, BOE, 삼성디스플레이, UPC, 언더패널카메라]

@@ -10,7 +10,7 @@ series:
   id: teker-deep
   part: 1
   episode: 6
-readingMinutes: 37
+readingMinutes: 30
 lang: en
 translationOf: 2026-09-01-ultrasonic-fingerprint-impedance
 tags: [지문센서, 초음파, 언더디스플레이, 압전, 음향임피던스, 퀄컴, under-display-sensor]

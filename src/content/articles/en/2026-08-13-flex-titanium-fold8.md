@@ -5,7 +5,7 @@ summary: "Foldable back plate materials have gone metal to CFRP and back to meta
 section: issue
 reporter: DESK
 publishedAt: 2026-08-13
-readingMinutes: 9
+readingMinutes: 6
 lang: en
 translationOf: 2026-08-13-flex-titanium-fold8
 tags: [금주의핫이슈, 갤럭시Z폴드8, 플렉스티타늄, 백플레이트, 폴더블OLED, 삼성디스플레이]

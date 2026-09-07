@@ -9,7 +9,7 @@ series:
   id: teker-deep
   part: 1
   episode: 2
-readingMinutes: 10
+readingMinutes: 6
 lang: en
 translationOf: 2026-08-14-proximity-sensor-transmittance
 tags: [근접센서, OLED, TFT, ams OSRAM]

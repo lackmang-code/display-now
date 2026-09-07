@@ -9,7 +9,7 @@ series:
   id: teker-deep
   part: 1
   episode: 3
-readingMinutes: 10
+readingMinutes: 5
 lang: en
 translationOf: 2026-08-14-als-behind-oled-crosstalk
 tags: [ALS, 조도센서, OLED, 크로스토크]

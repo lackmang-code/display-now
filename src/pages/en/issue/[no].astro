@@ -1,11 +1,11 @@
 ---
-import { getIssuesEn, type IssueMeta } from '../../../lib/issues';
+import { getAllIssuesEn, type IssueMeta } from '../../../lib/issues';
 import IssueView from '../../../components/IssueView.astro';
 
 // 영문 표지 문구(`headlineEn`)가 채워진 호만 만든다.
 // 문구 없이 페이지를 내면 영문 호에 한글 헤드라인이 그대로 박힌다.
 export async function getStaticPaths() {
-  return getIssuesEn().map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
+  return getAllIssuesEn().map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
 }
 
 interface Props {
