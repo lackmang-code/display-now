@@ -74,7 +74,13 @@ const related = hasSeriesNav
 // 이 기사가 속한 주제. 페이지가 실제로 존재하는(기사 2편 이상) 주제만 링크로 건다.
 // 기사마다 주제 허브로 나가는 링크가 생기면 크롤러가 사이트 안을 돌아다닐 길이 열린다.
 const liveTopics = new Set(topicIndex(published).map((g) => g.topic.slug));
-const topics = topicsOf(entry).filter((t) => liveTopics.has(t.slug));
+// 🔴 주제 칩은 한글 면에만 단다 (2026-09-08).
+// `Topic.label` 이 한글이고 링크가 가리키는 `/tag/<slug>` 도 한글 전용 면이라,
+// 영문 기사에 달면 「디스플레이 특허」·「LG디스플레이」 같은 한글 칩이 서고
+// 누르면 영문 독자가 한글 페이지로 떨어진다. 영문 아카이브에서 태그 구름을 뺀 것과
+// 같은 이유다. **주제를 영문화하면 그때 되살린다.**
+const topics =
+  lang === 'en' ? [] : topicsOf(entry).filter((t) => liveTopics.has(t.slug));
 
 // 검색엔진에 보내는 제목. 화면 제목(h1)은 언제나 entry.data.title 그대로다.
 const seoTitle = entry.data.searchTitle ?? entry.data.title;

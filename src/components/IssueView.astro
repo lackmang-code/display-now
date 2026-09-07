@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimBoot from '../components/SimBoot.astro';
+import LangSwitch from '../components/LangSwitch.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { bylineOf, articleHref, readingLabel, leadImage, baseSlug } from '../lib/articles';
 import {
@@ -12,6 +13,7 @@ import {
   issueDateLabel,
   issueRangeLabel,
   collectRangeLabel,
+  getAllIssuesEn,
   SHOW_PUBLISH_DATE,
   type IssueMeta,
 } from '../lib/issues';
@@ -55,6 +57,19 @@ const fallbackImage = issue.coverImage ?? (head ? leadImage(head) : undefined);
 const headIsSameTitle = !!head && headline.trim() === head.data.title.trim();
 const rest = head ? articles.filter((a) => a.slug !== head.slug) : articles;
 
+// 🔴 한·영 전환 스위치 (2026-09-08 추가).
+// 호 페이지에만 스위치가 없었다 — IssueView 가 Header 에 altHref 를 안 넘겼다.
+// **짝이 실제로 있을 때만 단다.** 영문 호는 `headlineEn` 이 채워진 호만 생성되므로
+// 한글 쪽에서는 그 조건을 그대로 물어본다. 영문 쪽의 짝(한글 호)은 언제나 있다.
+// hreflang 은 검색엔진용 메타라 화면에 아무것도 그리지 않는다. 스위치는 Header 가 그린다 —
+// 둘 다 넘겨야 한다.
+const hasEnIssue = getAllIssuesEn().some((i) => i.no === issue.no);
+const altHref = en
+  ? `/issue/${issue.no}`
+  : hasEnIssue
+    ? `/en/issue/${issue.no}`
+    : undefined;
+
 const grouped = SECTION_ORDER.map((key) => ({
   key,
   list: rest.filter((a) => a.data.section === key),
@@ -66,6 +81,7 @@ const grouped = SECTION_ORDER.map((key) => ({
   description={deck ?? headline}
   image={`/og/issue-${issue.no}.png`}
   lang={lang}
+  altHref={altHref}
 >
   <div class="frame issue-frame">
     <section class="cover">
@@ -86,6 +102,11 @@ const grouped = SECTION_ORDER.map((key) => ({
           </div>
           <span class="identity">{ui.issueIdentity}</span>
         </div>
+        {altHref && (
+          <div class="cover-lang">
+            <LangSwitch lang={lang} altHref={altHref} />
+          </div>
+        )}
         <span class="issue-no">
           {collectRangeLabel(issue, lang)}
           {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>}
@@ -154,6 +175,8 @@ const grouped = SECTION_ORDER.map((key) => ({
       </div>
     </section>
 
+    {/* 전환 스위치는 표지 우상단 하나만 둔다 — 헤더까지 달면 같은 버튼이
+        745px 간격으로 두 개 선다. hreflang 은 Base 가 altHref 로 받는다. */}
     <Header showNav={false} lang={lang} />
 
     <div class="content-pad">
@@ -249,6 +272,7 @@ const grouped = SECTION_ORDER.map((key) => ({
     gap: clamp(14px, 2.6vw, 20px);
   }
   .cover-top {
+    position: relative;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -256,6 +280,23 @@ const grouped = SECTION_ORDER.map((key) => ({
     flex-wrap: wrap;
     padding-bottom: 12px;
     border-bottom: 1.5px solid rgba(244, 243, 238, 0.28);
+  }
+  /* 🔴 전환 스위치는 표지 우상단에 둔다 (2026-09-08 대표 지시).
+     종전에는 호 페이지에만 스위치가 아예 없었고, 헤더에 달았더니 표지 727px 를
+     지난 y=745px 라 첫 화면에서 눈에 띄지 않았다. 영문 유입이 목적인데
+     전환 경로가 안 보이면 그 자리에서 나간다. */
+  .cover-lang {
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+  /* 좁은 폭에서는 제호와 겹치므로 흐름 안으로 되돌린다. */
+  @media (max-width: 560px) {
+    .cover-lang {
+      position: static;
+      order: 3;
+      width: 100%;
+    }
   }
   .mast-col {
     display: flex;
