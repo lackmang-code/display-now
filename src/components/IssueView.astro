@@ -114,12 +114,18 @@ const grouped = SECTION_ORDER.map((key) => ({
       </div>
 
       <div class="cover-stage">
+        {/*
+          🔴 표지에는 cover:true 를 함께 넘긴다 — 시뮬이 표지 구도로 그린다 (2026-09-08).
+          본문 구도를 그대로 표지에 올리면 808px 무대에 440px 로 작게 들어가고 안쪽 여백까지
+          커서 그림의 절반이 빈 공간이 된다. 표지는 이 매체의 얼굴이라 구도를 따로 잡는다.
+          시뮬이 표지 구도를 갖고 있지 않으면 이 값은 그냥 무시되므로 다른 시뮬에 영향이 없다.
+        */}
         {
           issue.coverSim ? (
             <div
               class="cover-sim"
               data-sim={issue.coverSim}
-              data-params={issue.coverSimParams ? JSON.stringify(issue.coverSimParams) : undefined}
+              data-params={JSON.stringify({ ...(issue.coverSimParams ?? {}), cover: true })}
             />
           ) : fallbackImage ? (
             <img class="cover-img" src={fallbackImage} alt={ui.coverAlt(issueNumberLabel(issue, lang))} />

@@ -28,8 +28,17 @@
 // 두 패널의 우열이 갈리는 정확한 지점은 GtG를 어떻게 정의하느냐에 따라 달라진다.
 // 발표된 제품의 실측 잔상량을 재현하거나 검증하는 값이 아니다.
 
-const W = 300;
-const H = 210;
+// 이 시뮬은 픽셀을 직접 계산해 putImageData 로 찍는다. 캔버스를 확대해도 그림이
+// 선명해지지 않고, **시뮬레이션 자체를 더 높은 해상도로 계산**해야 한다.
+// 그래서 배율 S 를 받아 장면 좌표와 번짐 폭을 함께 키운다. 물리는 그대로다 —
+// 같은 장면을 더 촘촘한 격자에서 풀 뿐이다.
+const BASE_W = 300;
+const BASE_H = 210;
+
+// ⚠ 표지에서 세로를 줄이고 캔버스를 키우는 것은 2026-09-08 에 시도했다가 되돌렸다.
+// 무대 안쪽 폭이 704px 인데 750px 로 잡아 그림이 오른쪽으로 넘쳤다.
+// 남긴 것은 **계산 격자 배율(S)** 뿐이다 — 그것이 실제 해상도 개선이었다.
+const COVER_H = BASE_H;
 
 const RATES = [60, 120, 165, 240, 360, 480, 540, 560, 600, 680, 720, 1000, 1100];
 
@@ -41,7 +50,7 @@ const PANELS = {
 };
 
 /** 표적 장면을 만든다. 세로 막대 묶음 + 조준 표적 + 눈금 잔줄 */
-function buildScene() {
+function buildScene(W, H, S, tight = 0) {
   const src = new Float32Array(W * H);
   const bars = (x0, x1, y0, y1, pitch) => {
     for (let y = y0; y < y1; y++) {
@@ -51,36 +60,36 @@ function buildScene() {
     }
   };
   // 위쪽 — 굵기가 다른 세로 막대 네 묶음. 가는 것부터 먼저 뭉개진다
-  bars(14, 82, 16, 62, 8);
-  bars(90, 158, 16, 62, 4);
-  bars(166, 234, 16, 62, 2);
-  bars(242, 288, 16, 62, 1);
+  bars(14 * S, 82 * S, 16 * S, 62 * S, 8 * S);
+  bars(90 * S, 158 * S, 16 * S, 62 * S, 4 * S);
+  bars(166 * S, 234 * S, 16 * S, 62 * S, 2 * S);
+  bars(242 * S, 288 * S, 16 * S, 62 * S, 1 * S);
 
   // 가운데 — 조준 표적
-  const cx = 150;
-  const cy = 122;
-  const r = 30;
-  for (let y = cy - r - 2; y <= cy + r + 2; y++) {
-    for (let x = cx - r - 2; x <= cx + r + 2; x++) {
+  const cx = 150 * S;
+  const cy = (122 - tight) * S;
+  const r = 30 * S;
+  for (let y = cy - r - 2 * S; y <= cy + r + 2 * S; y++) {
+    for (let x = cx - r - 2 * S; x <= cx + r + 2 * S; x++) {
       if (x < 0 || x >= W || y < 0 || y >= H) continue;
       const d = Math.hypot(x - cx, y - cy);
-      if (d > r - 2 && d < r) src[y * W + x] = 1;
-      else if (d < r - 3) src[y * W + x] = 0.16;
+      if (d > r - 2 * S && d < r) src[y * W + x] = 1;
+      else if (d < r - 3 * S) src[y * W + x] = 0.16;
     }
   }
-  for (let x = cx - r + 6; x <= cx + r - 6; x++) src[cy * W + x] = 1;
-  for (let y = cy - r + 6; y <= cy + r - 6; y++) src[y * W + cx] = 1;
+  for (let x = cx - r + 6 * S; x <= cx + r - 6 * S; x++) src[cy * W + x] = 1;
+  for (let y = cy - r + 6 * S; y <= cy + r - 6 * S; y++) src[y * W + cx] = 1;
 
   // 아래쪽 — 눈금 잔줄
-  for (let x = 14; x < 288; x += 6) {
-    for (let y = 172; y < 190; y++) src[y * W + x] = 1;
-    if ((x - 14) % 30 === 0) for (let y = 166; y < 196; y++) src[y * W + x] = 1;
+  for (let x = 14 * S; x < 288 * S; x += 6 * S) {
+    for (let y = (172 - tight * 2) * S; y < (190 - tight * 2) * S; y++) src[y * W + x] = 1;
+    if ((x - 14 * S) % (30 * S) === 0) for (let y = (166 - tight * 2) * S; y < (196 - tight * 2) * S; y++) src[y * W + x] = 1;
   }
   return src;
 }
 
 /** 가로 박스 평균(지속시간) 뒤에 한쪽으로 끌리는 1차 지연 꼬리(응답속도)를 얹는다 */
-function smear(src, boxPx, tailPx) {
+function smear(src, boxPx, tailPx, W, H) {
   const a = new Float32Array(W * H);
   const rad = boxPx / 2;
   const r0 = Math.floor(rad);
@@ -119,6 +128,12 @@ function smear(src, boxPx, tailPx) {
 }
 
 export function mount(container, params = {}) {
+  // 표지는 3배 격자에서 푼다. 같은 장면을 더 촘촘히 계산하는 것이라 물리는 그대로다.
+  const S = params.cover ? 3 : 1;
+  const TIGHT = 0;
+  const W = BASE_W * S;
+  const H = BASE_H * S;
+
   const state = {
     rateIdx: params.rateIdx ?? RATES.indexOf(240),
     speed: params.speed ?? 1000,
@@ -138,7 +153,7 @@ export function mount(container, params = {}) {
     '</div>',
     '<div class="sim-body">',
     '  <div class="sim-canvas-wrap">',
-    '    <canvas width="' + W + '" height="' + H + '"></canvas>',
+    '    <canvas width="' + W + '" height="' + H + '" style="width:' + BASE_W + 'px;height:' + (params.cover ? COVER_H : BASE_H) + 'px"></canvas>',
     '  </div>',
     '  <div class="sim-controls">',
     '    <div class="sim-control">',
@@ -191,7 +206,7 @@ export function mount(container, params = {}) {
   rateInput.value = String(state.rateIdx);
   speedInput.value = String(state.speed);
 
-  const scene = buildScene();
+  const scene = buildScene(W, H, S, TIGHT);
 
   function syncToggles() {
     panelGroup.querySelectorAll('button').forEach((b) => {
@@ -213,7 +228,7 @@ export function mount(container, params = {}) {
     const br = v * panel.tr;
     const total = bp + br;
 
-    const out = smear(scene, Math.max(1, bp), br);
+    const out = smear(scene, Math.max(1, bp * S), br * S, W, H);
 
     const gain = state.bfi ? 0.5 : 1;
     const img = ctx.createImageData(W, H);

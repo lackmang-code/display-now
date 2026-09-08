@@ -119,7 +119,14 @@ export const ISSUES: IssueMeta[] = [
     //   560Hz·250px/s   격자 모서리와 눈금이 살아난다. 이것을 쓴다
     // BFI를 켜면 선명도는 같은데 지속시간이 절반이라 화면이 어두워진다. 표지에서는 손해다.
     // 560Hz는 헤드라인이 가리키는 펜타 탠덤 패널의 주사율이기도 하다.
-    coverSimParams: { rateIdx: 7, speed: 250, panel: 'qdoled', bfi: false },
+    // 🔴 표지 조건을 바꿨다 (2026-09-08). 종전 560Hz·250px/s 는 번짐이 0.45px 라
+    // 이 시뮬이 보여주려는 것(주사율·응답속도가 잔상을 가른다)이 화면에 아무것도
+    // 나타나지 않았다. 뿌옇게 보이던 것은 번짐이 아니라 300px 그림을 3배로 늘린 흐림이었다.
+    // 240Hz·1000px/s 면 번짐이 4.2px 다. 가는 막대는 뭉개지고 굵은 막대와 표적은 남아
+    // 「무엇을 재는 그림인지」가 보이면서 잔상도 드러난다. 12.5px(120Hz·1500)는
+    // 전부 회색으로 뭉개져 그림이 사라졌다.
+    // 기사 결론이 「주사율이 절반인 패널이 더 또렷했다」이므로 번짐이 보이는 조건이 맞다.
+    coverSimParams: { rateIdx: 3, speed: 1000, panel: 'qdoled', bfi: false },
     headSlug: '2026-09-01-esports-245-panel-tandem',
     headlineEn: 'A 560Hz OLED and an 1,100Hz LCD met over an esports panel',
     deckEn: 'The talk of Gamescom this week was the world’s first 1,100Hz gaming monitor. Between a 560Hz OLED and an 1,100Hz LCD, which one shows a moving target more sharply?',

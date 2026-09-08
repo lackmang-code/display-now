@@ -11,19 +11,43 @@
 // - 가시성 띠는 접촉 반경을 두 액체 공통 기준으로 환산한 상대 지표이며 광학 계산이 아니다.
 // 캔버스 안 글자는 전부 영어로 쓴다(2026-09 규칙).
 
+import { hidpi } from './_hidpi.js';
+
 const LIQUIDS = {
-  hexadecane: { label: 'n-Hexadecane (oil)', short: 'n-Hexadecane', gamma: 27.5, k: 0.03, color: '#c8a55e' },
-  water: { label: 'Water', short: 'Water', gamma: 72.8, k: 0.0195, color: '#6f9fd8' },
+  hexadecane: {
+    label: 'n-Hexadecane (oil)', short: 'n-Hexadecane', gamma: 27.5, k: 0.03,
+    color: '#f0b23c', lit: '#ffd77a', shade: '#b87d1e',
+  },
+  water: {
+    label: 'Water', short: 'Water', gamma: 72.8, k: 0.0195,
+    color: '#5fa8ee', lit: '#a9d4ff', shade: '#2f6ea8',
+  },
 };
 
-const W = 440;
-const H = 336;
-const BASE_Y = 176;
-const CX = 220;
-const SCALE = 48;
-const STRIP_Y = 262;
+// 기사 본문 구도(기본)와 표지 구도(cover)를 나눈다.
+//
+// 🔴 왜 나누는가 (2026-09-08).
+// 이 캔버스는 본문 678px 폭에서 옆에 슬라이더를 두고 읽히도록 만든 것이다.
+// 그대로 표지에 올리면 808px 무대 안에 440px 로 작게 들어가고, 안쪽 여백까지 커서
+// **그림의 절반이 빈 공간**이 된다. 표지는 이 매체의 얼굴이라 구도를 따로 잡는다.
+//
+// 표지 구도에서 바꾸는 것은 **크기와 자리**뿐이다. 그리는 내용과 물리는 같다.
+// ⚠ 표지에서 캔버스를 키우는 것은 2026-09-08 에 시도했다가 되돌렸다.
+// 무대(808px) 안쪽 폭이 704px 인데 760px 로 잡아 **그림이 오른쪽으로 넘쳤다.**
+// 시뮬 몸통이 [캔버스 | 슬라이더] 가로 배치라 캔버스만 키우면 자리가 모자란다.
+// 키우려면 슬라이더를 아래로 내리는 레이아웃 변경이 함께 가야 한다.
+// 지금은 **크기를 건드리지 않고 해상도와 음영만** 올린다 — 그 둘이 실제 성과였다.
+const LAYOUT = {
+  article: { W: 440, H: 336, BASE_Y: 176, SCALE: 48, STRIP_Y: 262, PAD: 22, FS: 1 },
+  cover:   { W: 440, H: 336, BASE_Y: 176, SCALE: 48, STRIP_Y: 262, PAD: 22, FS: 1 },
+};
 
 export function mount(container, params = {}) {
+  const L = LAYOUT[params.cover ? 'cover' : 'article'];
+  const { W, H, BASE_Y, SCALE, STRIP_Y, PAD, FS } = L;
+  const CX = Math.round(W / 2);
+  const fs = (n) => Math.round(n * FS);
+
   const state = {
     gammaC: params.gammaC ?? 6,
     liquid: params.liquid ?? 'hexadecane',
@@ -56,7 +80,7 @@ export function mount(container, params = {}) {
   `;
 
   const canvas = container.querySelector('canvas');
-  const ctx = canvas.getContext('2d');
+  const ctx = hidpi(canvas, W, H);
   const gcInput = container.querySelector('[data-in="gc"]');
   const gcOut = container.querySelector('[data-out="gc"]');
   const readout = container.querySelector('[data-out="readout"]');
@@ -65,8 +89,8 @@ export function mount(container, params = {}) {
   gcInput.value = String(state.gammaC);
 
   const INK = '#f4f3ee';
-  const DIM = 'rgba(244,243,238,0.58)';
-  const FAINT = 'rgba(244,243,238,0.30)';
+  const DIM = 'rgba(244,243,238,0.72)';
+  const FAINT = 'rgba(244,243,238,0.42)';
 
   function contactAngle(gammaC, liq) {
     const c = 1 - liq.k * (liq.gamma - gammaC);
@@ -86,42 +110,42 @@ export function mount(container, params = {}) {
     const liq = LIQUIDS[state.liquid];
     const theta = contactAngle(state.gammaC, liq);
     const g = capGeometry(theta);
-    const aPx = Math.min(184, g.a * SCALE);
+    const aPx = Math.min(W / 2 - PAD - 30, g.a * SCALE);
     const hPx = g.h * SCALE;
 
     gcOut.textContent = state.gammaC.toFixed(1);
     ctx.clearRect(0, 0, W, H);
 
     // ---- header labels ----
-    ctx.font = 'bold 17px sans-serif';
+    ctx.font = `bold ${fs(17)}px sans-serif`;
     ctx.fillStyle = liq.color;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     const wetting = theta < 1;
-    ctx.fillText(wetting ? 'θ ≈ 0°' : 'θ = ' + theta.toFixed(0) + '°', 22, 16);
-    ctx.font = '13px sans-serif';
+    ctx.fillText(wetting ? 'θ ≈ 0°' : 'θ = ' + theta.toFixed(0) + '°', PAD, Math.round(16 * FS));
+    ctx.font = `${fs(13)}px sans-serif`;
     ctx.fillStyle = DIM;
-    ctx.fillText(wetting ? liq.label + '  ·  complete wetting' : liq.label, 22, 40);
+    ctx.fillText(wetting ? liq.label + '  ·  complete wetting' : liq.label, PAD, Math.round(40 * FS));
 
-    ctx.font = '13px sans-serif';
+    ctx.font = `${fs(13)}px sans-serif`;
     ctx.fillStyle = FAINT;
     ctx.textAlign = 'right';
-    ctx.fillText('CF3 = 6    CF2 = 17    CH3 = 22-24', W - 22, 16);
+    ctx.fillText('CF3 = 6    CF2 = 17    CH3 = 22-24', W - PAD, Math.round(16 * FS));
 
     // ---- surface ----
-    ctx.fillStyle = 'rgba(244,243,238,0.10)';
-    ctx.fillRect(22, BASE_Y, W - 44, 18);
+    ctx.fillStyle = 'rgba(244,243,238,0.16)';
+    ctx.fillRect(PAD, BASE_Y, W - PAD * 2, Math.round(18 * FS));
     ctx.strokeStyle = FAINT;
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(22, BASE_Y + 0.5);
-    ctx.lineTo(W - 22, BASE_Y + 0.5);
+    ctx.moveTo(PAD, BASE_Y + 0.5);
+    ctx.lineTo(W - PAD, BASE_Y + 0.5);
     ctx.stroke();
-    ctx.font = '12px sans-serif';
+    ctx.font = `${fs(12)}px sans-serif`;
     ctx.fillStyle = DIM;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
-    ctx.fillText('SURFACE', 28, BASE_Y + 9);
+    ctx.fillText('SURFACE', PAD + 6, BASE_Y + Math.round(9 * FS));
 
     // ---- drop ----
     // 구면 캡: 접촉각 t에서 구 중심은 표면보다 R*cos(t)만큼 아래에 있다.
@@ -131,17 +155,62 @@ export function mount(container, params = {}) {
     const yc = BASE_Y + R * Math.cos(g.t);
     ctx.save();
     ctx.beginPath();
-    ctx.rect(22, 56, W - 44, BASE_Y - 56);
+    ctx.rect(PAD, Math.round(56 * FS), W - PAD * 2, BASE_Y - Math.round(56 * FS));
     ctx.clip();
+    // Shading only. The geometry above is the spherical cap; nothing here changes it.
+    // A droplet is a three-dimensional body, so it is lit as one: a sphere gradient with
+    // the light up and to the left, one specular highlight, a rim on the shaded side,
+    // and a soft contact shadow where it meets the surface.
+    const LX = CX - R * 0.42;
+    const LY = yc - R * 0.55;
+
     ctx.beginPath();
     ctx.arc(CX, yc, R, 0, Math.PI * 2);
-    ctx.fillStyle = liq.color;
-    ctx.globalAlpha = 0.82;
+    const body = ctx.createRadialGradient(LX, LY, R * 0.06, CX, yc, R * 1.05);
+    body.addColorStop(0, liq.lit);
+    body.addColorStop(0.42, liq.color);
+    body.addColorStop(1, liq.shade);
+    ctx.fillStyle = body;
     ctx.fill();
-    ctx.globalAlpha = 1;
-    ctx.strokeStyle = liq.color;
-    ctx.lineWidth = 1.4;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(CX, yc, R, 0, Math.PI * 2);
+    ctx.clip();
+
+    const rim = ctx.createLinearGradient(CX + R * 0.4, yc, CX + R, yc + R * 0.3);
+    rim.addColorStop(0, 'rgba(255,255,255,0)');
+    rim.addColorStop(1, 'rgba(255,255,255,0.26)');
+    ctx.fillStyle = rim;
+    ctx.fillRect(CX - R, yc - R, R * 2, R * 2);
+
+    ctx.beginPath();
+    ctx.ellipse(LX, LY, R * 0.26, R * 0.16, -0.5, 0, Math.PI * 2);
+    const spec = ctx.createRadialGradient(LX, LY, 0, LX, LY, R * 0.26);
+    spec.addColorStop(0, 'rgba(255,255,255,0.82)');
+    spec.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = spec;
+    ctx.fill();
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(CX, yc, R, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    ctx.lineWidth = Math.max(1, 1.1 * FS);
     ctx.stroke();
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(PAD, BASE_Y, W - PAD * 2, Math.round(18 * FS));
+    ctx.clip();
+    const shW = aPx * 1.5;
+    const sh = ctx.createLinearGradient(CX - shW, 0, CX + shW, 0);
+    sh.addColorStop(0, 'rgba(0,0,0,0)');
+    sh.addColorStop(0.5, 'rgba(0,0,0,0.5)');
+    sh.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = sh;
+    ctx.fillRect(CX - shW, BASE_Y, shW * 2, Math.round(18 * FS));
     ctx.restore();
 
     // ---- contact angle, drawn at the three-phase contact line ----
@@ -166,7 +235,7 @@ export function mount(container, params = {}) {
     ctx.strokeStyle = FAINT;
     ctx.lineWidth = 1;
     ctx.beginPath();
-    const mx = Math.min(CX + aPx + 12, W - 34);
+    const mx = Math.min(CX + aPx + 12, W - PAD - 12);
     ctx.moveTo(mx, BASE_Y);
     ctx.lineTo(mx, BASE_Y - hPx);
     ctx.moveTo(mx - 4, BASE_Y - hPx);
@@ -184,40 +253,40 @@ export function mount(container, params = {}) {
     ctx.moveTo(CX + aPx, by - 5);
     ctx.lineTo(CX + aPx, by + 5);
     ctx.stroke();
-    ctx.font = '13px sans-serif';
+    ctx.font = `${fs(13)}px sans-serif`;
     ctx.fillStyle = INK;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     ctx.fillText('contact width', CX, by + 8);
 
     // ---- how it looks ----
-    ctx.font = '12px sans-serif';
+    ctx.font = `${fs(12)}px sans-serif`;
     ctx.fillStyle = DIM;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'bottom';
-    ctx.fillText('HOW IT LOOKS ON A DARK SCREEN', 22, STRIP_Y - 8);
+    ctx.fillText('HOW IT LOOKS ON A DARK SCREEN', PAD, STRIP_Y - 8);
 
     ctx.fillStyle = '#101012';
-    ctx.fillRect(22, STRIP_Y, W - 44, 48);
+    ctx.fillRect(PAD, STRIP_Y, W - PAD * 2, Math.round(48 * FS));
     ctx.strokeStyle = FAINT;
-    ctx.strokeRect(22.5, STRIP_Y + 0.5, W - 45, 47);
+    ctx.strokeRect(PAD + 0.5, STRIP_Y + 0.5, W - PAD * 2 - 1, Math.round(48 * FS) - 1);
 
     // 손가락이 다섯 번 닿았다고 두고, 각 자국이 접촉 반경만큼 퍼진다.
     // 자국이 커져 이웃과 겹치면 저절로 하나의 얼룩으로 이어진다.
-    const SPACING = 58;
+    const SPACING = Math.round(58 * FS);
     const marks = [-3, -2, -1, 0, 1, 2, 3].map((i) => i * SPACING);
     const dys = [-5, 4, -3, 5, -4, 3, -5];
     const rx = Math.max(4, aPx * 0.34);
-    const ry = Math.min(rx * 0.82, 17);
-    const cy = STRIP_Y + 24;
+    const ry = Math.min(rx * 0.82, Math.round(17 * FS));
+    const cy = STRIP_Y + Math.round(24 * FS);
 
     ctx.save();
     ctx.beginPath();
-    ctx.rect(23, STRIP_Y + 1, W - 46, 46);
+    ctx.rect(PAD + 1, STRIP_Y + 1, W - PAD * 2 - 2, Math.round(48 * FS) - 2);
     ctx.clip();
     // 자국을 하나씩 칠하면 겹친 자리만 알파가 누적돼 얼룩덜룩해진다.
     // 모든 타원을 한 경로에 모아 한 번만 채워 겹쳐도 색이 균일하게 한다.
-    ctx.fillStyle = 'rgba(196,196,186,0.42)';
+    ctx.fillStyle = 'rgba(214,212,198,0.60)';
     ctx.beginPath();
     marks.forEach((mx2, i) => {
       ctx.moveTo(CX + mx2 + rx, cy + dys[i]);
@@ -227,13 +296,13 @@ export function mount(container, params = {}) {
     ctx.restore();
 
     const merged = 2 * rx >= SPACING;
-    ctx.font = '12px sans-serif';
-    ctx.fillStyle = merged ? 'rgba(216,154,106,0.95)' : DIM;
+    ctx.font = `${fs(12)}px sans-serif`;
+    ctx.fillStyle = merged ? '#f0b23c' : DIM;
     ctx.textAlign = 'right';
     ctx.textBaseline = 'bottom';
     ctx.fillText(
       merged ? 'marks merge into one haze' : 'separate marks, easily wiped',
-      W - 22,
+      W - PAD,
       STRIP_Y - 8
     );
 
