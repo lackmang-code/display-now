@@ -258,6 +258,54 @@ function walkSvg(dir, rel) {
 }
 walkSvg(ASSET_DIR, '');
 
+// ── 시뮬 캔버스에 크기를 인라인으로 박지 않는다 (2026-09-09 신설) ──
+//
+// 🔴 왜. 2026-09-08 해상도 작업이 캔버스에 `style.width`·`style.height` 를 px 로 박았고,
+// **인라인은 스타일시트의 어떤 규칙보다 세서** 「좁은 화면에서는 줄여라」가 통째로 죽었다.
+// 줄지 못한 캔버스가 지면 밖으로 나가고 바깥 테두리(overflow:hidden)가 잘라냈다.
+// 제4호 표지와 AF 편이 320px 에서 59%만 보였고, **가로 스크롤바조차 안 생겨**
+// 대표가 폰으로 보고 알려줄 때까지 아무도 몰랐다.
+//
+// 폭만 예외다 — `_hidpi.js` 가 논리 크기를 정하는 데 쓴다. 높이는 비율이 정한다.
+if (existsSync(SIM_DIR)) {
+  for (const f of readdirSync(SIM_DIR)) {
+    if (!f.endsWith('.js')) continue;
+    const lines = stripComments(readFileSync(join(SIM_DIR, f), 'utf8')).split('\n');
+    lines.forEach((line, i) => {
+      const m = line.match(/\.style\.(width|height)\s*=([^;\r\n]*)/);
+      if (!m) return;
+      const [, prop, rhs] = m;
+      if (/['"`]auto['"`]/.test(rhs)) return;              // height:auto 는 이 규칙이 원하는 모습
+      if (f === '_hidpi.js' && prop === 'width') return;   // 유일한 예외
+      problems.push(
+        `${f} — ${i + 1}행에서 캔버스 ${prop} 를 인라인으로 박습니다\n` +
+        `      ${line.trim().slice(0, 76)}\n` +
+        `      인라인은 시트를 이겨서 좁은 화면에서 줄어들 길을 막습니다.\n` +
+        `      높이는 적지 마십시오 — sim.css 의 height:auto 와 비율이 정합니다`);
+    });
+  }
+}
+
+// ── sim.css 의 축소 허용 규칙이 살아 있는가 (2026-09-09 신설) ──
+//
+// 인라인을 안 박아도 **부모가 flex:0 0 auto 면 줄지 않는다.** 둘은 짝이라 함께 지킨다.
+const SIM_CSS = 'src/styles/sim.css';
+if (existsSync(SIM_CSS)) {
+  const css = readFileSync(SIM_CSS, 'utf8');
+  const need = [
+    [/\.sim-canvas-wrap\s*\{[^}]*flex:\s*0\s+1\s/, '.sim-canvas-wrap 에 flex: 0 1 — 부모가 줄 수 있어야 캔버스도 준다'],
+    [/\.sim-canvas-wrap\s+canvas\s*\{[^}]*max-width:\s*100%/, '.sim-canvas-wrap canvas 에 max-width: 100%'],
+    [/\.sim-canvas-wrap\s+canvas\s*\{[^}]*height:\s*auto/, '.sim-canvas-wrap canvas 에 height: auto — 비율 유지'],
+  ];
+  for (const [re, what] of need) {
+    if (!re.test(css)) {
+      problems.push(
+        `${SIM_CSS} — ${what} 가 없습니다\n` +
+        `      이게 빠지면 좁은 화면에서 시뮬이 잘려 나갑니다 (2026-09-09 제4호 사고)`);
+    }
+  }
+}
+
 if (problems.length) {
   console.error(`\n원고 검사 실패 (${problems.length}건)\n`);
   for (const p of problems) console.error('  ' + p);
