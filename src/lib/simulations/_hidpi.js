@@ -20,6 +20,9 @@
 //
 // ⚠ **`ctx.setTransform(1,0,0,1,0,0)` 으로 변환을 되돌리면 확대가 풀린다.**
 // 되돌릴 때는 `resetTo(ctx, canvas, W)` 를 쓴다.
+//
+// ⚠ **캔버스에 인라인 높이를 박지 않는다.** 인라인은 시트를 이기므로 좁은 화면에서
+// 줄어들 길이 막힌다. 높이는 `sim.css` 의 `height: auto` 와 비트맵 비율이 정한다.
 
 /** 화면 밀도에 맞춰 캔버스를 키우고, 논리 좌표로 그릴 수 있는 컨텍스트를 준다. */
 export function hidpi(canvas, w, h, opts = {}) {
@@ -30,7 +33,15 @@ export function hidpi(canvas, w, h, opts = {}) {
   canvas.width = Math.round(w * dpr);
   canvas.height = Math.round(h * dpr);
   canvas.style.width = w + 'px';
-  canvas.style.height = h + 'px';
+  // 🔴 `style.height = h + 'px'` 를 함께 박고 있었다 (2026-09-09 정정).
+  // 인라인 스타일은 시트의 어떤 규칙보다 세서, 좁은 화면용 규칙이 통째로 무력해졌다.
+  // 제4호 표지와 AF 편이 320px 에서 59%만 보이고 나머지가 잘려 나간 원인이 이것이다.
+  // 폭은 논리 크기를 정하려고 남기되, 높이는 비율에서 끌어오고 좁아지면 함께 줄게 둔다.
+  canvas.style.height = 'auto';
+  canvas.style.maxWidth = '100%';
+  // 비율을 명시해 둔다. `height: auto` 만으로도 크롬은 비트맵 비율에서 높이를 끌어오지만
+  // (dpr 1·2·3 실측 동일), 비트맵이 dpr 배라 구형 사파리에서 갈릴 여지를 남기지 않는다.
+  canvas.style.aspectRatio = w + ' / ' + h;
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
   ctx.__dpr = dpr;

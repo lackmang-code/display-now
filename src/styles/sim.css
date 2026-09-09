@@ -37,14 +37,29 @@
   gap: 20px;
 }
 
+/* 🔴 `flex: 0 0 auto` 였다 (2026-09-09 정정).
+   자리가 모자라도 줄지 않으므로 캔버스가 무대 밖으로 나가고, 조상(`.frame`·`.issue-frame`)이
+   `overflow: hidden` 이라 **잘린 채 조용히 사라진다** — 가로 스크롤바조차 생기지 않아
+   화면을 직접 좁혀 보기 전에는 모른다.
+   2026-09-09 실측 — 결함이 둘이고 무게가 다르다.
+   ① 인라인 크기를 박는 시뮬(hidpi): **내용이 잘려 사라진다.**
+      제4호 표지 320px 에서 캔버스 440px 중 59%만 보이고 슬라이더까지 함께 잘렸다.
+   ② 인라인이 없는 나머지: 481~530px 에서 **테두리 밖으로 최대 21px 삐져나온다**(500px).
+      잘리지는 않는다 — 클립 경계까지 1px 남았다. 눈에 거슬릴 뿐 내용은 남아 있다. */
 .sim-canvas-wrap {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .sim-canvas-wrap canvas {
   display: block;
   background: #0d0d0a;
   border: 1px solid var(--line);
+  /* 좁아지면 비율을 지키며 줄어든다.
+     `height: auto` 라야 비트맵 비율(width/height 속성)에서 높이를 끌어온다 —
+     높이를 px 로 박으면 폭만 줄어 그림이 눌린다. */
+  max-width: 100%;
+  height: auto;
 }
 
 .sim-legend {
