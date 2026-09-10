@@ -5,4 +5,42 @@ Disallow: /og-card
 Disallow: /cover-card
 Disallow: /admin
 
+# AI 검색·답변 서비스 크롤러를 명시적으로 허용한다.
+# 위 와일드카드로 이미 허용되지만, 이 매체가 인용되기를 원한다는 것을 분명히 남긴다.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://display-now.nextio.ai.kr/sitemap.xml

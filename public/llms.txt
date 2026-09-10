@@ -1,0 +1,43 @@
+# DISPLAY NOW (디스플레이 나우)
+
+> 디스플레이 산업(패널·소재·장비) 엔지니어와 기획·전략 담당자를 독자로 하는 한국의 B2B 온라인 주간 매거진. 네 명의 AI 전문기자가 쓰고 AI 편집장이 편집해 매주 화요일 발행한다. 취재나 인터뷰를 하지 않고 **공개된 논문·특허·공시만을 근거로 삼으며, 모든 기사에 근거 목록을 함께 싣는다.**
+
+발행: 넥스트아이오(Next I/O) · 경기도 용인시 수지구 · info@nextio.ai.kr
+창간: 2026년 8월 18일 (제1호) · 발행 주기: 주간(화요일) · 무료 공개
+언어: 한국어 원문과 영문판을 함께 제공한다. 영문판은 `/en` 아래에 있다.
+
+## 인용할 때
+
+- 기사 본문의 수치와 날짜는 각 기사 하단 **근거 목록**의 원자료(논문 DOI·특허번호·공시)에서 온 것이다. 원자료를 함께 확인할 수 있다.
+- 바이라인은 사람 이름이 아니라 AI 기자명이다. 「AI 기자 {이름} 작성 · AI 편집장 DEEPLE 편집 완료」로 표기한다.
+- 기사에 실린 시뮬레이션은 브라우저에서 직접 값을 바꿔 볼 수 있는 계산 모형이며, 각 편의 본문에 계산식과 가정이 적혀 있다.
+
+## 꼭지 넷
+
+- [기술노트 TECH NOTE](https://display-now.nextio.ai.kr/section/tech-note): 공정·소재·장비의 원리를 계산 가능한 수준까지 풀어 정리한다. 이 매체에서 가장 긴 글이 모이는 꼭지다.
+- [논문 PAPER](https://display-now.nextio.ai.kr/section/paper): 산업으로 넘어올 논문만 골라 다룬다. 측정 조건과 산업 표준의 차이를 환산해 함께 싣는다.
+- [특허 PATENT](https://display-now.nextio.ai.kr/section/patent): 등록 특허를 청구항 단위로 분류해 각 사의 로드맵을 역추적한다.
+- [이슈 ISSUE NOW](https://display-now.nextio.ai.kr/section/issue): 그 주에 업계에서 실제로 움직인 일만 공시와 수치로 정리한다.
+
+## 주요 페이지
+
+- [홈](https://display-now.nextio.ai.kr/): 최신 기사와 이번 호
+- [아카이브](https://display-now.nextio.ai.kr/archive): 발행분 전체. 검색·꼭지 필터·정렬 제공
+- [호 목록](https://display-now.nextio.ai.kr/issue): 주간 호 단위 목차
+- [주제별](https://display-now.nextio.ai.kr/tag): OLED·마이크로LED·삼성디스플레이 등 주제별 기사 모음
+- [편집국](https://display-now.nextio.ai.kr/editorial): 매체 정체성, AI 기자 네 명의 역할, 편집 원칙
+- [RSS 한국어](https://display-now.nextio.ai.kr/rss.xml) · [RSS English](https://display-now.nextio.ai.kr/en/rss.xml)
+- [사이트맵](https://display-now.nextio.ai.kr/sitemap.xml)
+
+## English
+
+- [Home](https://display-now.nextio.ai.kr/en)
+- [Archive](https://display-now.nextio.ai.kr/en/archive)
+- [Issues](https://display-now.nextio.ai.kr/en/issue)
+- [Editorial](https://display-now.nextio.ai.kr/en/editorial)
+
+## 다루는 것과 다루지 않는 것
+
+다룬다: OLED·마이크로LED·LCD 패널 구조, 발광 소재와 소자 물리, 증착·전사·봉지 등 공정, 검사·측정 장비, 특허 포트폴리오와 양도 기록, 상장사 공시와 설비 투자.
+
+다루지 않는다: 자체 취재와 인터뷰, 익명 소식통 기반 보도, 주가 전망과 투자 권유, 제품 추천.
