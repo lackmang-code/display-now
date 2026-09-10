@@ -1,14 +1,20 @@
+# 방침: 검색과 인용은 허용하고, AI 학습 데이터로 쓰이는 것은 거부한다.
+# (2026-09-10 대표 결정)
+#
+# 학습 크롤러(GPTBot·ClaudeBot·CCBot·Google-Extended 등) 차단은
+# Cloudflare 관리형 robots.txt 블록이 이 파일 앞에 붙어 처리한다.
+# 그 블록은 새 크롤러가 나오면 자동으로 갱신된다 — 여기서 중복해 적지 않는다.
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
 Allow: /
 Disallow: /dev-sim-test
 Disallow: /og-card
 Disallow: /cover-card
 Disallow: /admin
 
-# AI 검색·답변 서비스 크롤러를 명시적으로 허용한다.
-# 위 와일드카드로 이미 허용되지만, 이 매체가 인용되기를 원한다는 것을 분명히 남긴다.
-User-agent: GPTBot
-Allow: /
+# 검색·인용 목적 크롤러를 이름으로 허용한다.
+# 학습용이 아니라 「사용자가 물으면 그때 읽어 가는」 쪽이다.
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -16,13 +22,10 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
-Allow: /
-
-User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
@@ -31,16 +34,10 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
 User-agent: Bingbot
 Allow: /
 
-User-agent: CCBot
+User-agent: Googlebot
 Allow: /
 
 Sitemap: https://display-now.nextio.ai.kr/sitemap.xml
