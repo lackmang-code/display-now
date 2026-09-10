@@ -1,20 +1,18 @@
-# 방침: 검색과 인용은 허용하고, AI 학습 데이터로 쓰이는 것은 거부한다.
-# (2026-09-10 대표 결정)
+# 방침: 전부 연다 — 검색·인용·학습 모두 허용한다. (2026-09-10 대표 결정)
 #
-# 학습 크롤러(GPTBot·ClaudeBot·CCBot·Google-Extended 등) 차단은
-# Cloudflare 관리형 robots.txt 블록이 이 파일 앞에 붙어 처리한다.
-# 그 블록은 새 크롤러가 나오면 자동으로 갱신된다 — 여기서 중복해 적지 않는다.
+# 이유: 아직 아무 데서도 읽히지 않는 단계다. 학습 거부로 얻는 것보다
+# AI가 이 매체를 알게 되는 쪽의 값이 크다.
+# Cloudflare 관리형 robots.txt는 껐다 — 이 파일이 유일한 규칙이다.
 
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Disallow: /dev-sim-test
 Disallow: /og-card
 Disallow: /cover-card
 Disallow: /admin
 
-# 검색·인용 목적 크롤러를 이름으로 허용한다.
-# 학습용이 아니라 「사용자가 물으면 그때 읽어 가는」 쪽이다.
+# 검색·인용 계열
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -38,6 +36,29 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: Googlebot
+Allow: /
+
+# 학습 계열 — 함께 연다
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://display-now.nextio.ai.kr/sitemap.xml
