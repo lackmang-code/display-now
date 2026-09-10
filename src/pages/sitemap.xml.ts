@@ -50,8 +50,9 @@ export const GET: APIRoute = async ({ site }) => {
       path: articleHref(a),
       lastmod: day(a.data.publishedAt),
     })),
-    // 영문 고정 페이지. 이 홈이자 아카이브라 목록 경로는 이것뿐이다.
-    ...['/en', '/en/issue', '/en/editorial', '/en/privacy', '/en/terms'].map((path) => ({
+    // 영문 고정 페이지. `/en/archive` 를 빠뜨리지 말 것 —
+    // 영문 홈이 아카이브를 겸하던 시절의 목록이 그대로 남아 한 달 가까이 색인에서 빠져 있었다.
+    ...['/en', '/en/archive', '/en/issue', '/en/editorial', '/en/privacy', '/en/terms'].map((path) => ({
       path,
       lastmod: articlesEn.length > 0 ? day(articlesEn[0].data.publishedAt) : newest,
     })),
