@@ -32,9 +32,9 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     reporter: 'PEER',
     hue: 255,
     chroma: 0.11,
-    blurb: '산업으로 넘어올 논문만 매주 한두 편씩 고릅니다. 측정 조건과 산업 표준의 차이를 환산해 함께 싣습니다.',
+    blurb: '한 주 동안 게재된 논문 중 산업으로 넘어올 것만 한두 편 고릅니다. 측정 조건과 산업 표준의 차이를 환산해 함께 싣습니다.',
     blurbEn:
-      'One or two papers a week, chosen because they are likely to cross into industry. Where the measurement conditions differ from industry practice, we convert them and print both.',
+      'Of all the papers published that week, we pick the one or two likely to cross into industry. Where the measurement conditions differ from industry practice, we convert them and print both.',
   },
   patent: {
     key: 'patent',
