@@ -1,0 +1,76 @@
+<svg viewBox="0 0 840 478" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="477" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Same titanium, two different pens</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">Where each pen is read · concept, not to scale · DESK</text>
+  <line x1="28" y1="78" x2="812" y2="78" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- ================= LEFT : EMR ================= -->
+  <text x="30" y="106" font-size="12" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Mono', monospace" letter-spacing="1">EMR · S PEN</text>
+  <text x="30" y="124" font-size="11.5" fill="#8a8a80">If the S Pen met a titanium plate</text>
+
+  <!-- pen -->
+  <rect x="302" y="92" width="16" height="44" rx="3" fill="#e8d6cf" stroke="#c2705a" stroke-width="1.2"/>
+  <path d="M302 136 L310 150 L318 136 Z" fill="#c2705a"/>
+
+  <!-- display stack -->
+  <rect x="30" y="158" width="330" height="58" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.2"/>
+  <text x="46" y="182" font-size="12.5" font-weight="600" fill="#4a4a44">Display stack</text>
+  <text x="46" y="200" font-size="11.5" fill="#6a6a62">cover, touch sensor, OLED</text>
+
+  <!-- field lines passing through -->
+  <path d="M310 150 C282 180, 282 200, 296 236" fill="none" stroke="#c2705a" stroke-width="1" stroke-dasharray="3 3"/>
+  <path d="M310 150 C338 180, 338 200, 324 236" fill="none" stroke="#c2705a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- digitizer -->
+  <rect x="30" y="236" width="330" height="40" rx="4" fill="#fbeeea" stroke="#c2705a" stroke-width="1.5"/>
+  <text x="46" y="261" font-size="12.5" font-weight="600" fill="#8a3a26">Digitizer layer (its own layer)</text>
+
+  <!-- metal plate -->
+  <rect x="30" y="288" width="330" height="40" rx="4" fill="#e9e9e5" stroke="#9a9a92" stroke-width="1.5"/>
+  <text x="46" y="313" font-size="12.5" font-weight="600" fill="#4a4a44">Titanium support (Fold7 onward)</text>
+
+  <!-- interference mark -->
+  <path d="M344 272 L336 282 L348 284 L340 294" fill="none" stroke="#c2705a" stroke-width="2"/>
+
+  <rect x="30" y="346" width="330" height="64" rx="5" fill="#fbeeea" stroke="#e8cbc3" stroke-width="1"/>
+  <text x="46" y="368" font-size="12" font-weight="600" fill="#8a3a26">Metal interferes with the digitizer</text>
+  <text x="46" y="386" font-size="11.5" fill="#7a4a3a">Fold3 to Fold6 used CFRP here instead.</text>
+  <text x="46" y="402" font-size="11.5" fill="#7a4a3a">Fold7 chose titanium and dropped the pen.</text>
+
+  <!-- ================= RIGHT : capacitive ================= -->
+  <text x="482" y="106" font-size="12" font-weight="600" fill="#2f6a4a" font-family="'IBM Plex Mono', monospace" letter-spacing="1">CAPACITIVE · APPLE PENCIL</text>
+  <text x="482" y="124" font-size="11.5" fill="#8a8a80">iPhone Duo</text>
+
+  <!-- pen -->
+  <rect x="752" y="92" width="16" height="44" rx="3" fill="#d6e8dc" stroke="#4f8f6a" stroke-width="1.2"/>
+  <path d="M752 136 L760 150 L768 136 Z" fill="#4f8f6a"/>
+
+  <!-- display stack, touch sensor highlighted -->
+  <rect x="482" y="158" width="330" height="118" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.2"/>
+  <text x="498" y="180" font-size="12.5" font-weight="600" fill="#4a4a44">Display stack</text>
+  <text x="498" y="198" font-size="11.5" fill="#6a6a62">polymer cover, glass, OLED, glass</text>
+
+  <rect x="498" y="212" width="298" height="46" rx="4" fill="#e7f3eb" stroke="#4f8f6a" stroke-width="1.5"/>
+  <text x="514" y="232" font-size="12.5" font-weight="600" fill="#2f6a4a">Touch sensor reads the pen tip</text>
+  <text x="514" y="249" font-size="11.5" fill="#4f7a60">same layer as finger touch</text>
+
+  <line x1="760" y1="150" x2="760" y2="212" stroke="#4f8f6a" stroke-width="1" stroke-dasharray="3 3"/>
+
+
+  <!-- titanium plate -->
+  <rect x="482" y="288" width="330" height="40" rx="4" fill="#e9e9e5" stroke="#9a9a92" stroke-width="1.5"/>
+  <text x="498" y="313" font-size="12.5" font-weight="600" fill="#4a4a44">Titanium plate (bottom of stack)</text>
+
+  <rect x="482" y="346" width="330" height="64" rx="5" fill="#e7f3eb" stroke="#bcd9c6" stroke-width="1"/>
+  <text x="498" y="368" font-size="12" font-weight="600" fill="#2f6a4a">No pen layer, nothing to interfere with</text>
+  <text x="498" y="386" font-size="11.5" fill="#4f7a60">Pencil works on both inner and outer screens</text>
+
+  <!-- divider -->
+  <line x1="420" y1="96" x2="420" y2="410" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- bottom note -->
+  <text x="30" y="432" font-size="12.5" fill="#4a4a44">Apple did not pick this pen for titanium. The Pencil was capacitive long before; that is why titanium could stay.</text>
+  <text x="30" y="451" font-size="11" fill="#8a8a80">Only named layers are shown. Apple describes 10 layers in total; layer order is simplified and thickness is not drawn.</text>
+  <text x="30" y="468" font-size="10.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from Newsis (2025-07-22), MacRumors (2026-09-09), Apple iPhone Duo and Apple Pencil (USB-C) specs.</text>
+</svg>

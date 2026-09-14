@@ -69,6 +69,26 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 5,
+    publishedAt: '2026-09-15',
+    weekStart: '2026-09-07',
+    // 헤드는 데스크 아이폰 듀오 편이다. 이번 주 가장 큰 사건이고 시뮬이 두 개 붙어 있다.
+    // 🔴 표지 문구 = 헤드 기사 제목 그대로 (2026-09-14 대표 지시). 처음에 표지 그림에 맞춰
+    // 따로 지었다가 「표지 제목과 칼럼 제목 통일하기로 하지 않았어?」로 걷어냈다.
+    // 기사 제목 자체가 펜·티타늄 갈래라 표지 그림(펜 시뮬)과도 맞는다.
+    // 두께 시뮬(duo-fold-thickness-demo)은 막대 둘이라 썸네일에서 무엇인지 안 읽혀 뺐다.
+    headline: '티타늄판을 넣고도 펜을 지킨 폴더블 아이폰 듀오',
+    deck: '애플이 첫 폴더블 아이폰 듀오를 내놓았습니다. 삼성이 티타늄 때문에 폴더블에서 내려놓은 펜을 애플은 티타늄을 넣고도 지켰습니다. 두 회사를 가른 것은 금속이 아니라 펜을 읽는 방식입니다. EMR 펜의 자기장은 판에 와전류를 일으켜 되돌아오고, 정전식 펜의 전기장은 판에 닿기 전에 OLED 음극에서 끝납니다.',
+    // 표지는 EMR·판 있음으로 잡는다. 정전식 쪽은 선이 음극에서 끝나 그림이 작고,
+    // EMR 쪽은 자기력선이 판에 눌려 휘는 모양이 한눈에 보인다. 버튼 하나로 반대편을 본다.
+    coverSim: 'pen-titanium-field-demo',
+    coverSimParams: { mode: 'emr', plate: true, d: 0.15, k: 1 },
+    headSlug: '2026-09-15-iphone-duo-crease-pen-thickness',
+    // 영문 호. 표지 문구가 비어 있으면 영문 호 페이지를 만들지 않는다.
+    headlineEn: 'iPhone Duo keeps its pen despite a titanium plate',
+    deckEn: "Apple has launched its first foldable, the iPhone Duo. Samsung dropped the pen from its foldables because of titanium; Apple kept it with titanium inside. What separated the two was not the metal but how the pen is read. An EMR pen's magnetic field drives eddy currents in the plate that push back, while a capacitive pen's electric field ends at the OLED cathode before it reaches the plate.",
+  },
+  {
     no: 4,
     publishedAt: '2026-09-08',
     weekStart: '2026-08-31',

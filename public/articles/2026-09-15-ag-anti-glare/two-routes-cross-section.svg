@@ -1,0 +1,114 @@
+<svg viewBox="0 0 900 552" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="551" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">Two ways to make the same anti-glare</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">What sits on the outside decides which one you can use</text>
+  <line x1="450" y1="86" x2="450" y2="522" stroke="#e3e3dd" stroke-width="1"/>
+
+  <text x="44" y="104" font-size="19" font-weight="700" fill="#12120e">Cover window present</text>
+  <text x="44" y="126" font-size="15.6" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Smartphone &#183; tablet &#183; industrial glass</text>
+
+  <g fill="none" stroke="#3f5f8c" stroke-width="1.5" opacity="0.85">
+    <line x1="78" y1="160" x2="254.60000000000002" y2="252"/>
+    <line x1="258.6" y1="254" x2="192.60000000000002" y2="166"/>
+    <line x1="258.6" y1="254" x2="240.60000000000002" y2="158"/>
+    <line x1="258.6" y1="254" x2="292.6" y2="168"/>
+    <line x1="258.6" y1="254" x2="334.6" y2="188"/>
+  </g>
+  <circle cx="258.6" cy="254" r="4" fill="#3f5f8c"/>
+  <text x="50" y="150" font-size="15.6" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">one ray in</text>
+  <text x="408" y="150" font-size="15.6" fill="#3f5f8c" text-anchor="end" font-family="'IBM Plex Mono', monospace">many out</text>
+  <rect x="44" y="258" width="370" height="86" fill="#cfd8e0" stroke="#3f5f8c" stroke-width="1"/>
+  <path d="M 44 258 L 55.0 263.2 L 66.0 249.7 L 77.0 255.8 L 88.0 249.5 L 99.0 267.0 L 110.0 250.9 L 121.0 260.8 L 132.0 266.9 L 143.0 266.6 L 154.0 248.3 L 165.0 248.5 L 176.0 257.4 L 187.0 259.0 L 198.0 257.0 L 209.0 255.9 L 220.0 252.5 L 231.0 252.4 L 242.0 259.6 L 253.0 258.5 L 264.0 251.0 L 275.0 260.8 L 286.0 258.4 L 297.0 266.2 L 308.0 253.0 L 319.0 251.3 L 330.0 260.8 L 341.0 264.4 L 352.0 248.4 L 363.0 265.6 L 374.0 258.9 L 385.0 258.9 L 396.0 265.8 L 407.0 265.7 L 414 258" fill="#cfd8e0" stroke="#3f5f8c" stroke-width="1.6"/>
+  <text x="229" y="304" font-size="16.9" fill="#12120e" text-anchor="middle">Strengthened cover glass</text>
+  <text x="229" y="326" font-size="14.5" fill="#3f5f8c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">the glass itself is etched away</text>
+  <rect x="44" y="344" width="370" height="16" fill="#e8e4da" stroke="#c9c9c0" stroke-width="0.8"/>
+  <text x="229" y="356" font-size="13" fill="#6a6a60" text-anchor="middle" font-family="'IBM Plex Mono', monospace">OCA</text>
+  <rect x="44" y="360" width="370" height="44" fill="#2a2a2e"/>
+  <text x="229" y="387" font-size="16.2" fill="#fdfdfc" text-anchor="middle">Display panel</text>
+
+  <text x="44" y="466" font-size="15.6" font-weight="700" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">ACID ETCHING</text>
+  <text x="44" y="488" font-size="15.6" fill="#4d4d45">HF or NH&#8324;HF&#8322; 0.5&#8211;6 wt%. Nothing is added.</text>
+  <text x="44" y="510" font-size="15.6" fill="#4d4d45">Haze from the surface only. Ra 0.1&#8211;0.6 &#181;m.</text>
+
+  <text x="486" y="104" font-size="19" font-weight="700" fill="#12120e">No cover window</text>
+  <text x="486" y="126" font-size="15.6" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Notebook &#183; monitor &#183; industrial panel</text>
+
+  <g fill="none" stroke="#c0642b" stroke-width="1.5" opacity="0.85">
+    <line x1="520" y1="160" x2="696.6" y2="252"/>
+    <line x1="700.6" y1="254" x2="634.6" y2="166"/>
+    <line x1="700.6" y1="254" x2="682.6" y2="158"/>
+    <line x1="700.6" y1="254" x2="734.6" y2="168"/>
+    <line x1="700.6" y1="254" x2="776.6" y2="188"/>
+  </g>
+  <circle cx="700.6" cy="254" r="4" fill="#c0642b"/>
+  <text x="492" y="150" font-size="15.6" fill="#c0642b" font-family="'IBM Plex Mono', monospace">one ray in</text>
+  <text x="850" y="150" font-size="15.6" fill="#c0642b" text-anchor="end" font-family="'IBM Plex Mono', monospace">many out</text>
+  <rect x="486" y="258" width="370" height="44" fill="#f0dcc4" stroke="#c0642b" stroke-width="1"/>
+  <path d="M 486 258 L 503.0 262.1 L 520.0 260.2 L 537.0 256.9 L 554.0 257.7 L 571.0 254.6 L 588.0 252.9 L 605.0 261.9 L 622.0 254.6 L 639.0 262.7 L 656.0 251.6 L 673.0 262.3 L 690.0 258.2 L 707.0 264.7 L 724.0 253.6 L 741.0 261.9 L 758.0 262.2 L 775.0 262.3 L 792.0 255.4 L 809.0 262.0 L 826.0 265.3 L 843.0 259.3 L 856 258" fill="#f0dcc4" stroke="#c0642b" stroke-width="1.6"/>
+
+  <circle cx="511.6" cy="280.5" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="554.8" cy="272.6" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="598.2" cy="282.6" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="645.4" cy="272.2" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="690.8" cy="285.0" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="730.5" cy="272.9" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="777.0" cy="280.0" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="822.7" cy="286.9" r="8" fill="none" stroke="#c0642b" stroke-width="1.4"/>
+  <circle cx="722.2" cy="287.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="690.5" cy="274.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="640.5" cy="289.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="632.6" cy="289.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="740.2" cy="278.9" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="678.9" cy="277.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="547.0" cy="273.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="782.5" cy="267.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="505.4" cy="282.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="547.9" cy="283.4" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="691.5" cy="297.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="754.3" cy="294.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="806.5" cy="263.5" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="677.2" cy="278.7" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="508.2" cy="265.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="572.3" cy="296.2" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="635.6" cy="288.6" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="720.4" cy="276.5" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="667.7" cy="282.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="557.1" cy="263.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="582.2" cy="292.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="791.8" cy="269.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="508.1" cy="286.9" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="532.2" cy="283.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="497.0" cy="268.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="640.5" cy="286.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="710.1" cy="268.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="557.6" cy="288.9" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="629.1" cy="292.4" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="704.8" cy="277.7" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="595.8" cy="266.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="712.1" cy="271.6" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="573.3" cy="286.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="799.1" cy="285.7" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="671.0" cy="271.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="632.1" cy="284.9" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="628.4" cy="265.9" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="681.3" cy="294.6" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="498.8" cy="262.8" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="577.2" cy="269.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="611.7" cy="281.6" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="731.7" cy="264.0" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="755.6" cy="292.1" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <circle cx="836.0" cy="274.3" r="1.7" fill="#8c6a3c" opacity="0.8"/>
+  <text x="671" y="322" font-size="16.9" fill="#12120e" text-anchor="middle">Anti-glare hard coating</text>
+  <rect x="486" y="302" width="370" height="24" fill="#efeade" stroke="#b8b2a2" stroke-width="0.9" opacity="0"/>
+  <rect x="486" y="330" width="370" height="24" fill="#efeade" stroke="#b8b2a2" stroke-width="0.9"/>
+  <text x="671" y="347" font-size="14" fill="#6a6a60" text-anchor="middle" font-family="'IBM Plex Mono', monospace">TAC base film</text>
+  <rect x="486" y="354" width="370" height="40" fill="#ddd7e8" stroke="#6b5b8c" stroke-width="1"/>
+  <text x="671" y="379" font-size="16.2" fill="#12120e" text-anchor="middle">Front polarizer</text>
+  <rect x="486" y="394" width="370" height="44" fill="#2a2a2e"/>
+  <text x="671" y="421" font-size="16.2" fill="#fdfdfc" text-anchor="middle">Display panel</text>
+
+  <text x="486" y="466" font-size="15.6" font-weight="700" fill="#c0642b" font-family="'IBM Plex Mono', monospace">COAT AND CURE</text>
+  <text x="486" y="488" font-size="15.6" fill="#4d4d45">Gravure or bar coat, UV 300 mJ/cm&#178; under N&#8322;.</text>
+  <text x="486" y="510" font-size="15.6" fill="#4d4d45">Haze from two places, and it protects the polarizer.</text>
+  <text x="44" y="536" font-size="13.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Schematic. Not to scale.</text>
+</svg>

@@ -1,0 +1,122 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="639" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">Haze has two addresses</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">The total is one number on the datasheet, but where it comes from is a design choice</text>
+
+  <text x="60" y="104" font-size="19" font-weight="700" fill="#12120e">Where the light bends</text>
+  <rect x="60" y="172" width="410" height="70" fill="#f0dcc4" stroke="#c0642b" stroke-width="1"/>
+  <path d="M 60 172 L 75.0 176.5 L 90.0 179.4 L 105.0 180.2 L 120.0 166.3 L 135.0 180.2 L 150.0 166.6 L 165.0 168.3 L 180.0 180.3 L 195.0 176.0 L 210.0 174.5 L 225.0 165.5 L 240.0 163.6 L 255.0 164.9 L 270.0 174.0 L 285.0 179.5 L 300.0 163.7 L 315.0 172.8 L 330.0 166.9 L 345.0 169.5 L 360.0 178.6 L 375.0 163.9 L 390.0 163.2 L 405.0 177.8 L 420.0 172.5 L 435.0 169.3 L 450.0 163.7 L 465.0 170.9 L 470 172" fill="#f0dcc4" stroke="#c0642b" stroke-width="1.6"/>
+  <rect x="60" y="242" width="410" height="26" fill="#efeade" stroke="#b8b2a2" stroke-width="0.9"/>
+  <text x="265" y="260" font-size="14.5" fill="#6a6a60" text-anchor="middle" font-family="'IBM Plex Mono', monospace">TAC base film</text>
+
+  <circle cx="92.4" cy="219.0" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="154.6" cy="204.3" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="217.1" cy="205.3" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="276.7" cy="202.0" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="331.6" cy="211.6" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="395.1" cy="206.6" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="452.2" cy="197.8" r="8" fill="none" stroke="#c0642b" stroke-width="1.3" opacity="0.8"/>
+  <circle cx="418.0" cy="204.3" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="190.7" cy="212.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="249.2" cy="221.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="175.7" cy="184.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="380.9" cy="206.0" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="71.2" cy="224.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="135.8" cy="217.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="154.9" cy="215.7" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="199.0" cy="217.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="362.4" cy="219.1" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="362.1" cy="196.7" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="135.5" cy="186.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="166.6" cy="181.3" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="335.0" cy="190.5" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="110.7" cy="194.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="205.5" cy="187.0" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="400.5" cy="180.7" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="209.0" cy="210.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="228.7" cy="224.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="366.7" cy="222.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="271.1" cy="214.3" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="393.7" cy="182.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="160.1" cy="205.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="131.7" cy="198.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="123.3" cy="183.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="457.2" cy="205.9" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="319.5" cy="220.0" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="215.0" cy="210.2" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="166.8" cy="216.0" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="189.8" cy="214.6" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="452.5" cy="210.7" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="406.7" cy="227.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="79.4" cy="237.7" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="394.9" cy="228.5" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="285.5" cy="184.9" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="327.1" cy="215.4" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="113.0" cy="185.4" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="258.8" cy="183.4" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="102.5" cy="216.8" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <circle cx="305.2" cy="187.5" r="1.6" fill="#8c6a3c" opacity="0.75"/>
+  <g fill="none" stroke-width="2">
+    <path d="M 100 124 L 156 170" stroke="#c0642b"/>
+    <path d="M 156 170 L 212 132" stroke="#c0642b" stroke-dasharray="5 3"/>
+    <path d="M 272 124 L 328 212" stroke="#3f5f8c"/>
+    <path d="M 328 212 L 408 136" stroke="#3f5f8c" stroke-dasharray="5 3"/>
+  </g>
+  <circle cx="156" cy="170" r="4.5" fill="#c0642b"/>
+  <circle cx="328" cy="212" r="4.5" fill="#3f5f8c"/>
+  <line x1="156" y1="170" x2="100" y2="296" stroke="#c0642b" stroke-width="0.9" opacity="0.55"/>
+  <line x1="328" y1="212" x2="292" y2="296" stroke="#3f5f8c" stroke-width="0.9" opacity="0.55"/>
+  <text x="94" y="308" font-size="15.6" fill="#c0642b" font-family="'IBM Plex Mono', monospace">OUTER HAZE</text>
+  <text x="94" y="328" font-size="14.5" fill="#4d4d45">bends at the air interface</text>
+  <text x="286" y="308" font-size="15.6" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">INNER HAZE</text>
+  <text x="286" y="328" font-size="14.5" fill="#4d4d45">bends at a particle inside</text>
+
+  <rect x="510" y="128" width="362" height="172" fill="#f4f2ea" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="530" y="158" font-size="15.6" font-weight="700" fill="#12120e" font-family="'IBM Plex Mono', monospace">HOW THEY ARE SEPARATED</text>
+  <text x="530" y="188" font-size="15.6" fill="#4d4d45">1. Measure total haze</text>
+  <text x="530" y="214" font-size="15.6" fill="#4d4d45">2. Attach a zero-haze adhesive film to</text>
+  <text x="548" y="234" font-size="15.6" fill="#4d4d45">flatten the surface, measure again.</text>
+  <text x="548" y="254" font-size="15.6" fill="#4d4d45">That is the inner haze</text>
+  <text x="530" y="280" font-size="15.6" fill="#4d4d45">3. Outer haze = total minus inner</text>
+  <text x="530" y="328" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">HM-150 &#183; JIS K 7136 &#183; 4 &#215; 4 cm &#183; n = 3</text>
+
+  <text x="60" y="352" font-size="19" font-weight="700" fill="#12120e">Outer haze divided by inner haze, and where each design sits</text>
+  <rect x="150" y="366" width="142.1" height="126" fill="#3f5f8c" opacity="0.08"/>
+  <rect x="414.5" y="366" width="345.5" height="126" fill="#c0642b" opacity="0.08"/>
+  <line x1="292.1" y1="366" x2="292.1" y2="492" stroke="#3f5f8c" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="414.5" y1="366" x2="414.5" y2="492" stroke="#c0642b" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="158" y="384" font-size="15" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">BELOW 0.5</text>
+  <text x="158" y="402" font-size="14.5" fill="#4d4d45">fringes appear</text>
+  <text x="752" y="384" font-size="15" fill="#c0642b" text-anchor="end" font-family="'IBM Plex Mono', monospace">ABOVE 2</text>
+  <text x="752" y="402" font-size="14.5" fill="#4d4d45" text-anchor="end">sparkle, clarity drops</text>
+  <line x1="150" y1="492" x2="760" y2="492" stroke="#9a9a90" stroke-width="1.2"/>
+
+  <line x1="150.0" y1="487" x2="150.0" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="150.0" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.1</text>
+  <line x1="247.0" y1="487" x2="247.0" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="247.0" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.3</text>
+  <line x1="353.3" y1="487" x2="353.3" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="353.3" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">1</text>
+  <line x1="450.3" y1="487" x2="450.3" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="450.3" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">3</text>
+  <line x1="556.7" y1="487" x2="556.7" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="556.7" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">10</text>
+  <line x1="653.7" y1="487" x2="653.7" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="653.7" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">30</text>
+  <line x1="760.0" y1="487" x2="760.0" y2="497" stroke="#9a9a90" stroke-width="1"/>
+  <text x="760.0" y="516" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">100</text>
+  <text x="134" y="497" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">inner-heavy</text>
+  <text x="776" y="497" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">outer-heavy</text>
+  <rect x="292.1" y="420" width="122.4" height="12" fill="#2f7d5c" opacity="0.88"/>
+  <text x="423.5" y="431" font-size="14.5" fill="#2f7d5c" text-anchor="start" font-family="'IBM Plex Mono', monospace">ratio fixed by design</text>
+  <rect x="450.3" y="444" width="308.8" height="12" fill="#c0642b" opacity="0.88"/>
+  <text x="441.3" y="455" font-size="14.5" fill="#c0642b" text-anchor="end" font-family="'IBM Plex Mono', monospace">surface-led film</text>
+  <rect x="230.9" y="468" width="57.6" height="12" fill="#3f5f8c" opacity="0.88"/>
+  <text x="297.5" y="479" font-size="14.5" fill="#3f5f8c" text-anchor="start" font-family="'IBM Plex Mono', monospace">inner-led film</text>
+  <line x1="252.7" y1="540" x2="454.4" y2="540" stroke="#7a6a3c" stroke-width="2.4"/>
+  <line x1="252.7" y1="534" x2="252.7" y2="546" stroke="#7a6a3c" stroke-width="2.4"/>
+  <line x1="454.4" y1="534" x2="454.4" y2="546" stroke="#7a6a3c" stroke-width="2.4"/>
+  <text x="353.5" y="564" font-size="15.6" fill="#7a6a3c" text-anchor="middle">0.32 to 3.14 by changing only the particle surface treatment</text>
+  <text x="60" y="602" font-size="14.5" fill="#4d4d45">The inner-led film puts 10 to 13% surface haze inside a 40 to 50% total. The surface-led film keeps inner haze</text>
+  <text x="60" y="622" font-size="14.5" fill="#4d4d45">at 1 to 25% of the total. Values from film makers&#8217; published specifications; the first ratio is our own arithmetic.</text>
+</svg>

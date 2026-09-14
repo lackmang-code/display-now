@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 345" width="680" height="345" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="680" height="345" fill="#ffffff"/>
+  <text x="24" y="30" font-size="13.5" font-weight="700" fill="#1d1d1b">Samsung Display color conversion layer patents: what each specification is written around</text>
+  <g font-size="12" fill="#444">
+    <rect x="24" y="46" width="14" height="14" fill="#b4692a"/><text x="44" y="58">LCD-centered</text>
+    <rect x="150" y="46" width="14" height="14" fill="#2f62c9"/><text x="170" y="58">OLED-centered</text>
+    <rect x="286" y="46" width="14" height="14" fill="#cfccc2"/><text x="306" y="58">Mixed, generic list or other</text>
+  </g>
+
+  <!-- 막대: 폭 460px = 100% -->
+  <g font-size="13" fill="#1d1d1b">
+    <text x="24" y="104" font-weight="600">Priority up to 2016</text><text x="24" y="121" fill="#6b6b66" font-size="12">13 patents</text>
+    <rect x="160" y="88" width="353.8" height="34" fill="#b4692a"/>
+    <rect x="513.8" y="88" width="35.4" height="34" fill="#2f62c9"/>
+    <rect x="549.2" y="88" width="70.8" height="34" fill="#cfccc2"/>
+    <text x="337" y="110" fill="#fff" font-weight="700" text-anchor="middle">10</text>
+    <text x="531.5" y="110" fill="#fff" font-weight="700" text-anchor="middle">1</text>
+    <text x="584.6" y="110" fill="#444" font-weight="700" text-anchor="middle">2</text>
+
+    <text x="24" y="170" font-weight="600">2017 to 2018</text><text x="24" y="187" fill="#6b6b66" font-size="12">31 patents</text>
+    <rect x="160" y="154" width="163.2" height="34" fill="#b4692a"/>
+    <rect x="323.2" y="154" width="163.2" height="34" fill="#2f62c9"/>
+    <rect x="486.4" y="154" width="133.6" height="34" fill="#cfccc2"/>
+    <text x="241.6" y="176" fill="#fff" font-weight="700" text-anchor="middle">11</text>
+    <text x="404.8" y="176" fill="#fff" font-weight="700" text-anchor="middle">11</text>
+    <text x="553.2" y="176" fill="#444" font-weight="700" text-anchor="middle">9</text>
+
+    <text x="24" y="262" font-weight="600">2019 to 2020</text><text x="24" y="279" fill="#6b6b66" font-size="12">76 patents</text>
+    <rect x="160" y="246" width="12.1" height="34" fill="#b4692a"/>
+    <rect x="172.1" y="246" width="145.3" height="34" fill="#2f62c9"/>
+    <rect x="317.4" y="246" width="302.6" height="34" fill="#cfccc2"/>
+    <text x="166" y="240" fill="#b4692a" font-weight="700" text-anchor="middle">2</text>
+    <text x="244.8" y="268" fill="#fff" font-weight="700" text-anchor="middle">24</text>
+    <text x="468.7" y="268" fill="#444" font-weight="700" text-anchor="middle">50</text>
+  </g>
+
+  <line x1="160" y1="212" x2="620" y2="212" stroke="#1d1d1b" stroke-dasharray="4 3"/>
+  <text x="620" y="206" font-size="12" fill="#1d1d1b" text-anchor="end">Oct 10, 2019: Samsung Display says its large displays move from LCD to QD</text>
+
+  <text x="24" y="316" font-size="11.5" fill="#6b6b66">Rule: LCD-centered when LCD is mentioned 10 times or more and more than twice</text><text x="24" y="333" font-size="11.5" fill="#6b6b66">the OLED and inorganic LED mentions combined. OLED-centered by the same rule.</text>
+</svg>

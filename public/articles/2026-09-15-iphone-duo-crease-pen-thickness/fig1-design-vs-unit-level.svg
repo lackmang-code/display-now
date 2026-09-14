@@ -1,0 +1,60 @@
+<svg viewBox="0 0 840 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Same design for every phone, or a fix for each one</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">Crease countermeasures in foldables · DESK</text>
+  <line x1="28" y1="78" x2="812" y2="78" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- ===== Row A : design level ===== -->
+  <text x="30" y="106" font-size="11.5" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="1.2">DESIGN LEVEL · IDENTICAL IN EVERY UNIT</text>
+
+  <rect x="30" y="118" width="380" height="118" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="46" y="142" font-size="13" font-weight="600" fill="#4a2d63">Samsung Display · Flex Titanium</text>
+  <text x="46" y="166" font-size="12" fill="#5e4478">Titanium film on a titanium support plate</text>
+  <text x="46" y="186" font-size="12" fill="#5e4478">Micro-holes in the bending zone spread the stress</text>
+  <text x="46" y="220" font-size="11" fill="#8a76a0" font-family="'IBM Plex Mono', monospace">Galaxy Z Fold8</text>
+
+  <rect x="432" y="118" width="380" height="118" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="448" y="142" font-size="13" font-weight="600" fill="#4a2d63">Apple · 10-layer folding stack</text>
+  <text x="448" y="166" font-size="12" fill="#5e4478">Polymer cover, glass above and below the display,</text>
+  <text x="448" y="184" font-size="12" fill="#5e4478">titanium plate at the bottom</text>
+  <text x="448" y="202" font-size="12" fill="#5e4478">Adhesive lets layers glide like pages of a book</text>
+  <text x="448" y="220" font-size="11" fill="#8a76a0" font-family="'IBM Plex Mono', monospace">iPhone Duo</text>
+
+  <!-- arrow down to row B, under Apple only -->
+  <line x1="622" y1="236" x2="622" y2="266" stroke="#c2705a" stroke-width="1.5"/>
+  <path d="M616 259 L622 269 L628 259 Z" fill="#c2705a"/>
+  <text x="634" y="258" font-size="11.5" fill="#8a3a26" font-family="'IBM Plex Mono', monospace">then, per unit</text>
+
+  <!-- ===== Row B : unit level ===== -->
+  <text x="30" y="292" font-size="11.5" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Mono', monospace" letter-spacing="1.2">UNIT LEVEL · MEASURED AND CORRECTED ON EACH PHONE</text>
+
+  <rect x="30" y="304" width="238" height="74" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="46" y="326" font-size="11" fill="#b0705c" font-family="'IBM Plex Mono', monospace">STEP 1</text>
+  <text x="46" y="346" font-size="12.5" font-weight="600" fill="#8a3a26">Match each hinge to its</text>
+  <text x="46" y="364" font-size="12.5" font-weight="600" fill="#8a3a26">best-fit housing (AI)</text>
+
+  <line x1="268" y1="341" x2="296" y2="341" stroke="#c2705a" stroke-width="1.4"/>
+  <path d="M290 336 L299 341 L290 346 Z" fill="#c2705a"/>
+
+  <rect x="302" y="304" width="238" height="74" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="318" y="326" font-size="11" fill="#b0705c" font-family="'IBM Plex Mono', monospace">STEP 2</text>
+  <text x="318" y="346" font-size="12.5" font-weight="600" fill="#8a3a26">Confocal laser scans the</text>
+  <text x="318" y="364" font-size="12.5" font-weight="600" fill="#8a3a26">topology of every unit</text>
+
+  <line x1="540" y1="341" x2="568" y2="341" stroke="#c2705a" stroke-width="1.4"/>
+  <path d="M562 336 L571 341 L562 346 Z" fill="#c2705a"/>
+
+  <rect x="574" y="304" width="238" height="74" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="590" y="326" font-size="11" fill="#b0705c" font-family="'IBM Plex Mono', monospace">STEP 3</text>
+  <text x="590" y="346" font-size="12.5" font-weight="600" fill="#8a3a26">Print up to 25 micro-layers</text>
+  <text x="590" y="364" font-size="12.5" font-weight="600" fill="#8a3a26">of photopolymer (3D)</text>
+
+  <!-- ===== Not disclosed ===== -->
+  <rect x="30" y="398" width="782" height="44" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="46" y="418" font-size="12" font-weight="600" fill="#4a4a44">Not disclosed:</text>
+  <text x="140" y="418" font-size="12" fill="#6a6a62">which part's surface is scanned, and where the printed layers go.</text>
+  <text x="46" y="434" font-size="11" fill="#8a8a80">Apple describes the goal as removing "residual waviness". Its effect on the screen has not been quantified.</text>
+
+  <text x="30" y="460" font-size="10.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from Apple, TechCrunch (Johny Srouji, 2026-09-09), MacRumors (2026-09-09), Samsung Display.</text>
+</svg>

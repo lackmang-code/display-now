@@ -1,0 +1,86 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">What lower gloss costs</text>
+  <text x="28" y="63" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.4">AGC acid-etched anti-glare glass &#183; same gloss, different product</text>
+
+  <text x="34" y="86" font-size="17.5" font-weight="700" fill="#12120e">Haze rises as gloss falls</text>
+  <text x="34" y="108" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Haze  %</text>
+  <line x1="80" y1="358" x2="430" y2="358" stroke="#9a9a90" stroke-width="1"/>
+  <line x1="80" y1="116" x2="80" y2="358" stroke="#9a9a90" stroke-width="1"/>
+  <line x1="80" y1="358.0" x2="430" y2="358.0" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="72" y="363.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">0</text>
+  <line x1="80" y1="303.0" x2="430" y2="303.0" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="72" y="308.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">5</text>
+  <line x1="80" y1="248.0" x2="430" y2="248.0" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="72" y="253.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10</text>
+  <line x1="80" y1="193.0" x2="430" y2="193.0" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="72" y="198.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">15</text>
+  <line x1="80" y1="138.0" x2="430" y2="138.0" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="72" y="143.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">20</text>
+  <text x="109.2" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">40</text>
+  <text x="167.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">60</text>
+  <text x="225.8" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">80</text>
+  <text x="284.2" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">100</text>
+  <text x="342.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">120</text>
+  <text x="400.8" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">140</text>
+  <text x="255.0" y="402" font-size="15.6" fill="#4d4d45" text-anchor="middle">Gloss 60&#176;  G.U.</text>
+  <path d="M138.3 219.4 L196.7 311.8 L255.0 333.8 L342.5 351.4 L400.8 354.7" fill="none" stroke="#3f5f8c" stroke-width="2.2"/>
+  <circle cx="138.3" cy="219.4" r="4" fill="#3f5f8c"/>
+  <circle cx="196.7" cy="311.8" r="4" fill="#3f5f8c"/>
+  <circle cx="255.0" cy="333.8" r="4" fill="#3f5f8c"/>
+  <circle cx="342.5" cy="351.4" r="4" fill="#3f5f8c"/>
+  <circle cx="400.8" cy="354.7" r="4" fill="#3f5f8c"/>
+  <path d="M109.2 138.0 L138.3 235.9 L196.7 297.5 L255.0 318.4 L342.5 339.3" fill="none" stroke="#c0642b" stroke-width="2.2"/>
+  <circle cx="109.2" cy="138.0" r="4" fill="#c0642b"/>
+  <circle cx="138.3" cy="235.9" r="4" fill="#c0642b"/>
+  <circle cx="196.7" cy="297.5" r="4" fill="#c0642b"/>
+  <circle cx="255.0" cy="318.4" r="4" fill="#c0642b"/>
+  <circle cx="342.5" cy="339.3" r="4" fill="#c0642b"/>
+  <text x="484" y="86" font-size="17.5" font-weight="700" fill="#12120e">Clarity falls with it</text>
+  <text x="484" y="108" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Clarity  %</text>
+  <line x1="530" y1="358" x2="872" y2="358" stroke="#9a9a90" stroke-width="1"/>
+  <line x1="530" y1="116" x2="530" y2="358" stroke="#9a9a90" stroke-width="1"/>
+  <line x1="530" y1="340.7" x2="872" y2="340.7" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="522" y="345.7" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">30</text>
+  <line x1="530" y1="271.6" x2="872" y2="271.6" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="522" y="276.6" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">50</text>
+  <line x1="530" y1="202.4" x2="872" y2="202.4" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="522" y="207.4" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">70</text>
+  <line x1="530" y1="133.3" x2="872" y2="133.3" stroke="#e3e3dd" stroke-width="1"/>
+  <text x="522" y="138.3" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">90</text>
+  <text x="558.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">40</text>
+  <text x="615.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">60</text>
+  <text x="672.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">80</text>
+  <text x="729.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">100</text>
+  <text x="786.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">120</text>
+  <text x="843.5" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">140</text>
+  <text x="701.0" y="402" font-size="15.6" fill="#4d4d45" text-anchor="middle">Gloss 60&#176;  G.U.</text>
+  <path d="M587.0 295.8 L644.0 250.8 L701.0 212.8 L786.5 157.5 L843.5 136.7" fill="none" stroke="#3f5f8c" stroke-width="2.2"/>
+  <circle cx="587.0" cy="295.8" r="4" fill="#3f5f8c"/>
+  <circle cx="644.0" cy="250.8" r="4" fill="#3f5f8c"/>
+  <circle cx="701.0" cy="212.8" r="4" fill="#3f5f8c"/>
+  <circle cx="786.5" cy="157.5" r="4" fill="#3f5f8c"/>
+  <circle cx="843.5" cy="136.7" r="4" fill="#3f5f8c"/>
+  <path d="M558.5 330.3 L587.0 285.4 L644.0 233.5 L701.0 181.7 L786.5 147.1" fill="none" stroke="#c0642b" stroke-width="2.2"/>
+  <circle cx="558.5" cy="330.3" r="4" fill="#c0642b"/>
+  <circle cx="587.0" cy="285.4" r="4" fill="#c0642b"/>
+  <circle cx="644.0" cy="233.5" r="4" fill="#c0642b"/>
+  <circle cx="701.0" cy="181.7" r="4" fill="#c0642b"/>
+  <circle cx="786.5" cy="147.1" r="4" fill="#c0642b"/>
+  <line x1="138.3" y1="116" x2="138.3" y2="358" stroke="#a86a63" stroke-width="0.9" stroke-dasharray="3 3" opacity="0.75"/>
+  <line x1="138.3" y1="219.4" x2="260.8" y2="155.6" stroke="#3f5f8c" stroke-width="0.9" opacity="0.7"/>
+  <line x1="138.3" y1="235.9" x2="260.8" y2="186.4" stroke="#c0642b" stroke-width="0.9" opacity="0.7"/>
+  <text x="265.8" y="160.6" font-size="15.6" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">VRD 12.6</text>
+  <text x="265.8" y="191.4" font-size="15.6" fill="#c0642b" font-family="'IBM Plex Mono', monospace">LST 11.1</text>
+  <text x="265.8" y="210.4" font-size="14.5" fill="#a86a63">both at gloss 50</text>
+
+  <g>
+    <line x1="80" y1="428" x2="117" y2="428" stroke="#3f5f8c" stroke-width="2.6"/>
+    <circle cx="98.5" cy="428" r="4" fill="#3f5f8c"/>
+    <text x="125" y="433" font-size="16.2" fill="#12120e">VRD  larger texture  Rsm 100&#8211;120 &#181;m</text>
+    <line x1="470" y1="428" x2="507" y2="428" stroke="#c0642b" stroke-width="2.6"/>
+    <circle cx="488.5" cy="428" r="4" fill="#c0642b"/>
+    <text x="515" y="433" font-size="16.2" fill="#12120e">LST  medium texture  Rsm 50&#8211;60 &#181;m</text>
+  </g>
+  <text x="80" y="455" font-size="13.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Typical values from the datasheet, not guaranteed specifications</text>
+</svg>
