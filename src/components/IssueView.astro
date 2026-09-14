@@ -110,6 +110,8 @@ const grouped = SECTION_ORDER.map((key) => ({
         <span class="issue-no">
           {collectRangeLabel(issue, lang)}
           {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>}
+          {/* 뒷표지가 없는 매체라 간행물 정보(ISSN)를 표지 머리에 둔다(2026-09-14 대표 지적) */}
+          {' · ISSN 3140-5487'}
         </span>
       </div>
 

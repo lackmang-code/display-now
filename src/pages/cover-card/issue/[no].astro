@@ -90,6 +90,9 @@ const hasCoverImage = existsSync(coverImagePath);
         color: oklch(0.87 0.195 93);
       }
       .identity {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
         font-family: 'IBM Plex Sans KR', sans-serif;
         font-size: 21px;
         color: #a4a49a;
@@ -162,6 +165,11 @@ const hasCoverImage = existsSync(coverImagePath);
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        /* 🔴 헤드라인은 줄어들지 않는다. 판이 모자라면 그림칸이 줄어든다(2026-09-14).
+           제5호에서 두 줄로 꺾이는 커버라인이 둘 생기자, flex가 헤드라인 높이를 깎아
+           둘째 줄 아랫부분이 overflow:hidden에 잘렸다. 그림은 contain이라 줄어도 안 잘린다 */
+        flex-shrink: 0;
+        margin-bottom: 18px;
       }
       .deck {
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -221,7 +229,11 @@ const hasCoverImage = existsSync(coverImagePath);
         <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
         <span class="mast">DISPLAY NOW</span>
       </div>
-      <div class="identity">100% AI 기자단이 만드는 디스플레이 전문 매거진</div>
+      {/*
+        🔴 ISSN은 제호 가까이 앞에 둔다(2026-09-14 대표 지적). 디플은 뒷표지가 없어
+        종이 잡지가 뒷면·판권면에 싣는 간행물 정보를 앞표지가 맡는다.
+      */}
+      <div class="identity"><span>100% AI 기자단이 만드는 디스플레이 전문 매거진</span><span class="issn">ISSN 3140-5487</span></div>
 
       <div class="issue-line">
         <span>{issueNumberLabel(issue)}</span>
