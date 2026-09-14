@@ -6,7 +6,7 @@ section: issue
 reporter: DESK
 publishedAt: 2026-09-15
 collectWeekStart: '2026-09-07'
-readingMinutes: 12
+readingMinutes: 14
 tags: [hot-issue, iPhone-Duo, Apple, foldable-OLED, crease-free, Apple-Pencil, S-Pen, EMR, digitizer, titanium, Samsung-Display, Galaxy-Z-Fold8]
 sources:
   - type: disclosure
@@ -35,6 +35,26 @@ sources:
     title: "Magnetic shield for use in a location sensing system (3M Innovative Properties, eddy currents in nearby conductors weaken the stylus power magnetic field, radial slots suppress eddy currents)"
     number: "US7916501B2"
     url: "https://patents.google.com/patent/US7916501B2/en"
+  - type: patent
+    title: "Touch device for passive resonant stylus, driving method for the same and touch system (HiDeep Inc., granted 2023-06-13, touch electrodes drive and sense a battery-free resonant pen and find its position where the electrode current reverses direction)"
+    number: "US11675446B2"
+    url: "https://patents.google.com/patent/US11675446B2/en"
+  - type: patent
+    title: "Pen and touch input system or controller (HiDeep Inc., granted 2024-11-12, a resonant-circuit pen sensed by metal mesh touch electrodes)"
+    number: "US12141375B2"
+    url: "https://patents.google.com/patent/US12141375B2/en"
+  - type: article
+    title: "HiDeep to start stylus mass production in the second half of next year, sales could grow tenfold (The Elec, 2022-04-01)"
+    url: "http://www.thelec.kr/news/articleView.html?idxno=16566"
+  - type: article
+    title: "HiDeep and Samsung Display cooperate on recognizing the S Pen without a digitizer or battery (The Elec, 2024-12-20, mass production targeted for the second half of 2025, national project May 2023 to December 2025, 2.2 billion won)"
+    url: "https://www.thelec.kr/news/articleView.html?idxno=31848"
+  - type: article
+    title: "Handwriting and thinner too: Samsung pursues pen input that needs no digitizer (Electronic Times, 2024-12-17, considered for the Galaxy Z Fold7, reported as an electrostatic method)"
+    url: "https://www.etnews.com/20241217000304"
+  - type: article
+    title: "When will HiDeep's stylus sales come? In talks on a mass production model (ZDNet Korea, 2026-03-20, passed global customer performance evaluation, aims to secure a mass production model in 2026, 2025 sales of 1.77 billion won, 2025 forecast of 383.4 billion won)"
+    url: "https://zdnet.co.kr/view/?no=20260320123908"
   - type: article
     title: "Samsung Galaxy Z Fold7 drops the S Pen (Newsis, 2025-07-22, about 0.6mm thinner by removing the digitizer, interference between the EMR S Pen and titanium material)"
     url: "https://www.newsis.com/view/NISX20250722_0003262037"
@@ -134,6 +154,34 @@ The reason the capacitive method avoids this problem lies in the layer order. Di
 
 A metal plate does not, however, mean that EMR is impossible. Patents from Samsung Electronics and 3M present ways to reduce eddy currents by cutting slits in the plate or inserting a magnetic shielding sheet. On the Z Fold7, Samsung did not choose to add countermeasures. It chose to remove the digitizer and cut thickness.
 
+## The digitizer-free pen Samsung has been preparing has sat at the threshold of mass production for four years
+
+**Samsung Display has been developing, with HiDeep, a technology that reads the pen through the screen's touch electrodes without a digitizer layer.** That technology, however, has never gone into a mass-produced product.
+
+HiDeep first announced a mass production date in 2022. As of March 2026, the target has retreated from "mass production" to "**securing a mass production model**".
+
+This technology is not an Apple-style capacitive pen but **a variant of EMR**. The pen holds only a resonant circuit of a coil and a capacitor, with no battery, and in that respect it is the same as the S Pen.
+
+The difference is that the job of sending a signal to the pen and reading the resonant signal that comes back falls **to the screen's touch electrodes rather than a separate digitizer**. If it works, the pen needs no battery, like the S Pen, and the device has no layer for the pen, like Apple's.
+
+HiDeep patent US11675446B2 (granted 2023) describes a structure in which the touch electrodes send a signal at the pen's resonant frequency and find the position where the direction of the current the pen induces in the electrodes reverses. US12141375B2 (granted 2024) covers a configuration that reads a resonant pen with existing metal mesh touch electrodes.
+
+### The mass production target slipped twice
+
+| Reported | Stated target | Source |
+|---|---|---|
+| April 2022 | Mass production of products using the stylus and touch solution from the second half of 2023 | The Elec |
+| December 2024 | Cooperation with Samsung Display, mass production targeted for the second half of 2025 | The Elec |
+| March 2026 | Passed global customer performance evaluation, aims to secure a mass production model in 2026 | ZDNet Korea |
+
+<div class="fig-cap">How the mass production target for HiDeep's digitizer-free, battery-free pen technology shifted. Dates are when the reports ran. The national project period in the December 2024 report was May 2023 to December 2025 (2.2 billion won).</div>
+
+HiDeep's 2025 sales were 1.77 billion won, down 70% from the year before, and the company attributed this to **delays in the adoption of its integrated touch and stylus solution**. The 2025 sales forecast presented in its 2022 prospectus was 383.4 billion won.
+
+Over the same period, Samsung Electronics' foldables did not get the pen back. In December 2024 a report said a digitizer-free pen input was being considered for the Galaxy Z Fold7, and that report described the method as capacitive. The Z Fold7, launched in July 2025, dropped the S Pen, and the 2026 Z Fold8 does not support a pen either.
+
+One thing is not confirmed by public sources. **How reading a resonant pen through touch electrodes coexists with a titanium plate under the display** is not disclosed in any patent or report. Losing the digitizer layer solves the thickness problem, but whether it also solves the metal plate problem is a separate question.
+
 ## The pen features are those of the iPad's USB-C Pencil
 
 The iPhone Duo supports **one model only, Apple Pencil (USB-C)**. It detects tilt, but it does not support pressure sensitivity, haptics, squeeze, double-tap or barrel roll. The higher-end Apple Pencil Pro cannot be used.
@@ -177,7 +225,9 @@ The explanation that the iPhone Duo is thick because it has two batteries does n
 
 Capacity cannot be back-calculated from the usage times Apple published (up to 31 hours of video playback on the inner screen and up to 44 hours on the outer screen). Chip and panel power efficiency differ from company to company, so the same hours do not mean the same capacity.
 
-**The second is the water-resistance rating.** The iPhone Duo is rated IP68 (6m depth, 30 minutes), and the Galaxy Z Fold8 is rated IP48. The second digit is the same 8, but the first digit is the dust protection rating. The iPhone Duo in effect has **sealing that blocks even fine dust**. Keeping dust out of a folding structure may take more parts to close the gaps. However, we could not confirm the rating of the Galaxy Z Fold8 Ultra, whose thickness is compared here, so this contrast is based on the standard model.
+**The second is the water-resistance rating.** The iPhone Duo is rated IP68 (6m depth, 30 minutes), and the Galaxy Z Fold8 is rated IP48. The second digit is the same 8, but the first digit is the dust protection rating. The iPhone Duo in effect has **sealing that blocks even fine dust**. Keeping dust out of a folding structure may take more parts to close the gaps.
+
+However, we could not confirm the rating of the Galaxy Z Fold8 Ultra, whose thickness is compared here, so this contrast is based on the standard model.
 
 Still, how many mm sealing adds to thickness has not been published anywhere. Battery capacity has not been published either. **Current data cannot separate how much each of the two candidates accounts for.** Going further and writing down a ratio would be invention, not estimation.
 
@@ -193,10 +243,14 @@ Even so, a teardown is not the answer by itself. A teardown shows the thickness 
 
 ## Outlook
 
-**The question the iPhone Duo put to the foldable industry is about the pen more than the crease.** Samsung has also kept reducing the crease through materials and structure. Apple only added a process, and the direction is the same. The pen, by contrast, differs in method, and as long as titanium is used it is hard to go back to EMR.
+**The question the iPhone Duo put to the foldable industry is about the pen more than the crease.** Samsung has also kept reducing the crease through materials and structure. Apple only added a process, and the direction is the same. The pen, by contrast, differs in method, and as long as titanium is used it is hard to go back to the existing EMR approach that lays down a digitizer layer.
 
-That is why we think that **if Samsung brings the pen back to its foldables, it is likely to be of the capacitive family**. Changing the pen method can preserve the thinness already gained, whereas removing the titanium brought in to cut thickness would give it up. Minseok Kang, Vice President of Samsung Electronics' MX Business, said at the time of the Fold7, "We are preparing and researching thinner and more innovative technology."
+That is why we think that **if Samsung brings the pen back to its foldables, it will not be by reviving the digitizer layer**. That would mean putting back the layer it removed to cut thickness. Two paths remain: an Apple-style capacitive pen, and the touch-electrode resonant pen it has been developing with HiDeep.
+
+Minseok Kang, Vice President of Samsung Electronics' MX Business, said at the time of the Fold7, "We are preparing and researching thinner and more innovative technology." Either way, that technology has not yet come out in a mass-produced product.
 
 There are three ways to check whether this judgment is right. First, **will the iPhone Duo's battery capacity be revealed through certification filings or a teardown?** If it is, one of the two thickness candidates can be narrowed down. Second, **will Pencil support arrive this year as promised, and will handwriting quality on the unfolded screen match the iPad's?** The key is whether pen recognition wavers over the fold.
 
-Third, **if Samsung's next foldable supports a pen, which method will it use?** Whether the digitizer layer comes back, or Samsung moves to a capacitive pen that grows thicker and carries a battery, will show whether this article's prediction was right. The third answer will come last, but it is that answer that sets the direction of foldable pen technology.
+Third, **if Samsung's next foldable supports a pen, which method will it use?** If it is a capacitive pen carrying a battery, Samsung has followed Apple's path. If it is a battery-free resonant pen read by the touch electrodes, a technology that sat at the threshold of mass production for four years has crossed it for the first time.
+
+Before that, the thing to watch is **whether HiDeep actually secures the mass production model it has targeted for 2026**. The third question will be answered last, but it is that answer that sets the direction of foldable pen technology.
