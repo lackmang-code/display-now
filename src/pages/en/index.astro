@@ -72,6 +72,7 @@ const editorPicks = resolvePicks(articles, shownSlugs);
 </Base>
 
 <script>
+  import { confirmEmailDomain } from '../../lib/emailTypo';
   // 하단 구독 폼. 사이드바 폼(HomeDesktop)과 id가 겹치지 않게 따로 둔다.
   const form = document.getElementById('en-subscribe-form');
   const statusEl = document.getElementById('en-subscribe-status');
@@ -86,7 +87,8 @@ const editorPicks = resolvePicks(articles, shownSlugs);
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = form.elements.namedItem('email');
-      const email = input instanceof HTMLInputElement ? input.value.trim() : '';
+      let email = input instanceof HTMLInputElement ? input.value.trim() : '';
+      email = confirmEmailDomain(email, input instanceof HTMLInputElement ? input : null);
       const btn = form.querySelector('button');
       const reset = () => {
         if (btn instanceof HTMLButtonElement) {

@@ -182,6 +182,7 @@
 </style>
 
 <script>
+  import { confirmEmailDomain } from '../lib/emailTypo';
   const form = document.getElementById('cta-form') as HTMLFormElement | null;
   const btn = document.getElementById('cta-btn') as HTMLButtonElement | null;
   const input = document.getElementById('cta-email') as HTMLInputElement | null;
@@ -195,11 +196,12 @@
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = (input?.value || '').trim();
+    let email = (input?.value || '').trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       say('이메일 주소를 확인해 주십시오.');
       return;
     }
+    email = confirmEmailDomain(email, input);
     if (btn) {
       btn.disabled = true;
       btn.textContent = '처리 중';

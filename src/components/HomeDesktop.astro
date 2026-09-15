@@ -212,6 +212,7 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
 </div>
 
 <script>
+  import { confirmEmailDomain } from '../lib/emailTypo';
   // 광고 영상은 화면에 들어올 때만 받아서 재생한다.
   // display:none 안에 있으면 교차가 일어나지 않으므로 폰에서는 아예 받지 않는다.
   const vids = document.querySelectorAll<HTMLVideoElement>('video[data-lazy-video]');
@@ -250,7 +251,8 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const emailInput = form.elements.namedItem('email');
-      const email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
+      let email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
+      email = confirmEmailDomain(email, emailInput instanceof HTMLInputElement ? emailInput : null);
       const btn = form.querySelector('button');
       const reset = () => {
         if (btn instanceof HTMLButtonElement) {

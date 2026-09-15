@@ -437,6 +437,7 @@ const ROLES = [
 </style>
 
 <script>
+  import { confirmEmailDomain } from '../lib/emailTypo';
   const form = document.getElementById('subForm') as HTMLFormElement | null;
   const btn = document.getElementById('sf-btn') as HTMLButtonElement | null;
   const agree = document.getElementById('sf-agree-chk') as HTMLInputElement | null;
@@ -475,7 +476,7 @@ const ROLES = [
     e.preventDefault();
     clearError();
 
-    const email = (emailInput?.value || '').trim();
+    let email = (emailInput?.value || '').trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       emailInput?.classList.add('bad');
       showError('이메일 주소를 확인해 주십시오.');
@@ -486,6 +487,7 @@ const ROLES = [
       showError('개인정보 수집·이용에 동의해 주셔야 접수됩니다.');
       return;
     }
+    email = confirmEmailDomain(email, emailInput);
 
     const fd = new FormData(form);
     const payload = {
