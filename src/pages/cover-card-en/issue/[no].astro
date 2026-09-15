@@ -1,0 +1,280 @@
+---
+// 🔴 영문판 카드 (2026-09-15 대표 지시 — 「링크드인은 이미지와 글을 영문으로」).
+// 한글 카드(`cover-card/issue/[no].astro`)를 그대로 옮기고 글자만 영문으로 바꾼다. 판형·크기·여백은 같다.
+// 영문 표지 문구(headlineEn)가 있는 호만 만든다.
+export const prerender = true;
+import {
+  ISSUES,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
+  type IssueMeta,
+} from '../../../lib/issues';
+import { sectionColor } from '../../../lib/sections';
+import { baseSlug } from '../../../lib/articles';
+import { existsSync } from 'node:fs';
+
+export async function getStaticPaths() {
+  return ISSUES.filter((i) => i.headlineEn).map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
+}
+
+interface Props {
+  issue: IssueMeta;
+}
+
+const { issue } = Astro.props;
+const articles = await articlesOfIssue(issue, 'en');
+const head = articles.find((a) => baseSlug(a) === issue.headSlug) ?? articles[0];
+// 🔴 4편에 고정돼 있었다(2026-09-08 수정). 제4호는 헤드를 뺀 5편인데 한 편이 잘려
+// 표지 어디에도 나오지 않았다 — 수록 편수와 표지가 어긋나면 그 기사는 없는 것이 된다.
+// 편수가 늘면 잘라내는 것이 아니라 판을 그 편수에 맞춘다(편집규칙 「면이 비면 판을 고친다」).
+const coverlines = articles.filter((a) => a.slug !== head?.slug);
+
+// 표지 그림이 아직 없는 호도 있다(캡처 전이거나 그 주에 시뮬레이션이 없거나).
+// 파일이 없으면 그림칸을 아예 빼서 620px 빈 검정 칸이 남지 않게 한다.
+const coverImagePath = `public/issues/issue-${issue.no}-cover.png`;
+const hasCoverImage = existsSync(coverImagePath);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>cover-card-issue-en</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 정통 잡지 판형 2:3. 세로여야 표지로 읽힌다 */
+      /* 캡처는 뷰포트 1000x1500으로 뜬다. overflow를 잠그면 사람이 볼 때
+         창보다 큰 부분을 스크롤조차 못 해 잘려 보인다 */
+      html,
+      body {
+        width: 1000px;
+        height: 1500px;
+        background: #12120e;
+      }
+      .cover {
+        width: 1000px;
+        height: 1500px;
+        display: flex;
+        flex-direction: column;
+        padding: 56px 56px 48px;
+        color: #f4f3ee;
+      }
+
+      /* 제호가 표지에서 가장 큰 활자다 */
+      .mast-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .mast-mark {
+        height: 76px;
+        width: auto;
+        display: block;
+      }
+      .mast {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 92px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: oklch(0.87 0.195 93);
+      }
+      .identity {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 21px;
+        color: #a4a49a;
+        margin-top: 16px;
+        letter-spacing: -0.01em;
+      }
+      .issue-line {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        color: #c4c4bc;
+        border-top: 2px solid rgba(244, 243, 238, 0.3);
+        margin-top: 22px;
+        padding-top: 16px;
+      }
+
+      /* 표지 그림. 시뮬레이션 캔버스가 300x210 고정이라 크게 늘리면 흐려진다.
+         잘라내지 않고(contain) 원본 배율에 가깝게 앉힌다 */
+      /* 그림칸 높이를 고정한다.
+         시뮬레이터마다 캔버스 비율이 달라(0.91 ~ 1.47) 폭에 맞추면 높이가 603px에서
+         977px까지 벌어진다. 그러면 호마다 표지 레이아웃이 흔들려 매번 손봐야 한다.
+         칸을 고정하고 그림을 그 안에 맞추면 어떤 시뮬레이션이 와도 판형이 유지된다.
+         가로로 넓은 그림은 폭을 채우고, 세로로 긴 그림은 높이에 맞춰 가운데 선다. */
+      .stage {
+        margin-top: 26px;
+        height: 620px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      /*
+       * 표지 그림은 무대 폭을 꽉 채운다.
+       *
+       * `width: auto`로 두면 원본 크기 그대로 들어간다. 시뮬레이터 캔버스는 300px 안팎이라
+       * 1000px 카드 안에서 손톱만 하게 박히고 위아래가 검게 비어 버린다(2026-08-24 제2호에서 확인).
+       *
+       * 확대에 따른 흐려짐은 감수한다. 이 포스터를 1000px로 볼 일이 거의 없기 때문이다.
+       * 호 목록 카드에서 298px, 회사 홈페이지 진열대에서 118px로 나간다. 그 크기에서는
+       * 선명도보다 여백 없이 꽉 찬 구성이 훨씬 크게 작동한다.
+       *
+       * 근본 해법은 시뮬레이터가 더 큰 캔버스를 그리게 하는 것이다. 지문 시뮬레이터는
+       * W·H와 UM_PER_PX 한 쌍만 같이 바꾸면 시야각을 유지한 채 해상도를 올릴 수 있다
+       * (300x210·12µm → 900x630·4µm면 3.6mm x 2.5mm 그대로다). 공용 컴포넌트라
+       * 발행 전날에 손대지 않고 남겨 둔다.
+       */
+      .stage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .stage.empty {
+        background: #0d0d0a;
+      }
+
+      .headline {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 1.22;
+        letter-spacing: -0.02em;
+        margin-top: 36px;
+        word-break: keep-all;
+        /* 제목이 길어도 세 줄까지만. 넘치면 커버라인이 밀려난다 */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        /* 🔴 헤드라인은 줄어들지 않는다. 판이 모자라면 그림칸이 줄어든다(2026-09-14).
+           제5호에서 두 줄로 꺾이는 커버라인이 둘 생기자, flex가 헤드라인 높이를 깎아
+           둘째 줄 아랫부분이 overflow:hidden에 잘렸다. 그림은 contain이라 줄어도 안 잘린다 */
+        flex-shrink: 0;
+        margin-bottom: 18px;
+      }
+      .deck {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 24px;
+        line-height: 1.6;
+        color: #a4a49a;
+        margin-top: 16px;
+        word-break: keep-all;
+      }
+
+      /* 커버라인. 잡지 표지의 핵심 장치다 */
+      .coverlines {
+        margin-top: auto;
+        list-style: none;
+        border-top: 1px solid rgba(244, 243, 238, 0.22);
+        padding-top: 22px;
+      }
+      .coverlines li {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 1.35;
+        padding: 9px 0;
+        word-break: keep-all;
+      }
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        flex: 0 0 auto;
+        transform: translateY(-3px);
+      }
+
+      .foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-family: 'IBM Plex Mono', monospace;
+        /* 영문 문구가 길어 19px 에서 두 줄로 꺾였다 */
+        font-size: 16px;
+        white-space: nowrap;
+        gap: 16px;
+        letter-spacing: 0.02em;
+        color: #8a8a80;
+        border-top: 2px solid rgba(244, 243, 238, 0.3);
+        margin-top: 22px;
+        padding-top: 16px;
+      }
+      .foot .live {
+        color: oklch(0.87 0.195 93);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <div class="mast-row">
+        <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
+        <span class="mast">DISPLAY NOW</span>
+      </div>
+      {/*
+        🔴 ISSN은 제호 가까이 앞에 둔다(2026-09-14 대표 지적). 디플은 뒷표지가 없어
+        종이 잡지가 뒷면·판권면에 싣는 간행물 정보를 앞표지가 맡는다.
+      */}
+      <div class="identity"><span>The display industry magazine made 100% by AI reporters</span><span class="issn">ISSN 3140-5487</span></div>
+
+      <div class="issue-line">
+        <span>{issueNumberLabel(issue, 'en')}</span>
+        <span>{collectRangeLabel(issue, 'en')}</span>
+        {SHOW_PUBLISH_DATE && <span>{issueDateLabel(issue)}</span>}
+        <span>{articles.length} articles</span>
+      </div>
+
+      {
+        hasCoverImage && (
+          <div class="stage">
+            <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+          </div>
+        )
+      }
+
+      <h1 class="headline">{issue.headlineEn}</h1>
+
+      <ul class="coverlines">
+        {
+          coverlines.map((a) => (
+            <li>
+              <span class="dot" style={`background:${sectionColor(a.data.section, 0.62)};`} />
+              <span>{a.data.title}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="foot">
+        <span>Published by Next I/O</span>
+        {issue.coverSim && <span class="live">The cover is a live simulation</span>}
+        <span>display-now.nextio.ai.kr</span>
+      </div>
+    </div>
+  </body>
+</html>

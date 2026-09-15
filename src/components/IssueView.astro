@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { existsSync } from 'node:fs';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimBoot from '../components/SimBoot.astro';
@@ -79,7 +80,7 @@ const grouped = SECTION_ORDER.map((key) => ({
 <Base
   title={`${issueNumberLabel(issue, lang)} ${headline} | DISPLAY NOW`}
   description={deck ?? headline}
-  image={`/og/issue-${issue.no}.png`}
+  image={en && existsSync(`public/og/issue-${issue.no}-en.png`) ? `/og/issue-${issue.no}-en.png` : `/og/issue-${issue.no}.png`}
   lang={lang}
   altHref={altHref}
 >

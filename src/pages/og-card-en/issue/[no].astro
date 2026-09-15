@@ -1,0 +1,238 @@
+---
+// 🔴 영문판 카드 (2026-09-15 대표 지시 — 「링크드인은 이미지와 글을 영문으로」).
+// 한글 카드(`og-card/issue/[no].astro`)를 그대로 옮기고 글자만 영문으로 바꾼다. 판형·크기·여백은 같다.
+// 영문 표지 문구(headlineEn)가 있는 호만 만든다.
+export const prerender = true;
+import {
+  ISSUES,
+  articlesOfIssue,
+  issueNumberLabel,
+  issueDateLabel,
+  collectRangeLabel,
+  SHOW_PUBLISH_DATE,
+  type IssueMeta,
+} from '../../../lib/issues';
+import { SECTIONS, sectionColor } from '../../../lib/sections';
+import { bylineOf, baseSlug } from '../../../lib/articles';
+
+export async function getStaticPaths() {
+  return ISSUES.filter((i) => i.headlineEn).map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
+}
+
+interface Props {
+  issue: IssueMeta;
+}
+
+const { issue } = Astro.props;
+const articles = await articlesOfIssue(issue, 'en');
+const head = articles.find((a) => baseSlug(a) === issue.headSlug) ?? articles[0];
+// 표지에 헤드 기사가 실리므로 오른쪽에는 나머지 수록 기사를 전부 세운다.
+// 활자는 작게 간다. 기사 제목이 제호보다 커지면 표지의 활자 위계가 뒤집힌다.
+//
+// 다만 그 규칙은 수록이 많을 때만 맞다. 2편짜리 제4호에서 오른쪽이 70% 비었다.
+// 셋 미만이면 헤드도 목록에 세운다 — 왼쪽은 표지 문구(headline)이고 오른쪽은
+// 기사 제목이라 글자가 달라서 중복으로 읽히지 않는다.
+const rest = articles.filter((a) => a.slug !== head?.slug);
+const picks = rest.length >= 3 ? rest : articles;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>og-card-issue-en</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 공유 카드는 가로 1200x630 규격이 고정이다.
+         세로 표지를 왼쪽에 그대로 세우고 오른쪽에 커버라인을 두어
+         "잡지를 펼쳐 놓은" 모양으로 만든다 */
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        background: #12120e;
+      }
+      /* 🔴 좌우 70px는 비워 둔다(2026-09-14). 카카오 소식 카드는 그림 자리가 1.91:1보다 두꺼워
+         가운데 기준으로 한쪽 60~70px를 잘라낸다. 제4호 카드에서 「DISPLAY NOW」의 D와
+         표지 문구 앞부분이 사라졌다(2026-09-09 실측). 링크드인·사이트는 안 자른다 */
+      .card {
+        width: 1200px;
+        height: 630px;
+        padding: 0 70px;
+        display: flex;
+        color: #f4f3ee;
+      }
+
+      /* 왼쪽: 표지 실물. 표지가 2:3이므로 폭 420이면 높이가 정확히 630이 되어
+         잘리는 곳 없이 통째로 들어간다 */
+      .poster {
+        flex: 0 0 420px;
+        height: 630px;
+        overflow: hidden;
+        border-right: 1px solid rgba(244, 243, 238, 0.25);
+        background: #12120e;
+      }
+      .poster img {
+        width: 420px;
+        height: 630px;
+        display: block;
+      }
+
+      /* 오른쪽: 이번 호 안내 */
+      .side {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 34px 40px 28px;
+        display: flex;
+        flex-direction: column;
+      }
+      .issue-line {
+        font-family: 'IBM Plex Mono', monospace;
+        /* 영문 라벨이 길어 두 줄로 꺾였다 */
+        font-size: 16px;
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+        color: #a4a49a;
+      }
+      /* 사이트의 기사 카드를 그대로 옮긴다. 꼭지 · 바이라인 · 제목 · 요약.
+         활자는 작게 간다. 제목이 제호보다 커지면 표지의 활자 위계가 무너진다 */
+      .picks-label {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        color: #8a8a80;
+        margin-top: 18px;
+      }
+      /* 넘치면 하단 발행 정보가 밀려 사라진다. 목록에만 넘침을 가둔다 */
+      .picks {
+        list-style: none;
+        margin-top: 6px;
+        flex: 0 1 auto;
+        min-height: 0;
+        overflow: hidden;
+      }
+      .picks li {
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(244, 243, 238, 0.14);
+      }
+      /* 수록이 적은 호는 같은 판을 쓰면 오른쪽 면이 빈다.
+         블록을 벌리고 요약을 더 보여줘 면을 채운다 — 활자 크기는 건드리지 않는다.
+         제목이 커지면 제호보다 커져 표지의 활자 위계가 뒤집히기 때문이다. */
+      .picks.few li {
+        padding: 14px 0;
+      }
+      .picks.few .sum {
+        -webkit-line-clamp: 3;
+      }
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12.5px;
+      }
+      .chip {
+        color: #f4f3ee;
+        padding: 2px 7px;
+        flex: 0 0 auto;
+      }
+      .byline {
+        color: #8a8a80;
+      }
+      .t {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-weight: 600;
+        /* 영문 제목이 한글보다 길어 17.5px 에서 한 편이 잘렸다 */
+        font-size: 16px;
+        line-height: 1.28;
+        letter-spacing: -0.02em;
+        color: #f4f3ee;
+        margin-top: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sum {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 13px;
+        line-height: 1.45;
+        color: #a4a49a;
+        margin-top: 3px;
+        word-break: keep-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        font-family: 'IBM Plex Mono', monospace;
+        /* 좌우 70px를 비운 뒤 17px에서 두 줄로 꺾였다. 한 줄에 가둔다 */
+        font-size: 12px;
+        letter-spacing: 0;
+        white-space: nowrap;
+        color: #8a8a80;
+        margin-top: auto;
+        border-top: 1px solid rgba(244, 243, 238, 0.25);
+        padding-top: 12px;
+      }
+      .foot .live {
+        color: oklch(0.87 0.195 93);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="poster">
+        <img src={`/issues/issue-${issue.no}-poster-en.png`} alt="" />
+      </div>
+
+      <div class="side">
+        <div class="issue-line">
+          {issueNumberLabel(issue, 'en')} · {collectRangeLabel(issue, 'en')}
+          {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>} · {articles.length} articles
+        </div>
+
+        {/* ISSN은 앞쪽에 둔다 — 뒷표지가 없는 매체라 표지가 간행물 정보를 맡는다(2026-09-14) */}
+        <div class="picks-label"><span>In this issue</span><span>ISSN 3140-5487</span></div>
+        <ul class={picks.length < 3 ? 'picks few' : 'picks'}>
+          {
+            picks.map((a) => (
+              <li>
+                <div class="meta-row">
+                  <span class="chip" style={`background:${sectionColor(a.data.section, 0.42)};`}>
+                    {SECTIONS[a.data.section].labelEn}
+                  </span>
+                  <span class="byline">{bylineOf(a)}</span>
+                </div>
+                <div class="t">{a.data.title}</div>
+                <p class="sum">{a.data.summary}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="foot">
+          Published by Next I/O{issue.coverSim && <span class="live"> · Live simulation cover</span>}
+          <span class="site">display-now.nextio.ai.kr</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
