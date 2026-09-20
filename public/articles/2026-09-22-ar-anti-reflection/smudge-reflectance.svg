@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">A fingerprint undoes the best coating most</text>
+  <text x="28" y="64" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.3">Luminous reflectance Y, clean vs under a smooth oil film (n 1.47), disclosed stacks</text>
+  <line x1="80" y1="380.0" x2="870" y2="380.0" stroke="#e3e3dd"/>
+  <text x="70" y="385.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">0%</text>
+  <line x1="80" y1="303.4" x2="870" y2="303.4" stroke="#e3e3dd"/>
+  <text x="70" y="308.4" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">2%</text>
+  <line x1="80" y1="226.9" x2="870" y2="226.9" stroke="#e3e3dd"/>
+  <text x="70" y="231.9" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">4%</text>
+  <line x1="80" y1="150.3" x2="870" y2="150.3" stroke="#e3e3dd"/>
+  <text x="70" y="155.3" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">6%</text>
+  <line x1="80" y1="216.9" x2="870" y2="216.9" stroke="#8a8a80" stroke-dasharray="5 4"/>
+  <rect x="120" y="217.0" width="58" height="163.0" fill="#b9b9b0"/>
+  <rect x="186" y="240.4" width="58" height="139.6" fill="#c0642b"/>
+  <text x="149" y="209.0" font-size="13.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">4.26</text>
+  <text x="215" y="232.4" font-size="13.5" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace">3.65</text>
+  <text x="182" y="183.0" font-size="19" fill="#12120e" text-anchor="middle" font-weight="700">0.9×</text>
+  <text x="182" y="406" font-size="15.6" fill="#12120e" text-anchor="middle">Bare glass</text>
+  <rect x="310" y="346.8" width="58" height="33.2" fill="#b9b9b0"/>
+  <rect x="376" y="205.2" width="58" height="174.8" fill="#c0642b"/>
+  <text x="339" y="338.8" font-size="13.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.87</text>
+  <text x="405" y="197.2" font-size="13.5" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace">4.57</text>
+  <text x="372" y="171.2" font-size="19" fill="#12120e" text-anchor="middle" font-weight="700">5×</text>
+  <text x="372" y="406" font-size="15.6" fill="#12120e" text-anchor="middle">LR, one layer</text>
+  <rect x="500" y="369.8" width="58" height="10.2" fill="#b9b9b0"/>
+  <rect x="566" y="159.6" width="58" height="220.4" fill="#c0642b"/>
+  <text x="529" y="361.8" font-size="13.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.27</text>
+  <text x="595" y="151.6" font-size="13.5" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace">5.76</text>
+  <text x="562" y="125.6" font-size="19" fill="#a8402b" text-anchor="middle" font-weight="700">22×</text>
+  <text x="562" y="406" font-size="15.6" fill="#12120e" text-anchor="middle">Wet, three layers</text>
+  <rect x="690" y="374.0" width="58" height="6.0" fill="#b9b9b0"/>
+  <rect x="756" y="146.4" width="58" height="233.6" fill="#c0642b"/>
+  <text x="719" y="366.0" font-size="13.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.16</text>
+  <text x="785" y="138.4" font-size="13.5" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace">6.10</text>
+  <text x="752" y="112.4" font-size="19" fill="#a8402b" text-anchor="middle" font-weight="700">39×</text>
+  <text x="752" y="406" font-size="15.6" fill="#12120e" text-anchor="middle">Sputter, ten layers</text>
+  <rect x="80" y="86" width="16" height="16" fill="#b9b9b0"/><text x="104" y="99" font-size="14.5" fill="#4d4d45">clean</text>
+  <rect x="172" y="86" width="16" height="16" fill="#c0642b"/><text x="196" y="99" font-size="14.5" fill="#4d4d45">under oil</text>
+  <text x="260" y="208.90285714285716" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">bare glass</text>
+  <text x="28" y="432" font-size="13.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Computed for a smooth, thick oil film and specular reflection only; real fingerprints also scatter.</text>
+  <text x="28" y="452" font-size="13.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Stacks: ACS Omega 2021 layer index, Fujifilm US8691351 mid-range, AGC US11137521 Example 1.</text>
+</svg>

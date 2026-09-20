@@ -1,0 +1,46 @@
+<svg viewBox="0 0 840 420" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="419" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="28" y="40" font-size="21" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Stuck on a mature node that is shrinking</text>
+  <text x="28" y="60" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.5">Why driver ICs stay at 22 and 28 nm, and who else wants that space · DESK</text>
+  <line x1="28" y1="78" x2="812" y2="78" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- LEFT : why stuck -->
+  <text x="30" y="104" font-size="11.5" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="1.2">WHY IT CANNOT MOVE TO A FINER NODE</text>
+
+  <rect x="30" y="116" width="360" height="62" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="46" y="139" font-size="12.5" font-weight="600" fill="#4a2d63">Pixels need high voltage</text>
+  <text x="46" y="159" font-size="11.5" fill="#5e4478">far above the roughly 1 V that logic chips handle</text>
+
+  <rect x="30" y="188" width="360" height="62" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="46" y="211" font-size="12.5" font-weight="600" fill="#4a2d63">High-voltage devices barely shrink</text>
+  <text x="46" y="231" font-size="11.5" fill="#5e4478">so a finer node buys little area and costs more</text>
+
+  <rect x="30" y="260" width="360" height="62" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="46" y="283" font-size="12.5" font-weight="600" fill="#4a2d63">One design per panel</text>
+  <text x="46" y="303" font-size="11.5" fill="#5e4478">a custom chip cannot be bought off the shelf</text>
+
+  <!-- RIGHT : queue -->
+  <text x="450" y="104" font-size="11.5" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Mono', monospace" letter-spacing="1.2">WHO IS IN THE 22 / 28 NM LINE</text>
+
+  <rect x="450" y="116" width="360" height="52" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="466" y="139" font-size="12.5" font-weight="600" fill="#8a3a26">Foldable driver ICs</text>
+  <text x="466" y="157" font-size="11.5" fill="#7a4a3a">demand above plan, rush run declined</text>
+
+  <rect x="450" y="178" width="360" height="52" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="466" y="201" font-size="12.5" font-weight="600" fill="#8a3a26">Driver ICs for new panels</text>
+  <text x="466" y="219" font-size="11.5" fill="#7a4a3a">2K at 165 Hz moved onto the same node</text>
+
+  <rect x="450" y="240" width="360" height="62" rx="5" fill="#fdf5ec" stroke="#dfc09a" stroke-width="1.4"/>
+  <text x="466" y="263" font-size="12.5" font-weight="600" fill="#8a5a2a">Silicon interposers</text>
+  <text x="466" y="281" font-size="11.5" fill="#7a5a34">TSMC 28 nm wafer starts reported down over 25 %,</text>
+  <text x="466" y="296" font-size="11.5" fill="#7a5a34">from 200k to 150k a month, some space going here</text>
+
+  <!-- caveat -->
+  <rect x="30" y="334" width="780" height="46" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="46" y="356" font-size="12" font-weight="600" fill="#4a4a44">Reported, not confirmed:</text>
+  <text x="196" y="356" font-size="12" fill="#6a6a62">TSMC said in June that its mature-node strategy had not changed.</text>
+  <text x="46" y="372" font-size="11" fill="#8a8a80">The wafer-start figures come from market reporting, not from the foundry.</text>
+
+  <text x="30" y="404" font-size="10.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from TrendForce (2026-06-22), ZDNet Korea (2026-08-28, 2026-09-18) and Samsung Display (2026-09-14).</text>
+</svg>

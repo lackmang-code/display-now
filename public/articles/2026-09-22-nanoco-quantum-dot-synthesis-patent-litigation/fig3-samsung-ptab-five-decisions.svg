@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" width="680" height="430" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="680" height="430" fill="#ffffff"/>
+<text x="24" y="30" font-size="13.5" font-weight="700" fill="#1d1d1b">Samsung’s five PTAB challenges: the prior art and why it failed</text>
+<text x="24" y="48" font-size="12" fill="#6b6b66">Final written decisions of May 16, 2022. No challenged claim was held unpatentable.</text>
+<text x="24" y="118" font-size="12" fill="#6b6b66">Case and patent</text>
+<text x="455" y="70" font-size="12" fill="#6b6b66" text-anchor="middle">Prior art Samsung led with</text>
+<text x="300" y="90" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">Gold-cluster</text>
+<text x="300" y="104" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">catalyst</text>
+<text x="300" y="118" font-size="12" font-weight="400" fill="#6b6b66" text-anchor="middle">(Banin)</text>
+<text x="405" y="90" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">Zinc-doped</text>
+<text x="405" y="104" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">InP dots</text>
+<text x="405" y="118" font-size="12" font-weight="400" fill="#6b6b66" text-anchor="middle">(Zaban)</text>
+<text x="510" y="90" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">Patent plus</text>
+<text x="510" y="104" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">InP rods paper</text>
+<text x="510" y="118" font-size="12" font-weight="400" fill="#6b6b66" text-anchor="middle">(Lucey, Ahrenkiel)</text>
+<text x="610" y="90" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">Quantum dot</text>
+<text x="610" y="104" font-size="12" font-weight="700" fill="#1d1d1b" text-anchor="middle">phosphor film</text>
+<text x="610" y="118" font-size="12" font-weight="400" fill="#6b6b66" text-anchor="middle">(Dubrow)</text>
+<line x1="24" y1="128" x2="656" y2="128" stroke="#e6e4dc"/>
+<text x="24" y="147" font-size="12.5" font-weight="600" fill="#1d1d1b">IPR2021-00182</text>
+<text x="24" y="163" font-size="12" fill="#55606e">’068 film (not synthesis)</text>
+<text x="300" y="155" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<text x="405" y="155" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<text x="510" y="155" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<rect x="568" y="136" width="84" height="28" rx="4" fill="#7a4fb5"/>
+<line x1="24" y1="170" x2="656" y2="170" stroke="#e6e4dc"/>
+<text x="24" y="189" font-size="12.5" font-weight="600" fill="#1d1d1b">IPR2021-00183</text>
+<text x="24" y="205" font-size="12" fill="#55606e">’828 InP core on cluster</text>
+<rect x="258" y="178" width="84" height="28" rx="4" fill="#2f62c9"/>
+<rect x="363" y="178" width="84" height="28" rx="4" fill="#b4692a"/>
+<text x="510" y="197" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<text x="610" y="197" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<line x1="24" y1="212" x2="656" y2="212" stroke="#e6e4dc"/>
+<text x="24" y="231" font-size="12.5" font-weight="600" fill="#1d1d1b">IPR2021-00184</text>
+<text x="24" y="247" font-size="12" fill="#55606e">’423 seeding method</text>
+<rect x="258" y="220" width="84" height="28" rx="4" fill="#2f62c9"/>
+<rect x="363" y="220" width="84" height="28" rx="4" fill="#b4692a"/>
+<rect x="468" y="220" width="84" height="28" rx="4" fill="#cfccc2"/>
+<text x="610" y="239" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<line x1="24" y1="254" x2="656" y2="254" stroke="#e6e4dc"/>
+<text x="24" y="273" font-size="12.5" font-weight="600" fill="#1d1d1b">IPR2021-00185</text>
+<text x="24" y="289" font-size="12" fill="#55606e">’557 core and two shells</text>
+<rect x="258" y="262" width="84" height="28" rx="4" fill="#2f62c9"/>
+<rect x="363" y="262" width="84" height="28" rx="4" fill="#b4692a"/>
+<rect x="468" y="262" width="84" height="28" rx="4" fill="#cfccc2"/>
+<text x="610" y="281" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<line x1="24" y1="296" x2="656" y2="296" stroke="#e6e4dc"/>
+<text x="24" y="315" font-size="12.5" font-weight="600" fill="#1d1d1b">IPR2021-00186</text>
+<text x="24" y="331" font-size="12" fill="#55606e">’365 core on cluster</text>
+<rect x="258" y="304" width="84" height="28" rx="4" fill="#2f62c9"/>
+<rect x="363" y="304" width="84" height="28" rx="4" fill="#b4692a"/>
+<rect x="468" y="304" width="84" height="28" rx="4" fill="#cfccc2"/>
+<text x="610" y="323" font-size="13" fill="#b9b6ac" text-anchor="middle">-</text>
+<rect x="24" y="345" width="14" height="14" fill="#2f62c9"/>
+<text x="44" y="357" font-size="12" fill="#444">Gold clusters are not a molecular cluster compound</text>
+<rect x="354" y="345" width="14" height="14" fill="#b4692a"/>
+<text x="374" y="357" font-size="12" fill="#444">Zinc was a dopant: no reason to swap in a cluster</text>
+<rect x="24" y="367" width="14" height="14" fill="#7a4fb5"/>
+<text x="44" y="379" font-size="12" fill="#444">Two passages not shown to be one embodiment</text>
+<rect x="354" y="367" width="14" height="14" fill="#cfccc2"/>
+<text x="374" y="379" font-size="12" fill="#444">Withdrawn by Samsung at the hearing</text>
+<text x="24" y="416" font-size="12" fill="#55606e">Also in -00183 and -00186: Banin plus Herron failed for a separate reason (metal catalyst vs. semiconductor cluster).</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Serif KR', serif">
+  <rect x="0.5" y="0.5" width="899" height="479" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="27.3" font-weight="700" fill="#12120e" letter-spacing="-0.3">Where the leftover reflection goes</text>
+  <text x="28" y="64" font-size="16.2" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.3">Front-surface reflectance computed from the disclosed stacks, normal incidence</text>
+  <path d="M 90 390 L 90.0 390.0 L 108.0 389.9 L 126.0 389.7 L 144.0 389.2 L 162.0 388.4 L 180.0 387.3 L 198.0 385.8 L 216.0 383.6 L 234.0 380.3 L 252.0 375.4 L 270.0 367.4 L 288.0 354.8 L 306.0 340.3 L 324.0 329.7 L 342.0 323.2 L 360.0 320.4 L 378.0 320.4 L 396.0 323.4 L 414.0 329.1 L 432.0 337.0 L 450.0 345.8 L 468.0 354.8 L 486.0 363.3 L 504.0 371.4 L 522.0 377.8 L 540.0 382.5 L 558.0 385.7 L 576.0 387.8 L 594.0 388.8 L 612.0 389.4 L 630.0 389.7 L 630 390 Z" fill="#e9e3cf" opacity="0.8"/>
+  <text x="369" y="314" font-size="13.5" fill="#a89b6a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">eye sensitivity</text>
+  <line x1="90" y1="390.0" x2="630" y2="390.0" stroke="#e3e3dd"/>
+  <text x="80" y="395.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">0%</text>
+  <line x1="90" y1="327.0" x2="630" y2="327.0" stroke="#e3e3dd"/>
+  <text x="80" y="332.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">1%</text>
+  <line x1="90" y1="263.9" x2="630" y2="263.9" stroke="#e3e3dd"/>
+  <text x="80" y="268.9" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">2%</text>
+  <line x1="90" y1="200.9" x2="630" y2="200.9" stroke="#e3e3dd"/>
+  <text x="80" y="205.9" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">3%</text>
+  <line x1="90" y1="137.8" x2="630" y2="137.8" stroke="#e3e3dd"/>
+  <text x="80" y="142.8" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">4%</text>
+  <text x="90" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">400</text>
+  <text x="180" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">450</text>
+  <text x="270" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">500</text>
+  <text x="360" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">550</text>
+  <text x="450" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">600</text>
+  <text x="540" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">650</text>
+  <text x="630" y="414" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">700</text>
+  <text x="360" y="440" font-size="15.6" fill="#4d4d45" text-anchor="middle">Wavelength  nm</text>
+  <path d="M90.0 121.6 L108.0 121.6 L126.0 121.6 L144.0 121.6 L162.0 121.6 L180.0 121.6 L198.0 121.6 L216.0 121.6 L234.0 121.6 L252.0 121.6 L270.0 121.6 L288.0 121.6 L306.0 121.6 L324.0 121.6 L342.0 121.6 L360.0 121.6 L378.0 121.6 L396.0 121.6 L414.0 121.6 L432.0 121.6 L450.0 121.6 L468.0 121.6 L486.0 121.6 L504.0 121.6 L522.0 121.6 L540.0 121.6 L558.0 121.6 L576.0 121.6 L594.0 121.6 L612.0 121.6 L630.0 121.6" fill="none" stroke="#8a8a80" stroke-width="2.4"/>
+  <path d="M90.0 269.8 L108.0 280.2 L126.0 289.7 L144.0 298.1 L162.0 305.6 L180.0 312.2 L198.0 317.9 L216.0 322.7 L234.0 326.8 L252.0 330.2 L270.0 332.9 L288.0 335.0 L306.0 336.5 L324.0 337.5 L342.0 338.2 L360.0 338.4 L378.0 338.2 L396.0 337.7 L414.0 336.9 L432.0 335.8 L450.0 334.5 L468.0 333.1 L486.0 331.4 L504.0 329.5 L522.0 327.6 L540.0 325.5 L558.0 323.4 L576.0 321.1 L594.0 318.8 L612.0 316.4 L630.0 314.0" fill="none" stroke="#2f7d5c" stroke-width="2.8"/>
+  <path d="M90.0 340.4 L108.0 354.3 L126.0 364.5 L144.0 371.5 L162.0 375.8 L180.0 378.0 L198.0 378.8 L216.0 378.7 L234.0 378.0 L252.0 377.3 L270.0 376.5 L288.0 375.9 L306.0 375.4 L324.0 375.1 L342.0 375.0 L360.0 374.9 L378.0 374.6 L396.0 374.2 L414.0 373.5 L432.0 372.5 L450.0 371.0 L468.0 369.0 L486.0 366.4 L504.0 363.1 L522.0 359.3 L540.0 354.8 L558.0 349.7 L576.0 343.9 L594.0 337.5 L612.0 330.6 L630.0 323.0" fill="none" stroke="#6b4c9a" stroke-width="2.8"/>
+  <path d="M90.0 353.2 L108.0 363.5 L126.0 375.3 L144.0 374.3 L162.0 365.6 L180.0 359.2 L198.0 359.1 L216.0 363.2 L234.0 367.3 L252.0 369.4 L270.0 369.7 L288.0 370.1 L306.0 372.0 L324.0 375.9 L342.0 380.6 L360.0 384.8 L378.0 387.2 L396.0 387.4 L414.0 385.8 L432.0 383.4 L450.0 381.4 L468.0 380.8 L486.0 381.7 L504.0 383.6 L522.0 385.1 L540.0 384.3 L558.0 379.2 L576.0 367.7 L594.0 348.3 L612.0 320.2 L630.0 283.6" fill="none" stroke="#3f5f8c" stroke-width="3"/>
+  <line x1="660" y1="120" x2="694" y2="120" stroke="#8a8a80" stroke-width="3.5"/>
+  <text x="704" y="125" font-size="15.6" fill="#12120e">Bare glass</text>
+  <text x="704" y="146" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Y 4.26%</text>
+  <line x1="660" y1="178" x2="694" y2="178" stroke="#2f7d5c" stroke-width="3.5"/>
+  <text x="704" y="183" font-size="15.6" fill="#12120e">LR, one layer n 1.35</text>
+  <text x="704" y="204" font-size="14.5" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace">Y 0.87%</text>
+  <line x1="660" y1="236" x2="694" y2="236" stroke="#6b4c9a" stroke-width="3.5"/>
+  <text x="704" y="241" font-size="15.6" fill="#12120e">Wet coat, three layers</text>
+  <text x="704" y="262" font-size="14.5" fill="#6b4c9a" font-family="'IBM Plex Mono', monospace">Y 0.27%</text>
+  <line x1="660" y1="294" x2="694" y2="294" stroke="#3f5f8c" stroke-width="3.5"/>
+  <text x="704" y="299" font-size="15.6" fill="#12120e">Sputter, ten layers</text>
+  <text x="704" y="320" font-size="14.5" fill="#3f5f8c" font-family="'IBM Plex Mono', monospace">Y 0.16%</text>
+  <text x="660" y="372" font-size="14.5" fill="#4d4d45">Lowest in the middle,</text>
+  <text x="660" y="392" font-size="14.5" fill="#4d4d45">rising at both ends:</text>
+  <text x="660" y="412" font-size="14.5" fill="#4d4d45">a tinted reflection</text>
+  <text x="28" y="464" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Transfer matrix, no dispersion or absorption, CIE V(λ) and D65. Computed sputter Y is about half the reported 0.30%.</text>
+</svg>

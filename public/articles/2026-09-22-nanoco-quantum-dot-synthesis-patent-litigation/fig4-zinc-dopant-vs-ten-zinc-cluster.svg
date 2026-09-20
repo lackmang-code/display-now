@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="680" height="360" fill="#ffffff"/>
+<text x="24" y="30" font-size="13.5" font-weight="700" fill="#1d1d1b">Zinc in an indium phosphide dot: one ion, or one ten-zinc cluster</text>
+<text x="24" y="48" font-size="12" fill="#6b6b66">Schematic. Counts from the prior art (Zaban) and the PTAB decisions; positions and sizes not to scale.</text>
+<text x="24" y="84" font-size="13" font-weight="700" fill="#1d1d1b">Prior art: zinc as a dopant</text>
+<text x="24" y="101" font-size="12" fill="#55606e">Zaban: "on average one Zn2+ ion per particle"</text>
+<circle cx="170" cy="200" r="78" fill="#f3e3d3" stroke="#b4692a" stroke-width="2"/>
+<circle cx="120.0" cy="215.4" r="3" fill="#d9b48f"/>
+<circle cx="212.4" cy="178.1" r="3" fill="#d9b48f"/>
+<circle cx="116.4" cy="197.4" r="3" fill="#d9b48f"/>
+<circle cx="190.0" cy="245.9" r="3" fill="#d9b48f"/>
+<circle cx="127.3" cy="154.6" r="3" fill="#d9b48f"/>
+<circle cx="202.0" cy="221.5" r="3" fill="#d9b48f"/>
+<circle cx="223.0" cy="234.0" r="3" fill="#d9b48f"/>
+<circle cx="165.0" cy="186.6" r="3" fill="#d9b48f"/>
+<circle cx="238.3" cy="192.3" r="3" fill="#d9b48f"/>
+<circle cx="138.8" cy="154.8" r="3" fill="#d9b48f"/>
+<circle cx="174.7" cy="207.2" r="3" fill="#d9b48f"/>
+<circle cx="153.2" cy="197.0" r="3" fill="#d9b48f"/>
+<circle cx="182.6" cy="232.0" r="3" fill="#d9b48f"/>
+<circle cx="216.8" cy="209.0" r="3" fill="#d9b48f"/>
+<circle cx="110.2" cy="223.5" r="3" fill="#d9b48f"/>
+<circle cx="114.4" cy="193.3" r="3" fill="#d9b48f"/>
+<circle cx="113.0" cy="200.1" r="3" fill="#d9b48f"/>
+<circle cx="134.4" cy="209.8" r="3" fill="#d9b48f"/>
+<circle cx="239.8" cy="199.0" r="3" fill="#d9b48f"/>
+<circle cx="201.6" cy="150.3" r="3" fill="#d9b48f"/>
+<circle cx="156.6" cy="230.8" r="3" fill="#d9b48f"/>
+<circle cx="165.5" cy="218.0" r="3" fill="#d9b48f"/>
+<circle cx="174.5" cy="155.9" r="3" fill="#d9b48f"/>
+<circle cx="194.8" cy="164.2" r="3" fill="#d9b48f"/>
+<circle cx="232.2" cy="183.2" r="3" fill="#d9b48f"/>
+<circle cx="202.1" cy="200.1" r="3" fill="#d9b48f"/>
+<circle cx="210.6" cy="174.3" r="3" fill="#d9b48f"/>
+<circle cx="213.8" cy="194.6" r="3" fill="#d9b48f"/>
+<circle cx="219.8" cy="224.6" r="3" fill="#d9b48f"/>
+<circle cx="176.5" cy="164.2" r="3" fill="#d9b48f"/>
+<circle cx="204.5" cy="221.0" r="3" fill="#d9b48f"/>
+<circle cx="229.4" cy="186.3" r="3" fill="#d9b48f"/>
+<circle cx="195.6" cy="223.5" r="3" fill="#d9b48f"/>
+<circle cx="183.8" cy="210.2" r="3" fill="#d9b48f"/>
+<circle cx="178.6" cy="171.8" r="3" fill="#d9b48f"/>
+<circle cx="126.4" cy="183.0" r="3" fill="#d9b48f"/>
+<circle cx="191.8" cy="255.8" r="3" fill="#d9b48f"/>
+<circle cx="208.2" cy="241.2" r="3" fill="#d9b48f"/>
+<circle cx="203.8" cy="230.3" r="3" fill="#d9b48f"/>
+<circle cx="178.4" cy="235.4" r="3" fill="#d9b48f"/>
+<circle cx="231.7" cy="188.6" r="3" fill="#d9b48f"/>
+<circle cx="148.0" cy="262.1" r="3" fill="#d9b48f"/>
+<circle cx="180.7" cy="242.6" r="3" fill="#d9b48f"/>
+<circle cx="204.2" cy="155.5" r="3" fill="#d9b48f"/>
+<circle cx="226.2" cy="241.0" r="3" fill="#d9b48f"/>
+<circle cx="178.1" cy="234.6" r="3" fill="#d9b48f"/>
+<circle cx="198" cy="182" r="7" fill="#2f62c9" stroke="#fff" stroke-width="2"/>
+<line x1="205" y1="176" x2="262" y2="130" stroke="#2f62c9" stroke-width="1.5"/><text x="266" y="128" font-size="12" font-weight="700" fill="#2f62c9">1 Zn</text>
+<text x="364" y="84" font-size="13" font-weight="700" fill="#1d1d1b">Nanoco: core grown on a cluster</text>
+<text x="364" y="101" font-size="12" fill="#55606e">’828 example: InP on [Zn10S4(SPh)16]</text>
+<circle cx="510" cy="200" r="78" fill="#f3e3d3" stroke="#b4692a" stroke-width="2"/>
+<circle cx="515.7" cy="160.3" r="3" fill="#d9b48f"/>
+<circle cx="504.6" cy="218.2" r="3" fill="#d9b48f"/>
+<circle cx="555.1" cy="228.7" r="3" fill="#d9b48f"/>
+<circle cx="512.4" cy="254.2" r="3" fill="#d9b48f"/>
+<circle cx="477.4" cy="234.0" r="3" fill="#d9b48f"/>
+<circle cx="557.1" cy="187.6" r="3" fill="#d9b48f"/>
+<circle cx="451.9" cy="170.6" r="3" fill="#d9b48f"/>
+<circle cx="521.3" cy="225.1" r="3" fill="#d9b48f"/>
+<circle cx="563.1" cy="165.5" r="3" fill="#d9b48f"/>
+<circle cx="510.1" cy="230.5" r="3" fill="#d9b48f"/>
+<circle cx="505.5" cy="132.3" r="3" fill="#d9b48f"/>
+<circle cx="532.5" cy="264.4" r="3" fill="#d9b48f"/>
+<circle cx="550.1" cy="163.3" r="3" fill="#d9b48f"/>
+<circle cx="490.1" cy="210.7" r="3" fill="#d9b48f"/>
+<circle cx="576.7" cy="216.5" r="3" fill="#d9b48f"/>
+<circle cx="514.3" cy="258.6" r="3" fill="#d9b48f"/>
+<circle cx="507.2" cy="263.5" r="3" fill="#d9b48f"/>
+<circle cx="478.8" cy="178.4" r="3" fill="#d9b48f"/>
+<circle cx="536.8" cy="253.0" r="3" fill="#d9b48f"/>
+<circle cx="540.4" cy="214.0" r="3" fill="#d9b48f"/>
+<circle cx="449.8" cy="176.5" r="3" fill="#d9b48f"/>
+<circle cx="482.1" cy="175.6" r="3" fill="#d9b48f"/>
+<circle cx="537.4" cy="184.3" r="3" fill="#d9b48f"/>
+<circle cx="546.1" cy="203.8" r="3" fill="#d9b48f"/>
+<circle cx="493.8" cy="205.8" r="3" fill="#d9b48f"/>
+<circle cx="529.0" cy="238.0" r="3" fill="#d9b48f"/>
+<circle cx="487.2" cy="188.9" r="3" fill="#d9b48f"/>
+<circle cx="467.2" cy="250.3" r="3" fill="#d9b48f"/>
+<circle cx="566.3" cy="193.1" r="3" fill="#d9b48f"/>
+<circle cx="490.7" cy="150.1" r="3" fill="#d9b48f"/>
+<circle cx="518.3" cy="210.1" r="3" fill="#d9b48f"/>
+<circle cx="576.4" cy="207.5" r="3" fill="#d9b48f"/>
+<circle cx="489.2" cy="134.6" r="3" fill="#d9b48f"/>
+<circle cx="565.3" cy="207.4" r="3" fill="#d9b48f"/>
+<circle cx="450.5" cy="206.7" r="3" fill="#d9b48f"/>
+<circle cx="480.6" cy="263.5" r="3" fill="#d9b48f"/>
+<circle cx="556.1" cy="223.6" r="3" fill="#d9b48f"/>
+<circle cx="504.6" cy="133.8" r="3" fill="#d9b48f"/>
+<circle cx="505.2" cy="141.5" r="3" fill="#d9b48f"/>
+<circle cx="528.0" cy="135.5" r="3" fill="#d9b48f"/>
+<circle cx="475.4" cy="246.5" r="3" fill="#d9b48f"/>
+<circle cx="563.1" cy="161.9" r="3" fill="#d9b48f"/>
+<circle cx="456.0" cy="231.0" r="3" fill="#d9b48f"/>
+<circle cx="544.6" cy="159.9" r="3" fill="#d9b48f"/>
+<circle cx="479.4" cy="169.4" r="3" fill="#d9b48f"/>
+<circle cx="462.6" cy="172.9" r="3" fill="#d9b48f"/>
+<circle cx="510" cy="200" r="34" fill="#ffffff" stroke="#55606e" stroke-dasharray="3 3"/>
+<circle cx="510" cy="178" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="491" cy="211" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="529" cy="211" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="510" cy="200" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="500" cy="194" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="520" cy="194" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="510" cy="213" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="490" cy="188" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="530" cy="188" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<circle cx="510" cy="226" r="5.5" fill="#2f62c9" stroke="#fff" stroke-width="1.5"/>
+<line x1="540" y1="178" x2="590" y2="130" stroke="#2f62c9" stroke-width="1.5"/><text x="594" y="128" font-size="12" font-weight="700" fill="#2f62c9">10 Zn</text><text x="594" y="143" font-size="12" fill="#55606e">in one molecule</text>
+<rect x="24" y="298" width="632" height="44" rx="6" fill="#eef3fb"/>
+<text x="40" y="317" font-size="12.5" font-weight="700" fill="#1d1d1b">Nanoco: swap in a ten-zinc cluster and each dot gets at least 10 times the zinc Zaban calls for.</text>
+<text x="40" y="334" font-size="12" fill="#55606e">PTAB agreed, and found no reason to replace a dopant with a cluster (IPR2021-00183 to -00186).</text>
+<text x="170" y="296" font-size="12" fill="#b4692a" text-anchor="middle">InP</text><text x="510" y="296" font-size="12" fill="#b4692a" text-anchor="middle">InP</text>
+</svg>

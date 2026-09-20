@@ -69,6 +69,25 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 6,
+    publishedAt: '2026-09-22',
+    weekStart: '2026-09-14',
+    // 헤드는 클레임 나노코 편이다. 결정문 원문에서 읽어낸 발견이 이번 호에서 가장 세고,
+    // 직전 호 헤드가 데스크(이슈)라 꼭지도 연속되지 않는다.
+    // 표지 문구 = 헤드 기사 제목 그대로.
+    headline: '삼성 무효심판을 버틴 인화인듐 양자점 합성 특허 4건',
+    deck: '표지는 양자점 하나하나의 크기가 색을 정하는 장면입니다. 크기가 고르면 발광 봉우리가 좁아 색이 선명하고, 섞이면 넓어져 탁해집니다. 나노코는 모두 똑같이 생긴 아연·황 분자를 시드로 넣어 크기를 고르게 맞췄고, 삼성이 낸 무효심판에서 그 합성 특허 네 건이 모두 살아남았습니다. 삼성이 증거로 낸 문헌의 금 입자는 크기가 제각각이었고, 앞선 논문의 아연은 시드가 아니라 조금 섞은 첨가물이었습니다.',
+    // 표지는 입자가 32개 보이는 크기-색 시뮬이다. 썸네일에서도 「알갱이마다 색이 다르다」가
+    // 바로 읽힌다. 다른 후보(ar-stack-smudge-demo)는 폰 화면과 그래프 두 판이라 작게 줄이면 뭉개진다.
+    // 표지값은 크기를 키우고 편차를 벌려 색이 섞인 입자장이 보이게 잡는다(기사 기본값은 고른 녹색).
+    coverSim: 'qd-size-color-purity-demo',
+    coverSimParams: { edge: 3.6, spread: 0.15, cover: true },
+    headSlug: '2026-09-22-nanoco-quantum-dot-synthesis-patent-litigation',
+    // 영문 호. 표지 문구는 영문판 헤드 기사 제목 그대로.
+    headlineEn: 'Indium Phosphide Quantum Dot Synthesis: Four Patents Samsung Could Not Void',
+    deckEn: 'The cover shows how the size of each quantum dot sets its color. Even sizes give a narrow emission peak and a clean color; mixed sizes broaden it and muddy the color. Nanoco matched the sizes by seeding the growth with zinc-sulfur molecules that are all alike, and all four of its synthesis patents survived the petitions Samsung brought. The gold particles in the document Samsung filed as evidence were of mixed sizes, and the zinc in the earlier paper was a dopant mixed in at trace amounts rather than a seed.',
+  },
+  {
     no: 5,
     publishedAt: '2026-09-15',
     weekStart: '2026-09-07',
