@@ -295,12 +295,30 @@ const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3
         width: 1060px;
         padding: 0 40px;
       }
+      /* 🔴 위아래도 잘린다 — 작성창 미리보기 틀은 약 2:1이라 1060×630 그림의 위아래를 약 50px씩
+         자른다(2026-09-28 실측). 발행된 소식은 좌우를 자른다(9/9 실측). 어느 쪽이 와도 살도록
+         좌우 40px·위아래 58px 안에 모두 넣는다 */
       html.kakao .cover-side {
         flex: 0 0 470px;
-        padding-right: 28px;
+        padding: 58px 28px 56px 0;
       }
       html.kakao .side {
-        padding: 34px 0 28px 32px;
+        padding: 58px 0 56px 32px;
+      }
+      html.kakao .picks-label {
+        margin-top: 10px;
+      }
+      html.kakao .picks.split li {
+        padding: 5px 0;
+      }
+      html.kakao .picks.split li.head {
+        padding: 6px 0 8px;
+      }
+      html.kakao .picks.split li.head .sum {
+        -webkit-line-clamp: 1;
+      }
+      html.kakao .foot {
+        padding-top: 8px;
       }
       .foot .live {
         color: oklch(0.87 0.195 93);
