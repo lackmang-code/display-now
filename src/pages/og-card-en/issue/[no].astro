@@ -14,6 +14,7 @@ import {
 } from '../../../lib/issues';
 import { SECTIONS, sectionColor } from '../../../lib/sections';
 import { bylineOf, baseSlug } from '../../../lib/articles';
+import { existsSync } from 'node:fs';
 
 export async function getStaticPaths() {
   return ISSUES.filter((i) => i.headlineEn).map((issue) => ({ params: { no: String(issue.no) }, props: { issue } }));
@@ -32,8 +33,14 @@ const head = articles.find((a) => baseSlug(a) === issue.headSlug) ?? articles[0]
 // 다만 그 규칙은 수록이 많을 때만 맞다. 2편짜리 제4호에서 오른쪽이 70% 비었다.
 // 셋 미만이면 헤드도 목록에 세운다 — 왼쪽은 표지 문구(headline)이고 오른쪽은
 // 기사 제목이라 글자가 달라서 중복으로 읽히지 않는다.
+// 🔴 2026-09-28 한글 카드와 같이 판을 바꿨다 — 왼쪽은 표지 시뮬레이션만, 오른쪽은 헤드 포함 수록 전부.
+// 경위는 한글 카드(`og-card/issue/[no].astro`) 주석.
+const hasCoverImage = existsSync(`public/issues/issue-${issue.no}-cover.png`);
+const coverArticle = issue.coverSim
+  ? articles.find((a) => a.body?.includes(issue.coverSim as string))
+  : undefined;
 const rest = articles.filter((a) => a.slug !== head?.slug);
-const picks = rest.length >= 3 ? rest : articles;
+const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3 ? rest : articles;
 ---
 
 <!doctype html>
@@ -192,6 +199,88 @@ const picks = rest.length >= 3 ? rest : articles;
         border-top: 1px solid rgba(244, 243, 238, 0.25);
         padding-top: 12px;
       }
+      /* 왼쪽(새 판): 제호 + 표지 시뮬레이션 그림 + 출처 한 줄. 헤드 제목은 여기 두지 않는다 */
+      .cover-side {
+        flex: 0 0 520px;
+        height: 630px;
+        padding: 34px 32px 28px 0;
+        border-right: 1px solid rgba(244, 243, 238, 0.25);
+        display: flex;
+        flex-direction: column;
+      }
+      .mast-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .mast-mark {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+      .mast {
+        font-family: 'Noto Serif KR', serif;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: oklch(0.87 0.195 93);
+      }
+      .identity {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 14px;
+        color: #a4a49a;
+        margin-top: 10px;
+      }
+      /* 그림과 출처 줄을 한 덩어리로 남은 높이 가운데에 둔다 */
+      .cover-fig {
+        margin: auto 0;
+      }
+      .cover-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid rgba(244, 243, 238, 0.18);
+      }
+      .cover-cap {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #a4a49a;
+        margin-top: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .cap-tag {
+        font-family: 'IBM Plex Mono', monospace;
+        color: oklch(0.87 0.195 93);
+        margin-right: 8px;
+      }
+      /* 오른쪽(새 판): 헤드는 요약 두 줄, 나머지는 제목만 */
+      .picks.split li {
+        padding: 8px 0;
+      }
+      .picks.split li.head {
+        padding: 10px 0 12px;
+      }
+      .picks.split li.head .t {
+        font-size: 21px;
+        white-space: normal;
+      }
+      .picks.split li.head .sum {
+        -webkit-line-clamp: 2;
+      }
+      .side.split .issue-line {
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+      .head-tag {
+        font-family: 'IBM Plex Mono', monospace;
+        color: #12120e;
+        background: oklch(0.87 0.195 93);
+        padding: 2px 7px;
+      }
       .foot .live {
         color: oklch(0.87 0.195 93);
       }
@@ -199,11 +288,34 @@ const picks = rest.length >= 3 ? rest : articles;
   </head>
   <body>
     <div class="card">
-      <div class="poster">
-        <img src={`/issues/issue-${issue.no}-poster-en.png`} alt="" />
-      </div>
+      {
+        hasCoverImage ? (
+          <div class="cover-side">
+            <div class="mast-row">
+              <img class="mast-mark" src="/logo/dn-mark.png" alt="" />
+              <span class="mast">DISPLAY NOW</span>
+            </div>
+            <div class="identity">A display magazine written 100% by AI reporters</div>
+            <div class="cover-fig">
+              <img class="cover-img" src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+              <div class="cover-cap">
+                <span class="cap-tag">Cover simulation</span>
+                {coverArticle && (
+                  <span>
+                    {SECTIONS[coverArticle.data.section].labelEn} · {coverArticle.data.title}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="poster">
+            <img src={`/issues/issue-${issue.no}-poster-en.png`} alt="" />
+          </div>
+        )
+      }
 
-      <div class="side">
+      <div class={hasCoverImage ? 'side split' : 'side'}>
         <div class="issue-line">
           {issueNumberLabel(issue, 'en')} · {collectRangeLabel(issue, 'en')}
           {SHOW_PUBLISH_DATE && <> · {issueDateLabel(issue)}</>} · {articles.length} articles
@@ -211,25 +323,29 @@ const picks = rest.length >= 3 ? rest : articles;
 
         {/* ISSN은 앞쪽에 둔다 — 뒷표지가 없는 매체라 표지가 간행물 정보를 맡는다(2026-09-14) */}
         <div class="picks-label"><span>In this issue</span><span>ISSN 3140-5487</span></div>
-        <ul class={picks.length < 3 ? 'picks few' : 'picks'}>
+        <ul class={hasCoverImage ? 'picks split' : picks.length < 3 ? 'picks few' : 'picks'}>
           {
-            picks.map((a) => (
-              <li>
-                <div class="meta-row">
-                  <span class="chip" style={`background:${sectionColor(a.data.section, 0.42)};`}>
-                    {SECTIONS[a.data.section].labelEn}
-                  </span>
-                  <span class="byline">{bylineOf(a)}</span>
-                </div>
-                <div class="t">{a.data.title}</div>
-                <p class="sum">{a.data.summary}</p>
-              </li>
-            ))
+            picks.map((a) => {
+              const isHead = hasCoverImage && a.slug === head?.slug;
+              return (
+                <li class={isHead ? 'head' : ''}>
+                  <div class="meta-row">
+                    {isHead && <span class="head-tag">HEAD</span>}
+                    <span class="chip" style={`background:${sectionColor(a.data.section, 0.42)};`}>
+                      {SECTIONS[a.data.section].labelEn}
+                    </span>
+                    <span class="byline">{bylineOf(a)}</span>
+                  </div>
+                  <div class="t">{a.data.title}</div>
+                  {(!hasCoverImage || isHead) && <p class="sum">{a.data.summary}</p>}
+                </li>
+              );
+            })
           }
         </ul>
 
         <div class="foot">
-          Published by Next I/O{issue.coverSim && <span class="live"> · Live simulation cover</span>}
+          Published by Next I/O{issue.coverSim && !hasCoverImage && <span class="live"> · Live simulation cover</span>}
           <span class="site">display-now.nextio.ai.kr</span>
         </div>
       </div>
