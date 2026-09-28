@@ -103,6 +103,9 @@ export const ISSUES: IssueMeta[] = [
     coverSimParams: { preset: 'mosmite', view: 34 },
     coverNote: '모스아이 나노 돌기를 실제 비율로 그린 3D 모델(테커 편)입니다. 빛의 파장보다 작은 돌기가 공기와 수지의 굴절률을 계단이 아니라 경사로 이어 반사를 지웁니다.',
     headSlug: '2026-09-29-taction-apple-haptic-q-factor',
+    headlineEn: "Apple's Taptic Engine Patent Loss: $5.7 Billion",
+    deckEn: "Apple beat the infringement claim at trial by arguing its Taptic Engine's Q-factor exceeds the 1.5 line the district court had drawn — the appeals court threw out that line for having no basis and reversed. A jury ordered Apple to pay $5.72 billion (about ₩7.75 trillion) in damages.",
+    coverNoteEn: "A to-scale 3D model of moth-eye nanocones, from Teker's piece. Bumps smaller than the wavelength of light turn the air-to-resin refractive-index change from a step into a ramp, erasing the reflection.",
   },
   {
     no: 6,
