@@ -1,0 +1,53 @@
+<svg viewBox="0 0 678 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="519" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Three limits added, two erased</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Taction v. Apple · claim construction</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- timeline -->
+  <line x1="46" y1="104" x2="632" y2="104" stroke="#c9c9c3" stroke-width="1.6"/>
+  <circle cx="80" cy="104" r="5.5" fill="#5c3a7a"/>
+  <circle cx="255" cy="104" r="5.5" fill="#c2705a"/>
+  <circle cx="430" cy="104" r="5.5" fill="#2f6a4a"/>
+  <circle cx="606" cy="104" r="5.5" fill="#c2705a"/>
+  <text x="80" y="92" font-size="13" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Apr 2021</text>
+  <text x="255" y="92" font-size="13" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2023</text>
+  <text x="430" y="92" font-size="13" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Aug 2025</text>
+  <text x="606" y="92" font-size="13" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Sep 2026</text>
+  <text x="80" y="124" font-size="13" fill="#8a8a80" text-anchor="middle">sued</text>
+  <text x="255" y="124" font-size="13" fill="#8a8a80" text-anchor="middle">Apple wins</text>
+  <text x="430" y="124" font-size="13" fill="#8a8a80" text-anchor="middle">vacated</text>
+  <text x="606" y="124" font-size="13" fill="#8a8a80" text-anchor="middle">verdict</text>
+
+  <!-- limit 1 -->
+  <rect x="22" y="142" width="634" height="68" rx="5" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.6"/>
+  <text x="36" y="165" font-size="15.5" font-weight="600" fill="#4a2d63">1 · highly damped output</text>
+  <text x="36" y="187" font-size="14" fill="#5e4478">from what the applicant said while prosecuting the parent case</text>
+  <text x="520" y="176" font-size="15.5" font-weight="700" fill="#2f6a4a">SURVIVED</text>
+  <text x="36" y="204" font-size="13" fill="#6f9a80" font-family="'IBM Plex Mono', monospace">a clear and unmistakable disclaimer</text>
+
+  <!-- limit 2 -->
+  <rect x="22" y="222" width="634" height="68" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.6"/>
+  <text x="36" y="245" font-size="15.5" font-weight="600" fill="#8a3a26">2 · achieved by mechanical damping</text>
+  <text x="36" y="267" font-size="14" fill="#7a4a3a">added because the spec showed no other kind of damping</text>
+  <text x="544" y="256" font-size="15.5" font-weight="700" fill="#8a3a26">ERASED</text>
+  <text x="36" y="284" font-size="13" fill="#9a6a58" font-family="'IBM Plex Mono', monospace">reading the spec into the claim</text>
+
+  <!-- limit 3 -->
+  <rect x="22" y="302" width="634" height="68" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.6"/>
+  <text x="36" y="325" font-size="15.5" font-weight="600" fill="#8a3a26">3 · Q factor below 1.5</text>
+  <text x="36" y="347" font-size="14" fill="#7a4a3a">read out of remarks calling a Q of 1.5 to 3 a drawback</text>
+  <text x="544" y="336" font-size="15.5" font-weight="700" fill="#8a3a26">ERASED</text>
+  <text x="36" y="364" font-size="13" fill="#9a6a58" font-family="'IBM Plex Mono', monospace">a sibling patent claims that very number</text>
+
+  <!-- why -->
+  <rect x="22" y="386" width="634" height="84" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.5"/>
+  <text x="36" y="409" font-size="15.5" font-weight="600" fill="#4a4a44">Why the number fell</text>
+  <text x="36" y="431" font-size="14" fill="#6a6a62">US 9,430,921, same family, puts "a Q-factor of less than 1.5" inside five claims.</text>
+  <text x="36" y="451" font-size="14" fill="#6a6a62">If the remarks had given that number up, those claims would mean nothing.</text>
+  <text x="36" y="466" font-size="13" fill="#8a8a80">Q = 0.5 is critical damping. Above it the module rings; below it it crawls.</text>
+
+  <text x="22" y="494" font-size="14" fill="#4a4a44">The claim says damping must happen. It never says a machine has to do it.</text>
+  <text x="22" y="512" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from the CAFC opinion (2023-2349, 13 Aug 2025); verdict from CNBC and AppleInsider.</text>
+</svg>

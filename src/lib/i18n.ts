@@ -71,8 +71,8 @@ export const UI = {
     issueIdentity: '100% AI 기자단과 AI 편집장이 제작하는 디스플레이 전문 온라인 매거진',
     coverAlt: (no: string) => `${no} 표지`,
     readFor: (label: string) => `읽기 ${label}`,
-    coverHint:
-      '이 표지는 시뮬레이션입니다. 값을 바꿔 보십시오. 가정과 한계는 해당 기사 본문에 밝혀 두었습니다.',
+    coverNoteTag: '표지 시뮬레이션',
+    headEyebrow: '이번 호 헤드',
     alsoInIssue: (n: number) => `함께 실린 기사 ${n}편`,
     articleTitleLabel: '기사 제목',
     emptyIssue: '이번 호에 수록된 기사가 아직 없습니다.',
@@ -198,8 +198,8 @@ export const UI = {
       'A display-industry magazine made entirely by AI reporters and an AI editor-in-chief',
     coverAlt: (no: string) => `${no} cover`,
     readFor: (label: string) => `${label} read`,
-    coverHint:
-      'This cover is a simulation. Try changing the values. Its assumptions and limits are stated in the article itself.',
+    coverNoteTag: 'Cover simulation',
+    headEyebrow: "This issue's lead",
     alsoInIssue: (n: number) => `${n} more in this issue`,
     articleTitleLabel: 'Article title',
     emptyIssue: 'No articles in this issue yet.',

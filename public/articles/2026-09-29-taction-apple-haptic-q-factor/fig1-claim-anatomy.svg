@@ -1,0 +1,54 @@
+<svg viewBox="0 0 678 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">What the claim actually asks for</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">US 10,659,885 claim 1 · quoted in the CAFC opinion</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- cross section -->
+  <rect x="22" y="86" width="634" height="150" rx="6" fill="#f6f6f4" stroke="#9a9a92" stroke-width="1.6"/>
+  <text x="34" y="106" font-size="13" fill="#6a6a62" font-family="'IBM Plex Mono', monospace">housing</text>
+
+  <!-- coils -->
+  <rect x="52" y="196" width="120" height="26" rx="3" fill="#e8e4f2" stroke="#b9a3cc" stroke-width="1.4"/>
+  <rect x="506" y="196" width="120" height="26" rx="3" fill="#e8e4f2" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="112" y="214" font-size="13" fill="#4a2d63" text-anchor="middle" font-family="'IBM Plex Mono', monospace">coil</text>
+  <text x="566" y="214" font-size="13" fill="#4a2d63" text-anchor="middle" font-family="'IBM Plex Mono', monospace">coil</text>
+
+  <!-- moving portion -->
+  <rect x="210" y="132" width="258" height="58" rx="4" fill="#fbeeea" stroke="#c2705a" stroke-width="1.8"/>
+  <text x="339" y="155" font-size="15.5" font-weight="600" fill="#8a3a26" text-anchor="middle">moving portion</text>
+  <text x="339" y="177" font-size="13" fill="#7a4a3a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">inertial mass + magnets</text>
+
+  <!-- ferrofluid layer -->
+  <rect x="210" y="120" width="258" height="9" rx="3" fill="#dfc09a" stroke="#b98f4f" stroke-width="1.1"/>
+  <text x="339" y="114" font-size="13" fill="#8a5a2a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">ferrofluid, touching the moving portion</text>
+
+  <!-- flexures -->
+  <path d="M210 161 C186 149, 186 173, 162 161" fill="none" stroke="#5c3a7a" stroke-width="1.8"/>
+  <path d="M468 161 C492 149, 492 173, 516 161" fill="none" stroke="#5c3a7a" stroke-width="1.8"/>
+  <text x="150" y="142" font-size="13" fill="#5c3a7a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">flexure</text>
+  <text x="528" y="142" font-size="13" fill="#5c3a7a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">flexure</text>
+
+  <!-- planar motion -->
+  <text x="339" y="206" font-size="13" fill="#8a3a26" text-anchor="middle" font-family="'IBM Plex Mono', monospace">planar motion, side to side</text>
+  <line x1="300" y1="221" x2="240" y2="221" stroke="#c2705a" stroke-width="1.6"/>
+  <path d="M248 215 L236 221 L248 227 Z" fill="#c2705a"/>
+  <line x1="378" y1="221" x2="438" y2="221" stroke="#c2705a" stroke-width="1.6"/>
+  <path d="M430 215 L442 221 L430 227 Z" fill="#c2705a"/>
+
+  <!-- the two clauses -->
+  <text x="22" y="266" font-size="13" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Mono', monospace" letter-spacing="0.8">THE TWO CLAUSES THE CASE TURNED ON</text>
+
+  <rect x="22" y="278" width="634" height="54" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.5"/>
+  <text x="36" y="301" font-size="15.5" font-weight="600" fill="#8a3a26">movement is damped by a ferrofluid</text>
+  <text x="36" y="322" font-size="14" fill="#7a4a3a">in physical contact with at least the moving portion</text>
+
+  <rect x="22" y="342" width="634" height="76" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.5"/>
+  <text x="36" y="365" font-size="15.5" font-weight="600" fill="#8a3a26">the ferrofluid reduces at least a mechanical resonance</text>
+  <text x="36" y="386" font-size="15.5" font-weight="600" fill="#8a3a26">within the frequency range of 40-200 Hz</text>
+  <text x="36" y="408" font-size="14" fill="#7a4a3a">the claim never says how the damping must be done</text>
+
+  <text x="22" y="442" font-size="14" fill="#4a4a44">Written in 2014 for a headphone ear cup. Priority 24 Sep 2014, granted 2020, expires 2035.</text>
+  <text x="22" y="462" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from the CAFC opinion (2023-2349) and the patent text. Not to scale.</text>
+</svg>

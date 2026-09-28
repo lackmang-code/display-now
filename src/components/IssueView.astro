@@ -134,6 +134,21 @@ const grouped = SECTION_ORDER.map((key) => ({
             <img class="cover-img" src={fallbackImage} alt={ui.coverAlt(issueNumberLabel(issue, lang))} />
           ) : null
         }
+        {/*
+          표지 시뮬레이션이 무엇인지 초간단히 밝히는 캡션(2026-09-28 대표 지적).
+          표지=헤드 기사일 때는 필요 없었지만(바로 밑 헤드라인이 그 역할을 겸했다),
+          표지를 다른 기사에서 빌려 오는 호(예: 제7호)는 이 캡션이 없으면 표지 그림이
+          무엇을 그린 것인지 알 길이 없다. 시뮬 카드 안, 헤드기사 소개(cover-bottom)
+          바깥에 둬서 "표지 자체"와 "헤드기사 소개"를 명확히 나눈다.
+        */}
+        {
+          (en ? issue.coverNoteEn : issue.coverNote) && (
+            <p class="cover-note">
+              <span class="cover-note-tag">{ui.coverNoteTag}</span>
+              {en ? issue.coverNoteEn : issue.coverNote}
+            </p>
+          )
+        }
       </div>
 
       <div class="cover-bottom">
@@ -146,6 +161,7 @@ const grouped = SECTION_ORDER.map((key) => ({
           인쇄 표지에 해당하는 포스터·og 카드에는 커버라인이 그대로 있다 —
           그쪽은 한 장으로 끝나는 그림이라 목차가 따라붙지 않는다.
         */}
+        {head && <p class="head-eyebrow">{ui.headEyebrow}</p>}
         {
           head ? (
             <a class="head-link" href={articleHref(head)}>
@@ -173,13 +189,6 @@ const grouped = SECTION_ORDER.map((key) => ({
           )
         }
 
-        {
-          issue.coverSim && (
-            <div class="cover-hint">
-              {ui.coverHint}
-            </div>
-          )
-        }
       </div>
       </div>
     </section>
@@ -390,6 +399,35 @@ const grouped = SECTION_ORDER.map((key) => ({
     max-height: 56svh;
     object-fit: contain;
   }
+  /* 표지 시뮬레이션 캡션. 시뮬 카드(밝은 배경) 안에서 끝나 헤드기사 소개(어두운 배경)와
+     한눈에 갈린다 — 표지 자체를 설명하는 줄과 헤드 기사를 소개하는 줄을 색으로 나눈다. */
+  .cover-note {
+    margin: clamp(8px, 1.6vw, 12px) 0 0;
+    padding-top: clamp(8px, 1.6vw, 12px);
+    border-top: 1px solid rgba(18, 18, 14, 0.14);
+    font-size: clamp(12.5px, 1.6vw, 13.5px);
+    line-height: 1.6;
+    color: var(--meta-soft);
+    word-break: keep-all;
+  }
+  .cover-note-tag {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--ink);
+    margin-right: 0.5em;
+  }
+  .cover-note-tag::after {
+    content: ' — ';
+  }
+  /* 헤드기사 소개의 첫 줄. "위는 표지, 여기부터 헤드 기사"를 이름표 하나로 못 박는다 */
+  .head-eyebrow {
+    margin: 0 0 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    opacity: 0.9;
+  }
   .cover-bottom h1 {
     margin: 0 0 10px;
     font-family: var(--font-serif);
@@ -439,13 +477,6 @@ const grouped = SECTION_ORDER.map((key) => ({
     font-size: clamp(12px, 1.5vw, 13.5px);
     letter-spacing: 0.03em;
     color: var(--on-dark-mute);
-  }
-  .cover-hint {
-    margin-top: 14px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    opacity: 0.62;
   }
 
   /* 표지 아래 목차·편집장 노트까지 표지와 같은 판형 폭으로 이어 붙인다.

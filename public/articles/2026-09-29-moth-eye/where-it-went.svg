@@ -1,0 +1,83 @@
+<svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="899" height="329" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Five slots filled, one still empty</text>
+  <text x="28" y="64" font-size="15" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.2">Reported luminous reflectance Y, by where moth-eye already ships</text>
+
+  <!-- six cards -->
+  <!-- geometry: x0=28, card width 138, gap 10, 6 cards -->
+
+  <!-- card 1: vehicle display -->
+  <g>
+    <rect x="28" y="90" width="138" height="196" rx="6" fill="#f4f3ee" stroke="#c9c6ba" stroke-width="1.2"/>
+    <text x="97" y="122" font-size="15" fill="#4d4d45" text-anchor="middle">Vehicle</text>
+    <text x="97" y="140" font-size="15" fill="#4d4d45" text-anchor="middle">display</text>
+    <text x="97" y="185" font-size="26" font-weight="700" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.2%</text>
+    <line x1="48" y1="205" x2="146" y2="205" stroke="#dcd8cb" stroke-width="1"/>
+    <text x="97" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">rarely</text>
+    <text x="97" y="244" font-size="15" fill="#8a8a80" text-anchor="middle">touched</text>
+    <text x="97" y="270" font-size="14.5" fill="#a0a098" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Dexerials</text>
+  </g>
+
+  <!-- card 2: face shield -->
+  <g>
+    <rect x="176" y="90" width="138" height="196" rx="6" fill="#f4f3ee" stroke="#c9c6ba" stroke-width="1.2"/>
+    <text x="245" y="122" font-size="15" fill="#4d4d45" text-anchor="middle">Face</text>
+    <text x="245" y="140" font-size="15" fill="#4d4d45" text-anchor="middle">shield</text>
+    <text x="245" y="185" font-size="26" font-weight="700" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.3%</text>
+    <line x1="196" y1="205" x2="294" y2="205" stroke="#dcd8cb" stroke-width="1"/>
+    <text x="245" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">disinfected,</text>
+    <text x="245" y="244" font-size="15" fill="#8a8a80" text-anchor="middle">not touched</text>
+    <text x="245" y="270" font-size="14.5" fill="#a0a098" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Sharp</text>
+  </g>
+
+  <!-- card 3: camera lens -->
+  <g>
+    <rect x="324" y="90" width="138" height="196" rx="6" fill="#f4f3ee" stroke="#c9c6ba" stroke-width="1.2"/>
+    <text x="393" y="122" font-size="15" fill="#4d4d45" text-anchor="middle">Camera</text>
+    <text x="393" y="140" font-size="15" fill="#4d4d45" text-anchor="middle">lens</text>
+    <text x="393" y="185" font-size="26" font-weight="700" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.05%</text>
+    <line x1="344" y1="205" x2="442" y2="205" stroke="#dcd8cb" stroke-width="1"/>
+    <text x="393" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">sealed,</text>
+    <text x="393" y="244" font-size="15" fill="#8a8a80" text-anchor="middle">never touched</text>
+    <text x="393" y="270" font-size="14.5" fill="#a0a098" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Canon SWC</text>
+  </g>
+
+  <!-- card 4: watch inner surface -->
+  <g>
+    <rect x="472" y="90" width="138" height="196" rx="6" fill="#f4f3ee" stroke="#c9c6ba" stroke-width="1.2"/>
+    <text x="541" y="122" font-size="15" fill="#4d4d45" text-anchor="middle">Watch's</text>
+    <text x="541" y="140" font-size="15" fill="#4d4d45" text-anchor="middle">inner LCD</text>
+    <text x="541" y="185" font-size="26" font-weight="700" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.1~0.2%</text>
+    <line x1="492" y1="205" x2="590" y2="205" stroke="#dcd8cb" stroke-width="1"/>
+    <text x="541" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">under the</text>
+    <text x="541" y="244" font-size="15" fill="#8a8a80" text-anchor="middle">cover glass</text>
+    <text x="541" y="270" font-size="14.5" fill="#a0a098" text-anchor="middle" font-family="'IBM Plex Mono', monospace">MOSMITE</text>
+  </g>
+
+  <!-- card 5: museum frame -->
+  <g>
+    <rect x="620" y="90" width="138" height="196" rx="6" fill="#f4f3ee" stroke="#c9c6ba" stroke-width="1.2"/>
+    <text x="689" y="122" font-size="15" fill="#4d4d45" text-anchor="middle">Museum</text>
+    <text x="689" y="140" font-size="15" fill="#4d4d45" text-anchor="middle">frame</text>
+    <text x="689" y="185" font-size="26" font-weight="700" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.1~0.3%</text>
+    <line x1="640" y1="205" x2="738" y2="205" stroke="#dcd8cb" stroke-width="1"/>
+    <text x="689" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">behind</text>
+    <text x="689" y="244" font-size="15" fill="#8a8a80" text-anchor="middle">glass</text>
+    <text x="689" y="270" font-size="14.5" fill="#a0a098" text-anchor="middle" font-family="'IBM Plex Mono', monospace">MOSMITE</text>
+  </g>
+
+  <!-- card 6: phone screen, EMPTY -->
+  <g>
+    <rect x="768" y="90" width="104" height="196" rx="6" fill="#fdfdfc" stroke="#c0642b" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <text x="820" y="122" font-size="16.5" fill="#c0642b" text-anchor="middle" font-weight="700">Phone</text>
+    <text x="820" y="140" font-size="16.5" fill="#c0642b" text-anchor="middle" font-weight="700">screen</text>
+    <text x="820" y="185" font-size="24" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace">?</text>
+    <line x1="782" y1="205" x2="858" y2="205" stroke="#e4b89a" stroke-width="1"/>
+    <text x="820" y="225" font-size="14.5" fill="#c0642b" text-anchor="middle">touched</text>
+    <text x="820" y="240" font-size="14.5" fill="#c0642b" text-anchor="middle">daily</text>
+    <text x="820" y="266" font-size="16.5" fill="#c0642b" text-anchor="middle">no public</text>
+    <text x="820" y="280" font-size="16.5" fill="#c0642b" text-anchor="middle">product</text>
+  </g>
+
+  <text x="28" y="316" font-size="15" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Reflectance figures as reported by each maker, not measured under identical conditions.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="899" height="459" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Repetition smooths the pore wall</text>
+  <text x="28" y="64" font-size="16.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" letter-spacing="0.2">Same mold, same voltage: pore wall shape after 3 vs 15 anodize-etch cycles</text>
+
+  <!-- panel dividers -->
+  <line x1="450" y1="86" x2="450" y2="392" stroke="#e3e3dd" stroke-width="1.4"/>
+
+  <!-- ===== LEFT: 3 cycles, stepped wall ===== -->
+  <text x="225" y="108" font-size="18" font-weight="700" fill="#12120e" text-anchor="middle" font-family="'Noto Serif KR', serif">3 cycles</text>
+  <text x="225" y="128" font-size="16.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" text-anchor="middle">visible staircase on the wall</text>
+
+  <!-- base slab -->
+  <rect x="45" y="330" width="360" height="34" fill="#e9e6dc" stroke="#c9c6ba" stroke-width="1"/>
+
+  <!-- 5 stepped fingers -->
+  <g fill="#dcd8cb" stroke="#8a8478" stroke-width="1.1" stroke-linejoin="round">
+    <path d="M 55 330 L 55 190 L 63 190 L 63 175 L 71 175 L 71 160 L 79 160 L 79 145 L 95 145 L 95 160 L 103 160 L 103 175 L 111 175 L 111 190 L 119 190 L 119 330 Z"/>
+    <path d="M 129 330 L 129 190 L 137 190 L 137 175 L 145 175 L 145 160 L 153 160 L 153 145 L 169 145 L 169 160 L 177 160 L 177 175 L 185 175 L 185 190 L 193 190 L 193 330 Z"/>
+    <path d="M 203 330 L 203 190 L 211 190 L 211 175 L 219 175 L 219 160 L 227 160 L 227 145 L 243 145 L 243 160 L 251 160 L 251 175 L 259 175 L 259 190 L 267 190 L 267 330 Z"/>
+    <path d="M 277 330 L 277 190 L 285 190 L 285 175 L 293 175 L 293 160 L 301 160 L 301 145 L 317 145 L 317 160 L 325 160 L 325 175 L 333 175 L 333 190 L 341 190 L 341 330 Z"/>
+    <path d="M 351 330 L 351 190 L 359 190 L 359 175 L 367 175 L 367 160 L 375 160 L 375 145 L 391 145 L 391 160 L 399 160 L 399 175 L 407 175 L 407 190 L 415 190 L 415 330 Z"/>
+  </g>
+  <!-- step-count callout on one finger -->
+  <line x1="130" y1="190" x2="105" y2="190" stroke="#c0642b" stroke-width="1.1"/>
+  <line x1="130" y1="145" x2="105" y2="145" stroke="#c0642b" stroke-width="1.1"/>
+  <text x="99" y="171" font-size="16.5" fill="#c0642b" text-anchor="end" font-family="'IBM Plex Mono', monospace">3 steps</text>
+
+  <text x="225" y="356" font-size="15.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">alumina mold</text>
+
+  <!-- ===== RIGHT: 15 cycles, smooth taper ===== -->
+  <text x="675" y="108" font-size="18" font-weight="700" fill="#12120e" text-anchor="middle" font-family="'Noto Serif KR', serif">15 cycles</text>
+  <text x="675" y="128" font-size="16.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace" text-anchor="middle">smooth, continuous taper</text>
+
+  <rect x="495" y="330" width="360" height="34" fill="#e9e6dc" stroke="#c9c6ba" stroke-width="1"/>
+
+  <g fill="#dcd8cb" stroke="#8a8478" stroke-width="1.1" stroke-linejoin="round">
+    <path d="M 505 330 L 505 195 C 505 160 513 145 521 145 C 529 145 537 160 537 195 L 537 330 Z"/>
+    <path d="M 579 330 L 579 195 C 579 160 587 145 595 145 C 603 145 611 160 611 195 L 611 330 Z"/>
+    <path d="M 653 330 L 653 195 C 653 160 661 145 669 145 C 677 145 685 160 685 195 L 685 330 Z"/>
+    <path d="M 727 330 L 727 195 C 727 160 735 145 743 145 C 751 145 759 160 759 195 L 759 330 Z"/>
+    <path d="M 801 330 L 801 195 C 801 160 809 145 817 145 C 825 145 833 160 833 195 L 833 330 Z"/>
+  </g>
+
+  <text x="675" y="356" font-size="15.5" fill="#4d4d45" text-anchor="middle" font-family="'IBM Plex Mono', monospace">alumina mold</text>
+
+  <!-- shared depth marker -->
+  <line x1="30" y1="145" x2="30" y2="330" stroke="#9a9a90" stroke-width="1.2"/>
+  <line x1="25" y1="145" x2="35" y2="145" stroke="#9a9a90" stroke-width="1.2"/>
+  <line x1="25" y1="330" x2="35" y2="330" stroke="#9a9a90" stroke-width="1.2"/>
+  <text x="18" y="240" font-size="16.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace" transform="rotate(-90 18 240)">depth ≈ 330 nm</text>
+
+  <text x="450" y="416" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">pore spacing = anodizing voltage × 2.5 nm/V (here 60V → 150nm)</text>
+  <text x="28" y="444" font-size="16" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Concept diagram redrawn by this outlet from reported dimensions and cycle counts. Not a photograph.</text>
+</svg>
