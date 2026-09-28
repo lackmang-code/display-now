@@ -12,6 +12,7 @@ import {
   articleHref,
   langOf,
   counterpartOf,
+  publishedIsoKst,
 } from '../lib/articles';
 import { t } from '../lib/i18n';
 import { seriesOf, partOf, episodesOfPart, seriesKicker, partTitle, partDeck, partClosesWith } from '../lib/series';
@@ -99,12 +100,15 @@ const articleLd = {
     name: t.label,
     url: new URL(`/tag/${t.slug}`, Astro.site).toString(),
   })),
-  datePublished: entry.data.publishedAt.toISOString(),
-  dateModified: entry.data.publishedAt.toISOString(),
+  datePublished: publishedIsoKst(entry),
+  dateModified: publishedIsoKst(entry),
   image: [new URL(`/og/${entry.slug}.png`, Astro.site).toString()],
+  // 저자를 편집국 면에 잇는다. 구글은 AI 바이라인 대신 「AI를 어떻게 썼는지」 공개를 권한다 —
+  // 편집국 면이 AI 기자단 구성과 대표의 기획·검수를 밝히는 자리다. 바이라인 표기는 그대로(2026-09-29).
   author: {
     '@type': 'Organization',
     name: lang === 'en' ? `${entry.data.reporter} (AI reporter)` : `${entry.data.reporter} (AI 기자)`,
+    url: new URL(lang === 'en' ? '/en/editorial' : '/editorial', Astro.site).toString(),
   },
   publisher: {
     '@type': 'Organization',

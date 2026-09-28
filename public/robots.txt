@@ -62,3 +62,4 @@ User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://display-now.nextio.ai.kr/sitemap.xml
+Sitemap: https://display-now.nextio.ai.kr/news-sitemap.xml

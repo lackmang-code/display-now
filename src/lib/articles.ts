@@ -44,6 +44,15 @@ export async function getPublishedArticles(lang: Lang | 'all' = 'ko'): Promise<A
   return all.filter((a) => a.data.publishedAt.toISOString().slice(0, 10) <= todayKst);
 }
 
+/**
+ * 발행 시각(한국 시간). publishedAt 은 날짜만 적고 발행 게이트가 그 날짜의 KST 0시에 연다.
+ * toISOString() 은 `…T00:00:00.000Z`(=KST 오전 9시)라 실제 발행보다 9시간 늦게 찍힌다.
+ * 구조화 데이터·뉴스 사이트맵은 이 값을 쓴다(2026-09-29 구글 뉴스 준비).
+ */
+export function publishedIsoKst(a: Article): string {
+  return `${a.data.publishedAt.toISOString().slice(0, 10)}T00:00:00+09:00`;
+}
+
 /** 꼭지 목록. 발행된 것만 보여준다 */
 export async function getArticlesBySection(section: string, lang: Lang = 'ko'): Promise<Article[]> {
   const all = await getPublishedArticles(lang);
