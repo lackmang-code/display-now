@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="899" height="599" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="24.5" fill="#12120e" font-family="'Noto Serif KR', serif" font-weight="700">Thin and humidity-proof, but acidic and drifting</text>
+  <text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Two issues with PEDOT:PSS antistatic coatings</text>
+  <text x="28" y="108" font-size="18" fill="#12120e" font-family="'Noto Serif KR', serif" font-weight="700">A. The dispersion is a strong acid</text>
+  <rect x="60.0" y="170" width="57.14285714285714" height="16" fill="#c0642b"/>
+  <rect x="117.14285714285714" y="170" width="57.14285714285714" height="16" fill="#c97440"/>
+  <rect x="174.28571428571428" y="170" width="57.14285714285714" height="16" fill="#d18455"/>
+  <rect x="231.42857142857142" y="170" width="57.14285714285714" height="16" fill="#d8956b"/>
+  <rect x="288.57142857142856" y="170" width="57.14285714285717" height="16" fill="#dea682"/>
+  <rect x="345.7142857142857" y="170" width="57.14285714285711" height="16" fill="#e3b79a"/>
+  <rect x="402.85714285714283" y="170" width="57.14285714285717" height="16" fill="#e7c8b3"/>
+  <rect x="460.0" y="170" width="57.14285714285711" height="16" fill="#dfe3dd"/>
+  <rect x="517.1428571428571" y="170" width="57.142857142857224" height="16" fill="#c8d6e6"/>
+  <rect x="574.2857142857143" y="170" width="57.14285714285711" height="16" fill="#b4c6dd"/>
+  <rect x="631.4285714285714" y="170" width="57.14285714285711" height="16" fill="#9fb6d4"/>
+  <rect x="688.5714285714286" y="170" width="57.14285714285711" height="16" fill="#8aa6cb"/>
+  <rect x="745.7142857142857" y="170" width="57.142857142857224" height="16" fill="#7596c2"/>
+  <rect x="802.8571428571429" y="170" width="57.14285714285711" height="16" fill="#6086b9"/>
+  <text x="60.0" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0</text>
+  <text x="174.28571428571428" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2</text>
+  <text x="288.57142857142856" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">4</text>
+  <text x="402.85714285714283" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">6</text>
+  <text x="517.1428571428571" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">8</text>
+  <text x="631.4285714285714" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">10</text>
+  <text x="745.7142857142857" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">12</text>
+  <text x="860.0" y="206" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">14</text>
+  <text x="460.0" y="228" font-size="15" fill="#8a8a80" text-anchor="middle">pH</text>
+  <rect x="117.14285714285714" y="144" width="85.71428571428572" height="14" rx="3" fill="#c0642b"/>
+  <text x="117.14285714285714" y="136" font-size="15" fill="#c0642b" font-weight="700">standard grades 1.0–2.5</text>
+  <rect x="345.7142857142857" y="144" width="171.4285714285714" height="14" rx="3" fill="#2f7d5c"/>
+  <text x="345.7142857142857" y="136" font-size="15" fill="#2f7d5c" font-weight="700">neutralized grade 5–8</text>
+  <rect x="60" y="252" width="800" height="70" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="76" y="280" font-size="15" fill="#4d4d45">Indium etched out of ITO underneath</text>
+  <text x="440" y="280" font-size="17" fill="#c0642b" font-family="'IBM Plex Mono', monospace" font-weight="700">0.13 %</text>
+  <text x="560" y="280" font-size="15" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace">→ 0.02 % when neutralized</text>
+  <text x="76" y="306" font-size="15" fill="#4d4d45">Silver nanowires under it at 85 °C</text>
+  <text x="440" y="306" font-size="17" fill="#c0642b" font-family="'IBM Plex Mono', monospace" font-weight="700">dissolved</text>
+  <text x="560" y="306" font-size="15" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace">→ almost no change when neutralized</text>
+  <text x="28" y="372" font-size="18" fill="#12120e" font-family="'Noto Serif KR', serif" font-weight="700">B. Sheet resistance drifts up over time and heat</text>
+  <line x1="250" y1="500.0" x2="860" y2="500.0" stroke="#e3e3dd"/>
+  <text x="240" y="505.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10<tspan dy="-7" font-size="12">5</tspan></text>
+  <line x1="250" y1="474.0" x2="860" y2="474.0" stroke="#e3e3dd"/>
+  <text x="240" y="479.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10<tspan dy="-7" font-size="12">7</tspan></text>
+  <line x1="250" y1="448.0" x2="860" y2="448.0" stroke="#e3e3dd"/>
+  <text x="240" y="453.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10<tspan dy="-7" font-size="12">9</tspan></text>
+  <line x1="250" y1="422.0" x2="860" y2="422.0" stroke="#e3e3dd"/>
+  <text x="240" y="427.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10<tspan dy="-7" font-size="12">11</tspan></text>
+  <line x1="250" y1="396.0" x2="860" y2="396.0" stroke="#e3e3dd"/>
+  <text x="240" y="401.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-family="'IBM Plex Mono', monospace">10<tspan dy="-7" font-size="12">13</tspan></text>
+  <text x="60" y="448" font-size="15" fill="#8a8a80">Ω/□ (log)</text>
+  <circle cx="320" cy="493.5" r="6" fill="#fff" stroke="#c0642b" stroke-width="2.2"/>
+  <circle cx="366" cy="409.0" r="6" fill="#c0642b"/>
+  <line x1="326" y1="493.5" x2="360" y2="409.0" stroke="#c0642b" stroke-width="2"/>
+  <text x="343" y="522" font-size="15" fill="#12120e" text-anchor="middle" font-weight="700">PEDOT coat</text>
+  <text x="343" y="540" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">after 10 days</text>
+  <circle cx="470" cy="454.5" r="6" fill="#fff" stroke="#c0642b" stroke-width="2.2"/>
+  <circle cx="516" cy="438.9" r="6" fill="#c0642b"/>
+  <line x1="476" y1="454.5" x2="510" y2="438.9" stroke="#c0642b" stroke-width="2"/>
+  <text x="493" y="522" font-size="15" fill="#12120e" text-anchor="middle" font-weight="700">PEDOT film</text>
+  <text x="493" y="540" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">95 °C</text>
+  <circle cx="620" cy="461.0" r="6" fill="#fff" stroke="#c0642b" stroke-width="2.2"/>
+  <circle cx="666" cy="445.4" r="6" fill="#c0642b"/>
+  <line x1="626" y1="461.0" x2="660" y2="445.4" stroke="#c0642b" stroke-width="2"/>
+  <text x="643" y="522" font-size="15" fill="#12120e" text-anchor="middle" font-weight="700">PEDOT film</text>
+  <text x="643" y="540" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">95 °C</text>
+  <circle cx="770" cy="461.0" r="6" fill="#fff" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="816" cy="461.0" r="6" fill="#2f7d5c"/>
+  <line x1="776" y1="461.0" x2="810" y2="461.0" stroke="#2f7d5c" stroke-width="2"/>
+  <text x="793" y="522" font-size="15" fill="#12120e" text-anchor="middle" font-weight="700">CNT film</text>
+  <text x="793" y="540" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">105 °C, 1500 h</text>
+  <text x="28" y="572" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">A: lab studies of PEDOT:PSS on ITO and silver nanowire. B: mixed sources and conditions;</text>
+  <text x="28" y="590" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">CNT drawn flat for "almost no change". Read the direction, not the size.</text>
+</svg>

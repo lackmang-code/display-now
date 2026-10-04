@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 366" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="366" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">Where LG Display puts the novelty in touch-on-encapsulation patents</text>
+<text x="20.0" y="47.0" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start">16 US patents whose claim 1 recites touch on encapsulation (from a sample of 24).</text>
+<text x="20.0" y="96.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Alignment to pixels, banks, cathode</text>
+<rect x="330.0" y="80.0" width="290.0" height="22.0" fill="#2f6f4f" />
+<text x="628.0" y="96.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="start">5</text>
+<text x="20.0" y="142.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Routing, pads, edges, camera holes</text>
+<rect x="330.0" y="126.0" width="290.0" height="22.0" fill="#b4552d" />
+<text x="628.0" y="142.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="start">5</text>
+<text x="20.0" y="188.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Merging layers (color filter, black matrix)</text>
+<rect x="330.0" y="172.0" width="232.0" height="22.0" fill="#2a5ea8" />
+<text x="570.0" y="188.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="start">4</text>
+<text x="20.0" y="234.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Optics on top of touch</text>
+<rect x="330.0" y="218.0" width="116.0" height="22.0" fill="#7a5aa6" />
+<text x="454.0" y="234.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="start">2</text>
+<text x="20.0" y="280.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Touch on encapsulation itself</text>
+<rect x="330.0" y="264.0" width="2.0" height="22.0" fill="#d5d8de" />
+<text x="340.0" y="280.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="start">0</text>
+<text x="20.0" y="330.0" font-size="12" fill="#a51c45" font-weight="700" text-anchor="start">No claim in the sample relies on “touch on encapsulation” itself as the novelty.</text>
+<text x="20.0" y="348.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">The asserted ’394 patent falls in the first two groups (bridge over bank; routing along the side).</text>
+</svg>

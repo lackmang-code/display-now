@@ -1,0 +1,88 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="899" height="499" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Where the antistatic layer went</text>
+  <text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Peel voltage left on the adherend, by where the layer sits</text>
+  <rect x="28" y="88" width="156" height="330" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="106.0" y="116" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">No antistatic</text>
+  <rect x="44" y="170" width="124" height="26" fill="#dfe6ef" stroke="#9fb0c6"/>
+  <text x="106.0" y="188" font-size="14" fill="#3f5f8c" text-anchor="middle">base film</text>
+  <rect x="44" y="196" width="124" height="26" fill="#efe2c9" stroke="#c8b48c"/>
+  <text x="106.0" y="211" font-size="14" fill="#8a6d3b" text-anchor="middle">adhesive</text>
+  <line x1="106.0" y1="234" x2="106.0" y2="256" stroke="#8a8a80" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M 100.0 234 L 106.0 226 L 112.0 234" fill="none" stroke="#8a8a80" stroke-width="1.6"/>
+  <text x="116.0" y="252" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">peel</text>
+  <rect x="44" y="262" width="124" height="30" fill="#e6e6e0" stroke="#bdbdb4"/>
+  <text x="106.0" y="282" font-size="14" fill="#4d4d45" text-anchor="middle">polarizer</text>
+  <text x="106.0" y="346" font-size="30" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">&gt;20 kV</text>
+  <text x="106.0" y="376" font-size="14" fill="#8a8a80" text-anchor="middle">on the polarizer</text>
+  <rect x="198" y="88" width="156" height="330" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="276.0" y="116" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Back of base film</text>
+  <rect x="214" y="170" width="124" height="26" fill="#dfe6ef" stroke="#9fb0c6"/>
+  <text x="276.0" y="188" font-size="14" fill="#3f5f8c" text-anchor="middle">base film</text>
+  <rect x="214" y="196" width="124" height="26" fill="#efe2c9" stroke="#c8b48c"/>
+  <text x="276.0" y="211" font-size="14" fill="#8a6d3b" text-anchor="middle">adhesive</text>
+  <rect x="214" y="164" width="124" height="6" fill="#c0642b"/>
+  <line x1="276.0" y1="234" x2="276.0" y2="256" stroke="#8a8a80" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M 270.0 234 L 276.0 226 L 282.0 234" fill="none" stroke="#8a8a80" stroke-width="1.6"/>
+  <text x="286.0" y="252" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">peel</text>
+  <rect x="214" y="262" width="124" height="30" fill="#e6e6e0" stroke="#bdbdb4"/>
+  <text x="276.0" y="282" font-size="14" fill="#4d4d45" text-anchor="middle">polarizer</text>
+  <text x="276.0" y="346" font-size="30" fill="#c0642b" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">8 kV</text>
+  <text x="276.0" y="376" font-size="14" fill="#8a8a80" text-anchor="middle">on the polarizer</text>
+  <rect x="368" y="88" width="156" height="330" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="446.0" y="116" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Mixed into adhesive</text>
+  <rect x="384" y="170" width="124" height="26" fill="#dfe6ef" stroke="#9fb0c6"/>
+  <text x="446.0" y="188" font-size="14" fill="#3f5f8c" text-anchor="middle">base film</text>
+  <rect x="384" y="196" width="124" height="26" fill="#f3d7c3" stroke="#c8b48c"/>
+  <text x="446.0" y="211" font-size="14" fill="#8a6d3b" text-anchor="middle">adhesive</text>
+  <circle cx="394" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="407" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="420" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="433" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="446" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="459" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="472" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="485" cy="217" r="2.4" fill="#c0642b"/>
+  <circle cx="498" cy="217" r="2.4" fill="#c0642b"/>
+  <line x1="446.0" y1="234" x2="446.0" y2="256" stroke="#8a8a80" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M 440.0 234 L 446.0 226 L 452.0 234" fill="none" stroke="#8a8a80" stroke-width="1.6"/>
+  <text x="456.0" y="252" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">peel</text>
+  <rect x="384" y="262" width="124" height="30" fill="#e6e6e0" stroke="#bdbdb4"/>
+  <text x="446.0" y="282" font-size="14" fill="#4d4d45" text-anchor="middle">polarizer</text>
+  <text x="446.0" y="346" font-size="30" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">0.8 kV</text>
+  <text x="446.0" y="376" font-size="14" fill="#8a8a80" text-anchor="middle">on the polarizer</text>
+  <rect x="538" y="88" width="156" height="330" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="616.0" y="116" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Thin film on adhesive</text>
+  <rect x="554" y="170" width="124" height="26" fill="#dfe6ef" stroke="#9fb0c6"/>
+  <text x="616.0" y="188" font-size="14" fill="#3f5f8c" text-anchor="middle">base film</text>
+  <rect x="554" y="196" width="124" height="26" fill="#efe2c9" stroke="#c8b48c"/>
+  <text x="616.0" y="211" font-size="14" fill="#8a6d3b" text-anchor="middle">adhesive</text>
+  <rect x="554" y="222" width="124" height="5" fill="#c0642b"/>
+  <line x1="616.0" y1="234" x2="616.0" y2="256" stroke="#8a8a80" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M 610.0 234 L 616.0 226 L 622.0 234" fill="none" stroke="#8a8a80" stroke-width="1.6"/>
+  <text x="626.0" y="252" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">peel</text>
+  <rect x="554" y="262" width="124" height="30" fill="#e6e6e0" stroke="#bdbdb4"/>
+  <text x="616.0" y="282" font-size="14" fill="#4d4d45" text-anchor="middle">polarizer</text>
+  <text x="616.0" y="346" font-size="30" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">0.1 kV</text>
+  <text x="616.0" y="376" font-size="14" fill="#8a8a80" text-anchor="middle">on the polarizer</text>
+  <rect x="708" y="88" width="156" height="330" rx="6" fill="#f6f5f0" stroke="#e3e1d8"/>
+  <text x="786.0" y="116" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Moved from liner</text>
+  <rect x="730" y="138" width="112" height="10" fill="#ecebe5" stroke="#bdbdb4"/>
+  <rect x="730" y="148" width="112" height="4" fill="#c0642b" opacity="0.45"/>
+  <text x="786.0" y="133" font-size="13.5" fill="#8a8a80" text-anchor="middle">release liner</text>
+  <rect x="724" y="170" width="124" height="26" fill="#dfe6ef" stroke="#9fb0c6"/>
+  <text x="786.0" y="188" font-size="14" fill="#3f5f8c" text-anchor="middle">base film</text>
+  <rect x="724" y="196" width="124" height="26" fill="#efe2c9" stroke="#c8b48c"/>
+  <text x="786.0" y="211" font-size="14" fill="#8a6d3b" text-anchor="middle">adhesive</text>
+  <rect x="724" y="222" width="124" height="5" fill="#c0642b"/>
+  <line x1="786.0" y1="234" x2="786.0" y2="256" stroke="#8a8a80" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <path d="M 780.0 234 L 786.0 226 L 792.0 234" fill="none" stroke="#8a8a80" stroke-width="1.6"/>
+  <text x="796.0" y="252" font-size="13.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">peel</text>
+  <rect x="724" y="262" width="124" height="30" fill="#e6e6e0" stroke="#bdbdb4"/>
+  <text x="786.0" y="282" font-size="14" fill="#4d4d45" text-anchor="middle">polarizer</text>
+  <text x="786.0" y="346" font-size="30" fill="#2f7d5c" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="700">0.1 kV</text>
+  <text x="786.0" y="376" font-size="14" fill="#8a8a80" text-anchor="middle">on the polarizer</text>
+  <rect x="28" y="436" width="16" height="10" fill="#c0642b"/>
+  <text x="52" y="446" font-size="15" fill="#4d4d45">antistatic layer</text>
+  <text x="28" y="476" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">First three: one patent (180°, 0.3 m/min). Last two: other patents, faster peel.</text>
+</svg>

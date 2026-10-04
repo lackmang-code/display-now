@@ -1,0 +1,63 @@
+<svg viewBox="0 0 678 476" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="475" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Who is on the microLED optical I/O map</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">by role, as publicly disclosed</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- column headers -->
+  <text x="22" y="92" font-size="13" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">SYSTEM</text>
+  <text x="22" y="150" font-size="13" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">LIGHT SOURCE</text>
+  <text x="22" y="208" font-size="13" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">PHOTODETECTOR</text>
+  <text x="22" y="266" font-size="13" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">INTEGRATION</text>
+  <text x="22" y="324" font-size="13" font-weight="600" fill="#5c3a7a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">CABLE · MODULE</text>
+
+  <!-- row 1: system -->
+  <rect x="190" y="76" width="126" height="26" rx="4" fill="#f2ecf7" stroke="#b9a3cc" stroke-width="1.4"/>
+  <text x="253" y="93" font-size="14" font-weight="600" fill="#4a2d63" text-anchor="middle">Microsoft</text>
+  <rect x="326" y="76" width="106" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="379" y="93" font-size="14" fill="#4a4a44" text-anchor="middle">Marvell</text>
+  <text x="446" y="93" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">MOSAIC, SIGCOMM best paper</text>
+
+  <!-- row 2: light source -->
+  <rect x="190" y="134" width="126" height="26" rx="4" fill="#eef7f1" stroke="#6f9a80" stroke-width="1.6"/>
+  <text x="253" y="151" font-size="14" font-weight="600" fill="#2f6a4a" text-anchor="middle">Avicena</text>
+  <rect x="326" y="134" width="106" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="379" y="151" font-size="14" fill="#4a4a44" text-anchor="middle">ams OSRAM</text>
+  <rect x="442" y="134" width="96" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="490" y="151" font-size="14" fill="#4a4a44" text-anchor="middle">Ennostar</text>
+  <rect x="548" y="134" width="96" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="596" y="151" font-size="14" fill="#4a4a44" text-anchor="middle">San&#8217;an</text>
+
+  <!-- row 3: photodetector -->
+  <rect x="190" y="192" width="126" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="253" y="209" font-size="14" font-weight="600" fill="#4a4a44" text-anchor="middle">TSMC</text>
+  <rect x="326" y="192" width="106" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="379" y="209" font-size="14" fill="#4a4a44" text-anchor="middle">Tyntek</text>
+  <text x="446" y="209" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">image-sensor process</text>
+
+  <!-- row 4: integration -->
+  <rect x="190" y="250" width="126" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="253" y="267" font-size="14" font-weight="600" fill="#4a4a44" text-anchor="middle">AUO</text>
+  <rect x="326" y="250" width="106" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="379" y="267" font-size="14" fill="#4a4a44" text-anchor="middle">PlayNitride</text>
+  <rect x="442" y="250" width="96" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="490" y="267" font-size="14" fill="#4a4a44" text-anchor="middle">Innolux</text>
+  <text x="548" y="267" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">display makers</text>
+
+  <!-- row 5: cable -->
+  <rect x="190" y="308" width="126" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="253" y="325" font-size="14" font-weight="600" fill="#4a4a44" text-anchor="middle">Credo</text>
+  <rect x="326" y="308" width="106" height="26" rx="4" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.3"/>
+  <text x="379" y="325" font-size="14" fill="#4a4a44" text-anchor="middle">Hyperlume</text>
+  <text x="446" y="325" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">EU: Aledia, ALLOS, Leti</text>
+
+  <!-- korea band -->
+  <rect x="22" y="352" width="634" height="78" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.8"/>
+  <text x="36" y="376" font-size="15.5" font-weight="700" fill="#8a3a26">Korea — capital is in, the name is not</text>
+  <text x="36" y="398" font-size="14" fill="#7a4a3a">Intervest put USD 10M into Avicena on 1 Oct 2026, taking 1.77 percent.</text>
+  <text x="36" y="418" font-size="14" fill="#7a4a3a">SK hynix joined the Series B, yet its own roadmap is silicon-photonics CPO.</text>
+
+  <text x="22" y="452" font-size="13" fill="#4a4a44">Not listed does not mean not working on it — undisclosed programs may exist.</text>
+  <text x="22" y="468" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Compiled by DESK from TrendForce ecosystem data, company releases and the MOSAIC paper.</text>
+</svg>

@@ -79,6 +79,29 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 8,
+    publishedAt: '2026-10-06',
+    weekStart: '2026-09-28',
+    // 헤드는 데스크 마이크로LED 광 인터커넥트 편이다. AI 데이터센터 배선 병목이라는 이번 주
+    // 가장 큰 산업 흐름에 디스플레이 기술이 불려 나간 이야기이고, 10/1 한국 자본 136억 투자로
+    // 구간 안에 실제 사건이 있다. 클레임 Y-OCTA 소송 편(22분)도 세지만 제7호 헤드가 특허소송
+    // (애플 탭틱)이라 소송 헤드가 두 호 연속이 된다 — 피한다.
+    // 표지 시뮬 = 헤드 기사 것(microled-wide-and-slow-3d-demo). 제7호처럼 표지와 헤드가
+    // 갈리지 않아 가로 카드 출처 줄도 헤드 기사를 가리킨다.
+    // 표지 문구 = 헤드 기사 제목 그대로.
+    headline: '마이크로LED, 화면을 떠나 칩과 칩 사이로',
+    deck: 'AI 데이터센터의 병목이 연산에서 배선으로 옮겨가자, 디스플레이용으로 개발된 마이크로LED가 칩과 칩을 잇는 광원으로 불려 나왔습니다. 마이크로소프트의 MOSAIC은 1mm²에 400개를 깔아 800Gbps를 냅니다. 그리고 10월 1일, 그 생태계에 한국 자본 136억 원이 들어갔습니다.',
+    // 데스크 본문 임베드와 같은 값(k=20). 20×20=400개가 MOSAIC 논문 예시 그대로라
+    // 표지에서 기사 첫 숫자(400·800Gbps)와 바로 맞물린다.
+    coverSim: 'microled-wide-and-slow-3d-demo',
+    coverSimParams: { k: 20 },
+    coverNote: '마이크로LED 20×20 배열이 렌즈와 이미징 파이버로 빛을 넘기는 결합부를 그린 3D 모델(데스크 편)입니다. 배열 크기를 바꾸면 채널당 속도와 소자에 필요한 대역폭이 함께 움직입니다.',
+    headSlug: '2026-10-06-microled-optical-interconnect',
+    headlineEn: 'MicroLED Leaves the Screen for the Space Between Chips',
+    deckEn: "As the bottleneck in AI data centers moved from compute to wiring, microLEDs built for displays were called in as light sources linking chip to chip. Microsoft's MOSAIC lays 400 of them across 1 mm² to carry 800 Gbps. Then on 1 October, ₩13.6 billion of Korean capital entered that ecosystem.",
+    coverNoteEn: "A 3D model of the coupling stage in Desk's piece: a 20 × 20 microLED array handing its light through a lens array to an imaging fiber. Change the array size and the per-channel rate and the bandwidth each device needs move together.",
+  },
+  {
     no: 7,
     publishedAt: '2026-09-29',
     weekStart: '2026-09-21',

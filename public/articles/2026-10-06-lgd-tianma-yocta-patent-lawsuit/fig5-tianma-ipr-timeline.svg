@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 410" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="410" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">Tianma’s cases at the US Patent Trial and Appeal Board</text>
+<text x="20.0" y="47.0" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start">All 11 cases with Tianma as a party. The AVIC stake predates every one of them.</text>
+<rect x="78.1" y="70.0" width="547.4" height="22.0" fill="#f1e3c9" />
+<text x="84.1" y="85.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="start">AVIC stake: NLT 70% from Jul 2011; AVIC Innovation holds 10%+ of Tianma</text>
+<line x1="60.0" y1="250" x2="640.0" y2="250" stroke="#1d2330" stroke-width="1.5"/>
+<line x1="60.0" y1="245" x2="60.0" y2="255" stroke="#1d2330"/>
+<text x="60.0" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2011</text>
+<line x1="132.5" y1="245" x2="132.5" y2="255" stroke="#1d2330"/>
+<text x="132.5" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2013</text>
+<line x1="205.0" y1="245" x2="205.0" y2="255" stroke="#1d2330"/>
+<text x="205.0" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2015</text>
+<line x1="277.5" y1="245" x2="277.5" y2="255" stroke="#1d2330"/>
+<text x="277.5" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2017</text>
+<line x1="350.0" y1="245" x2="350.0" y2="255" stroke="#1d2330"/>
+<text x="350.0" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2019</text>
+<line x1="422.5" y1="245" x2="422.5" y2="255" stroke="#1d2330"/>
+<text x="422.5" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2021</text>
+<line x1="495.0" y1="245" x2="495.0" y2="255" stroke="#1d2330"/>
+<text x="495.0" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2023</text>
+<line x1="567.5" y1="245" x2="567.5" y2="255" stroke="#1d2330"/>
+<text x="567.5" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2025</text>
+<line x1="640.0" y1="245" x2="640.0" y2="255" stroke="#1d2330"/>
+<text x="640.0" y="272.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2027</text>
+<circle cx="252.1" cy="250" r="6" fill="#2f6f4f"/>
+<line x1="252.1" y1="244" x2="252.1" y2="172" stroke="#2f6f4f"/>
+<text x="252.1" y="150.0" font-size="12" fill="#2f6f4f" font-weight="700" text-anchor="middle">vs Japan Display: 2</text>
+<text x="252.1" y="165.0" font-size="11" fill="#1d2330" font-weight="400" text-anchor="middle">Final written decisions</text>
+<circle cx="440.6" cy="250" r="6" fill="#2f6f4f"/>
+<line x1="440.6" y1="244" x2="440.6" y2="172" stroke="#2f6f4f"/>
+<text x="440.6" y="150.0" font-size="12" fill="#2f6f4f" font-weight="700" text-anchor="middle">vs Japan Display: 7</text>
+<text x="440.6" y="165.0" font-size="11" fill="#1d2330" font-weight="400" text-anchor="middle">5 settled, 2 denied</text>
+<circle cx="596.5" cy="250" r="6" fill="#a51c45"/>
+<line x1="596.5" y1="244" x2="596.5" y2="222" stroke="#a51c45"/>
+<text x="596.5" y="200.0" font-size="12" fill="#a51c45" font-weight="700" text-anchor="end">vs LG Display: 1 (’394)</text>
+<text x="596.5" y="215.0" font-size="11" fill="#1d2330" font-weight="400" text-anchor="end">Denied Feb/Mar 2026</text>
+<text x="596.5" y="122.0" font-size="11" fill="#a51c45" font-weight="700" text-anchor="end">New rule: a foreign government is</text>
+<text x="596.5" y="136.0" font-size="11" fill="#a51c45" font-weight="700" text-anchor="end">not a “person” under the AIA</text>
+<circle cx="607.4" cy="250" r="6" fill="#2a5ea8"/>
+<line x1="607.4" y1="256" x2="607.4" y2="318" stroke="#2a5ea8"/>
+<text x="607.4" y="334.0" font-size="12" fill="#2a5ea8" font-weight="700" text-anchor="end">LG Display vs Tianma: 1 PGR</text>
+<text x="607.4" y="349.0" font-size="11" fill="#1d2330" font-weight="400" text-anchor="end">Filed Feb 2026, settled Jun 2026</text>
+<text x="20.0" y="392.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">Same shareholder, same petitioner. What changed in 2026 was how the Office reads the stake.</text>
+</svg>

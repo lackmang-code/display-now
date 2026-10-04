@@ -1,0 +1,50 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="899" height="459" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+  <text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Less static, more stain</text>
+  <text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">One patent, one antistatic salt, five placements (peel 40 m/min)</text>
+  <rect x="340.0" y="104" width="113.75" height="254" fill="#2f7d5c" opacity="0.10"/>
+  <text x="459.75" y="98" font-size="14.5" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace">±0.7 kV target</text>
+  <line x1="340.0" y1="106" x2="340.0" y2="358" stroke="#e3e3dd"/>
+  <text x="340.0" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.0</text>
+  <line x1="470.0" y1="106" x2="470.0" y2="358" stroke="#e3e3dd"/>
+  <text x="470.0" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">0.8</text>
+  <line x1="600.0" y1="106" x2="600.0" y2="358" stroke="#e3e3dd"/>
+  <text x="600.0" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">1.6</text>
+  <line x1="730.0" y1="106" x2="730.0" y2="358" stroke="#e3e3dd"/>
+  <text x="730.0" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2.4</text>
+  <line x1="860.0" y1="106" x2="860.0" y2="358" stroke="#e3e3dd"/>
+  <text x="860.0" y="380" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">3.2</text>
+  <text x="600.0" y="404" font-size="15" fill="#8a8a80" text-anchor="middle">peel voltage, kV</text>
+  <text x="260" y="98" font-size="14" fill="#8a8a80" text-anchor="middle">stain after</text>
+  <text x="232" y="114" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">3 d</text>
+  <text x="290" y="114" font-size="14" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">30 d</text>
+  <text x="28" y="143" font-size="15.5" fill="#12120e">None</text>
+  <circle cx="232" cy="138" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="290" cy="138" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="811.25" cy="138" r="9" fill="#c0642b"/>
+  <text x="827.25" y="143" font-size="15" fill="#c0642b" font-family="'IBM Plex Mono', monospace" font-weight="700">2.9 kV</text>
+  <text x="28" y="193" font-size="15.5" fill="#12120e">Mixed into adhesive</text>
+  <circle cx="232" cy="188" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <line x1="283" y1="181" x2="297" y2="195" stroke="#c0642b" stroke-width="2.6"/>
+  <line x1="283" y1="195" x2="297" y2="181" stroke="#c0642b" stroke-width="2.6"/>
+  <circle cx="405.0" cy="188" r="9" fill="#c0642b"/>
+  <text x="421.0" y="193" font-size="15" fill="#c0642b" font-family="'IBM Plex Mono', monospace" font-weight="700">0.4 kV</text>
+  <text x="28" y="243" font-size="15.5" fill="#12120e">Layer on adhesive, 0.5 μm</text>
+  <line x1="225" y1="231" x2="239" y2="245" stroke="#c0642b" stroke-width="2.6"/>
+  <line x1="225" y1="245" x2="239" y2="231" stroke="#c0642b" stroke-width="2.6"/>
+  <line x1="283" y1="231" x2="297" y2="245" stroke="#c0642b" stroke-width="2.6"/>
+  <line x1="283" y1="245" x2="297" y2="231" stroke="#c0642b" stroke-width="2.6"/>
+  <circle cx="372.5" cy="238" r="9" fill="#c0642b"/>
+  <text x="388.5" y="243" font-size="15" fill="#c0642b" font-family="'IBM Plex Mono', monospace" font-weight="700">0.2 kV</text>
+  <text x="28" y="293" font-size="15.5" fill="#12120e">Layer on adhesive, 0.3 μm</text>
+  <circle cx="232" cy="288" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="290" cy="288" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="356.25" cy="288" r="9" fill="#2f7d5c"/>
+  <text x="372.25" y="293" font-size="15" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace" font-weight="700">0.1 kV</text>
+  <text x="28" y="343" font-size="15.5" fill="#12120e">Layer on adhesive, 0.1 μm</text>
+  <circle cx="232" cy="338" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="290" cy="338" r="8" fill="none" stroke="#2f7d5c" stroke-width="2.2"/>
+  <circle cx="356.25" cy="338" r="9" fill="#2f7d5c"/>
+  <text x="372.25" y="343" font-size="15" fill="#2f7d5c" font-family="'IBM Plex Mono', monospace" font-weight="700">0.1 kV</text>
+  <text x="28" y="444" font-size="14.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Stain checked by eye after storage at 23 °C, 50 %RH.</text>
+</svg>

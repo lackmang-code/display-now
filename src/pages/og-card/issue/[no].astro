@@ -201,6 +201,8 @@ const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3
       }
       /* 왼쪽(새 판): 제호 + 표지 시뮬레이션 그림 + 출처 한 줄. 헤드 제목은 여기 두지 않는다 */
       .cover-side {
+        /* min-width:0 — 출처 줄(nowrap)이 길면 칸이 520px 넘게 밀려 오른쪽 목록이 좁아졌다(제8호 영문, 2026-10-04) */
+        min-width: 0;
         flex: 0 0 520px;
         height: 630px;
         padding: 34px 32px 28px 0;

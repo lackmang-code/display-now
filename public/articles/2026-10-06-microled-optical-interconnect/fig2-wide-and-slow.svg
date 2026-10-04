@@ -1,0 +1,56 @@
+<svg viewBox="0 0 678 408" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="407" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">Same 800 Gbps, two ways to split it</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">narrow-and-fast vs wide-and-slow</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- LEFT: narrow and fast -->
+  <rect x="22" y="84" width="306" height="236" rx="6" fill="#fbeeea" stroke="#c2705a" stroke-width="1.6"/>
+  <text x="38" y="108" font-size="15.5" font-weight="700" fill="#8a3a26">narrow-and-fast</text>
+  <text x="38" y="129" font-size="14" fill="#7a4a3a">8 lanes x 100 Gbps, lasers</text>
+
+  <rect x="38" y="144" width="274" height="11" rx="2" fill="#c2705a"/>
+  <rect x="38" y="160" width="274" height="11" rx="2" fill="#c2705a"/>
+  <rect x="38" y="176" width="274" height="11" rx="2" fill="#c2705a"/>
+  <rect x="38" y="192" width="274" height="11" rx="2" fill="#c2705a"/>
+  <text x="322" y="175" font-size="13" fill="#8a3a26" text-anchor="end" font-family="'IBM Plex Mono', monospace">8 lanes</text>
+
+  <text x="38" y="226" font-size="13" font-weight="600" fill="#8a3a26" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">CIRCUITS THAT COME WITH IT</text>
+  <rect x="38" y="236" width="62" height="24" rx="3" fill="#ffffff" stroke="#c2705a" stroke-width="1.3"/>
+  <text x="69" y="252" font-size="13" fill="#8a3a26" text-anchor="middle">DSP</text>
+  <rect x="106" y="236" width="76" height="24" rx="3" fill="#ffffff" stroke="#c2705a" stroke-width="1.3"/>
+  <text x="144" y="252" font-size="13" fill="#8a3a26" text-anchor="middle">ADC/DAC</text>
+  <rect x="188" y="236" width="56" height="24" rx="3" fill="#ffffff" stroke="#c2705a" stroke-width="1.3"/>
+  <text x="216" y="252" font-size="13" fill="#8a3a26" text-anchor="middle">CDR</text>
+  <rect x="250" y="236" width="56" height="24" rx="3" fill="#ffffff" stroke="#c2705a" stroke-width="1.3"/>
+  <text x="278" y="252" font-size="13" fill="#8a3a26" text-anchor="middle">FEC</text>
+
+  <text x="38" y="285" font-size="13" fill="#7a4a3a">Analog power scales with modulation frequency</text>
+  <text x="38" y="305" font-size="13" fill="#7a4a3a">and does not shrink with smaller CMOS nodes.</text>
+
+  <!-- RIGHT: wide and slow -->
+  <rect x="350" y="84" width="306" height="236" rx="6" fill="#eef7f1" stroke="#6f9a80" stroke-width="1.6"/>
+  <text x="366" y="108" font-size="15.5" font-weight="700" fill="#2f6a4a">wide-and-slow</text>
+  <text x="366" y="129" font-size="14" fill="#3f6a52">400 channels x 2 Gbps, microLEDs</text>
+
+  <g fill="#2f6a4a">
+    <circle cx="372" cy="148" r="2.6"/><circle cx="390" cy="148" r="2.6"/><circle cx="408" cy="148" r="2.6"/><circle cx="426" cy="148" r="2.6"/><circle cx="444" cy="148" r="2.6"/><circle cx="462" cy="148" r="2.6"/><circle cx="480" cy="148" r="2.6"/><circle cx="498" cy="148" r="2.6"/><circle cx="516" cy="148" r="2.6"/><circle cx="534" cy="148" r="2.6"/><circle cx="552" cy="148" r="2.6"/><circle cx="570" cy="148" r="2.6"/><circle cx="588" cy="148" r="2.6"/><circle cx="606" cy="148" r="2.6"/><circle cx="624" cy="148" r="2.6"/>
+    <circle cx="372" cy="166" r="2.6"/><circle cx="390" cy="166" r="2.6"/><circle cx="408" cy="166" r="2.6"/><circle cx="426" cy="166" r="2.6"/><circle cx="444" cy="166" r="2.6"/><circle cx="462" cy="166" r="2.6"/><circle cx="480" cy="166" r="2.6"/><circle cx="498" cy="166" r="2.6"/><circle cx="516" cy="166" r="2.6"/><circle cx="534" cy="166" r="2.6"/><circle cx="552" cy="166" r="2.6"/><circle cx="570" cy="166" r="2.6"/><circle cx="588" cy="166" r="2.6"/><circle cx="606" cy="166" r="2.6"/><circle cx="624" cy="166" r="2.6"/>
+    <circle cx="372" cy="184" r="2.6"/><circle cx="390" cy="184" r="2.6"/><circle cx="408" cy="184" r="2.6"/><circle cx="426" cy="184" r="2.6"/><circle cx="444" cy="184" r="2.6"/><circle cx="462" cy="184" r="2.6"/><circle cx="480" cy="184" r="2.6"/><circle cx="498" cy="184" r="2.6"/><circle cx="516" cy="184" r="2.6"/><circle cx="534" cy="184" r="2.6"/><circle cx="552" cy="184" r="2.6"/><circle cx="570" cy="184" r="2.6"/><circle cx="588" cy="184" r="2.6"/><circle cx="606" cy="184" r="2.6"/><circle cx="624" cy="184" r="2.6"/>
+    <circle cx="372" cy="202" r="2.6"/><circle cx="390" cy="202" r="2.6"/><circle cx="408" cy="202" r="2.6"/><circle cx="426" cy="202" r="2.6"/><circle cx="444" cy="202" r="2.6"/><circle cx="462" cy="202" r="2.6"/><circle cx="480" cy="202" r="2.6"/><circle cx="498" cy="202" r="2.6"/><circle cx="516" cy="202" r="2.6"/><circle cx="534" cy="202" r="2.6"/><circle cx="552" cy="202" r="2.6"/><circle cx="570" cy="202" r="2.6"/><circle cx="588" cy="202" r="2.6"/><circle cx="606" cy="202" r="2.6"/><circle cx="624" cy="202" r="2.6"/>
+  </g>
+  <text x="640" y="177" font-size="13" fill="#2f6a4a" text-anchor="end" font-family="'IBM Plex Mono', monospace">20 x 20</text>
+
+  <text x="366" y="226" font-size="13" font-weight="600" fill="#2f6a4a" font-family="'IBM Plex Mono', monospace" letter-spacing="0.6">WHAT DISAPPEARS</text>
+  <rect x="366" y="236" width="274" height="24" rx="3" fill="#ffffff" stroke="#6f9a80" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="503" y="252" font-size="13" fill="#6f9a80" text-anchor="middle">no DSP, no ADC/DAC, no CDR, no FEC</text>
+
+  <text x="366" y="285" font-size="13" fill="#3f6a52">Analog-only backend. Up to 68% less power,</text>
+  <text x="366" y="305" font-size="13" fill="#3f6a52">50 m reach, 100x the reliability.</text>
+
+  <!-- bottom note -->
+  <text x="22" y="348" font-size="14" fill="#4a4a44">The industry was already moving this way: at 800 Gbps it doubled the lane count</text>
+  <text x="22" y="368" font-size="14" fill="#4a4a44">from 4 to 8 instead of doubling lane speed. MOSAIC pushes that to 400.</text>
+  <text x="22" y="392" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from the MOSAIC paper (ACM SIGCOMM 2025).</text>
+</svg>

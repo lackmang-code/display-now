@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 386" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="386" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">Add-on touch film vs. touch on encapsulation (Y-OCTA)</text>
+<text x="20.0" y="47.0" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start">Schematic cross-sections, not to scale.</text>
+<text x="170.0" y="80.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="middle">Add-on touch</text>
+<rect x="30.0" y="308.0" width="280.0" height="22.0" fill="#cfd3da" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="323.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Substrate</text>
+<rect x="30.0" y="278.0" width="280.0" height="30.0" fill="#d9dce3" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="297.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">TFT backplane</text>
+<rect x="30.0" y="238.0" width="280.0" height="40.0" fill="#e4c9d6" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="262.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Cathode / OLED / anode</text>
+<rect x="30.0" y="212.0" width="280.0" height="26.0" fill="#bcd9c8" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="229.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Thin-film encapsulation</text>
+<rect x="30.0" y="194.0" width="280.0" height="18.0" fill="#f6ead9" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="207.0" font-size="11" fill="#5b6474" font-weight="600" text-anchor="middle">Optically clear adhesive</text>
+<rect x="30.0" y="168.0" width="280.0" height="26.0" fill="#f1d9c7" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="185.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Touch film (electrodes)</text>
+<rect x="30.0" y="146.0" width="280.0" height="22.0" fill="#c7cfdb" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="161.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Polarizer</text>
+<rect x="30.0" y="112.0" width="280.0" height="34.0" fill="#e9edf2" stroke="#ffffff" stroke-width="1"/>
+<text x="170.0" y="133.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Cover window</text>
+<text x="510.0" y="80.0" font-size="13" fill="#1d2330" font-weight="700" text-anchor="middle">Y-OCTA (touch on encapsulation)</text>
+<rect x="370.0" y="308.0" width="280.0" height="22.0" fill="#cfd3da" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="323.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Substrate</text>
+<rect x="370.0" y="278.0" width="280.0" height="30.0" fill="#d9dce3" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="297.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">TFT backplane</text>
+<rect x="370.0" y="238.0" width="280.0" height="40.0" fill="#e4c9d6" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="262.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Cathode / OLED / anode</text>
+<rect x="370.0" y="206.0" width="280.0" height="32.0" fill="#bcd9c8" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="226.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Encapsulation + metal-mesh touch</text>
+<rect x="382.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="408.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="434.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="460.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="486.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="512.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="538.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="564.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="590.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="616.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="642.0" y="207.0" width="8.0" height="5.0" fill="#c9a227" />
+<rect x="370.0" y="184.0" width="280.0" height="22.0" fill="#c7cfdb" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="199.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Polarizer</text>
+<rect x="370.0" y="150.0" width="280.0" height="34.0" fill="#e9edf2" stroke="#ffffff" stroke-width="1"/>
+<text x="510.0" y="171.0" font-size="11" fill="#1d2330" font-weight="600" text-anchor="middle">Cover window</text>
+<text x="30.0" y="350.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">Touch sensor made on a separate film,</text>
+<text x="30.0" y="366.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">then laminated with adhesive.</text>
+<text x="370.0" y="350.0" font-size="11" fill="#b4552d" font-weight="700" text-anchor="start">Film and adhesive removed; the mesh is</text>
+<text x="370.0" y="366.0" font-size="11" fill="#b4552d" font-weight="700" text-anchor="start">deposited and etched on the encapsulation.</text>
+</svg>

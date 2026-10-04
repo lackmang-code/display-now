@@ -1,0 +1,56 @@
+<svg viewBox="0 0 678 356" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="355" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">A microLED sprays light over a hemisphere</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">getting it into the fiber is the hard part</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- panel 1: no lens -->
+  <rect x="22" y="82" width="202" height="188" rx="6" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.4"/>
+  <text x="123" y="106" font-size="14" font-weight="700" fill="#4a4a44" text-anchor="middle">no lens</text>
+  <rect x="88" y="236" width="70" height="12" rx="2" fill="#5c3a7a"/>
+  <text x="123" y="262" font-size="12.5" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">microLED</text>
+  <path d="M123 236 L60 150" stroke="#c2705a" stroke-width="1.5" opacity="0.75"/>
+  <path d="M123 236 L84 142" stroke="#c2705a" stroke-width="1.5" opacity="0.75"/>
+  <path d="M123 236 L123 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M123 236 L162 142" stroke="#c2705a" stroke-width="1.5" opacity="0.75"/>
+  <path d="M123 236 L186 150" stroke="#c2705a" stroke-width="1.5" opacity="0.75"/>
+  <rect x="104" y="124" width="38" height="12" rx="2" fill="#2d3744" stroke="#8aa0b4" stroke-width="1.2"/>
+  <text x="123" y="118" font-size="12" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">fiber</text>
+  <text x="123" y="288" font-size="13" fill="#8a3a26" text-anchor="middle">most of the light misses</text>
+
+  <!-- panel 2: standard MLA -->
+  <rect x="238" y="82" width="202" height="188" rx="6" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.4"/>
+  <text x="339" y="106" font-size="14" font-weight="700" fill="#4a4a44" text-anchor="middle">standard micro-lens</text>
+  <rect x="304" y="236" width="70" height="12" rx="2" fill="#5c3a7a"/>
+  <text x="339" y="262" font-size="12.5" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">microLED</text>
+  <path d="M339 236 L300 200" stroke="#c2705a" stroke-width="1.5" opacity="0.7"/>
+  <path d="M339 236 L378 200" stroke="#c2705a" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="339" cy="196" rx="34" ry="13" fill="#dff0f7" stroke="#7fb6cc" stroke-width="1.5"/>
+  <text x="382" y="196" font-size="12" fill="#5d8da3" font-family="'IBM Plex Mono', monospace">MLA</text>
+  <path d="M322 186 L330 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M339 184 L339 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M356 186 L348 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <rect x="320" y="124" width="38" height="12" rx="2" fill="#2d3744" stroke="#8aa0b4" stroke-width="1.2"/>
+  <text x="339" y="118" font-size="12" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">fiber</text>
+  <text x="339" y="288" font-size="13" fill="#4a4a44" text-anchor="middle">better, still not enough</text>
+
+  <!-- panel 3: TIR lens -->
+  <rect x="454" y="82" width="202" height="188" rx="6" fill="#eef7f1" stroke="#6f9a80" stroke-width="1.8"/>
+  <text x="555" y="106" font-size="14" font-weight="700" fill="#2f6a4a" text-anchor="middle">custom TIR lens</text>
+  <rect x="520" y="236" width="70" height="12" rx="2" fill="#5c3a7a"/>
+  <text x="555" y="262" font-size="12.5" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">microLED</text>
+  <path d="M513 232 L513 196 L530 176 L580 176 L597 196 L597 232 Z" fill="#dff0f7" stroke="#2f6a4a" stroke-width="1.8"/>
+  <path d="M555 232 L520 212 L528 186" stroke="#1fdc6a" stroke-width="1.8" fill="none" opacity="0.95"/>
+  <path d="M555 232 L590 212 L582 186" stroke="#1fdc6a" stroke-width="1.8" fill="none" opacity="0.95"/>
+  <path d="M555 232 L555 180" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M530 176 L540 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M555 176 L555 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <path d="M580 176 L570 138" stroke="#1fdc6a" stroke-width="2" opacity="0.95"/>
+  <rect x="536" y="124" width="38" height="12" rx="2" fill="#2d3744" stroke="#8aa0b4" stroke-width="1.2"/>
+  <text x="555" y="118" font-size="12" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">fiber</text>
+  <text x="555" y="288" font-size="13" font-weight="700" fill="#2f6a4a" text-anchor="middle">2x the coupling of an MLA</text>
+
+  <text x="22" y="320" font-size="14" fill="#4a4a44">Total internal reflection traps the light inside the lens, the trick a torch uses.</text>
+  <text x="22" y="340" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">Drawn by DESK from the MOSAIC paper. Nano-imprint lithography makes it wafer-scale.</text>
+</svg>
