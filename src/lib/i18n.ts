@@ -60,9 +60,14 @@ export const UI = {
 
     footerBlurb:
       '디스플레이 나우는 논문·특허·공시만 근거로 쓰는 디스플레이 산업 전문 온라인 매거진입니다.',
-    footerPublisher: '발행 넥스트아이오 · 박원상 (Next I/O 대표 · 성균관대 산학교수)',
+    footerPublisher: '발행 넥스트아이오 · 발행인·편집인 박원상 · 경기도 용인시 수지구',
+    footerGroupSections: '꼭지',
+    footerGroupBrowse: '둘러보기',
+    footerGroupInfo: '안내',
     footerEmail: '이메일',
     footerPhone: '전화',
+    // 잡지등정기간행물법 §19 필요적 기재사항(2026-09-28 전자간행물 신고 수리). 발행소는 구 단위까지만(대표 결정 9/10)
+    footerRegistration: '전자간행물 신고 용인,다00004 (2026.9.28) · 주간 · ISSN 3140-5487',
     footerCopy: '© 2026 넥스트아이오(Next IO). 무단전재 및 재배포 금지.',
 
     langSwitchAria: '언어 전환',
@@ -186,9 +191,13 @@ export const UI = {
 
     footerBlurb:
       'DISPLAY NOW is a display-industry trade magazine that builds every article on papers, patents and public filings alone.',
-    footerPublisher: 'Published by NEXTIO · Wonsang Park (CEO, Next I/O · Industry Professor, SKKU)',
+    footerPublisher: 'Published by NEXTIO · Publisher & Editor: Wonsang Park · Suji-gu, Yongin, Korea',
+    footerGroupSections: 'Sections',
+    footerGroupBrowse: 'Browse',
+    footerGroupInfo: 'About',
     footerEmail: 'Email',
     footerPhone: 'Phone',
+    footerRegistration: 'Registered electronic periodical No. 용인,다00004 (28 Sep 2026) · Weekly · ISSN 3140-5487',
     footerCopy: '© 2026 NEXTIO. All rights reserved.',
 
     langSwitchAria: 'Switch language',
