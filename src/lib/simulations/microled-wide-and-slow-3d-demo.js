@@ -173,11 +173,49 @@ export function mount(container, params = {}) {
       ctx.closePath(); ctx.fill();
     };
 
+    // ── 표지 전용 스튜디오 배경(2026-10-04 대표 A안). 단색 검정은 「그래픽」으로 읽히고 실물 사진처럼
+    // 보이지 않는다. 제품 사진처럼 물체 뒤 은은한 빛 번짐 + 가장자리 어둡게 + 바닥 그림자·반사를 깐다.
+    // 계산·구도는 건드리지 않는다. 기사 본문(COVER=false)은 종전 검정 그대로.
+    if (COVER) {
+      const sx = acx + 70, sy = lensY - 10;
+      const spot = ctx.createRadialGradient(sx, sy, 20, sx, sy, Math.max(W, H) * 0.78);
+      spot.addColorStop(0, '#2b3038');
+      spot.addColorStop(0.35, '#1a1d22');
+      spot.addColorStop(0.75, '#0c0e11');
+      spot.addColorStop(1, '#060708');
+      ctx.fillStyle = spot;
+      ctx.fillRect(0, 0, W, H);
+      // 바닥: 판 아래로 아주 옅은 밝은 띠가 앞쪽으로 깔린다(스튜디오 스윕)
+      const floor = ctx.createLinearGradient(0, acy - ahd, 0, H);
+      floor.addColorStop(0, 'rgba(255,255,255,0)');
+      floor.addColorStop(0.35, 'rgba(200,215,230,0.035)');
+      floor.addColorStop(1, 'rgba(0,0,0,0.35)');
+      ctx.fillStyle = floor;
+      ctx.fillRect(0, acy - ahd, W, H - (acy - ahd));
+      // 접지 그림자: 판 바로 아래 타원
+      ctx.save();
+      ctx.translate(acx, acy + ahd * 0.55);
+      ctx.scale(1, 0.32);
+      const sh = ctx.createRadialGradient(0, 0, 10, 0, 0, ahw * 1.55);
+      sh.addColorStop(0, 'rgba(0,0,0,0.75)');
+      sh.addColorStop(0.6, 'rgba(0,0,0,0.35)');
+      sh.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = sh;
+      ctx.beginPath(); ctx.arc(0, 0, ahw * 1.55, 0, Math.PI * 2); ctx.fill();
+      // 바닥 반사: 발광이 바닥에 번진 옅은 초록
+      const rf = ctx.createRadialGradient(0, 0, 10, 0, 0, ahw * 1.9);
+      rf.addColorStop(0, hexA(col, 0.16));
+      rf.addColorStop(1, hexA(col, 0));
+      ctx.fillStyle = rf;
+      ctx.beginPath(); ctx.arc(0, 0, ahw * 1.9, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+
     const bgGlow = ctx.createRadialGradient(acx, lensY, 10, acx, lensY, 300);
     bgGlow.addColorStop(0, hexA(col, 0.1));
     bgGlow.addColorStop(1, hexA(col, 0));
     ctx.fillStyle = bgGlow;
-    ctx.fillRect(0, 0, W, SCENE_H);
+    ctx.fillRect(0, 0, W, COVER ? H : SCENE_H); // 표지는 끝까지 — 스튜디오 배경 위에서 경계선이 드러났다
 
     // ── 이미터·스팟 좌표
     const cores = [], emits = [];
