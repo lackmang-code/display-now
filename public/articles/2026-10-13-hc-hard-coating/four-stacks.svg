@@ -1,0 +1,53 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="479" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Four stacks, not to scale</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Where the hard coat sits on each base</text>
+<rect x="25" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="130.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Film</text>
+<rect x="55.0" y="150.0" width="150.0" height="26.0" fill="#b4541f" />
+<rect x="55.0" y="176.0" width="150.0" height="60.0" fill="#9db3c7" />
+<rect x="43.0" y="287.0" width="14.0" height="14.0" fill="#b4541f" />
+<text x="65.0" y="300.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">hard coat</text>
+<text x="65.0" y="322.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">1–25 µm</text>
+<rect x="43.0" y="339.0" width="14.0" height="14.0" fill="#9db3c7" />
+<text x="65.0" y="352.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">PET · TAC · CPI</text>
+<text x="65.0" y="374.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">50–100 µm</text>
+<rect x="240" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="345.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Molded plastic</text>
+<rect x="270.0" y="150.0" width="150.0" height="16.0" fill="#b4541f" />
+<rect x="270.0" y="166.0" width="150.0" height="8.0" fill="#d9b26a" />
+<rect x="270.0" y="174.0" width="150.0" height="110.0" fill="#9db3c7" />
+<rect x="258.0" y="287.0" width="14.0" height="14.0" fill="#b4541f" />
+<text x="280.0" y="300.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">siloxane coat</text>
+<text x="280.0" y="322.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">3–7 µm</text>
+<rect x="258.0" y="339.0" width="14.0" height="14.0" fill="#d9b26a" />
+<text x="280.0" y="352.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">primer (PC)</text>
+<text x="280.0" y="374.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">~0.5 µm</text>
+<rect x="258.0" y="391.0" width="14.0" height="14.0" fill="#9db3c7" />
+<text x="280.0" y="404.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">PC · PMMA</text>
+<text x="280.0" y="426.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">mm thick</text>
+<rect x="455" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="560.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Ultra-thin glass</text>
+<rect x="485.0" y="150.0" width="150.0" height="30.0" fill="#b4541f" />
+<rect x="485.0" y="180.0" width="150.0" height="14.0" fill="#e9d8f2" />
+<rect x="485.0" y="194.0" width="150.0" height="40.0" fill="#bfe0e6" />
+<rect x="473.0" y="287.0" width="14.0" height="14.0" fill="#b4541f" />
+<text x="495.0" y="300.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">hard coat</text>
+<text x="495.0" y="322.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">10–60 µm</text>
+<rect x="473.0" y="339.0" width="14.0" height="14.0" fill="#e9d8f2" />
+<text x="495.0" y="352.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">adhesive</text>
+<text x="495.0" y="374.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">or bonded direct</text>
+<rect x="473.0" y="391.0" width="14.0" height="14.0" fill="#bfe0e6" />
+<text x="495.0" y="404.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">UTG</text>
+<text x="495.0" y="426.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">≤75 µm</text>
+<rect x="670" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="775.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Tempered glass</text>
+<rect x="700.0" y="150.0" width="150.0" height="5.0" fill="#3d6e9e" />
+<rect x="700.0" y="155.0" width="150.0" height="110.0" fill="#bfe0e6" />
+<rect x="688.0" y="287.0" width="14.0" height="14.0" fill="#3d6e9e" />
+<text x="710.0" y="300.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">silica-rich layer</text>
+<text x="710.0" y="322.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">≤600 nm</text>
+<rect x="688.0" y="339.0" width="14.0" height="14.0" fill="#bfe0e6" />
+<text x="710.0" y="352.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">ion-exchanged glass</text>
+<text x="710.0" y="374.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">mm thick</text>
+</svg>

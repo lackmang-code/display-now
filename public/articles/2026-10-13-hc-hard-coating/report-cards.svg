@@ -1,0 +1,61 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="519" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Three more report cards</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Taber haze (molded) · pen drop (UTG) · Knoop scratch (glass)</text>
+<rect x="25" y="90" width="280" height="410" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="310" y="90" width="280" height="410" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="595" y="90" width="280" height="410" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="165.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Taber abrasion</text>
+<text x="165.0" y="164.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">two abrasive wheels</text>
+<ellipse cx="165.0" cy="256" rx="110" ry="36" fill="#9db3c7"/>
+<ellipse cx="165.0" cy="248" rx="110" ry="36" fill="#cbd8e3"/>
+<ellipse cx="165.0" cy="248" rx="68" ry="21" fill="none" stroke="#8a8a80" stroke-width="10" opacity="0.6"/>
+<rect x="84.0" y="186.0" width="26.0" height="62.0" fill="#666" rx="6"/>
+<rect x="220.0" y="186.0" width="26.0" height="62.0" fill="#666" rx="6"/>
+<path d="M261.0,300 A100 18 0 0 1 69.0,300" fill="none" stroke="#b4541f" stroke-width="2.5"/>
+<text x="165.0" y="342.0" font-size="14.5" fill="#b4541f" text-anchor="middle" font-weight="400">specimen turns</text>
+<text x="45.0" y="384.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="45.0" y="406.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">haze rise after N turns</text>
+<text x="45.0" y="438.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">PC coat: &lt;10% at 500</text>
+<text x="45.0" y="460.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">car glazing: &lt;2%</text>
+<text x="450.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Pen drop</text>
+<rect x="406.0" y="145.0" width="28.0" height="145.0" fill="none" stroke="#8a8a80" stroke-width="2"/>
+<rect x="415.0" y="158.0" width="10.0" height="58.0" fill="#444" rx="3"/>
+<path d="M415.0,216 L420.0,230 L425.0,216 Z" fill="#444"/>
+<line x1="420.0" y1="238.0" x2="420.0" y2="280.0" stroke="#b4541f" stroke-width="2" /><path d="M415.7,271.0 L420.0,280.0 L424.3,271.0" fill="none" stroke="#b4541f" stroke-width="2"/>
+<line x1="442.0" y1="290.0" x2="452.0" y2="290.0" stroke="#8a8a80" stroke-width="1.5" />
+<line x1="442.0" y1="266.0" x2="452.0" y2="266.0" stroke="#8a8a80" stroke-width="1.5" />
+<line x1="442.0" y1="242.0" x2="452.0" y2="242.0" stroke="#8a8a80" stroke-width="1.5" />
+<line x1="442.0" y1="218.0" x2="452.0" y2="218.0" stroke="#8a8a80" stroke-width="1.5" />
+<line x1="442.0" y1="194.0" x2="452.0" y2="194.0" stroke="#8a8a80" stroke-width="1.5" />
+<line x1="442.0" y1="170.0" x2="452.0" y2="170.0" stroke="#8a8a80" stroke-width="1.5" />
+<text x="462.0" y="200.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">raise 1 cm</text>
+<text x="462.0" y="220.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">each drop</text>
+<rect x="350.0" y="296.0" width="200.0" height="6.0" fill="#b4541f" />
+<rect x="350.0" y="302.0" width="200.0" height="8.0" fill="#bfe0e6" />
+<rect x="350.0" y="310.0" width="200.0" height="8.0" fill="#e9d8f2" />
+<rect x="350.0" y="318.0" width="200.0" height="8.0" fill="#9db3c7" />
+<rect x="350.0" y="326.0" width="200.0" height="12.0" fill="#bbbbb4" />
+<text x="330.0" y="384.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="330.0" y="406.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">height before it cracks</text>
+<text x="330.0" y="438.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">pen and backing differ</text>
+<text x="330.0" y="460.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">by company</text>
+<text x="735.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Knoop scratch</text>
+<rect x="625.0" y="250.0" width="220.0" height="50.0" fill="#bfe0e6" />
+<line x1="625.0" y1="250.0" x2="845.0" y2="250.0" stroke="#3d6e9e" stroke-width="2" />
+<path d="M655,251 Q735,253 765,256 L830,259" fill="none" stroke="#444" stroke-width="3"/>
+<line x1="775.0" y1="257.0" x2="767.0" y2="274.0" stroke="#b4541f" stroke-width="2" />
+<line x1="790.0" y1="257.0" x2="782.0" y2="274.0" stroke="#b4541f" stroke-width="2" />
+<line x1="805.0" y1="257.0" x2="797.0" y2="274.0" stroke="#b4541f" stroke-width="2" />
+<line x1="820.0" y1="257.0" x2="812.0" y2="274.0" stroke="#b4541f" stroke-width="2" />
+<path d="M647,226 L663,226 L655,250 Z" fill="#444"/>
+<line x1="655.0" y1="172.0" x2="655.0" y2="220.0" stroke="#12120e" stroke-width="2" /><path d="M650.7,211.0 L655.0,220.0 L659.3,211.0" fill="none" stroke="#12120e" stroke-width="2"/>
+<text x="669.0" y="192.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">load rises</text>
+<text x="770.0" y="240.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400">damage</text>
+<line x1="665.0" y1="326.0" x2="805.0" y2="326.0" stroke="#12120e" stroke-width="2" /><path d="M796.0,330.3 L805.0,326.0 L796.0,321.7" fill="none" stroke="#12120e" stroke-width="2"/>
+<text x="815.0" y="331.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">drag</text>
+<text x="615.0" y="384.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="615.0" y="406.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">load where damage starts</text>
+<text x="615.0" y="438.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">acid-treated glass:</text>
+<text x="615.0" y="460.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">48–50 N, about 3x</text>
+</svg>

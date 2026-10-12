@@ -1,0 +1,31 @@
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="429" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Same film, three pencil grades</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">One hard-coat layer, one patent, three loads (ASTM D3363)</text>
+<line x1="150" y1="340.0" x2="840" y2="340.0" stroke="#e3e3dd"/>
+<text x="136.0" y="345.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">2H</text>
+<line x1="150" y1="307.1" x2="840" y2="307.1" stroke="#e3e3dd"/>
+<text x="136.0" y="312.1" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">3H</text>
+<line x1="150" y1="274.3" x2="840" y2="274.3" stroke="#e3e3dd"/>
+<text x="136.0" y="279.3" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">4H</text>
+<line x1="150" y1="241.4" x2="840" y2="241.4" stroke="#e3e3dd"/>
+<text x="136.0" y="246.4" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">5H</text>
+<line x1="150" y1="208.6" x2="840" y2="208.6" stroke="#e3e3dd"/>
+<text x="136.0" y="213.6" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">6H</text>
+<line x1="150" y1="175.7" x2="840" y2="175.7" stroke="#e3e3dd"/>
+<text x="136.0" y="180.7" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">7H</text>
+<line x1="150" y1="142.9" x2="840" y2="142.9" stroke="#e3e3dd"/>
+<text x="136.0" y="147.9" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">8H</text>
+<line x1="150" y1="110.0" x2="840" y2="110.0" stroke="#e3e3dd"/>
+<text x="136.0" y="115.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">9H</text>
+<rect x="235" y="274.3" width="90" height="65.7" fill="#b4541f" opacity="0.55"/>
+<text x="280.0" y="262.3" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">4H</text>
+<text x="280.0" y="366.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="600" font-family="'IBM Plex Mono', monospace">750 g</text>
+<rect x="455" y="208.6" width="90" height="131.4" fill="#b4541f" opacity="0.70"/>
+<text x="500.0" y="196.6" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">6H</text>
+<text x="500.0" y="366.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="600" font-family="'IBM Plex Mono', monospace">500 g</text>
+<rect x="675" y="142.9" width="90" height="197.1" fill="#b4541f" opacity="0.85"/>
+<text x="720.0" y="130.9" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">8H</text>
+<text x="720.0" y="366.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="600" font-family="'IBM Plex Mono', monospace">250 g</text>
+<text x="495.0" y="398.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">pencil load — lighter load, higher grade</text>
+</svg>

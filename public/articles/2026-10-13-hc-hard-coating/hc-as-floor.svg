@@ -1,0 +1,58 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="439" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">The floor under AR, AG and AF</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Nanometer films borrow hardness from the hard coat</text>
+<rect x="25" y="90" width="280" height="330" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="310" y="90" width="280" height="330" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="595" y="90" width="280" height="330" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="165.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">AR</text>
+<rect x="65.0" y="158.0" width="200.0" height="8.0" fill="#c9e3f2" />
+<rect x="65.0" y="166.0" width="200.0" height="8.0" fill="#2e6f9e" />
+<rect x="65.0" y="174.0" width="200.0" height="8.0" fill="#7fb3d5" />
+<rect x="65.0" y="182.0" width="200.0" height="30.0" fill="#b4541f" />
+<rect x="65.0" y="212.0" width="200.0" height="40.0" fill="#9db3c7" />
+<text x="45.0" y="286.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">low · high · mid index, nm</text>
+<text x="45.0" y="308.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">hard coat 1–30 µm</text>
+<text x="45.0" y="330.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">TAC</text>
+<text x="45.0" y="372.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">low-index film: H on HC,</text>
+<text x="45.0" y="406.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">below 6B on bare TAC</text>
+<text x="450.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">AG</text>
+<polygon points="350,212 350,176.0 354,169.3 358,171.9 362,172.5 366,171.1 370,178.3 374,184.0 378,179.9 382,178.3 386,178.9 390,171.6 394,167.4 398,173.0 402,175.3 406,175.2 410,181.9 414,184.4 418,177.4 422,174.7 426,175.0 430,169.2 434,168.5 438,176.6 442,179.1 446,178.3 450,183.0 454,181.9 458,173.1 462,171.3 466,173.0 470,169.7 474,172.1 478,181.1 482,181.8 486,178.9 490,181.1 494,177.6 498,169.1 502,169.9 506,173.9 510,172.7 514,176.7 518,184.3 522,181.8 526,176.6 530,177.4 534,173.4 538,167.1 542,171.4 546,177.2 550,176.5 550,212" fill="#b4541f"/>
+<circle cx="366" cy="190" r="6" fill="#f6d9c6"/>
+<circle cx="387" cy="197" r="6" fill="#f6d9c6"/>
+<circle cx="408" cy="204" r="6" fill="#f6d9c6"/>
+<circle cx="429" cy="190" r="6" fill="#f6d9c6"/>
+<circle cx="450" cy="197" r="6" fill="#f6d9c6"/>
+<circle cx="471" cy="204" r="6" fill="#f6d9c6"/>
+<circle cx="492" cy="190" r="6" fill="#f6d9c6"/>
+<circle cx="513" cy="197" r="6" fill="#f6d9c6"/>
+<circle cx="534" cy="204" r="6" fill="#f6d9c6"/>
+<rect x="350.0" y="212.0" width="200.0" height="40.0" fill="#9db3c7" />
+<text x="330.0" y="286.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">particles in the hard coat</text>
+<text x="330.0" y="308.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">Ra 0.05–0.15 µm</text>
+<text x="330.0" y="372.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">one layer gives hardness</text>
+<text x="330.0" y="406.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">and roughness</text>
+<text x="735.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">AF</text>
+<line x1="643.0" y1="160.0" x2="643.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="657.0" y1="160.0" x2="657.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="671.0" y1="160.0" x2="671.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="685.0" y1="160.0" x2="685.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="699.0" y1="160.0" x2="699.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="713.0" y1="160.0" x2="713.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="727.0" y1="160.0" x2="727.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="741.0" y1="160.0" x2="741.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="755.0" y1="160.0" x2="755.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="769.0" y1="160.0" x2="769.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="783.0" y1="160.0" x2="783.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="797.0" y1="160.0" x2="797.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="811.0" y1="160.0" x2="811.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<line x1="825.0" y1="160.0" x2="825.0" y2="176.0" stroke="#5a9a5a" stroke-width="2" />
+<rect x="635.0" y="176.0" width="200.0" height="6.0" fill="#a8a8a0" />
+<rect x="635.0" y="182.0" width="200.0" height="30.0" fill="#b4541f" />
+<rect x="635.0" y="212.0" width="200.0" height="40.0" fill="#9db3c7" />
+<text x="615.0" y="286.0" font-size="14.5" fill="#5a9a5a" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">fluoro-silane</text>
+<text x="615.0" y="308.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">silica primer</text>
+<text x="615.0" y="330.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">epoxy-siloxane hard coat</text>
+<text x="615.0" y="372.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">bonds to the coat; 90%+ of</text>
+<text x="615.0" y="406.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600">angle after 5,000 rubs</text>
+</svg>

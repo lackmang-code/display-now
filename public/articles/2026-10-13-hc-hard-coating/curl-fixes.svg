@@ -1,0 +1,46 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="479" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Four ways to stop curl</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">All four are film problems; a 2 mm PC part needs none</text>
+<rect x="25" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="130.0" y="124.0" font-size="22" fill="#b4541f" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">1</text>
+<rect x="55.0" y="212.0" width="150.0" height="8.0" fill="#b4541f" />
+<rect x="55.0" y="220.0" width="150.0" height="24.0" fill="#9db3c7" />
+<rect x="55.0" y="244.0" width="150.0" height="8.0" fill="#b4541f" />
+<line x1="75.0" y1="194.0" x2="110.0" y2="194.0" stroke="#b4541f" stroke-width="2" /><path d="M101.0,198.3 L110.0,194.0 L101.0,189.7" fill="none" stroke="#b4541f" stroke-width="2"/>
+<line x1="185.0" y1="194.0" x2="150.0" y2="194.0" stroke="#b4541f" stroke-width="2" /><path d="M159.0,189.7 L150.0,194.0 L159.0,198.3" fill="none" stroke="#b4541f" stroke-width="2"/>
+<line x1="75.0" y1="272.0" x2="110.0" y2="272.0" stroke="#b4541f" stroke-width="2" /><path d="M101.0,276.3 L110.0,272.0 L101.0,267.7" fill="none" stroke="#b4541f" stroke-width="2"/>
+<line x1="185.0" y1="272.0" x2="150.0" y2="272.0" stroke="#b4541f" stroke-width="2" /><path d="M159.0,267.7 L150.0,272.0 L159.0,276.3" fill="none" stroke="#b4541f" stroke-width="2"/>
+<text x="130.0" y="336.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">Coat both sides</text>
+<text x="130.0" y="362.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">shrink cancels</text>
+<text x="130.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">LG Chem: 230 µm total</text>
+<rect x="240" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="345.0" y="124.0" font-size="22" fill="#b4541f" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2</text>
+<rect x="270.0" y="204.0" width="150.0" height="8.0" fill="#b4541f" />
+<rect x="270.0" y="212.0" width="150.0" height="12.0" fill="#e9d8f2" />
+<rect x="270.0" y="224.0" width="150.0" height="24.0" fill="#9db3c7" />
+<text x="345.0" y="278.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">hard top, soft bottom</text>
+<text x="345.0" y="336.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">Softer bottom layer</text>
+<text x="345.0" y="362.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">elastomer cuts shrink</text>
+<text x="345.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">LG Chem</text>
+<rect x="455" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="560.0" y="124.0" font-size="22" fill="#b4541f" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">3</text>
+<path d="M485,216 Q560.0,166 635,216" fill="none" stroke="#9db3c7" stroke-width="10"/>
+<line x1="560.0" y1="224.0" x2="560.0" y2="256.0" stroke="#12120e" stroke-width="2" /><path d="M555.7,247.0 L560.0,256.0 L564.3,247.0" fill="none" stroke="#12120e" stroke-width="2"/>
+<rect x="485.0" y="266.0" width="150.0" height="6.0" fill="#b4541f" />
+<rect x="485.0" y="272.0" width="150.0" height="10.0" fill="#9db3c7" />
+<text x="560.0" y="336.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">Bend it backward</text>
+<text x="560.0" y="362.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">reverse pre-curl</text>
+<text x="560.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">3M: R 4 cm, then flat</text>
+<rect x="670" y="90" width="210" height="370" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="775.0" y="124.0" font-size="22" fill="#b4541f" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">4</text>
+<path d="M700,180 Q775.0,230 850,180" fill="none" stroke="#9db3c7" stroke-width="10"/>
+<path d="M700,174 Q775.0,224 850,174" fill="none" stroke="#b4541f" stroke-width="3"/>
+<text x="735.0" y="248.0" font-size="15" fill="#b4541f" text-anchor="middle" font-weight="600">heat</text>
+<line x1="775.0" y1="224.0" x2="775.0" y2="256.0" stroke="#12120e" stroke-width="2" /><path d="M770.7,247.0 L775.0,256.0 L779.3,247.0" fill="none" stroke="#12120e" stroke-width="2"/>
+<rect x="700.0" y="266.0" width="150.0" height="6.0" fill="#b4541f" />
+<rect x="700.0" y="272.0" width="150.0" height="10.0" fill="#9db3c7" />
+<text x="775.0" y="336.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">Flatten after cure</text>
+<text x="775.0" y="362.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">heat correction</text>
+<text x="775.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">Fujifilm: curl to 1/9</text>
+</svg>

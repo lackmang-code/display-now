@@ -1,0 +1,35 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Hard coat is still soft</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Indentation / Vickers hardness, GPa (log scale)</text>
+<line x1="120.0" y1="100" x2="120.0" y2="400" stroke="#e3e3dd"/>
+<text x="120.0" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">0.1</text>
+<line x1="262.5" y1="100" x2="262.5" y2="400" stroke="#e3e3dd"/>
+<text x="262.5" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">0.3</text>
+<line x1="418.7" y1="100" x2="418.7" y2="400" stroke="#e3e3dd"/>
+<text x="418.7" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">1</text>
+<line x1="561.3" y1="100" x2="561.3" y2="400" stroke="#e3e3dd"/>
+<text x="561.3" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">3</text>
+<line x1="717.5" y1="100" x2="717.5" y2="400" stroke="#e3e3dd"/>
+<text x="717.5" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">10</text>
+<line x1="860.0" y1="100" x2="860.0" y2="400" stroke="#e3e3dd"/>
+<text x="860.0" y="424.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">30</text>
+<text x="490.0" y="450.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">hardness (GPa)</text>
+<circle cx="258.1" cy="128" r="8" fill="#b4541f"/>
+<text x="242.1" y="133.0" font-size="16" fill="#b4541f" text-anchor="end" font-weight="600">UV hard coat (pencil &gt;7H)</text>
+<text x="274.1" y="133.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">0.29 GPa · nanoindentation, coating 200 μm thick</text>
+<circle cx="693.3" cy="184" r="8" fill="#3d6e9e"/>
+<text x="677.3" y="189.0" font-size="16" fill="#3d6e9e" text-anchor="end" font-weight="600">ion-exchanged glass</text>
+<text x="709.3" y="189.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">8.3 GPa · nanoindentation</text>
+<circle cx="673.0" cy="240" r="8" fill="#8a8a80"/>
+<text x="657.0" y="245.0" font-size="16" fill="#8a8a80" text-anchor="end" font-weight="600">feldspar</text>
+<text x="689.0" y="245.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">7.1 GPa · 725 HV</text>
+<circle cx="723.8" cy="296" r="8" fill="#12120e"/>
+<text x="707.8" y="301.0" font-size="16" fill="#12120e" text-anchor="end" font-weight="600">quartz (sand)</text>
+<text x="739.8" y="301.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">10.5 GPa · 1,070 HV</text>
+<circle cx="795.2" cy="352" r="8" fill="#8a8a80"/>
+<text x="779.2" y="357.0" font-size="16" fill="#8a8a80" text-anchor="end" font-weight="600">corundum</text>
+<text x="811.2" y="357.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">18.2 GPa · 1,860 HV</text>
+<line x1="262.1" y1="152" x2="689.3" y2="152" stroke="#b4541f" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="475.7" y="172.0" font-size="15" fill="#b4541f" text-anchor="middle" font-weight="600">about 30x</text>
+</svg>

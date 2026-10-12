@@ -1,0 +1,53 @@
+<svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="449" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Softer surface, higher scratch threshold</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Corning: ion-exchanged glass in dilute acid, 95 °C, 24 h</text>
+<rect x="25" y="90" width="330" height="340" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="190.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">The surface</text>
+<text x="55.0" y="172.0" font-size="15" fill="#3d6e9e" text-anchor="start" font-weight="600">porous silica-rich, ≤600 nm</text>
+<rect x="55.0" y="186.0" width="270.0" height="22.0" fill="#e6eef4" />
+<circle cx="63" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="75" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="87" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="99" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="111" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="123" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="135" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="147" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="159" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="171" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="183" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="195" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="207" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="219" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="231" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="243" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="255" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="267" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="279" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="291" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="303" cy="193" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<circle cx="315" cy="201" r="3" fill="#ffffff" stroke="#3d6e9e" stroke-width="1"/>
+<rect x="55.0" y="208.0" width="270.0" height="100.0" fill="#bfe0e6" />
+<text x="190.0" y="264.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">ion-exchanged glass</text>
+<text x="55.0" y="352.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">made by leaching, not coating;</text>
+<text x="55.0" y="374.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">coatings judged unsuited</text>
+<text x="55.0" y="396.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">to large glass</text>
+<rect x="370" y="90" width="505" height="340" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="622.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Before vs after</text>
+<text x="395.0" y="166.0" font-size="16" fill="#12120e" text-anchor="start" font-weight="700">hardness</text>
+<rect x="395.0" y="178.0" width="90.0" height="18.0" fill="#c9c9c2" />
+<text x="495.0" y="192.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">before</text>
+<rect x="395.0" y="202.0" width="10.8" height="18.0" fill="#3d6e9e" />
+<text x="415.8" y="216.0" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">~1 GPa (was 8.3)</text>
+<text x="395.0" y="254.0" font-size="16" fill="#12120e" text-anchor="start" font-weight="700">modulus</text>
+<rect x="395.0" y="266.0" width="90.0" height="18.0" fill="#c9c9c2" />
+<text x="495.0" y="280.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">before</text>
+<rect x="395.0" y="290.0" width="15.6" height="18.0" fill="#3d6e9e" />
+<text x="420.6" y="304.0" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">12.2 GPa (was 70.5)</text>
+<text x="395.0" y="342.0" font-size="16" fill="#12120e" text-anchor="start" font-weight="700">scratch threshold</text>
+<rect x="395.0" y="354.0" width="90.0" height="18.0" fill="#c9c9c2" />
+<text x="495.0" y="368.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">before</text>
+<rect x="395.0" y="378.0" width="270.0" height="18.0" fill="#b4541f" />
+<text x="675.0" y="392.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">about 3x, 48–50 N</text>
+</svg>

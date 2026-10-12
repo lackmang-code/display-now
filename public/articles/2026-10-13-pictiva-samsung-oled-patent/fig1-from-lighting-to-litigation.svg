@@ -1,0 +1,75 @@
+<svg viewBox="0 0 678 440" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="439" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">From lighting to litigation</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">two OSRAM lighting patents, and where the money sat</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- two patent cards -->
+  <rect x="22" y="82" width="312" height="92" rx="6" fill="#f2ecf7" stroke="#5c3a7a" stroke-width="1.6"/>
+  <text x="36" y="104" font-size="14.5" font-weight="700" fill="#4a2d63">US 8,314,547</text>
+  <text x="320" y="104" font-size="12" fill="#6f5a85" text-anchor="end" font-family="'IBM Plex Mono', monospace">priority 2007</text>
+  <text x="36" y="124" font-size="12.5" fill="#5e4478">wavelength conversion plus filter layer</text>
+  <text x="36" y="141" font-size="12.5" fill="#5e4478">kills the yellow tint when switched off</text>
+  <text x="36" y="162" font-size="11.5" fill="#8a7a9a" font-family="'IBM Plex Mono', monospace">stated use: phone flashlight, luminaires</text>
+
+  <rect x="344" y="82" width="312" height="92" rx="6" fill="#f2ecf7" stroke="#5c3a7a" stroke-width="1.6"/>
+  <text x="358" y="104" font-size="14.5" font-weight="700" fill="#4a2d63">US 11,828,425</text>
+  <text x="642" y="104" font-size="12" fill="#6f5a85" text-anchor="end" font-family="'IBM Plex Mono', monospace">priority 2008</text>
+  <text x="358" y="124" font-size="12.5" fill="#5e4478">structured exit area, directional emission</text>
+  <text x="358" y="141" font-size="12.5" fill="#5e4478">filed 2023, granted 2023</text>
+  <text x="358" y="162" font-size="11.5" fill="#8a7a9a" font-family="'IBM Plex Mono', monospace">stated use: lamps, blinds, alarm clocks</text>
+
+  <!-- chain of title -->
+  <text x="22" y="200" font-size="12.5" font-weight="700" fill="#6a6a62" font-family="'IBM Plex Mono', monospace">CHAIN OF TITLE, identical for both</text>
+
+  <rect x="22" y="210" width="146" height="40" rx="4" fill="#f6f6f4" stroke="#c5c5bf" stroke-width="1.2"/>
+  <text x="95" y="226" font-size="12" fill="#4a4a44" text-anchor="middle">OSRAM Opto Semi.</text>
+  <text x="95" y="242" font-size="11" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2010</text>
+
+  <path d="M172 230 L186 230" stroke="#9a9a92" stroke-width="1.5"/>
+  <rect x="190" y="210" width="130" height="40" rx="4" fill="#f6f6f4" stroke="#c5c5bf" stroke-width="1.2"/>
+  <text x="255" y="226" font-size="12" fill="#4a4a44" text-anchor="middle">OSRAM OLED GmbH</text>
+  <text x="255" y="242" font-size="11" fill="#8a8a80" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2016</text>
+
+  <path d="M324 230 L338 230" stroke="#9a9a92" stroke-width="1.5"/>
+  <rect x="342" y="210" width="142" height="40" rx="4" fill="#fbeeea" stroke="#c2705a" stroke-width="1.4"/>
+  <text x="413" y="226" font-size="12" fill="#8a3a26" text-anchor="middle">Dolya Holdco 5 Ltd</text>
+  <text x="413" y="242" font-size="11" fill="#a8604a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">11 Aug 2020</text>
+
+  <path d="M488 230 L502 230" stroke="#c2705a" stroke-width="1.5"/>
+  <rect x="506" y="210" width="150" height="40" rx="4" fill="#fbeeea" stroke="#c2705a" stroke-width="1.6"/>
+  <text x="581" y="226" font-size="12" font-weight="700" fill="#8a3a26" text-anchor="middle">Pictiva Displays</text>
+  <text x="581" y="242" font-size="11" fill="#a8604a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">11 Aug 2020, renamed</text>
+
+  <text x="642" y="266" font-size="11.5" fill="#8a3a26" text-anchor="end" font-weight="700">same day. the name was OSRAM's own PMOLED display brand, dropped in 2007</text>
+
+  <!-- litigation timeline -->
+  <line x1="40" y1="300" x2="640" y2="300" stroke="#d5d5cf" stroke-width="2"/>
+
+  <circle cx="90" cy="300" r="5" fill="#8a8a80"/>
+  <text x="90" y="289" font-size="11.5" fill="#6a6a62" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2023</text>
+  <text x="90" y="320" font-size="12" fill="#4a4a44" text-anchor="middle">suit filed</text>
+
+  <circle cx="258" cy="300" r="6" fill="#c2705a"/>
+  <text x="258" y="289" font-size="11.5" fill="#8a3a26" text-anchor="middle" font-family="'IBM Plex Mono', monospace">Nov 2025</text>
+  <text x="258" y="320" font-size="12" font-weight="700" fill="#8a3a26" text-anchor="middle">jury: willful</text>
+  <text x="258" y="337" font-size="13" font-weight="700" fill="#8a3a26" text-anchor="middle">191.4 million USD</text>
+
+  <circle cx="440" cy="300" r="6" fill="#2f6a4a"/>
+  <text x="440" y="289" font-size="11.5" fill="#2f6a4a" text-anchor="middle" font-family="'IBM Plex Mono', monospace">2026</text>
+  <text x="440" y="320" font-size="12" font-weight="700" fill="#2f6a4a" text-anchor="middle">tribunal cancels the one</text>
+  <text x="440" y="337" font-size="12" font-weight="700" fill="#2f6a4a" text-anchor="middle">asserted claim of 425</text>
+  <text x="440" y="354" font-size="13" font-weight="700" fill="#2f6a4a" text-anchor="middle">minus 92.6 million</text>
+
+  <circle cx="600" cy="300" r="6" fill="#4a2d63"/>
+  <text x="600" y="289" font-size="11.5" fill="#4a2d63" text-anchor="middle" font-family="'IBM Plex Mono', monospace">8 Oct 2026</text>
+  <text x="600" y="320" font-size="12" font-weight="700" fill="#4a2d63" text-anchor="middle">settled</text>
+  <text x="600" y="337" font-size="11.5" fill="#6f5a85" text-anchor="middle">terms not disclosed</text>
+
+  <!-- bottom band -->
+  <rect x="22" y="374" width="634" height="38" rx="5" fill="#f2ecf7" stroke="#5c3a7a" stroke-width="1.4"/>
+  <text x="36" y="398" font-size="13.5" font-weight="700" fill="#4a2d63">Half the verdict hung on a single claim. Both sides folded.</text>
+
+  <text x="22" y="430" font-size="12" fill="#a0a098" font-family="'IBM Plex Mono', monospace">DESK, from USPTO assignment records and court reporting</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="519" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Cure is set by the base</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Film runs under UV; molded parts bake in an oven</text>
+<rect x="25" y="90" width="850" height="200" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="45.0" y="122.0" font-size="18" fill="#12120e" text-anchor="start" font-weight="700">Film: roll-to-roll</text>
+<circle cx="80" cy="210" r="30" fill="#9db3c7"/>
+<circle cx="820" cy="210" r="30" fill="#9db3c7"/>
+<line x1="80.0" y1="180.0" x2="820.0" y2="180.0" stroke="#7f93a6" stroke-width="4" />
+<path d="M196,132 L224,132 L214,176 L206,176 Z" fill="#666"/>
+<rect x="330.0" y="128.0" width="120.0" height="40.0" fill="#f3d6c6" rx="4"/>
+<rect x="515.0" y="128.0" width="150.0" height="40.0" fill="#f3e7c4" rx="4"/>
+<line x1="540.0" y1="168.0" x2="540.0" y2="176.0" stroke="#d4a017" stroke-width="2" />
+<line x1="565.0" y1="168.0" x2="565.0" y2="176.0" stroke="#d4a017" stroke-width="2" />
+<line x1="590.0" y1="168.0" x2="590.0" y2="176.0" stroke="#d4a017" stroke-width="2" />
+<line x1="615.0" y1="168.0" x2="615.0" y2="176.0" stroke="#d4a017" stroke-width="2" />
+<line x1="640.0" y1="168.0" x2="640.0" y2="176.0" stroke="#d4a017" stroke-width="2" />
+<text x="210.0" y="216.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">coat</text>
+<text x="210.0" y="240.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">slot die</text>
+<text x="390.0" y="216.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">dry</text>
+<text x="390.0" y="240.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">80 °C, 2 min</text>
+<text x="590.0" y="216.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">UV cure</text>
+<text x="590.0" y="240.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">N₂, O₂ &lt;50 ppm</text>
+<line x1="300.0" y1="266.0" x2="500.0" y2="266.0" stroke="#b4541f" stroke-width="2.5" /><path d="M491.0,270.3 L500.0,266.0 L491.0,261.7" fill="none" stroke="#b4541f" stroke-width="2.5"/>
+<text x="520.0" y="271.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">web 6–30 m/min</text>
+<rect x="25" y="305" width="850" height="200" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="45.0" y="337.0" font-size="18" fill="#12120e" text-anchor="start" font-weight="700">Molded part: one at a time</text>
+<path d="M100,420 Q140,380 180,420 L180,432 Q140,392 100,432 Z" fill="#9db3c7"/>
+<text x="140.0" y="466.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="600">flow · dip · spray</text>
+<line x1="200.0" y1="410.0" x2="300.0" y2="410.0" stroke="#12120e" stroke-width="2" /><path d="M291.0,414.3 L300.0,410.0 L291.0,405.7" fill="none" stroke="#12120e" stroke-width="2"/>
+<rect x="320.0" y="358.0" width="260.0" height="128.0" fill="#f3d6c6" rx="8"/>
+<path d="M410,420 Q450,380 490,420 L490,432 Q450,392 410,432 Z" fill="#9db3c7"/>
+<text x="450.0" y="384.0" font-size="16" fill="#12120e" text-anchor="middle" font-weight="700">oven</text>
+<text x="450.0" y="456.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">PC 130 °C, 30–60 min</text>
+<text x="450.0" y="476.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">PMMA 90 °C, 90 min</text>
+<text x="735.0" y="404.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="600">thicker part,</text>
+<text x="735.0" y="428.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="600">longer bake</text>
+<text x="735.0" y="456.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">82 °C: 4 h → 6 h+</text>
+</svg>

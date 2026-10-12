@@ -1,0 +1,28 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="419" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Form first, then finish the cure</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Curved covers from hard-coated film</text>
+<rect x="30" y="90" width="260" height="260" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="65.0" y="196.0" width="190.0" height="7.0" fill="#f0b48f" />
+<rect x="65.0" y="203.0" width="190.0" height="14.0" fill="#9db3c7" />
+<text x="160.0" y="290.0" font-size="17" fill="#12120e" text-anchor="middle" font-weight="700">coat, half-cure</text>
+<text x="160.0" y="316.0" font-size="15" fill="#8a8a80" text-anchor="middle" font-weight="400">still stretches</text>
+<line x1="294.0" y1="210.0" x2="316.0" y2="210.0" stroke="#12120e" stroke-width="2" /><path d="M307.0,214.3 L316.0,210.0 L307.0,205.7" fill="none" stroke="#12120e" stroke-width="2"/>
+<rect x="320" y="90" width="260" height="260" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<path d="M355,230 L390,230 Q400,170 450,170 Q500,170 510,230 L545,230" fill="none" stroke="#9db3c7" stroke-width="14"/>
+<path d="M355,230 L390,230 Q400,170 450,170 Q500,170 510,230 L545,230" fill="none" stroke="#f0b48f" stroke-width="5" transform="translate(0,-8)"/>
+<text x="450.0" y="290.0" font-size="17" fill="#12120e" text-anchor="middle" font-weight="700">thermoform</text>
+<text x="450.0" y="316.0" font-size="15" fill="#8a8a80" text-anchor="middle" font-weight="400">dual-cure passed 300%</text>
+<line x1="584.0" y1="210.0" x2="606.0" y2="210.0" stroke="#12120e" stroke-width="2" /><path d="M597.0,214.3 L606.0,210.0 L597.0,205.7" fill="none" stroke="#12120e" stroke-width="2"/>
+<rect x="610" y="90" width="260" height="260" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<line x1="680.0" y1="112.0" x2="680.0" y2="132.0" stroke="#d4a017" stroke-width="2" />
+<line x1="710.0" y1="112.0" x2="710.0" y2="132.0" stroke="#d4a017" stroke-width="2" />
+<line x1="740.0" y1="112.0" x2="740.0" y2="132.0" stroke="#d4a017" stroke-width="2" />
+<line x1="770.0" y1="112.0" x2="770.0" y2="132.0" stroke="#d4a017" stroke-width="2" />
+<line x1="800.0" y1="112.0" x2="800.0" y2="132.0" stroke="#d4a017" stroke-width="2" />
+<path d="M645,230 L680,230 Q690,170 740,170 Q790,170 800,230 L835,230" fill="none" stroke="#9db3c7" stroke-width="14"/>
+<path d="M645,230 L680,230 Q690,170 740,170 Q790,170 800,230 L835,230" fill="none" stroke="#b4541f" stroke-width="5" transform="translate(0,-8)"/>
+<text x="740.0" y="290.0" font-size="17" fill="#12120e" text-anchor="middle" font-weight="700">UV full cure</text>
+<text x="740.0" y="316.0" font-size="15" fill="#8a8a80" text-anchor="middle" font-weight="400">now hard</text>
+<text x="450.0" y="390.0" font-size="14.5" fill="#b4541f" text-anchor="middle" font-weight="400">UV-only coat, fully cured before forming: failed at 150% (allnex)</text>
+</svg>

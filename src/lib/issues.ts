@@ -79,6 +79,26 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 9,
+    publishedAt: '2026-10-13',
+    weekStart: '2026-10-05',
+    // 헤드는 클레임 아이폰 18 Pro UDC 화소 편이다. 표지 시뮬이 이 편(udc-pixel-generations-3d-demo)이라
+    // 표지와 헤드를 일치시킨다(제7호 표지·헤드 분리 때 대표 지적). 데스크 BOE 1+4+N 은 금주 핫이슈라
+    // 세지만 시뮬이 사업부 거품그래프라 표지 규칙(그래프는 3D 금지)상 8호 수준 표지를 못 맡는다.
+    // 헤드 꼭지가 클레임 → 데스크(8호) → 클레임으로 연속되지 않는다.
+    // 표지 문구 = 헤드 기사 제목에서 「특허 분석」을 뺀 명사형. 제목 그대로 두면 세로 표지에서
+    // 「분석」 한 단어만 둘째 줄로 떨어졌다(2026-10-12 대표 확인 후 축약). 기사 제목은 그대로다.
+    headline: '아이폰 18 Pro UDC 화소 구조',
+    deck: '아이폰 18 Pro는 Face ID 위 화면에서 화소 줄을 한 줄 걸러 비웠습니다. 화면 아래 카메라는 화소를 덜어 내는 1세대에서 회로를 가장자리로 빼는 2세대로 갔다가, 마스크 부담 때문에 다시 덜어 내는 1.5세대로 돌아왔습니다. 그 배열의 첫 그림은 애플 자신의 2018년 명세서에 있습니다.',
+    coverSim: 'udc-pixel-generations-3d-demo',
+    coverSimParams: { gen: 'g15' },
+    coverNote: '화면 아래 카메라 위 화소 배열을 세 갈래로 그린 3D 모델(클레임 편)입니다. 1세대는 화소를 덜어 내도 금속 배선이 창을 지나고, 2세대는 회로를 원 밖으로 빼며, 1.5세대는 한 줄 걸러 비우고 회로를 띠로 몹니다. 크기와 간격은 비례가 아니며 투과율은 표시하지 않았습니다.',
+    headSlug: '2026-10-13-under-panel-camera-pixel-structure',
+    headlineEn: 'iPhone 18 Pro Under-Display Camera Pixels',
+    deckEn: "Over its Face ID camera, the iPhone 18 Pro leaves every other row of pixels empty. Under-display cameras went from thinning out pixels (first generation) to pushing circuits to the edge (second), then came back to thinning out (1.5) because transparent wiring added masks. The first drawing of that layout is in Apple's own 2018 specification.",
+    coverNoteEn: "A 3D model of the pixels over an under-display camera, in three generations (Claim's piece). In the first, metal lines still cross the window; in the second, circuits move outside the circle; in 1.5, every other row is emptied and circuits are packed into a strip. Sizes and spacing are not to scale, and no transmittance is shown.",
+  },
+  {
     no: 8,
     publishedAt: '2026-10-06',
     weekStart: '2026-09-28',

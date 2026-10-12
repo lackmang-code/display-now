@@ -1,0 +1,54 @@
+<svg viewBox="0 0 678 440" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', sans-serif">
+  <rect x="0.5" y="0.5" width="677" height="439" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+
+  <text x="22" y="34" font-size="20" font-weight="700" fill="#12120e" letter-spacing="-0.3" font-family="'Noto Serif KR', serif">What the Sensor unit actually builds</text>
+  <text x="22" y="54" font-size="13" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">five lines, all running on display process assets</text>
+  <line x1="22" y1="68" x2="656" y2="68" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- source: display process -->
+  <rect x="22" y="84" width="180" height="92" rx="6" fill="#f2ecf7" stroke="#5c3a7a" stroke-width="1.8"/>
+  <text x="112" y="110" font-size="15.5" font-weight="700" fill="#4a2d63" text-anchor="middle">Display process</text>
+  <text x="112" y="132" font-size="13.5" fill="#5e4478" text-anchor="middle">TFT backplane</text>
+  <text x="112" y="151" font-size="13.5" fill="#5e4478" text-anchor="middle">oxide semiconductor</text>
+  <text x="112" y="170" font-size="13.5" fill="#5e4478" text-anchor="middle">glass handling</text>
+
+  <!-- arrows -->
+  <path d="M202 118 L250 104" stroke="#9a8aae" stroke-width="1.6" fill="none"/>
+  <path d="M202 128 L250 160" stroke="#9a8aae" stroke-width="1.6" fill="none"/>
+  <path d="M202 140 L250 216" stroke="#9a8aae" stroke-width="1.6" fill="none"/>
+  <path d="M202 152 L250 272" stroke="#9a8aae" stroke-width="1.6" fill="none"/>
+  <path d="M202 162 L250 328" stroke="#9a8aae" stroke-width="1.6" fill="none"/>
+
+  <!-- five lines -->
+  <rect x="250" y="86" width="406" height="48" rx="5" fill="#eef7f1" stroke="#2f6a4a" stroke-width="1.7"/>
+  <text x="264" y="108" font-size="15" font-weight="700" fill="#2f6a4a">FPXD</text>
+  <text x="642" y="108" font-size="13.5" fill="#3f6a52" text-anchor="end">X-ray flat panel detector backplane</text>
+  <text x="264" y="126" font-size="12.5" fill="#6f9a80" font-family="'IBM Plex Mono', monospace">MOST project: High Mobility IGZTO Detector, released</text>
+
+  <rect x="250" y="142" width="406" height="48" rx="5" fill="#eef7f1" stroke="#2f6a4a" stroke-width="1.7"/>
+  <text x="264" y="164" font-size="15" font-weight="700" fill="#2f6a4a">Smart window</text>
+  <text x="642" y="164" font-size="13.5" fill="#3f6a52" text-anchor="end">dimming glass and control systems</text>
+  <text x="264" y="182" font-size="12.5" fill="#6f9a80" font-family="'IBM Plex Mono', monospace">H1 2026: first zoned-dimming product shipped</text>
+
+  <rect x="250" y="198" width="406" height="48" rx="5" fill="#eef7f1" stroke="#2f6a4a" stroke-width="1.7"/>
+  <text x="264" y="220" font-size="15" font-weight="700" fill="#2f6a4a">Glass packaging substrate</text>
+  <text x="642" y="220" font-size="13.5" fill="#3f6a52" text-anchor="end">advanced packaging</text>
+  <text x="264" y="238" font-size="12.5" fill="#6f9a80" font-family="'IBM Plex Mono', monospace">H1 2026: samples to a leading domestic customer</text>
+
+  <rect x="250" y="254" width="406" height="44" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.4"/>
+  <text x="264" y="274" font-size="15" font-weight="700" fill="#4a4a44">Industrial sensing</text>
+  <text x="642" y="274" font-size="13.5" fill="#6a6a62" text-anchor="end">laser displacement, PLC</text>
+  <text x="264" y="291" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Suzhou site · PLC in mass production</text>
+
+  <rect x="250" y="306" width="406" height="44" rx="5" fill="#f6f6f4" stroke="#d5d5cf" stroke-width="1.4"/>
+  <text x="264" y="326" font-size="15" font-weight="700" fill="#4a4a44">MEMS</text>
+  <text x="642" y="326" font-size="13.5" fill="#6a6a62" text-anchor="end">micro differential pressure airflow sensor</text>
+  <text x="264" y="343" font-size="12.5" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">in-house design, passed customer qualification</text>
+
+  <!-- bottom band -->
+  <rect x="22" y="364" width="634" height="48" rx="5" fill="#fbeeea" stroke="#c2705a" stroke-width="1.7"/>
+  <text x="36" y="385" font-size="15.5" font-weight="700" fill="#8a3a26">All of this is 0.41 percent of revenue</text>
+  <text x="36" y="404" font-size="14" fill="#7a4a3a">CNY 421 million in H1 2026, up 88.21 percent. Fastest of the four, and smallest.</text>
+
+  <text x="22" y="430" font-size="12.5" fill="#a0a098" font-family="'IBM Plex Mono', monospace">DESK, from BOE Annual Report 2025 and the 2026 interim report</text>
+</svg>

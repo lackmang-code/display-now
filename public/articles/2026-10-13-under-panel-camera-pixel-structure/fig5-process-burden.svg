@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="300" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">What each route says about the process</text>
+<text x="20.0" y="47.0" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start">Statements in the patent texts. No document gives a cost figure.</text>
+<rect x="20" y="60" width="640" height="38" rx="6" fill="#f7f8fa"/>
+<rect x="20" y="60" width="6" height="38" fill="#e8590c"/>
+<text x="38.0" y="84.0" font-size="12" fill="#e8590c" font-weight="700" text-anchor="start">2nd generation</text>
+<text x="150.0" y="84.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">Tianma 2019</text>
+<text x="310.0" y="84.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Wire resistance weakens the drive signal to far units</text>
+<rect x="20" y="106" width="640" height="38" rx="6" fill="#f7f8fa"/>
+<rect x="20" y="106" width="6" height="38" fill="#e8590c"/>
+<text x="38.0" y="130.0" font-size="12" fill="#e8590c" font-weight="700" text-anchor="start">2nd generation</text>
+<text x="150.0" y="130.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">LG Display 2019</text>
+<text x="310.0" y="130.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Line width set by length to even out resistance</text>
+<rect x="20" y="152" width="640" height="38" rx="6" fill="#f7f8fa"/>
+<rect x="20" y="152" width="6" height="38" fill="#e8590c"/>
+<text x="38.0" y="176.0" font-size="12" fill="#e8590c" font-weight="700" text-anchor="start">2nd generation</text>
+<text x="150.0" y="176.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">Samsung Display 2021</text>
+<text x="310.0" y="176.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Three transparent lines: up to 4 more masks</text>
+<rect x="20" y="198" width="640" height="38" rx="6" fill="#f7f8fa"/>
+<rect x="20" y="198" width="6" height="38" fill="#2b8a5a"/>
+<text x="38.0" y="222.0" font-size="12" fill="#2b8a5a" font-weight="700" text-anchor="start">1.5 generation</text>
+<text x="150.0" y="222.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">Google 2021</text>
+<text x="310.0" y="222.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">No change to the deposition mask layers</text>
+<rect x="20" y="244" width="640" height="38" rx="6" fill="#f7f8fa"/>
+<rect x="20" y="244" width="6" height="38" fill="#2b8a5a"/>
+<text x="38.0" y="268.0" font-size="12" fill="#2b8a5a" font-weight="700" text-anchor="start">1.5 generation</text>
+<text x="150.0" y="268.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">Google 2021</text>
+<text x="310.0" y="268.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="start">Window made by not patterning select metal layers</text>
+</svg>

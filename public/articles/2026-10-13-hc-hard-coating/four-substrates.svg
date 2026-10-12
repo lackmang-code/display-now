@@ -1,0 +1,72 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="619" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">One name, four jobs</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Hard coat by substrate: job, material, process, grade, failure</text>
+<rect x="25" y="90" width="210" height="510" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="130.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Film</text>
+<text x="130.0" y="146.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">PET · TAC · CPI</text>
+<path d="M50,230 Q130.0,190 210,230" fill="none" stroke="#b4541f" stroke-width="5"/>
+<path d="M50,238 Q130.0,198 210,238" fill="none" stroke="#9db3c7" stroke-width="10"/>
+<text x="130.0" y="267.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">thin base curls</text>
+<text x="41.0" y="300.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">job</text>
+<text x="41.0" y="322.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">lends hardness</text>
+<text x="41.0" y="358.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">material</text>
+<text x="41.0" y="380.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">UV acrylate 1–25 µm</text>
+<text x="41.0" y="416.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">process</text>
+<text x="41.0" y="438.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">UV, N₂, roll-to-roll</text>
+<text x="41.0" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="41.0" y="496.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">pencil grade</text>
+<text x="41.0" y="532.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">fails by</text>
+<text x="41.0" y="554.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">curl</text>
+<rect x="240" y="90" width="210" height="510" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="345.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Molded plastic</text>
+<text x="345.0" y="146.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">PC · PMMA cover lens</text>
+<rect x="265" y="193" width="160" height="4" fill="#b4541f"/>
+<rect x="265" y="197" width="160" height="3" fill="#d9b26a"/>
+<rect x="265" y="200" width="160" height="48" fill="#9db3c7"/>
+<text x="345.0" y="267.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">coat · primer · thick PC</text>
+<text x="256.0" y="300.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">job</text>
+<text x="256.0" y="322.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">survives sun and heat</text>
+<text x="256.0" y="358.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">material</text>
+<text x="256.0" y="380.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">siloxane 3–7 µm</text>
+<text x="256.0" y="416.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">process</text>
+<text x="256.0" y="438.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">130 °C oven, primer</text>
+<text x="256.0" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="256.0" y="496.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">Taber haze</text>
+<text x="256.0" y="532.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">fails by</text>
+<text x="256.0" y="554.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">crazing, yellowing</text>
+<rect x="455" y="90" width="210" height="510" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="560.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Ultra-thin glass</text>
+<text x="560.0" y="146.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">foldable window</text>
+<rect x="480" y="197" width="160" height="16" fill="#b4541f" opacity="0.8"/>
+<rect x="480" y="213" width="160" height="10" fill="#bfe0e6"/>
+<line x1="560.0" y1="167" x2="560.0" y2="191" stroke="#12120e" stroke-width="2"/>
+<path d="M554.0,183 L560.0,193 L566.0,183" fill="none" stroke="#12120e" stroke-width="2"/>
+<text x="560.0" y="267.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">soft coat · hard glass</text>
+<text x="471.0" y="300.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">job</text>
+<text x="471.0" y="322.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">takes the pen drop</text>
+<text x="471.0" y="358.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">material</text>
+<text x="471.0" y="380.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">urethane acrylate</text>
+<text x="471.0" y="416.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">process</text>
+<text x="471.0" y="438.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">on OCA or bonded</text>
+<text x="471.0" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="471.0" y="496.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">pen-drop height</text>
+<text x="471.0" y="532.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">fails by</text>
+<text x="471.0" y="554.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">cracks when folded</text>
+<rect x="670" y="90" width="210" height="510" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="775.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Tempered glass</text>
+<text x="775.0" y="146.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">bar phone</text>
+<rect x="695" y="197" width="160" height="2" fill="#3d6e9e"/>
+<rect x="695" y="199" width="160" height="44" fill="#bfe0e6"/>
+<text x="775.0" y="267.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">treated glass surface</text>
+<text x="686.0" y="300.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">job</text>
+<text x="686.0" y="322.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">fix the glass itself</text>
+<text x="686.0" y="358.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">material</text>
+<text x="686.0" y="380.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">silica-rich surface</text>
+<text x="686.0" y="416.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">process</text>
+<text x="686.0" y="438.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">acid, 95 °C, 24 h</text>
+<text x="686.0" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">graded by</text>
+<text x="686.0" y="496.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">Knoop scratch load</text>
+<text x="686.0" y="532.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">fails by</text>
+<text x="686.0" y="554.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">sand scratches</text>
+</svg>

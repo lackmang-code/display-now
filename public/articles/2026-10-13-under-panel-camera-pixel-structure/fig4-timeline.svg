@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 470" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="470" fill="#ffffff"/>
+<text x="20.0" y="28.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">From fewer pixels to transparent wires and back</text>
+<text x="20.0" y="47.0" font-size="12" fill="#5b6474" font-weight="400" text-anchor="start">Priority dates of documents read in the original text, and the iPhone 18 Pro.</text>
+<line x1="215.0" y1="78" x2="215.0" y2="420" stroke="#eef0f3"/>
+<text x="215.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2017</text>
+<line x1="302.0" y1="78" x2="302.0" y2="420" stroke="#eef0f3"/>
+<text x="302.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2019</text>
+<line x1="389.0" y1="78" x2="389.0" y2="420" stroke="#eef0f3"/>
+<text x="389.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2021</text>
+<line x1="476.0" y1="78" x2="476.0" y2="420" stroke="#eef0f3"/>
+<text x="476.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2023</text>
+<line x1="563.0" y1="78" x2="563.0" y2="420" stroke="#eef0f3"/>
+<text x="563.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2025</text>
+<line x1="650.0" y1="78" x2="650.0" y2="420" stroke="#eef0f3"/>
+<text x="650.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2027</text>
+<text x="178.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">2009</text>
+<text x="196.0" y="72.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="middle">//</text>
+<text x="20.0" y="154.0" font-size="12" fill="#868e96" font-weight="700" text-anchor="start">1st generation</text>
+<line x1="168" y1="150" x2="650" y2="150" stroke="#868e96" stroke-width="1.2" opacity="0.5"/>
+<text x="20.0" y="269.0" font-size="12" fill="#e8590c" font-weight="700" text-anchor="start">2nd generation</text>
+<line x1="168" y1="265" x2="650" y2="265" stroke="#e8590c" stroke-width="1.2" opacity="0.5"/>
+<text x="20.0" y="384.0" font-size="12" fill="#2b8a5a" font-weight="700" text-anchor="start">1.5 generation</text>
+<line x1="168" y1="380" x2="650" y2="380" stroke="#2b8a5a" stroke-width="1.2" opacity="0.5"/>
+<circle cx="178.0" cy="150" r="5" fill="#868e96"/>
+<line x1="178.0" y1="150" x2="178.0" y2="162" stroke="#868e96" stroke-width="0.8"/>
+<text x="178.0" y="174.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">Sony 2009</text>
+<text x="178.0" y="187.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">openings per pixel</text>
+<circle cx="270.2" cy="150" r="5" fill="#868e96"/>
+<line x1="270.2" y1="150" x2="270.2" y2="142" stroke="#868e96" stroke-width="0.8"/>
+<text x="270.2" y="116.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="end">Apple</text>
+<text x="270.2" y="129.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="end">lower pixel density</text>
+<circle cx="278.9" cy="150" r="5" fill="#868e96"/>
+<line x1="278.9" y1="150" x2="278.9" y2="162" stroke="#868e96" stroke-width="0.8"/>
+<text x="278.9" y="174.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">BOE</text>
+<text x="278.9" y="187.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">lower density over camera</text>
+<circle cx="319.4" cy="150" r="5" fill="#868e96"/>
+<line x1="319.4" y1="150" x2="319.4" y2="142" stroke="#868e96" stroke-width="0.8"/>
+<text x="319.4" y="116.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="start">Google</text>
+<text x="319.4" y="129.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">density + light shield</text>
+<circle cx="323.3" cy="265" r="5" fill="#e8590c"/>
+<line x1="323.3" y1="265" x2="323.3" y2="257" stroke="#e8590c" stroke-width="0.8"/>
+<text x="323.3" y="231.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="end">Tianma</text>
+<text x="323.3" y="244.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="end">circuits to the edge</text>
+<circle cx="344.6" cy="265" r="5" fill="#e8590c"/>
+<line x1="344.6" y1="265" x2="344.6" y2="277" stroke="#e8590c" stroke-width="0.8"/>
+<text x="344.6" y="289.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">LG Display</text>
+<text x="344.6" y="302.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">ITO-only lines</text>
+<circle cx="392.5" cy="265" r="5" fill="#e8590c"/>
+<line x1="392.5" y1="265" x2="392.5" y2="257" stroke="#e8590c" stroke-width="0.8"/>
+<text x="392.5" y="231.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="start">Samsung Display</text>
+<text x="392.5" y="244.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">up to 4 more masks</text>
+<circle cx="270.2" cy="380" r="5" fill="#2b8a5a"/>
+<line x1="270.2" y1="380" x2="270.2" y2="372" stroke="#2b8a5a" stroke-width="0.8"/>
+<text x="270.2" y="346.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">Apple (spec)</text>
+<text x="270.2" y="359.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">omit every other pixel</text>
+<circle cx="372.0" cy="380" r="5" fill="#2b8a5a"/>
+<line x1="372.0" y1="380" x2="372.0" y2="392" stroke="#2b8a5a" stroke-width="0.8"/>
+<text x="372.0" y="404.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">Apple</text>
+<text x="372.0" y="417.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">every other row open</text>
+<circle cx="431.2" cy="380" r="5" fill="#2b8a5a"/>
+<line x1="431.2" y1="380" x2="431.2" y2="372" stroke="#2b8a5a" stroke-width="0.8"/>
+<text x="431.2" y="346.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="middle">Google</text>
+<text x="431.2" y="359.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">subsampled, no new layer</text>
+<circle cx="637.0" cy="380" r="5" fill="#2b8a5a"/>
+<line x1="637.0" y1="380" x2="637.0" y2="372" stroke="#2b8a5a" stroke-width="0.8"/>
+<text x="637.0" y="346.0" font-size="11" fill="#1d2330" font-weight="700" text-anchor="end">iPhone 18 Pro</text>
+<text x="637.0" y="359.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="end">half density (report)</text>
+<text x="20.0" y="448.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">Apple 2018 appears twice: its claim 1 is 1st generation, its specification already describes the 1.5 layout.</text>
+</svg>
