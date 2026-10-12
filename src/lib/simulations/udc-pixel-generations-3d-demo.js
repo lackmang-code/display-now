@@ -34,12 +34,22 @@ const C_OK = '#1fdc6a';
 const C_NO = '#ff8c1a';
 const C_IR = '#ff4d5e';
 const C_GOLD = '#f5b83d';
-const SUB = [
-  // [du, dv, 반폭(셀 단위), 색] — 빨강·초록·파랑 셋을 한 칸에
-  [-0.22, -0.2, 0.15, '#ff3b3b'],
-  [0.22, -0.2, 0.15, '#2bff6a'],
-  [0.0, 0.24, 0.17, '#3b7bff'],
+// 🔴 화소는 다이아몬드 배열이다(2026-10-13 대표 지적 「다이아몬드 픽셀구조가 아니네」).
+// 첫 판은 칸마다 R·G·B 세 점을 반듯한 격자에 놓은 단순화였는데 아이폰 OLED 실물과 다르다.
+// 원고 그림 1(iFixit 40배)대로: 빨강·파랑은 큰 마름모로 바둑판처럼 번갈아, 초록은 작은 기울어진
+// 타원(여기서는 길쭉한 마름모)으로 그 사이 반 칸 엇갈린 자리에 둔다.
+const C_R = '#ff3b3b';
+const C_G = '#2bff6a';
+const C_B = '#3b7bff';
+// 1세대 카메라 창 안은 다이아몬드 배열이 아니다(2026-10-13 대표 지적). 덜어 내고 남긴 화소 하나가
+// R·G·B 한 묶음으로 서 있다 — [du, dv, 반폭(칸 단위), 색].
+const TRIO = [
+  [-0.22, -0.2, 0.15, C_R],
+  [0.22, -0.2, 0.15, C_G],
+  [0.0, 0.24, 0.17, C_B],
 ];
+const RB_HALF = 0.30;              // 빨강·파랑 마름모 반대각선(칸 단위)
+const G_LONG = 0.19, G_SHORT = 0.085; // 초록 타원의 긴·짧은 반축(칸 단위, 대각선 방향)
 
 // 세대 정의. 순서는 시간 순 — 슬라이더 0 → 1 → 2.
 const GENS = [
@@ -141,13 +151,30 @@ export function mount(container, params = {}) {
     ctx.closePath();
   }
 
-  function subpixel(u, v, e, color, scale, alpha) {
-    const s = e * CELL * scale;
+  // 모양을 그리는 경로: 'rb' = 행 축에 맞춘 마름모, 'g' = 대각선으로 길쭉한 초록(방향 flip)
+  function shapePath(kind, u, v, s, flip) {
+    let pts;
+    if (kind === 'sq') {
+      pts = [[u - s, v - s], [u + s, v - s], [u + s, v + s], [u - s, v + s]];
+    } else if (kind === 'rb') {
+      pts = [[u - s, v], [u, v - s], [u + s, v], [u, v + s]];
+    } else {
+      const a = G_LONG * CELL * s, b = G_SHORT * CELL * s, k = flip ? -1 : 1;
+      pts = [[u + a, v + k * a], [u + b, v - k * b], [u - a, v - k * a], [u - b, v + k * b]];
+    }
+    ctx.beginPath();
+    pts.forEach(([pu, pv], n) => { const [x, y] = P(pu, pv); n ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+    ctx.closePath();
+  }
+
+  function subpixel(kind, u, v, color, scale, alpha, flip) {
+    const s = kind === 'rb' ? RB_HALF * CELL * scale : kind === 'sq' ? scale : scale;
+    const ext = kind === 'rb' || kind === 'sq' ? s : G_LONG * CELL * scale;
     const [x, y] = P(u, v);
     // 발광 번짐
-    const r = s * SX * 2.6;
+    const r = ext * SX * 2.2;
     const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-    g.addColorStop(0, hexA(color, 0.38 * alpha));
+    g.addColorStop(0, hexA(color, 0.34 * alpha));
     g.addColorStop(1, hexA(color, 0));
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
@@ -155,8 +182,8 @@ export function mount(container, params = {}) {
     ctx.beginPath(); ctx.ellipse(x, y, r, r * SY / SX, 0, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
     // 몸체
-    quad(u, v, s, s);
-    const body = ctx.createLinearGradient(x - s * SX, y - s * SY, x + s * SX, y + s * SY);
+    shapePath(kind, u, v, s, flip);
+    const body = ctx.createLinearGradient(x - ext * SX, y - ext * SY, x + ext * SX, y + ext * SY);
     body.addColorStop(0, '#ffffff');
     body.addColorStop(0.35, color);
     body.addColorStop(1, hexA(color, 0.75));
@@ -186,7 +213,7 @@ export function mount(container, params = {}) {
     }
     // 1.5세대: j(가로 줄) 한 줄 걸러 비운다. 남은 줄은 엇갈려 놓이고 회로는 띠로 몬다.
     const keep = j % 2 === 0;
-    return keep ? { px: true, scale: 1.12, circ: false, zig: (i % 2 ? 0.12 : -0.12), open: [] }
+    return keep ? { px: true, scale: 1.12, circ: false, gZig: (i % 2 ? 0.3 : -0.3), open: [] }
       : { px: false, circ: false, open: [[u - CELL * 0.25, v], [u + CELL * 0.25, v]] };
   }
 
@@ -391,15 +418,25 @@ export function mount(container, params = {}) {
       }
     }
 
-    // ── 5. 화소
+    // ── 5. 화소 — 다이아몬드 배열. 칸 중심에 빨강/파랑 마름모(바둑판), 반 칸 엇갈린 자리에 초록.
     for (const c of cells) {
       if (!c.m.px) continue;
       const inside = inWin(c.u, c.v);
       const alpha = inside && c.m.glass ? 0.7 : 1;
-      const zig = (c.m.zig || 0) * CELL;
-      for (const [du, dv, e, col] of SUB) {
-        subpixel(c.u + du * CELL, c.v + dv * CELL + zig, e, col, c.m.scale || 1, alpha);
+      const sc = c.m.scale || 1;
+      if (gi === 0 && inside) {
+        // 1세대 창 안: 남긴 화소마다 R·G·B 한 묶음(키운 크기)
+        for (const [du, dv, e, col] of TRIO) subpixel('sq', c.u + du * CELL, c.v + dv * CELL, col, e * CELL * sc, alpha, false);
+        continue;
       }
+      subpixel('rb', c.u, c.v, (c.i + c.j) % 2 ? C_R : C_B, sc, alpha, false);
+      if (c.i === N - 1 || c.j === N - 1) continue;      // 패널 가장자리 밖으로 나가는 초록은 뺀다
+      // 초록 자리: 기본은 (+½칸, +½칸). 1.5세대 남은 줄은 줄 위아래로 엇갈린다(iFixit 사진의 지그재그).
+      const gu = c.u + CELL * 0.5;
+      const gv = c.m.gZig != null ? c.v + CELL * c.m.gZig : c.v + CELL * 0.5;
+      // 창 밖 칸의 초록이 창 안으로 떨어지면 뺀다 — 비운 자리에 화소가 생겨 보이면 안 된다
+      if (!inside && inWin(gu, gv) && gi !== 1) continue;
+      subpixel('g', gu, gv, C_G, sc, alpha, c.i % 2 === 1);
     }
 
     // ── 5½. 2세대: 원 밖 회로 고리(투명 배선은 그리지 않는다)
