@@ -36,7 +36,7 @@ const MAT = {
   B: { c: '#3b7bff', name: 'Blue organic' },
   metal: { c: '#f4f6f8', name: 'Top electrode / cathode' },
   encap: { c: '#4fb8ff', name: 'Encapsulation' },
-  ovl: { c: '#b07cff', name: 'Overhang lower layer (402A)' },
+  ovl: { c: '#c89b3c', name: 'Overhang lower layer (402A) · conductor' },
   ovu: { c: '#e2ccff', name: 'Overhang upper layer (402B)' },
   ink: { c: '#f3e7a1', name: 'Inkjet layer (118)' },
   glob: { c: '#9be7ff', name: 'Global passivation (120)' },
@@ -214,7 +214,9 @@ function buildLiftoffLG() {
 // 그 색 유기물 → 음극 → 국소 봉지(116)를 따로 증착한다. 유기물은 처마 밑에서 멈추고, 음극은 더 들어가 처마 아랫부분에 닿는다
 // (공개본 청구항 1의 증착 각도). 국소 봉지는 처마 밑으로 들어가 옆벽을 따라 오른다([0034]). 그 화소에 레지스트를 두고
 // 바깥 막을 식각한다(FIG. 4F). 둘째 색은 레지스트(412)가 첫 화소를 덮은 채 둘째 자리를 연다(FIG. 4H). 처마는 끝까지 남는다.
-// 🔴 유기물·음극·봉지는 반드시 별도 스텝(2026-10-19 대표 지시). 처마 아랫부분이 도체인지는 구성마다 다르다 — 그림·범례에 단정하지 않는다.
+// 🔴 유기물·음극·봉지는 반드시 별도 스텝(2026-10-19 대표 지시).
+// 🔴 처마 아랫부분은 도체로 그린다(2026-10-20 대표 「오버행 하단이 금속이어야 탑전극과 연결된다」). AMAT [0024] 1·2 구성.
+//    3·4 구성(아래층 절연 + 그 밑 보조 음극)은 sim-note 에만 밝힌다.
 const BANKS = [0, 100, 200, 300];
 // 화소 자리 바닥: 하부전극 위(±24) → PDL 경사(±24~36) → PDL 윗면(±36~42, 처마 밑)
 const floorZ = (c, x) => { const d = Math.abs(x - c); return d <= 24 ? 3 : d <= 36 ? 3 + (d - 24) * 0.5 : 9; };
@@ -269,7 +271,7 @@ function buildOverhangAMAT() {
     w.add('metal', mlo.concat(mhi.reverse()), 'stack');
     w.conformal('metal', XL, c - 36, 1.5, 'lo');
     w.conformal('metal', c + 36, XR, 1.5, 'lo');
-    push('Cathode evaporated at a wider angle · it reaches past the organic edge and touches the overhang', 'FIG. ' + figs[k][2], { tags: [[c + 41, 'Cathode touches overhang', 'metal']] });
+    push('Cathode evaporated at a wider angle · it reaches past the organic edge and touches the overhang', 'FIG. ' + figs[k][2], { tags: [[c + 41, 'Cathode meets conductor', 'metal']] });
     // 4) 국소 봉지: 음극 위, 처마 밑으로 들어가 옆벽을 따라 오른다
     const et = (x) => ct(x) + 1.5;
     const e = [];
@@ -297,7 +299,7 @@ function buildOverhangAMAT() {
   w.conformal('ink', XL, XR, (x) => zi + 4 - pi(x), '', pi);
   push('Inkjet layer between the overhangs and local encapsulation and the global passivation', 'FIG. 1A (structure, 118)', { tags: [[100, 'Overhang stays', 'ovu'], [CENTER[1] + 20, 'Inkjet layer', 'ink']] });
   w.conformal('glob', XL, XR, 3);
-  push('Global passivation over the inkjet layer', 'FIG. 1A (structure, 120)', { tags: [[100, 'Overhang stays', 'ovu'], [CENTER[1] + 20, 'Local encapsulation', 'encap'], [CENTER[2] + 15, 'Global passivation', 'glob']] });
+  push('Global passivation over the inkjet layer', 'FIG. 1A (structure, 120)', { tags: [[100, 'Overhang stays', 'ovu'], [CENTER[1] + 20, 'Local encapsulation', 'encap'], [200, 'Cathodes joined via conductor', 'ovl']] });
   return { key: 'overhang-amat', short: 'AMAT (overhang)', name: 'Overhang, organic · cathode · seal each colour', elec: 'Cathode each colour, touching the overhang that stays', src: 'AMAT US20220077257A1', steps };
 }
 
