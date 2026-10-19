@@ -1,0 +1,36 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Three ways to say "R"</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Same symbol, different tests: repeat it, wrap it once, or close in until it cracks</text>
+<rect x="25" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="162.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Dynamic fold</text>
+<rect x="102.5" y="160.0" width="120.0" height="10.0" fill="#666" />
+<rect x="102.5" y="270.0" width="120.0" height="10.0" fill="#666" />
+<path d="M222.5,170 L142.5,170 A50 50 0 0 0 142.5,270 L222.5,270" fill="none" stroke="#b4541f" stroke-width="5"/>
+<line x1="242.5" y1="180.0" x2="242.5" y2="210.0" stroke="#12120e" stroke-width="2" /><path d="M238.2,201.0 L242.5,210.0 L246.8,201.0" fill="none" stroke="#12120e" stroke-width="2"/>
+<line x1="242.5" y1="260.0" x2="242.5" y2="230.0" stroke="#12120e" stroke-width="2" /><path d="M246.8,239.0 L242.5,230.0 L238.2,239.0" fill="none" stroke="#12120e" stroke-width="2"/>
+<text x="45.0" y="340.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">plates close and open</text>
+<text x="45.0" y="366.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="400">R = gap / 2</text>
+<text x="45.0" y="410.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">BenQ: 200,000 times</text>
+<rect x="312" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="449.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Mandrel wrap</text>
+<circle cx="449.5" cy="215" r="34" fill="#c9c9c2"/>
+<path d="M369.5,258 L449.5,258 A43 43 0 0 0 449.5,172 L369.5,172" fill="none" stroke="#b4541f" stroke-width="5" transform="translate(0,0)"/>
+<circle cx="544.5" cy="180" r="5" fill="#c9c9c2"/>
+<circle cx="544.5" cy="216" r="8" fill="#c9c9c2"/>
+<circle cx="544.5" cy="252" r="12" fill="#c9c9c2"/>
+<text x="332.0" y="340.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">wrap 180° once</text>
+<text x="332.0" y="366.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="400">thinnest rod, no crack</text>
+<text x="332.0" y="410.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">3M: ASTM D522, modified</text>
+<rect x="599" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="736.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Closing radius</text>
+<path d="M666.5,280 A70 70 0 0 1 806.5,280" fill="none" stroke="#b4541f" stroke-width="5" opacity="0.35"/>
+<path d="M686.5,280 A50 50 0 0 1 786.5,280" fill="none" stroke="#b4541f" stroke-width="5" opacity="0.65"/>
+<path d="M704.5,280 A32 32 0 0 1 768.5,280" fill="none" stroke="#b4541f" stroke-width="5" opacity="0.95"/>
+<line x1="722.4" y1="249.1" x2="718.6" y2="240.9" stroke="#b23a2a" stroke-width="2.5" />
+<line x1="736.5" y1="246.0" x2="736.5" y2="237.0" stroke="#b23a2a" stroke-width="2.5" />
+<line x1="750.7" y1="249.1" x2="754.5" y2="240.9" stroke="#b23a2a" stroke-width="2.5" />
+<text x="619.0" y="340.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600">bend tighter, once</text>
+<text x="619.0" y="366.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="400">radius at first crack</text>
+<text x="619.0" y="410.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">Kolon</text>
+</svg>

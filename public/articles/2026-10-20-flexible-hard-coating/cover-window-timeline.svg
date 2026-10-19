@@ -1,0 +1,33 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">From plastic to glass</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Foldable phone cover windows, 2019–2024</text>
+<rect x="25" y="90" width="850" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<line x1="70.0" y1="200.0" x2="840.0" y2="200.0" stroke="#12120e" stroke-width="2" />
+<circle cx="110" cy="200" r="9" fill="#b4541f"/>
+<text x="110.0" y="176.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2019</text>
+<line x1="110.0" y1="210.0" x2="110.0" y2="230.0" stroke="#e3e3dd" stroke-width="1.5" />
+<text x="110.0" y="250.0" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Galaxy Fold, Mate X, Razr</text>
+<text x="110.0" y="274.0" font-size="14.5" fill="#b4541f" text-anchor="middle" font-weight="400">hard-coated CPI on top</text>
+<circle cx="270" cy="200" r="9" fill="#3d6e9e"/>
+<text x="270.0" y="176.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2020</text>
+<line x1="270.0" y1="210.0" x2="270.0" y2="300.0" stroke="#e3e3dd" stroke-width="1.5" />
+<text x="270.0" y="320.0" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Galaxy Z Flip</text>
+<text x="270.0" y="344.0" font-size="14.5" fill="#3d6e9e" text-anchor="middle" font-weight="400">first UTG, about 30 µm</text>
+<circle cx="430" cy="200" r="9" fill="#b4541f"/>
+<text x="430.0" y="176.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2021</text>
+<line x1="430.0" y1="210.0" x2="430.0" y2="230.0" stroke="#e3e3dd" stroke-width="1.5" />
+<text x="430.0" y="250.0" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">Xiaomi, Lenovo</text>
+<text x="430.0" y="274.0" font-size="14.5" fill="#b4541f" text-anchor="middle" font-weight="400">Kolon CPI cover</text>
+<circle cx="600" cy="200" r="9" fill="#3d6e9e"/>
+<text x="600.0" y="176.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2023</text>
+<line x1="600.0" y1="210.0" x2="600.0" y2="300.0" stroke="#e3e3dd" stroke-width="1.5" />
+<text x="600.0" y="320.0" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">newest foldables</text>
+<text x="600.0" y="344.0" font-size="14.5" fill="#3d6e9e" text-anchor="middle" font-weight="400">UTG over 90% (TrendForce)</text>
+<circle cx="760" cy="200" r="9" fill="#8a8a80"/>
+<text x="760.0" y="176.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700" font-family="'IBM Plex Mono', monospace">2024</text>
+<line x1="760.0" y1="210.0" x2="760.0" y2="230.0" stroke="#e3e3dd" stroke-width="1.5" />
+<text x="760.0" y="250.0" font-size="15.5" fill="#12120e" text-anchor="middle" font-weight="700">SK IE Technology</text>
+<text x="760.0" y="274.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="400">exits cover-film business</text>
+<text x="70.0" y="430.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">CPI stays in mid-size foldables (TrendForce); a CPI film over UTG was reported under review in 2026</text>
+</svg>

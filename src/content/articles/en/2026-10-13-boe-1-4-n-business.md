@@ -83,8 +83,6 @@ Meanwhile, NEXT Biometrics, which has been developing technology to read fingerp
 
 **And BOE was in the news all week.** Chairman Chen Yanshun's visit to Korea and his meeting with Roh Tae-moon, head of Samsung Electronics' DX division, BOE's supply of practically all of Huawei's flagship panels, and figures of Samsung Display 50.9% and LG Display 31.8% in large OLED (2025 forecasts) came one after another. The semiconductor glass substrate side overlapped as well. **So this issue uses the filings to open up what BOE is doing outside displays.** The agenda of the Korea visit and the Huawei supply chain are stories where more reporting is still piling up, so we will look at them in the next issue.
 
-> Reports from **October 11 (Sunday)**, the last day of the collection window, **are not included in this roundup.** The material covering that day has not arrived yet, and that portion will be reviewed together in the next issue.
-
 **The hottest issue of October 5 to 11 is "BOE's 1+4+N."**
 
 ## The Core Business Has Turned to Decline

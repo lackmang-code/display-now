@@ -1,0 +1,24 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Inside it squeezes, outside it stretches</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Strain grows with distance from the neutral plane: ε ≈ y / R</text>
+<rect x="25" y="90" width="420" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="235.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Coat inside the fold</text>
+<circle cx="235" cy="300" r="53" fill="#eeeeea" stroke="#c9c9c2"/>
+<path d="M155.0,300.0 A80,80 0 0 1 315.0,300.0 L315.0,360 L297.0,360 L297.0,300.0 A62,62 0 0 0 173.0,300.0 L173.0,360 L155.0,360 Z" fill="#9db3c7"/>
+<path d="M173.0,300.0 A62,62 0 0 1 297.0,300.0 L297.0,360 L290.0,360 L290.0,300.0 A55,55 0 0 0 180.0,300.0 L180.0,360 L173.0,360 Z" fill="#b4541f"/>
+<path d="M167.5,300 A67.5,67.5 0 0 1 302.5,300" fill="none" stroke="#12120e" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="235.0" y="160.0" font-size="15.5" fill="#2f7d4a" text-anchor="middle" font-weight="600">compression: cracks stay shut</text>
+<text x="45.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">dashed = neutral plane</text>
+<rect x="455" y="90" width="420" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="665.0" y="122.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Coat outside the fold</text>
+<circle cx="665" cy="300" r="53" fill="#eeeeea" stroke="#c9c9c2"/>
+<path d="M592.0,300.0 A73,73 0 0 1 738.0,300.0 L738.0,360 L720.0,360 L720.0,300.0 A55,55 0 0 0 610.0,300.0 L610.0,360 L592.0,360 Z" fill="#9db3c7"/>
+<path d="M585.0,300.0 A80,80 0 0 1 745.0,300.0 L745.0,360 L738.0,360 L738.0,300.0 A73,73 0 0 0 592.0,300.0 L592.0,360 L585.0,360 Z" fill="#b4541f"/>
+<path d="M597.5,300 A67.5,67.5 0 0 1 732.5,300" fill="none" stroke="#12120e" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="616.7" y1="233.7" x2="610.9" y2="225.6" stroke="#b23a2a" stroke-width="2.5" />
+<line x1="665.1" y1="218.0" x2="665.1" y2="208.0" stroke="#b23a2a" stroke-width="2.5" />
+<line x1="713.4" y1="233.8" x2="719.3" y2="225.7" stroke="#b23a2a" stroke-width="2.5" />
+<text x="665.0" y="160.0" font-size="15.5" fill="#b23a2a" text-anchor="middle" font-weight="600">tension: cracks open</text>
+<text x="475.0" y="420.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">dashed = neutral plane</text>
+</svg>

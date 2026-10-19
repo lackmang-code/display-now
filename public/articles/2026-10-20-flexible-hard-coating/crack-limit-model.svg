@@ -1,0 +1,42 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="519" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Thicker coat, earlier crack</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Outer-surface strain at each radius vs a crack limit falling as 1/√h</text>
+<rect x="25" y="90" width="850" height="410" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<line x1="110.0" y1="450.0" x2="840.0" y2="450.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="98.0" y="455.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">0%</text>
+<line x1="110.0" y1="336.7" x2="840.0" y2="336.7" stroke="#e3e3dd" stroke-width="1" />
+<text x="98.0" y="341.7" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">1%</text>
+<line x1="110.0" y1="223.3" x2="840.0" y2="223.3" stroke="#e3e3dd" stroke-width="1" />
+<text x="98.0" y="228.3" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">2%</text>
+<line x1="110.0" y1="110.0" x2="840.0" y2="110.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="98.0" y="115.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">3%</text>
+<text x="110.0" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">0</text>
+<text x="245.2" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">5</text>
+<text x="380.4" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">10</text>
+<text x="515.6" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">15</text>
+<text x="650.7" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">20</text>
+<text x="785.9" y="474.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">25</text>
+<text x="475.0" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">hard coat thickness h, µm</text>
+<polyline points="137.0,136.1 143.8,169.2 150.6,193.7 157.3,212.7 164.1,228.0 170.8,240.7 177.6,251.5 184.4,260.7 191.1,268.8 197.9,275.9 204.6,282.2 211.4,287.9 218.1,293.0 224.9,297.7 231.7,302.0 238.4,306.0 245.2,309.6 251.9,313.0 258.7,316.1 265.5,319.1 272.2,321.8 279.0,324.4 285.7,326.9 292.5,329.2 299.3,331.3 306.0,333.4 312.8,335.4 319.5,337.2 326.3,339.0 333.1,340.7 339.8,342.3 346.6,343.9 353.3,345.4 360.1,346.8 366.9,348.1 373.6,349.5 380.4,350.7 387.1,351.9 393.9,353.1 400.6,354.3 407.4,355.3 414.2,356.4 420.9,357.4 427.7,358.4 434.4,359.4 441.2,360.3 448.0,361.2 454.7,362.1 461.5,362.9 468.2,363.8 475.0,364.6 481.8,365.3 488.5,366.1 495.3,366.8 502.0,367.6 508.8,368.3 515.6,368.9 522.3,369.6 529.1,370.3 535.8,370.9 542.6,371.5 549.4,372.1 556.1,372.7 562.9,373.3 569.6,373.9 576.4,374.4 583.1,375.0 589.9,375.5 596.7,376.0 603.4,376.5 610.2,377.0 616.9,377.5 623.7,378.0 630.5,378.4 637.2,378.9 644.0,379.4 650.7,379.8 657.5,380.2 664.3,380.7 671.0,381.1 677.8,381.5 684.5,381.9 691.3,382.3 698.1,382.7 704.8,383.1 711.6,383.4 718.3,383.8 725.1,384.2 731.9,384.5 738.6,384.9 745.4,385.2 752.1,385.6 758.9,385.9 765.6,386.2 772.4,386.6 779.2,386.9 785.9,387.2 792.7,387.5 799.4,387.8 806.2,388.1 813.0,388.4 819.7,388.7 826.5,389.0 833.2,389.3 840.0,389.6" fill="none" stroke="#b23a2a" stroke-width="3"/>
+<text x="223.6" y="286.8" font-size="15" fill="#b23a2a" text-anchor="start" font-weight="600">crack limit ∝ 1/√h</text>
+<polyline points="137.0,277.0 164.1,271.5 191.1,266.0 218.1,260.6 245.2,255.1 272.2,249.6 299.3,244.1 326.3,238.7 353.3,233.2 380.4,227.8 407.4,222.3 434.4,216.9 461.5,211.5 488.5,206.0 515.6,200.6 542.6,195.2 569.6,189.8 596.7,184.4 623.7,179.0 650.7,173.6 677.8,168.2 704.8,162.8 731.9,157.4 758.9,152.0 785.9,146.7 813.0,141.3 840.0,136.0" fill="none" stroke="#3d6e9e" stroke-width="1.8" opacity="0.8"/>
+<text x="846.0" y="141.0" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">R1</text>
+<polyline points="137.0,362.8 164.1,360.1 191.1,357.3 218.1,354.5 245.2,351.7 272.2,348.9 299.3,346.1 326.3,343.3 353.3,340.6 380.4,337.8 407.4,335.0 434.4,332.2 461.5,329.5 488.5,326.7 515.6,323.9 542.6,321.1 569.6,318.4 596.7,315.6 623.7,312.8 650.7,310.1 677.8,307.3 704.8,304.6 731.9,301.8 758.9,299.0 785.9,296.3 813.0,293.5 840.0,290.8" fill="none" stroke="#3d6e9e" stroke-width="1.8" opacity="0.8"/>
+<text x="846.0" y="295.8" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">R2</text>
+<polyline points="137.0,391.7 164.1,389.9 191.1,388.0 218.1,386.1 245.2,384.3 272.2,382.4 299.3,380.5 326.3,378.7 353.3,376.8 380.4,374.9 407.4,373.1 434.4,371.2 461.5,369.4 488.5,367.5 515.6,365.6 542.6,363.8 569.6,361.9 596.7,360.1 623.7,358.2 650.7,356.3 677.8,354.5 704.8,352.6 731.9,350.8 758.9,348.9 785.9,347.1 813.0,345.2 840.0,343.3" fill="none" stroke="#3d6e9e" stroke-width="1.8" opacity="0.8"/>
+<text x="846.0" y="348.3" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">R3</text>
+<polyline points="137.0,406.3 164.1,404.8 191.1,403.4 218.1,402.0 245.2,400.6 272.2,399.2 299.3,397.8 326.3,396.4 353.3,395.0 380.4,393.6 407.4,392.2 434.4,390.8 461.5,389.4 488.5,388.0 515.6,386.6 542.6,385.2 569.6,383.8 596.7,382.4 623.7,381.0 650.7,379.6 677.8,378.2 704.8,376.8 731.9,375.4 758.9,374.0 785.9,372.6 813.0,371.2 840.0,369.8" fill="none" stroke="#3d6e9e" stroke-width="1.8" opacity="0.8"/>
+<text x="846.0" y="374.8" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">R4</text>
+<polyline points="137.0,415.0 164.1,413.8 191.1,412.7 218.1,411.6 245.2,410.5 272.2,409.3 299.3,408.2 326.3,407.1 353.3,406.0 380.4,404.8 407.4,403.7 434.4,402.6 461.5,401.5 488.5,400.4 515.6,399.2 542.6,398.1 569.6,397.0 596.7,395.9 623.7,394.7 650.7,393.6 677.8,392.5 704.8,391.4 731.9,390.3 758.9,389.1 785.9,388.0 813.0,386.9 840.0,385.8" fill="none" stroke="#3d6e9e" stroke-width="1.8" opacity="0.8"/>
+<text x="846.0" y="390.8" font-size="14.5" fill="#3d6e9e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">R5</text>
+<circle cx="164.1" cy="271.5" r="6" fill="#b4541f"/>
+<circle cx="191.1" cy="357.3" r="6" fill="#b4541f"/>
+<circle cx="272.2" cy="348.9" r="6" fill="#b4541f"/>
+<circle cx="461.5" cy="369.4" r="6" fill="#b4541f"/>
+<circle cx="488.5" cy="367.5" r="6" fill="#b4541f"/>
+<circle cx="569.6" cy="383.8" r="6" fill="#b4541f"/>
+<circle cx="785.9" cy="388.0" r="6" fill="#b4541f"/>
+<text x="120.0" y="140.0" font-size="14.5" fill="#b4541f" text-anchor="start" font-weight="400">dots: radius BenQ reports for each thickness</text>
+<text x="120.0" y="162.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">a coat survives where its radius line sits below the red curve</text>
+</svg>

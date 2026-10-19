@@ -1,0 +1,18 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="399" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Thin only where it folds</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Plastic cover window: top coat uniform, bottom coat thinner and softer at the fold</text>
+<rect x="25" y="90" width="850" height="290" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<rect x="60.0" y="140.0" width="640.0" height="34.0" fill="#b4541f" />
+<text x="710.0" y="162.0" font-size="15" fill="#b4541f" text-anchor="start" font-weight="600">top coat</text>
+<rect x="60.0" y="174.0" width="640.0" height="60.0" fill="#9db3c7" />
+<text x="380.0" y="210.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">base film</text>
+<path d="M60,234 L700,234 L700,246 L460,246 L440,239 L320,239 L300,246 L60,246 Z" fill="#e9d8f2" stroke="#b9a3c9"/>
+<text x="710.0" y="245.0" font-size="15" fill="#7a5c96" text-anchor="start" font-weight="600">bottom coat</text>
+<line x1="300.0" y1="120.0" x2="300.0" y2="270.0" stroke="#8a8a80" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="460.0" y1="120.0" x2="460.0" y2="270.0" stroke="#8a8a80" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="380.0" y="128.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="700">folding area</text>
+<text x="60.0" y="300.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="400">top coat: about 35 µm, same everywhere, higher modulus</text>
+<text x="60.0" y="326.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="400">bottom coat: about 5 µm at the sides, thinner under the fold, lower modulus</text>
+<text x="60.0" y="356.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">example values from the patent; not to scale</text>
+</svg>

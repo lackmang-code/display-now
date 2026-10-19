@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="430" fill="#ffffff"/>
+<text x="20.0" y="26.0" font-size="16" fill="#1d2330" font-weight="700" text-anchor="start">Who cites the Orthogonal lift-off patent</text>
+<text x="20.0" y="44.0" font-size="11.5" fill="#5b6474" font-weight="400" text-anchor="start">Documents citing US10468637B2 on Google Patents, counted by applicant (125 publications).</text>
+<text x="220.0" y="80.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">SEL</text>
+<rect x="230" y="66" width="380.0" height="20" rx="3" fill="#7c3aed"/>
+<text x="618.0" y="80.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">69</text>
+<text x="220.0" y="110.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Samsung Display</text>
+<rect x="230" y="96" width="104.6" height="20" rx="3" fill="#c2410c"/>
+<text x="342.6" y="110.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">19</text>
+<text x="220.0" y="140.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">BOE</text>
+<rect x="230" y="126" width="27.5" height="20" rx="3" fill="#5b6474"/>
+<text x="265.5" y="140.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">5</text>
+<text x="220.0" y="170.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Orthogonal (own family)</text>
+<rect x="230" y="156" width="27.5" height="20" rx="3" fill="#c2410c"/>
+<text x="265.5" y="170.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">5</text>
+<text x="220.0" y="200.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Sharp</text>
+<rect x="230" y="186" width="16.5" height="20" rx="3" fill="#5b6474"/>
+<text x="254.5" y="200.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">3</text>
+<text x="220.0" y="230.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Apple</text>
+<rect x="230" y="216" width="11.0" height="20" rx="3" fill="#5b6474"/>
+<text x="249.0" y="230.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">2</text>
+<text x="220.0" y="260.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">CSOT</text>
+<rect x="230" y="246" width="11.0" height="20" rx="3" fill="#5b6474"/>
+<text x="249.0" y="260.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">2</text>
+<text x="220.0" y="290.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">JDI / Magnolia White</text>
+<rect x="230" y="276" width="11.0" height="20" rx="3" fill="#1d4ed8"/>
+<text x="249.0" y="290.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">2</text>
+<text x="220.0" y="320.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Applied Materials</text>
+<rect x="230" y="306" width="5.5" height="20" rx="3" fill="#1d4ed8"/>
+<text x="243.5" y="320.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">1</text>
+<text x="220.0" y="350.0" font-size="12" fill="#1d2330" font-weight="400" text-anchor="end">LG Display</text>
+<text x="238.0" y="350.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">0</text>
+<text x="220.0" y="380.0" font-size="12" fill="#1d2330" font-weight="600" text-anchor="end">Universities, materials and others</text>
+<rect x="230" y="366" width="93.6" height="20" rx="3" fill="#9ca3af"/>
+<text x="331.6" y="380.0" font-size="12" fill="#1d2330" font-weight="700" text-anchor="start">17</text>
+<text x="20.0" y="416.0" font-size="10.5" fill="#5b6474" font-weight="400" text-anchor="start">SEL appears under five name spellings, summed here. One publication per family member, not per family.</text>
+</svg>

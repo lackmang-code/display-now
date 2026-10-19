@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 478" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect width="680" height="478" fill="#ffffff"/>
+<text x="20.0" y="26.0" font-size="15" fill="#1d2330" font-weight="700" text-anchor="start">How each route protects the organic layer during patterning</text>
+<text x="20.0" y="44.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">One key moment per route, first colour (red) on pixel A. Same base: three anodes, PDL over their edges.</text>
+<text x="20.0" y="84.0" font-size="14" fill="#c2410c" font-weight="700" text-anchor="start">1  Lift-off</text>
+<text x="20.0" y="106.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">A mould with an undercut</text>
+<text x="20.0" y="122.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">covers B and C. Red lands</text>
+<text x="20.0" y="138.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">on A and on the mould; the</text>
+<text x="20.0" y="154.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">mould is lifted off in solvent.</text>
+<rect x="250" y="62" width="400" height="110" fill="#ffffff" stroke="#d9dde3"/>
+<rect x="250.0" y="150.0" width="400.0" height="22.0" fill="#cfd4dc" fill-opacity="1"/>
+<rect x="275.0" y="144.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="405.0" y="144.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="535.0" y="144.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<path d="M250.0 150.0 L250.0 136.0 L273.0 136.0 L281.0 144.0 L275.0 144.0 L275.0 150.0 Z" fill="#a0784f"/>
+<path d="M359.0 144.0 L367.0 136.0 L403.0 136.0 L411.0 144.0 L405.0 144.0 L405.0 150.0 L365.0 150.0 L365.0 144.0 Z" fill="#a0784f"/>
+<path d="M489.0 144.0 L497.0 136.0 L533.0 136.0 L541.0 144.0 L535.0 144.0 L535.0 150.0 L495.0 150.0 L495.0 144.0 Z" fill="#a0784f"/>
+<path d="M619.0 144.0 L627.0 136.0 L650.0 136.0 L650.0 150.0 L625.0 150.0 L625.0 144.0 Z" fill="#a0784f"/>
+<text x="320.0" y="165.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel A</text>
+<text x="450.0" y="165.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel B</text>
+<text x="580.0" y="165.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel C</text>
+<rect x="281.0" y="138.0" width="78.0" height="6.0" fill="#d6455d" fill-opacity="1"/>
+<rect x="403.0" y="114.0" width="94.0" height="22.0" fill="#f2c94c" fill-opacity="0.85"/>
+<rect x="397.0" y="108.0" width="106.0" height="6.0" fill="#fb923c" fill-opacity="1"/>
+<rect x="397.0" y="102.0" width="106.0" height="6.0" fill="#d6455d" fill-opacity="1"/>
+<path d="M450.0 76 l0 -8 m-5 5 l5 -5 l5 5" stroke="#5b6474" fill="none" stroke-width="1.4"/>
+<rect x="533.0" y="114.0" width="94.0" height="22.0" fill="#f2c94c" fill-opacity="0.85"/>
+<rect x="527.0" y="108.0" width="106.0" height="6.0" fill="#fb923c" fill-opacity="1"/>
+<rect x="527.0" y="102.0" width="106.0" height="6.0" fill="#d6455d" fill-opacity="1"/>
+<path d="M580.0 76 l0 -8 m-5 5 l5 -5 l5 5" stroke="#5b6474" fill="none" stroke-width="1.4"/>
+<text x="644.0" y="76.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="end">lifted away</text>
+<text x="20.0" y="216.0" font-size="14" fill="#1d4ed8" font-weight="700" text-anchor="start">2  Permanent overhang</text>
+<text x="20.0" y="238.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">Overhangs stand on the PDL</text>
+<text x="20.0" y="254.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">and cut the layer. Red,</text>
+<text x="20.0" y="270.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">cathode and seal cover all;</text>
+<text x="20.0" y="286.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">resist on A, the rest is etched.</text>
+<rect x="250" y="194" width="400" height="110" fill="#ffffff" stroke="#d9dde3"/>
+<rect x="250.0" y="282.0" width="400.0" height="22.0" fill="#cfd4dc" fill-opacity="1"/>
+<rect x="275.0" y="276.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="405.0" y="276.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="535.0" y="276.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<path d="M250.0 282.0 L250.0 268.0 L273.0 268.0 L281.0 276.0 L275.0 276.0 L275.0 282.0 Z" fill="#a0784f"/>
+<path d="M359.0 276.0 L367.0 268.0 L403.0 268.0 L411.0 276.0 L405.0 276.0 L405.0 282.0 L365.0 282.0 L365.0 276.0 Z" fill="#a0784f"/>
+<path d="M489.0 276.0 L497.0 268.0 L533.0 268.0 L541.0 276.0 L535.0 276.0 L535.0 282.0 L495.0 282.0 L495.0 276.0 Z" fill="#a0784f"/>
+<path d="M619.0 276.0 L627.0 268.0 L650.0 268.0 L650.0 282.0 L625.0 282.0 L625.0 276.0 Z" fill="#a0784f"/>
+<text x="320.0" y="297.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel A</text>
+<text x="450.0" y="297.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel B</text>
+<text x="580.0" y="297.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel C</text>
+<rect x="381.0" y="248.0" width="8.0" height="20.0" fill="#4b5563" fill-opacity="1"/>
+<rect x="371.0" y="244.0" width="28.0" height="5.0" fill="#4b5563" fill-opacity="1"/>
+<rect x="511.0" y="248.0" width="8.0" height="20.0" fill="#4b5563" fill-opacity="1"/>
+<rect x="501.0" y="244.0" width="28.0" height="5.0" fill="#4b5563" fill-opacity="1"/>
+<rect x="281.0" y="270.0" width="78.0" height="6.0" fill="#d6455d" fill-opacity="1"/>
+<rect x="279.0" y="265.0" width="102.0" height="5.0" fill="#93c5fd" fill-opacity="1"/>
+<rect x="273.0" y="256.0" width="94.0" height="8.0" fill="#fb923c" fill-opacity="1"/>
+<rect x="409.0" y="264.0" width="82.0" height="12.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="539.0" y="264.0" width="82.0" height="12.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="371.0" y="237.0" width="28.0" height="7.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="501.0" y="237.0" width="28.0" height="7.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="450.0" y="258.0" font-size="10" fill="#d6455d" font-weight="400" text-anchor="middle">etched away</text>
+<text x="580.0" y="258.0" font-size="10" fill="#d6455d" font-weight="400" text-anchor="middle">etched away</text>
+<text x="20.0" y="348.0" font-size="14" fill="#7c3aed" font-weight="700" text-anchor="start">3  Deposit, then etch</text>
+<text x="20.0" y="370.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">Red is laid over the whole</text>
+<text x="20.0" y="386.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">panel. A hard mask on A</text>
+<text x="20.0" y="402.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">protects it; the rest is</text>
+<text x="20.0" y="418.0" font-size="11" fill="#5b6474" font-weight="400" text-anchor="start">etched directly.</text>
+<rect x="250" y="326" width="400" height="110" fill="#ffffff" stroke="#d9dde3"/>
+<rect x="250.0" y="414.0" width="400.0" height="22.0" fill="#cfd4dc" fill-opacity="1"/>
+<rect x="275.0" y="408.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="405.0" y="408.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<rect x="535.0" y="408.0" width="90.0" height="6.0" fill="#7b8494" fill-opacity="1"/>
+<path d="M250.0 414.0 L250.0 400.0 L273.0 400.0 L281.0 408.0 L275.0 408.0 L275.0 414.0 Z" fill="#a0784f"/>
+<path d="M359.0 408.0 L367.0 400.0 L403.0 400.0 L411.0 408.0 L405.0 408.0 L405.0 414.0 L365.0 414.0 L365.0 408.0 Z" fill="#a0784f"/>
+<path d="M489.0 408.0 L497.0 400.0 L533.0 400.0 L541.0 408.0 L535.0 408.0 L535.0 414.0 L495.0 414.0 L495.0 408.0 Z" fill="#a0784f"/>
+<path d="M619.0 408.0 L627.0 400.0 L650.0 400.0 L650.0 414.0 L625.0 414.0 L625.0 408.0 Z" fill="#a0784f"/>
+<text x="320.0" y="429.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel A</text>
+<text x="450.0" y="429.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel B</text>
+<text x="580.0" y="429.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="middle">pixel C</text>
+<rect x="281.0" y="402.0" width="78.0" height="6.0" fill="#d6455d" fill-opacity="1"/>
+<rect x="277.0" y="394.0" width="86.0" height="8.0" fill="#a78bfa" fill-opacity="1"/>
+<rect x="409.0" y="402.0" width="82.0" height="6.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="539.0" y="402.0" width="82.0" height="6.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="369.0" y="394.0" width="32.0" height="6.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="499.0" y="394.0" width="32.0" height="6.0" fill="#ffffff" fill-opacity="0" stroke="#d6455d" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="450.0" y="394.0" font-size="10" fill="#d6455d" font-weight="400" text-anchor="middle">etched away</text>
+<text x="580.0" y="394.0" font-size="10" fill="#d6455d" font-weight="400" text-anchor="middle">etched away</text>
+<rect x="20.0" y="454.0" width="12.0" height="10.0" fill="#a0784f" fill-opacity="1"/>
+<text x="36.0" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">PDL</text>
+<rect x="60.9" y="454.0" width="12.0" height="10.0" fill="#d6455d" fill-opacity="1"/>
+<text x="76.9" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Red layer</text>
+<rect x="139.6" y="454.0" width="12.0" height="10.0" fill="#f2c94c" fill-opacity="1"/>
+<text x="155.6" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Lift-off layer</text>
+<rect x="249.8" y="454.0" width="12.0" height="10.0" fill="#fb923c" fill-opacity="1"/>
+<text x="265.8" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Resist</text>
+<rect x="309.6" y="454.0" width="12.0" height="10.0" fill="#4b5563" fill-opacity="1"/>
+<text x="325.6" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Overhang</text>
+<rect x="382.0" y="454.0" width="12.0" height="10.0" fill="#93c5fd" fill-opacity="1"/>
+<text x="398.0" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Cathode + seal</text>
+<rect x="492.2" y="454.0" width="12.0" height="10.0" fill="#a78bfa" fill-opacity="1"/>
+<text x="508.2" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Hard mask</text>
+<rect x="570.9" y="454" width="12" height="10" fill="none" stroke="#d6455d" stroke-dasharray="3 2"/>
+<text x="586.9" y="463.0" font-size="10" fill="#5b6474" font-weight="400" text-anchor="start">Removed</text>
+</svg>

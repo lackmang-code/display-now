@@ -79,6 +79,25 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 10,
+    publishedAt: '2026-10-20',
+    weekStart: '2026-10-12',
+    // 헤드는 클레임 FMM리스 패터닝 편이다. 표지 시뮬이 이 편(fmmless-rgb-patterning-3d-demo)이라
+    // 표지와 헤드를 일치시킨다(대표 지정 2026-10-19 「대표시뮬레이션은 클레임 시뮬레이션」).
+    // 데스크 FLiPP 편과 같은 주제(FMM 없는 패터닝)를 공정·사업 양쪽에서 받친다.
+    // 표지 문구 = 헤드 제목에서 「특허 분석」을 뺀 명사형(제9호와 같은 축약).
+    headline: 'FMM리스 OLED 패터닝',
+    deck: 'FMM 없이 OLED 화소를 색마다 그릴 때 필요 없는 유기물을 걷어 내는 방법은 이 편이 읽은 특허로 보면 둘입니다. 틀째 떼어 내는 리프트오프와 위에서 깎는 식각이고, 식각은 화소 사이에 남는 오버행을 세우느냐로 다시 갈립니다. 원리를 먼저 적은 것은 패널사가 아니라 미국 대학과 스타트업, 장비사였습니다.',
+    coverSim: 'fmmless-rgb-patterning-3d-demo',
+    // 표지 갈래는 AMAT 오버행(overhang-amat) 완성 단면 — 2026-10-19 대표 지정(「대표시뮬레이션은 AM으로 하자」). 기사 6장의 핵심.
+    coverSimParams: { route: 'overhang-amat' },
+    coverNote: 'FMM 없이 R·G·B 화소를 차례로 그리는 공정을 특허 도면 순서대로 넘기는 3D 단면입니다(클레임 편). 표지는 AMAT US20220077257A1의 오버행 방식을 마친 모습입니다. 색마다 유기물, 음극, 국소 봉지를 따로 올리고 바깥을 식각해, 처마(오버행)가 화소 사이에 남습니다. 맨 위는 잉크젯 층과 전체 보호층입니다. 단추로 리프트오프 두 갈래(Orthogonal, LG디스플레이)와 견줘 볼 수 있습니다. 두께와 폭은 비례가 아닙니다.',
+    headSlug: '2026-10-20-fmmless-oled-patterning-patents',
+    headlineEn: 'FMM-less OLED Patterning',
+    deckEn: 'To draw OLED pixels color by color without a fine metal mask, the patents this piece read show two ways to remove the unwanted organics: lift-off, which peels them away with the mold, and etching from above; etching splits again by whether an overhang is left standing between pixels. The principles were first written down not by panel makers but by a US university and start-up and an equipment maker.',
+    coverNoteEn: "A 3D cross-section that steps through patterning R, G and B pixels in the order of the patent drawings (Claim's piece). The cover shows the finished overhang method of AMAT US20220077257A1: organics, cathode and local encapsulation go on separately for each color and the rest is etched away, so the eaves (overhangs) stay between pixels. On top are the inkjet layer and the global passivation layer. The buttons compare it with two lift-off routes (Orthogonal, LG Display). Thickness and width are not to scale.",
+  },
+  {
     no: 9,
     publishedAt: '2026-10-13',
     weekStart: '2026-10-05',

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="469" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Soft underneath, hard on top</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Siloxane coats on polyimide; radius where cracks first appear (Kolon)</text>
+<rect x="25" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="162.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">soft only</text>
+<rect x="65.0" y="160.0" width="195.0" height="70.0" fill="#e9d8f2" />
+<rect x="65.0" y="230.0" width="195.0" height="26.0" fill="#9db3c7" />
+<text x="162.5" y="248.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="400">polyimide</text>
+<rect x="49.0" y="278.0" width="14.0" height="14.0" fill="#e9d8f2" />
+<text x="71.0" y="290.0" font-size="14.5" fill="#12120e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">10 µm, Hv 24</text>
+<text x="49.0" y="370.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">crack radius</text>
+<text x="49.0" y="396.0" font-size="18" fill="#12120e" text-anchor="start" font-weight="700" font-family="'IBM Plex Mono', monospace">R ≤1.0 mm</text>
+<text x="49.0" y="428.0" font-size="15" fill="#b23a2a" text-anchor="start" font-weight="600">steel wool: scratched</text>
+<rect x="312" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="449.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">hard only</text>
+<rect x="352.0" y="160.0" width="195.0" height="70.0" fill="#b4541f" />
+<rect x="352.0" y="230.0" width="195.0" height="26.0" fill="#9db3c7" />
+<text x="449.5" y="248.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="400">polyimide</text>
+<rect x="336.0" y="278.0" width="14.0" height="14.0" fill="#b4541f" />
+<text x="358.0" y="290.0" font-size="14.5" fill="#12120e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">10 µm, Hv 85</text>
+<text x="336.0" y="370.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">crack radius</text>
+<text x="336.0" y="396.0" font-size="18" fill="#12120e" text-anchor="start" font-weight="700" font-family="'IBM Plex Mono', monospace">R 3.0 mm</text>
+<text x="336.0" y="428.0" font-size="15" fill="#2f7d4a" text-anchor="start" font-weight="600">steel wool: no scratch</text>
+<rect x="599" y="90" width="275" height="360" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="736.5" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">soft + hard</text>
+<rect x="639.0" y="160.0" width="195.0" height="56.0" fill="#e9d8f2" />
+<rect x="639.0" y="216.0" width="195.0" height="14.0" fill="#b4541f" />
+<rect x="639.0" y="230.0" width="195.0" height="26.0" fill="#9db3c7" />
+<text x="736.5" y="248.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="400">polyimide</text>
+<rect x="623.0" y="278.0" width="14.0" height="14.0" fill="#b4541f" />
+<text x="645.0" y="290.0" font-size="14.5" fill="#12120e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">2 µm, Hv 79</text>
+<rect x="623.0" y="302.0" width="14.0" height="14.0" fill="#e9d8f2" />
+<text x="645.0" y="314.0" font-size="14.5" fill="#12120e" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">8 µm, Hv 23</text>
+<text x="623.0" y="370.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">crack radius</text>
+<text x="623.0" y="396.0" font-size="18" fill="#12120e" text-anchor="start" font-weight="700" font-family="'IBM Plex Mono', monospace">R 1.2 mm</text>
+<text x="623.0" y="428.0" font-size="15" fill="#2f7d4a" text-anchor="start" font-weight="600">steel wool: no scratch</text>
+</svg>

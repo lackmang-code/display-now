@@ -1,0 +1,27 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="439" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">What sits on the fold today</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Cover stack, 2019 first foldables vs Galaxy Z today (thickness not to scale)</text>
+<rect x="25" y="90" width="420" height="330" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="235.0" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">2019</text>
+<rect x="75.0" y="160.0" width="320.0" height="14.0" fill="#b4541f" stroke="#d8d2c6"/>
+<text x="235.0" y="172.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="600">hard coat</text>
+<rect x="75.0" y="174.0" width="320.0" height="56.0" fill="#9db3c7" stroke="#d8d2c6"/>
+<text x="235.0" y="207.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="600">CPI film</text>
+<rect x="75.0" y="230.0" width="320.0" height="40.0" fill="#55554d" />
+<text x="235.0" y="256.0" font-size="14.5" fill="#ffffff" text-anchor="middle" font-weight="400">OLED panel</text>
+<text x="235.0" y="340.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">the coated plastic film was the cover</text>
+<rect x="455" y="90" width="420" height="330" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="665.0" y="124.0" font-size="18" fill="#12120e" text-anchor="middle" font-weight="700">Galaxy Z today</text>
+<rect x="505.0" y="160.0" width="320.0" height="24.0" fill="#e9e4f0" stroke="#d8d2c6"/>
+<text x="665.0" y="177.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="600">protective film (replaceable)</text>
+<rect x="505.0" y="184.0" width="320.0" height="24.0" fill="#f3d9c2" stroke="#d8d2c6"/>
+<text x="665.0" y="201.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="600">protective layer on UTG</text>
+<rect x="505.0" y="208.0" width="320.0" height="30.0" fill="#bfe0e6" stroke="#d8d2c6"/>
+<text x="665.0" y="228.0" font-size="14.5" fill="#12120e" text-anchor="middle" font-weight="600">UTG, about 30 µm (Z Flip)</text>
+<rect x="505.0" y="238.0" width="320.0" height="40.0" fill="#55554d" />
+<text x="665.0" y="264.0" font-size="14.5" fill="#ffffff" text-anchor="middle" font-weight="400">OLED panel</text>
+<text x="665.0" y="340.0" font-size="15" fill="#12120e" text-anchor="middle" font-weight="400">glass is the cover; films ride on top</text>
+<text x="665.0" y="372.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">materials and thickness of the two films</text>
+<text x="665.0" y="394.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400">are not disclosed</text>
+</svg>

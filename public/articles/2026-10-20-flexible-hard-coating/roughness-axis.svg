@@ -1,0 +1,35 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="559" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Part 2 on one axis: roughness</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Surface roughness Ra of the outermost face, nm (log scale)</text>
+<rect x="25" y="90" width="850" height="450" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<line x1="192.6" y1="120.0" x2="192.6" y2="470.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="192.6" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">1</text>
+<line x1="388.7" y1="120.0" x2="388.7" y2="470.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="388.7" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">10</text>
+<line x1="584.8" y1="120.0" x2="584.8" y2="470.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="584.8" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">100</text>
+<line x1="781.0" y1="120.0" x2="781.0" y2="470.0" stroke="#e3e3dd" stroke-width="1" />
+<text x="781.0" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="middle" font-weight="400" font-family="'IBM Plex Mono', monospace">1000</text>
+<text x="840.0" y="494.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">nm</text>
+<circle cx="191.7" cy="160" r="8" fill="#12120e"/>
+<text x="205.7" y="165.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="700">clear hard coat</text>
+<text x="205.7" y="186.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">Ra 0.99</text>
+<rect x="286.1" y="208.0" width="137.1" height="16.0" fill="#3d6e9e" rx="8"/>
+<text x="437.2" y="221.0" font-size="15.5" fill="#3d6e9e" text-anchor="start" font-weight="700">anti-Newton-ring layer</text>
+<text x="437.2" y="242.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">Ra 3–15</text>
+<rect x="525.8" y="264.0" width="93.6" height="16.0" fill="#b4541f" rx="8"/>
+<text x="511.8" y="277.0" font-size="15.5" fill="#b4541f" text-anchor="end" font-weight="700">AG hard-coat film</text>
+<text x="511.8" y="298.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">Ra 50–150</text>
+<rect x="565.8" y="320.0" width="168.7" height="16.0" fill="#b4541f" rx="8"/>
+<text x="551.8" y="333.0" font-size="15.5" fill="#b4541f" text-anchor="end" font-weight="700">AG etched glass</text>
+<text x="551.8" y="354.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">Ra 80–580</text>
+<circle cx="678.4" cy="384" r="8" fill="#7a5c96"/>
+<text x="664.4" y="389.0" font-size="15.5" fill="#7a5c96" text-anchor="end" font-weight="700">moth-eye bumps (height, not Ra)</text>
+<text x="664.4" y="410.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400" font-family="'IBM Plex Mono', monospace">~300 tall</text>
+<line x1="482.3" y1="445.0" x2="114.5" y2="445.0" stroke="#3d6e9e" stroke-width="2.5" /><path d="M123.5,440.7 L114.5,445.0 L123.5,449.3" fill="none" stroke="#3d6e9e" stroke-width="2.5"/>
+<text x="208.1" y="438.0" font-size="15" fill="#3d6e9e" text-anchor="start" font-weight="600">AR and AF need it smooth</text>
+<line x1="506.8" y1="445.0" x2="815.5" y2="445.0" stroke="#b4541f" stroke-width="2.5" /><path d="M806.5,449.3 L815.5,445.0 L806.5,440.7" fill="none" stroke="#b4541f" stroke-width="2.5"/>
+<text x="809.6" y="438.0" font-size="15" fill="#b4541f" text-anchor="end" font-weight="600">AG scatters on purpose</text>
+<text x="840.0" y="116.0" font-size="14.5" fill="#8a8a80" text-anchor="end" font-weight="400">AS sits on a peel-off film, off this axis</text>
+</svg>

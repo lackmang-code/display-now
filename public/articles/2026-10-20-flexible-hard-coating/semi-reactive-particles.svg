@@ -1,0 +1,56 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="499" fill="#fdfdfc" stroke="#dcdcd6" stroke-width="1"/>
+<text x="28" y="42" font-size="24.5" font-weight="700" fill="#12120e" font-family="'Noto Serif KR', serif" letter-spacing="-0.3">Reactive enough, not too reactive</text>
+<text x="28" y="66" font-size="16" fill="#8a8a80" font-family="'IBM Plex Mono', monospace">Same 5 µm silica hard coat on PET; only the particle surface changes (3M)</text>
+<rect x="25" y="90" width="850" height="390" rx="8" fill="#ffffff" stroke="#e3ddd2"/>
+<text x="45.0" y="128.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">particle surface</text>
+<text x="300.0" y="128.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">radius, coat outside</text>
+<text x="560.0" y="128.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">folds survived</text>
+<text x="730.0" y="128.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400" font-family="'IBM Plex Mono', monospace">abrasion</text>
+<text x="45.0" y="186.0" font-size="17" fill="#12120e" text-anchor="start" font-weight="700">all reactive</text>
+<circle cx="248.0" cy="180.0" r="4" fill="#b4541f"/>
+<circle cx="242.7" cy="192.7" r="4" fill="#b4541f"/>
+<circle cx="230.0" cy="198.0" r="4" fill="#b4541f"/>
+<circle cx="217.3" cy="192.7" r="4" fill="#b4541f"/>
+<circle cx="212.0" cy="180.0" r="4" fill="#b4541f"/>
+<circle cx="217.3" cy="167.3" r="4" fill="#b4541f"/>
+<circle cx="230.0" cy="162.0" r="4" fill="#b4541f"/>
+<circle cx="242.7" cy="167.3" r="4" fill="#b4541f"/>
+<circle cx="230" cy="180" r="11" fill="#9db3c7"/>
+<rect x="300.0" y="172.0" width="192.0" height="18.0" fill="#b4541f" />
+<text x="500.0" y="187.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">6 mm</text>
+<text x="560.0" y="187.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">500</text>
+<text x="730.0" y="187.0" font-size="15.5" fill="#2f7d4a" text-anchor="start" font-weight="600">pass</text>
+<rect x="35.0" y="250.0" width="830.0" height="80.0" fill="#f3efe6" />
+<text x="45.0" y="286.0" font-size="17" fill="#12120e" text-anchor="start" font-weight="700">5 : 95 mix</text>
+<circle cx="248.0" cy="280.0" r="4" fill="#b4541f"/>
+<circle cx="242.7" cy="292.7" r="4" fill="#c9c9c2"/>
+<circle cx="230.0" cy="298.0" r="4" fill="#c9c9c2"/>
+<circle cx="217.3" cy="292.7" r="4" fill="#c9c9c2"/>
+<circle cx="212.0" cy="280.0" r="4" fill="#c9c9c2"/>
+<circle cx="217.3" cy="267.3" r="4" fill="#c9c9c2"/>
+<circle cx="230.0" cy="262.0" r="4" fill="#c9c9c2"/>
+<circle cx="242.7" cy="267.3" r="4" fill="#c9c9c2"/>
+<circle cx="230" cy="280" r="11" fill="#9db3c7"/>
+<rect x="300.0" y="272.0" width="128.0" height="18.0" fill="#b4541f" />
+<text x="436.0" y="287.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">4 mm</text>
+<text x="560.0" y="287.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">&gt;200,000</text>
+<text x="730.0" y="287.0" font-size="15.5" fill="#2f7d4a" text-anchor="start" font-weight="600">pass</text>
+<text x="45.0" y="386.0" font-size="17" fill="#12120e" text-anchor="start" font-weight="700">none reactive</text>
+<circle cx="248.0" cy="380.0" r="4" fill="#c9c9c2"/>
+<circle cx="242.7" cy="392.7" r="4" fill="#c9c9c2"/>
+<circle cx="230.0" cy="398.0" r="4" fill="#c9c9c2"/>
+<circle cx="217.3" cy="392.7" r="4" fill="#c9c9c2"/>
+<circle cx="212.0" cy="380.0" r="4" fill="#c9c9c2"/>
+<circle cx="217.3" cy="367.3" r="4" fill="#c9c9c2"/>
+<circle cx="230.0" cy="362.0" r="4" fill="#c9c9c2"/>
+<circle cx="242.7" cy="367.3" r="4" fill="#c9c9c2"/>
+<circle cx="230" cy="380" r="11" fill="#9db3c7"/>
+<rect x="300.0" y="372.0" width="96.0" height="18.0" fill="#b4541f" />
+<text x="404.0" y="387.0" font-size="15" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">3 mm</text>
+<text x="560.0" y="387.0" font-size="15.5" fill="#12120e" text-anchor="start" font-weight="600" font-family="'IBM Plex Mono', monospace">&gt;200,000</text>
+<text x="730.0" y="387.0" font-size="15.5" fill="#b23a2a" text-anchor="start" font-weight="600">worn at 1,000</text>
+<text x="45.0" y="470.0" font-size="14.5" fill="#2f7d4a" text-anchor="start" font-weight="400">coat inside the fold: 2 mm in every case</text>
+<circle cx="610" cy="466" r="4" fill="#b4541f"/>
+<text x="620.0" y="471.0" font-size="14.5" fill="#8a8a80" text-anchor="start" font-weight="400">reactive site</text>
+</svg>
