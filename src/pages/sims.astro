@@ -1,0 +1,193 @@
+---
+// 시뮬레이터 모음 — 기사에 박힌 시뮬을 한곳에 모은다(2026-10-21 AI 검색 조사).
+// 엔지니어는 기사보다 도구를 즐겨찾기하고 공유한다. 이 면은 「디스플레이 시뮬레이터」로
+// 찾는 사람의 입구이고, 테커 핸드북 서문에 적을 「웹 시뮬 모음」 주소이기도 하다.
+// 시뮬 설명은 따로 쓰지 않는다 — 원고 sim-note 의 첫 문장을 그대로 쓴다(한 사실은 한 곳에).
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SECTIONS, sectionColor } from '../lib/sections';
+import { getPublishedArticles, articleHref, dateLabel } from '../lib/articles';
+
+const articles = await getPublishedArticles();
+
+type Entry = { sims: string[]; lead: string; article: (typeof articles)[number] };
+const seen = new Set<string>();
+const entries: Entry[] = [];
+for (const a of articles) {
+  const body = a.body ?? '';
+  const re = /data-sim="([^"]+)"/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(body))) {
+    const sim = m[1];
+    if (seen.has(sim)) continue; // 같은 시뮬이 여러 기사에 있으면 가장 최근 기사 하나로
+    seen.add(sim);
+    // sim-note 는 제4호부터 생겼다. 그 전 기사는 기사 요약의 첫 문장으로 대신한다
+    const after = body.slice(m.index, m.index + 4000);
+    const tpl = after.match(/^[^]*?<\/div>/)?.[0].match(/<template data-sim-note>([\s\S]*?)<\/template>/);
+    const note = (tpl ? tpl[1] : a.data.summary).replace(/<[^>]+>/g, '').trim();
+    const lead = (note.match(/^[\s\S]*?(?:다\.|\.)(?=\s|$)/)?.[0] ?? note).trim();
+    // 한 기사에 시뮬이 여럿이면 한 줄로 묶는다 — 첫 시뮬의 설명을 대표로 쓴다
+    const prev = entries.find((e) => e.article === a);
+    if (prev) prev.sims.push(sim);
+    else entries.push({ sims: [sim], lead, article: a });
+  }
+}
+const title = '디스플레이 공정·광학 시뮬레이터 모음';
+const description = `OLED 증착·패터닝, 화면 아래 카메라, 커버유리 응력, 반사방지 코팅까지 — DISPLAY NOW 기사 속 인터랙티브 시뮬레이터 ${seen.size}종을 한곳에 모았습니다. 슬라이더를 움직여 원리를 직접 확인하고, 근거가 된 논문·특허는 각 기사에서 봅니다.`;
+---
+
+<Base title={`${title} | DISPLAY NOW`} description={description}>
+  <div class="frame">
+    <Header />
+    <div class="accent-strip">
+      <span style={`background:${sectionColor('tech-note')};`}></span>
+      <span style={`background:${sectionColor('paper')};`}></span>
+      <span style={`background:${sectionColor('patent')};`}></span>
+      <span style={`background:${sectionColor('issue')};`}></span>
+    </div>
+
+    <section class="archive-hero">
+      <div class="eyebrow">시뮬레이터</div>
+      <h1>{title}</h1>
+      <p class="sims-lead">{description}</p>
+    </section>
+
+    <div class="content-pad">
+      <div class="result-bar">
+        <div class="result-label">시뮬레이터 {seen.size}종 · 기사 {entries.length}편 · 최신순</div>
+      </div>
+      <div class="results">
+        {
+          entries.map(({ sims, lead, article: a }) => (
+            <a href={articleHref(a)} class="result-row" style={`border-left-color:${sectionColor(a.data.section)};`} data-sim={sims.join(' ')}>
+              <div class="result-main">
+                <div class="result-meta">
+                  <span class="chip-tag" style={`background:${sectionColor(a.data.section)};`}>{SECTIONS[a.data.section].label}</span>
+                </div>
+                <div class="result-title">{a.data.title}</div>
+                <p class="result-summary">{lead}</p>
+              </div>
+              <div class="result-side">
+                <span>{dateLabel(a, 'short')}</span>
+                <span>시뮬 {sims.length}종</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  /* 아래는 archive.astro 의 목록 스타일을 그대로 옮긴 것 — 두 면이 같은 모양이어야 한다 */
+  .archive-hero {
+    background: var(--ink);
+    color: var(--on-dark);
+    padding: clamp(22px, 5vw, 32px) clamp(14px, 4vw, 32px);
+  }
+  .archive-hero .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: #8c8c82;
+  }
+  .archive-hero h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 4.6vw, 34px);
+    line-height: 1.32;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .content-pad {
+    padding: 18px clamp(14px, 4vw, 24px) 28px;
+  }
+  .result-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 16px;
+    padding: 14px 0 10px;
+  }
+  .result-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+  }
+  .results {
+    border-top: 1px solid var(--ink);
+  }
+  .result-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+    border-left: 4px solid;
+    background: var(--card);
+    align-items: start;
+  }
+  .result-row[hidden] {
+    display: none;
+  }
+  .result-main {
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+  .result-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+  }
+  .chip-tag {
+    color: var(--card);
+    padding: 3px 8px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .result-title {
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 2.1vw, 21px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.4;
+    margin-top: 8px;
+    word-break: keep-all;
+  }
+  .result-summary {
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4d4d45;
+    word-break: keep-all;
+  }
+  .result-side {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    justify-content: flex-end;
+    min-width: 108px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--meta);
+    line-height: 1.8;
+  }
+  .sims-lead {
+    max-width: 720px;
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: inherit;
+    opacity: 0.85;
+  }
+</style>

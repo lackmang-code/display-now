@@ -4,7 +4,7 @@ import { getIssues, getIssuesEn } from '../lib/issues';
 import { getPublishedArticles, articleHref } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
 
-const STATIC_PATHS = ['/', '/editorial', '/archive', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
+const STATIC_PATHS = ['/', '/editorial', '/archive', '/sims', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
 
 /** 'YYYY-MM-DD' */
 function day(d: Date): string {
