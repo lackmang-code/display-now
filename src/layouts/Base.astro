@@ -101,6 +101,14 @@ const enURL = altHref ? (lang === 'en' ? canonicalURL : new URL(altHref, Astro.s
       alternateName: ['디스플레이 나우', '디스플레이나우', 'DisplayNow'],
       url: Astro.site?.toString(),
       logo: new URL('/logo/dn-lockup-reverse.png', Astro.site).toString(),
+      // 같은 이름의 사이니지 업체·아웃도어 매거진과 갈라 주는 근거 — 같은 매체의 공식 채널과 ISSN.
+      // AI 답변은 「이 이름이 누구인가」를 웹 곳곳의 언급을 엮어 판단한다(2026-10-21 AI 검색 조사).
+      sameAs: [
+        'https://www.linkedin.com/newsletters/display-now-7505509288484900864',
+        'https://pf.kakao.com/_ZGQiX',
+        'https://portal.issn.org/resource/ISSN/3140-5487',
+      ],
+      issn: '3140-5487',
       // 페이지 언어를 따른다. 영문 페이지가 자기를 한국어 매체라고 신고하면
       // 검색엔진이 영문 독자에게 내보낼 이유를 잃는다.
       // alternateName의 한글 표기는 언어와 무관한 사실이므로 양쪽에 그대로 둔다.
