@@ -139,9 +139,14 @@ function buildLiftoff() {
     // 증착: 구멍 안(레지스트 가장자리가 그림자를 만든다)과 구조 위
     // 🔴 가장자리는 증착 그림자로 얇아진다 — 끝을 수직으로 자르면 공통 전극이 그 턱을 타고 넘어
     // 화소마다 돌기가 솟는다(2026-10-19 대표 「돌기가 있는 것처럼 되어 현실성 없다」). 끝 10 만큼 0으로 줄인다.
-    const edge = (x, t) => t * Math.min(1, Math.max(0, Math.min(x - (c - 27), (c + 27) - x)) / 10);
-    w.conformal(col, c - 27, c + 27, (x) => edge(x, 6), 'stack', prof);
-    w.conformal('metal', c - 27, c + 27, (x) => edge(x, 2), 'stack', (x) => prof(x) + edge(x, 6));
+    // 🔴 화소 색 패턴부 윗면은 평평하게, PDL 윗면(9)보다 낮게(2026-10-22 대표 「특허도면은 모두 픽셀칼라 패턴부가 플랫」).
+    //    종전엔 바닥을 따라 두께 6으로 올려 PDL 위로 솟았고, 빗투영에서 화소마다 지붕처럼 보였다.
+    //    유기층은 우물을 ZO 까지 평평하게 채우고 가장자리(PDL 경사 초입)에서 얇아진다. 상부전극은 그 위 1.5.
+    const ZO = 7;
+    const edge = (x, t) => t * Math.min(1, Math.max(0, Math.min(x - (c - 27), (c + 27) - x)) / 4);
+    const ot = (x) => edge(x, Math.max(0, ZO - prof(x)));
+    w.conformal(col, c - 27, c + 27, ot, 'stack', prof);
+    w.conformal('metal', c - 27, c + 27, (x) => edge(x, 1.5), 'stack', (x) => prof(x) + ot(x));
     for (const [a, b] of [[XL, c - 27], [c + 27, XR]]) w.add(col, rect(a, b, 32, 38), 'lo');
     // 🔴 유기층과 상부전극은 반드시 별도 스텝(2026-10-19 대표 지시). 같은 FIG. 3C 이지만 증착은 두 번이다
     const stackMetal = w.objs.filter((o) => o.mat === 'metal' && o.tag === 'stack').pop();
@@ -187,7 +192,10 @@ function buildLiftoffLG() {
     // 3) 유기 발광층: 구멍 안은 두껍고, 언더컷 밑 뱅크 윗면으로 갈수록 얇다(FIG. 10). 레지스트 위에도 쌓인다
     // 🔴 뱅크 경사를 오르는 만큼 얇아져 윗면이 거의 평평하게 이어지고 뱅크 윗면 초입에서 0이 된다.
     // 종전(끝 0.6 두께로 뱅크 윗면까지)은 뱅크 위에 턱이 남아 봉지막까지 뿔처럼 솟았다(2026-10-19 대표 지적).
-    const th = (x) => { const d = Math.abs(x - c); return d <= 28 ? 5 : Math.max(0, 5 * (38 - d) / 10); };
+    // 🔴 윗면은 평평하게(2026-10-22 대표 「픽셀칼라 패턴부가 플랫」) — 우물을 ZO 까지 채우고, 뱅크 윗면으로 번지는 부분은
+    //    0.6 두께에서 끝으로 갈수록 0. 종전(바닥 위 5)은 경사에서 윗면이 8→10으로 올라 가장자리 테가 솟았다.
+    const ZO = 8.5;
+    const th = (x) => { const d = Math.abs(x - c); const fz = prof(x); return d >= 38 ? 0 : Math.max(ZO - fz, Math.min(0.6, 0.6 * (38 - d) / 3)); };
     const lo2 = [], hi2 = [];
     for (let x = c - 38; x <= c + 38; x++) { lo2.push([x, prof(x)]); hi2.push([x, prof(x) + th(x)]); }
     w.add(col, lo2.concat(hi2.reverse()), 'pat');
