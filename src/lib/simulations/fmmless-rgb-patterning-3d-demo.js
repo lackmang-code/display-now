@@ -238,20 +238,27 @@ function buildOverhangAMAT() {
     w.add('ovu', rect(c - 36, c + 36, 15, 18), 'fill' + k);
   });
   push('Overhang layers (lower 402A, upper 402B) laid over everything', 'FIG. 4A', { tags: [[100, 'Overhang layers', 'ovu'], [CENTER[1] - 20, 'Bottom electrode', 'anode']] });
-  const figs = [['4B·4C', '4D', '4D', '4D', '4E', '4F'], ['4H', '4J', '4J', '4J', '4L', '4N'], ['4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)']];
+  // 🔴 레지스트 패터닝과 처마층 식각은 별도 스텝이다(2026-10-22 대표 지적 「7~10단계가 특허에 있는 내용이 맞아?」).
+  //    첫 색: FIG. 4B(레지스트 406 패터닝) → FIG. 4C(operation 303, 처마층 식각). 둘째 색: FIG. 4H(레지스트 412) →
+  //    operation 308(처마층 식각, 도면 없음). 4D·4J 에는 레지스트가 없다 — 증착 전에 걷힌 것으로 그린다.
+  const figs = [['4B', '4C', '4D', '4D', '4D', '4E', '4F'], ['4H', 'operation 308 (no drawing)', '4J', '4J', '4J', '4L', '4N'], ['4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)', '4 (repeated)']];
   COLS.forEach((col, k) => {
     const c = CENTER[k];
-    // 1) 그 색 자리만 연다 — 아래층이 더 파여 처마가 된다([0046]·[0047]).
-    //    둘째 색부터는 새 레지스트(412)가 위층과 끝난 화소를 덮고 그 색 자리만 연다(FIG. 4H). 첫 레지스트 408 은 4F 에서 이미 걷혔다.
-    if (k) {
-      const pr0 = w.profile();
-      w.conformal('resist', XL, c - 36, (x) => Math.max(0, 24 - pr0(x)), 'res', pr0);
-      w.conformal('resist', c + 36, XR, (x) => Math.max(0, 24 - pr0(x)), 'res', pr0);
-    }
-    w.remove((o) => o.tag === 'fill' + k);
-    push((k ? 'New resist covers the finished pixel · ' : 'Resist patterned, then ') + 'overhang layers opened over the ' + CNAME[col] + ' pixel · the lower layer is cut back under the upper → overhang', 'FIG. ' + figs[k][0],
-      k ? { protect: 'the finished pixel sits under the new resist' } : { tags: [[c + 50, 'Overhang', 'ovu'], [c, 'Opened pixel', 'anode']] });
-    w.remove((o) => o.tag === 'res');
+    // 1) 레지스트를 깔고 그 색 자리만 연다 — 처마층은 아직 그대로다(FIG. 4B · 4H).
+    //    둘째 색부터는 새 레지스트(412)가 위층과 끝난 화소를 덮는다. 첫 레지스트 408 은 4F 에서 이미 걷혔다.
+    const pr0 = w.profile();
+    w.conformal('resist', XL, c - 36, (x) => Math.max(0, 24 - pr0(x)), 'res', pr0);
+    w.conformal('resist', c + 36, XR, (x) => Math.max(0, 24 - pr0(x)), 'res', pr0);
+    // 끝난 화소의 처마 밑 틈도 레지스트가 메운다(FIG. 4H — 412 가 우물을 116 위까지 채운다, 2026-10-22 대표 「비는 것도 이상해」).
+    //    위에서 내려다본 표면만 따르는 conformal 은 처마 밑에 들어가지 못하므로 따로 채운다.
+    for (let j = 0; j < k; j++) w.add('resist', rect(CENTER[j] - 42, CENTER[j] + 42, 12.5, 15), 'res');
+    push((k ? 'New resist covers the finished pixel · ' : 'Resist laid and ') + 'opened over the ' + CNAME[col] + ' pixel · the overhang layers are still whole', 'FIG. ' + figs[k][0],
+      k ? { protect: 'the finished pixel sits under the new resist' } : { tags: [[c, 'Resist opening', 'resist']] });
+    // 2) 열린 자리의 처마층을 깎는다 — 위층은 건식, 아래층은 습식으로 더 파여 처마가 된다(operation 303 · 308).
+    //    FIG. 4C 에는 레지스트 406 이 이미 없다 — 깎은 뒤 걷힌 상태로 그린다.
+    w.remove((o) => o.tag === 'fill' + k || o.tag === 'res');
+    push('Overhang layers etched through the opening, resist stripped · the lower layer is cut back under the upper → overhang', (figs[k][1].startsWith('operation') ? '' : 'FIG. ') + figs[k][1],
+      k ? {} : { tags: [[c + 50, 'Overhang', 'ovu'], [c, 'Opened pixel', 'anode']] });
     // 2) 유기물: 처마 밑에서 멈춘다(가장자리 3 만큼 얇아짐)
     // 🔴 유기물은 얇고 윗면이 평평하게(2026-10-19 대표 「RGB 양옆 날개 때문에 위층도 이상해 보인다」).
     //    윗면 높이 ZT 까지만 채워 PDL 경사 초입에서 끝난다 — 가장자리는 PDL 위(청구항 1 「OLED edge over the PDL」)
@@ -263,7 +270,7 @@ function buildOverhangAMAT() {
     w.add(col, lo.concat(hi.reverse()), 'stack');
     w.conformal(col, XL, c - 36, 2, 'lo');
     w.conformal(col, c + 36, XR, 2, 'lo');
-    push(CNAME[col][0].toUpperCase() + CNAME[col].slice(1) + ' organic evaporated · the overhang shadow stops it under the overhang, short of the stem', 'FIG. ' + figs[k][1]);
+    push(CNAME[col][0].toUpperCase() + CNAME[col].slice(1) + ' organic evaporated · the overhang shadow stops it under the overhang, short of the stem', 'FIG. ' + figs[k][2]);
     // 3) 음극: 유기물 가장자리를 넘어 처마 아랫부분 옆벽에 닿는다
     const ct = (x) => floorZ(c, x) + oth(x);
     const mlo = [], mhi = [];
@@ -271,7 +278,7 @@ function buildOverhangAMAT() {
     w.add('metal', mlo.concat(mhi.reverse()), 'stack');
     w.conformal('metal', XL, c - 36, 1.5, 'lo');
     w.conformal('metal', c + 36, XR, 1.5, 'lo');
-    push('Cathode evaporated at a wider angle · it reaches past the organic edge and touches the overhang', 'FIG. ' + figs[k][2], { tags: [[c + 41, 'Cathode meets conductor', 'metal']] });
+    push('Cathode evaporated at a wider angle · it reaches past the organic edge and touches the overhang', 'FIG. ' + figs[k][3], { tags: [[c + 41, 'Cathode meets conductor', 'metal']] });
     // 4) 국소 봉지: 음극 위, 처마 밑으로 들어가 옆벽을 따라 오른다
     const et = (x) => ct(x) + 1.5;
     const e = [];
@@ -279,16 +286,24 @@ function buildOverhangAMAT() {
     e.push([c + 42, 15], [c + 36, 15], [c + 36, 18], [c + 34, 18]);
     for (let x = c + 34; x >= c - 34; x--) e.push([x, et(x) + 2]);
     e.push([c - 34, 18], [c - 36, 18], [c - 36, 15], [c - 42, 15]);
-    w.add('encap', e, 'stack');
+    const enc = w.add('encap', e, 'stack');
     w.conformal('encap', XL, c - 36, 2, 'lo');
     w.conformal('encap', c + 36, XR, 2, 'lo');
-    push('Local encapsulation laid · it goes in under the overhang and up its sidewall', 'FIG. ' + figs[k][3], { tags: [[c + 35, 'Local encapsulation', 'encap']] });
+    push('Local encapsulation laid · it goes in under the overhang and up its sidewall', 'FIG. ' + figs[k][4], { tags: [[c + 35, 'Local encapsulation', 'encap']] });
     // 5) 그 화소에 레지스트 → 바깥 막 식각
     const pr = w.profile();
     w.conformal('resist', c - 34, c + 34, (x) => Math.max(0, 24 - pr(x)), 'res', pr);
-    push('Resist in the ' + CNAME[col] + ' pixel well', 'FIG. ' + figs[k][4]);
+    push('Resist in the ' + CNAME[col] + ' pixel well', 'FIG. ' + figs[k][5]);
     w.remove((o) => o.tag === 'lo' || o.tag === 'res');
-    push('Etch removes the layers outside the ' + CNAME[col] + ' pixel, then the resist · the overhang stays', 'FIG. ' + figs[k][5], { float: false });
+    // 🔴 식각 뒤 봉지는 처마 밑 우물 안에만 남는다 — 처마 옆벽·윗면은 드러난다(FIG. 4F, 2026-10-22 대표 지적).
+    //    처마 아래면(15)보다 낮은 평평한 윗면(ZF)까지만 남기고, 옆벽을 타고 오르던 부분은 걷는다.
+    const ZF = 12.5;
+    const ef = [];
+    for (let x = c - 42; x <= c + 42; x++) ef.push([x, et(x)]);
+    for (let x = c + 42; x >= c - 42; x--) ef.push([x, Math.max(ZF, et(x) + 1)]);
+    w.remove((o) => o === enc);
+    w.add('encap', ef, 'stack');
+    push('Etch removes the layers outside the ' + CNAME[col] + ' pixel, then the resist · what stays sits in the well under the overhang', 'FIG. ' + figs[k][6], { float: false });
   });
   // 마무리(구조 설명, FIG. 1A): 처마·국소 봉지 위를 아크릴 잉크젯 층(118)이 메워 평탄하게 하고, 그 위에 전체 보호층(120).
   // 2026-10-19 대표 「모노머로 평탄화하고 2차 CVD를 해야 완성된 모습」. 명세서 순서는 116 → 118(may) → 120.
