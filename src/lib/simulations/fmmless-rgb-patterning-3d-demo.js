@@ -262,9 +262,12 @@ function buildOverhangAMAT() {
     // 2) 유기물: 처마 밑에서 멈춘다(가장자리 3 만큼 얇아짐)
     // 🔴 유기물은 얇고 윗면이 평평하게(2026-10-19 대표 「RGB 양옆 날개 때문에 위층도 이상해 보인다」).
     //    윗면 높이 ZT 까지만 채워 PDL 경사 초입에서 끝난다 — 가장자리는 PDL 위(청구항 1 「OLED edge over the PDL」)
-    const ZT = 6.5;
-    // 단 청구항 1: 유기물은 처마 밑으로 들어가 PDL 위에서 끝난다(기둥 c±42 에는 닿지 않음) — 바닥은 평평, 경사·처마 밑은 얇은 막(클레임 검수 2026-10-20)
-    const oth = (x) => { const d = Math.abs(x - c); return d >= 39 ? 0 : Math.min(Math.max(1.2, ZT - floorZ(c, x)), (39 - d) * 1.2); };
+    // 🔴 화소 색 패턴부는 윗면이 평평해야 한다(2026-10-22 대표 「특허도면은 모두 픽셀칼라 패턴부가 플랫한데 왜 돌기가 나오게 했어」).
+    //    PDL 경사를 따라 올라가게 그리면 빗투영에서 골짜기가 산마루처럼 읽히고, 그 위에 얹는 음극·봉지도 따라 솟는다.
+    //    그래서 유기물은 PDL 윗면(9)을 살짝 넘는 높이 ZT 까지 우물을 평평하게 채운다 — 가장자리는 PDL 위, 처마 밑(청구항 1).
+    const ZT = 9.8;
+    // 청구항 1: 유기물은 처마 밑으로 들어가 PDL 위에서 끝난다(기둥 c±42 에는 닿지 않음, 클레임 검수 2026-10-20)
+    const oth = (x) => { const d = Math.abs(x - c); return d >= 39 ? 0 : Math.max(0, ZT - floorZ(c, x)); };
     const lo = [], hi = [];
     for (let x = c - 39; x <= c + 39; x++) { lo.push([x, floorZ(c, x)]); hi.push([x, floorZ(c, x) + oth(x)]); }
     w.add(col, lo.concat(hi.reverse()), 'stack');
@@ -274,13 +277,14 @@ function buildOverhangAMAT() {
     // 3) 음극: 유기물 가장자리를 넘어 처마 아랫부분 옆벽에 닿는다
     const ct = (x) => floorZ(c, x) + oth(x);
     const mlo = [], mhi = [];
-    for (let x = c - 42; x <= c + 42; x++) { mlo.push([x, ct(x)]); mhi.push([x, ct(x) + 1.5]); }
+    // 음극도 윗면을 평평하게(ZT+1.5) — 유기물이 끝난 처마 밑에서는 그만큼 두꺼워져 기둥에 닿는다
+    for (let x = c - 42; x <= c + 42; x++) { mlo.push([x, ct(x)]); mhi.push([x, ZT + 1.5]); }
     w.add('metal', mlo.concat(mhi.reverse()), 'stack');
     w.conformal('metal', XL, c - 36, 1.5, 'lo');
     w.conformal('metal', c + 36, XR, 1.5, 'lo');
     push('Cathode evaporated at a wider angle · it reaches past the organic edge and touches the overhang', 'FIG. ' + figs[k][3], { tags: [[c + 41, 'Cathode meets conductor', 'metal']] });
     // 4) 국소 봉지: 음극 위, 처마 밑으로 들어가 옆벽을 따라 오른다
-    const et = (x) => ct(x) + 1.5;
+    const et = () => ZT + 1.5;
     const e = [];
     for (let x = c - 42; x <= c + 42; x++) e.push([x, et(x)]);
     e.push([c + 42, 15], [c + 36, 15], [c + 36, 18], [c + 34, 18]);
