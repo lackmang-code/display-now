@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="599" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Same bend radius, two ways to close</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Side view of a folded phone, screen bent at R = 3 mm in both (1 mm = 12 px)</text>
+<linearGradient id="tu1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3e5ea"/><stop offset="1" stop-color="#c4cad2"/></linearGradient>
+<linearGradient id="fu1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9b2bf"/><stop offset="1" stop-color="#7b889c"/></linearGradient>
+<linearGradient id="su1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#838fa2"/><stop offset="1" stop-color="#505c6f"/></linearGradient>
+<linearGradient id="gu1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="106" y="251" width="252" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="96,182 114,173.0 348,173.0 330,182" fill="url(#tu1)" stroke="#a2abb9" stroke-width="1"/>
+<polygon points="330,182 348,173.0 348,245.0 330,254" fill="url(#su1)"/>
+<rect x="96" y="182" width="234" height="72" fill="url(#fu1)"/>
+<polygon points="224.70000000000002,182 255.12,182 273.12,173.0 242.70000000000002,173.0" fill="url(#gu1)" opacity=".8"/>
+<line x1="96" y1="182" x2="330" y2="182" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="96" y="182" width="234" height="72" fill="none" stroke="#5a687d" stroke-width=".8" opacity=".5"/>
+<linearGradient id="tu2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3e5ea"/><stop offset="1" stop-color="#c4cad2"/></linearGradient>
+<linearGradient id="fu2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9b2bf"/><stop offset="1" stop-color="#7b889c"/></linearGradient>
+<linearGradient id="su2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#838fa2"/><stop offset="1" stop-color="#505c6f"/></linearGradient>
+<linearGradient id="gu2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="106" y="395" width="252" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="96,326 114,317.0 348,317.0 330,326" fill="url(#tu2)" stroke="#a2abb9" stroke-width="1"/>
+<polygon points="330,326 348,317.0 348,389.0 330,398" fill="url(#su2)"/>
+<rect x="96" y="326" width="234" height="72" fill="url(#fu2)"/>
+<polygon points="224.70000000000002,326 255.12,326 273.12,317.0 242.70000000000002,317.0" fill="url(#gu2)" opacity=".8"/>
+<line x1="96" y1="326" x2="330" y2="326" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="96" y="326" width="234" height="72" fill="none" stroke="#5a687d" stroke-width=".8" opacity=".5"/>
+<path d="M324,254 L96,254 A36,36 0 0 0 96,326 L324,326" fill="none" stroke="#0f172a" stroke-width="7" opacity=".16" transform="translate(2 3)" filter="url(#b2)" stroke-linecap="round"/>
+<path d="M324,254 L96,254 A36,36 0 0 0 96,326 L324,326" fill="none" stroke="#a1144f" stroke-width="6" stroke-linecap="round"/>
+<path d="M324,254 L96,254 A36,36 0 0 0 96,326 L324,326" fill="none" stroke="#e197b6" stroke-width="2" stroke-linecap="round" transform="translate(-0.8 -0.8)"/>
+<line x1="352" y1="254" x2="352" y2="326" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="360.0" y="284.0" font-size="15" fill="#dc2626" text-anchor="start" font-weight="700">gap = 2R</text>
+<text x="360.0" y="304.0" font-size="15" fill="#dc2626" text-anchor="start" font-weight="700">= 6 mm</text>
+<text x="60.0" y="120.0" font-size="22" fill="#151a22" text-anchor="start" font-weight="700">U-fold</text>
+<text x="60.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">bend and gap are the same circle</text>
+<linearGradient id="tu3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3e5ea"/><stop offset="1" stop-color="#c4cad2"/></linearGradient>
+<linearGradient id="fu3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9b2bf"/><stop offset="1" stop-color="#7b889c"/></linearGradient>
+<linearGradient id="su3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#838fa2"/><stop offset="1" stop-color="#505c6f"/></linearGradient>
+<linearGradient id="gu3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="600" y="285" width="208" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="590,216 608,207.0 798,207.0 780,216" fill="url(#tu3)" stroke="#a2abb9" stroke-width="1"/>
+<polygon points="780,216 798,207.0 798,279.0 780,288" fill="url(#su3)"/>
+<rect x="590" y="216" width="190" height="72" fill="url(#fu3)"/>
+<polygon points="694.5,216 719.2,216 737.2,207.0 712.5,207.0" fill="url(#gu3)" opacity=".8"/>
+<line x1="590" y1="216" x2="780" y2="216" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="590" y="216" width="190" height="72" fill="none" stroke="#5a687d" stroke-width=".8" opacity=".5"/>
+<linearGradient id="tu4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3e5ea"/><stop offset="1" stop-color="#c4cad2"/></linearGradient>
+<linearGradient id="fu4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9b2bf"/><stop offset="1" stop-color="#7b889c"/></linearGradient>
+<linearGradient id="su4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#838fa2"/><stop offset="1" stop-color="#505c6f"/></linearGradient>
+<linearGradient id="gu4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="600" y="361" width="208" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="590,292 608,283.0 798,283.0 780,292" fill="url(#tu4)" stroke="#a2abb9" stroke-width="1"/>
+<polygon points="780,292 798,283.0 798,355.0 780,364" fill="url(#su4)"/>
+<rect x="590" y="292" width="190" height="72" fill="url(#fu4)"/>
+<polygon points="694.5,292 719.2,292 737.2,283.0 712.5,283.0" fill="url(#gu4)" opacity=".8"/>
+<line x1="590" y1="292" x2="780" y2="292" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="590" y="292" width="190" height="72" fill="none" stroke="#5a687d" stroke-width=".8" opacity=".5"/>
+<rect x="490" y="214" width="106" height="152" rx="18" fill="#515d6e" stroke="#848d99"/>
+<path d="M774,288 L590,288 C572.0,288 552.8,254 542,254 A36,36 0 0 0 542,326 C552.8,326 572.0,292 590,292 L774,292" fill="none" stroke="#0f172a" stroke-width="7" opacity=".16" transform="translate(2 3)" filter="url(#b2)" stroke-linecap="round"/>
+<path d="M774,288 L590,288 C572.0,288 552.8,254 542,254 A36,36 0 0 0 542,326 C552.8,326 572.0,292 590,292 L774,292" fill="none" stroke="#a1144f" stroke-width="6" stroke-linecap="round"/>
+<path d="M774,288 L590,288 C572.0,288 552.8,254 542,254 A36,36 0 0 0 542,326 C552.8,326 572.0,292 590,292 L774,292" fill="none" stroke="#e197b6" stroke-width="2" stroke-linecap="round" transform="translate(-0.8 -0.8)"/>
+<text x="816.0" y="295.0" font-size="15" fill="#15803d" text-anchor="start" font-weight="700">gap ≈ 0</text>
+<text x="500.0" y="120.0" font-size="22" fill="#151a22" text-anchor="start" font-weight="700">Water-drop</text>
+<text x="500.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">loop tucked inside the hinge housing</text>
+<text x="70.0" y="458.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Surface strain of a 50 μm layer, ε ≈ t / 2R</text>
+<text x="70.0" y="498.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">U-fold</text>
+<rect x="200" y="484" width="247.9" height="20" fill="#be185d"/>
+<text x="457.9" y="499.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">0.83 %  ·  closing gap 6 mm</text>
+<text x="70.0" y="532.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">Water-drop</text>
+<rect x="200" y="518" width="247.9" height="20" fill="#be185d"/>
+<text x="457.9" y="533.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">0.83 %  ·  closing gap ≈ 0 mm</text>
+<line x1="200" y1="474" x2="200" y2="552" stroke="#151a22" stroke-width="1.2"/>
+<text x="32.0" y="584.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Model: thin layer, neutral plane at its middle. Values for comparison, not a failure limit.</text>
+</svg>

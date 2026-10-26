@@ -1,0 +1,60 @@
+<svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="579" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Water-drop hinge: who filed first, who shipped first</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Earliest filing that describes the water-drop fold (in this search) and first product with that fold</text>
+<line x1="210.0" y1="118" x2="210.0" y2="458" stroke="#e6e9ee"/>
+<text x="210.0" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2013</text>
+<line x1="267.3" y1="118" x2="267.3" y2="458" stroke="#e6e9ee"/>
+<line x1="324.5" y1="118" x2="324.5" y2="458" stroke="#e6e9ee"/>
+<text x="324.5" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2015</text>
+<line x1="381.8" y1="118" x2="381.8" y2="458" stroke="#e6e9ee"/>
+<line x1="439.1" y1="118" x2="439.1" y2="458" stroke="#e6e9ee"/>
+<text x="439.1" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2017</text>
+<line x1="496.4" y1="118" x2="496.4" y2="458" stroke="#e6e9ee"/>
+<line x1="553.6" y1="118" x2="553.6" y2="458" stroke="#e6e9ee"/>
+<text x="553.6" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2019</text>
+<line x1="610.9" y1="118" x2="610.9" y2="458" stroke="#e6e9ee"/>
+<line x1="668.2" y1="118" x2="668.2" y2="458" stroke="#e6e9ee"/>
+<text x="668.2" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2021</text>
+<line x1="725.5" y1="118" x2="725.5" y2="458" stroke="#e6e9ee"/>
+<line x1="782.7" y1="118" x2="782.7" y2="458" stroke="#e6e9ee"/>
+<text x="782.7" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">2023</text>
+<line x1="840.0" y1="118" x2="840.0" y2="458" stroke="#e6e9ee"/>
+<text x="525.0" y="502.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">year (priority date for filings, announcement date for products)</text>
+<text x="32.0" y="157.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Samsung</text>
+<line x1="274.7" y1="152" x2="815.4" y2="152" stroke="#1d4ed8" stroke-width="3" opacity=".45"/>
+<circle cx="274.7" cy="152" r="9" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<polygon points="815.4,141 826.4,152 815.4,163 804.4,152" fill="#1d4ed8"/>
+<text x="274.7" y="135.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">KR 2014 / 2015</text>
+<text x="815.4" y="182.0" font-size="14" fill="#1d4ed8" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Z Fold5 · Flip5  +9 yr</text>
+<text x="32.0" y="223.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Motorola</text>
+<line x1="536.5" y1="218" x2="603.5" y2="218" stroke="#0f766e" stroke-width="3" opacity=".45"/>
+<circle cx="536.5" cy="218" r="9" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+<polygon points="603.5,207 614.5,218 603.5,229 592.5,218" fill="#0f766e"/>
+<text x="536.5" y="201.0" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">US 2018-09</text>
+<text x="619.5" y="223.0" font-size="14" fill="#0f766e" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Razr  +1.2 yr</text>
+<text x="32.0" y="289.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Huawei</text>
+<line x1="531.3" y1="284" x2="676.2" y2="284" stroke="#c2410c" stroke-width="3" opacity=".45"/>
+<circle cx="531.3" cy="284" r="9" fill="#fff" stroke="#c2410c" stroke-width="3"/>
+<polygon points="676.2,273 687.2,284 676.2,295 665.2,284" fill="#c2410c"/>
+<text x="531.3" y="267.0" font-size="14" fill="#c2410c" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">CN 2018-08</text>
+<text x="692.2" y="289.0" font-size="14" fill="#c2410c" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Mate X2  +2.5 yr</text>
+<text x="32.0" y="355.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">OPPO</text>
+<line x1="600.6" y1="350" x2="722.6" y2="350" stroke="#15803d" stroke-width="3" opacity=".45"/>
+<circle cx="600.6" cy="350" r="9" fill="#fff" stroke="#15803d" stroke-width="3"/>
+<polygon points="722.6,339 733.6,350 722.6,361 711.6,350" fill="#15803d"/>
+<text x="600.6" y="333.0" font-size="14" fill="#15803d" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">CN 2019-10</text>
+<text x="738.6" y="355.0" font-size="14" fill="#15803d" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Find N  +2.1 yr</text>
+<text x="32.0" y="421.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Honor</text>
+<line x1="670.5" y1="416" x2="727.2" y2="416" stroke="#7c3aed" stroke-width="3" opacity=".45"/>
+<circle cx="670.5" cy="416" r="9" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<polygon points="727.2,405 738.2,416 727.2,427 716.2,416" fill="#7c3aed"/>
+<text x="670.5" y="399.0" font-size="14" fill="#7c3aed" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">CN 2021-01</text>
+<text x="743.2" y="421.0" font-size="14" fill="#7c3aed" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Magic V  +1.0 yr</text>
+<circle cx="40" cy="525" r="8" fill="#fff" stroke="#151a22" stroke-width="2.5"/>
+<text x="56.0" y="530.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">earliest water-drop filing found (priority date)</text>
+<polygon points="440,514 451,525 440,536 429,525" fill="#151a22"/>
+<text x="460.0" y="530.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">first product with a water-drop-type fold</text>
+<text x="32.0" y="562.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Filings: Google Patents full-text search (water drop / teardrop / 水滴). A filing is not proof that it covers the product.</text>
+</svg>

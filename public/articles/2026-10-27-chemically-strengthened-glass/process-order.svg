@@ -1,0 +1,58 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="379" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">Cut first, strengthen last</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Once the middle is in tension, a new cut releases it. Corning cuts parts from the mother sheet first.</text>
+<rect x="24" y="104" width="158" height="250" rx="12" fill="#f7f9fb" stroke="#d9dde3" stroke-width="1"/>
+<text x="40.0" y="136.0" font-size="18" fill="#9aa3b2" text-anchor="start" font-weight="700" >1</text>
+<path d="M41.0,220.0 L71.0,194.0 L177.0,194.0 L147.0,220.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M147.0,220.0 L177.0,194.0 L177.0,208.0 L147.0,234.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="41.0" y="220.0" width="106.0" height="14.0" fill="url(#gFront)" /><rect x="41.0" y="220.0" width="106.0" height="14.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<text x="103.0" y="300.0" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700" >Sheet</text>
+<text x="103.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >fusion or float</text>
+<line x1="183.0" y1="224.0" x2="191.6" y2="224.0" stroke="#9aa3b2" stroke-width="2.2" /><path d="M190.7,227.3 L198.0,224.0 L190.7,220.7 Z" fill="#9aa3b2" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<rect x="197" y="104" width="158" height="250" rx="12" fill="#f7f9fb" stroke="#d9dde3" stroke-width="1"/>
+<text x="213.0" y="136.0" font-size="18" fill="#9aa3b2" text-anchor="start" font-weight="700" >2</text>
+<path d="M218.0,214.0 L232.0,202.0 L276.0,202.0 L262.0,214.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M262.0,214.0 L276.0,202.0 L276.0,212.0 L262.0,224.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="218.0" y="214.0" width="44.0" height="10.0" fill="url(#gFront)" /><rect x="218.0" y="214.0" width="44.0" height="10.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<path d="M274.0,210.0 L288.0,198.0 L332.0,198.0 L318.0,210.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M318.0,210.0 L332.0,198.0 L332.0,208.0 L318.0,220.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="274.0" y="210.0" width="44.0" height="10.0" fill="url(#gFront)" /><rect x="274.0" y="210.0" width="44.0" height="10.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<path d="M234.0,240.0 L248.0,228.0 L292.0,228.0 L278.0,240.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M278.0,240.0 L292.0,228.0 L292.0,238.0 L278.0,250.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="234.0" y="240.0" width="44.0" height="10.0" fill="url(#gFront)" /><rect x="234.0" y="240.0" width="44.0" height="10.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<path d="M290.0,236.0 L304.0,224.0 L348.0,224.0 L334.0,236.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M334.0,236.0 L348.0,224.0 L348.0,234.0 L334.0,246.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="290.0" y="236.0" width="44.0" height="10.0" fill="url(#gFront)" /><rect x="290.0" y="236.0" width="44.0" height="10.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<text x="276.0" y="300.0" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700" >Cut</text>
+<text x="276.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >parts from the sheet</text>
+<line x1="356.0" y1="224.0" x2="364.6" y2="224.0" stroke="#9aa3b2" stroke-width="2.2" /><path d="M363.7,227.3 L371.0,224.0 L363.7,220.7 Z" fill="#9aa3b2" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<rect x="370" y="104" width="158" height="250" rx="12" fill="#f7f9fb" stroke="#d9dde3" stroke-width="1"/>
+<text x="386.0" y="136.0" font-size="18" fill="#9aa3b2" text-anchor="start" font-weight="700" >3</text>
+<path d="M405.0,224.0 L429.0,204.0 L505.0,204.0 L481.0,224.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M481.0,224.0 L505.0,204.0 L505.0,218.0 L481.0,238.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="405.0" y="224.0" width="76.0" height="14.0" fill="url(#gFront)" /><rect x="405.0" y="224.0" width="76.0" height="14.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<circle cx="481.0" cy="231.0" r="16" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M479.0,174.0 L495.0,206.0 L473.0,198.0 Z" fill="#64748b" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<text x="449.0" y="300.0" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700" >Edge</text>
+<text x="449.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >CNC grind, polish</text>
+<line x1="529.0" y1="224.0" x2="537.6" y2="224.0" stroke="#9aa3b2" stroke-width="2.2" /><path d="M536.7,227.3 L544.0,224.0 L536.7,220.7 Z" fill="#9aa3b2" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<rect x="543" y="104" width="158" height="250" rx="12" fill="#ffedd5" stroke="#c2410c" stroke-width="2.5"/>
+<text x="559.0" y="136.0" font-size="18" fill="#c2410c" text-anchor="start" font-weight="700" >4</text>
+<rect x="564.0" y="172.0" width="116.0" height="72.0" fill="url(#gSalt)" rx="6" opacity="0.85"/>
+<rect x="564.0" y="172.0" width="116.0" height="72.0" fill="none" rx="6" stroke="#92400e" stroke-width="2"/>
+<path d="M586.0,210.0 L600.0,198.0 L662.0,198.0 L648.0,210.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M648.0,210.0 L662.0,198.0 L662.0,210.0 L648.0,222.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="586.0" y="210.0" width="62.0" height="12.0" fill="url(#gFront)" /><rect x="586.0" y="210.0" width="62.0" height="4.2" fill="url(#gComp)" /><path d="M648.0,210.0 L662.0,198.0 L662.0,202.2 L648.0,214.2 Z" fill="url(#gComp)" stroke="none" stroke-width="2" stroke-linejoin="round" opacity="0.6"/><rect x="586.0" y="217.8" width="62.0" height="4.2" fill="url(#gComp)" /><path d="M648.0,217.8 L662.0,205.8 L662.0,210.0 L648.0,222.0 Z" fill="url(#gComp)" stroke="none" stroke-width="2" stroke-linejoin="round" opacity="0.6"/><rect x="586.0" y="210.0" width="62.0" height="12.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<path d="M592.0,274 q5,-6 0,-12 q-5,-6 0,-12" fill="none" stroke="#e5482a" stroke-width="2.2"/>
+<path d="M622.0,274 q5,-6 0,-12 q-5,-6 0,-12" fill="none" stroke="#e5482a" stroke-width="2.2"/>
+<path d="M652.0,274 q5,-6 0,-12 q-5,-6 0,-12" fill="none" stroke="#e5482a" stroke-width="2.2"/>
+<text x="622.0" y="300.0" font-size="19" fill="#c2410c" text-anchor="middle" font-weight="700" >Ion exchange</text>
+<text x="622.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >molten salt, ~400 °C</text>
+<line x1="702.0" y1="224.0" x2="710.6" y2="224.0" stroke="#9aa3b2" stroke-width="2.2" /><path d="M709.7,227.3 L717.0,224.0 L709.7,220.7 Z" fill="#9aa3b2" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<rect x="716" y="104" width="158" height="250" rx="12" fill="#f7f9fb" stroke="#d9dde3" stroke-width="1"/>
+<text x="732.0" y="136.0" font-size="18" fill="#9aa3b2" text-anchor="start" font-weight="700" >5</text>
+<path d="M751.0,224.0 L775.0,204.0 L851.0,204.0 L827.0,224.0 Z" fill="url(#gTop)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><path d="M827.0,224.0 L851.0,204.0 L851.0,218.0 L827.0,238.0 Z" fill="url(#gSide)" stroke="#6f9fb5" stroke-width="1.2" stroke-linejoin="round" /><rect x="751.0" y="224.0" width="76.0" height="14.0" fill="url(#gFront)" /><rect x="751.0" y="224.0" width="76.0" height="3.5" fill="url(#gComp)" /><path d="M827.0,224.0 L851.0,204.0 L851.0,207.5 L827.0,227.5 Z" fill="url(#gComp)" stroke="none" stroke-width="2" stroke-linejoin="round" opacity="0.6"/><rect x="751.0" y="234.5" width="76.0" height="3.5" fill="url(#gComp)" /><path d="M827.0,234.5 L851.0,214.5 L851.0,218.0 L827.0,238.0 Z" fill="url(#gComp)" stroke="none" stroke-width="2" stroke-linejoin="round" opacity="0.6"/><rect x="751.0" y="224.0" width="76.0" height="14.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<path d="M751.0,223.0 L775.0,203.0 L851.0,203.0 L827.0,223.0 Z" fill="#a78bfa" stroke="none" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+<text x="803.0" y="192.0" font-size="14" fill="#7c3aed" text-anchor="middle" font-weight="700" >coating</text>
+<text x="795.0" y="300.0" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700" >Coat</text>
+<text x="795.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >AR, AF on top</text>
+</svg>

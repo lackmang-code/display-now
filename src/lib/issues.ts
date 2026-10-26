@@ -79,6 +79,23 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 11,
+    publishedAt: '2026-10-27',
+    weekStart: '2026-10-19',
+    // 헤드는 클레임 물방울 힌지 편(「특허로 보는 폴더블 디스플레이」 첫 편)이다. 표지 시뮬이 이 편이라
+    // 표지와 헤드를 일치시킨다. 표지 시뮬은 대표가 「역대 최고」로 꼽은 판(2026-10-26).
+    // 표지값은 물방울·닫힘(fold 100, 기본값) — 접은 두께 9.0 mm와 같은 R의 U자 15.0 mm가 한 화면에 보인다.
+    headline: '물방울 힌지 특허, 출원은 삼성·제품은 화웨이',
+    deck: '폴더블 화면은 접힐 때 반지름이 작을수록 많이 늘어나고, 그 흔적이 주름으로 남습니다. 굽는 부분을 몸체 안에 물방울 모양으로 넣는 힌지를 특허에 먼저 적은 것은 삼성이었지만, 제품에 먼저 넣은 것은 모토로라·화웨이·OPPO·아너였습니다.',
+    coverSim: 'fold-radius-gap-strain-demo',
+    coverSimParams: { mode: 'drop', r: 3, t: 50 },
+    coverNote: '폴더블 화면이 접히는 모습을 3D로 그린 시뮬레이션입니다(클레임 편). 굽힘 반경 R이 같으면 U자든 물방울이든 주름은 같습니다. 물방울 힌지가 바꾸는 것은 접었을 때 두 쪽 사이의 틈이고, 그래서 접은 두께가 얇아집니다. 거꾸로 말하면, 같은 두께로 접을 때 물방울 힌지는 더 큰 R을 쓸 수 있어 주름이 얕아집니다. 몸체 두께는 갤럭시 Z 폴드8의 펼친 두께 4.5 mm로 두었고, 주름 깊이는 실측이 아닌 그림입니다.',
+    headSlug: '2026-10-27-foldable-waterdrop-hinge-patents',
+    headlineEn: 'Water-Drop Hinge Patents, Filed by Samsung Electronics and Shipped by Huawei',
+    deckEn: 'The smaller the radius a foldable screen bends to, the more it stretches, and that stretch is left behind as a crease. Samsung Electronics was the first to write a hinge that tucks the bend into the body as a water drop into its patents, but the first to put it in products were Motorola, Huawei, OPPO and Honor.',
+    coverNoteEn: "A 3D simulation of a foldable screen folding (Claim's piece). At the same bend radius R, a U-fold and a water-drop fold leave the same crease. What the water-drop hinge changes is the gap between the halves when closed, so the closed phone is thinner. Read the other way, at the same closed thickness the water-drop can use a larger R and leave a shallower crease. Each half is fixed at the Galaxy Z Fold8's unfolded thickness of 4.5 mm, and the crease depth is illustrative, not measured.",
+  },
+  {
     no: 10,
     publishedAt: '2026-10-20',
     weekStart: '2026-10-12',

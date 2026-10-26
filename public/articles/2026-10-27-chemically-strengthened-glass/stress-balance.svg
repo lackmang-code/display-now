@@ -1,0 +1,42 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="499" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">Compression is borrowed from the middle</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Linear profile, t = 550 µm, CS 750 MPa, DOL 30 µm. No outside force, so the areas cancel.</text>
+<rect x="24" y="96" width="852" height="384" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<line x1="130.0" y1="240.0" x2="820.0" y2="240.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="118.0" y="246.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >250</text>
+<line x1="130.0" y1="190.0" x2="820.0" y2="190.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="118.0" y="196.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >500</text>
+<line x1="130.0" y1="140.0" x2="820.0" y2="140.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="118.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >750</text>
+<line x1="130.0" y1="340.0" x2="820.0" y2="340.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="118.0" y="346.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >50</text>
+<path d="M130.0,290.0 L130.0,140.0 L167.6,290.0 Z" fill="#2563eb" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" fill-opacity="0.85"/>
+<path d="M820.0,290.0 L820.0,140.0 L782.4,290.0 Z" fill="#2563eb" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" fill-opacity="0.85"/>
+<rect x="167.6" y="290.0" width="614.7" height="45.9" fill="#e5482a" fill-opacity="0.8"/>
+<line x1="130.0" y1="290.0" x2="820.0" y2="290.0" stroke="#151a22" stroke-width="1.5" />
+<line x1="130.0" y1="130.0" x2="130.0" y2="350.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="118.0" y="296.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >0</text>
+<text x="80.0" y="122.0" font-size="16" fill="#2563eb" text-anchor="start" font-weight="700" >compression, MPa</text>
+<text x="138.0" y="372.0" font-size="16" fill="#e5482a" text-anchor="start" font-weight="700" >tension, MPa (drawn 5× taller)</text>
+<text x="820.0" y="372.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >depth through the 550 µm thickness →</text>
+<text x="183.6" y="166.0" font-size="18" fill="#2563eb" text-anchor="start" font-weight="700" >CS 750</text>
+<text x="183.6" y="190.0" font-size="17" fill="#2563eb" text-anchor="start" font-weight="500" >area A = ½ · CS · DOL</text>
+<text x="766.4" y="190.0" font-size="17" fill="#2563eb" text-anchor="end" font-weight="500" >area A</text>
+<rect x="278.6" y="306.0" width="392.8" height="22.1" rx="5" fill="#ffffff" opacity="0.92"/><text x="475.0" y="320.0" font-size="17" fill="#e5482a" text-anchor="middle" font-weight="700" >CT 46 MPa, strip area = CT · (t − 2·DOL)</text>
+<rect x="200" y="400" width="500" height="64" rx="8" fill="#ffffff" stroke="#d9dde3"/>
+<text x="450.0" y="426.0" font-size="17" fill="#151a22" text-anchor="middle" font-weight="700" >two triangles (2A) = strip  →  CT = CS·DOL / (t − 2·DOL)</text>
+<text x="450.0" y="452.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >750 × 30 / 490 = 46 MPa</text>
+</svg>
