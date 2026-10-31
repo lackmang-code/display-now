@@ -24,25 +24,25 @@
  */
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import {
-  bylineOf,
   articleHref,
-  readingLabel,
-  dateLabel,
   getPublishedArticles,
   type Article,
 } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
 import { getIssues, issueNumberLabel, issueHref, type IssueMeta } from '../lib/issues';
+import Shelf from './Shelf.astro';
+import { issueThumbSrc } from '../lib/issueThumb';
+import { VIDEOS, videoHref } from '../lib/videos';
 
 interface Props {
   latestIssue?: IssueMeta;
   latestIssueCount: number;
-  recentArticles: Article[];
-  editorPicks: Article[];
+  /** 이번 호 기사 — 「이번 호」 목록 */
+  issueArticles: Article[];
   totalCount: number;
 }
 
-const { latestIssue, latestIssueCount, recentArticles, editorPicks, totalCount } = Astro.props;
+const { latestIssue, latestIssueCount, issueArticles, totalCount } = Astro.props;
 
 // 내비 풀다운에 실제 숫자를 넣는다. "전체 기사"만 적혀 있으면 눌러 볼 이유가 없다.
 const published = await getPublishedArticles();
@@ -87,6 +87,17 @@ const navIssues = getIssues().slice(0, 8);
             </a>
           ))
         }
+        {/* 아카이브를 따로 두던 풀다운을 여기로 합쳤다(10/31) — TV·책이 들어오며 320px에서 다섯 칸이 넘쳤다 */}
+        <a class="prow" href="/archive">
+          <span class="ptxt"><b>전체 기사</b><em>제목 · 기업명으로 검색</em></span>
+          <span class="cnt">{totalCount}편</span>
+        </a>
+        {/* 주제 칩 여섯 개를 여기 깔았다가 뺐다(2026-08-25). 풀다운 하나에 담기에 많았다.
+            주제를 고르는 일은 /tag 페이지가 받는다 */}
+        <a class="prow" href="/tag">
+          <span class="ptxt"><b>주제별</b><em>기술 · 기업 단위로 묶어 보기</em></span>
+          <span class="cnt">{topics.length}개</span>
+        </a>
       </div>
     </details>
 
@@ -106,17 +117,13 @@ const navIssues = getIssues().slice(0, 8);
     </details>
 
     <details name="dnnav" class="dd">
-      <summary>아카이브<i class="car"></i></summary>
+      <summary>TV·책<i class="car"></i></summary>
       <div class="panel">
-        <a class="prow" href="/archive">
-          <span class="ptxt"><b>전체 기사</b><em>제목 · 기업명으로 검색</em></span>
-          <span class="cnt">{totalCount}편</span>
+        <a class="prow" href="/tv">
+          <span class="ptxt"><b>DISPLAY NOW TV</b><em>원리를 그림으로 푸는 영상</em></span>
         </a>
-        {/* 주제 칩 여섯 개를 여기 깔았다가 뺐다(2026-08-25). 풀다운 하나에 담기에 많았다.
-            주제를 고르는 일은 /tag 페이지가 받는다 */}
-        <a class="prow" href="/tag">
-          <span class="ptxt"><b>주제별</b><em>기술 · 기업 단위로 묶어 보기</em></span>
-          <span class="cnt">{topics.length}개</span>
+        <a class="prow" href="/books">
+          <span class="ptxt"><b>책</b><em>기사를 주제별로 엮은 단행본</em></span>
         </a>
       </div>
     </details>
@@ -137,54 +144,57 @@ const navIssues = getIssues().slice(0, 8);
     </details>
   </nav>
 
-  <!-- ══════════ 이번 호 ══════════ -->
+  <!-- ══════════ 이번 호 — PC 맨 위 매거진 칸과 같은 짜임: 표지 + 헤드라인 + 목차(10/31 대표) ══════════ -->
   {
     latestIssue && (
-      <a class="issue-band" href={issueHref(latestIssue)}>
-        <span class="ib-top">
-          <span class="ib-label">이번 호</span>
-          <span class="ib-no">{issueNumberLabel(latestIssue)}</span>
+      <div class="issue-band">
+        <a class="ib-row" href={issueHref(latestIssue)}>
+          <img class="ib-cover" src={issueThumbSrc(latestIssue.no)} alt={`${issueNumberLabel(latestIssue)} 표지`} width="600" height="900" decoding="async" />
+          <span class="ib-txt">
+            <span class="ib-top">
+              <span class="ib-label">이번 호</span>
+              <span class="ib-no">{issueNumberLabel(latestIssue)} · {latestIssueCount}편</span>
+            </span>
+            <span class="ib-head">{latestIssue.headline}</span>
+            <span class="ib-go">표지 열기 →</span>
+          </span>
+        </a>
+        <ol class="ib-toc">
+          {issueArticles.map((a) => (
+            <li>
+              <a href={articleHref(a)}>
+                <i style={`background:${sectionColor(a.data.section)};`} />
+                <span class="it-sec">{SECTIONS[a.data.section].label}</span>
+                <span class="it-title">{a.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )
+  }
+
+  <!-- ══════════ TV — PC 맨 위 오른쪽 칸 ══════════ -->
+  {
+    VIDEOS[0] && (
+      <a class="tv-band" href={videoHref(VIDEOS[0])} target="_blank" rel="noopener">
+        <span class="tvb-label">DISPLAY NOW TV</span>
+        <span class="tvb-thumb">
+          <img src={VIDEOS[0].thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
+          <span class="tvb-play" aria-hidden="true" />
+          <span class="tvb-dur">{VIDEOS[0].duration}</span>
         </span>
-        <span class="ib-head">{latestIssue.headline}</span>
-        <span class="ib-foot">
-          <span>{latestIssueCount}편 수록{latestIssue.coverSim && ' · 표지는 시뮬레이션'}</span>
-          <span class="ib-go">표지 열기 →</span>
-        </span>
+        <span class="tvb-title">{VIDEOS[0].title}</span>
       </a>
     )
   }
 
   <div class="pad">
-    <!-- ══════════ 꼭지 바로가기 ══════════ -->
-    <div class="secline"><span>꼭지</span><em><a href="/editorial">편집국 소개 →</a></em></div>
-    <div class="secgrid">
-      {
-        SECTION_ORDER.map((key) => (
-          <a class="seccard" href={`/section/${key}`} style={`border-left-color:${sectionColor(key)};`}>
-            <span class="sc-name" style={`color:${sectionColor(key, 0.74)};`}>{SECTIONS[key].label}</span>
-            <span class="sc-n">{sectionCount(key)}편 · {SECTIONS[key].reporter}</span>
-          </a>
-        ))
-      }
-      <a class="seccard arch" href="/archive">
-        <span class="sc-name">아카이브</span>
-        <span class="sc-n">전체 {totalCount}편 · 검색</span>
-      </a>
-    </div>
-
-    <!-- ══════════ 최신 글 ══════════ -->
-    <div class="secline"><span>최신 글</span><em><a href="/archive">전체 {totalCount}편 →</a></em></div>
-    {
-      recentArticles.map((a) => (
-        <a class="arow" href={articleHref(a)} style={`border-left-color:${sectionColor(a.data.section)};`}>
-          <span class="ar-band" style={`color:${sectionColor(a.data.section, 0.74)};`}>
-            {SECTIONS[a.data.section].label}
-          </span>
-          <span class="ar-title">{a.data.title}</span>
-          <span class="ar-meta">{bylineOf(a)} · 읽기 {readingLabel(a)}</span>
-        </a>
-      ))
-    }
+    <!-- ══════════ 책장 ══════════ -->
+    <!-- 책장 — 매거진·TV·책을 썸네일로 최신부터(10/31 대표) -->
+    <Shelf which="magazine" mobile />
+    <Shelf which="tv" mobile />
+    <Shelf which="books" mobile />
 
     <!-- ══════════ 홍보영상 ══════════ -->
     {/*
@@ -211,30 +221,6 @@ const navIssues = getIssues().slice(0, 8);
       </span>
     </a>
 
-    <!-- ══════════ 편집국 추천 ══════════ -->
-    {
-      editorPicks.length > 0 && (
-        <>
-          <div class="secline"><span>편집국 추천</span><em>사람이 고릅니다</em></div>
-          <div class="picks">
-            {editorPicks.map((a, i) => (
-              <a class="prow2" href={articleHref(a)}>
-                <span class="pno">{String(i + 1).padStart(2, '0')}</span>
-                <span class="pbody">
-                  <span class="ptitle">{a.data.title}</span>
-                  <span class="pmeta">
-                    <span style={`color:${sectionColor(a.data.section, 0.74)};`}>
-                      {SECTIONS[a.data.section].label}
-                    </span>
-                    {' · by '}{a.data.reporter} · {dateLabel(a)}
-                  </span>
-                </span>
-              </a>
-            ))}
-          </div>
-        </>
-      )
-    }
   </div>
 </div>
 
@@ -522,23 +508,40 @@ const navIssues = getIssues().slice(0, 8);
   }
 
   /* ─────────── 이번 호 ─────────── */
-  /* 검정 지면 위에서 이 띠 하나만 골드다. "이번 주는 이것"이라는 표시.
-     밝은 판(테두리만 골드) 안도 만들어 봤으나 대표 판단으로 골드로 확정(2026-08-25) */
+  /* 검정 지면 위에서 이 띠 하나만 골드다. "이번 주는 이것"이라는 표시(2026-08-25 대표 확정).
+     10/31 PC 홈과 같은 짜임으로 — 표지 썸네일 + 헤드라인, 아래에 이번 호 목차 */
   .issue-band {
-    display: block;
     margin: 13px 15px 0;
-    padding: 11px 14px 12px;
+    padding: 12px 14px 6px;
     background: var(--gold);
     color: #17170f;
+  }
+  .ib-row {
+    display: flex;
+    gap: 12px;
+    color: inherit;
     text-decoration: none;
+  }
+  .ib-cover {
+    flex: 0 0 auto;
+    width: 84px;
+    height: auto;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  }
+  .ib-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
   }
   .ib-top {
     display: flex;
     align-items: baseline;
-    gap: 10px;
+    gap: 8px;
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
   }
   .ib-label {
     font-weight: 700;
@@ -547,28 +550,124 @@ const navIssues = getIssues().slice(0, 8);
     color: rgba(23, 23, 15, 0.68);
   }
   .ib-head {
-    display: block;
-    margin: 6px 0 8px;
     font-family: var(--font-serif);
-    font-size: clamp(17px, 5vw, 22px);
+    font-size: clamp(16px, 4.6vw, 20px);
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: -0.035em;
     word-break: keep-all;
   }
-  .ib-foot {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
+  .ib-go {
+    margin-top: auto;
     font-family: var(--font-mono);
     font-size: 11.5px;
-    color: rgba(23, 23, 15, 0.7);
-  }
-  .ib-go {
-    flex: 0 0 auto;
     font-weight: 600;
+  }
+  .ib-toc {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    border-top: 1px solid rgba(23, 23, 15, 0.28);
+  }
+  .ib-toc a {
+    display: grid;
+    grid-template-columns: 8px 52px minmax(0, 1fr);
+    gap: 7px;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(23, 23, 15, 0.14);
     color: #17170f;
+    text-decoration: none;
+  }
+  .ib-toc li:last-child a {
+    border-bottom: none;
+  }
+  .ib-toc i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .it-sec {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .it-title {
+    font-family: var(--font-serif);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.42;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+
+  /* ─────────── TV ─────────── */
+  .tv-band {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 18px 15px 0;
+    color: var(--on-dark);
+    text-decoration: none;
+  }
+  .tvb-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .tvb-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+  }
+  .tvb-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* 재생 표시 — 유튜브 로고를 쓰지 않고 삼각형만 그린다 */
+  .tvb-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px 0 0 -24px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.62);
+  }
+  .tvb-play::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 14px;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .tvb-dur {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    padding: 1px 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .tvb-title {
+    font-family: var(--font-serif);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.42;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
   }
 
   /* ─────────── 본문 ─────────── */
@@ -576,108 +675,15 @@ const navIssues = getIssues().slice(0, 8);
     padding: 0 15px 26px;
   }
   @media (max-width: 380px) {
-    .issue-band {
-      margin: 12px 12px 0;
+    .issue-band,
+    .tv-band {
+      margin-left: 12px;
+      margin-right: 12px;
     }
     .pad {
       padding: 0 12px 24px;
     }
   }
-  .secline {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 22px 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(244, 243, 238, 0.2);
-  }
-  .secline span {
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--gold);
-  }
-  .secline em {
-    font-family: var(--font-mono);
-    font-style: normal;
-    font-size: 11.5px;
-    color: var(--on-dark-mute);
-  }
-  .secline em a {
-    color: var(--on-dark-mute);
-    text-decoration: none;
-  }
-
-  /* 꼭지 — 두 칸씩. 이름과 편수만 담아 목록처럼 보이지 않게 한다 */
-  .secgrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 7px;
-  }
-  .seccard {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    border: 1px solid rgba(244, 243, 238, 0.14);
-    border-left-width: 3px;
-    background: rgba(244, 243, 238, 0.045);
-    padding: 10px 12px;
-    text-decoration: none;
-  }
-  .seccard.arch {
-    grid-column: 1 / -1;
-    border-left-color: rgba(244, 243, 238, 0.4);
-  }
-  .sc-name {
-    font-size: 14.5px;
-    font-weight: 600;
-    color: var(--on-dark);
-  }
-  .seccard.arch .sc-name {
-    color: var(--on-dark);
-  }
-  .sc-n {
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    color: var(--on-dark-mute);
-  }
-
-  /* 최신 글 — 요약 없이 제목 중심. 한 손가락 스크롤로 전체가 보이게 한다 */
-  .arow {
-    display: block;
-    border-left: 3px solid;
-    background: rgba(244, 243, 238, 0.045);
-    padding: 10px 13px 11px;
-    margin-bottom: 6px;
-    text-decoration: none;
-  }
-  .ar-band {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.09em;
-    margin-bottom: 4px;
-  }
-  .ar-title {
-    display: block;
-    color: var(--on-dark);
-    font-family: var(--font-serif);
-    font-size: 15.5px;
-    font-weight: 600;
-    line-height: 1.42;
-    letter-spacing: -0.03em;
-    word-break: keep-all;
-  }
-  .ar-meta {
-    display: block;
-    margin-top: 5px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--on-dark-mute);
-  }
-
   /* ─────────── 홍보영상 ─────────── */
   .mad {
     position: relative;
@@ -736,42 +742,6 @@ const navIssues = getIssues().slice(0, 8);
   .mad-contact {
     display: block;
     margin-top: 5px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--on-dark-mute);
-  }
-
-  /* 편집국 추천 — 번호를 앞세워 목록과 결을 다르게 */
-  .picks {
-    border-top: 1px solid rgba(244, 243, 238, 0.14);
-  }
-  .prow2 {
-    display: flex;
-    gap: 11px;
-    align-items: baseline;
-    padding: 11px 2px;
-    border-bottom: 1px solid rgba(244, 243, 238, 0.1);
-    text-decoration: none;
-  }
-  .pno {
-    flex: 0 0 auto;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--gold);
-  }
-  .pbody {
-    min-width: 0;
-  }
-  .ptitle {
-    display: block;
-    color: var(--on-dark);
-    font-size: 14.5px;
-    line-height: 1.45;
-    word-break: keep-all;
-  }
-  .pmeta {
-    display: block;
-    margin-top: 3px;
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--on-dark-mute);

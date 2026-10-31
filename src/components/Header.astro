@@ -81,6 +81,8 @@ const subscribeHref = en ? '/en#subscribe' : '/subscribe';
           href={en ? '/en/archive' : '/archive'}
           style={activeSection === 'archive' ? 'color:var(--ink); background:#c4c4bc;' : ''}
         >{ui.archive}</a>
+        {!en && <a class="archive-link" href="/tv">TV</a>}
+        {!en && <a class="archive-link" href="/books">책</a>}
       </nav>
     )
   }

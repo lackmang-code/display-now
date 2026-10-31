@@ -23,7 +23,8 @@ const recentArticles = allArticles.filter((a) => a.slug !== bannerHeadSlug).slic
 
 // 이번 호 배너. ISSUES에는 발행 확정된 호만 넣으므로 맨 앞이 곧 최신 호다.
 const latestIssue = getIssues()[0];
-const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue)).length : 0;
+const issueArticles = latestIssue ? await articlesOfIssue(latestIssue) : [];
+const latestIssueCount = issueArticles.length;
 
 // 편집국 추천 — 사람이 고르는 목록 (조회수 아님). 목록 자체는 `src/lib/picks.ts`에 있다.
 // 바로 왼쪽 기사 목록에 이미 있는 것과 배너에 실린 헤드 기사는 뺀다.
@@ -54,8 +55,7 @@ const editorPicks = resolvePicks(allArticles, shownSlugs);
     <HomeMobile
       latestIssue={latestIssue}
       latestIssueCount={latestIssueCount}
-      recentArticles={recentArticles}
-      editorPicks={editorPicks as any}
+      issueArticles={issueArticles}
       totalCount={allArticles.length}
     />
   </div>
@@ -67,6 +67,7 @@ const editorPicks = resolvePicks(allArticles, shownSlugs);
       editorPicks={editorPicks}
       latestIssue={latestIssue}
       latestIssueCount={latestIssueCount}
+      issueArticles={issueArticles}
     />
   </div>
 
@@ -75,8 +76,8 @@ const editorPicks = resolvePicks(allArticles, shownSlugs);
     푸터에는 꼭지·주간호·아카이브·주제별·편집국 링크가 들어 있어 모바일 색인이 그만큼 얇아진다.
   */}
   <div class="frame home-foot">
-    <SubscribeCTA />
-    <Footer />
+    <SubscribeCTA compact />
+    <Footer compact />
   </div>
 </Base>
 

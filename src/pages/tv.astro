@@ -1,0 +1,147 @@
+---
+// DISPLAY NOW TV — 유튜브 채널(@displaynowtv)에 공개된 영상 모음. 홈 세 축 중 「TV」.
+// 목록은 `src/lib/videos.ts` 한 곳. 사이트 안에서 재생하지 않고 유튜브로 넘긴다(플레이어를 심으면
+// 독자가 누르기 전부터 구글 쿠키·스크립트가 실린다).
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { VIDEOS, CHANNEL_URL, videoHref } from '../lib/videos';
+
+const dateDot = (d: string) => d.slice(5).replace('-', '.');
+---
+
+<Base title="DISPLAY NOW TV | DISPLAY NOW" description="디스플레이 속 원리를 그림으로 푸는 DISPLAY NOW의 영상 채널입니다.">
+  <div class="frame dark-frame">
+    <Header showNav={false} />
+
+    <section class="pg-hero">
+      <div class="eyebrow">DISPLAY NOW TV</div>
+      <h1>기사로 읽던 원리를, 움직이는 그림으로</h1>
+      <a class="ch" href={CHANNEL_URL} target="_blank" rel="noopener">유튜브 채널 @displaynowtv →</a>
+    </section>
+
+    <div class="content-pad">
+      <div class="grid">
+        {
+          VIDEOS.map((v) => (
+            <a class="card" href={videoHref(v)} target="_blank" rel="noopener">
+              <span class="thumb">
+                <img src={v.thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
+                <span class="play" aria-hidden="true" />
+                <span class="dur">{v.duration}</span>
+              </span>
+              <span class="title">{v.title}</span>
+              <span class="meta">{dateDot(v.date)} 공개</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .dark-frame {
+    width: min(808px, 100%);
+    background: var(--ink);
+    color: var(--on-dark);
+    border-left-color: var(--line-dark);
+    border-right-color: var(--line-dark);
+  }
+  .pg-hero {
+    padding: clamp(20px, 5vw, 28px) clamp(14px, 4vw, 32px);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .pg-hero h1 {
+    margin: 8px 0 10px;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4.4vw, 32px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .ch {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .content-pad {
+    padding: 8px clamp(14px, 4vw, 24px) 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px 14px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--on-dark);
+    text-decoration: none;
+  }
+  .thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  }
+  .thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px 0 0 -24px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.62);
+  }
+  .play::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 14px;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .dur {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    padding: 1px 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--on-dark-mute);
+  }
+</style>

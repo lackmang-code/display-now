@@ -5,9 +5,12 @@ import type { Lang } from '../lib/articles';
 
 interface Props {
   lang?: Lang;
+  /** 한글 홈 전용 — 링크를 한 줄로 잇고 간행물 정보를 두 줄로 줄인다(10/31 대표 「아주 컴팩트하게」).
+      링크·법정 기재사항은 하나도 빼지 않는다. 배치만 바꾼다 */
+  compact?: boolean;
 }
 
-const { lang = 'ko' } = Astro.props;
+const { lang = 'ko', compact = false } = Astro.props;
 const ui = t(lang);
 const en = lang === 'en';
 ---
@@ -16,7 +19,7 @@ const en = lang === 'en';
   2026-10-04 정리 — 대표 「너무 난잡해」. 링크 12개가 한 덩어리로 줄줄이 이어지고 법정 표기가
   사이에 끼어 있었다. 위는 제호 + 링크 세 묶음(꼭지·둘러보기·안내), 아래는 작은 글씨의 간행물 정보로 나눈다.
 */}
-<footer class="site-footer">
+<footer class:list={['site-footer', { compact }]}>
   <div class="inner">
     <div class="ft-top">
       <div class="ft-brand">
@@ -45,6 +48,8 @@ const en = lang === 'en';
           <a href={en ? '/en/issue' : '/issue'}>{ui.issues}</a>
           <a href={en ? '/en/archive' : '/archive'}>{ui.archive}</a>
           {!en && <a href="/tag">{ui.topics}</a>}
+          {!en && <a href="/tv">DISPLAY NOW TV</a>}
+          {!en && <a href="/books">책</a>}
           <a href={en ? '/en/editorial' : '/editorial'}>{ui.editorial}</a>
         </div>
         <div class="ft-col">
@@ -68,8 +73,8 @@ const en = lang === 'en';
       {[ui.footerPublisher, ui.footerRegistration].map((line) => (
         <div>{line.split(' · ').map((seg, i, all) => (<><span class="nw">{seg}{i < all.length - 1 && ' ·'}</span>{i < all.length - 1 && ' '}</>))}</div>
       ))}
-      <div><a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a> · 010-3938-6918</div>
-      <div class="copy">{ui.footerCopy}</div>
+      <div><a href="mailto:info@nextio.ai.kr">info@nextio.ai.kr</a> · 010-3938-6918{compact && <span> · {ui.footerCopy}</span>}</div>
+      {!compact && <div class="copy">{ui.footerCopy}</div>}
     </div>
   </div>
 </footer>

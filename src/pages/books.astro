@@ -1,0 +1,180 @@
+---
+// DISPLAY NOW 책 — 기사를 바탕으로 엮은 단행본. 홈 세 축 중 「책」.
+// 목록은 `src/lib/books.ts` 한 곳. 판매 링크는 판매가 열린 뒤에만 그 파일에 넣는다.
+// 출판사(발행) 명의는 넥스트아이오, DISPLAY NOW는 지은이(편집부)다.
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { BOOKS, won, bookDateLabel } from '../lib/books';
+
+const today = new Date().toISOString().slice(0, 10);
+---
+
+<Base title="책 | DISPLAY NOW" description="DISPLAY NOW 기사를 바탕으로 엮은 디스플레이 기술 단행본입니다.">
+  <div class="frame dark-frame">
+    <Header showNav={false} />
+
+    <section class="pg-hero">
+      <div class="eyebrow">DISPLAY NOW BOOKS</div>
+      <h1>매주 쓴 기사를, 한 주제씩 책으로 묶습니다</h1>
+    </section>
+
+    <div class="content-pad">
+      {
+        BOOKS.map((b) => (
+          <article class="book" id={b.slug}>
+            <img
+              class="cover"
+              src={b.cover}
+              alt={`『${b.title}』 표지`}
+              width={b.coverW}
+              height={b.coverH}
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="body">
+              <h2>『{b.title}』</h2>
+              <p class="author">{b.author}</p>
+              <p class="lead">{b.lead}</p>
+              <dl class="spec">
+                <dt>발행</dt>
+                <dd>
+                  {b.date > today ? `${bookDateLabel(b.date)} 출간 예정` : `${b.date.replaceAll('-', '.')} 출간`} · 넥스트아이오
+                </dd>
+                {b.pricePaper && (
+                  <>
+                    <dt>종이책</dt>
+                    <dd>{won(b.pricePaper)}{b.pages && ` · ${b.pages}쪽 · 컬러`}</dd>
+                  </>
+                )}
+                {b.priceEbook && (
+                  <>
+                    <dt>전자책</dt>
+                    <dd>{won(b.priceEbook)} · PDF</dd>
+                  </>
+                )}
+              </dl>
+              {b.links.length > 0 && (
+                <div class="buy">
+                  {b.links.map((l) => (
+                    <a href={l.href} target="_blank" rel="noopener">{l.label} →</a>
+                  ))}
+                </div>
+              )}
+              {b.about.map((p) => <p class="about">{p}</p>)}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .dark-frame {
+    width: min(808px, 100%);
+    background: var(--ink);
+    color: var(--on-dark);
+    border-left-color: var(--line-dark);
+    border-right-color: var(--line-dark);
+  }
+  .pg-hero {
+    padding: clamp(20px, 5vw, 28px) clamp(14px, 4vw, 32px);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .pg-hero h1 {
+    margin: 8px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4.4vw, 32px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+  }
+  .content-pad {
+    padding: 8px clamp(14px, 4vw, 32px) 36px;
+  }
+  .book {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid var(--line-dark);
+  }
+  .cover {
+    flex: 0 0 auto;
+    width: min(220px, 60%);
+    height: auto;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 10px 24px rgba(0, 0, 0, 0.5);
+  }
+  .body {
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+  h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
+  }
+  .author {
+    margin: 6px 0 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+  }
+  .lead {
+    margin: 14px 0 0;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--gold);
+    word-break: keep-all;
+  }
+  .spec {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 14px;
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+  .spec dt {
+    font-family: var(--font-mono);
+    color: var(--on-dark-mute);
+  }
+  .spec dd {
+    margin: 0;
+  }
+  .buy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .buy a {
+    padding: 8px 14px;
+    background: var(--gold);
+    color: #17170f;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .about {
+    margin: 14px 0 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #d6d5cd;
+    word-break: keep-all;
+  }
+</style>

@@ -16,6 +16,8 @@ import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { articleHref, type Article, type Lang } from '../lib/articles';
 import { issueNumberLabel, issueDateLabel, issueHref, type IssueMeta } from '../lib/issues';
 import { t } from '../lib/i18n';
+import BrandStrip from './BrandStrip.astro';
+import Shelf from './Shelf.astro';
 
 interface Props {
   lang?: Lang;
@@ -26,6 +28,8 @@ interface Props {
   editorPicks: Article[];
   latestIssue?: IssueMeta;
   latestIssueCount: number;
+  /** 이번 호 기사. 한글 홈 맨 위 매거진 칸에 카드로 싣는다 */
+  issueArticles?: Article[];
 }
 
 const {
@@ -35,6 +39,7 @@ const {
   editorPicks,
   latestIssue,
   latestIssueCount,
+  issueArticles = [],
 } = Astro.props;
 
 const ui = t(lang);
@@ -56,8 +61,11 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     <h1>{ui.homeTagline}</h1>
   </section>
 
+  {/* 한글 홈은 세 축(매거진·TV·책) 띠가 이번 호 배너를 대신한다. 영상·책이 한국어뿐이라 영문 홈은 배너 그대로 */}
+  {!en && <BrandStrip latestIssue={latestIssue} issueArticles={issueArticles} />}
+
   {
-    latestIssue && (
+    en && latestIssue && (
       <a class="issue-banner" href={issueHref(latestIssue, lang)}>
         <div class="ib-left">
           <span class="ib-label">{ui.homeIssueLabel}</span>
@@ -78,6 +86,9 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
   }
 
   <div class="content-pad">
+    {/* 꼭지 카드는 영문 홈에만. 한글 홈은 MAGAZINE 책장 머리의 칩이 꼭지 바로가기를 겸한다(10/31 대표: 최소 크기로) */}
+    {en && (
+    <>
     <div class="row-head">
       <span class="eyebrow">{ui.homeQuickNav}</span>
       <a href={editorialHref} class="muted-link">{ui.homeEditorialLink}</a>
@@ -121,16 +132,31 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
         </div>
       </a>
     </div>
+    </>
+    )}
 
     <div class="main-split">
       <div class="feed">
-        <div class="row-head">
-          <span class="eyebrow">{ui.homeFeedHead}</span>
-          <a href={feedMoreHref} class="muted-link">{ui.homeFeedLink(allArticles.length)}</a>
-        </div>
-        <div class="feed-grid">
-          {recentArticles.map((a) => <ArticleCard article={a} />)}
-        </div>
+        {/* 한글 홈은 최신 글 목록을 두지 않는다 — 이번 호 기사는 맨 위 매거진 칸에 있다(10/31 대표).
+            그 자리에 매거진·TV·책 책장을 둬서 랜딩이 한눈에 들어오게 한다 */}
+        {en ? (
+          <>
+            <div class="row-head">
+              <span class="eyebrow">{ui.homeFeedHead}</span>
+              <a href={feedMoreHref} class="muted-link">{ui.homeFeedLink(allArticles.length)}</a>
+            </div>
+            <div class="feed-grid">
+              {recentArticles.map((a) => <ArticleCard article={a} />)}
+            </div>
+          </>
+        ) : (
+          <>
+            {/* 책장 — 매거진·TV·책을 썸네일로 최신부터(10/31 대표) */}
+            <Shelf which="magazine" />
+            <Shelf which="tv" />
+            <Shelf which="books" />
+          </>
+        )}
       </div>
 
       <aside class="sidebar">
@@ -158,6 +184,9 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
           </div>
         </a>
 
+        {/* 편집국 추천은 영문 홈에만 둔다. 한글 홈은 맨 위 세 축 띠가 TV·책으로 그 역할을 넘겨받았다 */}
+        {en && (
+        <>
         <div class="row-head">
           <span class="eyebrow">{ui.homePicks}</span>
           <span class="muted">{ui.homeMonth(new Date().getMonth() + 1)}</span>
@@ -180,6 +209,8 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
             ))
           }
         </div>
+        </>
+        )}
 
         <div class="newsletter-dark">
           <div class="eyebrow-dark">{ui.homeNlEyebrow}</div>

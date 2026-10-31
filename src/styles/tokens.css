@@ -261,6 +261,66 @@ nav[data-nav],
   white-space: nowrap;
 }
 
+/* 한글 홈 전용 compact — 제호·소개 한 줄, 링크 세 묶음을 한 줄로 이어 붙이고, 간행물 정보를 붙여 쓴다 */
+.site-footer.compact {
+  padding: 16px 24px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.site-footer.compact .ft-top {
+  flex-direction: column;
+  gap: 6px;
+}
+.site-footer.compact .ft-brand {
+  flex: none;
+  max-width: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+}
+.site-footer.compact .brand {
+  font-size: 15px;
+}
+.site-footer.compact .blurb {
+  margin: 0;
+  font-size: 12.5px;
+}
+.site-footer.compact .ft-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  width: auto;
+}
+.site-footer.compact .ft-col {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+}
+.site-footer.compact .ft-h {
+  display: none;
+}
+.site-footer.compact .ft-col + .ft-col::before {
+  content: '|';
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.18);
+}
+/* 좁은 화면에서는 묶음이 줄을 바꿔 구분선이 줄 머리에 걸린다 — 빼고 묶음 사이를 띄운다 */
+@media (max-width: 560px) {
+  .site-footer.compact .ft-col + .ft-col::before {
+    content: none;
+  }
+  .site-footer.compact .ft-nav {
+    gap: 4px 18px;
+  }
+}
+.site-footer.compact .ft-legal {
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
 @media (max-width: 560px) {
   .site-footer .ft-nav {
     width: 100%;

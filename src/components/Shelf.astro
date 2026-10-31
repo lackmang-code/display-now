@@ -1,0 +1,363 @@
+---
+/**
+ * 한글 홈 아래쪽 책장 — 매거진 · TV · 책을 썸네일로 최신부터 진열한다(10/31 대표).
+ *
+ *   magazine — 호 표지(최신 5호) + 「지난 호 전체」, 머리에 꼭지 바로가기 칩
+ *   tv       — 영상 썸네일(최신 4편) + 「채널 전체」
+ *   books    — 책 표지 + 「책 전체」
+ *
+ * 줄이 넘치면 옆으로 밀어 본다(페이지 자체는 가로로 넘치지 않는다).
+ * 기자 소개는 편집국 페이지에 있으니 여기 싣지 않는다(10/31 대표).
+ */
+import { getIssues, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
+import { issueThumbSrc } from '../lib/issueThumb';
+import { VIDEOS, CHANNEL_URL, videoHref } from '../lib/videos';
+import { BOOKS, bookDateLabel } from '../lib/books';
+import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+import { getPublishedArticles } from '../lib/articles';
+
+interface Props {
+  which: 'magazine' | 'tv' | 'books';
+  mobile?: boolean;
+}
+const { which, mobile = false } = Astro.props;
+
+const ISSUE_COUNT = 5;
+const VIDEO_COUNT = 4;
+
+const issues = which === 'magazine' ? getIssues().slice(0, ISSUE_COUNT) : [];
+const videos = which === 'tv' ? VIDEOS.slice(0, VIDEO_COUNT) : [];
+const books = which === 'books' ? BOOKS : [];
+
+const published = which === 'magazine' ? await getPublishedArticles() : [];
+const sectionCount = (key: string) => published.filter((a) => a.data.section === key).length;
+
+const HEAD = {
+  magazine: { label: 'MAGAZINE', sub: '매주 화요일 발행', more: '/issue', moreLabel: '지난 호 전체' },
+  tv: { label: 'DISPLAY NOW TV', sub: '원리를 움직이는 그림으로', more: '/tv', moreLabel: '영상 전체' },
+  books: { label: 'BOOKS', sub: '기사를 주제별로 엮은 책', more: '/books', moreLabel: '책 전체' },
+}[which];
+
+const empty = issues.length + videos.length + books.length === 0;
+---
+
+{
+  !empty && (
+    <section class:list={['shelf', `s-${which}`, { mobile }]}>
+      <div class="sh">
+        <span class="sh-label">{HEAD.label}</span>
+        <span class="sh-sub">{HEAD.sub}</span>
+        <a class="sh-more" href={HEAD.more}>{HEAD.moreLabel} →</a>
+      </div>
+
+      {which === 'magazine' && (
+        <nav class="chips" aria-label="꼭지">
+          {SECTION_ORDER.map((key) => (
+            <a class="chip" href={`/section/${key}`}>
+              <i style={`background:${sectionColor(key)};`} />
+              {SECTIONS[key].label}
+              <b>{sectionCount(key)}</b>
+            </a>
+          ))}
+          <a class="chip" href="/archive">아카이브·검색 <b>{published.length}</b></a>
+        </nav>
+      )}
+
+      <div class="row">
+        {issues.map((i) => (
+          <a class="tile tall" href={issueHref(i)}>
+            <img src={issueThumbSrc(i.no)} alt={`${issueNumberLabel(i)} 표지: ${i.headline}`} width="600" height="900" loading="lazy" decoding="async" />
+            <span class="cap"><b>{issueNumberLabel(i)}</b>{' · '}{issueDateLabel(i).slice(5)}</span>
+          </a>
+        ))}
+
+        {videos.map((v) => (
+          <a class="tile wide" href={videoHref(v)} target="_blank" rel="noopener">
+            <span class="vthumb">
+              <img src={v.thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true" />
+              <span class="dur">{v.duration}</span>
+            </span>
+            <span class="cap vcap">{v.title}</span>
+          </a>
+        ))}
+
+        {books.map((b) => (
+          <a class="tile tall" href={`/books#${b.slug}`}>
+            <img src={b.cover} alt={`『${b.title}』 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
+            <span class="cap"><b>『{b.title}』</b><br />{bookDateLabel(b.date)} 출간</span>
+          </a>
+        ))}
+
+        <a
+          class:list={['tile', 'more', which === 'tv' ? 'wide' : 'tall']}
+          href={which === 'tv' ? CHANNEL_URL : HEAD.more}
+          target={which === 'tv' ? '_blank' : undefined}
+          rel={which === 'tv' ? 'noopener' : undefined}
+        >
+          <span class="more-box">
+            <span>{which === 'magazine' ? '이전 호' : which === 'tv' ? '유튜브 채널' : '책 전체'}</span>
+            <span class="arr">→</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .shelf {
+    margin-top: 30px;
+  }
+  .shelf:first-child {
+    margin-top: 0;
+  }
+  .sh {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    padding-top: 10px;
+    margin-bottom: 12px;
+    border-top: 3px solid var(--ink);
+  }
+  .sh-label {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .sh-sub {
+    font-size: 14px;
+    color: var(--meta-soft);
+  }
+  .sh-more {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--meta);
+    text-decoration: none;
+  }
+
+  /* 꼭지 바로가기 — 칩 한 줄 */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--line-frame);
+    background: var(--card);
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .chip:hover {
+    border-color: var(--ink);
+  }
+  .chip i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .chip b {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--meta);
+  }
+
+  /* 책장 한 칸 — 아래 선반 판 위에 썸네일을 세운다 */
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 4px 4px 12px;
+    border-bottom: 6px solid #cfc7b1;
+    box-shadow: 0 6px 8px -6px rgba(0, 0, 0, 0.35);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+  .tile {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    scroll-snap-align: start;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  /* 매거진 다섯 호 + 「이전 호」 여섯 칸이 PC 본문 폭(약 800px)에 스크롤 없이 들어가는 크기 */
+  .tall {
+    width: 116px;
+  }
+  .wide {
+    width: 236px;
+  }
+  .tall img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s;
+  }
+  .tile:hover img {
+    transform: translateY(-3px);
+  }
+  .vthumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  .vthumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.15s;
+  }
+  /* 재생 표시 — 유튜브 로고를 쓰지 않고 삼각형만 그린다 */
+  .play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.62);
+  }
+  .play::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 11px;
+    border-style: solid;
+    border-width: 9px 0 9px 14px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .dur {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 1px 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+  }
+  .cap {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--meta-soft);
+    line-height: 1.4;
+  }
+  .cap b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .vcap {
+    font-family: var(--font-serif);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    word-break: keep-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* 「이전 호 →」 칸 — 썸네일과 같은 크기의 빈 책 */
+  .more-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px dashed #b9b19b;
+    color: var(--meta-soft);
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .tall .more-box {
+    aspect-ratio: 2 / 3;
+  }
+  .wide .more-box {
+    aspect-ratio: 16 / 9;
+  }
+  .more:hover .more-box {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .arr {
+    font-family: var(--font-mono);
+    font-size: 18px;
+  }
+
+  /* ── 모바일 지면(어두운 바탕) ── */
+  .mobile {
+    margin-top: 26px;
+  }
+  .mobile .sh {
+    border-top: 2px solid var(--gold);
+  }
+  .mobile .sh-label {
+    color: var(--gold);
+    font-size: 14px;
+  }
+  .mobile .sh-sub {
+    font-size: 12.5px;
+    color: var(--on-dark-mute);
+  }
+  .mobile .sh-more {
+    font-size: 11.5px;
+    color: var(--on-dark-mute);
+  }
+  .mobile .chip {
+    background: transparent;
+    border-color: rgba(244, 243, 238, 0.2);
+    color: var(--on-dark);
+    font-size: 12.5px;
+    padding: 4px 9px;
+  }
+  .mobile .chip b {
+    color: var(--on-dark-mute);
+  }
+  .mobile .row {
+    gap: 12px;
+    border-bottom-color: rgba(244, 243, 238, 0.22);
+    box-shadow: none;
+  }
+  .mobile .tall {
+    width: 104px;
+  }
+  .mobile .wide {
+    width: 200px;
+  }
+  .mobile .tile,
+  .mobile .cap b,
+  .mobile .vcap {
+    color: var(--on-dark);
+  }
+  .mobile .cap {
+    color: var(--on-dark-mute);
+    font-size: 11px;
+  }
+  .mobile .more-box {
+    border-color: rgba(244, 243, 238, 0.3);
+    color: var(--on-dark-mute);
+  }
+</style>

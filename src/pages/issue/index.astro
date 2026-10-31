@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { issueThumbSrc } from '../../lib/issueThumb';
 import { sectionColor } from '../../lib/sections';
 import {
   getIssues,
@@ -52,7 +53,7 @@ const withCounts = await Promise.all(
                   <div class="band" style={`background:${band};`} />
                   <div class="shot">
                     <img
-                      src={`/issues/issue-${issue.no}-poster.png`}
+                      src={issueThumbSrc(issue.no)}
                       alt={`${issueNumberLabel(issue)} 표지: ${issue.headline}`}
                       loading="lazy"
                     />
