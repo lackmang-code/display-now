@@ -1,0 +1,75 @@
+<svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="579" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Same stiffness, opposite results</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">LG Display KR20240106353A, Table 1: carbon-fiber support layers folded 100,000 times at −20 °C</text>
+<line x1="130.0" y1="120" x2="130.0" y2="460" stroke="#e6e9ee"/>
+<text x="130.0" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">60</text>
+<line x1="216.2" y1="120" x2="216.2" y2="460" stroke="#e6e9ee"/>
+<text x="216.2" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">70</text>
+<line x1="302.3" y1="120" x2="302.3" y2="460" stroke="#e6e9ee"/>
+<text x="302.3" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">80</text>
+<line x1="388.5" y1="120" x2="388.5" y2="460" stroke="#e6e9ee"/>
+<text x="388.5" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">90</text>
+<line x1="474.6" y1="120" x2="474.6" y2="460" stroke="#e6e9ee"/>
+<text x="474.6" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">100</text>
+<line x1="560.8" y1="120" x2="560.8" y2="460" stroke="#e6e9ee"/>
+<text x="560.8" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">110</text>
+<line x1="646.9" y1="120" x2="646.9" y2="460" stroke="#e6e9ee"/>
+<text x="646.9" y="480.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">120</text>
+<line x1="130" y1="460.0" x2="690" y2="460.0" stroke="#e6e9ee"/>
+<text x="122.0" y="465.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">70</text>
+<line x1="130" y1="399.3" x2="690" y2="399.3" stroke="#e6e9ee"/>
+<text x="122.0" y="404.3" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">75</text>
+<line x1="130" y1="338.6" x2="690" y2="338.6" stroke="#e6e9ee"/>
+<text x="122.0" y="343.6" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">80</text>
+<line x1="130" y1="277.9" x2="690" y2="277.9" stroke="#e6e9ee"/>
+<text x="122.0" y="282.9" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">85</text>
+<line x1="130" y1="217.1" x2="690" y2="217.1" stroke="#e6e9ee"/>
+<text x="122.0" y="222.1" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">90</text>
+<line x1="130" y1="156.4" x2="690" y2="156.4" stroke="#e6e9ee"/>
+<text x="122.0" y="161.4" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">95</text>
+<rect x="130" y="217.1" width="560" height="242.9" fill="#15803d" opacity=".06"/>
+<text x="682.0" y="450.0" font-size="13" fill="#15803d" text-anchor="end" font-weight="700">claimed thickness 70–90 μm</text>
+<line x1="371.2" y1="411.4" x2="173.1" y2="411.4" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="595.2" y1="314.3" x2="233.4" y2="314.3" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="431.5" y1="241.4" x2="405.7" y2="241.4" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="646.9" y1="217.1" x2="250.6" y2="217.1" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="250.6" y1="168.6" x2="466.0" y2="168.6" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="363.2" y="403.4" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="384.2" y="416.4" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">74 μm, 88 GPa</text>
+<circle cx="173.1" cy="411.4" r="9" fill="#15803d" stroke="#15803d" stroke-width="2.6"/>
+<text x="186.1" y="416.4" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">74 μm, 65 GPa</text>
+<rect x="242.6" y="160.6" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="263.6" y="173.6" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">94 μm, 74 GPa</text>
+<circle cx="466.0" cy="168.6" r="9" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="479.0" y="173.6" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">94 μm, 99 GPa</text>
+<rect x="587.2" y="306.3" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="608.2" y="319.3" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">82 μm, 114 GPa</text>
+<circle cx="233.4" cy="314.3" r="9" fill="#15803d" stroke="#15803d" stroke-width="2.6"/>
+<text x="246.4" y="319.3" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">82 μm, 72 GPa</text>
+<rect x="638.9" y="209.1" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="659.9" y="222.1" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">90 μm, 120 GPa</text>
+<circle cx="250.6" cy="217.1" r="9" fill="#15803d" stroke="#15803d" stroke-width="2.6"/>
+<text x="263.6" y="222.1" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">90 μm, 74 GPa</text>
+<rect x="423.5" y="233.4" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.6"/>
+<text x="444.5" y="246.4" font-size="13" fill="#151a22" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">88 μm, 95 GPa</text>
+<circle cx="405.7" cy="241.4" r="9" fill="#15803d" stroke="#15803d" stroke-width="2.6"/>
+<text x="391.7" y="246.4" font-size="13" fill="#151a22" text-anchor="end" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">88 μm, 92 GPa</text>
+<rect x="130" y="120" width="560" height="340" fill="none" stroke="#d9dde3"/>
+<text x="410.0" y="504.0" font-size="14" fill="#151a22" text-anchor="middle" font-weight="700">Young's modulus of the support layer (GPa)</text>
+<text transform="translate(80 290.0) rotate(-90)" font-size="14" fill="#151a22" text-anchor="middle" font-weight="700">support layer thickness (μm)</text>
+<circle cx="730" cy="140" r="8" fill="#15803d" stroke="#15803d" stroke-width="2.4"/>
+<text x="746.0" y="145.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">outer fibers along</text>
+<text x="746.0" y="162.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">the fold axis, passed</text>
+<circle cx="730" cy="192" r="8" fill="#fff" stroke="#dc2626" stroke-width="2.4"/>
+<text x="746.0" y="197.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">along the axis, failed</text>
+<rect x="722" y="226" width="16" height="16" fill="#fff" stroke="#dc2626" stroke-width="2.4"/>
+<text x="746.0" y="239.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">outer fibers across</text>
+<text x="746.0" y="256.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">the fold, failed</text>
+<text x="722.0" y="300.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Dashed line joins</text>
+<text x="722.0" y="317.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">the two layups of</text>
+<text x="722.0" y="334.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">the same thickness.</text>
+<text x="32.0" y="546.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">All values as listed in Table 1 of the specification (folding test: −20 °C, 1 Hz, 100k cycles).</text>
+<text x="32.0" y="564.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Outer-fiber direction = direction of carbon fibers in the top and bottom prepregs.</text>
+</svg>

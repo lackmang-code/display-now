@@ -10,7 +10,7 @@ series:
   id: claim-theme
   part: 1
   episode: 2
-readingMinutes: 14
+readingMinutes: 18
 tags: [폴더블, 지지판, 메탈플레이트, 격자패턴, 디지타이저, S펜, 탄소섬유, 아라미드, 삼성디스플레이, LG디스플레이, 특허로보는폴더블]
 featured: false
 sources:
@@ -39,6 +39,9 @@ sources:
     title: "플렉서블 표시 장치 (KR20220085201A, LG디스플레이, 2020-12-15 우선 · 홈 + 금속 섬유 충진재)"
     url: "https://patents.google.com/patent/KR20220085201A/ko"
   - type: patent
+    title: "전자 장치 (KR103005271B1, 삼성디스플레이, 2021-01-21 우선 · 강화 섬유 장축이 폴딩축과 나란한 지지 플레이트, 교대 적층)"
+    url: "https://patents.google.com/patent/KR103005271B1/ko"
+  - type: patent
     title: "표시 장치 (KR20220108846A, 삼성디스플레이, 2021-01-27 우선 · 유리 또는 세라믹 지지 플레이트)"
     url: "https://patents.google.com/patent/KR20220108846A/ko"
   - type: patent
@@ -50,6 +53,12 @@ sources:
   - type: patent
     title: "전자 장치 (KR20240007970A, 삼성디스플레이, 2022-07-07 우선 · 섬유층 지지 플레이트 두께 100~300 μm)"
     url: "https://patents.google.com/patent/KR20240007970A/ko"
+  - type: patent
+    title: "지지 플레이트, 그 제조 방법 및 이를 포함하는 폴더블 표시 장치 (KR20240106353A, LG디스플레이, 2022-12-29 우선 · 반경화 UD 프리프레그 탄소섬유 지지층, 표 1)"
+    url: "https://patents.google.com/patent/KR20240106353A/ko"
+  - type: patent
+    title: "표시장치 및 이를 포함하는 전자장치 (KR20220167844A, 삼성디스플레이, 2021-06-14 우선 · 강화 섬유 복합재 지지층, 레이저 컷팅 개구부)"
+    url: "https://patents.google.com/patent/KR20220167844A/ko"
   - type: patent
     title: "표시 장치 (KR20240170626A, 삼성디스플레이, 2023-05-24 우선 · 슬릿과 바, 격자 패턴 시인 방지 부재)"
     url: "https://patents.google.com/patent/KR20240170626A/ko"
@@ -161,9 +170,33 @@ sources:
 
 > 「지지층(PLT)은 후술하는 디지타이저(DTM)에서 발생한 자기장을 손실없이 또는 최소한의 손실로써 투과시킬 수 있는 재료로부터 선택될 수 있다.」
 
-예로 든 재료는 탄소섬유 강화 플라스틱(CFRP)이었다. 그런데 넉 달 뒤 2021년 10월 출원(KR102893631B1)은 청구항 1에 아라미드 섬유를 넣었다. 탄소섬유는 전기가 통한다. 판을 자르고 구멍을 뚫는 과정에서 나온 탄소 부스러기가 회로 위에 떨어지면 문제가 된다. 명세서는 아라미드를 쓰면 디지타이저 감도와 안테나 효율이 오르고 「전도성 이물 발생이 방지되므로」 신뢰성이 개선된다고 적었다. 펜 문제를 풀려고 바꾼 재료가 이물 문제를 다시 불러왔고, 그것을 또 재료로 풀었다.
+예로 든 재료는 탄소섬유 강화 플라스틱(CFRP)이었다. 같은 날 출원(KR20220167844A)은 강화 섬유 복합재 지지층이 아래 디지타이저의 자계(magnetic field)에 영향을 미치지 않을 수 있다고 적고, 구멍은 레이저 컷팅으로 낸다고 했다. 그런데 넉 달 뒤 2021년 10월 출원(KR102893631B1)은 청구항 1에 아라미드 섬유를 넣었다. 탄소섬유는 전기가 통하는 재료다. 명세서는 아라미드를 쓰면 디지타이저 감도와 안테나 효율이 오르고 「전도성 이물 발생이 방지되므로」 신뢰성이 개선된다고 적었다. 펜 문제를 풀려고 바꾼 재료가 이물 문제를 다시 불러왔고, 그것을 또 재료로 풀었다.
 
 LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아랫면의 홈을 금속 섬유를 섞은 충진재로 채우는 구조를 청구했다. 구멍을 아예 메우는 방향이다.
+
+### 3.4 탄소섬유는 방향을 고른다
+
+탄소섬유 지지판은 금속판과 다른 질문 하나를 더 받는다. 섬유를 어느 방향으로 눕히느냐다. 탄소섬유는 섬유 방향으로는 매우 단단하지만, 섬유를 가로지르는 방향은 섬유를 묶은 수지가 버틴다. 같은 판이라도 섬유 방향에 따라 잘 휘기도 하고 안 휘기도 한다.
+
+이번 검색에서 탄소섬유 지지판을 청구항에 처음 올린 것은 삼성디스플레이의 2021년 1월 출원(KR103005271B1)이다. 유리 지지 플레이트 출원(2021년 1월 27일)보다 엿새 이르다. 이 출원의 청구항 1은 재료가 아니라 방향을 청구했다. 지지 플레이트가 「복수 개의 강화 섬유들의 장축 각각이 상기 일 방향과 나란하도록 배열된」 서브 지지 플레이트를 포함한다는 것이다. 여기서 「일 방향」은 폴딩축이 뻗은 방향이다. 명세서는 판을 여러 겹으로 쌓는 방법도 적었다. 맨 위와 맨 아래 겹은 섬유를 폴딩축과 나란히 두고, 그 사이에 섬유가 폴딩축과 수직인 겹을 끼워 번갈아 쌓는다. 접히는 부분에는 금속판처럼 구멍을 낸다. 목적은 「가벼운 무게를 가지면서도 우수한 가요성 및 양호한 기계적 물성」이라고 적었다.
+
+<div class="fig-frame">
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/cfrp-ply-layup.svg" alt="Left, a cross-section of a four-ply carbon-fiber plate cut across the fold. The top and bottom plies show fibers as dots because they run along the fold axis into the page; the two middle plies show fibers as horizontal lines running across the fold. A dashed line marks the neutral plane. Right, aligned to the same height, a graph of bending strain through the thickness: largest stretch at the top face, zero at the neutral plane and largest squeeze at the bottom; the top and bottom ply bands are shaded." />
+  <div class="fig-cap">그림 8. 탄소섬유 지지판의 겹 구성과 굽힘 변형률. 단면은 폴딩축과 직각으로 자른 것이라, 폴딩축과 나란한 섬유는 점으로, 가로지르는 섬유는 줄로 보인다. 오른쪽 그래프는 같은 높이에서 판이 접힐 때의 변형률이다. 겹 구성은 KR103005271B1 명세서를 따른 개념도다</div>
+</div>
+
+이유는 굽힘에 있다. 판을 접으면 바깥면은 가장 많이 늘어나고 안쪽면은 가장 많이 줄어든다. 가운데 중립면은 길이가 그대로다. 늘고 주는 방향은 폴딩축을 가로지르는 방향이다. 바깥 겹의 섬유가 폴딩축을 가로질러 누워 있으면, 가장 크게 늘어나는 자리에서 단단한 섬유를 잡아 늘여야 한다. 섬유를 폴딩축과 나란히 눕히면 그 변형은 섬유와 섬유 사이의 수지가 받는다. 가로지르는 겹은 변형이 작은 가운데에 넣어 판의 강성을 맡긴다.
+
+LG디스플레이는 2022년 12월 출원(KR20240106353A)에서 같은 답을 실험값으로 내놓았다. 탄소섬유를 한 방향으로 늘어놓고 수지를 반만 굳힌 프리프레그를 여러 장 쌓아 지지층을 만들고, 반경화 상태로 판 아래에 바로 붙여 접착제를 바르는 공정을 생략한다는 출원이다. 두께는 70~90 μm로 정했다. 70 μm보다 얇으면 판을 받치기 어렵고, 90 μm를 넘으면 접기 어렵다는 이유다. 명세서의 [표 1]은 두께가 같은 지지층 다섯 쌍을 맨 위·맨 아래 겹의 섬유 방향만 바꿔 영하 20 ℃에서 10만 번 접었다.
+
+<div class="fig-frame">
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/cfrp-layup-folding-test.svg" alt="Scatter plot of support layer thickness, 70 to 98 micrometres, against Young's modulus, 60 to 125 GPa, for ten carbon-fiber layups from Table 1. Five with outer fibers across the fold are red squares and all failed. Five with outer fibers along the fold axis are circles: 65 GPa at 74 micrometres, 72 GPa at 82, 92 GPa at 88 and 74 GPa at 90 passed, shown filled green; 99 GPa at 94 micrometres failed. At 88 micrometres the passing layup at 92 GPa sits next to a failing one at 95 GPa." />
+  <div class="fig-cap">그림 9. LG디스플레이 KR20240106353A [표 1]의 탄소섬유 지지층 10종. 같은 두께의 두 지지층을 점선으로 이었다. 맨 위·맨 아래 겹의 섬유가 폴딩축을 가로지른 다섯은 모두 접기 평가(영하 20 ℃, 1 Hz, 10만 회)를 통과하지 못했고, 폴딩축과 나란한 다섯은 94 μm 하나를 빼고 통과했다. 값은 명세서 표 그대로다</div>
+</div>
+
+결과는 갈렸다. 바깥 겹의 섬유가 폴딩축을 가로지른 다섯은 모두 실패했다. 폴딩축과 나란한 다섯은 넷이 통과했고, 실패한 하나는 청구 범위보다 두꺼운 94 μm였다. 두께 88 μm에서는 영률이 92 GPa와 95 GPa로 거의 같은 두 지지층이 바깥 섬유 방향 하나로 합격과 불합격이 나뉘었다. 명세서의 결론은 이렇다. 섬유가 폴딩축과 수직인 프리프레그가 「지지층(130)의 최상부 및 최하부에 위치하였을 때 인장강도는 증가하나 폴딩 구현이 어려워질 수 있다.」
+
+**두 회사는 2년 가까운 간격을 두고 같은 규칙에 닿았다. 바깥 겹의 섬유는 폴딩축과 나란히 눕힌다.** 이번에 「탄소섬유」「지지층」「폴딩」「표시 패널」「개구」로 찾은 한국 출원 63건 가운데 62건이 삼성디스플레이, 1건이 이 LG디스플레이 출원이었다.
 
 ## 4. 145건으로 본 흐름
 
@@ -173,7 +206,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-145-counts.svg" alt="Horizontal bar chart of 145 Korean support-plate filings. Any of the three problems: 96, 66 percent. Pen digitizer field or sensitivity: 68. Show-through: 47. Debris in openings: 36. The word crease anywhere: 40, 28 percent. Crease in claim 1: 0." />
-  <div class="fig-cap">그림 8. 지지판 출원 145건의 명세서가 적은 것. 2026-11-01 구글특허 명세서 전문을 문장 패턴으로 셌다. 「적었다」는 「풀었다」와 다르고, 한 건이 여러 줄에 들어간다. 비침 47건 가운데 10건을 눈으로 확인했고, 모두 판이나 패턴이 보이는 문제를 적은 문장이었다</div>
+  <div class="fig-cap">그림 10. 지지판 출원 145건의 명세서가 적은 것. 2026-11-01 구글특허 명세서 전문을 문장 패턴으로 셌다. 「적었다」는 「풀었다」와 다르고, 한 건이 여러 줄에 들어간다. 비침 47건 가운데 10건을 눈으로 확인했고, 모두 판이나 패턴이 보이는 문제를 적은 문장이었다</div>
 </div>
 
 **지지판 특허의 셋 가운데 둘은 명세서에서 구멍이 만든 문제를 다뤘고, 주름을 한 번이라도 말한 것은 넷 가운데 하나꼴이었다.** 1편에서 본 것처럼 주름은 청구항에 들어가지 않는다. 지지판에서는 명세서에서조차 주름보다 구멍의 뒷일이 더 자주 나온다.
@@ -182,7 +215,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-timeline.svg" alt="Timeline from 2015 to 2026 with four lanes of filings and one lane of Samsung launches. Let it bend: LG Display openings and slits in 2015. Hide the pattern: LG Display step fill 2015, flat-area openings end of 2017, Samsung Display light shield 2019, glass over coils 2021. Keep debris out: Samsung Display elastic layer 2019, aramid 2021. Let the pen through: Samsung Display metal only at fold 2020, glass early 2021, CFRP mid 2021, aramid late 2021. Samsung launches: Galaxy Fold early 2019, Z Fold3 with first S Pen August 2021, Z Fold7 with no S Pen July 2025." />
-  <div class="fig-cap">그림 9. 문제별로 이번 검색에서 찾은 가장 이른 출원(우선일)과 삼성 폴더블 발표. 출원이 곧 그 제품에 쓰였다는 뜻은 아니다</div>
+  <div class="fig-cap">그림 11. 문제별로 이번 검색에서 찾은 가장 이른 출원(우선일)과 삼성 폴더블 발표. 출원이 곧 그 제품에 쓰였다는 뜻은 아니다</div>
 </div>
 
 연표로 놓으면 순서가 보인다. 휘게 하는 구멍은 2015년에 나왔고, 감추는 방법은 2015년부터 2021년까지 이어졌다. 펜 갈래는 2020년 8월부터 2021년 10월 사이에 몰려 있다. 이물 갈래는 2019년에 한 번, 탄소섬유가 들어온 뒤인 2021년에 다시 나온다.
@@ -213,9 +246,11 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 | 2020-02 | 삼성디스플레이 | 서로 다른 폭의 홀 두 종류로 된 격자 지지층 | 구멍 이물(덮개층) · SUS 304 150 μm 실시예 | 유지 |
 | 2020-08 | 삼성디스플레이 | 절연성 지지부분 + 그 아래 나눈 디지타이저 | 펜 자기장 · 코일이 보인다 | 심사 중 |
 | 2020-12 | LG디스플레이 | 판 아랫면 홈 + 금속 섬유 충진재 | | 유지 |
+| 2021-01 | 삼성디스플레이 | 섬유 장축이 폴딩축과 나란한 강화 섬유 지지 플레이트 | 가벼우면서 가요성 | 유지 |
 | 2021-01 | 삼성디스플레이 | 유리 또는 세라믹 지지 플레이트 | 펜 자기장 · 코일 단차 | 유지 |
 | 2021-06 | 삼성디스플레이 | 개구 지지층 + 디지타이저 + 커버층 | 자기장을 손실 없이 투과(CFRP) | 유지 |
 | 2021-10 | 삼성디스플레이 | 아라미드 섬유 지지부분 | 감도 · 전도성 이물 | 유지 |
+| 2022-12 | LG디스플레이 | 반경화 탄소섬유 프리프레그 지지층, 70~90 μm | 바깥 섬유가 폴딩축과 수직이면 접기 어려움 | 심사 중 |
 | 2023-05 | 삼성디스플레이 | 슬릿과 바 + 그루브 | 격자 패턴이 보인다 | 심사 중 |
 
 </div>
@@ -224,7 +259,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 ### 6.2 무엇이 갈랐나
 
-출원인을 보면 순서가 갈린다. 구멍을 내는 발상과 그것을 감추는 첫 방법들은 LG디스플레이가 2015년에서 2017년 사이에 먼저 적었다. 2019년부터는 삼성디스플레이가 칸을 채웠고, 펜 갈래는 이번 검색에서 삼성디스플레이 출원만 나왔다. 145건 가운데 136건이 삼성디스플레이다.
+출원인을 보면 순서가 갈린다. 구멍을 내는 발상과 그것을 감추는 첫 방법들은 LG디스플레이가 2015년에서 2017년 사이에 먼저 적었다. 2019년부터는 삼성디스플레이가 칸을 채웠다. 이번에 원문을 읽은 펜 갈래 출원은 모두 삼성디스플레이 것이었고, 격자 지지판 145건 가운데 136건, 탄소섬유 지지층 63건 가운데 62건이 삼성디스플레이다. LG디스플레이는 2022년 탄소섬유 겹 구성에서 다시 나온다.
 
 이 차이는 제품과 겹친다. 펜을 지원하는 폴더블을 2021년에 내놓은 것은 삼성이었고, 디지타이저가 지지판 아래에 들어가면서 판의 재료가 문제가 됐다. 펜이 없는 폴더블이라면 세 번째 문제는 애초에 생기지 않는다. 지지판 특허의 지형은 누가 먼저 구멍을 냈는가보다, 누가 그 구멍 아래에 무엇을 넣었는가로 갈렸다.
 
