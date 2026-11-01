@@ -1,6 +1,6 @@
 ---
 title: "폴더블 지지판 특허, 주름을 풀자 비친 구멍"
-searchTitle: "특허로 보는 폴더블 디스플레이 ② 주름과 지지판 (지지판 · support plate · 백플레이트 · back plate · 메탈 플레이트 · 격자 패턴 · lattice · 슬릿 · 개구 패턴 · 패턴 시인 · 디지타이저 · digitizer · S펜 · 탄소섬유 강화 플라스틱 · CFRP · 아라미드 · 유리섬유 강화 플라스틱 · 갤럭시 Z 폴드3 · 갤럭시 Z 폴드7 · 삼성디스플레이 · LG디스플레이)"
+searchTitle: "특허로 보는 폴더블 디스플레이 ② 주름과 지지판 (지지판 · support plate · 백플레이트 · back plate · 메탈 플레이트 · 격자 패턴 · lattice · 슬릿 · 개구 패턴 · 패턴 시인 · 디지타이저 · digitizer · S펜 · 탄소섬유 강화 플라스틱 · CFRP · 아라미드 · 프리프레그 · prepreg · 섬유 방향 · 유리섬유 강화 플라스틱 · 갤럭시 Z 폴드3 · 갤럭시 Z 폴드7 · 삼성디스플레이 · LG디스플레이)"
 summary: "폴더블 화면 뒤의 지지판은 접히는 띠에 구멍을 내 휘게 만듭니다. 그런데 구멍을 처음 낸 2015년 출원은 같은 문서에 그 구멍이 화면에 비친다고 적었습니다. 그 뒤 지지판 특허는 주름보다 구멍이 만든 문제 셋, 곧 비침·이물·펜 신호를 푸는 데 쓰였습니다. 「특허로 보는 폴더블 디스플레이」 연재 두 번째 편입니다."
 section: patent
 reporter: CLAIM
@@ -178,7 +178,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 탄소섬유 지지판은 금속판과 다른 질문 하나를 더 받는다. 섬유를 어느 방향으로 눕히느냐다. 탄소섬유는 섬유 방향으로는 매우 단단하지만, 섬유를 가로지르는 방향은 섬유를 묶은 수지가 버틴다. 같은 판이라도 섬유 방향에 따라 잘 휘기도 하고 안 휘기도 한다.
 
-이번 검색에서 탄소섬유 지지판을 청구항에 처음 올린 것은 삼성디스플레이의 2021년 1월 출원(KR103005271B1)이다. 유리 지지 플레이트 출원(2021년 1월 27일)보다 엿새 이르다. 이 출원의 청구항 1은 재료가 아니라 방향을 청구했다. 지지 플레이트가 「복수 개의 강화 섬유들의 장축 각각이 상기 일 방향과 나란하도록 배열된」 서브 지지 플레이트를 포함한다는 것이다. 여기서 「일 방향」은 폴딩축이 뻗은 방향이다. 명세서는 판을 여러 겹으로 쌓는 방법도 적었다. 맨 위와 맨 아래 겹은 섬유를 폴딩축과 나란히 두고, 그 사이에 섬유가 폴딩축과 수직인 겹을 끼워 번갈아 쌓는다. 접히는 부분에는 금속판처럼 구멍을 낸다. 목적은 「가벼운 무게를 가지면서도 우수한 가요성 및 양호한 기계적 물성」이라고 적었다.
+이번 검색에서 섬유 지지판의 섬유 방향을 청구항에 처음 올린 것은 삼성디스플레이의 2021년 1월 출원(KR103005271B1)이다. 청구항은 「강화 섬유」라고만 썼고, 탄소섬유는 명세서에 나온다. 유리 지지 플레이트 출원(2021년 1월 27일)보다 엿새 이르다. 이 출원의 청구항 1은 재료가 아니라 방향을 청구했다. 지지 플레이트가 「복수 개의 강화 섬유들의 장축 각각이 상기 일 방향과 나란하도록 배열된」 서브 지지 플레이트를 포함한다는 것이다. 여기서 「일 방향」은 폴딩축이 뻗은 방향이다. 명세서는 판을 여러 겹으로 쌓는 방법도 적었다. 맨 위와 맨 아래 겹은 섬유를 폴딩축과 나란히 두고, 그 사이에 섬유가 폴딩축과 수직인 겹을 끼워 번갈아 쌓는다. 접히는 부분에는 금속판처럼 구멍을 낸다. 목적은 「가벼운 무게를 가지면서도 우수한 가요성 및 양호한 기계적 물성」이라고 적었다.
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/cfrp-ply-layup.svg" alt="Left, a cross-section of a four-ply carbon-fiber plate cut across the fold. The top and bottom plies show fibers as dots because they run along the fold axis into the page; the two middle plies show fibers as horizontal lines running across the fold. A dashed line marks the neutral plane. Right, aligned to the same height, a graph of bending strain through the thickness: largest stretch at the top face, zero at the neutral plane and largest squeeze at the bottom; the top and bottom ply bands are shaded." />
@@ -214,11 +214,11 @@ LG디스플레이는 2022년 12월 출원(KR20240106353A)에서 같은 답을 �
 ### 4.2 문제를 따라간 출원
 
 <div class="fig-frame">
-  <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-timeline.svg" alt="Timeline from 2015 to 2026 with four lanes of filings and one lane of Samsung launches. Let it bend: LG Display openings and slits in 2015. Hide the pattern: LG Display step fill 2015, flat-area openings end of 2017, Samsung Display light shield 2019, glass over coils 2021. Keep debris out: Samsung Display elastic layer 2019, aramid 2021. Let the pen through: Samsung Display metal only at fold 2020, glass early 2021, CFRP mid 2021, aramid late 2021. Samsung launches: Galaxy Fold early 2019, Z Fold3 with first S Pen August 2021, Z Fold7 with no S Pen July 2025." />
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-timeline.svg" alt="Timeline from 2015 to 2026 with four lanes of filings and one lane of Samsung launches. Let it bend: LG Display openings and slits in 2015, Samsung Display fibers along the fold axis in early 2021, LG Display carbon-fiber prepreg layup at the end of 2022. Hide the pattern: LG Display step fill 2015, flat-area openings end of 2017, Samsung Display light shield 2019, glass over coils 2021. Keep debris out: Samsung Display elastic layer 2019, aramid 2021. Let the pen through: Samsung Display metal only at fold 2020, glass early 2021, CFRP mid 2021, aramid late 2021. Samsung launches: Galaxy Fold early 2019, Z Fold3 with first S Pen August 2021, Z Fold7 with no S Pen July 2025." />
   <div class="fig-cap">그림 11. 문제별로 이번 검색에서 찾은 가장 이른 출원(우선일)과 삼성 폴더블 발표. 출원이 곧 그 제품에 쓰였다는 뜻은 아니다</div>
 </div>
 
-연표로 놓으면 순서가 보인다. 휘게 하는 구멍은 2015년에 나왔고, 감추는 방법은 2015년부터 2021년까지 이어졌다. 펜 갈래는 2020년 8월부터 2021년 10월 사이에 몰려 있다. 이물 갈래는 2019년에 한 번, 탄소섬유가 들어온 뒤인 2021년에 다시 나온다.
+연표로 놓으면 순서가 보인다. 휘게 하는 구멍은 2015년에 나왔고, 감추는 방법은 2015년부터 2021년까지 이어졌다. 펜 갈래는 2020년 8월부터 2021년 10월 사이에 몰려 있다. 이물 갈래는 2019~2020년에 구멍 아래를 덮는 층으로 나오고, 탄소섬유가 들어온 뒤인 2021년에 재료를 바꾸는 방식으로 다시 나온다. 휘게 하는 갈래도 2021년에 다시 열린다. 판이 섬유로 바뀌자 섬유의 방향이 새 설계 변수가 됐다.
 
 ## 5. 제품의 시계와 맞춰 보면
 
@@ -267,13 +267,15 @@ LG디스플레이는 2022년 12월 출원(KR20240106353A)에서 같은 답을 �
 
 검색은 구글특허 한국어 전문 검색이다. 「격자」「패턴」을 함께 요구했으므로 슬릿이나 홀만 쓴 출원은 145건에서 빠졌을 수 있다. 중국·일본 회사의 지지판 출원은 이번 집계에 들어가지 않았다. 「가장 이른 출원」은 이번 검색에서 찾은 가장 이른 것이며, 더 이른 출원이 없다는 뜻이 아니다.
 
+탄소섬유 지지층 63건은 「탄소섬유」「지지층」「폴딩」「표시 패널」「개구」를 모두 담은 한국 출원이고, 출원인은 특허 페이지의 표시로 셌다. 섬유 방향의 접기 실험값은 LG디스플레이 출원 한 건의 표이며, 삼성디스플레이 출원은 방향을 청구했지만 같은 형식의 실험값을 적지는 않았다.
+
 145건 집계는 문장 패턴으로 센 것이다. 명세서가 문제를 적었다는 것과 그 출원이 문제를 풀었다는 것은 다르다. 비침 47건 가운데 10건만 눈으로 확인했다.
 
 지지판이 휘는 원리는 구멍 사이 다리가 비틀리고 휜다는 수준까지만 적었다. 치수는 두 출원(KR102356652B1의 실시예, KR102893631B1의 범위)만 그림에 옮겼다. 명세서 145건 가운데 구멍·다리 치수를 적은 것은 더 있지만 판 재료와 두께가 달라 한 그래프에 모으지 않았고, 구멍 크기와 접힘 힘의 관계도 이번 편에서 계산하지 않았다. 청구항 1에 수치를 둔 출원은 145건 가운데 소수였고(예: 섬유층 지지 플레이트 두께 100~300 μm, KR20240007970A), 같은 기준으로 묶을 수 없었다.
 
 ## 8. 결론 및 다음 편
 
-접는 화면 뒤의 판은 단단하면서 휘어야 했다. 특허는 접히는 띠에만 구멍을 내 그 모순을 풀었다. 그런데 구멍을 처음 낸 2015년 출원은 같은 문서에 그 구멍이 화면에 비친다고 적었다. 그 뒤로 지지판 특허는 구멍을 감추고, 구멍에 들어간 먼지를 막고, 펜 신호가 구멍 난 판을 지나가게 하는 쪽으로 흘렀다. 145건 가운데 96건이 그 셋 가운데 하나를 적었고, 주름을 말한 것은 40건이었다.
+접는 화면 뒤의 판은 단단하면서 휘어야 했다. 특허는 접히는 띠에만 구멍을 내 그 모순을 풀었다. 그런데 구멍을 처음 낸 2015년 출원은 같은 문서에 그 구멍이 화면에 비친다고 적었다. 그 뒤로 지지판 특허는 구멍을 감추고, 구멍에 들어간 먼지를 막고, 펜 신호가 구멍 난 판을 지나가게 하는 쪽으로 흘렀다. 145건 가운데 96건이 그 셋 가운데 하나를 적었고, 주름을 말한 것은 40건이었다. 판이 금속에서 탄소섬유로 바뀌자 질문이 하나 더 생겼고, 삼성디스플레이와 LG디스플레이는 같은 답을 적었다. 바깥 겹의 섬유는 폴딩축과 나란히 눕힌다.
 
 1편과 이번 편을 겹쳐 보면 하나가 보인다. 주름은 폴더블의 첫 문제였지만, 주름을 풀려고 넣은 구조가 매번 다음 문제를 만들었다. 물방울 힌지는 몸체 안 공간을, 지지판의 구멍은 비침과 이물과 펜을 불렀다.
 
