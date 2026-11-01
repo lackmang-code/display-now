@@ -12,22 +12,34 @@
 <text x="592.0" y="122.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">3  Pen signal</text>
 <text x="592.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">a metal plate blocks the</text>
 <text x="592.0" y="165.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">digitizer's magnetic field</text>
-<linearGradient id="pu6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<linearGradient id="pu28" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
 <rect x="38" y="272" width="250" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
-<rect x="32.0" y="252" width="64.0" height="22" fill="url(#pu6)"/>
-<line x1="32.0" y1="252.6" x2="96.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="118.0" y="252" width="28.0" height="22" fill="url(#pu6)"/>
-<line x1="118.0" y1="252.6" x2="146.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="168.0" y="252" width="28.0" height="22" fill="url(#pu6)"/>
-<line x1="168.0" y1="252.6" x2="196.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="218.0" y="252" width="64.0" height="22" fill="url(#pu6)"/>
-<line x1="218.0" y1="252.6" x2="282.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<linearGradient id="qu7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
-<path d="M32,236 L92.0,236 Q107.0,245.0 122.0,236 L142.0,236 Q157.0,245.0 172.0,236 L192.0,236 Q207.0,245.0 222.0,236 L282,236 L282,252 L222.0,252 Q207.0,261.0 192.0,252 L172.0,252 Q157.0,261.0 142.0,252 L122.0,252 Q107.0,261.0 92.0,252 L32,252 Z" fill="url(#qu7)"/>
-<path d="M32,236 L92.0,236 Q107.0,245.0 122.0,236 L142.0,236 Q157.0,245.0 172.0,236 L192.0,236 Q207.0,245.0 222.0,236 L282,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
-<line x1="107.0" y1="206" x2="107.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<rect x="32.0" y="252" width="5.6" height="22" fill="url(#pu28)"/>
+<line x1="32.0" y1="252.6" x2="37.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="54.2" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="54.2" y1="252.6" x2="65.3" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="82.0" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="82.0" y1="252.6" x2="93.1" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="109.8" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="109.8" y1="252.6" x2="120.9" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="137.6" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="137.6" y1="252.6" x2="148.7" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="165.3" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="165.3" y1="252.6" x2="176.4" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="193.1" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="193.1" y1="252.6" x2="204.2" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="220.9" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="220.9" y1="252.6" x2="232.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="248.7" y="252" width="11.1" height="22" fill="url(#pu28)"/>
+<line x1="248.7" y1="252.6" x2="259.8" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="276.4" y="252" width="5.6" height="22" fill="url(#pu28)"/>
+<line x1="276.4" y1="252.6" x2="282.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu29" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M32,236 L36.6,236 Q45.9,243.0 55.2,236 L64.3,236 Q73.7,243.0 83.0,236 L92.1,236 Q101.4,243.0 110.8,236 L119.9,236 Q129.2,243.0 138.6,236 L147.7,236 Q157.0,243.0 166.3,236 L175.4,236 Q184.8,243.0 194.1,236 L203.2,236 Q212.6,243.0 221.9,236 L231.0,236 Q240.3,243.0 249.7,236 L258.8,236 Q268.1,243.0 277.4,236 L282,236 L282,252 L277.4,252 Q268.1,259.0 258.8,252 L249.7,252 Q240.3,259.0 231.0,252 L221.9,252 Q212.6,259.0 203.2,252 L194.1,252 Q184.8,259.0 175.4,252 L166.3,252 Q157.0,259.0 147.7,252 L138.6,252 Q129.2,259.0 119.9,252 L110.8,252 Q101.4,259.0 92.1,252 L83.0,252 Q73.7,259.0 64.3,252 L55.2,252 Q45.9,259.0 36.6,252 L32,252 Z" fill="url(#qu29)"/>
+<path d="M32,236 L36.6,236 Q45.9,243.0 55.2,236 L64.3,236 Q73.7,243.0 83.0,236 L92.1,236 Q101.4,243.0 110.8,236 L119.9,236 Q129.2,243.0 138.6,236 L147.7,236 Q157.0,243.0 166.3,236 L175.4,236 Q184.8,243.0 194.1,236 L203.2,236 Q212.6,243.0 221.9,236 L231.0,236 Q240.3,243.0 249.7,236 L258.8,236 Q268.1,243.0 277.4,236 L282,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<line x1="73.7" y1="206" x2="73.7" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
 <line x1="157.0" y1="206" x2="157.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
-<line x1="207.0" y1="206" x2="207.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="240.3" y1="206" x2="240.3" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
 <text x="157.0" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">lines seen on the screen</text>
 <text x="157.0" y="302.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">screen sags into each opening</text>
 <text x="32.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
@@ -39,26 +51,38 @@
 <text x="49.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">light-shield layer · SDC 2019</text>
 <circle cx="38" cy="472" r="4.5" fill="#1d4ed8"/>
 <text x="49.0" y="477.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">flat glass over coils · SDC 2021</text>
-<linearGradient id="pu8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<linearGradient id="pu30" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
 <rect x="318" y="272" width="250" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
-<rect x="312.0" y="252" width="64.0" height="22" fill="url(#pu8)"/>
-<line x1="312.0" y1="252.6" x2="376.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="398.0" y="252" width="28.0" height="22" fill="url(#pu8)"/>
-<line x1="398.0" y1="252.6" x2="426.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="448.0" y="252" width="28.0" height="22" fill="url(#pu8)"/>
-<line x1="448.0" y1="252.6" x2="476.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="498.0" y="252" width="64.0" height="22" fill="url(#pu8)"/>
-<line x1="498.0" y1="252.6" x2="562.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<linearGradient id="qu9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
-<path d="M312,236 L372.0,236 Q387.0,236.0 402.0,236 L422.0,236 Q437.0,236.0 452.0,236 L472.0,236 Q487.0,236.0 502.0,236 L562,236 L562,252 L502.0,252 Q487.0,252.0 472.0,252 L452.0,252 Q437.0,252.0 422.0,252 L402.0,252 Q387.0,252.0 372.0,252 L312,252 Z" fill="url(#qu9)"/>
-<path d="M312,236 L372.0,236 Q387.0,236.0 402.0,236 L422.0,236 Q437.0,236.0 452.0,236 L472.0,236 Q487.0,236.0 502.0,236 L562,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
-<radialGradient id="ru10" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
-<circle cx="387.0" cy="267.5" r="5.5" fill="url(#ru10)"/>
-<radialGradient id="ru11" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
-<circle cx="487.0" cy="268.5" r="4.5" fill="url(#ru11)"/>
+<rect x="312.0" y="252" width="5.6" height="22" fill="url(#pu30)"/>
+<line x1="312.0" y1="252.6" x2="317.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="334.2" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="334.2" y1="252.6" x2="345.3" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="362.0" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="362.0" y1="252.6" x2="373.1" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="389.8" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="389.8" y1="252.6" x2="400.9" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="417.6" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="417.6" y1="252.6" x2="428.7" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="445.3" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="445.3" y1="252.6" x2="456.4" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="473.1" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="473.1" y1="252.6" x2="484.2" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="500.9" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="500.9" y1="252.6" x2="512.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="528.7" y="252" width="11.1" height="22" fill="url(#pu30)"/>
+<line x1="528.7" y1="252.6" x2="539.8" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="556.4" y="252" width="5.6" height="22" fill="url(#pu30)"/>
+<line x1="556.4" y1="252.6" x2="562.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu31" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M312,236 L316.6,236 Q325.9,236.0 335.2,236 L344.3,236 Q353.7,236.0 363.0,236 L372.1,236 Q381.4,236.0 390.8,236 L399.9,236 Q409.2,236.0 418.6,236 L427.7,236 Q437.0,236.0 446.3,236 L455.4,236 Q464.8,236.0 474.1,236 L483.2,236 Q492.6,236.0 501.9,236 L511.0,236 Q520.3,236.0 529.7,236 L538.8,236 Q548.1,236.0 557.4,236 L562,236 L562,252 L557.4,252 Q548.1,252.0 538.8,252 L529.7,252 Q520.3,252.0 511.0,252 L501.9,252 Q492.6,252.0 483.2,252 L474.1,252 Q464.8,252.0 455.4,252 L446.3,252 Q437.0,252.0 427.7,252 L418.6,252 Q409.2,252.0 399.9,252 L390.8,252 Q381.4,252.0 372.1,252 L363.0,252 Q353.7,252.0 344.3,252 L335.2,252 Q325.9,252.0 316.6,252 L312,252 Z" fill="url(#qu31)"/>
+<path d="M312,236 L316.6,236 Q325.9,236.0 335.2,236 L344.3,236 Q353.7,236.0 363.0,236 L372.1,236 Q381.4,236.0 390.8,236 L399.9,236 Q409.2,236.0 418.6,236 L427.7,236 Q437.0,236.0 446.3,236 L455.4,236 Q464.8,236.0 474.1,236 L483.2,236 Q492.6,236.0 501.9,236 L511.0,236 Q520.3,236.0 529.7,236 L538.8,236 Q548.1,236.0 557.4,236 L562,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<radialGradient id="ru32" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
+<circle cx="381.4" cy="268.0" r="5" fill="url(#ru32)"/>
+<radialGradient id="ru33" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
+<circle cx="492.6" cy="268.5" r="4.5" fill="url(#ru33)"/>
 <text x="437.0" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">particles in the openings</text>
-<path d="M387.0,206 L387.0,260" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
-<path d="M487.0,206 L487.0,262" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
+<path d="M381.4,206 L381.4,260" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
+<path d="M492.6,206 L492.6,262" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
 <text x="312.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
 <circle cx="318" cy="400" r="4.5" fill="#1d4ed8"/>
 <text x="329.0" y="405.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">elastic layer under openings · SDC 2019</text>
@@ -66,27 +90,39 @@
 <text x="329.0" y="429.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">cover layer under the band · SDC 2021</text>
 <circle cx="318" cy="448" r="4.5" fill="#1d4ed8"/>
 <text x="329.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">non-conductive aramid · SDC 2021</text>
-<linearGradient id="pu12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<linearGradient id="pu34" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
 <rect x="598" y="272" width="117.5" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
-<rect x="592.0" y="252" width="80.6" height="22" fill="url(#pu12)"/>
-<line x1="592.0" y1="252.6" x2="672.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="694.6" y="252" width="14.9" height="22" fill="url(#pu12)"/>
-<line x1="694.6" y1="252.6" x2="709.5" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<linearGradient id="qu13" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
-<path d="M592,236 L668.6,236 Q683.6,236.0 698.6,236 L709.5,236 L709.5,252 L698.6,252 Q683.6,252.0 668.6,252 L592,252 Z" fill="url(#qu13)"/>
-<path d="M592,236 L668.6,236 Q683.6,236.0 698.6,236 L709.5,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
-<linearGradient id="pu14" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b88945"/><stop offset="1" stop-color="#885305"/></linearGradient>
+<rect x="592.0" y="252" width="5.9" height="22" fill="url(#pu34)"/>
+<line x1="592.0" y1="252.6" x2="597.9" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="615.5" y="252" width="11.8" height="22" fill="url(#pu34)"/>
+<line x1="615.5" y1="252.6" x2="627.2" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="644.9" y="252" width="11.8" height="22" fill="url(#pu34)"/>
+<line x1="644.9" y1="252.6" x2="656.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="674.2" y="252" width="11.8" height="22" fill="url(#pu34)"/>
+<line x1="674.2" y1="252.6" x2="686.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="703.6" y="252" width="5.9" height="22" fill="url(#pu34)"/>
+<line x1="703.6" y1="252.6" x2="709.5" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu35" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M592,236 L596.9,236 Q606.7,236.0 616.5,236 L626.2,236 Q636.1,236.0 645.9,236 L655.6,236 Q665.4,236.0 675.2,236 L685.0,236 Q694.8,236.0 704.6,236 L709.5,236 L709.5,252 L704.6,252 Q694.8,252.0 685.0,252 L675.2,252 Q665.4,252.0 655.6,252 L645.9,252 Q636.1,252.0 626.2,252 L616.5,252 Q606.7,252.0 596.9,252 L592,252 Z" fill="url(#qu35)"/>
+<path d="M592,236 L596.9,236 Q606.7,236.0 616.5,236 L626.2,236 Q636.1,236.0 645.9,236 L655.6,236 Q665.4,236.0 675.2,236 L685.0,236 Q694.8,236.0 704.6,236 L709.5,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<linearGradient id="pu36" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b88945"/><stop offset="1" stop-color="#885305"/></linearGradient>
 <rect x="730.5" y="272" width="117.5" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
-<rect x="724.5" y="252" width="14.9" height="22" fill="url(#pu14)"/>
-<line x1="724.5" y1="252.6" x2="739.4" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<rect x="761.4" y="252" width="80.6" height="22" fill="url(#pu14)"/>
-<line x1="761.4" y1="252.6" x2="842.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
-<linearGradient id="qu15" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
-<path d="M724.5,236 L735.4,236 Q750.4,236.0 765.4,236 L842.0,236 L842.0,252 L765.4,252 Q750.4,252.0 735.4,252 L724.5,252 Z" fill="url(#qu15)"/>
-<path d="M724.5,236 L735.4,236 Q750.4,236.0 765.4,236 L842.0,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
-<linearGradient id="du16" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e87df"/><stop offset="1" stop-color="#3c32b5"/></linearGradient>
-<rect x="592" y="290" width="117.5" height="10" fill="url(#du16)"/>
-<rect x="724.5" y="290" width="117.5" height="10" fill="url(#du16)"/>
+<rect x="724.5" y="252" width="5.9" height="22" fill="url(#pu36)"/>
+<line x1="724.5" y1="252.6" x2="730.4" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="748.0" y="252" width="11.8" height="22" fill="url(#pu36)"/>
+<line x1="748.0" y1="252.6" x2="759.8" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="777.4" y="252" width="11.8" height="22" fill="url(#pu36)"/>
+<line x1="777.4" y1="252.6" x2="789.1" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="806.8" y="252" width="11.8" height="22" fill="url(#pu36)"/>
+<line x1="806.8" y1="252.6" x2="818.5" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="836.1" y="252" width="5.9" height="22" fill="url(#pu36)"/>
+<line x1="836.1" y1="252.6" x2="842.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu37" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M724.5,236 L729.4,236 Q739.2,236.0 749.0,236 L758.8,236 Q768.6,236.0 778.4,236 L788.1,236 Q797.9,236.0 807.8,236 L817.5,236 Q827.3,236.0 837.1,236 L842.0,236 L842.0,252 L837.1,252 Q827.3,252.0 817.5,252 L807.8,252 Q797.9,252.0 788.1,252 L778.4,252 Q768.6,252.0 758.8,252 L749.0,252 Q739.2,252.0 729.4,252 L724.5,252 Z" fill="url(#qu37)"/>
+<path d="M724.5,236 L729.4,236 Q739.2,236.0 749.0,236 L758.8,236 Q768.6,236.0 778.4,236 L788.1,236 Q797.9,236.0 807.8,236 L817.5,236 Q827.3,236.0 837.1,236 L842.0,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<linearGradient id="du38" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e87df"/><stop offset="1" stop-color="#3c32b5"/></linearGradient>
+<rect x="592" y="290" width="117.5" height="10" fill="url(#du38)"/>
+<rect x="724.5" y="290" width="117.5" height="10" fill="url(#du38)"/>
 <text x="717.0" y="320.0" font-size="14" fill="#4338ca" text-anchor="middle" font-weight="700">digitizer coils</text>
 <path d="M624.5,290 L624.5,274" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
 <path d="M789.5,290 L789.5,206" stroke="#15803d" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
@@ -94,8 +130,8 @@
 <path d="M809.5,290 L809.5,206" stroke="#15803d" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
 <text x="634.5" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">blocked</text>
 <text x="799.5" y="198.0" font-size="14" fill="#15803d" text-anchor="middle" font-weight="700">passes</text>
-<text x="634.5" y="267.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">metal</text>
-<text x="799.5" y="267.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">fiber</text>
+<text x="634.5" y="326.0" font-size="14" fill="#151a22" text-anchor="middle" font-weight="700">metal</text>
+<text x="799.5" y="326.0" font-size="14" fill="#a16207" text-anchor="middle" font-weight="700">fiber</text>
 <text x="592.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
 <circle cx="598" cy="400" r="4.5" fill="#1d4ed8"/>
 <text x="609.0" y="405.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">non-metal where the coils are · SDC 2020</text>

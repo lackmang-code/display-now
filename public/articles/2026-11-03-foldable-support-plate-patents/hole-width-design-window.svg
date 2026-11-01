@@ -1,0 +1,67 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="619" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">How wide can the holes be?</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Ranges and reasons in Samsung Display KR102893631B1 (2021), with the 2020 stainless-steel embodiment</text>
+<line x1="150.0" y1="120" x2="150.0" y2="500" stroke="#e6e9ee"/>
+<text x="150.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.00</text>
+<line x1="150" y1="500.0" x2="710" y2="500.0" stroke="#e6e9ee"/>
+<text x="142.0" y="505.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.00</text>
+<line x1="220.0" y1="120" x2="220.0" y2="500" stroke="#e6e9ee"/>
+<text x="220.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.05</text>
+<line x1="150" y1="452.5" x2="710" y2="452.5" stroke="#e6e9ee"/>
+<text x="142.0" y="457.5" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.05</text>
+<line x1="290.0" y1="120" x2="290.0" y2="500" stroke="#e6e9ee"/>
+<text x="290.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.10</text>
+<line x1="150" y1="405.0" x2="710" y2="405.0" stroke="#e6e9ee"/>
+<text x="142.0" y="410.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.10</text>
+<line x1="360.0" y1="120" x2="360.0" y2="500" stroke="#e6e9ee"/>
+<text x="360.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.15</text>
+<line x1="150" y1="357.5" x2="710" y2="357.5" stroke="#e6e9ee"/>
+<text x="142.0" y="362.5" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.15</text>
+<line x1="430.0" y1="120" x2="430.0" y2="500" stroke="#e6e9ee"/>
+<text x="430.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.20</text>
+<line x1="150" y1="310.0" x2="710" y2="310.0" stroke="#e6e9ee"/>
+<text x="142.0" y="315.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.20</text>
+<line x1="500.0" y1="120" x2="500.0" y2="500" stroke="#e6e9ee"/>
+<text x="500.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.25</text>
+<line x1="150" y1="262.5" x2="710" y2="262.5" stroke="#e6e9ee"/>
+<text x="142.0" y="267.5" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.25</text>
+<line x1="570.0" y1="120" x2="570.0" y2="500" stroke="#e6e9ee"/>
+<text x="570.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.30</text>
+<line x1="150" y1="215.0" x2="710" y2="215.0" stroke="#e6e9ee"/>
+<text x="142.0" y="220.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.30</text>
+<line x1="640.0" y1="120" x2="640.0" y2="500" stroke="#e6e9ee"/>
+<text x="640.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.35</text>
+<line x1="150" y1="167.5" x2="710" y2="167.5" stroke="#e6e9ee"/>
+<text x="142.0" y="172.5" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.35</text>
+<line x1="710.0" y1="120" x2="710.0" y2="500" stroke="#e6e9ee"/>
+<text x="710.0" y="520.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">0.40</text>
+<line x1="150" y1="120.0" x2="710" y2="120.0" stroke="#e6e9ee"/>
+<text x="142.0" y="125.0" font-size="13" fill="#5b6474" text-anchor="end" font-weight="500">0.40</text>
+<rect x="430.0" y="120" width="280.0" height="380" fill="#dc2626" opacity=".08"/>
+<line x1="430.0" y1="120" x2="430.0" y2="500" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="220.0" y="215.0" width="210.0" height="237.5" fill="#15803d" opacity=".14" stroke="#15803d" stroke-width="2"/>
+<text x="325.0" y="239.0" font-size="15" fill="#15803d" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">claimed range</text>
+<text x="570.0" y="291.0" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">hole over 0.2 mm:</text>
+<text x="570.0" y="311.0" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">the lattice shows</text>
+<text x="570.0" y="331.0" font-size="15" fill="#dc2626" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">through the screen</text>
+<text x="325.0" y="167.5" font-size="14" fill="#151a22" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">bridge over 0.3: folds poorly, cracks</text>
+<text x="570.0" y="481.2" font-size="14" fill="#151a22" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">bridge under 0.05: bridges break</text>
+<text transform="translate(186.4 319.5) rotate(-90)" font-size="14" fill="#151a22" text-anchor="middle" font-weight="600">hole under 0.05: slow to machine</text>
+<rect x="290.0" y="329.0" width="140.0" height="82.6" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="5 4"/>
+<circle cx="360.0" cy="405.0" r="7" fill="#1d4ed8"/>
+<text x="348.0" y="431.0" font-size="14" fill="#1d4ed8" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">SUS 304 embodiment (2020):</text>
+<text x="348.0" y="449.0" font-size="14" fill="#1d4ed8" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">hole 0.15, bridge 0.10</text>
+<rect x="150" y="120" width="560" height="380" fill="none" stroke="#d9dde3"/>
+<text x="430.0" y="546.0" font-size="14" fill="#151a22" text-anchor="middle" font-weight="700">hole width across the fold (mm)</text>
+<text transform="translate(94 310.0) rotate(-90)" font-size="14" fill="#151a22" text-anchor="middle" font-weight="700">bridge width between holes (mm)</text>
+<rect x="728" y="140" width="22" height="14" fill="#15803d" opacity=".3" stroke="#15803d"/>
+<text x="758.0" y="152.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">KR102893631B1</text>
+<text x="758.0" y="169.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">aramid layer, claimed</text>
+<rect x="728" y="190" width="22" height="14" fill="none" stroke="#1d4ed8" stroke-dasharray="4 3" stroke-width="1.6"/>
+<text x="758.0" y="202.0" font-size="13" fill="#151a22" text-anchor="start" font-weight="600">KR102356652B1</text>
+<text x="758.0" y="219.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">SUS 304, preferred</text>
+<text x="32.0" y="586.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Reasons are paraphrased from the KR102893631B1 specification. The two filings use different plate materials.</text>
+<text x="32.0" y="604.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Blue box: KR102356652B1 preferred hole width 0.10–0.20 mm and bridge 0.093–0.18 mm.</text>
+</svg>

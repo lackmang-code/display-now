@@ -10,7 +10,7 @@ series:
   id: claim-theme
   part: 1
   episode: 2
-readingMinutes: 12
+readingMinutes: 14
 tags: [폴더블, 지지판, 메탈플레이트, 격자패턴, 디지타이저, S펜, 탄소섬유, 아라미드, 삼성디스플레이, LG디스플레이, 특허로보는폴더블]
 featured: false
 sources:
@@ -23,6 +23,9 @@ sources:
   - type: patent
     title: "플렉서블 디스플레이 및 이를 포함한 전자 장치 (KR102662279B1, LG디스플레이, 2017-12-28 우선 · 비폴딩부에도 낮은 밀도 개구)"
     url: "https://patents.google.com/patent/KR102662279B1/ko"
+  - type: patent
+    title: "표시 장치 (KR102356652B1, 삼성디스플레이, 2020-02-14 우선 · SUS 304 격자 지지층 실시예 치수, 서브 커버층)"
+    url: "https://patents.google.com/patent/KR102356652B1/ko"
   - type: patent
     title: "표시 장치 (KR102671010B1, 삼성디스플레이, 2019-06-25 우선 · 개구 아래 탄성 부재, 이물 침투)"
     url: "https://patents.google.com/patent/KR102671010B1/ko"
@@ -78,18 +81,23 @@ sources:
   <div class="fig-cap">그림 1. 폴더블 안쪽 화면의 주요 층을 떼어 놓은 모습. 지지판은 접히는 띠에만 구멍을 내고, 펜을 읽는 디지타이저는 접히는 선을 비워 두 쪽으로 나눈다. 층 순서는 삼성디스플레이 KR103006820B1(2021)을 따랐고, 실제 적층에는 접착층·필름·차폐층이 더 들어간다</div>
 </div>
 
-판을 통째로 금속으로 두면 왜 안 될까. 반지름 R로 굽힌 판의 바깥면은 대략 두께를 반지름의 두 배로 나눈 비율(t / 2R)만큼 늘어난다. 스테인리스강은 이 값이 0.1~0.5 % 안팎만 넘어도 항복해, 펴도 굽은 모양이 남는다. 두께 30 μm 판을 반지름 3 mm로 굽히기만 해도 0.5 %다. 접히는 띠를 통판 금속으로 두면 화면보다 판이 먼저 주름을 기억한다.
+판을 통째로 금속으로 두면 왜 안 될까. 삼성디스플레이의 2020년 2월 출원(KR102356652B1)이 실시예로 든 지지판은 두께 150 μm의 스테인리스강(SUS 304)이다. 반지름 R로 굽힌 판의 바깥면은 대략 두께를 반지름의 두 배로 나눈 비율(t / 2R)만큼 늘어난다. 스테인리스강은 이 값이 0.1~0.5 % 안팎만 넘어도 항복해, 펴도 굽은 모양이 남는다. 두께 30 μm 판을 반지름 3 mm로 굽히기만 해도 0.5 %이고, 150 μm 판이면 2.5 %다. 접히는 띠를 통판 금속으로 두면 화면보다 판이 먼저 주름을 기억한다.
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/solid-plate-strain.svg" alt="Left, a grey metal plate bent into a U at radius R, with the outer face marked red as stretching and the inner face blue as compressing. Right, a log-scale graph of surface strain against plate thickness from 0 to 150 micrometres for bend radii 1.5, 3 and 5 mm. Two grey dashed lines mark the yield strain of annealed 304 stainless steel, about 0.11 percent, and full-hard 301, about 0.5 percent. Most of each curve lies above both lines." />
   <div class="fig-cap">그림 2. 통판 금속을 굽히면 바깥면이 얼마나 늘어나나. 오른쪽은 판 두께에 따른 바깥면 변형률(얇은 판 하나의 근사, t / 2R)이고, 회색 점선은 스테인리스강의 항복 변형률(ASTM A240 304 최소 항복강도 205 MPa, ASTM A666 301 풀하드 965 MPa를 탄성률 193 GPa로 나눈 값)이다. 점선 위에서는 판이 펴져도 굽은 모양이 남는다. 실측한 판이 아니다</div>
 </div>
 
-특허가 찾은 답은 판의 접히는 띠에만 구멍을 내는 것이었다. 접히지 않는 부분은 통판으로 두고, 접히는 띠에는 접는 선을 따라 길쭉한 구멍을 엇갈려 뚫는다. 구멍 사이에 남은 가는 다리들이 비틀리고 휘면서 판 전체가 부드럽게 굽는다. 삼성디스플레이의 2019년 출원(KR102671010B1)은 그 효과를, 구멍 모양 덕에 지지 부재가 깊이 방향이 아니라 길이 방향으로 변형된다고 적었다(요지). 화면을 아래로 꺼뜨리지 않고 옆으로 늘어나 접힘을 받는다는 뜻이다.
+특허가 찾은 답은 판의 접히는 띠에만 구멍을 내는 것이었다. 접히지 않는 부분은 통판으로 두고, 접히는 띠에는 접는 선을 따라 길쭉한 구멍을 엇갈려 뚫는다. 구멍 사이에 남은 가는 다리들이 비틀리고 휘면서 판 전체가 부드럽게 굽는다. 다리는 가늘다. 앞의 2020년 출원 실시예에서 구멍은 길이 5.35 mm, 폭 0.15 mm이고, 구멍과 구멍 사이 다리는 0.10 mm, 구멍 끝의 다리는 0.20 mm다. **구멍이 남은 금속보다 넓다.** 폭 8.65~9.65 mm의 격자 띠에 구멍 줄이 서른여섯 줄쯤 들어간다. 삼성디스플레이의 2019년 출원(KR102671010B1)은 그 효과를, 구멍 모양 덕에 지지 부재가 깊이 방향이 아니라 길이 방향으로 변형된다고 적었다(요지). 화면을 아래로 꺼뜨리지 않고 옆으로 늘어나 접힘을 받는다는 뜻이다.
 
 <div class="fig-frame">
-  <img src="/articles/2026-11-03-foldable-support-plate-patents/lattice-flat-vs-folded.svg" alt="Two views of the same grey support plate. Left, flat, with a band of staggered short slits only in the middle. Right, the plate folded into a U; the slits sit on the curved part, while the two flat ends stay plain." />
-  <div class="fig-cap">그림 3. 같은 지지판을 펼쳤을 때와 접었을 때. 구멍은 접히는 띠에만 있고, 접으면 그 띠가 고리를 이룬다. 구멍 수와 크기는 보이도록 그린 개념도이며 출원마다 무늬가 크게 다르다</div>
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/lattice-flat-vs-folded.svg" alt="Two views of the same grey support plate. Left, flat, with a band of dense staggered slits only in the middle, the slits wider than the metal left between them. Right, the plate folded into a U; the slits sit on the curved part, while the two flat ends stay plain." />
+  <div class="fig-cap">그림 3. 같은 지지판을 펼쳤을 때와 접었을 때. 구멍은 접히는 띠에만 있고, 접으면 그 띠가 고리를 이룬다. 구멍과 다리의 폭 비율은 KR102356652B1 실시예(150 : 100 μm)를 따랐고, 구멍 수는 줄여 그렸다</div>
+</div>
+
+<div class="fig-frame">
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/lattice-true-scale.svg" alt="Left, a true-scale top view of 1.2 by 1.4 mm of the folding band: dark vertical holes 0.15 mm wide separated by 0.10 mm metal bridges, with rounded ends and 0.20 mm end bridges staggered between neighbouring columns. Right, a cross-section at the same scale both ways through the whole 683 micrometre stack: window protection film 55, window 30, shock-absorbing layer 41, anti-reflection layer 31, display panel 30, panel protection film 50, barrier layer 35, cushion layer 100 and a 150 micrometre SUS 304 support plate in which the 150 micrometre hole is as wide as the plate is thick, with adhesives between layers." />
+  <div class="fig-cap">그림 4. 실제 크기로 본 격자와 적층. 왼쪽은 접히는 띠 1.2 × 1.4 mm를 위에서 본 것, 오른쪽은 적층 전체를 가로·세로 같은 축척으로 자른 단면이다. 치수와 층 두께는 모두 KR102356652B1 명세서의 실시예 값이고, 이름 없는 회색 띠는 접착층(8~35 μm)이다. 패널 위 25 μm 접착층의 위치는 명세서 문장으로 확인하지 못해 가정했다. 구멍 사이의 작은 보조 구멍과 판 아래 덮개 시트는 뺐다</div>
 </div>
 
 이 편이 따라가는 것은 그 구멍이다. 한 줄로 줄이면 이렇다. **구멍은 지지판이 휘는 문제를 풀었지만, 그 뒤 지지판 특허는 대부분 구멍이 새로 만든 문제를 푸는 데 쓰였다.**
@@ -112,11 +120,18 @@ sources:
 
 삼성디스플레이의 2019년 출원(KR102770187B1)은 판과 화면 사이에 빛을 가리는 차광 패턴을 넣어, 지지 부재들 사이의 「이격 공간(폴딩 영역(FR))이 외부에서 시인되는 것을 방지하는」 방법을 적었다. 2023년 출원(KR20240170626A)에도 같은 문장이 나온다. 「하부 시인 방지 부재(TPU)는 패널 지지 부재(700)의 격자 패턴이 외부에 시인되지 않도록 할 수 있다.」 8년이 지나도 격자가 비치는 문제를 막는 부재를 따로 두고 있다.
 
+비침은 구멍의 크기에도 상한을 걸었다. 삼성디스플레이의 2021년 10월 출원(KR102893631B1)은 구멍 폭을 0.05~0.2 mm로 정하고 그 이유를 양쪽으로 적었다. 좁으면 정밀 가공 시간이 늘고, 넓으면 이렇다. 「제2 폭(WT2)이 0.2 mm 초과인 경우 복수의 개구부(OP)에 의한 격자 패턴이 외부에서 시인되는 문제가 발생할 수 있다.」 구멍 사이 다리는 0.05~0.3 mm다. 0.05 mm보다 가늘면 다리가 손상돼 구멍끼리 이어질 수 있고, 0.3 mm보다 굵으면 접힘 특성이 떨어지고 다리에 생기는 응력으로 크랙이 날 수 있다고 했다(요지). 휘게 하려면 구멍을 키워야 하고, 감추려면 줄여야 한다. 그 사이의 좁은 칸이 지금의 격자다.
+
+<div class="fig-frame">
+  <img src="/articles/2026-11-03-foldable-support-plate-patents/hole-width-design-window.svg" alt="Graph of bridge width against hole width, both 0 to 0.4 mm. A green box marks the claimed range of KR102893631B1: hole 0.05 to 0.2 mm and bridge 0.05 to 0.3 mm. The area right of 0.2 mm hole width is shaded red and labelled: the lattice shows through the screen. Other edges are labelled slow to machine, bridges break, and folds poorly with cracks. A dashed blue box marks the preferred range of KR102356652B1 and a blue dot its stainless-steel embodiment, hole 0.15 mm and bridge 0.10 mm." />
+  <div class="fig-cap">그림 5. 구멍은 얼마나 넓어도 되나. 초록 칸은 KR102893631B1(아라미드 지지층)이 청구한 범위, 파란 점선 칸과 점은 KR102356652B1(SUS 304 지지층)의 바람직한 범위와 실시예다. 범위 밖의 이유는 KR102893631B1 명세서의 요지다. 두 출원은 판 재료가 다르다</div>
+</div>
+
 ## 3. 구멍이 낳은 두 번째와 세 번째 문제
 
 ### 3.1 구멍에 들어가는 이물
 
-구멍은 빈 공간이다. 접었다 펴는 동안 그 안으로 먼지가 들어간다. 삼성디스플레이의 2019년 출원(KR102671010B1)은 문제를 이렇게 적었다. 「상기 개구에 이물질이 침투하는 경우, 상기 폴딩되는 부분에서 상기 플렉서블 표시 장치의 불량이 야기되고 있다.」 해법은 구멍 아래를 탄성 부재로 덮는 것이었다. 구멍은 그대로 두되 바깥과 통하지 않게 막은 것이다.
+구멍은 빈 공간이다. 접었다 펴는 동안 그 안으로 먼지가 들어간다. 삼성디스플레이의 2019년 출원(KR102671010B1)은 문제를 이렇게 적었다. 「상기 개구에 이물질이 침투하는 경우, 상기 폴딩되는 부분에서 상기 플렉서블 표시 장치의 불량이 야기되고 있다.」 해법은 구멍 아래를 탄성 부재로 덮는 것이었다. 구멍은 그대로 두되 바깥과 통하지 않게 막은 것이다. 2020년 2월 출원(KR102356652B1)도 판 아래에 열가소성 폴리우레탄이나 고무로 된 서브 커버층을 붙여, 그 층이 「제1 홀들(H1)에 이물질이 투입되는 것을 방지할 수 있다」고 적었다.
 
 ### 3.2 펜이 들어오자 금속판이 걸렸다
 
@@ -130,12 +145,12 @@ sources:
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/hybrid-support-layer-2020.svg" alt="Exploded view of a support layer and digitizer. The support layer has brown non-metal flat parts on both sides and a grey metal folding band with slits in the middle. Below, the digitizer is two violet sheets with grid-like coil lines, with no coils under the folding band. Green dashed lines show the pen field passing up through the brown parts." />
-  <div class="fig-cap">그림 4. 삼성디스플레이 KR20220023952A(2020년 8월 우선)의 지지층을 떼어 놓은 모습. 코일이 있는 펼친 쪽은 유리·유리섬유 강화 플라스틱·플라스틱, 코일이 없는 접히는 띠만 금속이다. 위의 패널·접착층은 뺐고 코일 선은 개념도다</div>
+  <div class="fig-cap">그림 6. 삼성디스플레이 KR20220023952A(2020년 8월 우선)의 지지층을 떼어 놓은 모습. 코일이 있는 펼친 쪽은 유리·유리섬유 강화 플라스틱·플라스틱, 코일이 없는 접히는 띠만 금속이다. 위의 패널·접착층은 뺐고 코일 선은 개념도다</div>
 </div>
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-three-problems.svg" alt="Three cross-sections of the folding band, each with a pink screen layer on top of a grey support plate with openings. Panel 1, show-through: the screen sags slightly into each opening and red dashed lines mark lines seen on the screen. Panel 2, debris: small grey particles sit inside the openings. Panel 3, pen signal: a digitizer below sends field lines upward; they stop at a grey metal plate on the left but pass through a brown fiber plate on the right. Under each panel is a list of patented fixes with filing years for LG Display and Samsung Display." />
-  <div class="fig-cap">그림 5. 접히는 띠의 구멍이 낳은 세 가지 문제와 특허가 적은 해법. 연도는 이번 검색에서 찾은 가장 이른 출원의 우선일이다. 구멍 위로 화면이 꺼지는 정도는 보이도록 과장했다</div>
+  <div class="fig-cap">그림 7. 접히는 띠의 구멍이 낳은 세 가지 문제와 특허가 적은 해법. 연도는 이번 검색에서 찾은 가장 이른 출원의 우선일이다. 구멍 위로 화면이 꺼지는 정도는 보이도록 과장했다</div>
 </div>
 
 ### 3.3 유리, 탄소섬유, 그리고 아라미드
@@ -158,7 +173,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-145-counts.svg" alt="Horizontal bar chart of 145 Korean support-plate filings. Any of the three problems: 96, 66 percent. Pen digitizer field or sensitivity: 68. Show-through: 47. Debris in openings: 36. The word crease anywhere: 40, 28 percent. Crease in claim 1: 0." />
-  <div class="fig-cap">그림 6. 지지판 출원 145건의 명세서가 적은 것. 2026-11-01 구글특허 명세서 전문을 문장 패턴으로 셌다. 「적었다」는 「풀었다」와 다르고, 한 건이 여러 줄에 들어간다. 비침 47건 가운데 10건을 눈으로 확인했고, 모두 판이나 패턴이 보이는 문제를 적은 문장이었다</div>
+  <div class="fig-cap">그림 8. 지지판 출원 145건의 명세서가 적은 것. 2026-11-01 구글특허 명세서 전문을 문장 패턴으로 셌다. 「적었다」는 「풀었다」와 다르고, 한 건이 여러 줄에 들어간다. 비침 47건 가운데 10건을 눈으로 확인했고, 모두 판이나 패턴이 보이는 문제를 적은 문장이었다</div>
 </div>
 
 **지지판 특허의 셋 가운데 둘은 명세서에서 구멍이 만든 문제를 다뤘고, 주름을 한 번이라도 말한 것은 넷 가운데 하나꼴이었다.** 1편에서 본 것처럼 주름은 청구항에 들어가지 않는다. 지지판에서는 명세서에서조차 주름보다 구멍의 뒷일이 더 자주 나온다.
@@ -167,7 +182,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 <div class="fig-frame">
   <img src="/articles/2026-11-03-foldable-support-plate-patents/support-plate-timeline.svg" alt="Timeline from 2015 to 2026 with four lanes of filings and one lane of Samsung launches. Let it bend: LG Display openings and slits in 2015. Hide the pattern: LG Display step fill 2015, flat-area openings end of 2017, Samsung Display light shield 2019, glass over coils 2021. Keep debris out: Samsung Display elastic layer 2019, aramid 2021. Let the pen through: Samsung Display metal only at fold 2020, glass early 2021, CFRP mid 2021, aramid late 2021. Samsung launches: Galaxy Fold early 2019, Z Fold3 with first S Pen August 2021, Z Fold7 with no S Pen July 2025." />
-  <div class="fig-cap">그림 7. 문제별로 이번 검색에서 찾은 가장 이른 출원(우선일)과 삼성 폴더블 발표. 출원이 곧 그 제품에 쓰였다는 뜻은 아니다</div>
+  <div class="fig-cap">그림 9. 문제별로 이번 검색에서 찾은 가장 이른 출원(우선일)과 삼성 폴더블 발표. 출원이 곧 그 제품에 쓰였다는 뜻은 아니다</div>
 </div>
 
 연표로 놓으면 순서가 보인다. 휘게 하는 구멍은 2015년에 나왔고, 감추는 방법은 2015년부터 2021년까지 이어졌다. 펜 갈래는 2020년 8월부터 2021년 10월 사이에 몰려 있다. 이물 갈래는 2019년에 한 번, 탄소섬유가 들어온 뒤인 2021년에 다시 나온다.
@@ -176,7 +191,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 삼성의 폴더블에 펜이 들어온 것은 2021년 8월 11일 발표한 갤럭시 Z 폴드3다. 삼성은 폴드3의 안쪽 화면에서만 S펜을 쓸 수 있고, 전용 펜(S Pen Fold Edition·S Pen Pro)만 지원한다고 밝혔다(삼성전자 독일 뉴스룸, 2021-08-31). 이번 검색의 펜 갈래 출원 넷 가운데 둘(2020년 8월, 2021년 1월)은 그 발표보다 앞서고, 둘(2021년 6월, 10월)은 발표 두 달 앞과 두 달 뒤다.
 
-그리고 2025년 7월, 갤럭시 Z 폴드7은 S펜 지원을 뺐다. 보도에 따르면 삼성은 펼친 두께 4.2 mm를 만들면서 안쪽 화면의 디지타이저층을 뺐고, 펜을 지원하지 않는다고 확인했다(Android Authority, 9to5Google). 디지타이저가 빠지면 그림 5의 세 번째 문제는 그 제품에서 사라진다.
+그리고 2025년 7월, 갤럭시 Z 폴드7은 S펜 지원을 뺐다. 보도에 따르면 삼성은 펼친 두께 4.2 mm를 만들면서 안쪽 화면의 디지타이저층을 뺐고, 펜을 지원하지 않는다고 확인했다(Android Authority, 9to5Google). 디지타이저가 빠지면 그림 7의 세 번째 문제는 그 제품에서 사라진다.
 
 다만 삼성이 각 제품의 지지판에 실제로 어떤 재료를 썼는지는 공개 자료로 확인하지 못했다. 특허 출원이 그 제품에 쓰였다는 증거도 아니다. 이 편이 말할 수 있는 것은 출원의 순서까지다. 펜을 넣기 앞뒤로 펜이 통하는 판을 출원했고, 펜을 뺀 뒤 판 출원이 어떻게 바뀌는지는 아직 공개되지 않은 출원이 많아 볼 수 없다.
 
@@ -195,6 +210,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 | 2017-12 | LG디스플레이 | 폴딩부 고밀도 · 비폴딩부 저밀도 개구 | 패턴 편차가 보인다 | 유지 |
 | 2019-06 | 삼성디스플레이 | 폴딩 영역 개구 + 그 아래 탄성 부재 | 개구에 이물 | 유지 |
 | 2019-07 | 삼성디스플레이 | 지지 부재와 화면 사이 차광 패턴 | 이격 공간이 보인다 | 유지 |
+| 2020-02 | 삼성디스플레이 | 서로 다른 폭의 홀 두 종류로 된 격자 지지층 | 구멍 이물(덮개층) · SUS 304 150 μm 실시예 | 유지 |
 | 2020-08 | 삼성디스플레이 | 절연성 지지부분 + 그 아래 나눈 디지타이저 | 펜 자기장 · 코일이 보인다 | 심사 중 |
 | 2020-12 | LG디스플레이 | 판 아랫면 홈 + 금속 섬유 충진재 | | 유지 |
 | 2021-01 | 삼성디스플레이 | 유리 또는 세라믹 지지 플레이트 | 펜 자기장 · 코일 단차 | 유지 |
@@ -218,7 +234,7 @@ LG디스플레이 쪽에서는 2020년 12월 출원(KR20220085201A)이 판 아�
 
 145건 집계는 문장 패턴으로 센 것이다. 명세서가 문제를 적었다는 것과 그 출원이 문제를 풀었다는 것은 다르다. 비침 47건 가운데 10건만 눈으로 확인했다.
 
-지지판이 휘는 원리는 구멍 사이 다리가 비틀리고 휜다는 수준까지만 적었다. 구멍 크기·간격과 접힘 힘의 관계는 출원마다 수치가 달라 이번 편에서 비교하지 않았다. 청구항 1에 수치를 둔 출원은 145건 가운데 소수였고(예: 섬유층 지지 플레이트 두께 100~300 μm, KR20240007970A), 같은 기준으로 묶을 수 없었다.
+지지판이 휘는 원리는 구멍 사이 다리가 비틀리고 휜다는 수준까지만 적었다. 치수는 두 출원(KR102356652B1의 실시예, KR102893631B1의 범위)만 그림에 옮겼다. 명세서 145건 가운데 구멍·다리 치수를 적은 것은 더 있지만 판 재료와 두께가 달라 한 그래프에 모으지 않았고, 구멍 크기와 접힘 힘의 관계도 이번 편에서 계산하지 않았다. 청구항 1에 수치를 둔 출원은 145건 가운데 소수였고(예: 섬유층 지지 플레이트 두께 100~300 μm, KR20240007970A), 같은 기준으로 묶을 수 없었다.
 
 ## 8. 결론 및 다음 편
 
