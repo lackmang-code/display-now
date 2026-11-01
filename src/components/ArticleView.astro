@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimBoot from '../components/SimBoot.astro';
+import YtShortBoot from '../components/YtShortBoot.astro';
 import '../styles/article.css';
 import { SECTIONS, sectionColor } from '../lib/sections';
 import {
@@ -202,6 +203,7 @@ const articleLd = {
         </article>
 
         <SimBoot />
+        <YtShortBoot />
 
         {
           entry.data.sources.length > 0 && (

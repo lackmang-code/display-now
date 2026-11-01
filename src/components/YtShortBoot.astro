@@ -1,0 +1,90 @@
+---
+// 우리 쇼츠(9:16)를 지면에 싣는 자리 — 호 표지(`coverVideo`)와 기사 본문이 같이 쓴다(2026-11-01 대표).
+//
+// 원고에는 한 줄만 적는다:
+//   <div class="yt-short" data-yt="<유튜브 ID>" data-poster="/videos/<첫 화면>.webp" data-title="<제목>"></div>
+//
+// 영상 파일은 저장소에 넣지 않는다 — PUBLIC 히스토리에 영구히 남고 Pages 파일 한계(25MiB)에 걸린다.
+// 누르기 전엔 첫 화면 webp만 받는다. 처음부터 iframe을 띄우면 열 때마다 유튜브 스크립트 1MB 남짓을 받는다.
+// 🔴 data-sim 을 쓰지 않는다 — /sims 모음이 data-sim 을 긁어 시뮬로 싣는다.
+---
+
+<script>
+  function boot() {
+    document.querySelectorAll<HTMLElement>('.yt-short').forEach((box) => {
+      if (box.dataset.ytMounted || !box.dataset.yt) return;
+      box.dataset.ytMounted = 'true';
+      const title = box.dataset.title ?? '';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'yt-play';
+      btn.setAttribute('aria-label', `${title} — 영상 재생`);
+      btn.innerHTML = `<img src="${box.dataset.poster ?? ''}" alt="" width="540" height="960" decoding="async" loading="lazy"><span class="yt-icon" aria-hidden="true"></span>`;
+      btn.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&playsinline=1&rel=0`;
+        f.title = title;
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        box.replaceChildren(f);
+      });
+      box.replaceChildren(btn);
+    });
+  }
+  boot();
+  document.addEventListener('astro:page-load', boot);
+</script>
+
+<style is:global>
+  /* 세로 영상이라 폭을 다 쓰면 너무 길어진다 — 높이를 화면의 70% 안으로 묶고 가운데 세운다. */
+  .yt-short {
+    position: relative;
+    width: min(100%, calc(min(70svh, 640px) * 9 / 16));
+    aspect-ratio: 9 / 16;
+    margin: 1.6em auto;
+    background: #0d0d10;
+  }
+  .yt-short :is(.yt-play, iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .yt-play {
+    padding: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .yt-play img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+  }
+  .yt-icon {
+    position: absolute;
+    left: 50%;
+    bottom: 14%;
+    width: 68px;
+    height: 68px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  }
+  .yt-icon::after {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 21px;
+    border-style: solid;
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent #12120e;
+  }
+  .yt-play:hover .yt-icon,
+  .yt-play:focus-visible .yt-icon {
+    background: #fff;
+  }
+</style>
