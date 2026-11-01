@@ -1,0 +1,66 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="599" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Why a solid metal plate cannot simply fold</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Surface strain of a bent plate, ε = t / 2R, against the strain at which stainless steel yields</text>
+<linearGradient id="mu17" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#99a1ac"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<path d="M350,227.0 L200,227.0 A73.0,73.0 0 0 0 200,373.0 L350,373.0 L350,359.0 L200,359.0 A59.0,59.0 0 0 1 200,241.0 L350,241.0 Z" fill="#0f172a" opacity=".16" transform="translate(5 7)" filter="url(#b4)"/>
+<path d="M350,227.0 L200,227.0 A73.0,73.0 0 0 0 200,373.0 L350,373.0 L350,359.0 L200,359.0 A59.0,59.0 0 0 1 200,241.0 L350,241.0 Z" fill="url(#mu17)" stroke="#384454" stroke-width="1"/>
+<path d="M350,227.0 L200,227.0 A73.0,73.0 0 0 0 148.9,248.2" fill="none" stroke="#fff" stroke-width="1.6" opacity=".8"/>
+<path d="M200,227.0 A73.0,73.0 0 0 0 200,373.0" fill="none" stroke="#dc2626" stroke-width="3"/>
+<path d="M200,241.0 A59.0,59.0 0 0 0 200,359.0" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<line x1="200" y1="300" x2="153.1" y2="253.1" stroke="#151a22" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="188.0" y="282.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">R</text>
+<text x="117.0" y="209.0" font-size="14" fill="#dc2626" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">outer face stretches</text>
+<text x="159.0" y="305.0" font-size="14" fill="#1d4ed8" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">inner face</text>
+<text x="159.0" y="323.0" font-size="14" fill="#1d4ed8" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">compresses</text>
+<text x="275.0" y="413.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700">metal plate, thickness t</text>
+<text x="275.0" y="433.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">bent at R (thickness drawn ×4)</text>
+<line x1="500" y1="460.0" x2="840" y2="460.0" stroke="#e6e9ee"/>
+<text x="492.0" y="465.0" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">0.05</text>
+<line x1="500" y1="416.8" x2="840" y2="416.8" stroke="#e6e9ee"/>
+<text x="492.0" y="421.8" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">0.1</text>
+<line x1="500" y1="373.7" x2="840" y2="373.7" stroke="#e6e9ee"/>
+<text x="492.0" y="378.7" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">0.2</text>
+<line x1="500" y1="316.6" x2="840" y2="316.6" stroke="#e6e9ee"/>
+<text x="492.0" y="321.6" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">0.5</text>
+<line x1="500" y1="273.4" x2="840" y2="273.4" stroke="#e6e9ee"/>
+<text x="492.0" y="278.4" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">1</text>
+<line x1="500" y1="230.2" x2="840" y2="230.2" stroke="#e6e9ee"/>
+<text x="492.0" y="235.2" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">2</text>
+<line x1="500" y1="173.2" x2="840" y2="173.2" stroke="#e6e9ee"/>
+<text x="492.0" y="178.2" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">5</text>
+<line x1="500" y1="130.0" x2="840" y2="130.0" stroke="#e6e9ee"/>
+<text x="492.0" y="135.0" font-size="14" fill="#5b6474" text-anchor="end" font-weight="500">10</text>
+<line x1="500.0" y1="130" x2="500.0" y2="460" stroke="#e6e9ee"/>
+<text x="500.0" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">0</text>
+<line x1="556.7" y1="130" x2="556.7" y2="460" stroke="#e6e9ee"/>
+<text x="556.7" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">25</text>
+<line x1="613.3" y1="130" x2="613.3" y2="460" stroke="#e6e9ee"/>
+<text x="613.3" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">50</text>
+<line x1="670.0" y1="130" x2="670.0" y2="460" stroke="#e6e9ee"/>
+<text x="670.0" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">75</text>
+<line x1="726.7" y1="130" x2="726.7" y2="460" stroke="#e6e9ee"/>
+<text x="726.7" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">100</text>
+<line x1="783.3" y1="130" x2="783.3" y2="460" stroke="#e6e9ee"/>
+<text x="783.3" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">125</text>
+<line x1="840.0" y1="130" x2="840.0" y2="460" stroke="#e6e9ee"/>
+<text x="840.0" y="480.0" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="500">150</text>
+<rect x="500" y="130" width="340" height="330" fill="none" stroke="#d9dde3"/>
+<text x="670.0" y="504.0" font-size="14" fill="#151a22" text-anchor="middle" font-weight="600">plate thickness t (μm)</text>
+<text transform="translate(454 295.0) rotate(-90)" font-size="14" fill="#151a22" text-anchor="middle" font-weight="600">surface strain (%)</text>
+<polyline points="505.7,428.2 511.3,385.0 517.0,359.8 522.7,341.8 528.3,327.9 534.0,316.6 539.7,307.0 545.3,298.7 551.0,291.3 556.7,284.8 562.3,278.8 568.0,273.4 573.7,268.4 579.3,263.8 585.0,259.5 590.7,255.5 596.3,251.7 602.0,248.2 607.7,244.8 613.3,241.6 619.0,238.6 624.7,235.7 630.3,232.9 636.0,230.2 641.7,227.7 647.3,225.3 653.0,222.9 658.7,220.6 664.3,218.5 670.0,216.3 675.7,214.3 681.3,212.3 687.0,210.4 692.7,208.5 698.3,206.7 704.0,205.0 709.7,203.3 715.3,201.6 721.0,200.0 726.7,198.4 732.3,196.9 738.0,195.4 743.7,193.9 749.3,192.5 755.0,191.1 760.7,189.7 766.3,188.4 772.0,187.1 777.7,185.8 783.3,184.5 789.0,183.3 794.7,182.1 800.3,180.9 806.0,179.7 811.7,178.6 817.3,177.5 823.0,176.4 828.7,175.3 834.3,174.2 840.0,173.2" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<text x="836.0" y="165.2" font-size="14" fill="#dc2626" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">R 1.5 mm</text>
+<polyline points="511.3,428.2 517.0,402.9 522.7,385.0 528.3,371.1 534.0,359.8 539.7,350.2 545.3,341.8 551.0,334.5 556.7,327.9 562.3,322.0 568.0,316.6 573.7,311.6 579.3,307.0 585.0,302.7 590.7,298.7 596.3,294.9 602.0,291.3 607.7,288.0 613.3,284.8 619.0,281.7 624.7,278.8 630.3,276.1 636.0,273.4 641.7,270.9 647.3,268.4 653.0,266.1 658.7,263.8 664.3,261.6 670.0,259.5 675.7,257.5 681.3,255.5 687.0,253.6 692.7,251.7 698.3,249.9 704.0,248.2 709.7,246.5 715.3,244.8 721.0,243.2 726.7,241.6 732.3,240.1 738.0,238.6 743.7,237.1 749.3,235.7 755.0,234.3 760.7,232.9 766.3,231.6 772.0,230.2 777.7,229.0 783.3,227.7 789.0,226.5 794.7,225.3 800.3,224.1 806.0,222.9 811.7,221.8 817.3,220.6 823.0,219.5 828.7,218.5 834.3,217.4 840.0,216.3" fill="none" stroke="#be185d" stroke-width="2.6"/>
+<text x="836.0" y="208.3" font-size="14" fill="#be185d" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">R 3 mm</text>
+<polyline points="511.3,460.0 517.0,434.7 522.7,416.8 528.3,402.9 534.0,391.6 539.7,382.0 545.3,373.7 551.0,366.3 556.7,359.8 562.3,353.8 568.0,348.4 573.7,343.4 579.3,338.8 585.0,334.5 590.7,330.5 596.3,326.7 602.0,323.1 607.7,319.8 613.3,316.6 619.0,313.5 624.7,310.6 630.3,307.9 636.0,305.2 641.7,302.7 647.3,300.2 653.0,297.9 658.7,295.6 664.3,293.4 670.0,291.3 675.7,289.3 681.3,287.3 687.0,285.4 692.7,283.5 698.3,281.7 704.0,280.0 709.7,278.3 715.3,276.6 721.0,275.0 726.7,273.4 732.3,271.9 738.0,270.4 743.7,268.9 749.3,267.5 755.0,266.1 760.7,264.7 766.3,263.4 772.0,262.1 777.7,260.8 783.3,259.5 789.0,258.3 794.7,257.1 800.3,255.9 806.0,254.7 811.7,253.6 817.3,252.5 823.0,251.4 828.7,250.3 834.3,249.2 840.0,248.2" fill="none" stroke="#7c2d12" stroke-width="2.6"/>
+<text x="836.0" y="240.2" font-size="14" fill="#7c2d12" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">R 5 mm</text>
+<line x1="500" y1="413.2" x2="840" y2="413.2" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="508.0" y="406.2" font-size="13" fill="#5b6474" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">stainless 304, annealed: yields at ≈0.11 %</text>
+<line x1="500" y1="316.6" x2="840" y2="316.6" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="508.0" y="309.6" font-size="13" fill="#5b6474" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">stainless 301, full hard: ≈0.5 %</text>
+<text x="508.0" y="150.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">above the grey lines the plate</text>
+<text x="508.0" y="168.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">keeps a permanent bend</text>
+<text x="32.0" y="566.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Yield strain = minimum yield strength (ASTM A240 304: 205 MPa; ASTM A666 301 full hard: 965 MPa) / E 193 GPa.</text>
+<text x="32.0" y="584.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Single-layer estimate with the neutral plane at mid-thickness; not a measured plate.</text>
+</svg>

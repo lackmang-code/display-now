@@ -1,0 +1,120 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="559" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Metal only where there are no coils</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Support layer of Samsung Display KR20220023952A (priority 2020-08), layers pulled apart</text>
+<linearGradient id="tu18" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eee2d2"/><stop offset="1" stop-color="#dbc3a0"/></linearGradient>
+<linearGradient id="fu18" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cba876"/><stop offset="1" stop-color="#af792c"/></linearGradient>
+<linearGradient id="su18" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b38138"/><stop offset="1" stop-color="#804e05"/></linearGradient>
+<linearGradient id="gu18" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="263" width="320" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,250 200,175.0 370,175.0 220,250" fill="url(#tu18)" stroke="#c6a06a" stroke-width="1"/>
+<polygon points="220,250 370,175.0 370,191.0 220,266" fill="url(#su18)"/>
+<rect x="50" y="250" width="170" height="16" fill="url(#fu18)"/>
+<polygon points="143.5,250 165.60000000000002,250 315.6,175.0 293.5,175.0" fill="url(#gu18)" opacity=".8"/>
+<line x1="50" y1="250" x2="220" y2="250" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="250" width="170" height="16" fill="none" stroke="#905806" stroke-width=".8" opacity=".5"/>
+<linearGradient id="tu19" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dde0e4"/><stop offset="1" stop-color="#b9bec6"/></linearGradient>
+<linearGradient id="fu19" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#99a1ac"/><stop offset="1" stop-color="#626e7f"/></linearGradient>
+<linearGradient id="su19" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6b7787"/><stop offset="1" stop-color="#384454"/></linearGradient>
+<linearGradient id="gu19" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="230" y="263" width="230" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="220,250 370,175.0 450,175.0 300,250" fill="url(#tu19)" stroke="#9099a5" stroke-width="1"/>
+<polygon points="300,250 450,175.0 450,191.0 300,266" fill="url(#su19)"/>
+<rect x="220" y="250" width="80" height="16" fill="url(#fu19)"/>
+<polygon points="264.0,250 274.4,250 424.4,175.0 414.0,175.0" fill="url(#gu19)" opacity=".8"/>
+<line x1="220" y1="250" x2="300" y2="250" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="220" y="250" width="80" height="16" fill="none" stroke="#3f4c5e" stroke-width=".8" opacity=".5"/>
+<polygon points="234.3,247.0 237.7,247.0 256.4,237.6 253.1,237.6" fill="#232a34" opacity=".9"/>
+<polygon points="263.6,232.4 266.9,232.4 286.4,222.6 283.1,222.6" fill="#232a34" opacity=".9"/>
+<polygon points="293.6,217.4 296.9,217.4 316.4,207.6 313.1,207.6" fill="#232a34" opacity=".9"/>
+<polygon points="323.6,202.4 326.9,202.4 346.4,192.6 343.1,192.6" fill="#232a34" opacity=".9"/>
+<polygon points="353.6,187.4 356.9,187.4 375.7,178.0 372.3,178.0" fill="#232a34" opacity=".9"/>
+<polygon points="268.6,239.9 271.9,239.9 291.4,230.1 288.1,230.1" fill="#232a34" opacity=".9"/>
+<polygon points="298.6,224.9 301.9,224.9 321.4,215.1 318.1,215.1" fill="#232a34" opacity=".9"/>
+<polygon points="328.6,209.9 331.9,209.9 351.4,200.1 348.1,200.1" fill="#232a34" opacity=".9"/>
+<polygon points="358.6,194.9 361.9,194.9 381.4,185.1 378.1,185.1" fill="#232a34" opacity=".9"/>
+<polygon points="274.3,247.0 277.7,247.0 296.4,237.6 293.1,237.6" fill="#232a34" opacity=".9"/>
+<polygon points="303.6,232.4 306.9,232.4 326.4,222.6 323.1,222.6" fill="#232a34" opacity=".9"/>
+<polygon points="333.6,217.4 336.9,217.4 356.4,207.6 353.1,207.6" fill="#232a34" opacity=".9"/>
+<polygon points="363.6,202.4 366.9,202.4 386.4,192.6 383.1,192.6" fill="#232a34" opacity=".9"/>
+<polygon points="393.6,187.4 396.9,187.4 415.7,178.0 412.3,178.0" fill="#232a34" opacity=".9"/>
+<polygon points="308.6,239.9 311.9,239.9 331.4,230.1 328.1,230.1" fill="#232a34" opacity=".9"/>
+<polygon points="338.6,224.9 341.9,224.9 361.4,215.1 358.1,215.1" fill="#232a34" opacity=".9"/>
+<polygon points="368.6,209.9 371.9,209.9 391.4,200.1 388.1,200.1" fill="#232a34" opacity=".9"/>
+<polygon points="398.6,194.9 401.9,194.9 421.4,185.1 418.1,185.1" fill="#232a34" opacity=".9"/>
+<linearGradient id="tu20" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eee2d2"/><stop offset="1" stop-color="#dbc3a0"/></linearGradient>
+<linearGradient id="fu20" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cba876"/><stop offset="1" stop-color="#af792c"/></linearGradient>
+<linearGradient id="su20" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b38138"/><stop offset="1" stop-color="#804e05"/></linearGradient>
+<linearGradient id="gu20" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="310" y="263" width="320" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="300,250 450,175.0 620,175.0 470,250" fill="url(#tu20)" stroke="#c6a06a" stroke-width="1"/>
+<polygon points="470,250 620,175.0 620,191.0 470,266" fill="url(#su20)"/>
+<rect x="300" y="250" width="170" height="16" fill="url(#fu20)"/>
+<polygon points="393.5,250 415.6,250 565.6,175.0 543.5,175.0" fill="url(#gu20)" opacity=".8"/>
+<line x1="300" y1="250" x2="470" y2="250" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="300" y="250" width="170" height="16" fill="none" stroke="#905806" stroke-width=".8" opacity=".5"/>
+<linearGradient id="tu21" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dddbf5"/><stop offset="1" stop-color="#b7b3ea"/></linearGradient>
+<linearGradient id="fu21" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9791e1"/><stop offset="1" stop-color="#5f55d1"/></linearGradient>
+<linearGradient id="su21" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#685fd4"/><stop offset="1" stop-color="#352ca1"/></linearGradient>
+<linearGradient id="gu21" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="397" width="320" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,390 200,315.0 370,315.0 220,390" fill="url(#tu21)" stroke="#8e87df" stroke-width="1"/>
+<polygon points="220,390 370,315.0 370,325.0 220,400" fill="url(#su21)"/>
+<rect x="50" y="390" width="170" height="10" fill="url(#fu21)"/>
+<polygon points="143.5,390 165.60000000000002,390 315.6,315.0 293.5,315.0" fill="url(#gu21)" opacity=".8"/>
+<line x1="50" y1="390" x2="220" y2="390" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="390" width="170" height="10" fill="none" stroke="#3c32b5" stroke-width=".8" opacity=".5"/>
+<line x1="79.0" y1="377.5" x2="241.0" y2="377.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="104.0" y1="365.0" x2="266.0" y2="365.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="129.0" y1="352.5" x2="291.0" y2="352.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="154.0" y1="340.0" x2="316.0" y2="340.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="179.0" y1="327.5" x2="341.0" y2="327.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="81.3" y1="388.0" x2="225.3" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="109.7" y1="388.0" x2="253.7" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="138.0" y1="388.0" x2="282.0" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="166.3" y1="388.0" x2="310.3" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="194.7" y1="388.0" x2="338.7" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="tu22" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dddbf5"/><stop offset="1" stop-color="#b7b3ea"/></linearGradient>
+<linearGradient id="fu22" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9791e1"/><stop offset="1" stop-color="#5f55d1"/></linearGradient>
+<linearGradient id="su22" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#685fd4"/><stop offset="1" stop-color="#352ca1"/></linearGradient>
+<linearGradient id="gu22" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="310" y="397" width="320" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="300,390 450,315.0 620,315.0 470,390" fill="url(#tu22)" stroke="#8e87df" stroke-width="1"/>
+<polygon points="470,390 620,315.0 620,325.0 470,400" fill="url(#su22)"/>
+<rect x="300" y="390" width="170" height="10" fill="url(#fu22)"/>
+<polygon points="393.5,390 415.6,390 565.6,315.0 543.5,315.0" fill="url(#gu22)" opacity=".8"/>
+<line x1="300" y1="390" x2="470" y2="390" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="300" y="390" width="170" height="10" fill="none" stroke="#3c32b5" stroke-width=".8" opacity=".5"/>
+<line x1="329.0" y1="377.5" x2="491.0" y2="377.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="354.0" y1="365.0" x2="516.0" y2="365.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="379.0" y1="352.5" x2="541.0" y2="352.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="404.0" y1="340.0" x2="566.0" y2="340.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="429.0" y1="327.5" x2="591.0" y2="327.5" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="331.3" y1="388.0" x2="475.3" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="359.7" y1="388.0" x2="503.7" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="388.0" y1="388.0" x2="532.0" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="416.3" y1="388.0" x2="560.3" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<line x1="444.7" y1="388.0" x2="588.7" y2="317.0" stroke="#282179" stroke-width="1.2" opacity=".8"/>
+<path d="M185.0,352.5 L185.0,142.5" stroke="#15803d" stroke-width="1.8" stroke-dasharray="4 3" fill="none"/>
+<path d="M255.0,352.5 L255.0,142.5" stroke="#15803d" stroke-width="1.8" stroke-dasharray="4 3" fill="none"/>
+<path d="M435.0,352.5 L435.0,142.5" stroke="#15803d" stroke-width="1.8" stroke-dasharray="4 3" fill="none"/>
+<path d="M505.0,352.5 L505.0,142.5" stroke="#15803d" stroke-width="1.8" stroke-dasharray="4 3" fill="none"/>
+<text x="210.0" y="134.5" font-size="14" fill="#15803d" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">pen field passes</text>
+<path d="M560.0,213.0 L636.0,175.0 L650.0,175.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="560.0" cy="213.0" r="3" fill="#5b6474"/>
+<text x="658.0" y="180.0" font-size="16" fill="#a16207" text-anchor="start" font-weight="700">Flat parts: non-metal</text>
+<text x="658.0" y="200.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">glass, fiber plastic, plastic</text>
+<path d="M402.5,182.0 L636.0,105.0 L650.0,105.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="402.5" cy="182.0" r="3" fill="#5b6474"/>
+<text x="658.0" y="110.0" font-size="16" fill="#475569" text-anchor="start" font-weight="700">Folding part: metal</text>
+<text x="658.0" y="130.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">no coils underneath</text>
+<path d="M560.0,350.0 L636.0,330.0 L650.0,330.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="560.0" cy="350.0" r="3" fill="#5b6474"/>
+<text x="658.0" y="335.0" font-size="16" fill="#4338ca" text-anchor="start" font-weight="700">Digitizer, two halves</text>
+<text x="658.0" y="355.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">coils only under the flat parts</text>
+<text x="260.0" y="436.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">no coils here</text>
+<line x1="260.0" y1="420" x2="320.0" y2="366.0" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="32.0" y="526.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Materials as worded in the specification: flat parts glass, glass-fiber reinforced plastic or plastic; folding part metal.</text>
+<text x="32.0" y="544.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Panel and adhesive layers above are omitted. Coil lines are schematic.</text>
+</svg>

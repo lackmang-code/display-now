@@ -66,7 +66,7 @@
 <text x="329.0" y="429.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">cover layer under the band · SDC 2021</text>
 <circle cx="318" cy="448" r="4.5" fill="#1d4ed8"/>
 <text x="329.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">non-conductive aramid · SDC 2021</text>
-<linearGradient id="pu12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#94949b"/><stop offset="1" stop-color="#606067"/></linearGradient>
+<linearGradient id="pu12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
 <rect x="598" y="272" width="117.5" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
 <rect x="592.0" y="252" width="80.6" height="22" fill="url(#pu12)"/>
 <line x1="592.0" y1="252.6" x2="672.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
