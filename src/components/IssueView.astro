@@ -43,6 +43,9 @@ const head = issue.headSlug
   : articles[0];
 const fallbackImage = issue.coverImage ?? (head ? leadImage(head) : undefined);
 
+// 영상 표지는 한글 호에만, 유튜브에 공개된 뒤에만 선다(`IssueMeta.coverVideo`).
+const coverVideo = !en && issue.coverVideo?.youtubeId ? issue.coverVideo : undefined;
+
 // 헤드 기사는 표지가 이미 크게 싣는다. 아래 목차는 나머지만 받는다.
 // 종전에는 표지 커버라인 네 줄과 목차가 같은 제목을 두 번 보여줬고,
 // 헤드 기사 제목은 표지 헤드라인과 목차에 또 두 번 나왔다.
@@ -124,7 +127,14 @@ const grouped = SECTION_ORDER.map((key) => ({
           시뮬이 표지 구도를 갖고 있지 않으면 이 값은 그냥 무시되므로 다른 시뮬에 영향이 없다.
         */}
         {
-          issue.coverSim ? (
+          coverVideo ? (
+            <div class="cover-video" data-yt={coverVideo.youtubeId} data-title={coverVideo.title}>
+              <button type="button" class="cv-play" aria-label={`${coverVideo.title} — 영상 재생`}>
+                <img src={coverVideo.poster} alt="" width="540" height="960" decoding="async" />
+                <span class="cv-icon" aria-hidden="true" />
+              </button>
+            </div>
+          ) : issue.coverSim ? (
             <div
               class="cover-sim"
               data-sim={issue.coverSim}
@@ -144,7 +154,7 @@ const grouped = SECTION_ORDER.map((key) => ({
         {
           (en ? issue.coverNoteEn : issue.coverNote) && (
             <p class="cover-note">
-              <span class="cover-note-tag">{ui.coverNoteTag}</span>
+              <span class="cover-note-tag">{coverVideo ? '표지 영상' : ui.coverNoteTag}</span>
               {en ? issue.coverNoteEn : issue.coverNote}
             </p>
           )
@@ -249,6 +259,21 @@ const grouped = SECTION_ORDER.map((key) => ({
 </Base>
 
 <SimBoot />
+
+<script>
+  // 영상 표지: 누르기 전엔 첫 화면 webp만 받고, 누르면 유튜브 플레이어로 바꾼다.
+  // 처음부터 iframe을 띄우면 표지를 열 때마다 유튜브 스크립트 1MB 남짓을 받는다.
+  document.querySelectorAll<HTMLElement>('.cover-video').forEach((box) => {
+    box.querySelector('.cv-play')?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&playsinline=1&rel=0`;
+      f.title = box.dataset.title ?? '';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      box.replaceChildren(f);
+    });
+  });
+</script>
 
 <style is:global>
   /* 표지에서는 시뮬레이터의 제목 띠와 고지 문단을 접는다. 표지는 한 장으로 읽혀야 하고,
@@ -392,6 +417,57 @@ const grouped = SECTION_ORDER.map((key) => ({
   }
   .cover-sim {
     display: block;
+  }
+  /* 세로(9:16) 쇼츠 표지. 808px 카드 폭을 다 쓰면 1,400px 넘게 길어지므로
+     높이를 화면의 70% 안으로 묶고 가운데 세운다. */
+  .cover-video {
+    position: relative;
+    width: min(100%, calc(min(70svh, 720px) * 9 / 16));
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    background: #0d0d10;
+  }
+  .cover-video :is(.cv-play, iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .cv-play {
+    padding: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .cv-play img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cv-icon {
+    position: absolute;
+    left: 50%;
+    bottom: 14%;
+    width: 68px;
+    height: 68px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  }
+  .cv-icon::after {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 21px;
+    border-style: solid;
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent #12120e;
+  }
+  .cv-play:hover .cv-icon,
+  .cv-play:focus-visible .cv-icon {
+    background: #fff;
   }
   .cover-img {
     display: block;

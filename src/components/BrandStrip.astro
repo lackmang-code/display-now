@@ -38,7 +38,7 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
           <span class="ax-label">MAGAZINE · 이번 호</span>
           <span class="mag-no">
             {issueNumberLabel(latestIssue)} · {issueDateLabel(latestIssue)} · {issueArticles.length}편
-            {latestIssue.coverSim && ' · 표지는 시뮬레이션'}
+            {latestIssue.coverVideo?.youtubeId ? ' · 표지는 영상' : latestIssue.coverSim && ' · 표지는 시뮬레이션'}
           </span>
           <span class="mag-head">{latestIssue.headline}</span>
         </a>
