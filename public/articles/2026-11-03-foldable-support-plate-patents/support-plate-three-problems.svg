@@ -1,0 +1,111 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="559" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">One set of openings, three new problems</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Cross-sections of the folding band: screen on top, support plate below</text>
+<text x="32.0" y="122.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">1  Show-through</text>
+<text x="32.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">opening edges print through</text>
+<text x="32.0" y="165.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">the screen as faint lines</text>
+<text x="312.0" y="122.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">2  Debris</text>
+<text x="312.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">particles get into the</text>
+<text x="312.0" y="165.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">openings under the fold</text>
+<text x="592.0" y="122.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">3  Pen signal</text>
+<text x="592.0" y="146.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">a metal plate blocks the</text>
+<text x="592.0" y="165.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500">digitizer's magnetic field</text>
+<linearGradient id="pu6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<rect x="38" y="272" width="250" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
+<rect x="32.0" y="252" width="64.0" height="22" fill="url(#pu6)"/>
+<line x1="32.0" y1="252.6" x2="96.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="118.0" y="252" width="28.0" height="22" fill="url(#pu6)"/>
+<line x1="118.0" y1="252.6" x2="146.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="168.0" y="252" width="28.0" height="22" fill="url(#pu6)"/>
+<line x1="168.0" y1="252.6" x2="196.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="218.0" y="252" width="64.0" height="22" fill="url(#pu6)"/>
+<line x1="218.0" y1="252.6" x2="282.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M32,236 L92.0,236 Q107.0,245.0 122.0,236 L142.0,236 Q157.0,245.0 172.0,236 L192.0,236 Q207.0,245.0 222.0,236 L282,236 L282,252 L222.0,252 Q207.0,261.0 192.0,252 L172.0,252 Q157.0,261.0 142.0,252 L122.0,252 Q107.0,261.0 92.0,252 L32,252 Z" fill="url(#qu7)"/>
+<path d="M32,236 L92.0,236 Q107.0,245.0 122.0,236 L142.0,236 Q157.0,245.0 172.0,236 L192.0,236 Q207.0,245.0 222.0,236 L282,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<line x1="107.0" y1="206" x2="107.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="157.0" y1="206" x2="157.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="207.0" y1="206" x2="207.0" y2="232" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="157.0" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">lines seen on the screen</text>
+<text x="157.0" y="302.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">screen sags into each opening</text>
+<text x="32.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
+<circle cx="38" cy="400" r="4.5" fill="#a21caf"/>
+<text x="49.0" y="405.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">fill or level the step · LGD 2015</text>
+<circle cx="38" cy="424" r="4.5" fill="#a21caf"/>
+<text x="49.0" y="429.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">openings in flat areas too · LGD 2017</text>
+<circle cx="38" cy="448" r="4.5" fill="#1d4ed8"/>
+<text x="49.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">light-shield layer · SDC 2019</text>
+<circle cx="38" cy="472" r="4.5" fill="#1d4ed8"/>
+<text x="49.0" y="477.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">flat glass over coils · SDC 2021</text>
+<linearGradient id="pu8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757f8e"/><stop offset="1" stop-color="#3c4859"/></linearGradient>
+<rect x="318" y="272" width="250" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
+<rect x="312.0" y="252" width="64.0" height="22" fill="url(#pu8)"/>
+<line x1="312.0" y1="252.6" x2="376.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="398.0" y="252" width="28.0" height="22" fill="url(#pu8)"/>
+<line x1="398.0" y1="252.6" x2="426.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="448.0" y="252" width="28.0" height="22" fill="url(#pu8)"/>
+<line x1="448.0" y1="252.6" x2="476.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="498.0" y="252" width="64.0" height="22" fill="url(#pu8)"/>
+<line x1="498.0" y1="252.6" x2="562.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M312,236 L372.0,236 Q387.0,236.0 402.0,236 L422.0,236 Q437.0,236.0 452.0,236 L472.0,236 Q487.0,236.0 502.0,236 L562,236 L562,252 L502.0,252 Q487.0,252.0 472.0,252 L452.0,252 Q437.0,252.0 422.0,252 L402.0,252 Q387.0,252.0 372.0,252 L312,252 Z" fill="url(#qu9)"/>
+<path d="M312,236 L372.0,236 Q387.0,236.0 402.0,236 L422.0,236 Q437.0,236.0 452.0,236 L472.0,236 Q487.0,236.0 502.0,236 L562,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<radialGradient id="ru10" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
+<circle cx="387.0" cy="267.5" r="5.5" fill="url(#ru10)"/>
+<radialGradient id="ru11" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#f5f5f4"/><stop offset="1" stop-color="#57534e"/></radialGradient>
+<circle cx="487.0" cy="268.5" r="4.5" fill="url(#ru11)"/>
+<text x="437.0" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">particles in the openings</text>
+<path d="M387.0,206 L387.0,260" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
+<path d="M487.0,206 L487.0,262" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/>
+<text x="312.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
+<circle cx="318" cy="400" r="4.5" fill="#1d4ed8"/>
+<text x="329.0" y="405.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">elastic layer under openings · SDC 2019</text>
+<circle cx="318" cy="424" r="4.5" fill="#1d4ed8"/>
+<text x="329.0" y="429.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">cover layer under the band · SDC 2021</text>
+<circle cx="318" cy="448" r="4.5" fill="#1d4ed8"/>
+<text x="329.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">non-conductive aramid · SDC 2021</text>
+<linearGradient id="pu12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#94949b"/><stop offset="1" stop-color="#606067"/></linearGradient>
+<rect x="598" y="272" width="117.5" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
+<rect x="592.0" y="252" width="80.6" height="22" fill="url(#pu12)"/>
+<line x1="592.0" y1="252.6" x2="672.6" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="694.6" y="252" width="14.9" height="22" fill="url(#pu12)"/>
+<line x1="694.6" y1="252.6" x2="709.5" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu13" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M592,236 L668.6,236 Q683.6,236.0 698.6,236 L709.5,236 L709.5,252 L698.6,252 Q683.6,252.0 668.6,252 L592,252 Z" fill="url(#qu13)"/>
+<path d="M592,236 L668.6,236 Q683.6,236.0 698.6,236 L709.5,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<linearGradient id="pu14" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b88945"/><stop offset="1" stop-color="#885305"/></linearGradient>
+<rect x="730.5" y="272" width="117.5" height="10" rx="5" fill="#0f172a" opacity=".18" filter="url(#b4)"/>
+<rect x="724.5" y="252" width="14.9" height="22" fill="url(#pu14)"/>
+<line x1="724.5" y1="252.6" x2="739.4" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<rect x="761.4" y="252" width="80.6" height="22" fill="url(#pu14)"/>
+<line x1="761.4" y1="252.6" x2="842.0" y2="252.6" stroke="#fff" stroke-width="1.2" opacity=".8"/>
+<linearGradient id="qu15" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c42f6d"/></linearGradient>
+<path d="M724.5,236 L735.4,236 Q750.4,236.0 765.4,236 L842.0,236 L842.0,252 L765.4,252 Q750.4,252.0 735.4,252 L724.5,252 Z" fill="url(#qu15)"/>
+<path d="M724.5,236 L735.4,236 Q750.4,236.0 765.4,236 L842.0,236" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<linearGradient id="du16" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e87df"/><stop offset="1" stop-color="#3c32b5"/></linearGradient>
+<rect x="592" y="290" width="117.5" height="10" fill="url(#du16)"/>
+<rect x="724.5" y="290" width="117.5" height="10" fill="url(#du16)"/>
+<text x="717.0" y="320.0" font-size="14" fill="#4338ca" text-anchor="middle" font-weight="700">digitizer coils</text>
+<path d="M624.5,290 L624.5,274" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+<path d="M789.5,290 L789.5,206" stroke="#15803d" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+<path d="M644.5,290 L644.5,274" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+<path d="M809.5,290 L809.5,206" stroke="#15803d" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+<text x="634.5" y="198.0" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="700">blocked</text>
+<text x="799.5" y="198.0" font-size="14" fill="#15803d" text-anchor="middle" font-weight="700">passes</text>
+<text x="634.5" y="267.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">metal</text>
+<text x="799.5" y="267.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">fiber</text>
+<text x="592.0" y="380.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="700">Patented fixes</text>
+<circle cx="598" cy="400" r="4.5" fill="#1d4ed8"/>
+<text x="609.0" y="405.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">non-metal where the coils are · SDC 2020</text>
+<circle cx="598" cy="424" r="4.5" fill="#1d4ed8"/>
+<text x="609.0" y="429.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">glass or ceramic plate · SDC 2021</text>
+<circle cx="598" cy="448" r="4.5" fill="#1d4ed8"/>
+<text x="609.0" y="453.0" font-size="14" fill="#151a22" text-anchor="start" font-weight="500">carbon or aramid fiber · SDC 2021</text>
+<circle cx="40" cy="509" r="5" fill="#a21caf"/>
+<text x="52.0" y="514.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">LG Display</text>
+<circle cx="160" cy="509" r="5" fill="#1d4ed8"/>
+<text x="172.0" y="514.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">Samsung Display</text>
+<text x="32.0" y="544.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Year = priority date of the earliest filing found for each fix. Sag over the openings is exaggerated.</text>
+</svg>

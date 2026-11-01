@@ -1,0 +1,81 @@
+<svg viewBox="0 0 900 660" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="659" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Support-plate filings follow the problems</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Earliest filing found for each fix (priority date), with Samsung foldable launches</text>
+<line x1="230.0" y1="116" x2="230.0" y2="542" stroke="#e6e9ee"/>
+<text x="230.0" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2015</text>
+<line x1="286.4" y1="116" x2="286.4" y2="542" stroke="#e6e9ee"/>
+<text x="286.4" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2016</text>
+<line x1="342.7" y1="116" x2="342.7" y2="542" stroke="#e6e9ee"/>
+<text x="342.7" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2017</text>
+<line x1="399.1" y1="116" x2="399.1" y2="542" stroke="#e6e9ee"/>
+<text x="399.1" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2018</text>
+<line x1="455.5" y1="116" x2="455.5" y2="542" stroke="#e6e9ee"/>
+<text x="455.5" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2019</text>
+<line x1="511.8" y1="116" x2="511.8" y2="542" stroke="#e6e9ee"/>
+<text x="511.8" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2020</text>
+<line x1="568.2" y1="116" x2="568.2" y2="542" stroke="#e6e9ee"/>
+<text x="568.2" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2021</text>
+<line x1="624.5" y1="116" x2="624.5" y2="542" stroke="#e6e9ee"/>
+<text x="624.5" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2022</text>
+<line x1="680.9" y1="116" x2="680.9" y2="542" stroke="#e6e9ee"/>
+<text x="680.9" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2023</text>
+<line x1="737.3" y1="116" x2="737.3" y2="542" stroke="#e6e9ee"/>
+<text x="737.3" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2024</text>
+<line x1="793.6" y1="116" x2="793.6" y2="542" stroke="#e6e9ee"/>
+<text x="793.6" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2025</text>
+<line x1="850.0" y1="116" x2="850.0" y2="542" stroke="#e6e9ee"/>
+<text x="850.0" y="564.0" font-size="13" fill="#5b6474" text-anchor="middle" font-weight="500">2026</text>
+<text x="32.0" y="154.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Let it bend</text>
+<text x="32.0" y="174.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">openings and slits</text>
+<line x1="230" y1="156" x2="850" y2="156" stroke="#d9dde3" stroke-width="1"/>
+<circle cx="254.8" cy="156" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+<text x="250.8" y="140.0" font-size="14" fill="#a21caf" text-anchor="end" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">openings</text>
+<circle cx="267.2" cy="156" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+<text x="271.2" y="140.0" font-size="14" fill="#a21caf" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">slits</text>
+<text x="32.0" y="242.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Hide the pattern</text>
+<text x="32.0" y="262.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">show-through</text>
+<line x1="230" y1="244" x2="850" y2="244" stroke="#d9dde3" stroke-width="1"/>
+<circle cx="254.8" cy="244" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+<text x="254.8" y="228.0" font-size="14" fill="#a21caf" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">step fill</text>
+<circle cx="398.5" cy="244" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+<text x="398.5" y="272.0" font-size="14" fill="#a21caf" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">flat-area openings</text>
+<circle cx="484.2" cy="244" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="484.2" y="228.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">light shield</text>
+<circle cx="572.1" cy="244" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="572.1" y="272.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">glass over coils</text>
+<text x="32.0" y="330.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Keep debris out</text>
+<text x="32.0" y="350.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">particles in openings</text>
+<line x1="230" y1="332" x2="850" y2="332" stroke="#d9dde3" stroke-width="1"/>
+<circle cx="482.5" cy="332" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="482.5" y="316.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">elastic layer</text>
+<circle cx="611.6" cy="332" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="611.6" y="360.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">aramid</text>
+<text x="32.0" y="418.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Let the pen through</text>
+<text x="32.0" y="438.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">digitizer field</text>
+<line x1="230" y1="420" x2="850" y2="420" stroke="#d9dde3" stroke-width="1"/>
+<circle cx="547.3" cy="420" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="543.3" y="404.0" font-size="14" fill="#1d4ed8" text-anchor="end" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">metal only at fold</text>
+<circle cx="572.1" cy="420" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="572.1" y="448.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">glass</text>
+<circle cx="593.5" cy="420" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="593.5" y="404.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">CFRP</text>
+<circle cx="611.6" cy="420" r="8" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="615.6" y="448.0" font-size="14" fill="#1d4ed8" text-anchor="start" font-weight="600" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">aramid</text>
+<text x="32.0" y="513.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="700">Samsung launch</text>
+<line x1="230" y1="508" x2="850" y2="508" stroke="#d9dde3"/>
+<polygon points="463.3,498 473.3,508 463.3,518 453.3,508" fill="#1d4ed8"/>
+<text x="463.3" y="492.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Galaxy Fold</text>
+<polygon points="602.6,498 612.6,508 602.6,518 592.6,508" fill="#1d4ed8"/>
+<text x="602.6" y="492.0" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Z Fold3, first S Pen</text>
+<polygon points="822.9,498 832.9,508 822.9,518 812.9,508" fill="#1d4ed8"/>
+<text x="834.9" y="492.0" font-size="14" fill="#1d4ed8" text-anchor="end" font-weight="700" paint-order="stroke" stroke="#fff" stroke-width="4" stroke-linejoin="round">Z Fold7, no S Pen</text>
+<circle cx="40" cy="611" r="7" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+<text x="54.0" y="616.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">LG Display filing</text>
+<circle cx="214" cy="611" r="7" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="228.0" y="616.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">Samsung Display filing</text>
+<polygon points="428,601 438,611 428,621 418,611" fill="#1d4ed8"/>
+<text x="446.0" y="616.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="500">product announcement</text>
+<text x="32.0" y="644.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Filings: Google Patents full-text search, Korean filings. A filing is not proof that a product uses it.</text>
+</svg>

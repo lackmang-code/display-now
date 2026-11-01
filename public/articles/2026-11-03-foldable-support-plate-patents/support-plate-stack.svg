@@ -1,0 +1,138 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="639" fill="#fff" stroke="#d9dde3"/>
+<defs><filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter><filter id="b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<text x="32.0" y="46.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Where the support plate sits</text>
+<text x="32.0" y="74.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="500">Exploded view of a foldable inner screen, layers pulled apart (not to scale)</text>
+<linearGradient id="tu1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3e5eb"/><stop offset="1" stop-color="#a3cad4"/></linearGradient>
+<linearGradient id="fu1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ab2c1"/><stop offset="1" stop-color="#3288a0"/></linearGradient>
+<linearGradient id="su1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3e8fa6"/><stop offset="1" stop-color="#0b5c73"/></linearGradient>
+<linearGradient id="gu1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="211" width="560" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,200 210,120.0 610,120.0 450,200" fill="url(#tu1)" stroke="#6eabbc" stroke-width="1"/>
+<polygon points="450,200 610,120.0 610,134.0 450,214" fill="url(#su1)"/>
+<rect x="50" y="200" width="400" height="14" fill="url(#fu1)"/>
+<polygon points="270.0,200 322.0,200 482.0,120.0 430.0,120.0" fill="url(#gu1)" opacity=".8"/>
+<line x1="50" y1="200" x2="450" y2="200" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="200" width="400" height="14" fill="none" stroke="#0c6881" stroke-width=".8" opacity=".5"/>
+<path d="M538.0,163.0 L626.0,156.0 L640.0,156.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="538.0" cy="163.0" r="3" fill="#5b6474"/>
+<text x="648.0" y="161.0" font-size="16" fill="#0e7490" text-anchor="start" font-weight="700">Cover window</text>
+<text x="648.0" y="181.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">ultra-thin glass or polyimide</text>
+<linearGradient id="tu2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d5e1"/><stop offset="1" stop-color="#e6a7c1"/></linearGradient>
+<linearGradient id="fu2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#db7fa5"/><stop offset="1" stop-color="#c73a75"/></linearGradient>
+<linearGradient id="su2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cb467d"/><stop offset="1" stop-color="#98134a"/></linearGradient>
+<linearGradient id="gu2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="303" width="560" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,290 210,210.0 610,210.0 450,290" fill="url(#tu2)" stroke="#d8749d" stroke-width="1"/>
+<polygon points="450,290 610,210.0 610,226.0 450,306" fill="url(#su2)"/>
+<rect x="50" y="290" width="400" height="16" fill="url(#fu2)"/>
+<polygon points="270.0,290 322.0,290 482.0,210.0 430.0,210.0" fill="url(#gu2)" opacity=".8"/>
+<line x1="50" y1="290" x2="450" y2="290" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="290" width="400" height="16" fill="none" stroke="#ab1553" stroke-width=".8" opacity=".5"/>
+<path d="M538.0,254.0 L626.0,246.0 L640.0,246.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="538.0" cy="254.0" r="3" fill="#5b6474"/>
+<text x="648.0" y="251.0" font-size="16" fill="#be185d" text-anchor="start" font-weight="700">Display panel</text>
+<text x="648.0" y="271.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">OLED layers on a plastic film</text>
+<linearGradient id="tu3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dde0e4"/><stop offset="1" stop-color="#b9bec6"/></linearGradient>
+<linearGradient id="fu3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#99a1ac"/><stop offset="1" stop-color="#626e7f"/></linearGradient>
+<linearGradient id="su3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6b7787"/><stop offset="1" stop-color="#384454"/></linearGradient>
+<linearGradient id="gu3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="405" width="560" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,390 210,310.0 610,310.0 450,390" fill="url(#tu3)" stroke="#9099a5" stroke-width="1"/>
+<polygon points="450,390 610,310.0 610,328.0 450,408" fill="url(#su3)"/>
+<rect x="50" y="390" width="400" height="18" fill="url(#fu3)"/>
+<polygon points="270.0,390 322.0,390 482.0,310.0 430.0,310.0" fill="url(#gu3)" opacity=".8"/>
+<line x1="50" y1="390" x2="450" y2="390" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="390" width="400" height="18" fill="none" stroke="#3f4c5e" stroke-width=".8" opacity=".5"/>
+<polygon points="210.7,386.8 214.1,386.8 234.1,376.8 230.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="241.9,371.2 245.3,371.2 266.1,360.8 262.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="273.9,355.2 277.3,355.2 298.1,344.8 294.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="305.9,339.2 309.3,339.2 330.1,328.8 326.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="337.9,323.2 341.3,323.2 361.3,313.2 357.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="233.9,379.2 237.3,379.2 258.1,368.8 254.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="265.9,363.2 269.3,363.2 290.1,352.8 286.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="297.9,347.2 301.3,347.2 322.1,336.8 318.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="329.9,331.2 333.3,331.2 354.1,320.8 350.7,320.8" fill="#232a34" opacity=".9"/>
+<polygon points="226.7,386.8 230.1,386.8 250.1,376.8 246.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="257.9,371.2 261.3,371.2 282.1,360.8 278.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="289.9,355.2 293.3,355.2 314.1,344.8 310.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="321.9,339.2 325.3,339.2 346.1,328.8 342.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="353.9,323.2 357.3,323.2 377.3,313.2 373.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="249.9,379.2 253.3,379.2 274.1,368.8 270.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="281.9,363.2 285.3,363.2 306.1,352.8 302.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="313.9,347.2 317.3,347.2 338.1,336.8 334.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="345.9,331.2 349.3,331.2 370.1,320.8 366.7,320.8" fill="#232a34" opacity=".9"/>
+<polygon points="242.7,386.8 246.1,386.8 266.1,376.8 262.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="273.9,371.2 277.3,371.2 298.1,360.8 294.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="305.9,355.2 309.3,355.2 330.1,344.8 326.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="337.9,339.2 341.3,339.2 362.1,328.8 358.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="369.9,323.2 373.3,323.2 393.3,313.2 389.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="265.9,379.2 269.3,379.2 290.1,368.8 286.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="297.9,363.2 301.3,363.2 322.1,352.8 318.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="329.9,347.2 333.3,347.2 354.1,336.8 350.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="361.9,331.2 365.3,331.2 386.1,320.8 382.7,320.8" fill="#232a34" opacity=".9"/>
+<polygon points="258.7,386.8 262.1,386.8 282.1,376.8 278.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="289.9,371.2 293.3,371.2 314.1,360.8 310.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="321.9,355.2 325.3,355.2 346.1,344.8 342.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="353.9,339.2 357.3,339.2 378.1,328.8 374.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="385.9,323.2 389.3,323.2 409.3,313.2 405.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="281.9,379.2 285.3,379.2 306.1,368.8 302.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="313.9,363.2 317.3,363.2 338.1,352.8 334.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="345.9,347.2 349.3,347.2 370.1,336.8 366.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="377.9,331.2 381.3,331.2 402.1,320.8 398.7,320.8" fill="#232a34" opacity=".9"/>
+<polygon points="274.7,386.8 278.1,386.8 298.1,376.8 294.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="305.9,371.2 309.3,371.2 330.1,360.8 326.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="337.9,355.2 341.3,355.2 362.1,344.8 358.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="369.9,339.2 373.3,339.2 394.1,328.8 390.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="401.9,323.2 405.3,323.2 425.3,313.2 421.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="297.9,379.2 301.3,379.2 322.1,368.8 318.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="329.9,363.2 333.3,363.2 354.1,352.8 350.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="361.9,347.2 365.3,347.2 386.1,336.8 382.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="393.9,331.2 397.3,331.2 418.1,320.8 414.7,320.8" fill="#232a34" opacity=".9"/>
+<polygon points="290.7,386.8 294.1,386.8 314.1,376.8 310.7,376.8" fill="#232a34" opacity=".9"/>
+<polygon points="321.9,371.2 325.3,371.2 346.1,360.8 342.7,360.8" fill="#232a34" opacity=".9"/>
+<polygon points="353.9,355.2 357.3,355.2 378.1,344.8 374.7,344.8" fill="#232a34" opacity=".9"/>
+<polygon points="385.9,339.2 389.3,339.2 410.1,328.8 406.7,328.8" fill="#232a34" opacity=".9"/>
+<polygon points="417.9,323.2 421.3,323.2 441.3,313.2 437.9,313.2" fill="#232a34" opacity=".9"/>
+<polygon points="313.9,379.2 317.3,379.2 338.1,368.8 334.7,368.8" fill="#232a34" opacity=".9"/>
+<polygon points="345.9,363.2 349.3,363.2 370.1,352.8 366.7,352.8" fill="#232a34" opacity=".9"/>
+<polygon points="377.9,347.2 381.3,347.2 402.1,336.8 398.7,336.8" fill="#232a34" opacity=".9"/>
+<polygon points="409.9,331.2 413.3,331.2 434.1,320.8 430.7,320.8" fill="#232a34" opacity=".9"/>
+<path d="M538.0,355.0 L626.0,346.0 L640.0,346.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="538.0" cy="355.0" r="3" fill="#5b6474"/>
+<text x="648.0" y="351.0" font-size="16" fill="#475569" text-anchor="start" font-weight="700">Support plate</text>
+<text x="648.0" y="371.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">openings only where it folds</text>
+<linearGradient id="tu4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dddbf5"/><stop offset="1" stop-color="#b7b3ea"/></linearGradient>
+<linearGradient id="fu4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9791e1"/><stop offset="1" stop-color="#5f55d1"/></linearGradient>
+<linearGradient id="su4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#685fd4"/><stop offset="1" stop-color="#352ca1"/></linearGradient>
+<linearGradient id="gu4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="60" y="529" width="306.0" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="50,520 210,440.0 356.0,440.0 196.0,520" fill="url(#tu4)" stroke="#8e87df" stroke-width="1"/>
+<polygon points="196.0,520 356.0,440.0 356.0,452.0 196.0,532" fill="url(#su4)"/>
+<rect x="50" y="520" width="146.0" height="12" fill="url(#fu4)"/>
+<polygon points="130.3,520 149.28,520 309.28,440.0 290.3,440.0" fill="url(#gu4)" opacity=".8"/>
+<line x1="50" y1="520" x2="196.0" y2="520" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="50" y="520" width="146.0" height="12" fill="none" stroke="#3c32b5" stroke-width=".8" opacity=".5"/>
+<linearGradient id="tu5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dddbf5"/><stop offset="1" stop-color="#b7b3ea"/></linearGradient>
+<linearGradient id="fu5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9791e1"/><stop offset="1" stop-color="#5f55d1"/></linearGradient>
+<linearGradient id="su5" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#685fd4"/><stop offset="1" stop-color="#352ca1"/></linearGradient>
+<linearGradient id="gu5" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<rect x="314.0" y="529" width="306.0" height="12" rx="6" fill="#0f172a" opacity=".2" filter="url(#b9)"/>
+<polygon points="304.0,520 464.0,440.0 610.0,440.0 450.0,520" fill="url(#tu5)" stroke="#8e87df" stroke-width="1"/>
+<polygon points="450.0,520 610.0,440.0 610.0,452.0 450.0,532" fill="url(#su5)"/>
+<rect x="304.0" y="520" width="146.0" height="12" fill="url(#fu5)"/>
+<polygon points="384.3,520 403.28,520 563.28,440.0 544.3,440.0" fill="url(#gu5)" opacity=".8"/>
+<line x1="304.0" y1="520" x2="450.0" y2="520" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+<rect x="304.0" y="520" width="146.0" height="12" fill="none" stroke="#3c32b5" stroke-width=".8" opacity=".5"/>
+<path d="M538.0,482.0 L626.0,476.0 L640.0,476.0" fill="none" stroke="#5b6474" stroke-width="1"/>
+<circle cx="538.0" cy="482.0" r="3" fill="#5b6474"/>
+<text x="648.0" y="481.0" font-size="16" fill="#4338ca" text-anchor="start" font-weight="700">Digitizer (pen)</text>
+<text x="648.0" y="501.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="500">two halves, gap at the fold</text>
+<path d="M202.0,420 L202.0,428 L298.0,428 L298.0,420" fill="none" stroke="#151a22" stroke-width="1.4"/>
+<text x="250.0" y="448.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700">folding band</text>
+<line x1="250.0" y1="200.0" x2="410.0" y2="120.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 5"/>
+<line x1="250.0" y1="290.0" x2="410.0" y2="210.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 5"/>
+<line x1="250.0" y1="390.0" x2="410.0" y2="310.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 5"/>
+<text x="418.0" y="114.0" font-size="15" fill="#dc2626" text-anchor="start" font-weight="700">fold axis</text>
+<text x="32.0" y="622.0" font-size="13" fill="#5b6474" text-anchor="start" font-weight="500">Order of the main layers follows Samsung Display KR103006820B1 (2021). Real stacks add adhesives, films and shields.</text>
+</svg>
