@@ -27,14 +27,15 @@ export interface IssueMeta {
   /** 표지 시뮬레이션에 넘길 초기값 */
   coverSimParams?: Record<string, unknown>;
   /**
-   * 시뮬레이션 대신 **우리가 만든 쇼츠**를 표지로 올릴 때(2026-11-01 대표, 제12호 듀오).
+   * 시뮬레이션 대신 **우리 유튜브 영상의 한 구간**을 표지로 올릴 때(2026-11-01 대표, 제12호 듀오).
    *
+   * 롱폼 한 편에서 `start`~`end`(초)만 재생한다 — 같은 내용의 짧은 판을 또 올리면 채널에
+   * 같은 영상이 두 편 뜬다. 세로 쇼츠는 808px 표지에서 양옆이 비어 쓰지 않는다(`portrait`는 예외용).
    * 한글 호에만 쓴다 — 나레이션이 한국어라 영문 호는 `coverSim`을 그대로 둔다.
-   * 영상은 유튜브에서 끌어온다. mp4를 저장소에 넣으면 PUBLIC 히스토리에 영구히 남는다.
-   * `youtubeId`가 비어 있으면(공개 전) `coverSim`으로 떨어진다.
-   * `poster`는 첫 화면 webp(`public/videos/`) — 누르기 전엔 이것만 받는다.
+   * mp4를 저장소에 넣지 않는다(PUBLIC 히스토리에 영구히 남는다). `youtubeId`가 비면(공개 전) `coverSim`으로 떨어진다.
+   * `poster`는 그 구간 첫머리 장면 webp(`public/videos/`) — 누르기 전엔 이것만 받는다.
    */
-  coverVideo?: { youtubeId?: string; poster: string; title: string };
+  coverVideo?: { youtubeId?: string; start?: number; end?: number; portrait?: boolean; poster: string; title: string };
   /**
    * 표지 시뮬레이션이 무엇을 보여주는지 한 줄 설명(초간단, 15~40자 안팎).
    *

@@ -1,9 +1,12 @@
 ---
-// 우리 쇼츠(9:16)를 지면에 싣는 자리 — 호 표지(`coverVideo`)와 기사 본문이 같이 쓴다(2026-11-01 대표).
+// 우리 유튜브 영상을 지면에 싣는 자리 — 호 표지(`coverVideo`)와 기사 본문이 같이 쓴다(2026-11-01 대표).
 //
-// 원고에는 한 줄만 적는다:
-//   <div class="yt-short" data-yt="<유튜브 ID>" data-poster="/videos/<첫 화면>.webp" data-title="<제목>"></div>
+// 원고에는 한 줄만 적는다(가로 16:9가 기본, 세로 쇼츠는 class 에 yt-portrait 를 더한다):
+//   <div class="yt-clip" data-yt="<유튜브 ID>" data-start="104" data-end="284"
+//        data-poster="/videos/<첫 화면>.webp" data-title="<제목>"></div>
 //
+// 잡지에는 롱폼의 **한 구간만** 건다(start·end 초). 같은 내용의 짧은 판을 따로 올리면
+// 채널에 같은 영상이 두 편 뜬다(대표). 막대를 끌면 앞뒤도 볼 수 있다 — 막는 기능은 없다.
 // 영상 파일은 저장소에 넣지 않는다 — PUBLIC 히스토리에 영구히 남고 Pages 파일 한계(25MiB)에 걸린다.
 // 누르기 전엔 첫 화면 webp만 받는다. 처음부터 iframe을 띄우면 열 때마다 유튜브 스크립트 1MB 남짓을 받는다.
 // 🔴 data-sim 을 쓰지 않는다 — /sims 모음이 data-sim 을 긁어 시뮬로 싣는다.
@@ -11,18 +14,21 @@
 
 <script>
   function boot() {
-    document.querySelectorAll<HTMLElement>('.yt-short').forEach((box) => {
+    document.querySelectorAll<HTMLElement>('.yt-clip').forEach((box) => {
       if (box.dataset.ytMounted || !box.dataset.yt) return;
       box.dataset.ytMounted = 'true';
-      const title = box.dataset.title ?? '';
+      const { yt, start, end, poster = '', title = '' } = box.dataset;
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'yt-play';
       btn.setAttribute('aria-label', `${title} — 영상 재생`);
-      btn.innerHTML = `<img src="${box.dataset.poster ?? ''}" alt="" width="540" height="960" decoding="async" loading="lazy"><span class="yt-icon" aria-hidden="true"></span>`;
+      btn.innerHTML = `<img src="${poster}" alt="" decoding="async" loading="lazy"><span class="yt-icon" aria-hidden="true"></span>`;
       btn.addEventListener('click', () => {
+        const q = new URLSearchParams({ autoplay: '1', playsinline: '1', rel: '0' });
+        if (start) q.set('start', start);
+        if (end) q.set('end', end);
         const f = document.createElement('iframe');
-        f.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&playsinline=1&rel=0`;
+        f.src = `https://www.youtube-nocookie.com/embed/${yt}?${q}`;
         f.title = title;
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.allowFullscreen = true;
@@ -36,15 +42,19 @@
 </script>
 
 <style is:global>
-  /* 세로 영상이라 폭을 다 쓰면 너무 길어진다 — 높이를 화면의 70% 안으로 묶고 가운데 세운다. */
-  .yt-short {
+  .yt-clip {
     position: relative;
-    width: min(100%, calc(min(70svh, 640px) * 9 / 16));
-    aspect-ratio: 9 / 16;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     margin: 1.6em auto;
     background: #0d0d10;
   }
-  .yt-short :is(.yt-play, iframe) {
+  /* 세로 쇼츠는 폭을 다 쓰면 너무 길어진다 — 높이를 화면의 70% 안으로 묶고 가운데 세운다. */
+  .yt-clip.yt-portrait {
+    width: min(100%, calc(min(70svh, 640px) * 9 / 16));
+    aspect-ratio: 9 / 16;
+  }
+  .yt-clip :is(.yt-play, iframe) {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -66,10 +76,10 @@
   .yt-icon {
     position: absolute;
     left: 50%;
-    bottom: 14%;
+    top: 50%;
     width: 68px;
     height: 68px;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.92);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
@@ -82,6 +92,12 @@
     border-style: solid;
     border-width: 13px 0 13px 22px;
     border-color: transparent transparent transparent #12120e;
+  }
+  /* 휴대폰에서는 68px 버튼이 그림 가운데(힌지)를 덮는다 */
+  @media (max-width: 520px) {
+    .yt-icon {
+      transform: translate(-50%, -50%) scale(0.66);
+    }
   }
   .yt-play:hover .yt-icon,
   .yt-play:focus-visible .yt-icon {

@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SimBoot from '../components/SimBoot.astro';
-import YtShortBoot from '../components/YtShortBoot.astro';
+import YtClipBoot from '../components/YtClipBoot.astro';
 import LangSwitch from '../components/LangSwitch.astro';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { bylineOf, articleHref, readingLabel, leadImage, baseSlug } from '../lib/articles';
@@ -130,8 +130,10 @@ const grouped = SECTION_ORDER.map((key) => ({
         {
           coverVideo ? (
             <div
-              class="yt-short cover-video"
+              class={coverVideo.portrait ? 'yt-clip yt-portrait cover-video' : 'yt-clip cover-video'}
               data-yt={coverVideo.youtubeId}
+              data-start={coverVideo.start}
+              data-end={coverVideo.end}
               data-poster={coverVideo.poster}
               data-title={coverVideo.title}
             />
@@ -260,8 +262,7 @@ const grouped = SECTION_ORDER.map((key) => ({
 </Base>
 
 <SimBoot />
-<YtShortBoot />
-
+<YtClipBoot />
 
 <style is:global>
   /* 표지에서는 시뮬레이터의 제목 띠와 고지 문단을 접는다. 표지는 한 장으로 읽혀야 하고,
@@ -406,7 +407,7 @@ const grouped = SECTION_ORDER.map((key) => ({
   .cover-sim {
     display: block;
   }
-  /* 쇼츠 표지 — 모양은 YtShortBoot 가 갖고, 표지 카드 안에서는 바깥 여백만 걷는다. */
+  /* 영상 표지 — 모양은 YtClipBoot 가 갖고, 표지 카드 안에서는 바깥 여백만 걷는다. */
   .cover-stage .cover-video {
     margin: 0 auto;
   }
