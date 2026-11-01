@@ -30,6 +30,14 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
   const lines = readFileSync(join(DIR, file), 'utf8').split('\n');
   const start = frontmatterEnd(lines) + 1;
 
+  // 프론트매터도 화면에 나간다 — 제목·summary는 목록에, sources의 title은 근거 박스에 그대로 찍힌다.
+  // 본문만 보던 때 제12호 데스크 sources에 em dash 3개가 통과했다(2026-11-01).
+  for (let i = 0; i < start; i++) {
+    if (lines[i].includes(EM_DASH)) {
+      problems.push(`${file}:${i + 1}  프론트매터에 em dash(${EM_DASH})가 있습니다. 쉼표나 쌍점으로 바꾸십시오.`);
+    }
+  }
+
   let fenced = false;
   let inHtml = false;
   let para = [];

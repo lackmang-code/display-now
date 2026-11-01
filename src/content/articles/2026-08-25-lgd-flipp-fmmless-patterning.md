@@ -40,7 +40,7 @@ sources:
     title: "Visionox announces that the building of its 8.6-Gen V5 ViP AMOLED line topped out (OLED-Info, 76억 달러 허페이 8.6세대 ViP 라인)"
     url: "https://www.oled-info.com/visionox-announces-building-its-86-gen-v5-vip-amoled-line-topped-out"
   - type: paper
-    title: "Identification of OLED Degradation Scenarios by Kinetic Monte Carlo Simulations of Lifetime Experiments, Frontiers in Chemistry 9, 823210 (2021) — 수명 멱법칙 τ ∝ J^(-n), n = 1.5~2.0"
+    title: "Identification of OLED Degradation Scenarios by Kinetic Monte Carlo Simulations of Lifetime Experiments, Frontiers in Chemistry 9, 823210 (2021): 수명 멱법칙 τ ∝ J^(-n), n = 1.5~2.0"
     url: "https://doi.org/10.3389/fchem.2021.823210"
   - type: paper
     title: "A unified OLED aging model combining three modeling approaches for extending AMOLED lifetime, Journal of the SID 29(11) (2021)"
