@@ -275,7 +275,7 @@ const hasCoverImage = existsSync(coverImagePath);
       {
         hasCoverImage && coverFromOther && coverArticle && (
           <div class="cover-cap">
-            <span class="cap-tag">표지 시뮬레이션</span>
+            <span class="cap-tag">{issue.coverVideo?.youtubeId ? '표지 영상' : '표지 시뮬레이션'}</span>
             {SECTIONS[coverArticle.data.section].label} 「{coverArticle.data.title}」
           </div>
         )

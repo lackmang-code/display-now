@@ -340,7 +340,7 @@ const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3
             <div class="cover-fig">
             <img class="cover-img" src={`/issues/issue-${issue.no}-cover.png`} alt="" />
             <div class="cover-cap">
-              <span class="cap-tag">표지 시뮬레이션</span>
+              <span class="cap-tag">{issue.coverVideo?.youtubeId ? '표지 영상' : '표지 시뮬레이션'}</span>
               {coverArticle && (
                 <span>
                   {SECTIONS[coverArticle.data.section].label} 「{coverArticle.data.title}」
