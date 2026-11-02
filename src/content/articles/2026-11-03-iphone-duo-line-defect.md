@@ -118,7 +118,7 @@ sources:
 
 힌지 구조와 두 가설을 DISPLAY NOW 영상(3분)으로 먼저 보실 수 있습니다. 글은 같은 내용을 그림 넷으로 나눠 따라갑니다.
 
-<div class="yt-clip" data-yt="fX3DIFYgt3k" data-start="104" data-end="284" data-poster="/videos/duo-hinge-1m46.webp" data-title="아이폰 듀오 힌지, 지지대 셋과 두 가설"></div>
+<div class="yt-clip" data-yt="fX3DIFYgt3k" data-start="105" data-end="284" data-poster="/videos/duo-hinge-1m46.webp" data-title="아이폰 듀오 힌지, 지지대 셋과 두 가설"></div>
 
 iFixit과 분해 채널들이 짚은 곳은 같습니다. 접히는 축의 가운데입니다. iFixit은 신고된 손상 위치를 3D 모델과 맞춰 보고, 손상이 화면 케이블이 지나는 틈에서 가운데 지지대로 넘어가는 자리 근처에 몰린다고 봤습니다. 아래 도식은 ColorScale의 3D 모델과 iFixit의 CT 영상을 보고 DISPLAY NOW가 그린 개략도입니다. 실제 치수와 부품 배치를 그대로 옮긴 것이 아닙니다.
 

@@ -99,7 +99,7 @@ export const ISSUES: IssueMeta[] = [
     deck: '애플은 아이폰 듀오 안쪽 화면 문제를 출시 사흘 만에 인정하고 교체를 시작했지만, 몇 대에서 왜 생겼는지는 지금도 밝히지 않았습니다. 공개된 가설 둘은 모두 힌지 가운데를 가리키지만 어느 쪽도 확정이 아닙니다.',
     coverVideo: {
       youtubeId: 'fX3DIFYgt3k',
-      start: 104,
+      start: 105,
       end: 284,
       poster: '/videos/duo-hinge-1m46.webp',
       title: '아이폰 듀오 힌지, 지지대 셋과 두 가설',
