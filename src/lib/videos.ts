@@ -25,6 +25,13 @@ export const CHANNEL_URL = 'https://www.youtube.com/@displaynowtv';
 
 export const VIDEOS: Video[] = [
   {
+    id: 'fX3DIFYgt3k',
+    title: '애플 듀오 화면 라인불량, 원인은 힌지?',
+    duration: '6:54',
+    date: '2026-11-02',
+    thumb: '/videos/duo-hinge-crack.webp',
+  },
+  {
     id: 'upKBkH7KEbw',
     title: '아이폰 18 Pro Face ID, 화면 아래로 내려갔다는데 사실일까?',
     duration: '6:27',

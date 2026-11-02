@@ -89,6 +89,25 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 12,
+    publishedAt: '2026-11-03',
+    weekStart: '2026-10-26',
+    // 헤드는 데스크 아이폰 듀오 편이다. 표지는 시뮬 대신 우리 롱폼의 한 구간(대표 2026-11-01) —
+    // 힌지 구조 → 가설 A(iFixit) → 가설 B(ColorScale), 1:44~4:44. 첫 화면은 1:46 장면(대표 A안).
+    // 영문 호를 만들면 headlineEn 과 함께 coverSim 을 넣는다 — 영상이 한국어라 영문 표지는 시뮬로 간다.
+    headline: '애플 아이폰 듀오 폴더블 OLED 라인 불량',
+    deck: '애플은 아이폰 듀오 안쪽 화면 문제를 출시 사흘 만에 인정하고 교체를 시작했지만, 몇 대에서 왜 생겼는지는 지금도 밝히지 않았습니다. 공개된 가설 둘은 모두 힌지 가운데를 가리키지만 어느 쪽도 확정이 아닙니다.',
+    coverVideo: {
+      youtubeId: 'fX3DIFYgt3k',
+      start: 104,
+      end: 284,
+      poster: '/videos/duo-hinge-1m46.webp',
+      title: '아이폰 듀오 힌지, 지지대 셋과 두 가설',
+    },
+    coverNote: '아이폰 듀오 힌지의 구조와 공개된 가설 둘을 그림으로 푼 DISPLAY NOW 영상의 한 구간입니다(3분, 데스크 편). 그림은 iFixit 분해·CT와 ColorScale 3D 분석을 보고 다시 그렸고, 어느 가설도 확정이 아닙니다.',
+    headSlug: '2026-11-03-iphone-duo-line-defect',
+  },
+  {
     no: 11,
     publishedAt: '2026-10-27',
     weekStart: '2026-10-19',

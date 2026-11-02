@@ -1,0 +1,78 @@
+<svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="cTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f0ff"/><stop offset="1" stop-color="#d9c8fb"/></linearGradient>
+<linearGradient id="cFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ddcffd"/><stop offset="1" stop-color="#c2aaf6"/></linearGradient>
+<linearGradient id="cSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a68af5"/><stop offset="1" stop-color="#7a59d4"/></linearGradient>
+<linearGradient id="pTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6ecff"/><stop offset="1" stop-color="#b8c6f3"/></linearGradient>
+<linearGradient id="pFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b3c3f1"/><stop offset="1" stop-color="#8197e0"/></linearGradient>
+<linearGradient id="pSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a70c4"/><stop offset="1" stop-color="#36499a"/></linearGradient>
+<radialGradient id="xt" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#f3ecff"/><stop offset="0.5" stop-color="#9b6cf7"/><stop offset="1" stop-color="#5b21b6"/></radialGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="719" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">Tougher and stiffer, not harder</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Corning datasheets (Victus 2 ©2022, Glass Ceramic 2 2025-05), Kyocera SA100 and NIST for sapphire</text>
+<path d="M40.0,118.0 L54.0,108.0 L98.0,108.0 L84.0,118.0 Z" fill="url(#gTop)" stroke="#4d7f97" stroke-width="1.2" stroke-linejoin="round" /><path d="M84.0,118.0 L98.0,108.0 L98.0,126.0 L84.0,136.0 Z" fill="url(#gSide)" stroke="#4d7f97" stroke-width="1.2" stroke-linejoin="round" /><rect x="40.0" y="118.0" width="44.0" height="18.0" fill="url(#gFront)" /><rect x="40.0" y="118.0" width="44.0" height="18.0" fill="none" stroke="#4d7f97" stroke-width="1.4"/>
+<text x="110.0" y="134.0" font-size="19" fill="#0e8fb0" text-anchor="start" font-weight="700" >Victus 2 (glass)</text>
+<path d="M330.0,118.0 L344.0,108.0 L388.0,108.0 L374.0,118.0 Z" fill="url(#cTop)" stroke="#6d4fc4" stroke-width="1.2" stroke-linejoin="round" /><path d="M374.0,118.0 L388.0,108.0 L388.0,126.0 L374.0,136.0 Z" fill="url(#cSide)" stroke="#6d4fc4" stroke-width="1.2" stroke-linejoin="round" /><rect x="330.0" y="118.0" width="44.0" height="18.0" fill="url(#cFront)" /><rect x="330.0" y="118.0" width="44.0" height="18.0" fill="none" stroke="#6d4fc4" stroke-width="1.4"/>
+<text x="400.0" y="134.0" font-size="19" fill="#7c3aed" text-anchor="start" font-weight="700" >Glass Ceramic 2</text>
+<path d="M620.0,118.0 L634.0,108.0 L678.0,108.0 L664.0,118.0 Z" fill="url(#pTop)" stroke="#2b3f8f" stroke-width="1.2" stroke-linejoin="round" /><path d="M664.0,118.0 L678.0,108.0 L678.0,126.0 L664.0,136.0 Z" fill="url(#pSide)" stroke="#2b3f8f" stroke-width="1.2" stroke-linejoin="round" /><rect x="620.0" y="118.0" width="44.0" height="18.0" fill="url(#pFront)" /><rect x="620.0" y="118.0" width="44.0" height="18.0" fill="none" stroke="#2b3f8f" stroke-width="1.4"/>
+<text x="690.0" y="134.0" font-size="19" fill="#1e3a8a" text-anchor="start" font-weight="700" >Sapphire</text>
+<line x1="32.0" y1="166.0" x2="868.0" y2="166.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="40.0" y="206.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700" >Fracture toughness</text>
+<text x="40.0" y="232.0" font-size="16" fill="#5b6474" text-anchor="start" font-weight="500" >MPa·m^0.5</text>
+<rect x="290.0" y="178.0" width="58.3" height="24.0" fill="#0e8fb0" rx="4"/>
+<text x="358.3" y="197.0" font-size="17" fill="#0e8fb0" text-anchor="start" font-weight="700" >0.82</text>
+<rect x="290.0" y="208.0" width="81.8" height="24.0" fill="#7c3aed" rx="4"/>
+<text x="381.8" y="227.0" font-size="17" fill="#7c3aed" text-anchor="start" font-weight="700" >1.15</text>
+<rect x="290.0" y="238.0" width="320.0" height="24.0" fill="#1e3a8a" opacity="0.28" rx="4"/>
+<rect x="290.0" y="238.0" width="170.7" height="24.0" fill="#1e3a8a" rx="4"/>
+<text x="620.0" y="257.0" font-size="17" fill="#1e3a8a" text-anchor="start" font-weight="700" >2.4 to 4.5 by plane</text>
+<line x1="32.0" y1="268.0" x2="868.0" y2="268.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="40.0" y="308.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700" >Hardness</text>
+<text x="40.0" y="334.0" font-size="16" fill="#5b6474" text-anchor="start" font-weight="500" >GPa, 200 g load</text>
+<rect x="290.0" y="280.0" width="93.4" height="24.0" fill="#0e8fb0" rx="4"/>
+<text x="393.4" y="299.0" font-size="17" fill="#0e8fb0" text-anchor="start" font-weight="700" >6.6 Vickers</text>
+<rect x="290.0" y="310.0" width="92.0" height="24.0" fill="#7c3aed" rx="4"/>
+<text x="392.0" y="329.0" font-size="17" fill="#7c3aed" text-anchor="start" font-weight="700" >6.5 Knoop</text>
+<rect x="290.0" y="340.0" width="320.0" height="24.0" fill="#1e3a8a" rx="4"/>
+<text x="620.0" y="359.0" font-size="17" fill="#1e3a8a" text-anchor="start" font-weight="700" >22.5 Vickers</text>
+<line x1="32.0" y1="370.0" x2="868.0" y2="370.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="40.0" y="410.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700" >Young’s modulus</text>
+<text x="40.0" y="436.0" font-size="16" fill="#5b6474" text-anchor="start" font-weight="500" >GPa</text>
+<rect x="290.0" y="382.0" width="53.8" height="24.0" fill="#0e8fb0" rx="4"/>
+<text x="353.8" y="401.0" font-size="17" fill="#0e8fb0" text-anchor="start" font-weight="700" >79</text>
+<rect x="290.0" y="412.0" width="70.1" height="24.0" fill="#7c3aed" rx="4"/>
+<text x="370.1" y="431.0" font-size="17" fill="#7c3aed" text-anchor="start" font-weight="700" >103</text>
+<rect x="290.0" y="442.0" width="320.0" height="24.0" fill="#1e3a8a" rx="4"/>
+<text x="620.0" y="461.0" font-size="17" fill="#1e3a8a" text-anchor="start" font-weight="700" >470</text>
+<line x1="32.0" y1="472.0" x2="868.0" y2="472.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="40.0" y="512.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700" >Density</text>
+<text x="40.0" y="538.0" font-size="16" fill="#5b6474" text-anchor="start" font-weight="500" >g/cm³</text>
+<rect x="290.0" y="484.0" width="194.3" height="24.0" fill="#0e8fb0" rx="4"/>
+<text x="494.3" y="503.0" font-size="17" fill="#0e8fb0" text-anchor="start" font-weight="700" >2.41</text>
+<rect x="290.0" y="514.0" width="199.9" height="24.0" fill="#7c3aed" rx="4"/>
+<text x="499.9" y="533.0" font-size="17" fill="#7c3aed" text-anchor="start" font-weight="700" >2.48</text>
+<rect x="290.0" y="544.0" width="320.0" height="24.0" fill="#1e3a8a" rx="4"/>
+<text x="620.0" y="563.0" font-size="17" fill="#1e3a8a" text-anchor="start" font-weight="700" >3.97</text>
+<line x1="32.0" y1="574.0" x2="868.0" y2="574.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="40.0" y="614.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700" >Reflection, one face</text>
+<text x="40.0" y="640.0" font-size="16" fill="#5b6474" text-anchor="start" font-weight="500" >%, from the index</text>
+<rect x="290.0" y="586.0" width="178.7" height="24.0" fill="#0e8fb0" rx="4"/>
+<text x="478.7" y="605.0" font-size="17" fill="#0e8fb0" text-anchor="start" font-weight="700" >4.3  (n 1.52)</text>
+<rect x="290.0" y="616.0" width="187.0" height="24.0" fill="#7c3aed" rx="4"/>
+<text x="487.0" y="635.0" font-size="17" fill="#7c3aed" text-anchor="start" font-weight="700" >4.5  (n 1.54)</text>
+<rect x="290.0" y="646.0" width="320.0" height="24.0" fill="#1e3a8a" rx="4"/>
+<text x="620.0" y="665.0" font-size="17" fill="#1e3a8a" text-anchor="start" font-weight="700" >7.7  (n 1.77)</text>
+<text x="32.0" y="702.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500" >Glass values are after ion exchange. Knoop and Vickers are different scales; both glasses sit near 6.5 GPa.</text>
+</svg>
