@@ -62,7 +62,7 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   {
     video && (
       <a class="ax ax-tv" href={videoHref(video)} target="_blank" rel="noopener">
-        <span class="ax-label">DISPLAY NOW TV</span>
+        <span class="ax-label">DISPLAY NOW TV · 최신 영상</span>
         <span class="tv-thumb">
           <img src={video.thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
           <span class="tv-play" aria-hidden="true" />
@@ -79,8 +79,9 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   .axes {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    border-top: 1px solid var(--line-dark);
-    border-bottom: 1px solid var(--line-dark);
+    gap: 14px;
+    padding: 14px;
+    background: var(--ink);
   }
   .axes.solo {
     grid-template-columns: 1fr;
@@ -96,7 +97,7 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   }
   .ax-label {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.12em;
     font-weight: 600;
   }
@@ -200,11 +201,11 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
     letter-spacing: -0.02em;
     word-break: keep-all;
   }
-  /* TV — 검정 바탕 */
+  /* TV — 매거진 카드와 나란한 별도 카드: 금색 테두리로 칸을 가른다(11/5 대표 「TV가 눈에 안 띈다」) */
   .ax-tv {
-    background: var(--ink);
+    background: #24241d;
     color: var(--on-dark);
-    border-left: 1px solid var(--line-dark);
+    border: 2px solid var(--gold);
   }
   .ax-tv .ax-label {
     color: var(--gold);
@@ -271,10 +272,6 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   @media (max-width: 1000px) {
     .axes {
       grid-template-columns: 1fr;
-    }
-    .ax-tv {
-      border-left: none;
-      border-top: 1px solid var(--line-dark);
     }
   }
 </style>

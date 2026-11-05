@@ -178,7 +178,7 @@ const navIssues = getIssues().slice(0, 8);
   {
     VIDEOS[0] && (
       <a class="tv-band" href={videoHref(VIDEOS[0])} target="_blank" rel="noopener">
-        <span class="tvb-label">DISPLAY NOW TV</span>
+        <span class="tvb-label">DISPLAY NOW TV · 최신 영상</span>
         <span class="tvb-thumb">
           <img src={VIDEOS[0].thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
           <span class="tvb-play" aria-hidden="true" />
@@ -608,12 +608,15 @@ const navIssues = getIssues().slice(0, 8);
     flex-direction: column;
     gap: 8px;
     margin: 18px 15px 0;
+    padding: 12px;
+    background: #24241d;
+    border: 2px solid var(--gold);
     color: var(--on-dark);
     text-decoration: none;
   }
   .tvb-label {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: var(--gold);
