@@ -54,7 +54,10 @@ export const BOOKS: Book[] = [
       '일곱 막을 한 장씩 다룬다. 각 장은 일상 장면에서 출발해 원리와 수치로 내려간다. 그림 71장과 도표 9장, 시뮬레이션 장면 여덟 가지로 막 안에서 일어나는 일을 눈으로 따라갈 수 있게 했다.',
       '공개된 특허, 논문, 제조사 기술자료만 근거로 삼았고, 근거 213건을 모두 실었다. 본문과 그림은 AI가 쓰고, 사람이 기획하고 편집·감수했다.',
     ],
-    links: [],
+    links: [
+      { label: '교보문고 종이책', href: 'https://product.kyobobook.co.kr/detail/S000221882563' },
+      { label: '교보문고 전자책', href: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013787461' },
+    ],
   },
 ];
 
