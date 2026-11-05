@@ -201,14 +201,13 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
     letter-spacing: -0.02em;
     word-break: keep-all;
   }
-  /* TV — 매거진 카드와 나란한 별도 카드: 금색 테두리로 칸을 가른다(11/5 대표 「TV가 눈에 안 띈다」) */
+  /* TV — 흰 카드(11/5 대표 「영상도 검고 박스도 검어서 안 보인다」). 검은 썸네일이 흰 바탕에 또렷이 선다 */
   .ax-tv {
-    background: #24241d;
-    color: var(--on-dark);
-    border: 2px solid var(--gold);
+    background: #fbfaf6;
+    color: #17170f;
   }
   .ax-tv .ax-label {
-    color: var(--gold);
+    color: #17170f;
   }
   .tv-thumb {
     position: relative;
@@ -265,7 +264,8 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
     margin-top: auto;
     font-family: var(--font-mono);
     font-size: 13px;
-    color: var(--on-dark-mute);
+    font-weight: 600;
+    color: #17170f;
   }
 
   /* 좁은 PC 폭(821~1000px) — 카드 두 줄, TV는 아래로 */
