@@ -39,7 +39,7 @@ const today = new Date().toISOString().slice(0, 10);
               <dl class="spec">
                 <dt>발행</dt>
                 <dd>
-                  {b.date > today ? `${bookDateLabel(b.date)} 출간 예정` : `${b.date.replaceAll('-', '.')} 출간`} · 넥스트아이오
+                  {b.date > today && b.links.length === 0 ? `${bookDateLabel(b.date)} 출간 예정` : `${b.date.replaceAll('-', '.')} 출간`} · 넥스트아이오
                 </dd>
                 {b.pricePaper && (
                   <>
