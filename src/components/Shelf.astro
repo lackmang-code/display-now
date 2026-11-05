@@ -2,16 +2,17 @@
 /**
  * 한글 홈 아래쪽 책장 — 매거진 · TV · 책을 썸네일로 최신부터 진열한다(10/31 대표).
  *
- *   magazine — 호 표지(최신 5호) + 「지난 호 전체」, 머리에 꼭지 바로가기 칩
- *   tv       — 영상 썸네일(최신 4편) + 「채널 전체」
- *   books    — 책 표지 + 「책 전체」
+ *   magazine — 호 표지(최신 12호), 머리에 꼭지 바로가기 칩
+ *   tv       — 영상 썸네일(최신 12편)
+ *   books    — 책 표지
  *
- * 줄이 넘치면 옆으로 밀어 본다(페이지 자체는 가로로 넘치지 않는다).
+ * 줄이 넘치면 좌우 화살표(또는 손가락)로 밀어 본다. 넘치지 않으면 화살표는 숨는다(11/5 대표).
+ * 줄 끝 「이전 호·유튜브 채널·책 전체」 칸은 머리의 「… 전체 →」와 겹쳐 뺐다(11/5 대표).
  * 기자 소개는 편집국 페이지에 있으니 여기 싣지 않는다(10/31 대표).
  */
 import { getIssues, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
 import { issueThumbSrc } from '../lib/issueThumb';
-import { VIDEOS, CHANNEL_URL, videoHref } from '../lib/videos';
+import { VIDEOS, videoHref } from '../lib/videos';
 import { BOOKS, bookDateLabel } from '../lib/books';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { getPublishedArticles } from '../lib/articles';
@@ -22,8 +23,8 @@ interface Props {
 }
 const { which, mobile = false } = Astro.props;
 
-const ISSUE_COUNT = 5;
-const VIDEO_COUNT = 4;
+const ISSUE_COUNT = 12;
+const VIDEO_COUNT = 12;
 
 const issues = which === 'magazine' ? getIssues().slice(0, ISSUE_COUNT) : [];
 const videos = which === 'tv' ? VIDEOS.slice(0, VIDEO_COUNT) : [];
@@ -63,6 +64,8 @@ const empty = issues.length + videos.length + books.length === 0;
         </nav>
       )}
 
+      <div class="rowwrap">
+      <button class="nav prev" type="button" aria-label="앞쪽 보기" hidden>‹</button>
       <div class="row">
         {issues.map((i) => (
           <a class="tile tall" href={issueHref(i)}>
@@ -89,23 +92,69 @@ const empty = issues.length + videos.length + books.length === 0;
           </a>
         ))}
 
-        <a
-          class:list={['tile', 'more', which === 'tv' ? 'wide' : 'tall']}
-          href={which === 'tv' ? CHANNEL_URL : HEAD.more}
-          target={which === 'tv' ? '_blank' : undefined}
-          rel={which === 'tv' ? 'noopener' : undefined}
-        >
-          <span class="more-box">
-            <span>{which === 'magazine' ? '이전 호' : which === 'tv' ? '유튜브 채널' : '책 전체'}</span>
-            <span class="arr">→</span>
-          </span>
-        </a>
+      </div>
+      <button class="nav next" type="button" aria-label="뒤쪽 보기" hidden>›</button>
       </div>
     </section>
   )
 }
 
+<script>
+  // 줄이 넘칠 때만 화살표를 보이고, 끝에 닿은 쪽은 숨긴다
+  document.querySelectorAll<HTMLElement>('.rowwrap').forEach((w) => {
+    const row = w.querySelector<HTMLElement>('.row')!;
+    const prev = w.querySelector<HTMLButtonElement>('.prev')!;
+    const next = w.querySelector<HTMLButtonElement>('.next')!;
+    const sync = () => {
+      prev.hidden = row.scrollLeft <= 8;
+      next.hidden = row.scrollLeft + row.clientWidth >= row.scrollWidth - 8;
+    };
+    const step = (d: number) => row.scrollBy({ left: d * row.clientWidth * 0.8, behavior: 'smooth' });
+    prev.addEventListener('click', () => step(-1));
+    next.addEventListener('click', () => step(1));
+    row.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
+</script>
+
 <style>
+  .rowwrap {
+    position: relative;
+  }
+  .nav {
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    margin-top: -17px;
+    border: 1px solid var(--line-frame);
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+  .nav[hidden] {
+    display: none;
+  }
+  .nav:hover {
+    border-color: var(--ink);
+  }
+  .prev {
+    left: -6px;
+  }
+  .next {
+    right: -6px;
+  }
+  .mobile .nav {
+    background: rgba(17, 17, 17, 0.85);
+    border-color: rgba(244, 243, 238, 0.3);
+    color: var(--on-dark);
+  }
   .shelf {
     margin-top: 30px;
   }
@@ -195,7 +244,6 @@ const empty = issues.length + videos.length + books.length === 0;
     color: var(--ink);
     text-decoration: none;
   }
-  /* 매거진 다섯 호 + 「이전 호」 여섯 칸이 PC 본문 폭(약 800px)에 스크롤 없이 들어가는 크기 */
   .tall {
     width: 116px;
   }
@@ -280,32 +328,6 @@ const empty = issues.length + videos.length + books.length === 0;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* 「이전 호 →」 칸 — 썸네일과 같은 크기의 빈 책 */
-  .more-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    border: 1px dashed #b9b19b;
-    color: var(--meta-soft);
-    font-size: 13.5px;
-    font-weight: 600;
-  }
-  .tall .more-box {
-    aspect-ratio: 2 / 3;
-  }
-  .wide .more-box {
-    aspect-ratio: 16 / 9;
-  }
-  .more:hover .more-box {
-    border-color: var(--ink);
-    color: var(--ink);
-  }
-  .arr {
-    font-family: var(--font-mono);
-    font-size: 18px;
-  }
 
   /* ── 모바일 지면(어두운 바탕) ── */
   .mobile {
@@ -355,9 +377,5 @@ const empty = issues.length + videos.length + books.length === 0;
   .mobile .cap {
     color: var(--on-dark-mute);
     font-size: 11px;
-  }
-  .mobile .more-box {
-    border-color: rgba(244, 243, 238, 0.3);
-    color: var(--on-dark-mute);
   }
 </style>
