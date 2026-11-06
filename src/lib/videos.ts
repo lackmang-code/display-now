@@ -25,6 +25,13 @@ export const CHANNEL_URL = 'https://www.youtube.com/@displaynowtv';
 
 export const VIDEOS: Video[] = [
   {
+    id: 'DnWvhOUgxLI',
+    title: '지문을 소리로 읽는다고? 초음파 지문센서의 원리',
+    duration: '9:32',
+    date: '2026-11-06',
+    thumb: '/videos/ultrasonic-fingerprint.webp',
+  },
+  {
     id: 'fX3DIFYgt3k',
     title: '애플 듀오 화면 라인불량, 원인은 힌지?',
     duration: '6:54',
