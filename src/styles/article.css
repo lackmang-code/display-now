@@ -112,6 +112,15 @@
   color: #2a2a24;
 }
 
+/* 영문 표는 긴 낱말이 폭을 밀어 320~390px에서 잘렸다(2026-11-09 제13호 플라스틱 편) */
+@media (max-width: 560px) {
+  .article-body th,
+  .article-body td {
+    padding: 8px 6px;
+    overflow-wrap: anywhere;
+  }
+}
+
 .article-body > p em {
   font-size: 14px;
   color: var(--meta-soft);

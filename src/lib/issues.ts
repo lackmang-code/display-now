@@ -98,6 +98,8 @@ export const ISSUES: IssueMeta[] = [
     coverSim: 'adhesive-neutral-plane-3d-demo',
     coverNote: '같은 세 판을 단단한 점착층과 무른 점착층으로 접어 중립면과 변형률을 비교한 3D 모델입니다(클레임 편). 층 두께와 끝 어긋남은 보이도록 키웠습니다.',
     headSlug: '2026-11-10-foldable-adhesive-low-temperature-modulus',
+    headlineEn: 'Adhesives for Foldable Displays',
+    coverNoteEn: "A 3D model folding the same three plates with a stiff and a soft adhesive to compare neutral planes and strain (Claim's piece). Layer thickness and end slip are enlarged for visibility.",
   },
   {
     no: 12,
