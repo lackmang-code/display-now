@@ -378,7 +378,6 @@ const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3
                     <span class="byline">{bylineOf(a)}</span>
                   </div>
                   <div class="t">{a.data.title}</div>
-                  {(!hasCoverImage || isHead) && <p class="sum">{a.data.summary}</p>}
                 </li>
               );
             })
