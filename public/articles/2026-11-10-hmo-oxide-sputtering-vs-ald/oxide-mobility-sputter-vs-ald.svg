@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 510" role="img" aria-labelledby="t d"><title id="t">Electron mobility of oxide TFT channels by deposition method</title><desc id="d">Sputtered IGZO about 10 cm2/Vs. ALD channels 7.8, 19.7 and 50.4 cm2/Vs at indium 35, 45 and 84 atomic percent. Optimized ALD above 40. HMO target band 30 to 50.</desc>
+<rect width="760" height="510" fill="#fbfaf7"/>
+<rect x="506.3636363636364" y="62" width="170.90909090909088" height="396" fill="#6b3a8c" opacity="0.12"/>
+<text x="591.8181818181818" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#6b3a8c">HMO target 30-50</text>
+<text x="236" y="129.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" fill="#1a1a17">Sputter IGZO</text>
+<rect x="250" y="100.0" width="85.45454545454544" height="40" fill="#8a8a84"/>
+<text x="345.45454545454544" y="129.0" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#1a1a17">10</text>
+<text x="236" y="195.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" fill="#1a1a17">ALD, In 35%</text>
+<rect x="250" y="166.0" width="66.65454545454543" height="40" fill="#6b3a8c"/>
+<text x="326.6545454545454" y="195.0" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#1a1a17">7.8</text>
+<text x="236" y="261.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" fill="#1a1a17">ALD, In 45%</text>
+<rect x="250" y="232.0" width="168.34545454545457" height="40" fill="#6b3a8c"/>
+<text x="428.3454545454546" y="261.0" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#1a1a17">19.7</text>
+<text x="236" y="327.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" fill="#1a1a17">ALD, In 84%</text>
+<rect x="250" y="298.0" width="430.69090909090914" height="40" fill="#6b3a8c"/>
+<text x="670.6909090909091" y="327.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#fff">50.4</text>
+<text x="236" y="393.0" text-anchor="end" font-family="Arial,sans-serif" font-size="26" fill="#1a1a17">ALD, tuned</text>
+<rect x="250" y="364.0" width="341.81818181818176" height="40" fill="#6b3a8c"/>
+<path d="M591.8181818181818 384.0 h58 m-14 -12 l14 12 l-14 12" fill="none" stroke="#6b3a8c" stroke-width="4"/>
+<text x="661.8181818181818" y="393.0" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#1a1a17">>40</text>
+<line x1="250" y1="424.0" x2="720" y2="424.0" stroke="#1a1a17" stroke-width="2"/>
+<line x1="250.0" y1="424.0" x2="250.0" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="250.0" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">0</text>
+<line x1="335.45454545454544" y1="424.0" x2="335.45454545454544" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="335.45454545454544" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">10</text>
+<line x1="420.9090909090909" y1="424.0" x2="420.9090909090909" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="420.9090909090909" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">20</text>
+<line x1="506.3636363636364" y1="424.0" x2="506.3636363636364" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="506.3636363636364" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">30</text>
+<line x1="591.8181818181818" y1="424.0" x2="591.8181818181818" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="591.8181818181818" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">40</text>
+<line x1="677.2727272727273" y1="424.0" x2="677.2727272727273" y2="432.0" stroke="#1a1a17" stroke-width="2"/><text x="677.2727272727273" y="458.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">50</text>
+<text x="720" y="486.0" text-anchor="end" font-family="Arial,sans-serif" font-size="24" fill="#55554f">mobility (cm²/Vs)</text>
+</svg>

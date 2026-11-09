@@ -89,6 +89,18 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 13,
+    publishedAt: '2026-11-10',
+    weekStart: '2026-11-02',
+    // 헤드는 클레임 폴더블 3편(점착층)이다. 표지는 그 기사의 중립면 시뮬을 3D로 다시 그린 판(대표 2026-11-09).
+    // 계산은 기사 안 시뮬(adhesive-neutral-plane-demo)의 solve 를 그대로 불러 쓴다.
+    headline: '폴더블 디스플레이용 점착제',
+    deck: '폴더블 적층에서 점착층은 패널보다 다섯 배 두껍습니다. 특허 100건을 읽어 보니 청구항이 겨루는 숫자는 접착력보다 영하 20도의 탄성률이었습니다.',
+    coverSim: 'adhesive-neutral-plane-3d-demo',
+    coverNote: '같은 세 판을 단단한 점착층과 무른 점착층으로 접어 중립면과 변형률을 비교한 3D 모델입니다(클레임 편). 층 두께와 끝 어긋남은 보이도록 키웠습니다.',
+    headSlug: '2026-11-10-foldable-adhesive-low-temperature-modulus',
+  },
+  {
     no: 12,
     publishedAt: '2026-11-03',
     weekStart: '2026-10-26',

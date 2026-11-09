@@ -1,0 +1,71 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="cTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f0ff"/><stop offset="1" stop-color="#d9c8fb"/></linearGradient>
+<linearGradient id="cFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ddcffd"/><stop offset="1" stop-color="#c2aaf6"/></linearGradient>
+<linearGradient id="cSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a68af5"/><stop offset="1" stop-color="#7a59d4"/></linearGradient>
+<linearGradient id="pTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6ecff"/><stop offset="1" stop-color="#b8c6f3"/></linearGradient>
+<linearGradient id="pFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b3c3f1"/><stop offset="1" stop-color="#8197e0"/></linearGradient>
+<linearGradient id="pSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a70c4"/><stop offset="1" stop-color="#36499a"/></linearGradient>
+<radialGradient id="xt" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#f3ecff"/><stop offset="0.5" stop-color="#9b6cf7"/><stop offset="1" stop-color="#5b21b6"/></radialGradient>
+
+<linearGradient id="mTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9fbf8"/><stop offset="1" stop-color="#b6ece4"/></linearGradient>
+<linearGradient id="mFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fe3d9"/><stop offset="1" stop-color="#5ccabb"/></linearGradient>
+<linearGradient id="mSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2fb3a3"/><stop offset="1" stop-color="#0f8274"/></linearGradient>
+<linearGradient id="kTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6e0"/><stop offset="1" stop-color="#fbd98e"/></linearGradient>
+<linearGradient id="kFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd27a"/><stop offset="1" stop-color="#f0a92e"/></linearGradient>
+<linearGradient id="kSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d98a10"/><stop offset="1" stop-color="#a8650a"/></linearGradient>
+<linearGradient id="lcdTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe7ef"/></linearGradient>
+<linearGradient id="lcdSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4b5563"/><stop offset="1" stop-color="#2b323c"/></linearGradient>
+<linearGradient id="sgTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b7686"/><stop offset="1" stop-color="#3a424e"/></linearGradient>
+<radialGradient id="head" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="0.5" stop-color="#c9d1dc"/><stop offset="1" stop-color="#6b7686"/></radialGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="519" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">Bending the plate: a window with two walls</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Thermoforming at 100–200 °C, aluminium mould at 124 or 143 °C, 0.6 MPa (MGC US11370206B2)</text>
+<rect x="24" y="98" width="400" height="398" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<path d="M64.0,372.0 L71.5,359.1 L79.0,346.9 L86.5,335.4 L94.0,324.5 L101.5,314.2 L109.0,304.7 L116.5,295.8 L124.0,287.5 L131.5,279.9 L139.0,273.0 L146.5,266.7 L154.0,261.1 L161.5,256.2 L169.0,251.9 L176.5,248.2 L184.0,245.3 L191.5,243.0 L199.0,241.3 L206.5,240.3 L214.0,240.0 L221.5,240.3 L229.0,241.3 L236.5,243.0 L244.0,245.3 L251.5,248.2 L259.0,251.9 L266.5,256.2 L274.0,261.1 L281.5,266.7 L289.0,273.0 L296.5,279.9 L304.0,287.5 L311.5,295.8 L319.0,304.7 L326.5,314.2 L334.0,324.5 L341.5,335.4 L349.0,346.9 L356.5,359.1 L364.0,372.0 L394.0,356.0 L386.5,343.1 L379.0,330.9 L371.5,319.4 L364.0,308.5 L356.5,298.2 L349.0,288.7 L341.5,279.8 L334.0,271.5 L326.5,263.9 L319.0,257.0 L311.5,250.7 L304.0,245.1 L296.5,240.2 L289.0,235.9 L281.5,232.2 L274.0,229.3 L266.5,227.0 L259.0,225.3 L251.5,224.3 L244.0,224.0 L236.5,224.3 L229.0,225.3 L221.5,227.0 L214.0,229.3 L206.5,232.2 L199.0,235.9 L191.5,240.2 L184.0,245.1 L176.5,250.7 L169.0,257.0 L161.5,263.9 L154.0,271.5 L146.5,279.8 L139.0,288.7 L131.5,298.2 L124.0,308.5 L116.5,319.4 L109.0,330.9 L101.5,343.1 L94.0,356.0 Z" fill="#dbe2ea" stroke="#94a3b8" stroke-width="1" stroke-linejoin="round" opacity="0.7"/>
+<path d="M64.0,372.0 L71.5,359.1 L79.0,346.9 L86.5,335.4 L94.0,324.5 L101.5,314.2 L109.0,304.7 L116.5,295.8 L124.0,287.5 L131.5,279.9 L139.0,273.0 L146.5,266.7 L154.0,261.1 L161.5,256.2 L169.0,251.9 L176.5,248.2 L184.0,245.3 L191.5,243.0 L199.0,241.3 L206.5,240.3 L214.0,240.0 L221.5,240.3 L229.0,241.3 L236.5,243.0 L244.0,245.3 L251.5,248.2 L259.0,251.9 L266.5,256.2 L274.0,261.1 L281.5,266.7 L289.0,273.0 L296.5,279.9 L304.0,287.5 L311.5,295.8 L319.0,304.7 L326.5,314.2 L334.0,324.5 L341.5,335.4 L349.0,346.9 L356.5,359.1 L364.0,372.0 L364.0,406.0 L64.0,406.0 Z" fill="#94a3b8" stroke="#475569" stroke-width="1.2" stroke-linejoin="round" />
+<path d="M364.0,372.0 L394.0,356.0 L394.0,390.0 L364.0,406.0 Z" fill="#64748b" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<path d="M64.0,352.0 L71.5,339.1 L79.0,326.9 L86.5,315.4 L94.0,304.5 L101.5,294.2 L109.0,284.7 L116.5,275.8 L124.0,267.5 L131.5,259.9 L139.0,253.0 L146.5,246.7 L154.0,241.1 L161.5,236.2 L169.0,231.9 L176.5,228.2 L184.0,225.3 L191.5,223.0 L199.0,221.3 L206.5,220.3 L214.0,220.0 L221.5,220.3 L229.0,221.3 L236.5,223.0 L244.0,225.3 L251.5,228.2 L259.0,231.9 L266.5,236.2 L274.0,241.1 L281.5,246.7 L289.0,253.0 L296.5,259.9 L304.0,267.5 L311.5,275.8 L319.0,284.7 L326.5,294.2 L334.0,304.5 L341.5,315.4 L349.0,326.9 L356.5,339.1 L364.0,352.0" fill="none" stroke="#6366f1" stroke-width="3" stroke-linejoin="round" />
+<path d="M64.0,357.0 L71.5,344.1 L79.0,331.9 L86.5,320.4 L94.0,309.5 L101.5,299.2 L109.0,289.7 L116.5,280.8 L124.0,272.5 L131.5,264.9 L139.0,258.0 L146.5,251.7 L154.0,246.1 L161.5,241.2 L169.0,236.9 L176.5,233.2 L184.0,230.3 L191.5,228.0 L199.0,226.3 L206.5,225.3 L214.0,225.0 L221.5,225.3 L229.0,226.3 L236.5,228.0 L244.0,230.3 L251.5,233.2 L259.0,236.9 L266.5,241.2 L274.0,246.1 L281.5,251.7 L289.0,258.0 L296.5,264.9 L304.0,272.5 L311.5,280.8 L319.0,289.7 L326.5,299.2 L334.0,309.5 L341.5,320.4 L349.0,331.9 L356.5,344.1 L364.0,357.0" fill="none" stroke="#0d9488" stroke-width="6" stroke-linejoin="round" />
+<path d="M64.0,366.0 L71.5,353.1 L79.0,340.9 L86.5,329.4 L94.0,318.5 L101.5,308.2 L109.0,298.7 L116.5,289.8 L124.0,281.5 L131.5,273.9 L139.0,267.0 L146.5,260.7 L154.0,255.1 L161.5,250.2 L169.0,245.9 L176.5,242.2 L184.0,239.3 L191.5,237.0 L199.0,235.3 L206.5,234.3 L214.0,234.0 L221.5,234.3 L229.0,235.3 L236.5,237.0 L244.0,239.3 L251.5,242.2 L259.0,245.9 L266.5,250.2 L274.0,255.1 L281.5,260.7 L289.0,267.0 L296.5,273.9 L304.0,281.5 L311.5,289.8 L319.0,298.7 L326.5,308.2 L334.0,318.5 L341.5,329.4 L349.0,340.9 L356.5,353.1 L364.0,366.0" fill="none" stroke="#d97706" stroke-width="12" stroke-linejoin="round" />
+<rect x="141.3" y="182.9" width="137.4" height="20.8" rx="5" fill="#ffffff" opacity="0.92"/><text x="210.0" y="196.0" font-size="16" fill="#151a22" text-anchor="middle" font-weight="700" >R 50 or 100 mm</text>
+<rect x="73.8" y="419.7" width="272.4" height="19.5" rx="5" fill="#ffffff" opacity="0.92"/><text x="210.0" y="432.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700" >mould 124 °C or 143 °C, 0.6 MPa</text>
+<text x="44.0" y="470.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500" >Hard coat, acrylic skin, PC body bend together.</text>
+<rect x="436" y="98" width="440" height="398" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="456.0" y="132.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Tg of skin minus Tg of PC</text>
+<rect x="470.0" y="220.0" width="94.0" height="40.0" fill="#fde3dc" />
+<rect x="564.0" y="220.0" width="156.7" height="40.0" fill="#d1fae5" />
+<rect x="720.7" y="220.0" width="125.3" height="40.0" fill="#fde3dc" />
+<line x1="470.0" y1="214.0" x2="470.0" y2="266.0" stroke="#9aa3b2" stroke-width="1" />
+<text x="470.0" y="286.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >-40</text>
+<line x1="564.0" y1="214.0" x2="564.0" y2="266.0" stroke="#151a22" stroke-width="2" />
+<text x="564.0" y="286.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700" >-10</text>
+<line x1="595.3" y1="214.0" x2="595.3" y2="266.0" stroke="#9aa3b2" stroke-width="1" />
+<text x="595.3" y="286.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >0</text>
+<line x1="720.7" y1="214.0" x2="720.7" y2="266.0" stroke="#151a22" stroke-width="2" />
+<text x="720.7" y="286.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700" >+40</text>
+<line x1="846.0" y1="214.0" x2="846.0" y2="266.0" stroke="#9aa3b2" stroke-width="1" />
+<text x="846.0" y="286.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >+80</text>
+<text x="642.3" y="246.0" font-size="17" fill="#15955a" text-anchor="middle" font-weight="700" >claimed</text>
+<text x="846.0" y="310.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >°C</text>
+<text x="456.0" y="338.0" font-size="17" fill="#e5482a" text-anchor="start" font-weight="700" >Too low:</text>
+<text x="536.0" y="338.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="500" >the skin turns rubbery and moves,</text>
+<text x="536.0" y="360.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="500" >so the crosslinked hard coat cracks</text>
+<text x="456.0" y="410.0" font-size="17" fill="#e5482a" text-anchor="start" font-weight="700" >Too high:</text>
+<text x="540.0" y="410.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="500" >viscosities differ too much,</text>
+<text x="540.0" y="432.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="500" >giving a rough interface and flow marks</text>
+<line x1="490.0" y1="322.0" x2="505.4" y2="274.8" stroke="#e5482a" stroke-width="2" /><path d="M508.5,277.0 L507.6,268.0 L501.6,274.7 Z" fill="#e5482a" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<line x1="820.0" y1="396.0" x2="791.7" y2="302.9" stroke="#e5482a" stroke-width="2" /><path d="M795.5,302.8 L789.6,296.0 L788.5,304.9 Z" fill="#e5482a" stroke="none" stroke-width="2" stroke-linejoin="round" />
+</svg>
