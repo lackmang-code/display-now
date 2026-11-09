@@ -1,0 +1,100 @@
+<svg viewBox="0 0 900 660" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="660" fill="#fff"/>
+<text x="32.0" y="46.0" font-size="30" fill="#151a22" text-anchor="start" font-weight="700">A foldable adhesive, monomer by monomer</text>
+<text x="32.0" y="78.0" font-size="21" fill="#5b6474" text-anchor="start" font-weight="400">Example 1 of LG Chem KR20220022811A, parts by weight (bulk polymerized)</text>
+<text x="32.0" y="146.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">2-Ethylhexyl acrylate</text>
+<line x1="40.0" y1="183.0" x2="51.5" y2="176.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="41.5" y1="179.0" x2="53.0" y2="172.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="51.5" y1="176.0" x2="63.0" y2="183.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="60.5" y1="183.0" x2="60.5" y2="198.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.5" y1="183.0" x2="65.5" y2="198.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="63.0" y1="183.0" x2="74.5" y2="176.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="74.5" y1="176.0" x2="86.0" y2="183.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="86.0" y1="183.0" x2="97.5" y2="176.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="176.0" x2="97.5" y2="162.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="162.0" x2="109.0" y2="155.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="176.0" x2="109.0" y2="183.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="109.0" y1="183.0" x2="120.5" y2="176.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="120.5" y1="176.0" x2="132.0" y2="183.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="132.0" y1="183.0" x2="143.5" y2="176.0" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="63.0" cy="202.0" r="9" fill="#fff"/><text x="63.0" y="208.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="74.5" cy="176.0" r="9" fill="#fff"/><text x="74.5" y="182.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<text x="520.0" y="160.0" font-size="20" fill="#2563eb" text-anchor="start" font-weight="700">soft main monomer</text>
+<rect x="520" y="176" width="204.0" height="24" fill="#2563eb" opacity=".85" rx="3"/>
+<text x="732.0" y="195.0" font-size="21" fill="#151a22" text-anchor="start" font-weight="700">30</text>
+<line x1="32" x2="880" y1="246" y2="246" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="32.0" y="268.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Lauryl acrylate (C12)</text>
+<line x1="40.0" y1="305.0" x2="51.5" y2="298.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="41.5" y1="301.0" x2="53.0" y2="294.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="51.5" y1="298.0" x2="63.0" y2="305.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="60.5" y1="305.0" x2="60.5" y2="320.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.5" y1="305.0" x2="65.5" y2="320.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="63.0" y1="305.0" x2="74.5" y2="298.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="74.5" y1="298.0" x2="86.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="86.0" y1="305.0" x2="97.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="298.0" x2="109.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="109.0" y1="305.0" x2="120.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="120.5" y1="298.0" x2="132.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="132.0" y1="305.0" x2="143.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="143.5" y1="298.0" x2="155.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="155.0" y1="305.0" x2="166.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="166.5" y1="298.0" x2="178.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="178.0" y1="305.0" x2="189.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="189.5" y1="298.0" x2="201.0" y2="305.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="201.0" y1="305.0" x2="212.5" y2="298.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="63.0" cy="324.0" r="9" fill="#fff"/><text x="63.0" y="330.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="74.5" cy="298.0" r="9" fill="#fff"/><text x="74.5" y="304.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<text x="520.0" y="282.0" font-size="20" fill="#b45309" text-anchor="start" font-weight="700">longer side chain</text>
+<rect x="520" y="298" width="272.0" height="24" fill="#b45309" opacity=".85" rx="3"/>
+<text x="800.0" y="317.0" font-size="21" fill="#151a22" text-anchor="start" font-weight="700">40</text>
+<line x1="32" x2="880" y1="368" y2="368" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="32.0" y="390.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">4-Hydroxybutyl acrylate</text>
+<line x1="40.0" y1="427.0" x2="51.5" y2="420.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="41.5" y1="423.0" x2="53.0" y2="416.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="51.5" y1="420.0" x2="63.0" y2="427.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="60.5" y1="427.0" x2="60.5" y2="442.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.5" y1="427.0" x2="65.5" y2="442.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="63.0" y1="427.0" x2="74.5" y2="420.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="74.5" y1="420.0" x2="86.0" y2="427.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="86.0" y1="427.0" x2="97.5" y2="420.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="420.0" x2="109.0" y2="427.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="109.0" y1="427.0" x2="120.5" y2="420.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="120.5" y1="420.0" x2="132.0" y2="427.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="63.0" cy="446.0" r="9" fill="#fff"/><text x="63.0" y="452.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="74.5" cy="420.0" r="9" fill="#fff"/><text x="74.5" y="426.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="132.0" cy="427.0" r="9" fill="#fff"/><text x="132.0" y="433.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">OH</text>
+<text x="520.0" y="404.0" font-size="20" fill="#dc2626" text-anchor="start" font-weight="700">OH group: polar site</text>
+<rect x="520" y="420" width="136.0" height="24" fill="#dc2626" opacity=".85" rx="3"/>
+<text x="664.0" y="439.0" font-size="21" fill="#151a22" text-anchor="start" font-weight="700">20</text>
+<line x1="32" x2="880" y1="490" y2="490" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="32.0" y="512.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Ether acrylate (EH-EGDA)</text>
+<line x1="40.0" y1="549.0" x2="51.5" y2="542.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="41.5" y1="545.0" x2="53.0" y2="538.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="51.5" y1="542.0" x2="63.0" y2="549.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="60.5" y1="549.0" x2="60.5" y2="564.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.5" y1="549.0" x2="65.5" y2="564.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="63.0" y1="549.0" x2="74.5" y2="542.0" stroke="#151a22" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="74.5" y1="542.0" x2="86.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="86.0" y1="549.0" x2="97.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="97.5" y1="542.0" x2="109.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="109.0" y1="549.0" x2="120.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="120.5" y1="542.0" x2="132.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="132.0" y1="549.0" x2="143.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="143.5" y1="542.0" x2="155.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="155.0" y1="549.0" x2="166.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="166.5" y1="542.0" x2="166.5" y2="528.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="166.5" y1="528.0" x2="178.0" y2="521.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="166.5" y1="542.0" x2="178.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="178.0" y1="549.0" x2="189.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="189.5" y1="542.0" x2="201.0" y2="549.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="201.0" y1="549.0" x2="212.5" y2="542.0" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="63.0" cy="568.0" r="9" fill="#fff"/><text x="63.0" y="574.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="74.5" cy="542.0" r="9" fill="#fff"/><text x="74.5" y="548.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="109.0" cy="549.0" r="9" fill="#fff"/><text x="109.0" y="555.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<circle cx="143.5" cy="542.0" r="9" fill="#fff"/><text x="143.5" y="548.5" font-size="18" fill="#dc2626" text-anchor="middle" font-weight="700">O</text>
+<text x="520.0" y="526.0" font-size="20" fill="#15803d" text-anchor="start" font-weight="700">ether links: flexible</text>
+<rect x="520" y="542" width="68.0" height="24" fill="#15803d" opacity=".85" rx="3"/>
+<text x="596.0" y="561.0" font-size="21" fill="#151a22" text-anchor="start" font-weight="700">10</text>
+<text x="32.0" y="620.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">Without the ether monomer (Comparatives 1, 2) the same family failed the −40 °C static fold.</text>
+<text x="32.0" y="648.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">Roles are general polymer chemistry; the filing reports the combined result.</text>
+</svg>

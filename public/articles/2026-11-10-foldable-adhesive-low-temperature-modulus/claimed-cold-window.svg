@@ -1,0 +1,83 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="620" fill="#fff"/>
+<text x="32.0" y="46.0" font-size="30" fill="#151a22" text-anchor="start" font-weight="700">The claimed ceiling came down around 2019</text>
+<text x="32.0" y="78.0" font-size="21" fill="#5b6474" text-anchor="start" font-weight="400">Upper limit of storage modulus claimed at −20 °C or colder, 33 Korean filings</text>
+<line x1="96" x2="868" y1="486.8" y2="486.8" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="493.8" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">30</text>
+<line x1="96" x2="868" y1="418.3" y2="418.3" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="425.3" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">100</text>
+<line x1="96" x2="868" y1="355.8" y2="355.8" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="362.8" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">300</text>
+<line x1="96" x2="868" y1="287.2" y2="287.2" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="294.2" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">1,000</text>
+<line x1="96" x2="868" y1="224.7" y2="224.7" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="231.7" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">3,000</text>
+<line x1="96" x2="868" y1="156.2" y2="156.2" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="86.0" y="163.2" font-size="19" fill="#5b6474" text-anchor="end" font-weight="400">10,000</text>
+<line x1="131.1" x2="131.1" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="131.1" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2015</text>
+<line x1="271.5" x2="271.5" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="271.5" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2017</text>
+<line x1="411.8" x2="411.8" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="411.8" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2019</text>
+<line x1="552.2" x2="552.2" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="552.2" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2021</text>
+<line x1="692.5" x2="692.5" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="692.5" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2023</text>
+<line x1="832.9" x2="832.9" y1="510" y2="517" stroke="#5b6474" stroke-width="1.5"/>
+<text x="832.9" y="542.0" font-size="19" fill="#5b6474" text-anchor="middle" font-weight="400">2025</text>
+<line x1="96" x2="868" y1="510" y2="510" stroke="#5b6474" stroke-width="1.5"/>
+<text x="24.0" y="320.0" font-size="20" fill="#5b6474" text-anchor="middle" font-weight="400" transform="rotate(-90 24 320.0)">claimed upper limit (kPa, log scale)</text>
+<rect x="96" y="355.8" width="772" height="154.2" fill="#ecfdf5"/>
+<line x1="96" x2="868" y1="355.8" y2="355.8" stroke="#15803d" stroke-width="2.5" stroke-dasharray="7 6"/>
+<line x1="411.8" x2="411.8" y1="130" y2="510" stroke="#5b6474" stroke-width="2" stroke-dasharray="4 6"/>
+<text x="404.8" y="122.0" font-size="20" fill="#5b6474" text-anchor="end" font-weight="700">before 2019: 0 of 7</text>
+<text x="418.8" y="122.0" font-size="20" fill="#15803d" text-anchor="start" font-weight="700">from 2019: 22 of 26 at 300 kPa or less</text>
+<circle cx="124.8" cy="326.7" r="10" fill="#64748b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="157.1" cy="156.2" r="10" fill="#64748b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="279.9" cy="326.7" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="286.9" cy="287.2" r="10" fill="#c2410c" stroke="#fff" stroke-width="1.5"/>
+<circle cx="347.3" cy="264.2" r="10" fill="#64748b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="350.1" cy="287.2" r="9" fill="#fff" stroke="#a21caf" stroke-width="4"/>
+<circle cx="402.7" cy="287.2" r="9" fill="#fff" stroke="#a21caf" stroke-width="4"/>
+<circle cx="414.6" cy="418.3" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="438.5" cy="264.2" r="10" fill="#64748b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="450.4" cy="355.8" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="474.3" cy="355.8" r="10" fill="#c2410c" stroke="#fff" stroke-width="1.5"/>
+<circle cx="478.5" cy="379.1" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="480.6" cy="355.8" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="518.5" cy="378.8" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="526.2" cy="470.4" r="10" fill="#a21caf" stroke="#fff" stroke-width="1.5"/>
+<circle cx="531.1" cy="418.3" r="10" fill="#a21caf" stroke="#fff" stroke-width="1.5"/>
+<circle cx="543.1" cy="378.8" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="555.0" cy="418.3" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="566.2" cy="355.8" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="594.3" cy="355.8" r="9" fill="#fff" stroke="#1d4ed8" stroke-width="4"/>
+<circle cx="623.8" cy="326.7" r="10" fill="#64748b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="625.9" cy="395.2" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="630.8" cy="355.8" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="696.1" cy="247.8" r="10" fill="#c2410c" stroke="#fff" stroke-width="1.5"/>
+<circle cx="699.6" cy="418.3" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="701.7" cy="395.2" r="9" fill="#fff" stroke="#0f766e" stroke-width="4"/>
+<circle cx="724.1" cy="407.9" r="9" fill="#fff" stroke="#0f766e" stroke-width="4"/>
+<circle cx="747.3" cy="407.9" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="474.3" cy="287.2" r="10" fill="#c2410c" stroke="#fff" stroke-width="1.5"/>
+<circle cx="784.5" cy="378.8" r="10" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<circle cx="769.7" cy="431.0" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="835.7" cy="431.0" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="837.8" cy="355.8" r="10" fill="#0f766e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="49" cy="571" r="9" fill="#1d4ed8"/>
+<text x="66.0" y="578.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">Samsung Display</text>
+<circle cx="251" cy="571" r="9" fill="#a21caf"/>
+<text x="268.0" y="578.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">LG Chem</text>
+<circle cx="387" cy="571" r="9" fill="#0f766e"/>
+<text x="404.0" y="578.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">Dongwoo</text>
+<circle cx="527" cy="571" r="9" fill="#c2410c"/>
+<text x="544.0" y="578.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">Mitsubishi</text>
+<circle cx="681" cy="571" r="9" fill="#64748b"/>
+<text x="698.0" y="578.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">others</text>
+<circle cx="49" cy="606" r="9" fill="#151a22"/>
+<text x="66.0" y="612.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">measured at −20 °C</text>
+<circle cx="290" cy="606" r="8" fill="#fff" stroke="#151a22" stroke-width="4"/>
+<text x="307.0" y="612.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">at −25 to −40 °C</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="640" fill="#fff"/>
+<text x="32.0" y="46.0" font-size="30" fill="#151a22" text-anchor="start" font-weight="700">From one neutral plane to many</text>
+<text x="32.0" y="78.0" font-size="21" fill="#5b6474" text-anchor="start" font-weight="400">What Korean foldable adhesive filings say about the neutral plane</text>
+<rect x="16" y="112" width="868" height="150" fill="#f5f6f8" rx="8"/>
+<rect x="16" y="302" width="868" height="300" fill="#ecfdf5" rx="8"/>
+<text x="32.0" y="292.0" font-size="21" fill="#15803d" text-anchor="start" font-weight="700">June to November 2017: six filings, three companies, several planes</text>
+<circle cx="44" cy="137.0" r="9" fill="#1d4ed8"/>
+<text x="64.0" y="144.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2014-12</text>
+<text x="166.0" y="144.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Samsung Display</text>
+<text x="344.0" y="144.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">the one plane goes in the touch electrode layer</text>
+<circle cx="44" cy="187.0" r="9" fill="#0f766e"/>
+<text x="64.0" y="194.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2015-11</text>
+<text x="166.0" y="194.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Dongwoo</text>
+<text x="344.0" y="194.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">the plane close to the touch panel (34 % of thickness)</text>
+<circle cx="44" cy="237.0" r="9" fill="#0f766e"/>
+<text x="64.0" y="244.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-03</text>
+<text x="166.0" y="244.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Dongwoo</text>
+<text x="344.0" y="244.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">the plane at the OLED and adhesive interface</text>
+<circle cx="44" cy="327.0" r="9" fill="#1d4ed8"/>
+<text x="64.0" y="334.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-06</text>
+<text x="166.0" y="334.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Samsung Display</text>
+<text x="344.0" y="334.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">several planes, one inside each layer</text>
+<circle cx="44" cy="377.0" r="9" fill="#a21caf"/>
+<text x="64.0" y="384.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-08</text>
+<text x="166.0" y="384.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">LG Display</text>
+<text x="344.0" y="384.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">several planes inside a patterned adhesive</text>
+<circle cx="44" cy="427.0" r="9" fill="#0f766e"/>
+<text x="64.0" y="434.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-09</text>
+<text x="166.0" y="434.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Dongwoo</text>
+<text x="344.0" y="434.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">strain separation, a plane in every layer</text>
+<circle cx="44" cy="477.0" r="9" fill="#1d4ed8"/>
+<text x="64.0" y="484.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-09</text>
+<text x="166.0" y="484.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Samsung Display</text>
+<text x="344.0" y="484.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">each layer's plane defined independently</text>
+<circle cx="44" cy="527.0" r="9" fill="#0f766e"/>
+<text x="64.0" y="534.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-10</text>
+<text x="166.0" y="534.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">Dongwoo</text>
+<text x="344.0" y="534.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">adhesive modulus over thickness share</text>
+<circle cx="44" cy="577.0" r="9" fill="#a21caf"/>
+<text x="64.0" y="584.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">2017-11</text>
+<text x="166.0" y="584.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="700">LG Display</text>
+<text x="344.0" y="584.0" font-size="20" fill="#151a22" text-anchor="start" font-weight="400">several planes in a perforated metal adhesive</text>
+<text x="32.0" y="628.0" font-size="20" fill="#5b6474" text-anchor="start" font-weight="400">Three earlier filings, top: where to place the single plane.</text>
+</svg>
