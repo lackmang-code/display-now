@@ -12,6 +12,11 @@ const ASSET_DIR = 'public/articles';
 // 규칙이 정해지기 전에 발행된 기사까지 막으면 지금 빌드가 통째로 서므로,
 // 제2호(2026-08-25) 이후 슬러그만 검사한다. 규칙 적용 시점과 정확히 같다.
 const WEBP_RULE_FROM = '2026-08-25';
+// 본문 볼드 금지 — 조판에서 다시 걷어낼 일을 미리 없앤다(2026-11-09 대표 지시, 전 꼭지).
+// 소급하지 않는다. 규칙은 2026-11-09 확정이지만 제13·14호 원고는 이미 쓰여 있었고
+// 남의 꼭지 원고를 대신 고칠 수 없으므로, 기계가 막는 것은 제15호(2026-11-24)부터다.
+// 제14호까지는 각 기자가 자발적으로 지킨다. 피어는 제13호부터 이미 0이다.
+const BOLD_RULE_FROM = '2026-11-24';
 const RASTER = ['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tif', '.tiff'];
 const ESC = String.fromCharCode(92) + '~';
 const EM_DASH = '—';
@@ -94,6 +99,14 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
         problems.push(`${file}:${i + 1}  HTML 블록 안의 이스케이프는 백슬래시가 그대로 보입니다.`);
       }
       continue;
+    }
+
+    if (file.slice(0, 10) >= BOLD_RULE_FROM) {
+      // 볼드는 조판 단계에서 전부 걷어내야 한다. 강조는 문장을 문단 머리에 놓아 대신한다.
+      const noCode = line.replace(/`[^`]*`/g, '');
+      if (/\*\*[^*]+\*\*/.test(noCode) || /<b[ >]/.test(noCode)) {
+        problems.push(`${file}:${i + 1}  본문에 볼드가 있습니다. 쓰지 않습니다 — 강조는 문단 머리로 옮기십시오.`);
+      }
     }
 
     if (line.includes(EM_DASH)) {
