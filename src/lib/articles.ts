@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { publishGateDate } from './publishGate';
 import { SECTIONS, formatByline } from './sections';
 
 export type Article = CollectionEntry<'articles'>;
@@ -23,7 +24,7 @@ export async function getAllArticles(lang: Lang | 'all' = 'ko'): Promise<Article
 }
 
 /**
- * **빌드 시점(한국 시각) 기준으로 이미 발행일이 된 기사만.**
+ * **빌드 시점(한국 시각) 기준으로 이미 발행일이 된 기사만.** 단 발행 전날 21:00부터는 다음 날 발행분도 연다(11/16 대표, `publishGate.ts`).
  *
  * 테커·클레임은 수집 주간 개념이 없어 기사를 미리 써 둔다. 그런데 완성될 때마다 push하면
  * `publishedAt`이 며칠 뒤인 기사가 그날로 라이브에 떠 버린다. 목록에서 걸러 두면
@@ -39,9 +40,9 @@ export async function getAllArticles(lang: Lang | 'all' = 'ko'): Promise<Article
  */
 export async function getPublishedArticles(lang: Lang | 'all' = 'ko'): Promise<Article[]> {
   const all = await getAllArticles(lang);
-  const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
-  const todayKst = new Date(Date.now() + KST_OFFSET_MS).toISOString().slice(0, 10);
-  return all.filter((a) => a.data.publishedAt.toISOString().slice(0, 10) <= todayKst);
+  // 발행 전날 21:00 KST부터 다음 날 발행분을 연다 — publishGate.ts
+  const gate = publishGateDate();
+  return all.filter((a) => a.data.publishedAt.toISOString().slice(0, 10) <= gate);
 }
 
 /**

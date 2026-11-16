@@ -1,4 +1,5 @@
 import { getAllArticles, baseSlug, type Article, type Lang } from './articles';
+import { publishGateDate } from './publishGate';
 
 /**
  * 주간 호(號) 메타데이터.
@@ -508,7 +509,8 @@ export function getAllIssuesEn(): IssueMeta[] {
  *    **발행일 당일에 push하거나 재배포해야** 목록에 올라온다.
  */
 export function getIssues(): IssueMeta[] {
-  return getAllIssues().filter((i) => i.publishedAt <= todayKst());
+  // 발행 전날 21:00 KST부터 다음 날 호가 열린다 — publishGate.ts
+  return getAllIssues().filter((i) => i.publishedAt <= publishGateDate());
 }
 
 /** 발행일과 무관하게 전부. 페이지 생성·표지 캡처처럼 미리 만들어야 하는 곳에서 쓴다 */
@@ -517,10 +519,6 @@ export function getAllIssues(): IssueMeta[] {
 }
 
 /** 한국 날짜 'YYYY-MM-DD'. 기사 게이팅(getPublishedArticles)과 같은 기준을 쓴다 */
-function todayKst(): string {
-  const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
-  return new Date(Date.now() + KST_OFFSET_MS).toISOString().slice(0, 10);
-}
 
 export function getIssue(no: number): IssueMeta | undefined {
   return ISSUES.find((i) => i.no === no);
