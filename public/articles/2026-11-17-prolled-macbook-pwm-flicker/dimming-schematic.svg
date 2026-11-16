@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-labelledby="t d"><title id="t">DC dimming and PWM dimming schematic</title><desc id="d">Left: constant luminance at a reduced level. Right: a rectangular on-off wave with period T whose on-time fraction is the duty cycle.</desc>
+<rect width="760" height="380" fill="#fbfaf7"/>
+<text x="200" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#1a1a17">DC dimming</text><line x1="50" y1="60" x2="50" y2="290" stroke="#1a1a17" stroke-width="3"/><line x1="50" y1="290" x2="350" y2="290" stroke="#1a1a17" stroke-width="3"/><text x="200" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">Time</text><text x="38" y="75" text-anchor="end" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">L</text>
+<line x1="50" y1="190" x2="350" y2="190" stroke="#6b3a8c" stroke-width="6"/>
+<text x="200" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#6b3a8c">constant L</text>
+<text x="580" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#1a1a17">PWM dimming</text><line x1="430" y1="60" x2="430" y2="290" stroke="#1a1a17" stroke-width="3"/><line x1="430" y1="290" x2="730" y2="290" stroke="#1a1a17" stroke-width="3"/><text x="690" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">Time</text><text x="418" y="75" text-anchor="end" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">L</text>
+<path d="M430 290 L430 110 L470 110 L470 290 L530 290 L530 110 L570 110 L570 290 L630 290 L630 110 L670 110 L670 290 L730 290" fill="none" stroke="#6b3a8c" stroke-width="5"/>
+<line x1="430" y1="230" x2="730" y2="230" stroke="#55554f" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="725" y="222" text-anchor="end" font-family="Arial,sans-serif" font-size="22" fill="#55554f">average L</text>
+<line x1="430" y1="312" x2="530" y2="312" stroke="#1a1a17" stroke-width="3"/><text x="480" y="340" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#1a1a17">period T</text>
+<line x1="430" y1="95" x2="470" y2="95" stroke="#1a1a17" stroke-width="3"/><text x="482" y="102" text-anchor="start" font-family="Arial,sans-serif" font-size="22" fill="#1a1a17">on-time</text>
+<text x="745" y="368" text-anchor="end" font-family="Arial,sans-serif" font-size="22" fill="#55554f">duty cycle = on-time / T</text>
+</svg>

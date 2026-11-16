@@ -1,0 +1,71 @@
+<svg viewBox="0 0 900 960" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect x="0.0" y="0.0" width="900.0" height="960.0" fill="#fff" rx="0" />
+<text x="40.0" y="48.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">How high a drop the panel survives</text>
+<text x="40.0" y="80.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="400">Heights from two Samsung Display filings. Test setups differ; compare within a panel only.</text>
+<text x="40.0" y="130.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">(a) Wider slit in the support plate, lower ball drop</text>
+<text x="40.0" y="154.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">KR20250039551A</text>
+<line x1="330.0" y1="170.0" x2="330.0" y2="306.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="330.0" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">0</text>
+<line x1="464.3" y1="170.0" x2="464.3" y2="306.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="464.3" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">4</text>
+<line x1="598.6" y1="170.0" x2="598.6" y2="306.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="598.6" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">8</text>
+<line x1="732.9" y1="170.0" x2="732.9" y2="306.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="732.9" y="326.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">12</text>
+<text x="800.0" y="348.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="400">Ball drop height (cm)</text>
+<text x="318.0" y="195.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Slit 200 µm</text>
+<rect x="330.0" y="174.0" width="67.1" height="30.0" fill="#dc2626" rx="3" />
+<text x="405.1" y="195.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 2 cm</text>
+<text x="318.0" y="239.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Slit 100 µm</text>
+<rect x="330.0" y="218.0" width="201.4" height="30.0" fill="#b45309" rx="3" />
+<text x="539.4" y="239.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 6 cm</text>
+<text x="318.0" y="283.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Slit width near 0</text>
+<rect x="330.0" y="262.0" width="268.6" height="30.0" fill="#15803d" rx="3" />
+<text x="606.6" y="283.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 8 cm</text>
+<text x="40.0" y="376.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">(b) Groove and composite stack, pen drop to crack</text>
+<text x="40.0" y="400.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">KR20240144713A. Stack: organic and inorganic layers in turn</text>
+<line x1="330.0" y1="416.0" x2="330.0" y2="596.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="330.0" y="616.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">0</text>
+<line x1="464.3" y1="416.0" x2="464.3" y2="596.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="464.3" y="616.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">4</text>
+<line x1="598.6" y1="416.0" x2="598.6" y2="596.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="598.6" y="616.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">8</text>
+<line x1="732.9" y1="416.0" x2="732.9" y2="596.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="732.9" y="616.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">12</text>
+<text x="800.0" y="638.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="400">Pen drop height at first crack (cm)</text>
+<text x="318.0" y="441.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">No groove, no stack</text>
+<rect x="330.0" y="420.0" width="100.7" height="30.0" fill="#dc2626" rx="3" />
+<text x="438.7" y="441.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">3 cm</text>
+<text x="318.0" y="485.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Composite stack only</text>
+<rect x="330.0" y="464.0" width="201.4" height="30.0" fill="#b45309" rx="3" />
+<text x="539.4" y="485.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">6 cm</text>
+<text x="318.0" y="529.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Groove only</text>
+<rect x="330.0" y="508.0" width="235.0" height="30.0" fill="#b45309" rx="3" />
+<text x="573.0" y="529.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">7 cm</text>
+<text x="318.0" y="573.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">Groove + stack</text>
+<rect x="330.0" y="552.0" width="302.1" height="30.0" fill="#15803d" rx="3" />
+<text x="640.1" y="573.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">9 cm</text>
+<text x="40.0" y="666.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">(c) Deeper opening in the inorganic layer, later bright spot</text>
+<text x="40.0" y="690.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">KR20240144713A, opening depth</text>
+<line x1="330.0" y1="706.0" x2="330.0" y2="886.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="330.0" y="906.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">0</text>
+<line x1="464.3" y1="706.0" x2="464.3" y2="886.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="464.3" y="906.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">4</text>
+<line x1="598.6" y1="706.0" x2="598.6" y2="886.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="598.6" y="906.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">8</text>
+<line x1="732.9" y1="706.0" x2="732.9" y2="886.0" stroke="#e6e9ee" stroke-width="1.5" />
+<text x="732.9" y="906.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="400">12</text>
+<text x="800.0" y="928.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="400">Pen drop height at bright spot (cm)</text>
+<text x="318.0" y="731.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">No opening</text>
+<rect x="330.0" y="710.0" width="251.8" height="30.0" fill="#dc2626" rx="3" />
+<text x="589.8" y="731.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 7.5 cm</text>
+<text x="318.0" y="775.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">To 2nd semiconductor</text>
+<rect x="330.0" y="754.0" width="282.0" height="30.0" fill="#b45309" rx="3" />
+<text x="620.0" y="775.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 8.4 cm</text>
+<text x="318.0" y="819.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">To 1st semiconductor</text>
+<rect x="330.0" y="798.0" width="332.4" height="30.0" fill="#b45309" rx="3" />
+<text x="670.4" y="819.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 9.9 cm</text>
+<text x="318.0" y="863.0" font-size="16" fill="#151a22" text-anchor="end" font-weight="400">To lower metal</text>
+<rect x="330.0" y="842.0" width="419.6" height="30.0" fill="#15803d" rx="3" />
+<text x="757.6" y="863.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">≈ 12.5 cm</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="rod" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b6472"/><stop offset="0.45" stop-color="#c9d1dc"/><stop offset="1" stop-color="#4a525e"/></linearGradient>
+<linearGradient id="mold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7686"/><stop offset="1" stop-color="#3b4452"/></linearGradient>
+<linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd38d"/><stop offset="1" stop-color="#e8a33d"/></linearGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="559" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">The forming window is set by viscosity, not by one temperature</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Corning WO2012118612A1 (claim 1), US10479052B2. AGC US10703666B2 example.</text>
+<rect x="24" y="98" width="852" height="250" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<rect x="200.0" y="190.0" width="520.0" height="52.0" fill="#ffedd5" />
+<rect x="70.0" y="190.0" width="130.0" height="52.0" fill="#fde3dc" />
+<rect x="720.0" y="190.0" width="130.0" height="52.0" fill="#e6e9ee" />
+<rect x="200.0" y="190.0" width="130.0" height="52.0" fill="#fdba74" />
+<rect x="460.0" y="190.0" width="260.0" height="52.0" fill="#fed7aa" />
+<text x="265.0" y="222.0" font-size="16" fill="#151a22" text-anchor="middle" font-weight="700" >tight bends</text>
+<text x="551.0" y="222.0" font-size="16" fill="#151a22" text-anchor="middle" font-weight="700" >gentle contours</text>
+<text x="460.0" y="176.0" font-size="17" fill="#ea580c" text-anchor="middle" font-weight="700" >claimed forming range: 10⁷ to 10¹¹ poise</text>
+<line x1="70.0" y1="242.0" x2="70.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="70.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10⁶</text>
+<line x1="200.0" y1="242.0" x2="200.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="200.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10⁷</text>
+<line x1="330.0" y1="242.0" x2="330.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="330.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10⁸</text>
+<line x1="460.0" y1="242.0" x2="460.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="460.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10⁹</text>
+<line x1="590.0" y1="242.0" x2="590.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="590.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10¹⁰</text>
+<line x1="720.0" y1="242.0" x2="720.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="720.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10¹¹</text>
+<line x1="850.0" y1="242.0" x2="850.0" y2="250.0" stroke="#5b6474" stroke-width="1.5" />
+<text x="850.0" y="270.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="500" >10¹²</text>
+<text x="850.0" y="328.0" font-size="15" fill="#151a22" text-anchor="end" font-weight="600" >glass viscosity, poise</text>
+<text x="72.0" y="176.0" font-size="16" fill="#e5482a" text-anchor="start" font-weight="700" >too soft</text>
+<text x="72.0" y="294.0" font-size="15" fill="#e5482a" text-anchor="start" font-weight="600" >orange peel, port marks</text>
+<text x="850.0" y="176.0" font-size="16" fill="#5b6474" text-anchor="end" font-weight="700" >too stiff</text>
+<line x1="655.0" y1="190.0" x2="655.0" y2="242.0" stroke="#151a22" stroke-width="2.5" stroke-dasharray="5 4"/>
+<rect x="548.2" y="283.7" width="213.6" height="19.5" rx="5" fill="#ffffff" opacity="0.92"/><text x="655.0" y="296.0" font-size="15" fill="#151a22" text-anchor="middle" font-weight="700" >AGC press example 10¹⁰·⁵</text>
+<rect x="24" y="360" width="852" height="180" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="44.0" y="392.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Forming pressure in published sources, MPa</text>
+<text x="856.0" y="392.0" font-size="15" fill="#5b6474" text-anchor="end" font-weight="500" >Gas, die and cylinder pressures differ in kind.</text>
+<line x1="330.0" y1="408.0" x2="330.0" y2="512.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="330.0" y="530.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >0</text>
+<line x1="500.0" y1="408.0" x2="500.0" y2="512.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="500.0" y="530.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >0.2</text>
+<line x1="670.0" y1="408.0" x2="670.0" y2="512.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="670.0" y="530.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >0.4</text>
+<line x1="840.0" y1="408.0" x2="840.0" y2="512.0" stroke="#e6e9ee" stroke-width="1" />
+<text x="840.0" y="530.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >0.6</text>
+<text x="44.0" y="431.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Gas, Corning WO2012118612</text>
+<rect x="389.5" y="418.0" width="59.5" height="17.0" fill="#ea580c" rx="3"/>
+<text x="44.0" y="456.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Gas, Corning US10479052</text>
+<rect x="389.5" y="443.0" width="289.0" height="17.0" fill="#ea580c" rx="3"/>
+<text x="44.0" y="481.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Press, AGC (max)</text>
+<rect x="330.0" y="468.0" width="467.5" height="17.0" fill="#475569" rx="3"/>
+<text x="44.0" y="506.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Mold, CN107915397B</text>
+<rect x="347.0" y="493.0" width="408.0" height="17.0" fill="#475569" rx="3"/>
+</svg>

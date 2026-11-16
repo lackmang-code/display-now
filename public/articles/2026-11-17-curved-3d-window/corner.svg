@@ -1,0 +1,69 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="rod" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b6472"/><stop offset="0.45" stop-color="#c9d1dc"/><stop offset="1" stop-color="#4a525e"/></linearGradient>
+<linearGradient id="mold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7686"/><stop offset="1" stop-color="#3b4452"/></linearGradient>
+<linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd38d"/><stop offset="1" stop-color="#e8a33d"/></linearGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="559" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">Four curved edges leave spare area at each corner</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Visionox, SID 2025 Digest P-154: a 6.57-inch test cover glass</text>
+<rect x="24" y="98" width="470" height="442" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<rect x="130.0" y="160.0" width="260.0" height="270.0" fill="url(#gTop)" stroke="#4d7f97" stroke-width="1.5"/>
+<rect x="130.0" y="120.0" width="260.0" height="40.0" fill="url(#gFront)" stroke="#4d7f97" stroke-width="1.2"/>
+<rect x="130.0" y="430.0" width="260.0" height="40.0" fill="url(#gFront)" stroke="#4d7f97" stroke-width="1.2"/>
+<rect x="90.0" y="160.0" width="40.0" height="270.0" fill="url(#gFront)" stroke="#4d7f97" stroke-width="1.2"/>
+<rect x="390.0" y="160.0" width="40.0" height="270.0" fill="url(#gFront)" stroke="#4d7f97" stroke-width="1.2"/>
+<path d="M130.0,160.0 L90.0,160.0 L90.0,120.0 L130.0,120.0 Z" fill="#fde3dc" stroke="#e5482a" stroke-width="1.6" stroke-linejoin="round" />
+<line x1="120.0" y1="158.0" x2="92.0" y2="130.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="110.0" y1="158.0" x2="92.0" y2="140.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="100.0" y1="158.0" x2="92.0" y2="150.0" stroke="#e5482a" stroke-width="1.5" />
+<path d="M390.0,160.0 L430.0,160.0 L430.0,120.0 L390.0,120.0 Z" fill="#fde3dc" stroke="#e5482a" stroke-width="1.6" stroke-linejoin="round" />
+<line x1="400.0" y1="158.0" x2="428.0" y2="130.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="410.0" y1="158.0" x2="428.0" y2="140.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="420.0" y1="158.0" x2="428.0" y2="150.0" stroke="#e5482a" stroke-width="1.5" />
+<path d="M130.0,430.0 L90.0,430.0 L90.0,470.0 L130.0,470.0 Z" fill="#fde3dc" stroke="#e5482a" stroke-width="1.6" stroke-linejoin="round" />
+<line x1="120.0" y1="432.0" x2="92.0" y2="460.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="110.0" y1="432.0" x2="92.0" y2="450.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="100.0" y1="432.0" x2="92.0" y2="440.0" stroke="#e5482a" stroke-width="1.5" />
+<path d="M390.0,430.0 L430.0,430.0 L430.0,470.0 L390.0,470.0 Z" fill="#fde3dc" stroke="#e5482a" stroke-width="1.6" stroke-linejoin="round" />
+<line x1="400.0" y1="432.0" x2="428.0" y2="460.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="410.0" y1="432.0" x2="428.0" y2="450.0" stroke="#e5482a" stroke-width="1.5" />
+<line x1="420.0" y1="432.0" x2="428.0" y2="440.0" stroke="#e5482a" stroke-width="1.5" />
+<text x="260.0" y="275.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >flat panel area</text>
+<text x="260.0" y="303.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="500" >bends simply along each side</text>
+<rect x="44.0" y="503.7" width="432.0" height="19.5" rx="5" fill="#ffffff" opacity="0.92"/><text x="260.0" y="516.0" font-size="15" fill="#e5482a" text-anchor="middle" font-weight="700" >Corners bend two ways at once: wrinkles start here</text>
+<rect x="506" y="98" width="370" height="442" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="526.0" y="132.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Cover glass in the test</text>
+<text x="680.0" y="164.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="700" >R, mm</text>
+<text x="756.0" y="164.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="700" >h, mm</text>
+<text x="832.0" y="164.0" font-size="16" fill="#5b6474" text-anchor="middle" font-weight="700" >θ</text>
+<text x="526.0" y="196.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="600" >Long side</text>
+<text x="680.0" y="196.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >3.0</text>
+<text x="756.0" y="196.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >2.3</text>
+<text x="832.0" y="196.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >60°</text>
+<text x="526.0" y="230.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="600" >Short side</text>
+<text x="680.0" y="230.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >3.4</text>
+<text x="756.0" y="230.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >1.49</text>
+<text x="832.0" y="230.0" font-size="18" fill="#151a22" text-anchor="middle" font-weight="700" >40°</text>
+<line x1="526.0" y1="256.0" x2="856.0" y2="256.0" stroke="#d9dde3" stroke-width="1" />
+<text x="526.0" y="288.0" font-size="18" fill="#151a22" text-anchor="start" font-weight="700" >Wrinkle margin (“redundancy”)</text>
+<text x="526.0" y="330.0" font-size="34" fill="#2563eb" text-anchor="start" font-weight="700" >0.22 mm</text>
+<text x="526.0" y="358.0" font-size="17" fill="#2563eb" text-anchor="start" font-weight="600" >after reliability test, +29.4%</text>
+<text x="526.0" y="380.0" font-size="17" fill="#2563eb" text-anchor="start" font-weight="600" >over the earlier scheme</text>
+<line x1="526.0" y1="402.0" x2="856.0" y2="402.0" stroke="#d9dde3" stroke-width="1" />
+<text x="526.0" y="432.0" font-size="15.5" fill="#e5482a" text-anchor="start" font-weight="600" >Low-modulus OCA rebounds in heat and</text>
+<text x="526.0" y="454.0" font-size="15.5" fill="#e5482a" text-anchor="start" font-weight="600" >humidity. Patterning the panel brings</text>
+<text x="526.0" y="476.0" font-size="15.5" fill="#e5482a" text-anchor="start" font-weight="600" >OCA bubbles after reliability tests.</text>
+<text x="526.0" y="516.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500" >Trial device, conditions unpublished.</text>
+</svg>

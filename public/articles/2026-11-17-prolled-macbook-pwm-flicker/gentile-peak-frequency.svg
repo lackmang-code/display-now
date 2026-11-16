@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 512" role="img" aria-labelledby="t d"><title id="t">Peak frequency of discomfort and cortical response</title><desc id="d">Peak temporal frequency with 95 percent confidence intervals for discomfort ratings and steady-state visually evoked potentials for three postreceptoral pathways.</desc><rect width="760" height="512" fill="#fbfaf7"/>
+<line x1="250.0" y1="40" x2="250.0" y2="412" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="250.0" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">0</text>
+<line x1="367.5" y1="40" x2="367.5" y2="412" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="367.5" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">10</text>
+<line x1="485.0" y1="40" x2="485.0" y2="412" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="485.0" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">20</text>
+<line x1="602.5" y1="40" x2="602.5" y2="412" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="602.5" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">30</text>
+<line x1="720.0" y1="40" x2="720.0" y2="412" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="720.0" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">40</text>
+<text x="485.0" y="482" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">Peak frequency (Hz) with 95% CI</text>
+<text x="236" y="72" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#6b3a8c">LMS, discomfort</text>
+<line x1="443.9" y1="64" x2="477.9" y2="64" stroke="#6b3a8c" stroke-width="5"/><circle cx="468.6" cy="64" r="9" fill="#6b3a8c"/>
+<text x="491.9" y="72" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">18.6</text>
+<text x="236" y="134" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#55554f">LMS, ssVEP</text>
+<line x1="452.1" y1="126" x2="695.3" y2="126" stroke="#55554f" stroke-width="5"/><circle cx="506.1" cy="126" r="9" fill="#55554f"/>
+<text x="492.1" y="112" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">21.8</text>
+<text x="236" y="196" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#6b3a8c">L-M, discomfort</text>
+<line x1="361.6" y1="188" x2="386.3" y2="188" stroke="#6b3a8c" stroke-width="5"/><circle cx="371.0" cy="188" r="9" fill="#6b3a8c"/>
+<text x="400.3" y="196" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">10.3</text>
+<text x="236" y="258" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#55554f">L-M, ssVEP</text>
+<line x1="386.3" y1="250" x2="436.8" y2="250" stroke="#55554f" stroke-width="5"/><circle cx="402.8" cy="250" r="9" fill="#55554f"/>
+<text x="450.8" y="258" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">13.0</text>
+<text x="236" y="320" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#6b3a8c">S, discomfort</text>
+<line x1="341.6" y1="312" x2="375.7" y2="312" stroke="#6b3a8c" stroke-width="5"/><circle cx="356.9" cy="312" r="9" fill="#6b3a8c"/>
+<text x="389.7" y="320" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">9.1</text>
+<text x="236" y="382" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#55554f">S, ssVEP</text>
+<line x1="317.0" y1="374" x2="361.6" y2="374" stroke="#55554f" stroke-width="5"/><circle cx="341.6" cy="374" r="9" fill="#55554f"/>
+<text x="375.6" y="382" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">7.8</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="rod" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b6472"/><stop offset="0.45" stop-color="#c9d1dc"/><stop offset="1" stop-color="#4a525e"/></linearGradient>
+<linearGradient id="mold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7686"/><stop offset="1" stop-color="#3b4452"/></linearGradient>
+<linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd38d"/><stop offset="1" stop-color="#e8a33d"/></linearGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="519" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">A hot-bending line is a row of hot stations</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Shenzhen East Noda CN107915397B: a 13-station machine as its background describes</text>
+<rect x="24" y="98" width="852" height="216" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<rect x="44.0" y="150.0" width="58.0" height="62.0" fill="#ea580c" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="73.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >1</text>
+<rect x="106.0" y="150.0" width="58.0" height="62.0" fill="#ea580c" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="135.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >2</text>
+<rect x="168.0" y="150.0" width="58.0" height="62.0" fill="#ea580c" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="197.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >3</text>
+<rect x="230.0" y="150.0" width="58.0" height="62.0" fill="#ea580c" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="259.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >4</text>
+<text x="166.0" y="138.0" font-size="16" fill="#ea580c" text-anchor="middle" font-weight="700" >heat × 4</text>
+<rect x="292.0" y="150.0" width="58.0" height="62.0" fill="#2563eb" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="321.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >5</text>
+<rect x="354.0" y="150.0" width="58.0" height="62.0" fill="#2563eb" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="383.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >6</text>
+<rect x="416.0" y="150.0" width="58.0" height="62.0" fill="#2563eb" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="445.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >7</text>
+<text x="383.0" y="138.0" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="700" >form × 3</text>
+<rect x="478.0" y="150.0" width="58.0" height="62.0" fill="#7c3aed" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="507.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >8</text>
+<rect x="540.0" y="150.0" width="58.0" height="62.0" fill="#7c3aed" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="569.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >9</text>
+<text x="538.0" y="138.0" font-size="16" fill="#7c3aed" text-anchor="middle" font-weight="700" >slow cool × 2</text>
+<rect x="602.0" y="150.0" width="58.0" height="62.0" fill="#475569" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="631.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >10</text>
+<rect x="664.0" y="150.0" width="58.0" height="62.0" fill="#475569" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="693.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >11</text>
+<rect x="726.0" y="150.0" width="58.0" height="62.0" fill="#475569" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="755.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >12</text>
+<rect x="788.0" y="150.0" width="58.0" height="62.0" fill="#475569" rx="6" filter="url(#sh)" opacity="0.92"/>
+<text x="817.0" y="188.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="700" >13</text>
+<text x="724.0" y="138.0" font-size="16" fill="#475569" text-anchor="middle" font-weight="700" >cool × 4</text>
+<text x="44.0" y="246.0" font-size="17" fill="#151a22" text-anchor="start" font-weight="600" >Before: 80 s per station. Forming over 240 s, heating 320 s.</text>
+<text x="44.0" y="276.0" font-size="17" fill="#2563eb" text-anchor="start" font-weight="600" >Claimed change: 50 s per forming station, 150 s of forming, more heating stations.</text>
+<rect x="24" y="326" width="416" height="174" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="44.0" y="358.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Mold set temperature, °C</text>
+<text x="44.0" y="394.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Preheat</text>
+<rect x="175.0" y="378.0" width="141.7" height="20.0" fill="#ea580c" rx="4"/>
+<text x="322.7" y="394.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="600" >580–750</text>
+<text x="44.0" y="428.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Pre-press</text>
+<rect x="291.7" y="412.0" width="66.7" height="20.0" fill="#ea580c" rx="4"/>
+<text x="285.7" y="428.0" font-size="15" fill="#151a22" text-anchor="end" font-weight="600" >720–800</text>
+<text x="44.0" y="462.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Forming</text>
+<rect x="258.3" y="446.0" width="25.0" height="20.0" fill="#ea580c" rx="4"/>
+<text x="289.3" y="462.0" font-size="15" fill="#151a22" text-anchor="start" font-weight="600" >680–710</text>
+<rect x="452" y="326" width="424" height="174" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="472.0" y="358.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Mold life in vacuum forming, cycles</text>
+<text x="472.0" y="398.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Coated Inconel</text>
+<rect x="626.0" y="382.0" width="30.8" height="22.0" fill="#e5482a" rx="4"/>
+<text x="662.8" y="399.0" font-size="15" fill="#e5482a" text-anchor="start" font-weight="700" >100–150</text>
+<text x="472.0" y="438.0" font-size="15.5" fill="#151a22" text-anchor="start" font-weight="600" >Bare nickel Ni201</text>
+<rect x="626.0" y="422.0" width="205.5" height="22.0" fill="#15955a" rx="4"/>
+<text x="825.5" y="439.0" font-size="15" fill="#ffffff" text-anchor="end" font-weight="700" >over 1,000</text>
+<text x="472.0" y="482.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500" >Corning US9266768B2. Graphite: no public count.</text>
+</svg>

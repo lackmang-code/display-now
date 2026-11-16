@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs>
+<linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbfe"/><stop offset="1" stop-color="#cfe7f2"/></linearGradient>
+<linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde8f3"/><stop offset="1" stop-color="#a9d2e4"/></linearGradient>
+<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#86b6cc"/><stop offset="1" stop-color="#5f93ab"/></linearGradient>
+<linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86f7"/><stop offset="1" stop-color="#2459d6"/></linearGradient>
+<linearGradient id="gTens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b3a3"/><stop offset="0.5" stop-color="#fbd3c8"/><stop offset="1" stop-color="#f7b3a3"/></linearGradient>
+<linearGradient id="gSalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+<radialGradient id="sK" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#d9c6ff"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c1d95"/></radialGradient>
+<radialGradient id="sNa" cx="0.35" cy="0.32" r="0.75"><stop offset="0" stop-color="#fff1c2"/><stop offset="0.45" stop-color="#fbbf24"/><stop offset="1" stop-color="#b45309"/></radialGradient>
+<radialGradient id="sSi" cx="0.35" cy="0.32" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#9aa3b2"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1220" flood-opacity="0.18"/></filter>
+
+<linearGradient id="rod" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b6472"/><stop offset="0.45" stop-color="#c9d1dc"/><stop offset="1" stop-color="#4a525e"/></linearGradient>
+<linearGradient id="mold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7686"/><stop offset="1" stop-color="#3b4452"/></linearGradient>
+<linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd38d"/><stop offset="1" stop-color="#e8a33d"/></linearGradient>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="499" fill="#ffffff" stroke="#d9dde3"/>
+<text x="32" y="46" font-size="27" font-weight="700" fill="#151a22" letter-spacing="-0.3">To reach the curve, the pad overloads the flat</text>
+<text x="32" y="76" font-size="17" fill="#5b6474">Samsung Display US11251395B2, FIG. 12. LG Display US11693269B2 for adhesive thickness.</text>
+<rect x="24" y="98" width="420" height="382" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<path d="M84.0,272.0 L84.0,236.0 L84.1,233.2 L84.4,230.4 L85.0,227.6 L85.8,224.9 L86.7,222.2 L87.9,219.7 L89.3,217.2 L90.9,214.8 L92.6,212.6 L94.5,210.5 L96.6,208.6 L98.8,206.9 L101.2,205.3 L103.7,203.9 L106.2,202.7 L108.9,201.8 L111.6,201.0 L114.4,200.4 L117.2,200.1 L120.0,200.0 L348.0,200.0 L350.8,200.1 L353.6,200.4 L356.4,201.0 L359.1,201.8 L361.8,202.7 L364.3,203.9 L366.8,205.3 L369.2,206.9 L371.4,208.6 L373.5,210.5 L375.4,212.6 L377.1,214.8 L378.7,217.2 L380.1,219.7 L381.3,222.2 L382.2,224.9 L383.0,227.6 L383.6,230.4 L383.9,233.2 L384.0,236.0 L384.0,272.0 L370.0,272.0 L370.0,236.0 L369.9,234.3 L369.7,232.6 L369.4,230.9 L368.9,229.2 L368.3,227.6 L367.6,226.0 L366.8,224.5 L365.8,223.1 L364.7,221.7 L363.6,220.4 L362.3,219.3 L360.9,218.2 L359.5,217.2 L358.0,216.4 L356.4,215.7 L354.8,215.1 L353.1,214.6 L351.4,214.3 L349.7,214.1 L348.0,214.0 L120.0,214.0 L118.3,214.1 L116.6,214.3 L114.9,214.6 L113.2,215.1 L111.6,215.7 L110.0,216.4 L108.5,217.2 L107.1,218.2 L105.7,219.3 L104.4,220.4 L103.3,221.7 L102.2,223.1 L101.2,224.5 L100.4,226.0 L99.7,227.6 L99.1,229.2 L98.6,230.9 L98.3,232.6 L98.1,234.3 L98.0,236.0 L98.0,272.0 Z" fill="url(#gFront)" stroke="#4d7f97" stroke-width="1.3" stroke-linejoin="round" />
+<text x="234.0" y="190.0" font-size="15" fill="#5b6474" text-anchor="middle" font-weight="600" >cover window, fixed</text>
+<path d="M116.0,366.0 L116.0,262.0 L130.0,232.0 L338.0,232.0 L352.0,262.0 L352.0,366.0 Z" fill="#fde68a" stroke="#b45309" stroke-width="1.5" stroke-linejoin="round" />
+<rect x="180.0" y="262.0" width="108.0" height="104.0" fill="url(#mold)" rx="6"/>
+<text x="234.0" y="320.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700" >rigid core</text>
+<rect x="156.6" y="239.7" width="154.8" height="19.5" rx="5" fill="#ffffff" opacity="0.92"/><text x="234.0" y="252.0" font-size="15" fill="#92400e" text-anchor="middle" font-weight="700" >shape pad + panel</text>
+<line x1="160.0" y1="412.0" x2="160.0" y2="382.8" stroke="#151a22" stroke-width="3" /><path d="M164.5,384.0 L160.0,374.0 L155.5,384.0 Z" fill="#151a22" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<line x1="234.0" y1="412.0" x2="234.0" y2="382.8" stroke="#151a22" stroke-width="3" /><path d="M238.5,384.0 L234.0,374.0 L229.5,384.0 Z" fill="#151a22" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<line x1="308.0" y1="412.0" x2="308.0" y2="382.8" stroke="#151a22" stroke-width="3" /><path d="M312.5,384.0 L308.0,374.0 L303.5,384.0 Z" fill="#151a22" stroke="none" stroke-width="2" stroke-linejoin="round" />
+<text x="234.0" y="442.0" font-size="16" fill="#151a22" text-anchor="middle" font-weight="600" >pad pushed up about 6.9 to 7.6 mm</text>
+<text x="234.0" y="464.0" font-size="16" fill="#151a22" text-anchor="middle" font-weight="600" >to give the curved part 0.1 MPa</text>
+<rect x="456" y="98" width="420" height="214" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="476.0" y="130.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Contact pressure, MPa</text>
+<text x="476.0" y="170.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Curved part</text>
+<rect x="590.0" y="152.0" width="25.0" height="26.0" fill="#15955a" rx="4"/>
+<text x="623.0" y="171.0" font-size="16" fill="#15955a" text-anchor="start" font-weight="700" >0.1 target</text>
+<text x="476.0" y="212.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Flat, no core</text>
+<rect x="590.0" y="194.0" width="240.0" height="26.0" fill="#e5482a" rx="4"/>
+<text x="822.0" y="213.0" font-size="16" fill="#ffffff" text-anchor="end" font-weight="700" >0.96</text>
+<text x="476.0" y="254.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Flat, with core</text>
+<rect x="590.0" y="236.0" width="195.0" height="26.0" fill="#ea580c" rx="4"/>
+<text x="777.0" y="255.0" font-size="16" fill="#ffffff" text-anchor="end" font-weight="700" >0.78</text>
+<text x="476.0" y="296.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="500" >Patent figures, not line settings.</text>
+<rect x="456" y="324" width="420" height="156" rx="10" fill="#f7f9fb" stroke="#d9dde3"/>
+<text x="476.0" y="356.0" font-size="19" fill="#151a22" text-anchor="start" font-weight="700" >Adhesive thickness, μm (claim range)</text>
+<text x="476.0" y="394.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Flat part</text>
+<rect x="600.0" y="386.0" width="250.0" height="2.0" fill="#e6e9ee" />
+<rect x="678.1" y="376.0" width="156.2" height="24.0" fill="#2563eb" rx="4"/>
+<text x="756.2" y="394.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700" >100–300</text>
+<text x="476.0" y="434.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="600" >Curved end</text>
+<rect x="600.0" y="426.0" width="250.0" height="2.0" fill="#e6e9ee" />
+<rect x="615.6" y="416.0" width="62.5" height="24.0" fill="#ea580c" rx="4"/>
+<text x="646.9" y="434.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700" >20–100</text>
+</svg>

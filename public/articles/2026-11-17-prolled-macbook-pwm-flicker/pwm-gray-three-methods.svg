@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 850" role="img" aria-labelledby="t d"><title id="t">Three ways to set brightness and gray level</title><desc id="d">Three time-luminance panels over one frame. Analog gamma drive sets the current level for the whole frame. OLED PWM dimming turns the emission on and off several times per frame. Digital PWM in micro LED uses binary-weighted sub-frames at constant current.</desc><rect width="760" height="850" fill="#fbfaf7"/>
+<text x="10" y="30" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#1a1a17">1. Analog (gamma) drive</text>
+<text x="10" y="60" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">data voltage sets current; two gray levels</text>
+<line x1="60" y1="220" x2="720" y2="220" stroke="#1a1a17" stroke-width="2"/>
+<line x1="60" y1="90" x2="720" y2="90" stroke="#6b3a8c" stroke-width="5"/>
+<text x="720" y="82" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">higher gray</text>
+<line x1="60" y1="160" x2="720" y2="160" stroke="#55554f" stroke-width="5"/>
+<text x="720" y="152" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">lower gray</text>
+<text x="60" y="248" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">one frame</text>
+<text x="10" y="285" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#1a1a17">2. OLED PWM dimming</text>
+<text x="10" y="315" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">emission on and off inside the frame (P-61 values)</text>
+<path d="M60 390 L60.0 344 L713.8 344 L713.8 390 L720.0 390" fill="none" stroke="#6b3a8c" stroke-width="3"/>
+<text x="720" y="334" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">1 pulse, duty 99.06%</text>
+<path d="M60 474 L60.0 428 L66.6 428 L66.6 474 L80.6 474 L80.6 428 L87.3 428 L87.3 474 L101.2 474 L101.2 428 L107.9 428 L107.9 474 L121.9 474 L121.9 428 L128.5 428 L128.5 474 L142.5 474 L142.5 428 L149.1 428 L149.1 474 L163.1 474 L163.1 428 L169.8 428 L169.8 474 L183.8 474 L183.8 428 L190.4 428 L190.4 474 L204.4 474 L204.4 428 L211.0 428 L211.0 474 L225.0 474 L225.0 428 L231.6 428 L231.6 474 L245.6 474 L245.6 428 L252.3 428 L252.3 474 L266.2 474 L266.2 428 L272.9 428 L272.9 474 L286.9 474 L286.9 428 L293.5 428 L293.5 474 L307.5 474 L307.5 428 L314.1 428 L314.1 474 L328.1 474 L328.1 428 L334.8 428 L334.8 474 L348.8 474 L348.8 428 L355.4 428 L355.4 474 L369.4 474 L369.4 428 L376.0 428 L376.0 474 L390.0 474 L390.0 428 L396.6 428 L396.6 474 L410.6 474 L410.6 428 L417.3 428 L417.3 474 L431.2 474 L431.2 428 L437.9 428 L437.9 474 L451.9 474 L451.9 428 L458.5 428 L458.5 474 L472.5 474 L472.5 428 L479.1 428 L479.1 474 L493.1 474 L493.1 428 L499.8 428 L499.8 474 L513.8 474 L513.8 428 L520.4 428 L520.4 474 L534.4 474 L534.4 428 L541.0 428 L541.0 474 L555.0 474 L555.0 428 L561.6 428 L561.6 474 L575.6 474 L575.6 428 L582.3 428 L582.3 474 L596.2 474 L596.2 428 L602.9 428 L602.9 474 L616.9 474 L616.9 428 L623.5 428 L623.5 474 L637.5 474 L637.5 428 L644.1 428 L644.1 474 L658.1 474 L658.1 428 L664.8 428 L664.8 474 L678.8 474 L678.8 428 L685.4 428 L685.4 474 L699.4 474 L699.4 428 L706.0 428 L706.0 474 L720.0 474" fill="none" stroke="#55554f" stroke-width="3"/>
+<text x="720" y="418" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">32 pulses, duty 32.19%</text>
+<text x="60" y="526" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">one 120 Hz frame = 8.33 ms</text>
+<text x="10" y="565" text-anchor="start" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#1a1a17">3. Digital PWM (micro LED)</text>
+<text x="10" y="595" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">binary-weighted sub-frames, constant current; schematic</text>
+<line x1="60" y1="715" x2="720" y2="715" stroke="#1a1a17" stroke-width="2"/>
+<rect x="60.0" y="635" width="329.6" height="80" fill="#6b3a8c" stroke="#6b3a8c" stroke-width="3"/>
+<text x="224.8" y="745" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">8T</text>
+<text x="224.8" y="625" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">on</text>
+<rect x="403.6" y="635" width="164.8" height="80" fill="#fbfaf7" stroke="#6b3a8c" stroke-width="3"/>
+<text x="486.0" y="745" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">4T</text>
+<text x="486.0" y="625" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">off</text>
+<rect x="582.4" y="635" width="82.4" height="80" fill="#6b3a8c" stroke="#6b3a8c" stroke-width="3"/>
+<text x="623.6" y="745" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">2T</text>
+<text x="623.6" y="625" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#6b3a8c">on</text>
+<rect x="678.8" y="635" width="41.2" height="80" fill="#fbfaf7" stroke="#6b3a8c" stroke-width="3"/>
+<text x="699.4" y="745" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">1T</text>
+<text x="699.4" y="625" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">off</text>
+<text x="60" y="777" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">example: gray 10 of 15 = 8T + 2T</text>
+</svg>

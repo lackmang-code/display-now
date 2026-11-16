@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" role="img" aria-labelledby="t d"><title id="t">Phantom array effect schematic</title><desc id="d">Top: with a fixed gaze a pulsed light appears as one image. Bottom: during a saccade the pulses fall on different retinal positions and appear as a row of repeated images.</desc><rect width="760" height="400" fill="#fbfaf7"/>
+<text x="380" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#1a1a17">Fixation</text>
+<circle cx="380" cy="100" r="22" fill="#6b3a8c"/><text x="380" y="166" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#6b3a8c">one image</text>
+<line x1="40" y1="206" x2="720" y2="206" stroke="#d8d6cf" stroke-width="2"/>
+<text x="380" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#1a1a17">Saccade</text>
+<circle cx="130" cy="312" r="16" fill="#6b3a8c"/>
+<circle cx="230" cy="312" r="16" fill="#6b3a8c"/>
+<circle cx="330" cy="312" r="16" fill="#6b3a8c"/>
+<circle cx="430" cy="312" r="16" fill="#6b3a8c"/>
+<circle cx="530" cy="312" r="16" fill="#6b3a8c"/>
+<circle cx="630" cy="312" r="16" fill="#6b3a8c"/>
+<line x1="70" y1="352" x2="690" y2="352" stroke="#1a1a17" stroke-width="3"/><polygon points="690,352 672,342 672,362" fill="#1a1a17"/>
+<text x="70" y="386" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">eye movement</text>
+<text x="720" y="386" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#6b3a8c">repeated images</text>
+</svg>

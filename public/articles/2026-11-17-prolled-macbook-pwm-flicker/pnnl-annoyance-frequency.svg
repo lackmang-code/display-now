@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 582" role="img" aria-labelledby="t d"><title id="t">Mean annoyance of phantom array versus frequency</title><desc id="d">Mean annoyance rating from 0 to 8 for rectangular waves with 10 percent and 50 percent duty and sine waves, at frequencies from 120 to 10000 Hz.</desc><rect width="760" height="582" fill="#fbfaf7"/>
+<line x1="90" y1="360.0" x2="720" y2="360.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="368.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">0</text>
+<line x1="90" y1="296.0" x2="720" y2="296.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="304.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">1</text>
+<line x1="90" y1="232.0" x2="720" y2="232.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="240.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">2</text>
+<line x1="90" y1="168.0" x2="720" y2="168.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="176.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">3</text>
+<line x1="90" y1="104.0" x2="720" y2="104.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="112.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">4</text>
+<line x1="90" y1="40.0" x2="720" y2="40.0" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="80" y="48.0" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">5</text>
+<line x1="114.0" y1="40" x2="114.0" y2="360" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="114.0" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">120</text>
+<line x1="272.4" y1="40" x2="272.4" y2="360" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="272.4" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">400</text>
+<line x1="417.0" y1="40" x2="417.0" y2="360" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="417.0" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">1,200</text>
+<line x1="599.4" y1="40" x2="599.4" y2="360" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="599.4" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">4,800</text>
+<line x1="696.0" y1="40" x2="696.0" y2="360" stroke="#d8d6cf" stroke-width="1.5"/>
+<text x="696.0" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#1a1a17">10,000</text>
+<line x1="90" y1="360" x2="720" y2="360" stroke="#1a1a17" stroke-width="3"/><line x1="90" y1="40" x2="90" y2="360" stroke="#1a1a17" stroke-width="3"/>
+<text x="405" y="422" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">Frequency (Hz, log scale)</text>
+<text x="20" y="26" text-anchor="start" font-family="Arial,sans-serif" font-size="22" font-weight="normal" fill="#55554f">Mean annoyance (scale 0-8)</text>
+<polyline points="114.0,46.4 272.4,52.8 363.6,52.8 417.0,59.2 508.2,116.8 599.4,200.0 696.0,302.4" fill="none" stroke="#6b3a8c" stroke-width="4"/>
+<circle cx="114.0" cy="46.4" r="6" fill="#6b3a8c"/>
+<circle cx="272.4" cy="52.8" r="6" fill="#6b3a8c"/>
+<circle cx="363.6" cy="52.8" r="6" fill="#6b3a8c"/>
+<circle cx="417.0" cy="59.2" r="6" fill="#6b3a8c"/>
+<circle cx="508.2" cy="116.8" r="6" fill="#6b3a8c"/>
+<circle cx="599.4" cy="200.0" r="6" fill="#6b3a8c"/>
+<circle cx="696.0" cy="302.4" r="6" fill="#6b3a8c"/>
+<polyline points="114.0,129.6 272.4,110.4 363.6,142.4 417.0,142.4 508.2,161.6 599.4,270.4 696.0,315.2" fill="none" stroke="#55554f" stroke-width="4"/>
+<circle cx="114.0" cy="129.6" r="6" fill="#55554f"/>
+<circle cx="272.4" cy="110.4" r="6" fill="#55554f"/>
+<circle cx="363.6" cy="142.4" r="6" fill="#55554f"/>
+<circle cx="417.0" cy="142.4" r="6" fill="#55554f"/>
+<circle cx="508.2" cy="161.6" r="6" fill="#55554f"/>
+<circle cx="599.4" cy="270.4" r="6" fill="#55554f"/>
+<circle cx="696.0" cy="315.2" r="6" fill="#55554f"/>
+<polyline points="114.0,193.6 272.4,142.4 363.6,148.8 417.0,161.6 508.2,193.6 599.4,296.0" fill="none" stroke="#8a8a84" stroke-width="4" stroke-dasharray="8 6"/>
+<circle cx="114.0" cy="193.6" r="6" fill="#8a8a84"/>
+<circle cx="272.4" cy="142.4" r="6" fill="#8a8a84"/>
+<circle cx="363.6" cy="148.8" r="6" fill="#8a8a84"/>
+<circle cx="417.0" cy="161.6" r="6" fill="#8a8a84"/>
+<circle cx="508.2" cy="193.6" r="6" fill="#8a8a84"/>
+<circle cx="599.4" cy="296.0" r="6" fill="#8a8a84"/>
+<line x1="40" y1="462" x2="90" y2="462" stroke="#6b3a8c" stroke-width="4"/>
+<text x="104" y="470" text-anchor="start" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#6b3a8c">Rectangular, 10% duty, 100% modulation</text>
+<line x1="40" y1="496" x2="90" y2="496" stroke="#55554f" stroke-width="4"/>
+<text x="104" y="504" text-anchor="start" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#55554f">Rectangular, 50% duty, 100% modulation</text>
+<line x1="40" y1="530" x2="90" y2="530" stroke="#8a8a84" stroke-width="4" stroke-dasharray="8 6"/>
+<text x="104" y="538" text-anchor="start" font-family="Arial,sans-serif" font-size="23" font-weight="normal" fill="#8a8a84">Sine, 100% modulation</text>
+</svg>

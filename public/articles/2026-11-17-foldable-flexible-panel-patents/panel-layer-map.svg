@@ -1,0 +1,60 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<defs><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+<rect x="0.0" y="0.0" width="900.0" height="640.0" fill="#fff" rx="0" />
+<text x="40.0" y="48.0" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Where this part works in the panel</text>
+<text x="40.0" y="80.0" font-size="17" fill="#5b6474" text-anchor="start" font-weight="400">Exploded schematic of a foldable OLED panel; layer thicknesses not to scale</text>
+<path d="M90.0 140.0 L126.4 117.6 L486.4 117.6 L450.0 140.0 Z" fill="#a995d8"/>
+<path d="M450.0 140.0 L486.4 117.6 L486.4 147.6 L450.0 170.0 Z" fill="#604798"/>
+<rect x="90.0" y="140.0" width="360.0" height="30.0" fill="#7c5cc4" rx="0" />
+<line x1="90.0" y1="140.0" x2="450.0" y2="140.0" stroke="#c4b5e4" stroke-width="1" />
+<text x="106.0" y="161.0" font-size="16" fill="#fff" text-anchor="start" font-weight="700">Sensor layer (touch, pen)</text>
+<line x1="492.4" y1="143.8" x2="520.4" y2="143.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="149.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 5  fold-angle sensing</text>
+<path d="M90.0 204.0 L126.4 181.6 L486.4 181.6 L450.0 204.0 Z" fill="#82c5c1"/>
+<path d="M450.0 204.0 L486.4 181.6 L486.4 211.6 L450.0 234.0 Z" fill="#31827c"/>
+<rect x="90.0" y="204.0" width="360.0" height="30.0" fill="#3fa7a0" rx="0" />
+<line x1="90.0" y1="204.0" x2="450.0" y2="204.0" stroke="#a8d7d4" stroke-width="1" />
+<text x="106.0" y="225.0" font-size="16" fill="#fff" text-anchor="start" font-weight="700">Thin-film encapsulation</text>
+<line x1="492.4" y1="207.8" x2="520.4" y2="207.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="213.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 4  reverse-tapered spacers</text>
+<path d="M90.0 268.0 L126.4 245.6 L486.4 245.6 L450.0 268.0 Z" fill="#d671a8"/>
+<path d="M450.0 268.0 L486.4 245.6 L486.4 275.6 L450.0 298.0 Z" fill="#951d5f"/>
+<rect x="90.0" y="268.0" width="360.0" height="30.0" fill="#c0267a" rx="0" />
+<line x1="90.0" y1="268.0" x2="450.0" y2="268.0" stroke="#e29dc3" stroke-width="1" />
+<text x="106.0" y="289.0" font-size="16" fill="#fff" text-anchor="start" font-weight="700">Emitting layer, bank</text>
+<line x1="492.4" y1="271.8" x2="520.4" y2="271.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="277.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 3  emitters over slits</text>
+<path d="M90.0 332.0 L126.4 309.6 L486.4 309.6 L450.0 332.0 Z" fill="#a9b1bc"/>
+<path d="M450.0 332.0 L486.4 309.6 L486.4 339.6 L450.0 362.0 Z" fill="#606976"/>
+<rect x="90.0" y="332.0" width="360.0" height="30.0" fill="#7c8798" rx="0" />
+<line x1="90.0" y1="332.0" x2="450.0" y2="332.0" stroke="#c4c9d0" stroke-width="1" />
+<text x="106.0" y="353.0" font-size="16" fill="#fff" text-anchor="start" font-weight="700">Pixel circuits, wiring</text>
+<line x1="492.4" y1="335.8" x2="520.4" y2="335.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="341.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 3  relocation</text>
+<path d="M90.0 396.0 L126.4 373.6 L486.4 373.6 L450.0 396.0 Z" fill="#bed8ee"/>
+<path d="M450.0 396.0 L486.4 373.6 L486.4 403.6 L450.0 426.0 Z" fill="#7998b3"/>
+<rect x="90.0" y="396.0" width="360.0" height="30.0" fill="#9cc3e6" rx="0" />
+<line x1="90.0" y1="396.0" x2="450.0" y2="396.0" stroke="#d2e4f3" stroke-width="1" />
+<text x="106.0" y="417.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">Inorganic insulators</text>
+<line x1="492.4" y1="399.8" x2="520.4" y2="399.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="405.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 4  grooves, islands, barriers</text>
+<path d="M90.0 460.0 L126.4 437.6 L486.4 437.6 L450.0 460.0 Z" fill="#dbe1e8"/>
+<path d="M450.0 460.0 L486.4 437.6 L486.4 467.6 L450.0 490.0 Z" fill="#9ca3ab"/>
+<rect x="90.0" y="460.0" width="360.0" height="30.0" fill="#c9d1dc" rx="0" />
+<line x1="90.0" y1="460.0" x2="450.0" y2="460.0" stroke="#e6eaef" stroke-width="1" />
+<text x="106.0" y="481.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="700">Substrate (PI or glass)</text>
+<line x1="492.4" y1="463.8" x2="520.4" y2="463.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="469.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 7  glass substrate</text>
+<path d="M90.0 524.0 L126.4 501.6 L486.4 501.6 L450.0 524.0 Z" fill="#b4bac3"/>
+<path d="M450.0 524.0 L486.4 501.6 L486.4 531.6 L450.0 554.0 Z" fill="#6d757f"/>
+<rect x="90.0" y="524.0" width="360.0" height="30.0" fill="#8d96a3" rx="0" />
+<line x1="90.0" y1="524.0" x2="450.0" y2="524.0" stroke="#cbcfd5" stroke-width="1" />
+<text x="106.0" y="545.0" font-size="16" fill="#fff" text-anchor="start" font-weight="700">Support plate</text>
+<line x1="492.4" y1="527.8" x2="520.4" y2="527.8" stroke="#5b6474" stroke-width="1.5" />
+<text x="526.4" y="533.8" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Section 3  circuits moved onto ribs</text>
+<rect x="330.0" y="524.0" width="18.0" height="30.0" fill="#fff" rx="0" />
+<rect x="370.0" y="524.0" width="18.0" height="30.0" fill="#fff" rx="0" />
+<rect x="410.0" y="524.0" width="18.0" height="30.0" fill="#fff" rx="0" />
+<text x="330.0" y="576.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">slits</text>
+<text x="40.0" y="616.0" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">Outside this part: cover window and adhesives (part 3), the touch stack itself (part 6).</text>
+</svg>
