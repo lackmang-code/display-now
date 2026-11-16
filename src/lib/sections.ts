@@ -17,7 +17,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
   'tech-note': {
     key: 'tech-note',
     label: '기술노트',
-    labelEn: 'TECH NOTE',
+    labelEn: 'TECH',
     reporter: 'TEKER',
     hue: 40,
     chroma: 0.11,
@@ -50,7 +50,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
   issue: {
     key: 'issue',
     label: '이슈',
-    labelEn: 'ISSUE NOW',
+    labelEn: 'ISSUE',
     reporter: 'DESK',
     hue: 315,
     chroma: 0.12,
