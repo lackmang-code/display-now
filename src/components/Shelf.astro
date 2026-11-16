@@ -9,35 +9,44 @@
  * 줄이 넘치면 좌우 화살표(또는 손가락)로 밀어 본다. 넘치지 않으면 화살표는 숨는다(11/5 대표).
  * 줄 끝 「이전 호·유튜브 채널·책 전체」 칸은 머리의 「… 전체 →」와 겹쳐 뺐다(11/5 대표).
  * 기자 소개는 편집국 페이지에 있으니 여기 싣지 않는다(10/31 대표).
+ *
+ * 영문 홈(`lang='en'`)은 매거진·TV만 쓴다(11/16 대표, 책은 한국어뿐). 영문 호·영문 포스터,
+ * 영상은 영어판이 있으면 그것, 없으면 한국어 영상에 「EN subtitles」.
  */
-import { getIssues, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
+import { getIssues, getIssuesEn, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
 import { issueThumbSrc } from '../lib/issueThumb';
-import { VIDEOS, videoHref } from '../lib/videos';
+import { videosFor, videoHref, CHANNEL_URL } from '../lib/videos';
 import { BOOKS, bookDateLabel } from '../lib/books';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
-import { getPublishedArticles } from '../lib/articles';
+import { getPublishedArticles, type Lang } from '../lib/articles';
 
 interface Props {
   which: 'magazine' | 'tv' | 'books';
   mobile?: boolean;
+  lang?: Lang;
 }
-const { which, mobile = false } = Astro.props;
+const { which, mobile = false, lang = 'ko' } = Astro.props;
+const en = lang === 'en';
 
 const ISSUE_COUNT = 12;
 const VIDEO_COUNT = 12;
 
-const issues = which === 'magazine' ? getIssues().slice(0, ISSUE_COUNT) : [];
-const videos = which === 'tv' ? VIDEOS.slice(0, VIDEO_COUNT) : [];
-const books = which === 'books' ? BOOKS : [];
+const issues = which === 'magazine' ? (en ? getIssuesEn() : getIssues()).slice(0, ISSUE_COUNT) : [];
+const videos = which === 'tv' ? videosFor(lang).slice(0, VIDEO_COUNT) : [];
+const books = which === 'books' && !en ? BOOKS : [];
 
-const published = which === 'magazine' ? await getPublishedArticles() : [];
+const published = which === 'magazine' ? await getPublishedArticles(lang) : [];
 const sectionCount = (key: string) => published.filter((a) => a.data.section === key).length;
 
-const HEAD = {
+const HEAD = (en ? {
+  magazine: { label: 'MAGAZINE', sub: 'Published every Tuesday', more: '/en/issue', moreLabel: 'All issues' },
+  tv: { label: 'DISPLAY NOW TV', sub: 'Principles in moving pictures', more: CHANNEL_URL, moreLabel: 'YouTube channel' },
+  books: { label: 'BOOKS', sub: '', more: '/books', moreLabel: '' },
+} : {
   magazine: { label: 'MAGAZINE', sub: '매주 화요일 발행', more: '/issue', moreLabel: '지난 호 전체' },
   tv: { label: 'DISPLAY NOW TV', sub: '원리를 움직이는 그림으로', more: '/tv', moreLabel: '영상 전체' },
   books: { label: 'BOOKS', sub: '기사를 주제별로 엮은 책', more: '/books', moreLabel: '책 전체' },
-}[which];
+})[which];
 
 const empty = issues.length + videos.length + books.length === 0;
 ---
@@ -48,29 +57,29 @@ const empty = issues.length + videos.length + books.length === 0;
       <div class="sh">
         <span class="sh-label">{HEAD.label}</span>
         <span class="sh-sub">{HEAD.sub}</span>
-        <a class="sh-more" href={HEAD.more}>{HEAD.moreLabel} →</a>
+        <a class="sh-more" href={HEAD.more} {...(HEAD.more.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{HEAD.moreLabel} →</a>
       </div>
 
       {which === 'magazine' && (
-        <nav class="chips" aria-label="꼭지">
+        <nav class="chips" aria-label={en ? 'Sections' : '꼭지'}>
           {SECTION_ORDER.map((key) => (
-            <a class="chip" href={`/section/${key}`}>
+            <a class="chip" href={en ? `/en/archive?section=${key}` : `/section/${key}`}>
               <i style={`background:${sectionColor(key)};`} />
-              {SECTIONS[key].label}
+              {en ? SECTIONS[key].labelEn : SECTIONS[key].label}
               <b>{sectionCount(key)}</b>
             </a>
           ))}
-          <a class="chip" href="/archive">아카이브·검색 <b>{published.length}</b></a>
+          <a class="chip" href={en ? '/en/archive' : '/archive'}>{en ? 'Archive · search' : '아카이브·검색'} <b>{published.length}</b></a>
         </nav>
       )}
 
       <div class="rowwrap">
-      <button class="nav prev" type="button" aria-label="앞쪽 보기" hidden>‹</button>
+      <button class="nav prev" type="button" aria-label={en ? 'Previous' : '앞쪽 보기'} hidden>‹</button>
       <div class="row">
         {issues.map((i) => (
-          <a class="tile tall" href={issueHref(i)}>
-            <img src={issueThumbSrc(i.no)} alt={`${issueNumberLabel(i)} 표지: ${i.headline}`} width="600" height="900" loading="lazy" decoding="async" />
-            <span class="cap"><b>{issueNumberLabel(i)}</b>{' · '}{issueDateLabel(i).slice(5)}</span>
+          <a class="tile tall" href={issueHref(i, lang)}>
+            <img src={issueThumbSrc(i.no, lang)} alt={en ? `${issueNumberLabel(i, lang)} cover: ${i.headlineEn}` : `${issueNumberLabel(i)} 표지: ${i.headline}`} width="600" height="900" loading="lazy" decoding="async" />
+            <span class="cap"><b>{issueNumberLabel(i, lang)}</b>{' · '}{issueDateLabel(i).slice(5)}</span>
           </a>
         ))}
 
@@ -82,6 +91,7 @@ const empty = issues.length + videos.length + books.length === 0;
               <span class="dur">{v.duration}</span>
             </span>
             <span class="cap vcap">{v.title}</span>
+            {v.subtitled && <span class="cc">EN subtitles</span>}
           </a>
         ))}
 
@@ -93,7 +103,7 @@ const empty = issues.length + videos.length + books.length === 0;
         ))}
 
       </div>
-      <button class="nav next" type="button" aria-label="뒤쪽 보기" hidden>›</button>
+      <button class="nav next" type="button" aria-label={en ? 'Next' : '뒤쪽 보기'} hidden>›</button>
       </div>
     </section>
   )
@@ -316,6 +326,11 @@ const empty = issues.length + videos.length + books.length === 0;
   .cap b {
     color: var(--ink);
     font-weight: 600;
+  }
+  .cc {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--meta);
   }
   .vcap {
     font-family: var(--font-serif);

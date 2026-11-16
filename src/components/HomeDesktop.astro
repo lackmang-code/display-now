@@ -11,46 +11,31 @@
  * 여기서 언어에 따라 갈리는 것은 **링크 경로**뿐이다.
  */
 import Header from './Header.astro';
-import ArticleCard from './ArticleCard.astro';
-import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
+import { SECTIONS, sectionColor } from '../lib/sections';
 import { articleHref, type Article, type Lang } from '../lib/articles';
-import { issueNumberLabel, issueDateLabel, issueHref, type IssueMeta } from '../lib/issues';
+import type { IssueMeta } from '../lib/issues';
 import { t } from '../lib/i18n';
 import BrandStrip from './BrandStrip.astro';
 import Shelf from './Shelf.astro';
 
 interface Props {
   lang?: Lang;
-  /** 그 언어판 발행 기사 전체. 꼭지별 편수와 「전체 N편」에 쓴다 */
-  allArticles: Article[];
-  /** 가운데 목록에 실을 최신분 */
-  recentArticles: Article[];
   editorPicks: Article[];
   latestIssue?: IssueMeta;
-  latestIssueCount: number;
   /** 이번 호 기사. 한글 홈 맨 위 매거진 칸에 카드로 싣는다 */
   issueArticles?: Article[];
 }
 
 const {
   lang = 'ko',
-  allArticles,
-  recentArticles,
   editorPicks,
   latestIssue,
-  latestIssueCount,
   issueArticles = [],
 } = Astro.props;
 
 const ui = t(lang);
 const en = lang === 'en';
 
-/* 영문판에는 꼭지 낱장(`/en/section/*`)이 없다. 아카이브(`/en/archive`)가 그 자리를
-   겸하므로 꼭지 카드는 그 면의 꼭지 필터를 켠 채로 연다. */
-const editorialHref = en ? '/en/editorial' : '/editorial';
-const sectionHref = (key: string) => (en ? `/en/archive?section=${key}` : `/section/${key}`);
-const archiveHref = en ? '/en/archive' : '/archive';
-const feedMoreHref = en ? '/en/archive' : '/archive';
 const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
 ---
 
@@ -61,102 +46,18 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     <h1>{ui.homeTagline}</h1>
   </section>
 
-  {/* 한글 홈은 세 축(매거진·TV·책) 띠가 이번 호 배너를 대신한다. 영상·책이 한국어뿐이라 영문 홈은 배너 그대로 */}
-  {!en && <BrandStrip latestIssue={latestIssue} issueArticles={issueArticles} />}
-
-  {
-    en && latestIssue && (
-      <a class="issue-banner" href={issueHref(latestIssue, lang)}>
-        <div class="ib-left">
-          <span class="ib-label">{ui.homeIssueLabel}</span>
-          <span class="ib-no">
-            {issueNumberLabel(latestIssue, lang)} · {issueDateLabel(latestIssue)}
-          </span>
-        </div>
-        <div class="ib-main">
-          <div class="ib-headline">{en ? latestIssue.headlineEn : latestIssue.headline}</div>
-          <div class="ib-meta">
-            {ui.articleCount(latestIssueCount)}
-            {latestIssue.coverSim && ui.homeCoverSimNote}
-          </div>
-        </div>
-        <span class="ib-go">{ui.homeCoverOpen}</span>
-      </a>
-    )
-  }
+  {/* 세 축(매거진·TV·책) 띠가 이번 호 배너를 대신한다. 영문 홈도 같은 띠를 쓴다(11/16 대표) — 영문 호·영어판(없으면 자막) 영상 */}
+  <BrandStrip latestIssue={latestIssue} issueArticles={issueArticles} lang={lang} />
 
   <div class="content-pad">
-    {/* 꼭지 카드는 영문 홈에만. 한글 홈은 MAGAZINE 책장 머리의 칩이 꼭지 바로가기를 겸한다(10/31 대표: 최소 크기로) */}
-    {en && (
-    <>
-    <div class="row-head">
-      <span class="eyebrow">{ui.homeQuickNav}</span>
-      <a href={editorialHref} class="muted-link">{ui.homeEditorialLink}</a>
-    </div>
-
-    {/*
-      꼭지 카드는 **내비게이션**이다. 종전에는 각 꼭지의 최신 기사 제목을 실었는데,
-      그 제목이 바로 아래 기사 목록과 오른쪽 편집국 추천에 그대로 또 나와
-      한 화면에서 같은 제목이 서너 번씩 보였다(기사 자리 24칸에 고유 제목 15개).
-
-      제목 대신 **그 꼭지가 무엇을 하는 곳인지** 한 줄로 적는다.
-      카드가 목록처럼 보이지 않고, 처음 온 사람이 꼭지를 고를 근거가 생긴다.
-    */}
-    <div class="quick-cards" data-nav="1">
-      {
-        SECTION_ORDER.map((key) => {
-          const s = SECTIONS[key];
-          const n = allArticles.filter((a) => a.data.section === key).length;
-          if (n === 0) return null;
-          // 첫 문장만. 이미 마침표로 끝나면 또 붙이지 않는다(특허 카드가 ".."이 됐다)
-          const first = (en ? s.blurbEn : s.blurb).split('. ')[0];
-          const blurb = first.endsWith('.') ? first : first + '.';
-          return (
-            <a href={sectionHref(key)} class="quick-card" style={`border-color:${sectionColor(key)};`}>
-              <div class="band" style={`background:${sectionColor(key)};`}>
-                {en ? s.labelEn : s.label}
-              </div>
-              <div class="body">
-                <div class="title">{blurb}</div>
-                <div class="byline">{ui.homeSectionByline(n, s.reporter)}</div>
-              </div>
-            </a>
-          );
-        })
-      }
-      <a href={archiveHref} class="quick-card archive-card">
-        <div class="band archive-band">{ui.homeArchiveBand}</div>
-        <div class="body">
-          <div class="title">{ui.homeArchiveTitle}</div>
-          <div class="byline">{ui.homeArchiveByline(allArticles.length)}</div>
-        </div>
-      </a>
-    </div>
-    </>
-    )}
-
+    {/* 꼭지 바로가기는 MAGAZINE 책장 머리의 칩이 맡는다(한글 10/31, 영문 11/16 대표). 종전 꼭지 카드는 뺐다 */}
     <div class="main-split">
       <div class="feed">
-        {/* 한글 홈은 최신 글 목록을 두지 않는다 — 이번 호 기사는 맨 위 매거진 칸에 있다(10/31 대표).
-            그 자리에 매거진·TV·책 책장을 둬서 랜딩이 한눈에 들어오게 한다 */}
-        {en ? (
-          <>
-            <div class="row-head">
-              <span class="eyebrow">{ui.homeFeedHead}</span>
-              <a href={feedMoreHref} class="muted-link">{ui.homeFeedLink(allArticles.length)}</a>
-            </div>
-            <div class="feed-grid">
-              {recentArticles.map((a) => <ArticleCard article={a} />)}
-            </div>
-          </>
-        ) : (
-          <>
-            {/* 책장 — 매거진·TV·책을 썸네일로 최신부터(10/31 대표) */}
-            <Shelf which="magazine" />
-            <Shelf which="tv" />
-            <Shelf which="books" />
-          </>
-        )}
+        {/* 최신 글 목록을 두지 않는다 — 이번 호 기사는 맨 위 매거진 칸에 있다(한글 10/31, 영문 11/16 대표).
+            그 자리에 책장을 둬서 랜딩이 한눈에 들어오게 한다. 책은 한국어뿐이라 영문에서 뺀다 */}
+        <Shelf which="magazine" lang={lang} />
+        <Shelf which="tv" lang={lang} />
+        {!en && <Shelf which="books" />}
       </div>
 
       <aside class="sidebar">
@@ -344,69 +245,6 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     color: #fff;
     word-break: keep-all;
   }
-  /* 이번 호 배너. 히어로 바로 아래에서 그 주 호로 보낸다.
-     종전에는 제호·부제·배너가 모두 같은 검정이라 세 덩어리가 하나로 붙어 보였다.
-     배너만 밝은 판으로 뒤집어 "여기부터 이번 주 내용"이라는 경계를 만든다.
-     골드 테두리로 묶어 아래 콘텐츠 영역과도 섞이지 않게 한다. */
-  .issue-banner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 20px;
-    background: var(--gold);
-    color: #17170f;
-    padding: 15px clamp(14px, 4vw, 32px) 17px;
-  }
-  .issue-banner .ib-no,
-  .issue-banner .ib-meta {
-    color: rgba(23, 23, 15, 0.66);
-  }
-  .issue-banner .ib-label,
-  .issue-banner .ib-go {
-    color: #17170f;
-    font-weight: 600;
-  }
-  .ib-left {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    flex: 0 0 auto;
-  }
-  .ib-label {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-  }
-  .ib-no {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .ib-main {
-    flex: 1 1 320px;
-    min-width: 0;
-  }
-  .ib-headline {
-    font-family: var(--font-serif);
-    font-size: clamp(17px, 3vw, 21px);
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: -0.03em;
-    word-break: keep-all;
-  }
-  .ib-meta {
-    margin-top: 4px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--on-dark-mute);
-  }
-  .ib-go {
-    flex: 0 0 auto;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--gold);
-  }
   .content-pad {
     padding: 20px clamp(14px, 4vw, 24px) 24px;
   }
@@ -431,61 +269,6 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     font-size: 14px;
     color: var(--meta);
   }
-  .quick-cards {
-    display: flex;
-    gap: 12px;
-    align-items: stretch;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 2px;
-  }
-  .quick-card {
-    background: var(--card);
-    border: 1.5px solid var(--line-frame);
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 clamp(152px, 42vw, 200px);
-    min-width: clamp(152px, 42vw, 200px);
-    scroll-snap-align: start;
-  }
-  .quick-card .band {
-    color: var(--card);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    padding: 8px clamp(12px, 3.2vw, 18px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .archive-card {
-    background: var(--card-warm);
-    border-color: var(--line-dark);
-  }
-  .archive-band {
-    background: var(--line-dark);
-  }
-  .quick-card .body {
-    padding: clamp(12px, 3.4vw, 16px) clamp(13px, 3.8vw, 18px) clamp(11px, 3vw, 14px);
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    flex: 1;
-  }
-  .quick-card .title {
-    font-family: var(--font-serif);
-    font-size: clamp(15.5px, 4vw, 18px);
-    font-weight: 600;
-    line-height: 1.45;
-    letter-spacing: -0.03em;
-    word-break: keep-all;
-    flex: 1;
-  }
-  .quick-card .byline {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--meta);
-  }
   .main-split {
     display: flex;
     flex-wrap: wrap;
@@ -496,11 +279,6 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
   .feed {
     flex: 1 1 520px;
     min-width: 0;
-  }
-  .feed-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px;
   }
   .sidebar {
     flex: 1 1 300px;

@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import HomeDesktop from '../../components/HomeDesktop.astro';
 import Footer from '../../components/Footer.astro';
-import { getPublishedArticles, baseSlug } from '../../lib/articles';
+import { getPublishedArticles } from '../../lib/articles';
 import { getIssuesEn, articlesOfIssue } from '../../lib/issues';
 import { resolvePicks } from '../../lib/picks';
 
@@ -13,7 +13,8 @@ import { resolvePicks } from '../../lib/picks';
  *
  * 🔴 **랜딩 페이지는 전체 목록을 이지 않는다.** 한때 이 면이 홈이자 아카이브라
  * 발행분 전체를 꼭지별로 실었는데, 호가 쌓이면 첫 화면이 목록에 잠식된다
- * (2026-09-05 대표 지적). 한글 홈과 같이 **최신 8편에서 끊고** 전체는 `/en/archive`가 받는다.
+ * (2026-09-05 대표 지적). 11/16부터는 한글 홈과 같은 세 축 모양 — 맨 위 매거진(이번 호 목차)·TV,
+ * 아래 책장(매거진·TV). 최신 글 목록은 없고 전체는 `/en/archive`가 받는다.
  *
  * 모바일 전용 지면(HomeMobile)은 한글만 있다. 영문은 HomeDesktop 한 벌이 좁은 폭에서
  * 그대로 접히게 둔다 — 주 6편이라 표지형 지면을 따로 유지할 만큼 분량이 없다.
@@ -22,30 +23,20 @@ const articles = await getPublishedArticles('en');
 
 // 이번 호. `headlineEn`이 있는 호만 getIssuesEn()에 들어온다.
 const latestIssue = getIssuesEn()[0];
-const latestIssueCount = latestIssue ? (await articlesOfIssue(latestIssue, 'en')).length : 0;
+const issueArticles = latestIssue ? await articlesOfIssue(latestIssue, 'en') : [];
 
-// 배너가 헤드 기사 제목을 그대로 싣는 호에서는 그 기사를 목록에서 뺀다(한글 홈과 같은 규칙).
-// 영문판 slug는 `en/` 접두사가 붙으므로 `baseSlug`로 맞춘다.
-const _head0 = latestIssue?.headSlug
-  ? articles.find((a) => baseSlug(a) === latestIssue.headSlug)
-  : undefined;
-const bannerHeadSlug =
-  _head0 && latestIssue?.headlineEn?.trim() === _head0.data.title.trim() ? _head0.slug : undefined;
-const recentArticles = articles.filter((a) => a.slug !== bannerHeadSlug).slice(0, 8);
-
-const shownSlugs = new Set<string>(recentArticles.map((a) => a.slug));
-if (bannerHeadSlug) shownSlugs.add(bannerHeadSlug);
-const editorPicks = resolvePicks(articles, shownSlugs);
+// 편집국 추천은 맨 위 매거진 칸(이번 호 목차)에 이미 있는 기사만 뺀다 — 최신 글 목록은 11/16에 뺐다
+const shownSlugs = new Set<string>(issueArticles.map((a) => a.slug));
+// 다섯 편만 — 열 편이면 사이드바가 왼쪽 책장보다 두 배 길어져 빈 자리가 생긴다(11/16)
+const editorPicks = resolvePicks(articles, shownSlugs).slice(0, 5);
 ---
 
 <Base title="DISPLAY NOW" lang="en" altHref="/">
   <HomeDesktop
     lang="en"
-    allArticles={articles}
-    recentArticles={recentArticles}
     editorPicks={editorPicks}
     latestIssue={latestIssue}
-    latestIssueCount={latestIssueCount}
+    issueArticles={issueArticles}
   >
     {/*
       한글 홈의 SubscribeCTA 자리. `/subscribe`의 영문 짝이 아직 없어 여기가 그 역할을 겸하고,

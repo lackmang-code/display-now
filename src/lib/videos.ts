@@ -1,8 +1,9 @@
 /**
  * 홈 「DISPLAY NOW TV」 — 유튜브 채널(@displaynowtv)에 **공개된** 영상 목록.
  *
- * 한글 홈 세 축 중 「TV」 — 맨 위 TV 칸(맨 앞 한 편)과 아래 TV 책장(최신 4편), `/tv`가 쓴다.
- * 영상이 한국어라 영문 홈에는 싣지 않는다.
+ * 홈 세 축 중 「TV」 — 맨 위 TV 칸(맨 앞 한 편)과 아래 TV 책장, `/tv`가 쓴다.
+ * 영문 홈도 같은 목록을 쓴다(11/16 대표) — 영어판이 따로 있으면(`en`) 그것을, 없으면 한국어 영상을
+ * 영어 자막 표시와 함께 싣는다(모든 롱폼에 .en.srt가 있다). 영문 홈 TV 칸 맨 앞은 영어판이 있는 최신 편.
  *
  * - **공개된 영상만 적는다.** 공개 전 편을 미리 넣지 않는다
  * - 최신 편을 맨 앞에 둔다
@@ -19,17 +20,39 @@ export interface Video {
   date: string;
   /** `public/` 기준 경로 */
   thumb: string;
+  /** 영문 홈에 쓸 제목(한국어 음성 + 영어 자막 영상) */
+  titleEn: string;
+  /** 영어 음성판을 따로 공개했으면 그 영상 */
+  en?: { id: string; title: string; thumb: string; duration?: string };
 }
 
 export const CHANNEL_URL = 'https://www.youtube.com/@displaynowtv';
 
 export const VIDEOS: Video[] = [
   {
+    id: 'xJ9qIbUoVA4',
+    title: 'OLED 맥북 프로 두통 논란, PWM 디밍이 뭐길래?',
+    duration: '5:44',
+    date: '2026-11-16',
+    thumb: '/videos/pwm-flicker-macbook.webp',
+    titleEn: 'OLED MacBook Pro and Headache Reports: What Is PWM Dimming?',
+  },
+  {
+    id: 'S2RDoUf0U4U',
+    title: '내가 찍은 영상이 유튜브 방송이 되기까지',
+    duration: '7:32',
+    date: '2026-11-14',
+    thumb: '/videos/video-data-to-youtube.webp',
+    titleEn: 'How the Video I Filmed Becomes a YouTube Broadcast',
+    en: { id: 'B8v8D8HsgwQ', title: 'How the Video I Filmed Becomes a YouTube Broadcast', thumb: '/videos/video-data-to-youtube-en.webp' },
+  },
+  {
     id: 'DnWvhOUgxLI',
     title: '지문을 소리로 읽는다고? 초음파 지문센서의 원리',
     duration: '9:32',
     date: '2026-11-06',
     thumb: '/videos/ultrasonic-fingerprint.webp',
+    titleEn: 'Reading Fingerprints with Sound: How Ultrasonic Fingerprint Sensors Work',
   },
   {
     id: 'fX3DIFYgt3k',
@@ -37,6 +60,7 @@ export const VIDEOS: Video[] = [
     duration: '6:54',
     date: '2026-11-02',
     thumb: '/videos/duo-hinge-crack.webp',
+    titleEn: 'iPhone Duo Screen Line Defects: Is the Hinge the Cause?',
   },
   {
     id: 'upKBkH7KEbw',
@@ -44,7 +68,34 @@ export const VIDEOS: Video[] = [
     duration: '6:27',
     date: '2026-10-31',
     thumb: '/videos/faceid-under-panel.webp',
+    titleEn: 'iPhone 18 Pro Face ID Under the Display: Is It True?',
   },
 ];
 
-export const videoHref = (v: Video) => `https://youtu.be/${v.id}`;
+export const videoHref = (v: { id: string }) => `https://youtu.be/${v.id}`;
+
+/** 화면에 실을 한 편 — 언어판을 고른 뒤의 모양 */
+export interface VideoView {
+  id: string;
+  title: string;
+  duration: string;
+  thumb: string;
+  /** 한국어 음성에 영어 자막(영문 홈에서만 true) */
+  subtitled: boolean;
+}
+
+export function videosFor(lang: 'ko' | 'en' = 'ko'): VideoView[] {
+  return VIDEOS.map((v) =>
+    lang === 'en'
+      ? v.en
+        ? { id: v.en.id, title: v.en.title, duration: v.en.duration ?? v.duration, thumb: v.en.thumb, subtitled: false }
+        : { id: v.id, title: v.titleEn, duration: v.duration, thumb: v.thumb, subtitled: true }
+      : { id: v.id, title: v.title, duration: v.duration, thumb: v.thumb, subtitled: false },
+  );
+}
+
+/** 홈 맨 위 TV 칸의 한 편. 영문 홈은 영어판이 있는 최신 편, 없으면 최신 편 */
+export function leadVideo(lang: 'ko' | 'en' = 'ko'): VideoView | undefined {
+  const list = videosFor(lang);
+  return (lang === 'en' && list.find((v) => !v.subtitled)) || list[0];
+}

@@ -1,46 +1,61 @@
 ---
 /**
- * 한글 홈 PC 맨 위 — 매거진 2/3 · TV 1/3 (10/31 대표).
+ * 홈 PC 맨 위 — 매거진 2/3 · TV 1/3 (10/31 대표).
  *
  * 매거진 칸은 이번 호를 카드로 펼친다. 최신 글 목록을 따로 두지 않으므로(랜딩을 한눈에)
  * 이번 호 기사는 여기가 홈에서 보이는 유일한 자리다.
  * 책은 아래 BOOKS 구역에 있다.
  *
- * 영상이 한국어뿐이라 영문 홈에는 싣지 않는다. 모바일 지면은 HomeMobile이 따로 그린다.
+ * 영문 홈도 같은 띠를 쓴다(11/16 대표). 영문은 영문 호·영문판 기사, TV는 영어판이 있는 최신 편
+ * (없으면 한국어 영상 + 「English subtitles」). 모바일 한글 지면은 HomeMobile이 따로 그린다.
  */
 import { issueHref, issueNumberLabel, issueDateLabel, type IssueMeta } from '../lib/issues';
 import { SECTIONS, sectionColor } from '../lib/sections';
-import { articleHref, type Article } from '../lib/articles';
-import { VIDEOS, videoHref } from '../lib/videos';
+import { articleHref, type Article, type Lang } from '../lib/articles';
+import { leadVideo, videoHref } from '../lib/videos';
 import { issueThumbSrc } from '../lib/issueThumb';
 
 interface Props {
   latestIssue?: IssueMeta;
   issueArticles?: Article[];
+  lang?: Lang;
 }
-const { latestIssue, issueArticles = [] } = Astro.props;
+const { latestIssue, issueArticles = [], lang = 'ko' } = Astro.props;
+const en = lang === 'en';
 
-const video = VIDEOS[0];
+const video = leadVideo(lang);
 
-const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
+const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no, lang) : '';
+const headline = latestIssue ? (en ? latestIssue.headlineEn ?? latestIssue.headline : latestIssue.headline) : '';
+// 영상 표지는 한글 호에만 선다(영문 호는 coverSim 그대로)
+const coverKind = !latestIssue
+  ? ''
+  : !en && latestIssue.coverVideo?.youtubeId
+    ? ' · 표지는 영상'
+    : latestIssue.coverSim
+      ? en ? ' · cover is a simulation' : ' · 표지는 시뮬레이션'
+      : '';
+const L = en
+  ? { cover: 'Open cover →', mag: 'MAGAZINE · THIS ISSUE', count: (n: number) => `${n} article${n === 1 ? '' : 's'}`, tv: 'DISPLAY NOW TV · LATEST', go: 'Watch on YouTube →', cc: 'English subtitles' }
+  : { cover: '표지 열기 →', mag: 'MAGAZINE · 이번 호', count: (n: number) => `${n}편`, tv: 'DISPLAY NOW TV · 최신 영상', go: '유튜브에서 보기 →', cc: '' };
 ---
 
 <div class:list={['axes', { solo: !video }]}>
   {
     latestIssue && (
       <div class="ax ax-mag">
-        <a class="mag-cover" href={issueHref(latestIssue)}>
-          <img src={coverSrc} alt={`${issueNumberLabel(latestIssue)} 표지: ${latestIssue.headline}`} width="400" height="600" decoding="async" />
-          <span class="ax-go">표지 열기 →</span>
+        <a class="mag-cover" href={issueHref(latestIssue, lang)}>
+          <img src={coverSrc} alt={en ? `${issueNumberLabel(latestIssue, lang)} cover: ${headline}` : `${issueNumberLabel(latestIssue)} 표지: ${headline}`} width="400" height="600" decoding="async" />
+          <span class="ax-go">{L.cover}</span>
         </a>
         <div class="mag-body">
-        <a class="mag-top" href={issueHref(latestIssue)}>
-          <span class="ax-label">MAGAZINE · 이번 호</span>
+        <a class="mag-top" href={issueHref(latestIssue, lang)}>
+          <span class="ax-label">{L.mag}</span>
           <span class="mag-no">
-            {issueNumberLabel(latestIssue)} · {issueDateLabel(latestIssue)} · {issueArticles.length}편
-            {latestIssue.coverVideo?.youtubeId ? ' · 표지는 영상' : latestIssue.coverSim && ' · 표지는 시뮬레이션'}
+            {issueNumberLabel(latestIssue, lang)} · {issueDateLabel(latestIssue)} · {L.count(issueArticles.length)}
+            {coverKind}
           </span>
-          <span class="mag-head">{latestIssue.headline}</span>
+          <span class="mag-head">{headline}</span>
         </a>
         <ol class="toc">
           {issueArticles.map((a) => (
@@ -48,7 +63,7 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
               <a href={articleHref(a)}>
                 <span class="t-sec">
                   <i style={`background:${sectionColor(a.data.section)};`} />
-                  {SECTIONS[a.data.section].label}
+                  {en ? SECTIONS[a.data.section].labelEn : SECTIONS[a.data.section].label}
                 </span>
                 <span class="t-title">{a.data.title}</span>
               </a>
@@ -62,14 +77,15 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   {
     video && (
       <a class="ax ax-tv" href={videoHref(video)} target="_blank" rel="noopener">
-        <span class="ax-label">DISPLAY NOW TV · 최신 영상</span>
+        <span class="ax-label">{L.tv}</span>
         <span class="tv-thumb">
           <img src={video.thumb} alt="" width="640" height="360" loading="lazy" decoding="async" />
           <span class="tv-play" aria-hidden="true" />
           <span class="tv-dur">{video.duration}</span>
         </span>
         <span class="tv-title">{video.title}</span>
-        <span class="tv-go">유튜브에서 보기 →</span>
+        {video.subtitled && <span class="tv-cc">{L.cc}</span>}
+        <span class="tv-go">{L.go}</span>
       </a>
     )
   }
@@ -260,6 +276,11 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
     letter-spacing: -0.02em;
     word-break: keep-all;
   }
+  .tv-cc {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: rgba(23, 23, 15, 0.66);
+  }
   .tv-go {
     margin-top: auto;
     font-family: var(--font-mono);
@@ -272,6 +293,23 @@ const coverSrc = latestIssue ? issueThumbSrc(latestIssue.no) : '';
   @media (max-width: 1000px) {
     .axes {
       grid-template-columns: 1fr;
+    }
+  }
+  /* 폰 폭 — 영문 홈은 모바일 지면이 따로 없어 이 띠가 좁은 폭까지 내려온다. 표지를 위로 */
+  @media (max-width: 560px) {
+    .axes {
+      padding: 10px;
+      gap: 10px;
+    }
+    .ax-mag {
+      flex-direction: column;
+    }
+    .mag-cover {
+      width: min(180px, 60%);
+    }
+    .toc a {
+      grid-template-columns: 1fr;
+      gap: 2px;
     }
   }
 </style>

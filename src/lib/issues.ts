@@ -89,6 +89,22 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 14,
+    publishedAt: '2026-11-17',
+    weekStart: '2026-11-09',
+    // 헤드는 데스크 맥북 프로 PWM 편이다. 표지는 우리 롱폼(xJ9qIbUoVA4) — 대표 결정(11/16)으로 구간을 자르지 않고 전편(5:44)을 건다.
+    // 첫 화면은 0:08 장면(맥북 + 240 Hz 파형). 영문 호를 만들면 headlineEn 과 함께 coverSim 을 넣는다.
+    headline: '맥북 프로 OLED 두통 논란과 PWM 디밍',
+    deck: '새 OLED 맥북 프로의 화면은 밝기 99% 이하에서 1초에 240번, 진폭 56%로 깜빡인다고 측정됐고, 일부 구매자가 눈 피로와 두통을 보고했습니다. 플리커의 주파수와 깊이가 불편감과 어떤 관계로 연구돼 왔는지, 이 측정값이 어디에 놓이는지 정리했습니다.',
+    coverVideo: {
+      youtubeId: 'xJ9qIbUoVA4',
+      poster: '/videos/pwm-flicker-0m08.webp',
+      title: 'OLED 맥북 프로 두통 논란, PWM 디밍이 뭐길래?',
+    },
+    coverNote: 'PWM 디밍의 원리와 플리커가 불편감과 연관된다고 보는 이유를 그림으로 푼 DISPLAY NOW 영상입니다(5분 44초, 데스크 편). 240 Hz·56%는 Notebookcheck 측정값이고, 이 수준에서 두통을 직접 잰 연구는 아직 없습니다.',
+    headSlug: '2026-11-17-prolled-macbook-pwm-flicker',
+  },
+  {
     no: 13,
     publishedAt: '2026-11-10',
     weekStart: '2026-11-02',
