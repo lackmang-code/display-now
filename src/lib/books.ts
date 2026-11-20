@@ -38,6 +38,28 @@ export interface Book {
 
 export const BOOKS: Book[] = [
   {
+    slug: 'sensor-tech-1',
+    title: '디스플레이 센서기술 I',
+    author: 'DISPLAY NOW 편집부 지음 · 박원상 기획·편집·감수',
+    date: '2026-11-26',
+    cover: '/books/sensor-tech-1.webp',
+    coverW: 480,
+    coverH: 711,
+    pricePaper: 16000,
+    priceEbook: 11000,
+    pages: 202,
+    lead: '매일 손끝과 얼굴로 여는 스마트폰, 그 센서는 지금 화면 아래에 있습니다',
+    about: [
+      '손가락을 대면 잠금이 풀리고, 귀에 대면 화면이 꺼지고, 어두운 방에 들어서면 화면이 알아서 어두워집니다. 이 일을 하는 센서들은 한때 화면 테두리에 나란히 있었습니다. 테두리가 사라진 지금, 그 센서들은 모두 디스플레이 패널 아래로 들어갔습니다.',
+      '자리를 옮긴 값은 작지 않았습니다. 패널을 지나며 빛은 크게 줄고, 촘촘한 화소는 사진을 흐리게 하며, 카메라 위 화면에는 미세하게 다른 원이 비칩니다. 업계는 화소 배치를 바꾸고, 빛을 고르고, 빛 대신 소리를 쓰며 이 문제를 하나씩 풀어 왔습니다.',
+      '이 책은 화면 아래로 옮겨 간 다섯 센서가 무엇을 잃었고 그것을 어떻게 되찾아 왔는지 한 장씩 보여 줍니다. 책을 덮고 나면, 매일 보던 화면이 다르게 보일 것입니다.',
+    ],
+    links: [
+      { label: '교보문고 종이책', href: 'https://product.kyobobook.co.kr/detail/S000222029805' },
+      { label: '교보문고 전자책', href: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013849277' },
+    ],
+  },
+  {
     slug: 'surface-treatment',
     title: '디스플레이 표면처리기술',
     author: 'DISPLAY NOW 편집부 지음 · 박원상 기획·편집·감수',
