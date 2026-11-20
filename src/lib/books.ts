@@ -34,6 +34,19 @@ export interface Book {
   about: string[];
   /** 판매처. 판매가 열린 곳만 */
   links: BookLink[];
+  /** 영문판(판매가 열린 것만). 있으면 영문 홈 책장에 이것만 보인다 */
+  en?: {
+    title: string;
+    author: string;
+    /** 발행일 YYYY-MM-DD */
+    date: string;
+    cover: string;
+    coverW: number;
+    coverH: number;
+    /** 형식·가격 한 줄 (예: 'Kindle eBook · US$9.99') */
+    format: string;
+    href: string;
+  };
 }
 
 export const BOOKS: Book[] = [
@@ -79,7 +92,18 @@ export const BOOKS: Book[] = [
     links: [
       { label: '교보문고 종이책', href: 'https://product.kyobobook.co.kr/detail/S000221882563' },
       { label: '교보문고 전자책', href: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013787461' },
+      { label: '영문판 아마존 킨들', href: 'https://www.amazon.com/dp/B0HS7ZBXRX' },
     ],
+    en: {
+      title: 'Display Surface Treatment Technology',
+      author: 'DISPLAY NOW Editorial Team · Planning, editing, and review by Won Sang Park',
+      date: '2026-11-19',
+      cover: '/books/surface-treatment-en.webp',
+      coverW: 480,
+      coverH: 768,
+      format: 'Kindle eBook · US$9.99',
+      href: 'https://www.amazon.com/dp/B0HS7ZBXRX',
+    },
   },
 ];
 

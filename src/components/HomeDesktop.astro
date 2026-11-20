@@ -54,10 +54,10 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     <div class="main-split">
       <div class="feed">
         {/* 최신 글 목록을 두지 않는다 — 이번 호 기사는 맨 위 매거진 칸에 있다(한글 10/31, 영문 11/16 대표).
-            그 자리에 책장을 둬서 랜딩이 한눈에 들어오게 한다. 책은 한국어뿐이라 영문에서 뺀다 */}
+            그 자리에 책장을 둬서 랜딩이 한눈에 들어오게 한다. 영문 책장은 영문판이 있는 책만(11/20 대표) */}
         <Shelf which="magazine" lang={lang} />
         <Shelf which="tv" lang={lang} />
-        {!en && <Shelf which="books" />}
+        <Shelf which="books" lang={lang} />
       </div>
 
       <aside class="sidebar">

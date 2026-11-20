@@ -10,7 +10,7 @@
  * 줄 끝 「이전 호·유튜브 채널·책 전체」 칸은 머리의 「… 전체 →」와 겹쳐 뺐다(11/5 대표).
  * 기자 소개는 편집국 페이지에 있으니 여기 싣지 않는다(10/31 대표).
  *
- * 영문 홈(`lang='en'`)은 매거진·TV만 쓴다(11/16 대표, 책은 한국어뿐). 영문 호·영문 포스터,
+ * 영문 홈(`lang='en'`)의 책장은 영문판이 판매 중인 책만 싣는다(`books.ts`의 `en`, 11/20 대표). 영문 호·영문 포스터,
  * 영상은 영어판이 있으면 그것, 없으면 한국어 영상에 「EN subtitles」.
  */
 import { getIssues, getIssuesEn, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
@@ -34,6 +34,10 @@ const VIDEO_COUNT = 12;
 const issues = which === 'magazine' ? (en ? getIssuesEn() : getIssues()).slice(0, ISSUE_COUNT) : [];
 const videos = which === 'tv' ? videosFor(lang).slice(0, VIDEO_COUNT) : [];
 const books = which === 'books' && !en ? BOOKS : [];
+/** 영문 홈 책장 — 영문판이 판매 중인 책만. 표지를 누르면 판매처로 바로 간다(영문 책 페이지는 없다) */
+const booksEn = which === 'books' && en ? BOOKS.flatMap((b) => (b.en ? [b.en] : [])) : [];
+const enDate = (d: string) =>
+  new Date(`${d}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
 const published = which === 'magazine' ? await getPublishedArticles(lang) : [];
 const sectionCount = (key: string) => published.filter((a) => a.data.section === key).length;
@@ -41,14 +45,14 @@ const sectionCount = (key: string) => published.filter((a) => a.data.section ===
 const HEAD = (en ? {
   magazine: { label: 'MAGAZINE', sub: 'Published every Tuesday', more: '/en/issue', moreLabel: 'All issues' },
   tv: { label: 'DISPLAY NOW TV', sub: 'Principles in moving pictures', more: CHANNEL_URL, moreLabel: 'YouTube channel' },
-  books: { label: 'BOOKS', sub: '', more: '/books', moreLabel: '' },
+  books: { label: 'BOOKS', sub: 'English editions', more: '', moreLabel: '' },
 } : {
   magazine: { label: 'MAGAZINE', sub: '매주 화요일 발행', more: '/issue', moreLabel: '지난 호 전체' },
   tv: { label: 'DISPLAY NOW TV', sub: '원리를 움직이는 그림으로', more: '/tv', moreLabel: '영상 전체' },
   books: { label: 'BOOKS', sub: '기사를 주제별로 엮은 책', more: '/books', moreLabel: '책 전체' },
 })[which];
 
-const empty = issues.length + videos.length + books.length === 0;
+const empty = issues.length + videos.length + books.length + booksEn.length === 0;
 ---
 
 {
@@ -57,7 +61,7 @@ const empty = issues.length + videos.length + books.length === 0;
       <div class="sh">
         <span class="sh-label">{HEAD.label}</span>
         <span class="sh-sub">{HEAD.sub}</span>
-        <a class="sh-more" href={HEAD.more} {...(HEAD.more.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{HEAD.moreLabel} →</a>
+        {HEAD.more && <a class="sh-more" href={HEAD.more} {...(HEAD.more.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{HEAD.moreLabel} →</a>}
       </div>
 
       {which === 'magazine' && (
@@ -99,6 +103,13 @@ const empty = issues.length + videos.length + books.length === 0;
           <a class="tile tall book" href={`/books#${b.slug}`}>
             <img src={b.cover} alt={`『${b.title}』 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
             <span class="cap"><b>『{b.title}』</b><br />{bookDateLabel(b.date)} 출간</span>
+          </a>
+        ))}
+
+        {booksEn.map((b) => (
+          <a class="tile tall book" href={b.href} target="_blank" rel="noopener">
+            <img src={b.cover} alt={`${b.title} cover`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
+            <span class="cap"><b>{b.title}</b><br />{b.format}<br />{enDate(b.date)}</span>
           </a>
         ))}
 
@@ -274,6 +285,8 @@ const empty = issues.length + videos.length + books.length === 0;
     box-sizing: border-box;
     padding: 7px;
     background: #eceae4;
+    /* 표지 비율이 책마다 달라(국문 1:1.48, 킨들 1:1.6) 자르지 않고 담는다 */
+    object-fit: contain;
   }
   .tile:hover img {
     transform: translateY(-3px);
