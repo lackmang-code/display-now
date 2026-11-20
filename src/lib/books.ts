@@ -34,19 +34,15 @@ export interface Book {
   about: string[];
   /** 판매처. 판매가 열린 곳만 */
   links: BookLink[];
-  /** 영문판(판매가 열린 것만). 있으면 영문 홈 책장에 이것만 보인다 */
-  en?: {
-    title: string;
-    author: string;
-    /** 발행일 YYYY-MM-DD */
-    date: string;
-    cover: string;
-    coverW: number;
-    coverH: number;
-    /** 형식·가격 한 줄 (예: 'Kindle eBook · US$9.99') */
-    format: string;
-    href: string;
-  };
+  /**
+   * 영문 책이면 'en'. 영문판은 한국어판과 **별도의 책으로** 따로 싣는다(11/20 대표).
+   * 한글 홈·/books엔 모든 책이, 영문 홈 책장엔 'en' 책만 보인다
+   */
+  lang?: 'en';
+  /** 원화가 아닌 판의 가격·형식 한 줄(예: 'US$9.99 · 아마존 킨들'). 있으면 /books 「전자책」 칸에 그대로 */
+  ebookNote?: string;
+  /** 영문 홈 책장 아래 줄(예: 'Kindle eBook · US$9.99') */
+  capEn?: string;
 }
 
 export const BOOKS: Book[] = [
@@ -73,6 +69,23 @@ export const BOOKS: Book[] = [
     ],
   },
   {
+    slug: 'surface-treatment-en',
+    lang: 'en',
+    title: 'Display Surface Treatment Technology',
+    author: 'DISPLAY NOW Editorial Team · Planning, editing, and review by Won Sang Park',
+    date: '2026-11-19',
+    cover: '/books/surface-treatment-en.webp',
+    coverW: 480,
+    coverH: 768,
+    ebookNote: 'US$9.99 · 아마존 킨들(영어)',
+    capEn: 'Kindle eBook · US$9.99',
+    lead: 'Every screen you touch is wrapped in films you never see.',
+    about: [
+      '『디스플레이 표면처리기술』 영문판 『Display Surface Treatment Technology』가 아마존 킨들로 나왔습니다. 지문방지·눈부심방지·반사방지·모스아이·대전방지·하드코트·플렉서블 하드코트 — 화면 맨 바깥의 일곱 가지 막을 일상 장면에서 출발해 원리와 수치까지 다룹니다. 해외 동료에게 권하기 좋은 책입니다.',
+    ],
+    links: [{ label: '아마존 킨들', href: 'https://www.amazon.com/dp/B0HS7ZBXRX' }],
+  },
+  {
     slug: 'surface-treatment',
     title: '디스플레이 표면처리기술',
     author: 'DISPLAY NOW 편집부 지음 · 박원상 기획·편집·감수',
@@ -92,18 +105,7 @@ export const BOOKS: Book[] = [
     links: [
       { label: '교보문고 종이책', href: 'https://product.kyobobook.co.kr/detail/S000221882563' },
       { label: '교보문고 전자책', href: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013787461' },
-      { label: '영문판 아마존 킨들', href: 'https://www.amazon.com/dp/B0HS7ZBXRX' },
     ],
-    en: {
-      title: 'Display Surface Treatment Technology',
-      author: 'DISPLAY NOW Editorial Team · Planning, editing, and review by Won Sang Park',
-      date: '2026-11-19',
-      cover: '/books/surface-treatment-en.webp',
-      coverW: 480,
-      coverH: 768,
-      format: 'Kindle eBook · US$9.99',
-      href: 'https://www.amazon.com/dp/B0HS7ZBXRX',
-    },
   },
 ];
 

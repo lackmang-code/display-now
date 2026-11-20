@@ -26,14 +26,14 @@ const today = new Date().toISOString().slice(0, 10);
             <img
               class="cover"
               src={b.cover}
-              alt={`『${b.title}』 표지`}
+              alt={`${b.title} 표지`}
               width={b.coverW}
               height={b.coverH}
               loading="lazy"
               decoding="async"
             />
             <div class="body">
-              <h2>『{b.title}』</h2>
+              <h2>{b.lang === 'en' ? b.title : `『${b.title}』`}</h2>
               <p class="author">{b.author}</p>
               <p class="lead">{b.lead}</p>
               <dl class="spec">
@@ -51,6 +51,12 @@ const today = new Date().toISOString().slice(0, 10);
                   <>
                     <dt>전자책</dt>
                     <dd>{won(b.priceEbook)} · PDF</dd>
+                  </>
+                )}
+                {b.ebookNote && (
+                  <>
+                    <dt>전자책</dt>
+                    <dd>{b.ebookNote}</dd>
                   </>
                 )}
               </dl>

@@ -10,7 +10,7 @@
  * 줄 끝 「이전 호·유튜브 채널·책 전체」 칸은 머리의 「… 전체 →」와 겹쳐 뺐다(11/5 대표).
  * 기자 소개는 편집국 페이지에 있으니 여기 싣지 않는다(10/31 대표).
  *
- * 영문 홈(`lang='en'`)의 책장은 영문판이 판매 중인 책만 싣는다(`books.ts`의 `en`, 11/20 대표). 영문 호·영문 포스터,
+ * 영문 홈(`lang='en'`)의 책장은 영문 책(`books.ts`의 `lang: 'en'`)만 싣는다. 영문판은 한국어판과 별도의 책(11/20 대표). 영문 호·영문 포스터,
  * 영상은 영어판이 있으면 그것, 없으면 한국어 영상에 「EN subtitles」.
  */
 import { getIssues, getIssuesEn, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
@@ -35,7 +35,8 @@ const issues = which === 'magazine' ? (en ? getIssuesEn() : getIssues()).slice(0
 const videos = which === 'tv' ? videosFor(lang).slice(0, VIDEO_COUNT) : [];
 const books = which === 'books' && !en ? BOOKS : [];
 /** 영문 홈 책장 — 영문판이 판매 중인 책만. 표지를 누르면 판매처로 바로 간다(영문 책 페이지는 없다) */
-const booksEn = which === 'books' && en ? BOOKS.flatMap((b) => (b.en ? [b.en] : [])) : [];
+const booksEn = which === 'books' && en ? BOOKS.filter((b) => b.lang === 'en') : [];
+const bookHref = (b: (typeof BOOKS)[number]) => (b.links[0]?.href ?? '/books');
 const enDate = (d: string) =>
   new Date(`${d}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
@@ -101,15 +102,15 @@ const empty = issues.length + videos.length + books.length + booksEn.length === 
 
         {books.map((b) => (
           <a class="tile tall book" href={`/books#${b.slug}`}>
-            <img src={b.cover} alt={`『${b.title}』 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
-            <span class="cap"><b>『{b.title}』</b><br />{bookDateLabel(b.date)} 출간</span>
+            <img src={b.cover} alt={`${b.title} 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
+            <span class="cap"><b>{b.lang === 'en' ? b.title : `『${b.title}』`}</b><br />{bookDateLabel(b.date)} 출간{b.lang === 'en' && ' · 영문판'}</span>
           </a>
         ))}
 
         {booksEn.map((b) => (
-          <a class="tile tall book" href={b.href} target="_blank" rel="noopener">
+          <a class="tile tall book" href={bookHref(b)} target="_blank" rel="noopener">
             <img src={b.cover} alt={`${b.title} cover`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
-            <span class="cap"><b>{b.title}</b><br />{b.format}<br />{enDate(b.date)}</span>
+            <span class="cap"><b>{b.title}</b><br />{b.capEn}<br />{enDate(b.date)}</span>
           </a>
         ))}
 
