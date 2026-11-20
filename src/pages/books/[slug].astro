@@ -1,0 +1,62 @@
+---
+// 책 한 권 페이지 — `/books/<slug>`. 링크드인·메일에서 책 하나를 가리킬 때 이 주소를 쓴다
+// (목록 `/books#…`로 보내면 다른 책이 같이 보여 시선이 흩어진다 — 11/20 대표).
+// 링크 미리보기 그림은 `public/og/book-<slug>.png`(표지를 밝은 종이색 바탕에 앉힌 1200×630).
+// 영문 책(`lang: 'en'`)은 페이지 전체를 영어로 낸다.
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BookEntry from '../../components/BookEntry.astro';
+import { BOOKS, type Book } from '../../lib/books';
+
+export function getStaticPaths() {
+  return BOOKS.map((book) => ({ params: { slug: book.slug }, props: { book } }));
+}
+
+const { book } = Astro.props as { book: Book };
+const en = book.lang === 'en';
+const title = en ? `${book.title} | DISPLAY NOW` : `『${book.title}』 | DISPLAY NOW`;
+const description = `${book.lead} — ${book.author}`;
+---
+
+<Base title={title} description={description} image={`/og/book-${book.slug}.png`} lang={en ? 'en' : 'ko'}>
+  <div class="frame dark-frame">
+    <Header showNav={false} lang={en ? 'en' : 'ko'} />
+
+    <div class="content-pad">
+      <a class="back" href="/books">{en ? '← All DISPLAY NOW books' : '← 책 전체'}</a>
+      <BookEntry book={book} full />
+    </div>
+
+    <Footer lang={en ? 'en' : 'ko'} />
+  </div>
+</Base>
+
+<style>
+  .dark-frame {
+    width: min(808px, 100%);
+    background: var(--ink);
+    color: var(--on-dark);
+    border-left-color: var(--line-dark);
+    border-right-color: var(--line-dark);
+  }
+  .content-pad {
+    padding: 18px clamp(14px, 4vw, 32px) 36px;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--on-dark-mute);
+    text-decoration: none;
+  }
+  .back:hover {
+    color: var(--on-dark);
+  }
+  /* 책 페이지는 맨 위 칸이라 구분선이 필요 없다 */
+  .content-pad :global(.book) {
+    border-top: none;
+    padding-top: 6px;
+  }
+</style>

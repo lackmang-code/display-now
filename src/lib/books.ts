@@ -12,7 +12,7 @@ export interface BookLink {
 }
 
 export interface Book {
-  /** 주소 `/books#<slug>` */
+  /** 책 페이지 주소 `/books/<slug>` (목록은 `/books`) */
   slug: string;
   title: string;
   author: string;
@@ -77,13 +77,17 @@ export const BOOKS: Book[] = [
     cover: '/books/surface-treatment-en.webp',
     coverW: 480,
     coverH: 768,
-    ebookNote: 'US$9.99 · 아마존 킨들(영어)',
+    ebookNote: 'Kindle eBook · US$9.99',
     capEn: 'Kindle eBook · US$9.99',
     lead: 'Every screen you touch is wrapped in films you never see.',
+    // 소개는 아마존 상품 소개(KDP 등록문안, 대표 11/17 확정) 그대로. 영문 책은 페이지 전체가 영어다
     about: [
-      '『디스플레이 표면처리기술』 영문판 『Display Surface Treatment Technology』가 아마존 킨들로 나왔습니다. 지문방지·눈부심방지·반사방지·모스아이·대전방지·하드코트·플렉서블 하드코트 — 화면 맨 바깥의 일곱 가지 막을 일상 장면에서 출발해 원리와 수치까지 다룹니다. 해외 동료에게 권하기 좋은 책입니다.',
+      'Wipe your phone and the smudge disappears. Step into bright sunlight and the screen is still readable. Drop it into a pocket full of keys and the glass comes out unscratched. Fold it open and shut, day after day, and the outer layer does not crack. Each of these everyday moments depends on a coating thinner than a hair.',
+      "Display Surface Treatment Technology opens up the seven films that sit on top of today's displays: anti-fingerprint (AF), anti-glare (AG), anti-reflection and low-reflection (AR/LR), moth-eye nanostructures, antistatic (AS) layers on protective films, hard coats (HC), and flexible hard coats for foldable screens. Each chapter begins with a familiar scene, such as car wax, a non-stick pan, or a soap bubble, and works its way down to the physics, the chemistry, and the numbers engineers actually use.",
+      'Along the way you will see why the best anti-reflection film is the one most ruined by a single fingerprint, why anti-glare surfaces start to sparkle on high-resolution panels, what a "9H" hardness rating really measures, and why, for a flexible hard coat, the thicker, the harder, and the thicker, the less it folds.',
+      'English edition of 『디스플레이 표면처리기술』 (Next I/O, 2026).',
     ],
-    links: [{ label: '아마존 킨들', href: 'https://www.amazon.com/dp/B0HS7ZBXRX' }],
+    links: [{ label: 'Buy on Amazon Kindle', href: 'https://www.amazon.com/dp/B0HS7ZBXRX' }],
   },
   {
     slug: 'surface-treatment',
@@ -116,3 +120,6 @@ export const bookDateLabel = (d: string) => {
   const [, m, day] = d.split('-').map(Number);
   return `${m}월 ${day}일`;
 };
+
+/** 책 한 권 페이지 주소 */
+export const bookHref = (b: Book) => `/books/${b.slug}`;

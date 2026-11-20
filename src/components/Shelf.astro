@@ -16,7 +16,7 @@
 import { getIssues, getIssuesEn, issueHref, issueNumberLabel, issueDateLabel } from '../lib/issues';
 import { issueThumbSrc } from '../lib/issueThumb';
 import { videosFor, videoHref, CHANNEL_URL } from '../lib/videos';
-import { BOOKS, bookDateLabel } from '../lib/books';
+import { BOOKS, bookDateLabel, bookHref } from '../lib/books';
 import { SECTIONS, SECTION_ORDER, sectionColor } from '../lib/sections';
 import { getPublishedArticles, type Lang } from '../lib/articles';
 
@@ -34,9 +34,8 @@ const VIDEO_COUNT = 12;
 const issues = which === 'magazine' ? (en ? getIssuesEn() : getIssues()).slice(0, ISSUE_COUNT) : [];
 const videos = which === 'tv' ? videosFor(lang).slice(0, VIDEO_COUNT) : [];
 const books = which === 'books' && !en ? BOOKS : [];
-/** 영문 홈 책장 — 영문판이 판매 중인 책만. 표지를 누르면 판매처로 바로 간다(영문 책 페이지는 없다) */
+/** 영문 홈 책장 — 영문판이 판매 중인 책만. 표지를 누르면 그 책의 영문 페이지(/books/<slug>)로 간다 */
 const booksEn = which === 'books' && en ? BOOKS.filter((b) => b.lang === 'en') : [];
-const bookHref = (b: (typeof BOOKS)[number]) => (b.links[0]?.href ?? '/books');
 const enDate = (d: string) =>
   new Date(`${d}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
@@ -101,14 +100,14 @@ const empty = issues.length + videos.length + books.length + booksEn.length === 
         ))}
 
         {books.map((b) => (
-          <a class="tile tall book" href={`/books#${b.slug}`}>
+          <a class="tile tall book" href={bookHref(b)}>
             <img src={b.cover} alt={`${b.title} 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
             <span class="cap"><b>{b.lang === 'en' ? b.title : `『${b.title}』`}</b><br />{bookDateLabel(b.date)} 출간{b.lang === 'en' && ' · 영문판'}</span>
           </a>
         ))}
 
         {booksEn.map((b) => (
-          <a class="tile tall book" href={bookHref(b)} target="_blank" rel="noopener">
+          <a class="tile tall book" href={bookHref(b)}>
             <img src={b.cover} alt={`${b.title} cover`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
             <span class="cap"><b>{b.title}</b><br />{b.capEn}<br />{enDate(b.date)}</span>
           </a>

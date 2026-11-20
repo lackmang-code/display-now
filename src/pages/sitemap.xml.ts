@@ -3,6 +3,7 @@ import { SECTION_ORDER } from '../lib/sections';
 import { getIssues, getIssuesEn } from '../lib/issues';
 import { getPublishedArticles, articleHref } from '../lib/articles';
 import { topicIndex } from '../lib/tags';
+import { BOOKS, bookHref } from '../lib/books';
 
 const STATIC_PATHS = ['/', '/editorial', '/archive', '/sims', '/tv', '/books', '/issue', '/subscribe', '/board', '/privacy', '/terms'];
 
@@ -27,6 +28,8 @@ export const GET: APIRoute = async ({ site }) => {
 
   const entries: Array<{ path: string; lastmod?: string }> = [
     ...STATIC_PATHS.map((path) => ({ path, lastmod: newest })),
+    // 책 한 권 페이지(11/20~)
+    ...BOOKS.map((b) => ({ path: bookHref(b) })),
     ...SECTION_ORDER.map((key) => {
       const inSection = articles.filter((a) => a.data.section === key);
       return {
