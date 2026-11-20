@@ -96,7 +96,7 @@ const empty = issues.length + videos.length + books.length === 0;
         ))}
 
         {books.map((b) => (
-          <a class="tile tall" href={`/books#${b.slug}`}>
+          <a class="tile tall book" href={`/books#${b.slug}`}>
             <img src={b.cover} alt={`『${b.title}』 표지`} width={b.coverW} height={b.coverH} loading="lazy" decoding="async" />
             <span class="cap"><b>『{b.title}』</b><br />{bookDateLabel(b.date)} 출간</span>
           </a>
@@ -268,6 +268,12 @@ const empty = issues.length + videos.length + books.length === 0;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.15s;
+  }
+  /* 책 표지는 밝은 종이색 바탕 위에(어두운 표지가 묻히지 않게, 11/20 대표) */
+  .book img {
+    box-sizing: border-box;
+    padding: 7px;
+    background: #eceae4;
   }
   .tile:hover img {
     transform: translateY(-3px);
