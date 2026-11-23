@@ -417,6 +417,30 @@ if (existsSync(SIM_CSS)) {
   }
 }
 
+// 영문 호 누락 경고 (2026-11-23 대표 「헐 영문호가 없었던 적이 있었어?」).
+// 영문 호는 제4호부터 매주 필수다. 12·14호가 번역 없이 나갔는데 빌드가 아무 말도 안 해 3주를 몰랐다.
+// 빌드(Cloudflare 포함)를 막으면 다음 호 배포까지 멈추므로 실패가 아니라 매 빌드 경고로 띄운다.
+{
+  const src = readFileSync('src/lib/issues.ts', 'utf8');
+  const enDir = join(DIR, 'en');
+  const enFiles = existsSync(enDir) ? readdirSync(enDir) : [];
+  const koFiles = readdirSync(DIR).filter((f) => f.endsWith('.md'));
+  const missing = [];
+  for (const m of src.matchAll(/\{\s*\n\s*no: (\d+),\s*\n\s*publishedAt: '(\d{4}-\d{2}-\d{2})'([\s\S]*?)\n  \},/g)) {
+    const [, no, date, body] = m;
+    if (+no < 4) continue;
+    const ko = koFiles.filter((f) => f.startsWith(date)).length;
+    const en = enFiles.filter((f) => f.startsWith(date)).length;
+    const head = /headlineEn:/.test(body);
+    if (!head || en < ko) missing.push(`제${no}호(${date}) — 영문 표지 문구 ${head ? '있음' : '없음'} · 영문 기사 ${en}/${ko}편`);
+  }
+  if (missing.length) {
+    console.warn(`\n⚠⚠ 영문 호가 비었거나 덜 됐습니다 ${missing.length}건 — 영문 호는 매주 필수다(발행절차 「영문판」). 「정상」으로 넘기지 말 것`);
+    for (const s of missing) console.warn('  ' + s);
+    console.warn('');
+  }
+}
+
 if (problems.length) {
   console.error(`\n원고 검사 실패 (${problems.length}건)\n`);
   for (const p of problems) console.error('  ' + p);

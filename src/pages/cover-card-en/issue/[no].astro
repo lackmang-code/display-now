@@ -43,6 +43,10 @@ const coverFromOther = !!coverArticle && coverArticle.slug !== head?.slug;
 // 파일이 없으면 그림칸을 아예 빼서 620px 빈 검정 칸이 남지 않게 한다.
 const coverImagePath = `public/issues/issue-${issue.no}-cover.png`;
 const hasCoverImage = existsSync(coverImagePath);
+// 영문 카드는 한글 글자가 든 그림(영상 썸네일·자막 장면)을 피해 `-cover-en.png`가 있으면 그것을 쓴다(11/23).
+const coverSrc = existsSync(`public/issues/issue-${issue.no}-cover-en.png`) ? `/issues/issue-${issue.no}-cover-en.png` : `/issues/issue-${issue.no}-cover.png`;
+const coverTag = !issue.coverSim && issue.coverVideo?.youtubeId ? 'From our video' : 'Cover simulation';
+
 ---
 
 <!doctype html>
@@ -275,14 +279,14 @@ const hasCoverImage = existsSync(coverImagePath);
       {
         hasCoverImage && (
           <div class="stage">
-            <img src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+            <img src={coverSrc} alt="" />
           </div>
         )
       }
       {
         hasCoverImage && coverFromOther && coverArticle && (
           <div class="cover-cap">
-            <span class="cap-tag">Cover simulation</span>
+            <span class="cap-tag">{coverTag}</span>
             {SECTIONS[coverArticle.data.section].labelEn} · “{coverArticle.data.title}”
           </div>
         )

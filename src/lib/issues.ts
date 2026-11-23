@@ -105,13 +105,18 @@ export const ISSUES: IssueMeta[] = [
     },
     coverNote: '초박막유리(UTG)가 접히는 원리와 깨지는 조건을 그림으로 푼 DISPLAY NOW 영상입니다(8분 47초, 테커 편). 수치는 기사 근거 목록의 특허·발표에서 가져왔습니다.',
     headSlug: '2026-11-24-utg-window',
+    // 영문 호 표지는 유튜브 썸네일(확정B)의 영어판 그림이다(11/23 대표 「영문표지 이상해」 — 시뮬 화면에서 교체). 한글 호는 coverVideo 가 먼저라 영향 없다.
+    coverImage: '/videos/utg-cover-en.webp',
+    headlineEn: 'How Does Glass Fold?',
+    deckEn: 'How tightly ultra-thin glass (UTG) can fold is set less by its thickness than by the strain on its outer surface. The limiting radius for 200,000 folds grows in proportion to thickness, and chemical strengthening goes in shallow, the opposite of thick glass. We followed the numbers in patent examples from sheet forming to pen drop.',
+    coverNoteEn: "From our DISPLAY NOW video on how ultra-thin glass (UTG) folds and when it breaks (8:47, Teker's piece; Korean narration with English subtitles). The article adds a simulator you can fold yourself.",
   },
   {
     no: 14,
     publishedAt: '2026-11-17',
     weekStart: '2026-11-09',
     // 헤드는 데스크 맥북 프로 PWM 편이다. 표지는 우리 롱폼(xJ9qIbUoVA4) — 대표 결정(11/16)으로 구간을 자르지 않고 전편(5:44)을 건다.
-    // 첫 화면은 0:08 장면(맥북 + 240 Hz 파형). 영문 호를 만들면 headlineEn 과 함께 coverSim 을 넣는다.
+    // 첫 화면은 0:08 장면(맥북 + 240 Hz 파형).
     headline: '맥북 프로 OLED 두통 논란과 PWM 디밍',
     deck: '새 OLED 맥북 프로의 화면은 밝기 99% 이하에서 1초에 240번, 진폭 56%로 깜빡인다고 측정됐고, 일부 구매자가 눈 피로와 두통을 보고했습니다. 플리커의 주파수와 깊이가 불편감과 어떤 관계로 연구돼 왔는지, 이 측정값이 어디에 놓이는지 정리했습니다.',
     coverVideo: {
@@ -121,6 +126,11 @@ export const ISSUES: IssueMeta[] = [
     },
     coverNote: 'PWM 디밍의 원리와 플리커가 불편감과 연관된다고 보는 이유를 그림으로 푼 DISPLAY NOW 영상입니다(5분 44초, 데스크 편). 240 Hz·56%는 Notebookcheck 측정값이고, 이 수준에서 두통을 직접 잰 연구는 아직 없습니다.',
     headSlug: '2026-11-17-prolled-macbook-pwm-flicker',
+    // 영문 호 표지는 영상 0:08 장면 그림(글자가 전부 영어)으로 세운다. 한글 호는 coverVideo 가 먼저라 영향 없다.
+    coverImage: '/videos/pwm-flicker-0m08.webp',
+    headlineEn: 'PWM Dimming and the Headache Reports on the OLED MacBook Pro',
+    deckEn: "The new OLED MacBook Pro's screen was measured flickering 240 times a second at 56% amplitude at brightness of 99% or below, and some buyers have reported eye strain and headaches. We set out how the frequency and depth of flicker have been studied in relation to discomfort, and where this measurement sits.",
+    coverNoteEn: "A frame from our DISPLAY NOW video on PWM dimming (5:44, Desk's piece; Korean narration with English subtitles). 240 Hz and 56% are Notebookcheck's measurements, and no study has yet measured headaches directly at this level.",
   },
   {
     no: 13,
@@ -141,7 +151,6 @@ export const ISSUES: IssueMeta[] = [
     weekStart: '2026-10-26',
     // 헤드는 데스크 아이폰 듀오 편이다. 표지는 시뮬 대신 우리 롱폼의 한 구간(대표 2026-11-01) —
     // 힌지 구조 → 가설 A(iFixit) → 가설 B(ColorScale), 1:44~4:44. 첫 화면은 1:46 장면(대표 A안).
-    // 영문 호를 만들면 headlineEn 과 함께 coverSim 을 넣는다 — 영상이 한국어라 영문 표지는 시뮬로 간다.
     headline: '애플 아이폰 듀오 폴더블 OLED 라인 불량',
     deck: '애플은 아이폰 듀오 안쪽 화면 문제를 출시 사흘 만에 인정하고 교체를 시작했지만, 몇 대에서 왜 생겼는지는 지금도 밝히지 않았습니다. 공개된 가설 둘은 모두 힌지 가운데를 가리키지만 어느 쪽도 확정이 아닙니다.',
     coverVideo: {
@@ -153,6 +162,11 @@ export const ISSUES: IssueMeta[] = [
     },
     coverNote: '아이폰 듀오 힌지의 구조와 공개된 가설 둘을 그림으로 푼 DISPLAY NOW 영상의 한 구간입니다(3분, 데스크 편). 그림은 iFixit 분해·CT와 ColorScale 3D 분석을 보고 다시 그렸고, 어느 가설도 확정이 아닙니다.',
     headSlug: '2026-11-03-iphone-duo-line-defect',
+    // 영문 호 표지는 영상 1:46 장면에서 한글 자막·장 표시를 지운 그림(issue-12-cover-en.png)으로 세운다.
+    coverImage: '/issues/issue-12-cover-en.png',
+    headlineEn: 'iPhone Duo Foldable OLED Line Defects',
+    deckEn: "Apple acknowledged the problem with the iPhone Duo's inner screen three days after launch and began replacing units, but it still has not said how many were affected or why. Both public hypotheses point to the middle of the hinge, and neither is confirmed.",
+    coverNoteEn: "A frame from our DISPLAY NOW video on the iPhone Duo hinge (Desk's piece). It was redrawn from iFixit's teardown and CT images and ColorScale's 3D analysis, and neither hypothesis is confirmed.",
   },
   {
     no: 11,

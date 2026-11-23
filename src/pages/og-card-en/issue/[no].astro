@@ -36,6 +36,10 @@ const head = articles.find((a) => baseSlug(a) === issue.headSlug) ?? articles[0]
 // 🔴 2026-09-28 한글 카드와 같이 판을 바꿨다 — 왼쪽은 표지 시뮬레이션만, 오른쪽은 헤드 포함 수록 전부.
 // 경위는 한글 카드(`og-card/issue/[no].astro`) 주석.
 const hasCoverImage = existsSync(`public/issues/issue-${issue.no}-cover.png`);
+// 영문 카드는 한글 글자가 든 그림(영상 썸네일·자막 장면)을 피해 `-cover-en.png`가 있으면 그것을 쓴다(11/23).
+const coverSrc = existsSync(`public/issues/issue-${issue.no}-cover-en.png`) ? `/issues/issue-${issue.no}-cover-en.png` : `/issues/issue-${issue.no}-cover.png`;
+const coverTag = !issue.coverSim && issue.coverVideo?.youtubeId ? 'From our video' : 'Cover simulation';
+
 const coverArticle = issue.coverSim
   ? articles.find((a) => a.body?.includes(issue.coverSim as string))
   : undefined;
@@ -299,9 +303,9 @@ const picks = hasCoverImage ? (head ? [head, ...rest] : rest) : rest.length >= 3
             </div>
             <div class="identity">A display magazine written 100% by AI reporters</div>
             <div class="cover-fig">
-              <img class="cover-img" src={`/issues/issue-${issue.no}-cover.png`} alt="" />
+              <img class="cover-img" src={coverSrc} alt="" />
               <div class="cover-cap">
-                <span class="cap-tag">Cover simulation</span>
+                <span class="cap-tag">{coverTag}</span>
                 {coverArticle && (
                   <span>
                     {SECTIONS[coverArticle.data.section].labelEn} · {coverArticle.data.title}

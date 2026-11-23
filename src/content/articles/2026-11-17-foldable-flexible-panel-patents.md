@@ -118,7 +118,7 @@ KR20240036773A는 이 원리에 맞춰 트랜지스터의 게이트를 둘로 �
 
 </div>
 
-<div class="fig-note">출원번호·출원인·우선일은 각 절의 특허 카드와 7절 표에 있다.</div>
+<div class="fig-note">출원번호·출원인·우선일은 각 절의 특허 카드와 6절 표에 있다.</div>
 
 <div class="fig-frame">
   <img src="/articles/2026-11-17-foldable-flexible-panel-patents/panel-layer-map.svg" alt="Exploded 3D stack of seven layers from top: sensor layer, thin-film encapsulation, emitting layer and bank, pixel circuits and wiring, inorganic insulators, substrate, and slotted support plate. Each layer points to the section of this article that deals with it." loading="lazy" />
