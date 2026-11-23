@@ -1,0 +1,81 @@
+<svg viewBox="0 0 900 490" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="490" fill="#fff"/>
+<text x="40" y="46" font-size="26" fill="#151a22" text-anchor="start" font-weight="700">Foldable OLED stack before and after integration</text>
+<text x="40" y="76" font-size="16" fill="#5b6474" text-anchor="start" font-weight="400">Schematic. Layer heights are not to scale.</text>
+<text x="40" y="124" font-size="18" fill="#151a22" text-anchor="start" font-weight="700">Before: films attached</text>
+<rect x="40" y="426" width="250" height="34" fill="#f5dcc4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="449.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Polyimide substrate</text>
+<rect x="40" y="398" width="250" height="28" fill="#e6e9ee" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="418.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">TFT layer</text>
+<rect x="40" y="370" width="250" height="28" fill="#fde6c8" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="390.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">OLED layer</text>
+<rect x="40" y="340" width="250" height="30" fill="#eef1f4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="361.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Thin-film encapsulation</text>
+<rect x="40" y="328" width="250" height="12" fill="#f3efe2" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="40" y="274" width="250" height="54" fill="#d5ecdf" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="298.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Touch sensor film</text>
+<text x="52" y="318.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">base film + electrodes</text>
+<rect x="40" y="262" width="250" height="12" fill="#f3efe2" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="40" y="200" width="250" height="62" fill="#d9d2ef" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="228.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Circular polarizer</text>
+<text x="52" y="248.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">linear polarizer + λ/4 retarder</text>
+<rect x="40" y="188" width="250" height="12" fill="#f3efe2" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="40" y="144" width="250" height="44" fill="#dfeaf6" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="52" y="172.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Cover window</text>
+<line x1="292" y1="194.0" x2="302" y2="194.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="306" y="199.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">OCA</text>
+<line x1="292" y1="268.0" x2="302" y2="268.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="306" y="273.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">PSA</text>
+<line x1="292" y1="334.0" x2="302" y2="334.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="306" y="339.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">PSA</text>
+<text x="470" y="124" font-size="18" fill="#151a22" text-anchor="start" font-weight="700">After: formed on encapsulation</text>
+<rect x="470" y="426" width="250" height="34" fill="#f5dcc4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="482" y="449.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Polyimide substrate</text>
+<rect x="470" y="398" width="250" height="28" fill="#e6e9ee" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="482" y="418.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">TFT layer</text>
+<rect x="470" y="370" width="250" height="28" fill="#fde6c8" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="482" y="390.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">OLED layer</text>
+<rect x="470" y="340" width="250" height="30" fill="#eef1f4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="482" y="361.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Thin-film encapsulation</text>
+<rect x="470" y="324" width="250" height="16" fill="#fff" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="478.0" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="502.5" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="527.0" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="551.5" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="576.0" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="600.5" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="625.0" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="649.5" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="674.0" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="698.5" y="327" width="10" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="470.0" y="306" width="27.77777777777778" height="18" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="497.77777777777777" y="306" width="27.77777777777778" height="18" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="525.5555555555555" y="306" width="27.77777777777778" height="18" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="553.3333333333334" y="306" width="27.77777777777778" height="18" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="581.1111111111111" y="306" width="27.77777777777778" height="18" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="608.8888888888889" y="306" width="27.77777777777778" height="18" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="636.6666666666667" y="306" width="27.77777777777778" height="18" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="664.4444444444445" y="306" width="27.77777777777778" height="18" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="692.2222222222222" y="306" width="27.77777777777778" height="18" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="467.0" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="494.77777777777777" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="522.5555555555555" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="550.3333333333334" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="578.1111111111111" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="605.8888888888889" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="633.6666666666667" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="661.4444444444445" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="689.2222222222222" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="717.0" y="306" width="6" height="18" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="470" y="294" width="250" height="12" fill="#f3efe2" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="470" y="250" width="250" height="44" fill="#dfeaf6" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="482" y="278.0" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Cover window</text>
+<line x1="722" y1="300.0" x2="732" y2="300.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="736" y="305.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">OCA</text>
+<line x1="722" y1="315.0" x2="732" y2="320.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="736" y="325.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">Colour filter, black matrix</text>
+<line x1="722" y1="332.0" x2="732" y2="340.0" stroke="#c9ced6" stroke-width="1"/>
+<text x="736" y="345.0" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">Touch electrodes</text>
+<text x="470" y="200" font-size="15" fill="#1d6b45" text-anchor="start" font-weight="600">Removed: polarizer film, touch base</text>
+<text x="470" y="222" font-size="15" fill="#1d6b45" text-anchor="start" font-weight="600">film and two adhesive layers</text>
+</svg>

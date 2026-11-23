@@ -90,6 +90,23 @@ export const SHOW_PUBLISH_DATE = false;
 
 export const ISSUES: IssueMeta[] = [
   {
+    no: 15,
+    publishedAt: '2026-11-24',
+    weekStart: '2026-11-16',
+    // 헤드는 테커 커버윈도 5편(UTG)이다. 표지는 우리 UTG 롱폼 전편 — 대표 결정(11/23 「표지는 동영상」「롱폼」).
+    // 대표가 이 편을 「깨지지 않는 유리」로 부른다. 영상은 11/23 공개(oVXr5k49XIU, 8:47).
+    // 헤드라인은 유튜브 썸네일 제목에서 따온다(11/23 대표).
+    headline: '깨지는 유리가 어떻게 접히지?',
+    deck: 'UTG가 몇 mm까지 접히는지는 두께보다 겉면 변형률이 정합니다. 20만 회 접힘 한계 반경은 두께에 비례해 커지고, 강화는 두꺼운 유리와 반대로 얕게 들어갑니다. 특허 실시예의 수치로 원판 성형부터 펜 낙하까지 따라갔습니다.',
+    coverVideo: {
+      youtubeId: 'oVXr5k49XIU',
+      poster: '/videos/utg-cover.webp',
+      title: '유리가 어떻게 접히지? 접는 폰 유리의 원리',
+    },
+    coverNote: '초박막유리(UTG)가 접히는 원리와 깨지는 조건을 그림으로 푼 DISPLAY NOW 영상입니다(8분 47초, 테커 편). 수치는 기사 근거 목록의 특허·발표에서 가져왔습니다.',
+    headSlug: '2026-11-24-utg-window',
+  },
+  {
     no: 14,
     publishedAt: '2026-11-17',
     weekStart: '2026-11-09',

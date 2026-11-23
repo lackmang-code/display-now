@@ -30,6 +30,14 @@ export const CHANNEL_URL = 'https://www.youtube.com/@displaynowtv';
 
 export const VIDEOS: Video[] = [
   {
+    id: 'oVXr5k49XIU',
+    title: '유리가 어떻게 접히지? 접는 폰 유리의 원리',
+    duration: '8:47',
+    date: '2026-11-23',
+    thumb: '/videos/utg-glass-fold.webp',
+    titleEn: 'How Does Glass Fold? The Ultra-Thin Glass in Foldable Phones',
+  },
+  {
     id: 'xJ9qIbUoVA4',
     title: 'OLED 맥북 프로 두통 논란, PWM 디밍이 뭐길래?',
     duration: '5:44',

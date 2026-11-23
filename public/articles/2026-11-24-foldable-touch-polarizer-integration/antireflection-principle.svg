@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="600" fill="#fff"/>
+<text x="40" y="46" font-size="26" fill="#151a22" text-anchor="start" font-weight="700">How ambient-light reflection is suppressed</text>
+<text x="225" y="92" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700">Circular polarizer</text>
+<rect x="50" y="190" width="350" height="26" fill="#d9d2ef" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="392" y="209" font-size="15" fill="#151a22" text-anchor="end" font-weight="400">Linear polarizer</text>
+<rect x="50" y="290" width="350" height="26" fill="#e7e0f7" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="392" y="309" font-size="15" fill="#151a22" text-anchor="end" font-weight="400">λ/4 retarder</text>
+<rect x="50" y="470" width="350" height="30" fill="#c7ccd4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="392" y="491" font-size="15" fill="#151a22" text-anchor="end" font-weight="400">Reflective electrode</text>
+<line x1="110" y1="120" x2="110" y2="466" stroke="#151a22" stroke-width="2"/>
+<polygon points="110.0,466.0 104.0,454.0 116.0,454.0" fill="#151a22"/>
+<line x1="190" y1="466" x2="190" y2="224" stroke="#151a22" stroke-width="2"/>
+<polygon points="190.0,224.0 196.0,236.0 184.0,236.0" fill="#151a22"/>
+<line x1="178" y1="220" x2="202" y2="244" stroke="#b3261e" stroke-width="3"/>
+<line x1="202" y1="220" x2="178" y2="244" stroke="#b3261e" stroke-width="3"/>
+<text x="98" y="140" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">ambient light</text>
+<text x="98" y="158" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">unpolarized</text>
+<text x="98" y="258" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">linear</text>
+<text x="98" y="370" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">circular</text>
+<text x="98" y="388" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">(left)</text>
+<text x="202" y="370" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">circular</text>
+<text x="202" y="388" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">(right) after reflection</text>
+<text x="202" y="272" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">linear, rotated 90°</text>
+<text x="210" y="240" font-size="15" fill="#b3261e" text-anchor="start" font-weight="600">absorbed</text>
+<text x="50" y="540" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">Emitted light also passes the polarizer,</text>
+<text x="50" y="562" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">so part of the emission is absorbed.</text>
+<text x="675" y="92" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700">Colour filter + black matrix</text>
+<rect x="500" y="470" width="350" height="30" fill="#c7ccd4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="842" y="491" font-size="15" fill="#151a22" text-anchor="end" font-weight="400">Reflective electrode</text>
+<rect x="525" y="290" width="90" height="26" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="570.0" y="309" font-size="14" fill="#151a22" text-anchor="middle" font-weight="400">R filter</text>
+<rect x="535" y="448" width="70" height="18" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="0" opacity="0.6"/>
+<text x="570.0" y="462" font-size="12" fill="#151a22" text-anchor="middle" font-weight="400">R OLED</text>
+<rect x="640" y="290" width="90" height="26" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="685.0" y="309" font-size="14" fill="#151a22" text-anchor="middle" font-weight="400">G filter</text>
+<rect x="650" y="448" width="70" height="18" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="0" opacity="0.6"/>
+<text x="685.0" y="462" font-size="12" fill="#151a22" text-anchor="middle" font-weight="400">G OLED</text>
+<rect x="755" y="290" width="90" height="26" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="800.0" y="309" font-size="14" fill="#151a22" text-anchor="middle" font-weight="400">B filter</text>
+<rect x="765" y="448" width="70" height="18" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="0" opacity="0.6"/>
+<text x="800.0" y="462" font-size="12" fill="#151a22" text-anchor="middle" font-weight="400">B OLED</text>
+<rect x="500" y="290" width="25" height="26" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="615" y="290" width="25" height="26" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="730" y="290" width="25" height="26" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="845" y="290" width="25" height="26" fill="#2b2f36" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="842" y="280" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">black matrix between filters</text>
+<line x1="555" y1="130" x2="555" y2="288" stroke="#7a5c00" stroke-width="2"/>
+<polygon points="555.0,288.0 549.0,276.0 561.0,276.0" fill="#7a5c00"/>
+<text x="563" y="150" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">ambient white light</text>
+<text x="563" y="168" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">only the red band passes</text>
+<text x="563" y="186" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">the red filter</text>
+<line x1="591" y1="444" x2="591" y2="322" stroke="#b3261e" stroke-width="2"/>
+<polygon points="591.0,322.0 597.0,334.0 585.0,334.0" fill="#b3261e"/>
+<line x1="591" y1="288" x2="591" y2="220" stroke="#b3261e" stroke-width="2"/>
+<polygon points="591.0,220.0 597.0,232.0 585.0,232.0" fill="#b3261e"/>
+<text x="599" y="236" font-size="14" fill="#b3261e" text-anchor="start" font-weight="400">red emission passes</text>
+<line x1="857.5" y1="200" x2="857.5" y2="288" stroke="#7a5c00" stroke-width="2"/>
+<polygon points="857.5,288.0 851.5,276.0 863.5,276.0" fill="#7a5c00"/>
+<text x="849.5" y="214" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">absorbed by</text>
+<text x="849.5" y="232" font-size="14" fill="#5b6474" text-anchor="end" font-weight="400">black matrix</text>
+<text x="500" y="540" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">No polarizer: the filter removes other</text>
+<text x="500" y="562" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">wavelengths of the ambient light.</text>
+</svg>

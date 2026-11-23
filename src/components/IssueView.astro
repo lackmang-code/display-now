@@ -46,6 +46,8 @@ const fallbackImage = issue.coverImage ?? (head ? leadImage(head) : undefined);
 
 // 영상 표지는 한글 호에만, 유튜브에 공개된 뒤에만 선다(`IssueMeta.coverVideo`).
 const coverVideo = !en && issue.coverVideo?.youtubeId ? issue.coverVideo : undefined;
+// 아이디가 아직 없으면(업로드 전) 기사 첫 그림으로 넘어가지 않고 영상 포스터를 세운다(11/23 대표 「대표 영상을 넣기로 했는데」).
+const coverVideoPending = !en && issue.coverVideo && !issue.coverVideo.youtubeId ? issue.coverVideo : undefined;
 
 // 헤드 기사는 표지가 이미 크게 싣는다. 아래 목차는 나머지만 받는다.
 // 종전에는 표지 커버라인 네 줄과 목차가 같은 제목을 두 번 보여줬고,
@@ -137,6 +139,8 @@ const grouped = SECTION_ORDER.map((key) => ({
               data-poster={coverVideo.poster}
               data-title={coverVideo.title}
             />
+          ) : coverVideoPending ? (
+            <img class="cover-img" src={coverVideoPending.poster} alt={coverVideoPending.title} />
           ) : issue.coverSim ? (
             <div
               class="cover-sim"
@@ -157,7 +161,7 @@ const grouped = SECTION_ORDER.map((key) => ({
         {
           (en ? issue.coverNoteEn : issue.coverNote) && (
             <p class="cover-note">
-              <span class="cover-note-tag">{coverVideo ? '표지 영상' : ui.coverNoteTag}</span>
+              <span class="cover-note-tag">{coverVideo || coverVideoPending ? '표지 영상' : ui.coverNoteTag}</span>
               {en ? issue.coverNoteEn : issue.coverNote}
             </p>
           )

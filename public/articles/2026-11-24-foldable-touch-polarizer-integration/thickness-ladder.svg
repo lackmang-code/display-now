@@ -1,0 +1,50 @@
+<svg viewBox="0 0 900 690" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="690" fill="#fff"/>
+<text x="40" y="48" font-size="27" fill="#151a22" text-anchor="start" font-weight="700">Thickness of the polarizing and touch layers</text>
+<text x="40" y="80" font-size="16" fill="#5b6474" text-anchor="start" font-weight="400">Values from the cited filings (examples or claimed ranges). Measurement scope differs by filing.</text>
+<line x1="330.0" y1="120" x2="330.0" y2="620" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="330.0" y="642" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">0</text>
+<line x1="450.0" y1="120" x2="450.0" y2="620" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="450.0" y="642" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">50</text>
+<line x1="570.0" y1="120" x2="570.0" y2="620" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="570.0" y="642" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">100</text>
+<line x1="690.0" y1="120" x2="690.0" y2="620" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="690.0" y="642" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">150</text>
+<line x1="810.0" y1="120" x2="810.0" y2="620" stroke="#e6e9ee" stroke-width="1.5"/>
+<text x="810.0" y="642" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">200</text>
+<text x="570.0" y="666" font-size="14" fill="#5b6474" text-anchor="middle" font-weight="400">µm</text>
+<text x="40" y="142" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">Polarizing function</text>
+<text x="40" y="176" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Circular polarizer</text>
+<text x="40" y="196" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR20230031265A</text>
+<rect x="330.0" y="160" width="360.0" height="22" fill="#1d6b45"/>
+<rect x="690.0" y="160" width="120.0" height="22" fill="#9fcfb4"/>
+<text x="682.0" y="176" font-size="14" fill="#fff" text-anchor="end" font-weight="600">about 150–200</text>
+<text x="40" y="236" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Thin linear polarizer</text>
+<text x="40" y="256" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR20230031265A</text>
+<rect x="330.0" y="220" width="240.0" height="22" fill="#1d6b45"/>
+<text x="578.0" y="236" font-size="14" fill="#151a22" text-anchor="start" font-weight="400">100 or less</text>
+<text x="40" y="296" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Coated anti-reflection panel</text>
+<text x="40" y="316" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR102604284B1</text>
+<rect x="330.0" y="280" width="74.4" height="22" fill="#1d6b45"/>
+<rect x="404.4" y="280" width="45.6" height="22" fill="#9fcfb4"/>
+<text x="458.0" y="296" font-size="14" fill="#151a22" text-anchor="start" font-weight="400">31 (claimed 1–50)</text>
+<text x="40" y="356" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Colour filter + adhesive</text>
+<text x="40" y="376" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR102214977B1</text>
+<rect x="330.0" y="340" width="6.0" height="22" fill="#1d6b45"/>
+<rect x="336.0" y="340" width="36.0" height="22" fill="#9fcfb4"/>
+<text x="380.0" y="356" font-size="14" fill="#151a22" text-anchor="start" font-weight="400">2–4 + 5–15, 2nd substrate not stated</text>
+<text x="40" y="422" font-size="19" fill="#151a22" text-anchor="start" font-weight="700">Touch function</text>
+<text x="40" y="456" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Film touch sensor</text>
+<text x="40" y="476" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR20160085036A</text>
+<rect x="330.0" y="440" width="48.0" height="22" fill="#1d6b45"/>
+<rect x="378.0" y="440" width="432.0" height="22" fill="#9fcfb4"/>
+<text x="804.0" y="456" font-size="14" fill="#151a22" text-anchor="end" font-weight="400">20–500 →</text>
+<text x="40" y="516" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Thin touch panel + adhesive</text>
+<text x="40" y="536" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR102814617B1</text>
+<rect x="330.0" y="500" width="79.2" height="22" fill="#1d6b45"/>
+<rect x="409.2" y="500" width="60.0" height="22" fill="#9fcfb4"/>
+<text x="477.2" y="516" font-size="14" fill="#151a22" text-anchor="start" font-weight="400">33 + 25</text>
+<text x="40" y="576" font-size="16" fill="#151a22" text-anchor="start" font-weight="400">Electrodes on encapsulation</text>
+<text x="40" y="596" font-size="13" fill="#5b6474" text-anchor="start" font-weight="400">KR102604284B1</text>
+<text x="338.0" y="576" font-size="14" fill="#151a22" text-anchor="start" font-weight="400">no film, no adhesive layer</text>
+</svg>

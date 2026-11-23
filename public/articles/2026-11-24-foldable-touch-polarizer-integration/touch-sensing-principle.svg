@@ -1,0 +1,62 @@
+<svg viewBox="0 0 900 545" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Sans KR', Inter, system-ui, sans-serif">
+<rect width="900" height="545" fill="#fff"/>
+<text x="40" y="46" font-size="26" fill="#151a22" text-anchor="start" font-weight="700">Capacitive touch electrodes on the encapsulation</text>
+<text x="250" y="92" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700">Cross-section</text>
+<rect x="40" y="200" width="420" height="36" fill="#dfeaf6" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="50" y="224" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">Cover window</text>
+<rect x="40" y="362" width="420" height="98" fill="#eef1f4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<rect x="40" y="460" width="420" height="18" fill="#c7ccd4" stroke="#c9ced6" stroke-width="1" rx="0" opacity="1"/>
+<text x="50" y="498" font-size="15" fill="#5b6474" text-anchor="start" font-weight="400">Cathode of the OLED</text>
+<rect x="110" y="352" width="80" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<rect x="290" y="352" width="80" height="10" fill="#8a6d3b" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="104" y="361" font-size="15" fill="#151a22" text-anchor="end" font-weight="600">Tx (drive)</text>
+<text x="376" y="361" font-size="15" fill="#151a22" text-anchor="start" font-weight="600">Rx (sense)</text>
+<path d="M180,352 C210,312 270,312 300,352" stroke="#1d6b45" stroke-width="1.6" fill="none"/>
+<path d="M180,352 C210,282 270,282 300,352" stroke="#1d6b45" stroke-width="1.6" fill="none"/>
+<path d="M180,352 C210,252 270,252 300,352" stroke="#1d6b45" stroke-width="1.6" fill="none" stroke-dasharray="5 4"/>
+<text x="144" y="302" font-size="15" fill="#1d6b45" text-anchor="end" font-weight="600">Cm</text>
+<path d="M215,116 Q240,110 265,116 L270,178 Q240,198 210,178 Z" stroke="#8b5e3c" stroke-width="1.5" fill="#f1d3b8"/>
+<line x1="240" y1="238" x2="240" y2="272" stroke="#1d6b45" stroke-width="1.6" stroke-dasharray="4 4"/>
+<polygon points="240.0,272.0 234.0,260.0 246.0,260.0" fill="#1d6b45"/>
+<text x="282" y="150" font-size="14" fill="#5b6474" text-anchor="start" font-weight="400">finger draws part of the field</text>
+<text x="282" y="168" font-size="14" fill="#1d6b45" text-anchor="start" font-weight="600">→ Cm decreases</text>
+<line x1="150" y1="364" x2="150" y2="458" stroke="#b3261e" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="330" y1="364" x2="330" y2="458" stroke="#b3261e" stroke-width="1.6" stroke-dasharray="3 3"/>
+<rect x="46" y="426" width="290" height="26" fill="#eef1f4" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="50" y="446" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">Thin-film encapsulation (thickness d)</text>
+<text x="50" y="522" font-size="14" fill="#b3261e" text-anchor="start" font-weight="400">Cp (red dashed): capacitance to the cathode, larger when d is smaller</text>
+<text x="715" y="92" font-size="19" fill="#151a22" text-anchor="middle" font-weight="700">Plan view</text>
+<rect x="594" y="144" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="654" y="144" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="714" y="144" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="774" y="144" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="834" y="144" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="594" y="204" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="654" y="204" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="714" y="204" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="774" y="204" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="834" y="204" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="594" y="264" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="654" y="264" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="714" y="264" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="774" y="264" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="834" y="264" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="594" y="324" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="654" y="324" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="714" y="324" width="32" height="32" fill="#a8bfe6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="774" y="324" width="32" height="32" fill="#e8a3a3" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="834" y="324" width="32" height="32" fill="#a9d4a6" stroke="none" stroke-width="1.5" rx="4" opacity="1"/>
+<line x1="580" y1="130" x2="580" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="640" y1="130" x2="640" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="700" y1="130" x2="700" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="760" y1="130" x2="760" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="820" y1="130" x2="820" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="880" y1="130" x2="880" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="580" y1="130" x2="880" y2="130" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="580" y1="190" x2="880" y2="190" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="580" y1="250" x2="880" y2="250" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="580" y1="310" x2="880" y2="310" stroke="#8a6d3b" stroke-width="3"/>
+<line x1="580" y1="370" x2="880" y2="370" stroke="#8a6d3b" stroke-width="3"/>
+<text x="580" y="404" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">Metal mesh lines run over the</text>
+<text x="580" y="426" font-size="15" fill="#151a22" text-anchor="start" font-weight="400">non-emitting gaps between pixels.</text>
+</svg>

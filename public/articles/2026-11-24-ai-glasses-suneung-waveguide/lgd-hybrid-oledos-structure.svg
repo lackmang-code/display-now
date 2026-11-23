@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" role="img" aria-labelledby="t d"><title id="t">Hybrid panel with a high-resolution center</title><desc id="d">Top view: a small high-density central area SP1 surrounded by lower-density areas SP2 and SP3. Bottom: side view of a glass-based OLED panel with an opening and a silicon-based OLED panel bonded behind it.</desc><rect width="760" height="470" fill="#fbfaf7"/>
+<text x="380" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#1a1a17">Top view (schematic after FIG. 2A)</text>
+<rect x="150" y="60" width="460" height="220" fill="#fbfaf7" stroke="#55554f" stroke-width="3"/>
+<text x="166" y="86" text-anchor="start" font-family="Arial,sans-serif" font-size="19" font-weight="normal" fill="#55554f">SP3 area: about 1,166 PPI (21.78 um)</text>
+<rect x="230" y="98" width="300" height="140" fill="#e7dcee" stroke="#6b3a8c" stroke-width="3"/>
+<text x="244" y="124" text-anchor="start" font-family="Arial,sans-serif" font-size="19" font-weight="normal" fill="#6b3a8c">SP2 area: about 1,166 PPI</text>
+<rect x="325" y="140" width="110" height="68" fill="#6b3a8c" stroke="#1a1a17" stroke-width="3"/>
+<text x="380" y="170" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#ffffff">SP1</text>
+<text x="380" y="194" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="normal" fill="#ffffff">3,500 PPI</text>
+<text x="380" y="306" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="normal" fill="#55554f">Center sub-pixel 7.26 um = 1/3 of 21.78 um (3 x 3 per outer sub-pixel)</text>
+<text x="380" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#1a1a17">Side view (schematic after claim 16)</text>
+<rect x="150" y="372" width="460" height="26" fill="#d8d6cf" stroke="#55554f" stroke-width="2"/><rect x="330" y="372" width="100" height="26" fill="#fbfaf7" stroke="#55554f" stroke-width="2"/>
+<text x="160" y="390" text-anchor="start" font-family="Arial,sans-serif" font-size="16" font-weight="normal" fill="#1a1a17">OLED on glass</text>
+<text x="380" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="normal" fill="#1a1a17">opening</text>
+<text x="500" y="390" text-anchor="start" font-family="Arial,sans-serif" font-size="16" font-weight="normal" fill="#1a1a17">first panel</text>
+<rect x="326" y="404" width="108" height="26" fill="#6b3a8c" stroke="#1a1a17" stroke-width="2"/>
+<text x="446" y="424" text-anchor="start" font-family="Arial,sans-serif" font-size="17" font-weight="normal" fill="#6b3a8c">Second panel: OLED on silicon</text>
+<text x="380" y="458" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="normal" fill="#55554f">Not to scale. The patent text does not say whether the PPI values refer to pixels or sub-pixels.</text>
+</svg>
