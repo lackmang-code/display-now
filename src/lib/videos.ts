@@ -30,6 +30,14 @@ export const CHANNEL_URL = 'https://www.youtube.com/@displaynowtv';
 
 export const VIDEOS: Video[] = [
   {
+    id: '33zdSIN3BOY',
+    title: '전구 회사 오스람에 삼성디스플레이가 투자하는 이유',
+    duration: '7:38',
+    date: '2026-11-26',
+    thumb: '/videos/ams-osram-samsung.webp',
+    titleEn: 'Why Samsung Display Is Investing in OSRAM, the Light Bulb Name',
+  },
+  {
     id: 'oVXr5k49XIU',
     title: '유리가 어떻게 접히지? 접는 폰 유리의 원리',
     duration: '8:47',
