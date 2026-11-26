@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import HomeMobile from '../components/HomeMobile.astro';
 import HomeDesktop from '../components/HomeDesktop.astro';
 import Footer from '../components/Footer.astro';
-import SubscribeCTA from '../components/SubscribeCTA.astro';
 import { getPublishedArticles } from '../lib/articles';
 import { getIssues, articlesOfIssue } from '../lib/issues';
 import { resolvePicks } from '../lib/picks';
@@ -69,11 +68,13 @@ const editorPicks = resolvePicks(allArticles, shownSlugs);
   </div>
 
   {/*
-    구독 CTA와 푸터는 두 지면이 함께 쓴다. PC 블록 안에 두면 모바일에서 통째로 사라지는데,
+    푸터는 두 지면이 함께 쓴다. PC 블록 안에 두면 모바일에서 통째로 사라지는데,
     푸터에는 꼭지·주간호·아카이브·주제별·편집국 링크가 들어 있어 모바일 색인이 그만큼 얇아진다.
+    아래 구독 띠(SubscribeCTA)는 뺐다 — 맨 위 「구독하기」(/subscribe)가 제대로 된 신청이다(11/26 대표).
+    제보·정정·광고 문의는 푸터에 있다.
   */}
-  <div class="frame home-foot">
-    <SubscribeCTA compact />
+  {/* PC 지면은 푸터를 맨 아래 줄(책장 옆)에 품는다(HomeDesktop, 11/26 대표). 여기 푸터는 휴대폰 지면용 */}
+  <div class="frame home-foot home-mobile">
     <Footer compact />
   </div>
 </Base>

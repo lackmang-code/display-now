@@ -1,10 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import HomeDesktop from '../../components/HomeDesktop.astro';
-import Footer from '../../components/Footer.astro';
-import { getPublishedArticles } from '../../lib/articles';
 import { getIssuesEn, articlesOfIssue } from '../../lib/issues';
-import { resolvePicks } from '../../lib/picks';
 
 /*
  * 영문 홈은 **한글 홈과 같은 컴포넌트(HomeDesktop)를 쓴다.**
@@ -19,157 +16,16 @@ import { resolvePicks } from '../../lib/picks';
  * 모바일 전용 지면(HomeMobile)은 한글만 있다. 영문은 HomeDesktop 한 벌이 좁은 폭에서
  * 그대로 접히게 둔다 — 주 6편이라 표지형 지면을 따로 유지할 만큼 분량이 없다.
  */
-const articles = await getPublishedArticles('en');
-
 // 이번 호. `headlineEn`이 있는 호만 getIssuesEn()에 들어온다.
 const latestIssue = getIssuesEn()[0];
 const issueArticles = latestIssue ? await articlesOfIssue(latestIssue, 'en') : [];
 
-// 편집국 추천은 맨 위 매거진 칸(이번 호 목차)에 이미 있는 기사만 뺀다 — 최신 글 목록은 11/16에 뺐다
-const shownSlugs = new Set<string>(issueArticles.map((a) => a.slug));
-// 다섯 편만 — 열 편이면 사이드바가 왼쪽 책장보다 두 배 길어져 빈 자리가 생긴다(11/16)
-const editorPicks = resolvePicks(articles, shownSlugs).slice(0, 5);
 ---
 
 <Base title="DISPLAY NOW" lang="en" altHref="/">
   <HomeDesktop
     lang="en"
-    editorPicks={editorPicks}
     latestIssue={latestIssue}
     issueArticles={issueArticles}
-  >
-    {/*
-      한글 홈의 SubscribeCTA 자리. `/subscribe`의 영문 짝이 아직 없어 여기가 그 역할을 겸하고,
-      한글 구독 페이지의 언어 전환이 `/en#subscribe`로 오므로 이 id는 유지해야 한다.
-      슬롯으로 넣는 이유는 `.frame` 테두리다 — 밖에 두면 한 번 끊겼다 이어져 가로 이음매가 보인다.
-    */}
-    <section class="subscribe" id="subscribe">
-      <div>
-        <div class="sub-head">Every Tuesday, the week in display — as one issue.</div>
-        <p class="sub-note">
-          The technical notes, papers, patents and issues four AI reporters wrote that week, in one
-          mail. Every article carries the full list of what it was built on. Unsubscribe any time.
-        </p>
-      </div>
-      <form id="en-subscribe-form">
-        <input type="email" name="email" placeholder="Email address" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="sub-status" id="en-subscribe-status" hidden></p>
-    </section>
-
-    <Footer lang="en" />
-  </HomeDesktop>
+  />
 </Base>
-
-<script>
-  import { confirmEmailDomain } from '../../lib/emailTypo';
-  // 하단 구독 폼. 사이드바 폼(HomeDesktop)과 id가 겹치지 않게 따로 둔다.
-  const form = document.getElementById('en-subscribe-form');
-  const statusEl = document.getElementById('en-subscribe-status');
-
-  function show(text: string) {
-    if (!statusEl) return;
-    statusEl.hidden = false;
-    statusEl.textContent = text;
-  }
-
-  if (form instanceof HTMLFormElement) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const input = form.elements.namedItem('email');
-      let email = input instanceof HTMLInputElement ? input.value.trim() : '';
-      email = confirmEmailDomain(email, input instanceof HTMLInputElement ? input : null);
-      const btn = form.querySelector('button');
-      const reset = () => {
-        if (btn instanceof HTMLButtonElement) {
-          btn.disabled = false;
-          btn.textContent = 'Subscribe';
-        }
-      };
-      if (btn instanceof HTMLButtonElement) {
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-      }
-      try {
-        const res = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ email, source: 'en-home' }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-          form.hidden = true;
-          show('You are subscribed. Thank you!');
-        } else {
-          show('Please check the email address.');
-          reset();
-        }
-      } catch {
-        show('Something went wrong. Please try again in a moment.');
-        reset();
-      }
-    });
-  }
-</script>
-
-<style>
-  .subscribe {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px 24px;
-    padding: clamp(24px, 5vw, 36px) clamp(16px, 5vw, 42px);
-    border-top: 1px solid var(--line);
-    background: var(--card-warm);
-  }
-  .subscribe > div {
-    flex: 1 1 320px;
-    min-width: 0;
-  }
-  .sub-head {
-    font-family: var(--font-serif);
-    font-size: clamp(19px, 3.4vw, 24px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.35;
-  }
-  .sub-note {
-    margin: 8px 0 0;
-    max-width: 60ch;
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--ink-faint);
-  }
-  .subscribe form {
-    display: flex;
-    gap: 8px;
-    flex: 0 1 auto;
-  }
-  .subscribe form[hidden] {
-    display: none;
-  }
-  .subscribe input {
-    padding: 9px 12px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    font-family: var(--font-sans);
-    font-size: 14px;
-    min-width: 200px;
-  }
-  .subscribe button {
-    padding: 9px 18px;
-    border: none;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .sub-status {
-    flex: 1 1 100%;
-    margin: 0;
-    font-size: 14px;
-    color: var(--meta);
-  }
-</style>

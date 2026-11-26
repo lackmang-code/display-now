@@ -196,31 +196,7 @@ const navIssues = getIssues().slice(0, 8);
     <Shelf which="tv" mobile />
     <Shelf which="books" mobile />
 
-    <!-- ══════════ 홍보영상 ══════════ -->
-    {/*
-      PC 지면과 같은 자리(편집국 추천 바로 위)에 둔다.
-      영상은 2.47MB다. autoplay를 붙이면 화면에 안 보여도 받아 버리므로
-      preload="none"으로 두고, 화면에 들어올 때만 받아서 재생한다.
-      그 스크립트는 index.astro에 있고 video[data-lazy-video]를 전부 잡는다 —
-      두 지면에 하나씩 있지만 숨겨진 쪽은 교차가 없어 요청되지 않는다.
-    */}
-    <a class="mad" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
-      <span class="mad-label">광고</span>
-      <img class="mad-logo" src="/uploads/nextio-lockup-reverse.svg" alt="Next I/O" />
-      <video
-        src="/uploads/nextio-ad-mobile-robot.mp4"
-        loop
-        muted
-        playsinline
-        preload="none"
-        data-lazy-video
-      ></video>
-      <span class="mad-copy">
-        <span class="mad-tag">당신의 PC에 AI 직원을<br />복제/이식시켜 드립니다.</span>
-        <span class="mad-contact">문의: info@nextio.ai.kr</span>
-      </span>
-    </a>
-
+    {/* 홍보영상(Next I/O 광고)은 뺐다 — PC 지면과 같게(11/26 대표 「광고는 제거」) */}
   </div>
 </div>
 

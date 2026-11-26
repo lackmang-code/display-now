@@ -2,7 +2,7 @@
 /**
  * 한글 홈 아래쪽 책장 — 매거진 · TV · 책을 썸네일로 최신부터 진열한다(10/31 대표).
  *
- *   magazine — 호 표지(최신 12호), 머리에 꼭지 바로가기 칩
+ *   magazine — 호 표지(창간호까지 전부, 최대 52호), 머리에 꼭지 바로가기 칩
  *   tv       — 영상 썸네일(최신 12편)
  *   books    — 책 표지
  *
@@ -28,7 +28,8 @@ interface Props {
 const { which, mobile = false, lang = 'ko' } = Astro.props;
 const en = lang === 'en';
 
-const ISSUE_COUNT = 12;
+// 창간호부터 다 보인다(11/26 대표 「4호까지밖에 없네」 — 12호 제한에 1~3호가 잘렸다). 1년치(52호)를 넘기면 다시 정한다
+const ISSUE_COUNT = 52;
 const VIDEO_COUNT = 12;
 
 const issues = which === 'magazine' ? (en ? getIssuesEn() : getIssues()).slice(0, ISSUE_COUNT) : [];
@@ -44,11 +45,11 @@ const sectionCount = (key: string) => published.filter((a) => a.data.section ===
 
 const HEAD = (en ? {
   magazine: { label: 'MAGAZINE', sub: 'Published every Tuesday', more: '/en/issue', moreLabel: 'All issues' },
-  tv: { label: 'DISPLAY NOW TV', sub: 'Principles in moving pictures', more: CHANNEL_URL, moreLabel: 'YouTube channel' },
+  tv: { label: 'DISPLAY NOW TV', sub: 'Our lead stories, made easy on video', more: CHANNEL_URL, moreLabel: 'YouTube channel' },
   books: { label: 'BOOKS', sub: 'English editions', more: '', moreLabel: '' },
 } : {
   magazine: { label: 'MAGAZINE', sub: '매주 화요일 발행', more: '/issue', moreLabel: '지난 호 전체' },
-  tv: { label: 'DISPLAY NOW TV', sub: '원리를 움직이는 그림으로', more: '/tv', moreLabel: '영상 전체' },
+  tv: { label: 'DISPLAY NOW TV', sub: '메인 기사 내용을 동영상으로 알기 쉽게', more: '/tv', moreLabel: '영상 전체' },
   books: { label: 'BOOKS', sub: '기사를 주제별로 엮은 책', more: '/books', moreLabel: '책 전체' },
 })[which];
 
@@ -62,6 +63,18 @@ const empty = issues.length + videos.length + books.length + booksEn.length === 
         <span class="sh-label">{HEAD.label}</span>
         <span class="sh-sub">{HEAD.sub}</span>
         {HEAD.more && <a class="sh-more" href={HEAD.more} {...(HEAD.more.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{HEAD.moreLabel} →</a>}
+        {/* 유튜브 채널 구독 — TV 줄 머리 오른쪽(11/26 대표). 롱폼 고정 댓글로 들어온 시청자가 채널로 돌아가는 길 */}
+        {/* 매거진 구독 — TV 줄 「채널 구독하기」와 같은 빨간 버튼(11/26 대표) */}
+        {which === 'magazine' && (
+          <a class="sh-yt" href={en ? '/en/subscribe' : '/subscribe'}>
+            {en ? 'Subscribe' : '매거진 구독하기'}
+          </a>
+        )}
+        {which === 'tv' && (
+          <a class="sh-yt" href={`${CHANNEL_URL}?sub_confirmation=1`} target="_blank" rel="noopener">
+            {en ? 'Subscribe on YouTube' : '채널 구독하기'}
+          </a>
+        )}
       </div>
 
       {which === 'magazine' && (
@@ -208,6 +221,21 @@ const empty = issues.length + videos.length + books.length + booksEn.length === 
     font-size: 13px;
     color: var(--meta);
     text-decoration: none;
+  }
+  .sh-yt {
+    margin-left: 14px;
+    align-self: center;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: #e62117;
+    padding: 6px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .sh-yt:hover {
+    background: #ff3328;
   }
 
   /* 꼭지 바로가기 — 칩 한 줄 */

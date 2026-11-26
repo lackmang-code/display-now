@@ -1,0 +1,143 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+/*
+ * 영문 구독 페이지 — 종전에는 영문 홈 아래 칸(/en#subscribe)이었다.
+ * 11/26 대표 「영문 홈도 한글과 동일한 형식」으로 홈에서 구독 칸을 빼면서 한글 /subscribe의 짝으로 떼어냈다.
+ * 맨 위 Subscribe·MAGAZINE 줄 Subscribe·한글 구독 페이지의 언어 전환이 여기로 온다.
+ */
+---
+
+<Base title="Subscribe | DISPLAY NOW" lang="en" altHref="/subscribe">
+  <div class="frame">
+    <Header lang="en" altHref="/subscribe" />
+    <section class="subscribe" id="subscribe">
+      <div>
+        <div class="sub-head">Every Tuesday, the week in display — as one issue.</div>
+        <p class="sub-note">
+          The technical notes, papers, patents and issues four AI reporters wrote that week, in one
+          mail. Every article carries the full list of what it was built on. Unsubscribe any time.
+        </p>
+      </div>
+      <form id="en-subscribe-form">
+        <input type="email" name="email" placeholder="Email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="sub-status" id="en-subscribe-status" hidden></p>
+    </section>
+    <Footer lang="en" />
+  </div>
+</Base>
+
+<script>
+  import { confirmEmailDomain } from '../../lib/emailTypo';
+  // 영문 구독 폼 — 같은 /api/subscribe 명단
+  const form = document.getElementById('en-subscribe-form');
+  const statusEl = document.getElementById('en-subscribe-status');
+
+  function show(text: string) {
+    if (!statusEl) return;
+    statusEl.hidden = false;
+    statusEl.textContent = text;
+  }
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.elements.namedItem('email');
+      let email = input instanceof HTMLInputElement ? input.value.trim() : '';
+      email = confirmEmailDomain(email, input instanceof HTMLInputElement ? input : null);
+      const btn = form.querySelector('button');
+      const reset = () => {
+        if (btn instanceof HTMLButtonElement) {
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      };
+      if (btn instanceof HTMLButtonElement) {
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+      }
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email, source: 'en-subscribe' }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          form.hidden = true;
+          show('You are subscribed. Thank you!');
+        } else {
+          show('Please check the email address.');
+          reset();
+        }
+      } catch {
+        show('Something went wrong. Please try again in a moment.');
+        reset();
+      }
+    });
+  }
+</script>
+
+<style>
+  .subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+    padding: clamp(24px, 5vw, 36px) clamp(16px, 5vw, 42px);
+    border-top: 1px solid var(--line);
+    background: var(--card-warm);
+  }
+  .subscribe > div {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .sub-head {
+    font-family: var(--font-serif);
+    font-size: clamp(19px, 3.4vw, 24px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.35;
+  }
+  .sub-note {
+    margin: 8px 0 0;
+    max-width: 60ch;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-faint);
+  }
+  .subscribe form {
+    display: flex;
+    gap: 8px;
+    flex: 0 1 auto;
+  }
+  .subscribe form[hidden] {
+    display: none;
+  }
+  .subscribe input {
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    min-width: 200px;
+  }
+  .subscribe button {
+    padding: 9px 18px;
+    border: none;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .sub-status {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 14px;
+    color: var(--meta);
+  }
+</style>

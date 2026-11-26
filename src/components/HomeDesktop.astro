@@ -11,16 +11,17 @@
  * 여기서 언어에 따라 갈리는 것은 **링크 경로**뿐이다.
  */
 import Header from './Header.astro';
-import { SECTIONS, sectionColor } from '../lib/sections';
-import { articleHref, type Article, type Lang } from '../lib/articles';
+import type { Article, Lang } from '../lib/articles';
 import type { IssueMeta } from '../lib/issues';
 import { t } from '../lib/i18n';
 import BrandStrip from './BrandStrip.astro';
 import Shelf from './Shelf.astro';
+import Footer from './Footer.astro';
 
 interface Props {
   lang?: Lang;
-  editorPicks: Article[];
+  /** 쓰지 않는다(11/26 영문 편집국 추천 제거) — 한글 홈이 아직 넘겨서 남겨 둔다 */
+  editorPicks?: Article[];
   latestIssue?: IssueMeta;
   /** 이번 호 기사. 한글 홈 맨 위 매거진 칸에 카드로 싣는다 */
   issueArticles?: Article[];
@@ -28,7 +29,6 @@ interface Props {
 
 const {
   lang = 'ko',
-  editorPicks,
   latestIssue,
   issueArticles = [],
 } = Astro.props;
@@ -36,7 +36,6 @@ const {
 const ui = t(lang);
 const en = lang === 'en';
 
-const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
 ---
 
 <div class="frame">
@@ -51,172 +50,37 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
 
   <div class="content-pad">
     {/* 꼭지 바로가기는 MAGAZINE 책장 머리의 칩이 맡는다(한글 10/31, 영문 11/16 대표). 종전 꼭지 카드는 뺐다 */}
-    <div class="main-split">
-      <div class="feed">
-        {/* 최신 글 목록을 두지 않는다 — 이번 호 기사는 맨 위 매거진 칸에 있다(한글 10/31, 영문 11/16 대표).
-            그 자리에 책장을 둬서 랜딩이 한눈에 들어오게 한다. 영문 책장은 영문판이 있는 책만(11/20 대표) */}
-        <Shelf which="magazine" lang={lang} />
-        <Shelf which="tv" lang={lang} />
-        <Shelf which="books" lang={lang} />
-      </div>
-
-      <aside class="sidebar">
-        {/* 광고를 사이드바 맨 위로 올린다. 맨 아래에 두면 스크롤을 끝까지 내려야 보인다 */}
-        <a class="ad-box" href="https://www.nextio.ai.kr" target="_blank" rel="noopener">
-          <span class="ad-label">{ui.homeAdLabel}</span>
-          <img class="ad-logo" src="/uploads/nextio-lockup-reverse.svg" alt="Next I/O" />
-          {/*
-            autoplay를 떼고 preload="none"으로 둔다. 이 영상은 2.47MB인데
-            autoplay가 붙어 있으면 화면에 안 보여도 브라우저가 내려받는다.
-            지면을 나눈 뒤 이 광고는 PC 지면에만 있는데, 폰에서 재니
-            보이지도 않는 영상 2,528KB를 받고 있었다.
-          */}
-          <video
-            src="/uploads/nextio-ad-mobile-robot.mp4"
-            loop
-            muted
-            playsinline
-            preload="none"
-            data-lazy-video
-          ></video>
-          <div class="ad-copy">
-            <div class="ad-tagline" set:html={ui.homeAdTagline} />
-            <div class="ad-contact">{ui.homeAdContact}</div>
-          </div>
-        </a>
-
-        {/* 편집국 추천은 영문 홈에만 둔다. 한글 홈은 맨 위 세 축 띠가 TV·책으로 그 역할을 넘겨받았다 */}
-        {en && (
-        <>
-        <div class="row-head">
-          <span class="eyebrow">{ui.homePicks}</span>
-          <span class="muted">{ui.homeMonth(new Date().getMonth() + 1)}</span>
-        </div>
-        <div class="picks">
-          {
-            editorPicks.map((a, i) => (
-              <a href={articleHref(a)} class="pick-row">
-                <span class="no">{String(i + 1).padStart(2, '0')}</span>
-                <span>
-                  <span class="pick-title">{a.data.title}</span>
-                  <span class="pick-meta">
-                    <span style={`color:${sectionColor(a.data.section)};`}>
-                      {en ? SECTIONS[a.data.section].labelEn : SECTIONS[a.data.section].label}
-                    </span>
-                    {' · by '}{a.data.reporter}
-                  </span>
-                </span>
-              </a>
-            ))
-          }
-        </div>
-        </>
-        )}
-
-        <div class="newsletter-dark">
-          <div class="eyebrow-dark">{ui.homeNlEyebrow}</div>
-          <div class="nl-title">{ui.homeNlTitle}</div>
-          {/* 상태 문구는 언어별로 다르다. 스크립트가 사전을 다시 들이지 않도록 여기서 실어 보낸다 */}
-          <form
-            id="subscribe-form"
-            data-busy={ui.subProcessing}
-            data-done={ui.subDone}
-            data-bad={ui.subBadEmail}
-            data-err={ui.subError}
-            data-btn={ui.subscribeShort}
-          >
-            <input type="email" name="email" placeholder={ui.emailPlaceholder} required />
-            <button type="submit">{ui.subscribeShort}</button>
-          </form>
-          <p class="nl-status" id="subscribe-status" hidden></p>
-          <a class="nl-more" href={subscribeMoreHref}>{ui.homeNlMore}</a>
-        </div>
-      </aside>
+    {/* 매거진·TV 책장은 콘텐츠가 많아 한 줄을 다 쓰고, 맨 아래 한 줄에 책장 | 광고 | 유튜브 채널 구독을 나란히 둔다
+        (11/26 대표 — 오른쪽 칸이 위에만 있고 아래가 비어 중심이 안 맞았다. 영문 홈도 동일하게) */}
+    <div class="full-shelves">
+      <Shelf which="magazine" lang={lang} />
+      <Shelf which="tv" lang={lang} />
     </div>
+
+    {/* 편집국 추천 줄은 뺐다 — 영문 홈도 한글 홈과 같은 형식(11/26 대표) */}
+
   </div>
 
   {/*
-    이어지는 지면. 영문 홈이 꼭지별 전체 목록·구독·푸터를 여기로 넣는다.
-    **같은 `.frame` 안에 들어와야 한다** — 밖에 두면 테두리가 한 번 끊겼다 다시 시작해
-    이음매가 가로줄로 보인다(한글 홈은 그 자리가 검은 구독 CTA라 티가 나지 않았다).
+    영문 홈은 구독 칸을 여기로 넣는다(영문 신청 페이지가 없어 맨 위 Subscribe가 이 칸으로 온다).
+    **같은 `.frame` 안에 들어와야 한다** — 밖에 두면 테두리가 한 번 끊겼다 다시 시작해 이음매가 가로줄로 보인다.
   */}
   <slot />
+
+  {/* 맨 아래 한 줄 — 책장 | 푸터(제호·링크·법정 기재사항). 광고는 뺐다(11/26 대표).
+      유튜브 채널 구독은 TV 책장 머리 오른쪽으로 옮겼다(Shelf.astro). */}
+  <div class="content-pad bottom-pad">
+    <div class="main-split bottom-row">
+      <div class="feed">
+        {/* 영문 책장은 영문판이 있는 책만(11/20 대표) */}
+        <Shelf which="books" lang={lang} />
+      </div>
+      <div class="foot-col">
+        <Footer lang={lang} />
+      </div>
+    </div>
+  </div>
 </div>
-
-<script>
-  import { confirmEmailDomain } from '../lib/emailTypo';
-  // 광고 영상은 화면에 들어올 때만 받아서 재생한다.
-  // display:none 안에 있으면 교차가 일어나지 않으므로 폰에서는 아예 받지 않는다.
-  const vids = document.querySelectorAll<HTMLVideoElement>('video[data-lazy-video]');
-  if (vids.length) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        const v = e.target as HTMLVideoElement;
-        if (e.isIntersecting) {
-          // preload="none"이라 이 시점에는 아직 데이터가 없다. 첫 play()는 거부되므로
-          // 받을 준비를 시키고, 데이터가 오면 한 번 더 시도한다.
-          // (이걸 안 하면 영상은 내려받아 놓고 멈춘 채로 있다)
-          v.preload = 'auto';
-          const tryPlay = () => v.play().catch(() => {});
-          tryPlay();
-          v.addEventListener('canplay', tryPlay, { once: true });
-        } else {
-          v.pause();
-        }
-      }
-    }, { rootMargin: '200px' });
-    vids.forEach((v) => io.observe(v));
-  }
-
-  // 구독 폼. 상태 문구는 data-* 로 실려 온다(한/영 한 벌로 쓰기 위해).
-  const form = document.getElementById('subscribe-form');
-  const statusEl = document.getElementById('subscribe-status');
-
-  function showStatus(text: string) {
-    if (!statusEl) return;
-    statusEl.hidden = false;
-    statusEl.textContent = text;
-  }
-
-  if (form instanceof HTMLFormElement) {
-    const msg = form.dataset;
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const emailInput = form.elements.namedItem('email');
-      let email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
-      email = confirmEmailDomain(email, emailInput instanceof HTMLInputElement ? emailInput : null);
-      const btn = form.querySelector('button');
-      const reset = () => {
-        if (btn instanceof HTMLButtonElement) {
-          btn.disabled = false;
-          btn.textContent = msg.btn ?? '';
-        }
-      };
-      if (btn instanceof HTMLButtonElement) {
-        btn.disabled = true;
-        btn.textContent = msg.busy ?? '';
-      }
-      try {
-        const res = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ email, source: 'home-sidebar' }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-          form.hidden = true;
-          showStatus(msg.done ?? '');
-        } else {
-          showStatus(msg.bad ?? '');
-          reset();
-        }
-      } catch {
-        showStatus(msg.err ?? '');
-        reset();
-      }
-    });
-  }
-</script>
 
 <style>
   .hero {
@@ -276,6 +140,104 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     margin-top: 22px;
     align-items: flex-start;
   }
+  .full-shelves {
+    margin-top: 22px;
+  }
+  /* 맨 아래 줄 — 책장 사이 간격(30px)과 같게 띄운다. 책장은 그 줄의 첫 자식이라 자기 위 여백이 0이다 */
+  .bottom-row {
+    margin-top: 30px;
+  }
+  /* 맨 아래 줄 — 책장 | 푸터. 책장 사이 간격(30px)과 같게 띄운다 */
+  .bottom-pad {
+    padding-top: 0;
+  }
+  .bottom-row {
+    margin-top: 30px;
+    align-items: stretch;
+  }
+  .bottom-row .feed {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* 책장 칸을 옆 푸터 높이까지 늘린다 — 책장 바탕이 중간에서 끊기지 않게 */
+  .bottom-row .feed :global(.shelf) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-row .feed :global(.rowwrap) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-row .feed :global(.row) {
+    flex: 1;
+  }
+  .foot-col {
+    flex: 0 1 660px;
+    max-width: 660px;
+    display: flex;
+  }
+  .foot-col :global(.site-footer) {
+    flex: 1;
+    padding: 22px 24px 18px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* 푸터를 책장 높이에 맞춘다(11/26 대표 「오른쪽 여백이 많다」) — 제호와 링크 세 묶음을 한 줄에 나란히 */
+  .foot-col :global(.ft-top) {
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+  .foot-col :global(.ft-brand) {
+    flex: 1 1 200px;
+  }
+  .foot-col :global(.ft-nav) {
+    flex: 0 0 auto;
+    gap: 0 24px;
+  }
+  /* 좁은 폭(영문 홈은 폰까지 이 지면)에서는 제호가 위, 링크 묶음이 아래로 */
+  @media (max-width: 700px) {
+    .foot-col :global(.ft-top) {
+      flex-wrap: wrap;
+    }
+    .foot-col :global(.site-footer) {
+      min-width: 0;
+    }
+    .foot-col {
+      min-width: 0;
+    }
+    .foot-col :global(.ft-nav) {
+      flex: 1 1 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 12px;
+    }
+    .foot-col :global(.nw) {
+      white-space: normal;
+    }
+  }
+  .foot-col :global(.ft-legal) {
+    margin-top: 14px;
+    padding-top: 12px;
+    font-size: 12px;
+  }
+  /* 폭이 모자라 아랫줄로 내려가면 푸터가 폭을 다 쓴다 */
+  @media (max-width: 1160px) {
+    .foot-col {
+      flex-basis: 100%;
+      max-width: none;
+    }
+  }
+  @media (max-width: 600px) {
+    .picks-row .pick-row {
+      border-right: none;
+      border-bottom: 1px solid #e2dccb;
+    }
+  }
   .feed {
     flex: 1 1 520px;
     min-width: 0;
@@ -288,6 +250,21 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
   .picks {
     background: var(--card-warm);
     border: 1px solid #d8d2c2;
+  }
+  /* 영문 편집국 추천 — TV 아래 한 줄. 넓으면 다섯 칸 가로, 좁으면 접힌다 */
+  .picks-row {
+    margin-top: 30px;
+  }
+  .picks-row .picks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .picks-row .pick-row {
+    border-bottom: none;
+    border-right: 1px solid #e2dccb;
+  }
+  .picks-row .pick-row:last-child {
+    border-right: none;
   }
   .pick-row {
     display: grid;
@@ -422,6 +399,25 @@ const subscribeMoreHref = en ? '/en#subscribe' : '/subscribe';
     font-size: 12px;
     color: var(--on-dark-mute);
     margin-top: 5px;
+  }
+  .yt-box {
+    text-decoration: none;
+  }
+  .yt-btn {
+    align-self: flex-start;
+    margin-top: 14px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: #e62117;
+    padding: 10px 16px;
+  }
+  .yt-box:hover .yt-btn {
+    background: #ff3328;
+  }
+  .yt-box .nl-more {
+    align-self: flex-start;
   }
   .nl-status {
     margin: 10px 0 0;
